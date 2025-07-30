@@ -1196,7 +1196,6 @@ public class AmiWebDesktopPortlet extends GridPortlet implements WebDropDownMenu
 						t1.addChild(new BasicWebMenuLink(name, true, "show_window_" + portletId, 3));
 					}
 				}
-				//add
 				t1.sort();
 				r.addChild(t1);
 				r.addChild(new BasicWebMenuLink("Dashboard Objects...", true, "show_objects").setBackgroundImage(AmiWebConsts.ICON_DASH_OBJECTS));
