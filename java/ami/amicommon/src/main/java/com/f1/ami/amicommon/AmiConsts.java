@@ -227,6 +227,19 @@ public class AmiConsts {
 	public static final String CACHE = "Cache";
 	public static final String NOBROADCAST = "NoBroadcast";
 
+	//added
+	public static final String CACHE_UNIT_DEFAULT_BYTE = "<DEFAULT> BYTES";
+	public static final String CACHE_UNIT_KB = "KB";
+	public static final String CACHE_UNIT_MB = "MB";
+	public static final String CACHE_UNIT_GB = "GB";
+	public static final String CACHE_UNIT_TB = "TB";
+
+	public static final byte CODE_CACHE_UNIT_DEFAULT_BYTE = 0;
+	public static final byte CODE_CACHE_UNIT_KB = 1;
+	public static final byte CODE_CACHE_UNIT_MB = 2;
+	public static final byte CODE_CACHE_UNIT_GB = 3;
+	public static final byte CODE_CACHE_UNIT_TB = 4;
+
 	public static final String PASSWORD_KEYWORD = "PASSWORD";
 
 	public static final Map<String, String> NONULL_OPTIONS = CH.m(NONULL, "true");

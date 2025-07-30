@@ -19,6 +19,9 @@ import com.f1.ami.amiscript.AmiDebugMessage;
 import com.f1.ami.amiscript.AmiDebugMessageListener;
 import com.f1.ami.web.AmiWebAutosaveManager.AutoSaveFile;
 import com.f1.ami.web.auth.AmiWebStatesManager;
+import com.f1.ami.web.centermanager.AmiWebCenterManagerPortlet;
+import com.f1.ami.web.centermanager.graph.nodes.AmiCenterGraphNode;
+import com.f1.ami.web.centermanager.graph.nodes.AmiCenterGraphNode_Table;
 import com.f1.ami.web.charts.AmiWebChartAxisPortlet;
 import com.f1.ami.web.charts.AmiWebChartPlotPortlet;
 import com.f1.ami.web.charts.AmiWebManagedPortlet;
@@ -558,6 +561,8 @@ public class AmiWebDesktopPortlet extends GridPortlet implements WebDropDownMenu
 				showAddPanelPortlet(currentPortletId);
 		} else if ("amidb_cmd".equals(action)) {
 			showAmidbShellPortlet();
+		} else if ("amidb_manager".equals(action)) {
+			showAmiCenterManagerPortlet();
 		} else if ("var_table".equals(action)) {
 			getManager().showDialog("Session Variables", new AmiWebVarsTablePortlet(generateConfig(), this.service.getVarsManager()));
 		} else if ("style_manager".equals(action)) {
@@ -799,6 +804,10 @@ public class AmiWebDesktopPortlet extends GridPortlet implements WebDropDownMenu
 	public void showAmidbShellPortlet() {
 		if (!showSpecialPortlet(AmiWebAmiDbShellPortlet.class))
 			addSpecialPortlet(new AmiWebAmiDbShellPortlet(this.service, generateConfig()), "AMIDB Shell Tool", 1280, 700);
+	}
+	public void showAmiCenterManagerPortlet() {
+		if (!showSpecialPortlet(AmiWebAmiDbShellPortlet.class))
+			addSpecialPortlet(new AmiWebCenterManagerPortlet(generateConfig(), this.service, "", true, null), "AMI Center Manager", 1250, 700);
 	}
 	public void showStyleManagerPortlet() {
 		if (!showSpecialPortlet(AmiWebStyleManagerPortlet.class))
@@ -1136,6 +1145,7 @@ public class AmiWebDesktopPortlet extends GridPortlet implements WebDropDownMenu
 				r.addChild(new BasicWebMenuLink("Data Modeler...", true, "data_models").setBackgroundImage(AmiWebConsts.ICON_DATAMODEL));
 				r.addChild(new BasicWebMenuLink("AMIDB Shell Tool...", true, "amidb_cmd").setBackgroundImage(AmiWebConsts.ICON_SETTINGS));
 				BasicWebMenu t1 = new BasicWebMenu("Editors & Viewers", true).setBackgroundImage(AmiWebConsts.ICON_EDITORS);
+				r.addChild(new BasicWebMenuLink("Center Manager...", true, "amidb_manager").setBackgroundImage(AmiWebConsts.ICON_SETTINGS));
 				boolean needsDivider = false;
 				if (this.service.getAmiWebViewMethodsManager().getEditorsCount() > 0) {
 					Collection<AmiWebViewMethodPortlet> editors = this.service.getAmiWebViewMethodsManager().getEditors();
@@ -1193,6 +1203,54 @@ public class AmiWebDesktopPortlet extends GridPortlet implements WebDropDownMenu
 						String formPnlId = form.getAmiLayoutFullAliasDotId();
 						String fieldName = editedFieldForFieldEditor.getName();
 						String name = "Form: " + formPnlId + " Field: " + fieldName;
+						t1.addChild(new BasicWebMenuLink(name, true, "show_window_" + portletId, 3));
+					}
+				}
+				//add editors
+				if (this.service.getAmiCenterManagerEditorsManager().getEditorsCount() > 0) {
+					if (needsDivider)
+						t1.add(new BasicWebMenuDivider(2));
+					Set<String> editorsIds = this.service.getAmiCenterManagerEditorsManager().getEditorsPortletIds();
+					for (String portletId : editorsIds) {
+						Portlet p = this.service.getAmiCenterManagerEditorsManager().getEditorByPortletId(portletId);
+						String name = null;
+						if (p instanceof AmiCenterManagerAbstractEditCenterObjectPortlet) {
+							AmiCenterManagerAbstractEditCenterObjectPortlet ep = (AmiCenterManagerAbstractEditCenterObjectPortlet) p;
+							AmiCenterGraphNode node = ep.getCorrelationNode();
+							String prefix = null;
+							if (node != null) {//edit
+								String nodeName = node.getLabel();
+								switch (node.getType()) {
+									case AmiCenterGraphNode.TYPE_TIMER:
+										prefix = "Timer Editor: ";
+										break;
+									case AmiCenterGraphNode.TYPE_PROCEDURE:
+										prefix = "Procedure Editor: ";
+										break;
+									case AmiCenterGraphNode.TYPE_TRIGGER:
+										prefix = "Trigger Editor: ";
+										break;
+									default:
+										throw new NullPointerException();
+								}
+								name = prefix + nodeName;
+							} else {//node is null means it is an add
+								if (p instanceof AmiCenterManagerEditTimerPortlet)
+									name = "New Timer Editor";
+								else if (p instanceof AmiCenterManagerEditProcedurePortlet)
+									name = "New Procedure Editor";
+								else if (p instanceof AmiCenterManagerEditTriggerPortlet)
+									name = "New Trigger Editor";
+							}
+						} else if (p instanceof AmiCenterManagerRichTableEditorPortlet) {
+							AmiCenterManagerRichTableEditorPortlet rp = (AmiCenterManagerRichTableEditorPortlet) p;
+							AmiCenterGraphNode_Table node = rp.getCorrelationNode();
+							if (node != null) {
+								name = "Table Editor: " + node.getLabel();
+							} else
+								name = "New Table Editor";
+
+						}
 						t1.addChild(new BasicWebMenuLink(name, true, "show_window_" + portletId, 3));
 					}
 				}
