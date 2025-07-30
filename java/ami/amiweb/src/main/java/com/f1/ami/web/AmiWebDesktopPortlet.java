@@ -1163,7 +1163,7 @@ public class AmiWebDesktopPortlet extends GridPortlet implements WebDropDownMenu
 						String name = "Amiscript Custom Context Menu - " + ari;
 						t1.addChild(new BasicWebMenuLink(name, true, "show_window_" + portletId, 0));
 					}
-				} //test
+				}
 				if (this.service.getAmiWebDmEditorsManager().getEditorsCount() > 0) {
 					if (needsDivider)
 						t1.add(new BasicWebMenuDivider(2));
