@@ -1,0 +1,2 @@
+C:\PROGRA~1\Java\jdk1.8.0_251\bin\javac -cp "../lib/*" ../src/com/threeforge/clients/wafra/* -d ../out
+C:\PROGRA~1\Java\jdk1.8.0_251\bin\jar -cvfe ../out/Wafra3forgeJdbcClient.jar  ../out/WafraAmiJdbcClient ../out

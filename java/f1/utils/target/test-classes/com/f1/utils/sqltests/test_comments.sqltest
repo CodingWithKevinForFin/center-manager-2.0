@@ -1,0 +1,27 @@
+****TEST_INPUT_QUERY****
+{
+ // Single-line comment 
+ int x = 3; 
+ int y = 4; // End of line comment 
+ int z = 5; 
+ /*
+ * Block 
+* Comment 
+ */ 
+ return x * y * z;}
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+****TEST_RESULT****
+60
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****

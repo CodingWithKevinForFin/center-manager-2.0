@@ -1,0 +1,119 @@
+****TEST_INPUT_QUERY****
+create table out as select * from analyzeInputWithBool where n <= 5 || n >= 10 || x < 0.0 || x > 5.0 || b == true;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+analyzeInputWithBool
++----------------------+
+| analyzeInputWithBool |
++-------+------+-------+
+|n      |x     |b      |
+|Integer|Double|Boolean|
++-------+------+-------+
+|0      |4.0   |false  |
+|1      |8.1   |false  |
+|2      |9.8   |false  |
+|3      |-1.9  |false  |
+|4      |2.3   |false  |
+|5      !null  |false  |
+|6      |5.7   |false  |
+|7      |-2.8  |false  |
+|8      !null  |false  |
+|9      |-0.3  |false  |
+|10     |1.8   |true   |
+|11     |6.7   |false  |
+|12     |-7.2  |true   |
+|13     |-2.1  |false  |
+|14     |1.5   |true   |
+|15     |0.0   |false  |
+|16     |9.9   |true   |
+|17     !null  |false  |
+|18     |-4.4  |true   |
+|19     |2.8   |false  |
+|20     |7.7   |true   |
++-------+------+-------+
+
+****TEST_RESULT****
+20
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS out  SELECT "*" FROM analyzeInputWithBool WHERE n <= 5 || n >= 10 || x < 0.0 || x > 5.0 || b == true
+
+PROJECTION : 
+SELECT "*" FROM analyzeInputWithBool WHERE n <= 5 || n >= 10 || x < 0.0 || x > 5.0 || b == true
+
+PREJOIN_FILTER : 
+For Table 'analyzeInputWithBool' ==> ((n <= 5) || (n >= 10) || (x < 0.0D) || (x > 5.0D) || (b == true))
+
+NESTING_QUERY : 
+#0 analyzeInputWithBool
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+analyzeInputWithBool
++----------------------+
+| analyzeInputWithBool |
++-------+------+-------+
+|n      |x     |b      |
+|Integer|Double|Boolean|
++-------+------+-------+
+|0      |4.0   |false  |
+|1      |8.1   |false  |
+|2      |9.8   |false  |
+|3      |-1.9  |false  |
+|4      |2.3   |false  |
+|5      !null  |false  |
+|6      |5.7   |false  |
+|7      |-2.8  |false  |
+|8      !null  |false  |
+|9      |-0.3  |false  |
+|10     |1.8   |true   |
+|11     |6.7   |false  |
+|12     |-7.2  |true   |
+|13     |-2.1  |false  |
+|14     |1.5   |true   |
+|15     |0.0   |false  |
+|16     |9.9   |true   |
+|17     !null  |false  |
+|18     |-4.4  |true   |
+|19     |2.8   |false  |
+|20     |7.7   |true   |
++-------+------+-------+
+
+out
++----------------------+
+|         out          |
++-------+------+-------+
+|n      |x     |b      |
+|Integer|Double|Boolean|
++-------+------+-------+
+|0      |4.0   |false  |
+|1      |8.1   |false  |
+|2      |9.8   |false  |
+|3      |-1.9  |false  |
+|4      |2.3   |false  |
+|5      !null  |false  |
+|6      |5.7   |false  |
+|7      |-2.8  |false  |
+|9      |-0.3  |false  |
+|10     |1.8   |true   |
+|11     |6.7   |false  |
+|12     |-7.2  |true   |
+|13     |-2.1  |false  |
+|14     |1.5   |true   |
+|15     |0.0   |false  |
+|16     |9.9   |true   |
+|17     !null  |false  |
+|18     |-4.4  |true   |
+|19     |2.8   |false  |
+|20     |7.7   |true   |
++-------+------+-------+
+

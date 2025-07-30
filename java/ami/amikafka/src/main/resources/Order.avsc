@@ -1,0 +1,11 @@
+{
+	"type": "record",
+	"name": "Order",
+	"namespace": "com.codingharbour.avro",
+	"fields": [
+	    {"name": "id", "type": "string"},
+		{"name": "name", "type":"string", "doc": "Stock Name"},
+		{"name": "price", "type":"float", "doc": "Price of stock"},
+		{"name": "size", "type":"float", "doc": "Size of order"}
+	]
+}

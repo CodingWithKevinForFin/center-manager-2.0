@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "3.2.2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2020"/>
+  <title>Datamodels</title>
+  <link rel="StyleSheet" href="../../../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Datamodels">
+        <span>Datamodels</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+  <h1>Datamodels</h1>
+  <p>Datamodels typically send a query to one or many data sources and process the results to generate output tables used within visualizations. Datamodels also cache the resulting output from the most recent run. If a datamodel has attached filters, then it caches a copy of the original unfiltered data along with a filtered set of the data. Note that when the filter(s) are adjusted, only the filtered set of data is changed.</p>
+  <p> </p>
+  <p>Each datamodel has a block of AmiScript code which is executed when the datamodel is run. Inputs to the script include (1) variables passed in from relationships, (2) values from form fields that are enabled for use by the datamodel, and (3) any dashboard variables and Global Variables.  All datamodels are configured to interact with a default datasource but can be overridden using the USE ds= clause</p>
+  <p> </p>
+  <p>A datamodel can be added on top of a datasource by following the frontend windows/inscructions when filling in a panel visulization or by explicitely selecting <strong>A</strong><strong>dd Datamodel to &lt;datasource&gt; </strong>after right clicking on a <strong>Data Modeler</strong> blue icon.</p>
+  <p> </p>
+  <figure><img height="350" src="../../../assets/images/AddingDatamodel.png" width="579"/>
+    <figcaption>Adding a Datamodel</figcaption>
+  </figure>
+  <p> </p>
+  <p>After the <strong>Add </strong>action a <strong>Table Chooser</strong> window prompts the user to specify the desired table of the selected datasource.</p>
+  <p> </p>
+  <figure><img height="373" src="../../../assets/images/TableChooser.png" width="570"/>
+    <figcaption>Table Chooser</figcaption>
+  </figure>
+  <p> </p>
+  <p>With table selection there is a short preview of the table at the bottom of the window. </p>
+  <p>With <strong>Next&gt;&gt; </strong>button the user is guided to the next window where (s)he can edit the datamodel queries and configure the datamodel behavior through the available options/properties.</p>
+  <p> </p>
+  <figure><img height="325" src="../../../assets/images/CreateDatamodel.png" width="570"/>
+    <figcaption>Datamodel Configuration</figcaption>
+  </figure>
+  <p> </p>
+  <p>Finally, after testing the datamodel code and pressing <strong>Finish </strong>the datamodel is defined and ready for further use.<br/>
+    Inside Data Modeler the created datamodel can be recognized by a green icon with its name, behavior icons and connection line to its datasource.</p>
+  <figure><img src="../../../assets/images/DatamodelIcon.png"/>
+    <figcaption>Datamodel Icon</figcaption>
+  </figure>
+  <p> </p>
+  <p> </p>
+  <p class="Examples_Small">DATAMODEL OPTIONS</p>
+  <p class="Examples_Small"> </p>
+  <p>The available options on the datamodel configuration window:<br/>
+    <br/>
+    <strong>Timeout (sec):  </strong>max duration in seconds the datamodel may run<br/>
+    <br/>
+    <strong>Limit: </strong> max number of rows the datamodel tables can have
+  </p>
+  <p> </p>
+  <p><strong>Datasource:</strong> select the datasource the datamodel runs on</p>
+  <p> </p>
+  <p><strong>Datamodels: </strong>select the datamodel(s) the current datamodel will include - in case any number of other datamodels is selected, the Datamodel becomes a Blender</p>
+  <p> </p>
+  <p><strong>Owning Layout:</strong> select the Layout the Datamodel belongs to</p>
+  <p> </p>
+  <p><strong>Datamodel Name: </strong>edit the datamodel name</p>
+  <p> </p>
+  <p><strong>Auto-Run: </strong>specify the conditions that trigger the datamodel run(s)</p>
+  <p> </p>
+  <p><strong>Auto Requery (sec): </strong>if selected the datamodel will automatically run with the selected period</p>
+  <p> </p>
+  <p> </p>
+  <p class="Examples_Small">DATAMODEL BUTTONS</p>
+  <p class="Examples_Small"> </p>
+  <p><strong>Test (alt + enter):</strong></p>
+  <p> </p>
+  <p><strong>Apply (ctrl + enter):</strong></p>
+  <p> </p>
+  <p><strong>Set Test Input...:</strong></p>
+  <p> </p>
+  <p> </p>
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

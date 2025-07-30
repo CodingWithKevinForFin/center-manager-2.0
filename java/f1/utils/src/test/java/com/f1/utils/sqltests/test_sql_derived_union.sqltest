@@ -1,0 +1,233 @@
+****TEST_INPUT_QUERY****
+select * from (select * from tA union select * from tB) union select * from (select * from tB union select * from tC);
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+tA
++---------------------+
+|         tA          |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |2.0   |2.0   |
+|1      |3.0   |2.0   |
+|2      |0.0   |3.0   |
+|3      |0.0   |1.0   |
+|4      |4.0   |1.0   |
+|5      |1.0   |4.0   |
+|6      |2.0   |3.0   |
+|7      |4.0   |0.0   |
+|8      |0.0   |0.0   |
+|9      |1.0   |3.0   |
++-------+------+------+
+
+tB
++---------------------+
+|         tB          |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |1.0   |0.0   |
+|1      |1.0   |4.0   |
+|2      |2.0   |0.0   |
+|3      |3.0   |2.0   |
+|4      |3.0   |0.0   |
+|5      |0.0   |4.0   |
+|6      |1.0   |2.0   |
+|7      |2.0   |3.0   |
+|8      |3.0   |4.0   |
+|9      |0.0   |1.0   |
++-------+------+------+
+
+tC
++---------------------+
+|         tC          |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |3.0   |3.0   |
+|1      |1.0   |2.0   |
+|2      |3.0   |4.0   |
+|3      |3.0   |0.0   |
+|4      |3.0   |0.0   |
+|5      |3.0   |1.0   |
+|6      |4.0   |3.0   |
+|7      |3.0   |2.0   |
+|8      |4.0   |0.0   |
+|9      |2.0   |0.0   |
++-------+------+------+
+
+****TEST_RESULT****
++---------------------+
+|         tA          |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |2.0   |2.0   |
+|1      |3.0   |2.0   |
+|2      |0.0   |3.0   |
+|3      |0.0   |1.0   |
+|4      |4.0   |1.0   |
+|5      |1.0   |4.0   |
+|6      |2.0   |3.0   |
+|7      |4.0   |0.0   |
+|8      |0.0   |0.0   |
+|9      |1.0   |3.0   |
+|0      |1.0   |0.0   |
+|1      |1.0   |4.0   |
+|2      |2.0   |0.0   |
+|3      |3.0   |2.0   |
+|4      |3.0   |0.0   |
+|5      |0.0   |4.0   |
+|6      |1.0   |2.0   |
+|7      |2.0   |3.0   |
+|8      |3.0   |4.0   |
+|9      |0.0   |1.0   |
+|0      |1.0   |0.0   |
+|1      |1.0   |4.0   |
+|2      |2.0   |0.0   |
+|3      |3.0   |2.0   |
+|4      |3.0   |0.0   |
+|5      |0.0   |4.0   |
+|6      |1.0   |2.0   |
+|7      |2.0   |3.0   |
+|8      |3.0   |4.0   |
+|9      |0.0   |1.0   |
+|0      |3.0   |3.0   |
+|1      |1.0   |2.0   |
+|2      |3.0   |4.0   |
+|3      |3.0   |0.0   |
+|4      |3.0   |0.0   |
+|5      |3.0   |1.0   |
+|6      |4.0   |3.0   |
+|7      |3.0   |2.0   |
+|8      |4.0   |0.0   |
+|9      |2.0   |0.0   |
++-------+------+------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT "*" FROM (SELECT "*" FROM tA UNION SELECT "*" FROM tB) UNION SELECT "*" FROM (SELECT "*" FROM tB UNION SELECT "*" FROM tC)SELECT "*" FROM tA UNION SELECT "*" FROM tBSELECT "*" FROM tB UNION SELECT "*" FROM tC
+
+PROJECTION : 
+SELECT "*" FROM (SELECT "*" FROM tA UNION SELECT "*" FROM tB) UNION SELECT "*" FROM (SELECT "*" FROM tB UNION SELECT "*" FROM tC)
+
+PROJECTION : 
+SELECT "*" FROM tA UNION SELECT "*" FROM tB
+
+NESTING_QUERY : 
+#0 tA
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+NESTING_QUERY : 
+#0 tB
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+UNION : 
+Combined 2 Tables into 20 rows
+
+NESTING_QUERY : 
+#0 tA
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM tB UNION SELECT "*" FROM tC
+
+NESTING_QUERY : 
+#0 tB
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+NESTING_QUERY : 
+#0 tC
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+UNION : 
+Combined 2 Tables into 20 rows
+
+NESTING_QUERY : 
+#0 tB
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+UNION : 
+Combined 2 Tables into 40 rows
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+tA
++---------------------+
+|         tA          |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |2.0   |2.0   |
+|1      |3.0   |2.0   |
+|2      |0.0   |3.0   |
+|3      |0.0   |1.0   |
+|4      |4.0   |1.0   |
+|5      |1.0   |4.0   |
+|6      |2.0   |3.0   |
+|7      |4.0   |0.0   |
+|8      |0.0   |0.0   |
+|9      |1.0   |3.0   |
++-------+------+------+
+
+tB
++---------------------+
+|         tB          |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |1.0   |0.0   |
+|1      |1.0   |4.0   |
+|2      |2.0   |0.0   |
+|3      |3.0   |2.0   |
+|4      |3.0   |0.0   |
+|5      |0.0   |4.0   |
+|6      |1.0   |2.0   |
+|7      |2.0   |3.0   |
+|8      |3.0   |4.0   |
+|9      |0.0   |1.0   |
++-------+------+------+
+
+tC
++---------------------+
+|         tC          |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |3.0   |3.0   |
+|1      |1.0   |2.0   |
+|2      |3.0   |4.0   |
+|3      |3.0   |0.0   |
+|4      |3.0   |0.0   |
+|5      |3.0   |1.0   |
+|6      |4.0   |3.0   |
+|7      |3.0   |2.0   |
+|8      |4.0   |0.0   |
+|9      |2.0   |0.0   |
++-------+------+------+
+

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "3.4_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Personal Settings</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Personal Settings">
+        <span>Personal Settings</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Personal Settings</h1>
+<p dir="ltr"><b id="docs-internal-guid-f9bcda0c-7fff-7821-029f-baef1bec1181"><span style="font-weight: 400;">Preferences allow end users to customize 
+ a dashboard for their own personal experience. Each panel within a dashboard 
+ can have its own specific configuration, and even how the panels are arranged 
+ may be user specific. In order to support this, each panel has its own 
+ default configuration and can be overridden by the user&#39;s preferences. 
+ Additionally, custom preferences can be used to drive specific AmiScript.</span></b></p>
+<p><b id="docs-internal-guid-f9bcda0c-7fff-7821-029f-baef1bec1181" style="font-weight: normal;"><br/>
+</b><b id="docs-internal-guid-f9bcda0c-7fff-7821-029f-baef1bec1181"><span style="line-height: 1.38; font-weight: 400;">Preferences of each panel 
+ can be represented by JSON. This makes it easy to manage and export/import 
+ preferences across panels and layouts.</span></b></p>
+<p> </p>
+<h2>Defaults</h2>
+<p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; font-size: 11pt; 
+	 line-height: 1.38; font-weight: 400;"><b id="docs-internal-guid-fc68e440-7fff-b195-8730-04e5e38ad490"><span style="font-weight: 400; font-size: 12pt;">Each panel can have defaults 
+ set  when in layout editor mode. Once a default is set, that panel 
+ will &quot;remember&quot; how to be configured.  If a default 
+ has not been set, then the current configuration is used. In other words, 
+ if you don&#39;t set defaults then it is  important to have everything 
+ positioned just right when you save a dashboard. Alternatively, if you 
+ set default values, then it doesn&#39;t matter what the configuration of the 
+ panel looks like when you save, because it&#39;s those default values that 
+ will be used for saving. This reduces the chance of saving an accidental 
+ change to something in a dashboard.</span><span style="font-weight: 400;"> </span></b></p>
+<p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; font-size: 11pt; 
+	 line-height: 1.38; font-weight: 400;"> </p>
+<h2 dir="ltr">User Preferences</h2>
+<p dir="ltr"><b id="docs-internal-guid-fc68e440-7fff-b195-8730-04e5e38ad490"><span style="font-weight: 400;">When an end user modifies the dashboard, 
+ they can then save these modifications to their personal preferences. 
+ And next time when they login, these preferences will be applied. End 
+ users can also export/import these preferences with other users.</span></b></p>
+<p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; font-size: 11pt; 
+	 line-height: 1.38; font-weight: 400;"> </p>
+<h2 dir="ltr">User Preferences Namespace</h2>
+<p><b id="docs-internal-guid-fc68e440-7fff-b195-8730-04e5e38ad490" style="font-weight: normal;"><span style="font-weight: 400;">Users can have access to many dashboards, 
+ each with their own user preferences. In order to properly match the user&#39;s 
+ preferences with a given dashboard there needs to be a common key for 
+ reference, which is called the</span> <span style="font-weight: 400; font-style: italic;">user 
+ preferences NameSpace</span><span style="font-weight: 400;">. Assigning 
+ dashboards to a namespace is done using </span><span style="font-weight: bold;">Menu</span><span style="font-weight: 400;"> &gt; </span><span style="font-weight: bold;">Dashboard</span><span style="font-weight: 400;"> &gt; </span><span style="font-weight: bold;">Dashboard 
+ Settings</span></b> </p>
+<br class="Apple-interchange-newline"/>
+
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

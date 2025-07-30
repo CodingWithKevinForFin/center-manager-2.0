@@ -1,0 +1,78 @@
+****TEST_INPUT_QUERY****
+create table out as select * from t where (((((((((v==3 || v==4) || v==5) || v==6) || v==7) || v==1.0) || v==5) || v==15) || v=="9.0") || v==null)
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+t
++-------------+
+|      t      |
++------+------+
+|v     |w     |
+|Double|Double|
++------+------+
+|4.0   |5.0   |
+|4.0   |11.0  |
+|9.0   |7.0   |
+|6.0   |13.0  |
+|3.0   |8.0   |
+|4.0   |17.0  |
+|1.0   |1.0   |
++------+------+
+
+****TEST_RESULT****
+7
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS out  SELECT "*" FROM t WHERE (((((((((v == 3 || v == 4) || v == 5) || v == 6) || v == 7) || v == 1.0) || v == 5) || v == 15) || v == "9.0") || v == null)
+
+PROJECTION : 
+SELECT "*" FROM t WHERE (((((((((v == 3 || v == 4) || v == 5) || v == 6) || v == 7) || v == 1.0) || v == 5) || v == 15) || v == "9.0") || v == null)
+
+PREJOIN_FILTER : 
+For Table 't' ==> ((((((((((v == 3) || (v == 4)) || (v == 5)) || (v == 6)) || (v == 7)) || (v == 1.0D)) || (v == 5)) || (v == 15)) || (v == "9.0")) || (v == null))
+
+NESTING_QUERY : 
+#0 t
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+t
++-------------+
+|      t      |
++------+------+
+|v     |w     |
+|Double|Double|
++------+------+
+|4.0   |5.0   |
+|4.0   |11.0  |
+|9.0   |7.0   |
+|6.0   |13.0  |
+|3.0   |8.0   |
+|4.0   |17.0  |
+|1.0   |1.0   |
++------+------+
+
+out
++-------------+
+|     out     |
++------+------+
+|v     |w     |
+|Double|Double|
++------+------+
+|4.0   |5.0   |
+|4.0   |11.0  |
+|9.0   |7.0   |
+|6.0   |13.0  |
+|3.0   |8.0   |
+|4.0   |17.0  |
+|1.0   |1.0   |
++------+------+
+

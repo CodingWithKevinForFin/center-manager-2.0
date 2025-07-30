@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+<head>
+  <f1:script src="cookiehub.js" nonce="true"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://3forge.com/signup"/>
+  <title>Signup | 3forge</title>
+  <meta name="description" content="Sign up for 3forge to access real-time data streaming & low-code app development tools. Join top banks & crypto exchanges using our innovative, high-performance platform.">
+  <style>
+  	   *{
+/*   	   	-webkit-text-stroke: 0.1px; */
+  	   	font-family: 'Barlow', sans-serif;
+  	   }
+	  body{
+	  	background-color: white;
+	  }
+  	  .gradience {
+	    background-clip: text;
+	    background-image: linear-gradient(93deg, #00a9ff, #ff8629, #ff6f00);
+	    -webkit-text-fill-color: transparent;
+	  }
+	[id^=gartner-pi-widget][data-theme=dark] * {
+		background: #191919;
+	}
+	[id^=gartner-pi-widget][data-size=line] .gartner-pi-score {
+	    position: relative;
+	    z-index: 8;
+	    vertical-align: bottom;
+	}
+	label#passrules, div#customUse {
+    	display: none;
+	}
+	input[id="user2"] {
+	    position: absolute;
+	    left: -999999999px;
+	}
+	input[name="state"] {
+	    position: absolute;
+	    left: -999999999px;
+	}
+  </style>
+  <link media="all" rel="stylesheet" href="css/webv3.css">
+    <link href="./output.css" rel="stylesheet">
+    <link media="all" rel="stylesheet" href="css/inter.css">
+	<style>
+        .label-hidden {
+            visibility: hidden;
+        }
+	</style>
+	<f1:include page="'headtags.html'"/>
+</head>
+<body>
+<div class="wrap">
+<f1:include page="'newweb_header_announce.html'"/>
+<section class="bg-white" style="padding-top: 88px;" id="starting">
+	<div class="m-0 m-auto max-w-[800px] pt-20">
+					<h1 class="text-center pb-3 text-5xl font-bold">Start your free account</h1>
+					<p class="text-center m-0 m-auto text-black text-xl font-md pt-8 pb-8 md:pb-0">Sign up once to get unlimited access to exclusive 3Forge content including a customizable trial, product videos, white papers and more.</p>
+	</div>
+	<div class="h-[auto] pb-20 flex" style="justify-content: center; -webkit-box-pack: center; flex-flow: row wrap; -webkit-box-orient: horizontal; -webkit-box-direction: nomral;">
+			<div class="relative flex flex-col justify-center overflow-hiddenpy-6 sm:py-12 w-full">
+  <div class="relative mx-auto w-full max-w-[36rem] bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-xl sm:px-10">
+    <div class="w-full">
+      <div class="text-center">
+        <img class="m-0 m-auto" src="images/3forge-logo-blacktext.svg" style="width: 300px;" alt="3forge Logo">
+        <p class="text-center text-lg text-gray-500">Already have an account? <a href="login" class="font-semibold text-gray-600 hover:underline focus:text-gray-800 focus:outline-none">Sign in</a>.</p>
+      	<p class="txt-center" id='error' style="color:red;"></p>
+      </div>
+      <div class="mt-5">
+        <form class="center" action="" method="post" accept-charset="UTF-8" role="form" id='form'>
+          <div>
+			  <p class="txt-center" id='error' style="color:red;"></p>
+          </div>
+          <div class="relative mt-6 flex flex-row gap-8">
+          	<div class="relative basis-1/2">
+            <input id='fname' type="text" tabindex="1"  class="peer rounded-md mt-1 w-full border-b-2 border-gray-300 px-3 py-3 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA" />
+            <label for="fname" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-[70%] transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800">First Name</label>
+         	</div>
+         	<div class="relative basis-1/2">
+          	<input id='lname' type="text" tabindex="2"  class="peer rounded-md mt-1 w-full border-b-2 border-gray-300 px-3 py-3 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA" />
+          	<label for="lname" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-[70%] transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800">Last Name</label>
+          	</div>
+          </div>
+          <div class="relative mt-6 flex flex-row gap-8">
+          	<div class="relative basis-1/2">
+            <input id='phone' type="text" tabindex="3"  class="peer rounded-md mt-1 w-full border-b-2 border-gray-300 px-3 py-3 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA" />
+            <label for="phone" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-[70%] transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800">Phone Number</label>
+         	</div>
+         	<div class="relative basis-1/2">
+          	<input id='company' type="text" tabindex="4" class="peer rounded-md mt-1 w-full border-b-2 border-gray-300 px-3 py-3 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA" />
+          	<label for="company" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-[70%] transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800">Company</label>
+          	</div>
+          </div>
+          <div class="relative mt-6 flex flex-row gap-8">
+          	<div class="relative basis-1/2">
+            <input id='role' type="text" tabindex="5" class="peer rounded-md mt-1 w-full border-b-2 border-gray-300 px-3 py-3 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA" />
+            <label for="role" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-[70%] transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800">Title/Role</label>
+         	</div>
+         	<div class="relative basis-1/2">
+          	<select id="use" tabindex="6" class="peer rounded-md mt-1 w-full border-b-2 border-gray-300 px-3 py-3 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA" />
+          		<option selected disabled value="">Please select</option>
+                <option value="trade operations">Trade Operations</option>
+                <option value="trade support">Trade Support</option>
+                <option value="trading equities">Trading - Equities</option>
+                <option value="trading fx">Trading - Foreign Exchange</option>
+                <option value="trading fixed income">Trading - Fixed Income</option>
+                <option value="trading options derivatives">Trading - Options and Derivatives</option>
+                <option value="trading market making">Trading - Market Making</option>
+                <option value="compliance">Risk and Compliance</option>
+                <option value="wealth mgmt">Wealth Management</option>
+                <option value="investment banking">Investment Banking<option>
+                <option value="other">Other</option>
+          	</select>
+          	
+          	<label for="use" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-[70%] transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800">Intended Use</label>
+          	</div>
+          	
+          </div>
+          <div class="w-full">
+		 		<div id="customUse" class="clearboth pt-8">
+                   <textarea id='otheruse' rows='3' maxlength="250" class="textareabox rounded-md w-full resize-none" placeholder="Please describe your interest in AMI" data-hj-whitelist></textarea>
+                   <label class="smalltext" id="charCount">250 characters remaining</label>
+                 </div>
+          	</div>
+          <div class="relative mt-6">
+            <input id="email" type="text" tabindex="7" autocomplete="current-password" class="max-w-[46.5%] md:max-w-[47%] peer peer rounded-md mt-1 w-full border-b-2 border-gray-300 px-3 py-3 placeholder:text-transparent focus:border-gray-500 focus:outline-none" />
+            <label for="email" name="signin" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-[70%] transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800">Email Address</label>
+          </div>
+          <div class="relative mt-6 flex flex-row gap-8">
+          	<div class="relative basis-1/2">
+            <input id="pass1" type="password" tabindex="8" name="password" class="peer rounded-md mt-1 w-full border-b-2 border-gray-300 px-3 py-3 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA" />
+            <label for="email" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-[70%] transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800">Password</label>
+         	</div>
+         	<div class="relative basis-1/2">
+          	<input id="pass2" type="password" tabindex="9" name="password" class="peer rounded-md mt-1 w-full border-b-2 border-gray-300 px-3 py-3 placeholder:text-transparent focus:border-gray-500 focus:outline-none" autocomplete="NA" />
+          	<label for="email" class="pointer-events-none absolute top-0 left-0 origin-left -translate-y-[70%] transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800">Retype Password</label>
+          	</div>
+          </div>
+           <label class="smalltext" id="passrules">Password must be 7 to 32 characters and contain an uppercase, lowercase, numeric and special character.</label>
+           <p class="text-left text-sm text-gray-500 pt-5" id="microNotice">All fields are required.</p>
+          <div class="my-6">
+<button id="createacct" type="submit" class="w-full rounded-md bg-lightorange px-3 py-4 text-white font-semibold hover:bg-[#e76800]"> Activate My Account </button>
+          </div>
+           <noscript>
+        	<div class="formOverlay">
+           	<center>
+               	<h3 style="margin-top: 100px; padding: 100px 25px;">JavaScript is currently disabled. Please enable JavaScript to access the form.</h3>
+             	</center>
+        	</div>
+        	</noscript>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+	 </div>
+</section>
+
+<f1:include page="'newweb_footer.html'"/>
+</div>
+
+	<f1:script src="inline" nonce="true"/>
+	  document.getElementById('createacct').addEventListener('click', function(event) {
+	    event.preventDefault(); // Prevent form submission
+	    console.log("button disabled");
+	    disableBtn();
+	    ajaxNow("createAccount", getFields("form"));
+	    return false;
+	  });
+	</script>
+
+	<f1:script src="js/util.js" nonce="true"/>
+	<f1:script nonce="true" src="js/flowbite.min.js"/>
+	<f1:script nonce="true" src="js/jquery-3.7.1.min.js"/>
+	<f1:script nonce="true" src="js/jquery-ui.min.js" />
+	<f1:script src="cookiebutton.js" nonce="true"/>
+	<f1:script src="inline" nonce="true"/>
+			// Function to set a custom cookie indicating the user's choice regarding cookies
+			function setCookieHubCookie(value) {
+			    // Set a cookie named 'cookiehub' with the provided value
+			    document.cookie = 'cookiehub=' + value + '; expires=' + calculateExpirationDate() + '; path=/';
+			}
+			
+			// Function to calculate the expiration date for the cookie (30 days from the current day)
+			function calculateExpirationDate() {
+			    var currentDate = new Date();
+			    var expirationDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 days in milliseconds
+			    return expirationDate.toUTCString();
+			}
+			
+			// Check if the custom cookie indicating the user's choice regarding cookies is set
+			window.addEventListener('load', function() {
+			    var cookieValue = getCookie('cookiehub');
+			    if (!cookieValue) {
+			        // If the custom cookie is not set, display the CookieHub banner
+			        var cpm = {};
+			        window.cookiehub.load(cpm);
+			    }
+			});
+			
+			// Set the custom cookie when the "Accept All Cookies" or "Deny All Cookies" button is clicked
+			document.addEventListener('click', function(event) {
+			    var target = event.target;
+			    if (target.classList.contains('ch2-allow-all-btn')) {
+			        // Set the custom cookie to indicate acceptance of cookies
+			        setCookieHubCookie('allow');
+			    } else if (target.classList.contains('ch2-deny-all-btn')) {
+			        // Set the custom cookie to indicate denial of all cookies
+			        setCookieHubCookie('deny');
+			    }
+			});
+	</script>
+	<f1:script src="inline" nonce="true"/>
+		var count = 0; 
+		function openCookieHubWindow() {
+			if (count == 0) {
+				window.cookiehub.load();
+				count++;
+			}
+			if (count >= 1) {			
+				window.cookiehub.openDialog();
+				count++;
+			}
+		}
+	</script>
+	<f1:script type="text/javascript" src="../js/widget.js" nonce="true"/>
+	<f1:script src="inline" nonce="true" type="text/javascript"/>
+	    GartnerPI_Widget({
+	        size: "line",
+	        theme: "dark",
+	        sourcingLink: "https://gtnr.io/iKfnxw3cA",
+	        widget_id: "ZjA4NTVhMzUtZWUxZi00YmZhLWJmNGEtMWQ4YzU1YjI1ZjUy",
+	        version: "2",
+	        container: document.getElementById("gartner-widget")
+	    });
+	</script>
+
+	<f1:script src="inline" nonce="true"/>
+	let lastScrollTop = 0;
+	let initialLoad = true;
+	
+	const bottom = document.getElementById("bottomnav");
+	bottom.style.transform = "translate3d(0, 0, 0)";
+	
+	const banner = document.getElementById("sticky-banner");
+	const closeButton = banner.querySelector('[data-dismiss-target="#sticky-banner"]');
+	const navbar = document.getElementById("navbarwhole");
+	const startingElement = document.getElementById("starting");
+	
+	function removeClass(element, className) {
+	    element.classList.remove(...className.split(" "));
+	}
+	
+	startingElement.style.paddingTop = banner.style.display === "none" ? "88px" : "131px";
+	
+	closeButton.addEventListener("click", () => {
+	    // Hide the banner
+	    banner.style.display = "none";
+	
+	    // Adjust navbar styles
+	    removeClass(navbar, "mt-[2.7rem]");
+	    navbar.style.marginTop = "0";
+	
+	    // Adjust starting padding
+	    startingElement.style.paddingTop = "88px";
+	});
+	
+	window.onscroll = function () {
+	    if (window.innerWidth > 500) {
+	        if (!initialLoad) {
+	            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+	            const top = document.getElementById("topnav");
+	
+	            if (currentScroll > lastScrollTop) {
+	                // Scrolling down
+	                top.style.position = "fixed";
+	                top.style.width = "100%";
+	                top.style.zIndex = "100";
+	                top.style.transform = "translate3d(0, -100%, 0)";
+	                top.style.visibility = "hidden";
+	                top.style.transition = "transform 0.2s ease-out";
+	
+	                navbar.style.height = "4.125rem";
+	
+	                bottom.style.position = "fixed";
+	                bottom.style.width = "100%";
+	                bottom.style.zIndex = "100";
+	                bottom.style.transform = "translate3d(0, 0, 0)";
+	            } else {
+	                // Scrolling up
+	                top.style.transition = "transform 0.2s ease-in";
+	                top.style.position = "fixed";
+	                top.style.width = "100%";
+	                top.style.zIndex = "100";
+	                top.style.transform = "translate3d(0, 0, 0)";
+	                top.style.visibility = "visible";
+	
+	                navbar.style.height = "6.688rem";
+	
+	                bottom.style.position = "fixed";
+	                bottom.style.width = "100%";
+	                bottom.style.zIndex = "100";
+	                bottom.style.transform = "translate3d(0, 45px, 0)";
+	            }
+	
+	            lastScrollTop = Math.max(0, currentScroll);
+	        }
+	
+	        initialLoad = false;
+	    }
+	};
+	</script>
+	
+	<f1:script src="inline" nonce="true"/>
+	    document.addEventListener("DOMContentLoaded", function() {
+	        // Ensure the element exists before trying to apply the style
+	        var element = document.querySelector('gartner-pi-score');
+	        if (element) {
+	            element.style.paddingRight = "10px"; // Remove the space in "10px"
+	        }
+	    });
+	</script>
+	<f1:script src="js/jquery-3.7.1.min.js" nonce="true"/>
+  	<f1:script type="text/javascript" src="js/slick.min.js" nonce="true"/>
+
+    <f1:script type="text/javascript" src="v2_resources/javascripts/script.js" nonce="true"/>
+	<f1:script src="inline" nonce="true" type="text/javascript"/>
+		passRules();
+		// highlight current page in navigation
+		$("#nav-item-signup").toggleClass("active");
+	</script>
+	
+    <f1:script type="text/javascript" src="js/email.min.js" nonce="true"/>
+	<f1:script src="inline" nonce="true" type="text/javascript"/>
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "I3dJ3vzRikpLEq5W-",
+            });
+        })();
+    </script>
+
+	<f1:script src="inline" nonce="true"/>
+	window.onload = function() {
+	    document.getElementById('email-signup').addEventListener('submit', function(event) {
+	        event.preventDefault(); // Prevent the default form submission
+	
+	        var emailInput = document.getElementById('EMBED_FORM_EMAIL_LABEL');
+	        var email = emailInput.value;
+	        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	
+	        if (!emailPattern.test(email)) {
+	            emailInput.value = 'Invalid email entered.';
+	        } else {
+	
+	            emailjs.sendForm('newsletter_service', 'newsletter_form', this)
+	                .then(() => {
+	                    console.log('SUCCESS!');
+	                    window.location.href = "thanks";
+	                }, (error) => {
+	                    console.log('FAILED...', error);
+	                    alert('There was an error with your submission. Please try again.');
+	                });
+	        }
+	    });
+	}
+	</script>
+	
+		<f1:script src="inline" nonce="true"/>
+	 cookiesets = document.getElementById("cookiesettings");
+	 
+	 cookiesets.addEventListener("click", function(event){
+	 	event.preventDefault();
+	 	openCookieHubWindow(); 
+	 	return false;
+	 });
+	</script>
+
+</body>
+</html>
+
+<f1:set scope="session" var="login_error_message"/>
+<f1:set scope="session" var="login_message"/>

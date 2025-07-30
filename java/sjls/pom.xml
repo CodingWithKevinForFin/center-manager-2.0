@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>sjls</name>
+
+    <groupId>com.sjls</groupId>
+    <artifactId>sjls</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+    
+    
+ <parent>
+        <groupId>com.3f</groupId>
+        <artifactId>3f</artifactId>
+        <version>1.00-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+    
+    
+    <modules>
+        <module>oms</module>
+        <module>ofr</module>
+        <module>sjlscommon</module>
+        <module>tapload</module>
+        <module>gui</module>
+    </modules>
+    <build>
+    <resources>
+	<resource>
+	<directory>src/main/java</directory>
+	<excludes>
+		<exclude>**/*.java</exclude>
+	</excludes>
+	<filtering>false</filtering>
+	</resource>
+    </resources>
+    <plugins>
+    
+  
+        <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>2.3</version>
+            <configuration>
+                <descriptors>
+                    <descriptor>gui/src/main/assembly/sjls.xml</descriptor>
+                </descriptors>
+                <finalName>sjls</finalName>
+                <appendAssemblyId>false</appendAssemblyId>
+            </configuration>
+        </plugin>
+         <plugin>
+             <artifactId>maven-source-plugin</artifactId>
+             <version>2.1.1</version>
+             <executions>
+             <execution>
+             <id>bundle-sources</id>
+             <phase>package</phase>
+             <goals>
+                  <goal>jar-no-fork</goal>
+             <goal>test-jar-no-fork</goal>
+             </goals>
+             </execution>
+             </executions>
+         </plugin>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-release-plugin</artifactId>
+               <version>2.0</version>
+           </plugin>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-scm-plugin</artifactId>
+               <version>1.4</version>
+               <dependencies>
+                   <dependency>
+                       <groupId>com.perforce</groupId>
+                       <artifactId>p4maven</artifactId>
+                       <version>[2011,2012)</version>
+                   </dependency>
+              </dependencies>
+              <configuration>
+                  <connectionType>connection</connectionType>
+                  <username>tcity</username>
+                  <password>ding1bat</password>
+                  <includes>**</includes>
+              </configuration>
+          </plugin>
+        </plugins>
+    </build>
+
+
+    <!-- Be sure your JVM is a JDK: In eclipse.ini set -vm option accordingly -->
+
+  <dependencies>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.10</version>
+          <type>jar</type>
+          <scope>test</scope>
+          <optional>true</optional>
+      </dependency>
+   
+  </dependencies>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+
+    <scm>
+        <connection>scm:perforce:ssl:192.168.3.2:1234://depot/dev/java/sjls</connection>
+        <developerConnection>scm:perforce:ssl:192.168.3.2:1234://depot/dev/java/sjls</developerConnection>
+        <url>scm:perforce://depot/dev/java/sjls</url>
+    </scm>
+</project>
+

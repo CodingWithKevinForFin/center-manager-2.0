@@ -1,0 +1,71 @@
+****TEST_INPUT_QUERY****
+select * from t; create table tAgg as select count(`_Name_With_Weird_Chars_3$@#$%_^%&*()|`) from t;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+t
++-------------------------------------+
+|                  t                  |
++-------------------------------------+
+|_Name_With_Weird_Chars_3$@#$%_^%&*()||
+|String                               |
++-------------------------------------+
+|x                                    |
++-------------------------------------+
+
+****TEST_RESULT****
++-------------------------------------+
+|                  t                  |
++-------------------------------------+
+|_Name_With_Weird_Chars_3$@#$%_^%&*()||
+|String                               |
++-------------------------------------+
+|x                                    |
++-------------------------------------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT "*" FROM tCREATE TABLE AS tAgg  SELECT count(`_Name_With_Weird_Chars_3$@#$%_^%&*()|`) FROM t
+
+PROJECTION : 
+SELECT "*" FROM t
+
+NESTING_QUERY : 
+#0 t
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT count(`_Name_With_Weird_Chars_3$@#$%_^%&*()|`) FROM t
+
+GROUPING : 
+Grouped 1 rows into 1 buckets
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+t
++-------------------------------------+
+|                  t                  |
++-------------------------------------+
+|_Name_With_Weird_Chars_3$@#$%_^%&*()||
+|String                               |
++-------------------------------------+
+|x                                    |
++-------------------------------------+
+
+tAgg
++--------------------------------+
+|              tAgg              |
++--------------------------------+
+|count__Name_With_Weird_Chars_3__|
+|Long                            |
++--------------------------------+
+|1                               |
++--------------------------------+
+

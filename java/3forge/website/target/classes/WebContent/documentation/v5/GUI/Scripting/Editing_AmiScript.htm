@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "3.3.0_10";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Editing AmiScript</title>
+<link rel="StyleSheet" href="../../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Editing AmiScript">
+        <span>Editing AmiScript</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Editing AmiScript</h1>
+<p dir="ltr">There are 3 user interfaces in which AmiScript is edited, 
+ depending on the exact use. </p>
+<h3 dir="ltr">Simple Return Value</h3>
+<p dir="ltr">There are hundreds of places within AMI where you can supply 
+ AmiScript for determining a simple value. This can be just referencing 
+ a single variable, or perhaps calling a custom AmiScript method. For example, 
+ when editing a column, you can supply the function that will return what 
+ the user sees in the column. Use the plus arrow to the right to access 
+ available variables and functions.</p>
+<h3 dir="ltr">AmiScript Block</h3>
+<p dir="ltr">This is used for editing larger blocks of code, such as callbacks 
+ and datamodels. Using ctrl+space will autocomplete partial lines. Pressing 
+ period (.) will present a list of available functions. Additionally, there 
+ is a variable tree to the right where you can conveniently reference objects 
+ within the dashboard. </p>
+<h3 dir="ltr">String Template Editor</h3>
+<p>Used for editing the filters and relationships generated string. In 
+ this case, you can think of the input as already being inside a string, 
+ meaning that you do not need to wrap the whole thing in quotes and the 
+ ${...} string templating syntax is available by default.</p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

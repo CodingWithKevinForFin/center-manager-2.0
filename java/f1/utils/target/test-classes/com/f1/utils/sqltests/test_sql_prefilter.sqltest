@@ -1,0 +1,123 @@
+****TEST_INPUT_QUERY****
+select * from A, B where A.ones == B.ones && A.mostly_zeros == 1 && B.mostly_zeros == 1;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+A
++--------------------+
+|         A          |
++------------+-------+
+|mostly_zeros|ones   |
+|Integer     |Integer|
++------------+-------+
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|1           |1      |
+|0           |1      |
++------------+-------+
+
+B
++--------------------+
+|         B          |
++------------+-------+
+|mostly_zeros|ones   |
+|Integer     |Integer|
++------------+-------+
+|1           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
++------------+-------+
+
+****TEST_RESULT****
++-------------------------------------------+
+|                    A_B                    |
++------------+-------+--------------+-------+
+|mostly_zeros|ones   |B_mostly_zeros|B_ones |
+|Integer     |Integer|Integer       |Integer|
++------------+-------+--------------+-------+
+|1           |1      |1             |1      |
++------------+-------+--------------+-------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT "*" FROM A,B WHERE A . ones == B . ones && A . mostly_zeros == 1 && B . mostly_zeros == 1
+
+PROJECTION : 
+SELECT "*" FROM A,B WHERE A . ones == B . ones && A . mostly_zeros == 1 && B . mostly_zeros == 1
+
+PREJOIN_FILTER : 
+For Table 'A' ==> (A.mostly_zeros == 1)
+
+PREJOIN_FILTER : 
+For Table 'B' ==> (B.mostly_zeros == 1)
+
+TEMP_INDEX : 
+On 'B.ones'
+
+NESTING_QUERY : 
+#0 A indexing to [A.ones ==> B.ones]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+A
++--------------------+
+|         A          |
++------------+-------+
+|mostly_zeros|ones   |
+|Integer     |Integer|
++------------+-------+
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|1           |1      |
+|0           |1      |
++------------+-------+
+
+B
++--------------------+
+|         B          |
++------------+-------+
+|mostly_zeros|ones   |
+|Integer     |Integer|
++------------+-------+
+|1           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
+|0           |1      |
++------------+-------+
+

@@ -1,0 +1,57 @@
+****TEST_INPUT_QUERY****
+SELECT * FROM nullTableA WHERE a != null
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+nullTableA
++--------------------+
+|     nullTableA     |
++------+------+------+
+|a     |b     |c     |
+|Double|Double|Double|
++------+------+------+
+!null  !null  !null  |
+!null  !null  !null  |
+!null  !null  !null  |
+!null  !null  !null  |
++------+------+------+
+
+****TEST_RESULT****
++--------------------+
+|     nullTableA     |
++------+------+------+
+|a     |b     |c     |
+|Double|Double|Double|
++------+------+------+
++------+------+------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT "*" FROM nullTableA WHERE a != null
+
+PROJECTION : 
+SELECT "*" FROM nullTableA WHERE a != null
+
+PREJOIN_FILTER : 
+For Table 'nullTableA' ==> (a != null)
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+nullTableA
++--------------------+
+|     nullTableA     |
++------+------+------+
+|a     |b     |c     |
+|Double|Double|Double|
++------+------+------+
+!null  !null  !null  |
+!null  !null  !null  |
+!null  !null  !null  |
+!null  !null  !null  |
++------+------+------+
+

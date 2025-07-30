@@ -1,0 +1,81 @@
+****TEST_INPUT_QUERY****
+CREATE TABLE output AS SELECT * FROM tableA; ALTER TABLE output ADD w long;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+tableA
++--------------------+
+|       tableA       |
++------+------+------+
+|x     |y     |z     |
+|Double|Double|Double|
++------+------+------+
+|4.0   |5.0   |8.0   |
+|4.0   |11.0  |11.0  |
+|9.0   |7.0   |0.0   |
+|6.0   |13.0  |33.0  |
+|3.0   |8.0   |17.0  |
+|4.0   |17.0  |99.0  |
+|1.0   |1.0   |23.0  |
+|1.0   |7.0   |90.0  |
+|1.0   |5.0   |50.0  |
++------+------+------+
+
+****TEST_RESULT****
+9
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS output  SELECT "*" FROM tableAALTER TABLE output(ADD w long)
+
+PROJECTION : 
+SELECT "*" FROM tableA
+
+NESTING_QUERY : 
+#0 tableA
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+tableA
++--------------------+
+|       tableA       |
++------+------+------+
+|x     |y     |z     |
+|Double|Double|Double|
++------+------+------+
+|4.0   |5.0   |8.0   |
+|4.0   |11.0  |11.0  |
+|9.0   |7.0   |0.0   |
+|6.0   |13.0  |33.0  |
+|3.0   |8.0   |17.0  |
+|4.0   |17.0  |99.0  |
+|1.0   |1.0   |23.0  |
+|1.0   |7.0   |90.0  |
+|1.0   |5.0   |50.0  |
++------+------+------+
+
+output
++-------------------------+
+|         output          |
++------+------+------+----+
+|x     |y     |z     |w   |
+|Double|Double|Double|Long|
++------+------+------+----+
+|4.0   |5.0   |8.0   !null|
+|4.0   |11.0  |11.0  !null|
+|9.0   |7.0   |0.0   !null|
+|6.0   |13.0  |33.0  !null|
+|3.0   |8.0   |17.0  !null|
+|4.0   |17.0  |99.0  !null|
+|1.0   |1.0   |23.0  !null|
+|1.0   |7.0   |90.0  !null|
+|1.0   |5.0   |50.0  !null|
++------+------+------+----+
+

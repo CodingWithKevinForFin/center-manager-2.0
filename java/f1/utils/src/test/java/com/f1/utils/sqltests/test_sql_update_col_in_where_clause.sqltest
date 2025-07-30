@@ -1,0 +1,60 @@
+****TEST_INPUT_QUERY****
+update t set col="abcd" where t.col == "123"
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+t
++------+
+|  t   |
++------+
+|col   |
+|String|
++------+
+!null  |
+|      |
+|zzz   |
+|abc   |
+|a123  |
+|xyz   |
+|123   |
+|123   |
+|yy    |
+|abcd  |
+|123   |
+|abcx  |
++------+
+
+****TEST_RESULT****
+3
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+UPDATE t SET col = "abcd" WHERE t . col == "123"
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+t
++------+
+|  t   |
++------+
+|col   |
+|String|
++------+
+!null  |
+|      |
+|zzz   |
+|abc   |
+|a123  |
+|xyz   |
+|abcd  |
+|abcd  |
+|yy    |
+|abcd  |
+|abcd  |
+|abcx  |
++------+
+

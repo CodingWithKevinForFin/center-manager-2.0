@@ -1,0 +1,39 @@
+****TEST_INPUT_QUERY****
+insert into charsEmpty values ('c'), ('z'), ('0');
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+charsEmpty
++----------+
+|charsEmpty|
++----------+
+|x         |
+|Character |
++----------+
++----------+
+
+****TEST_RESULT****
+3
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+INSERT INTO charsEmpty VALUES (c), (z), (0)
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+charsEmpty
++----------+
+|charsEmpty|
++----------+
+|x         |
+|Character |
++----------+
+|c         |
+|z         |
+|0         |
++----------+
+

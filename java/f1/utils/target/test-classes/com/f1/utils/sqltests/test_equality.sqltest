@@ -1,0 +1,29 @@
+****TEST_INPUT_QUERY****
+select 1==1 as t1,1000==1000L as t2,10d==10 as t3,10f==10 as t5,10=="10" as t6,10d=="10.0" as t7,10f=="10.0" as t8,"true"==true as t9,"true"==false as t10,"null"==null as t11
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+****TEST_RESULT****
++-------------------------------------------------------------------------------+
+|                                       _                                       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|t1     |t2     |t3     |t5     |t6     |t7     |t8     |t9     |t10    |t11    |
+|Boolean|Boolean|Boolean|Boolean|Boolean|Boolean|Boolean|Boolean|Boolean|Boolean|
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|true   |true   |true   |true   |true   |true   |true   |true   |false  |false  |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT 1 == 1 AS t1,1000 == 1000L AS t2,10.0 == 10 AS t3,10.0D == 10 AS t5,10 == "10" AS t6,10.0 == "10.0" AS t7,10.0D == "10.0" AS t8,"true" == true AS t9,"true" == false AS t10,"null" == null AS t11
+
+PROJECTION : 
+SELECT 1 == 1 AS t1,1000 == 1000L AS t2,10.0 == 10 AS t3,10.0D == 10 AS t5,10 == "10" AS t6,10.0 == "10.0" AS t7,10.0D == "10.0" AS t8,"true" == true AS t9,"true" == false AS t10,"null" == null AS t11
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****

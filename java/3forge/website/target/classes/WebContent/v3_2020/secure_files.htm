@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f1:set var="tab" value="'secure_files'" scope="request" />
+
+<f1:secure/>
+
+<f1:if test="${isLoggedIn}"><f1:else/>
+
+  <f1:redirect page="'login.html'"/>
+
+</f1:if>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<f1:include page="'_/v2/head.htm'"/>
+
+
+<f1:include page="'_/v2/masthead.htm'"/>
+
+
+
+
+
+<body>
+
+
+
+  <div class="visible-phone" id="secondary-nav">
+
+
+
+
+
+    <a href="#" class="scrollToTop">
+
+      <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+    </a>
+
+
+
+
+
+    <noscript>
+
+
+
+
+      <a href="#" class="scrollToTop2">
+
+        <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+      </a>
+
+
+
+
+    </noscript>
+
+
+
+
+
+    <center>
+
+
+      <h3 class="mobile-h1">Files</h3>
+
+
+    </center>
+
+
+
+
+
+    <a href="secure_account.htm" title="My Account">
+
+
+      <img class="secondary-nav-icon" style="right:0;top:0;color:white;" src="v2_resources/images/account_icon_gray.png"/>
+
+
+    </a>
+
+
+
+
+
+  </div>
+
+
+
+  <div id="portal-content">
+
+
+
+
+
+    <noscript>
+
+      <div class="formOverlay">
+
+        <center>
+
+          <h2>Most features on this site require JavaScript. Please enable JavaScript before continuing.</h2>
+
+        </center>
+
+      </div>
+
+    </noscript>
+
+
+
+    <div id="secureblock">
+
+
+
+
+
+      <h1>Files</h1>
+
+
+
+
+
+      <div id="files">
+
+
+
+
+
+        <table>
+
+
+
+          <tr class="files-header-row">
+
+
+
+
+            <th>
+
+              <a href="secure_files?sort=name&tok=<f1:out value="${sectoken}"/>">File<f1:if test="OH.eq(${user.fileSorting},\"name\")">
+
+                <img src="v2_resources/images/carrot.png" alt="^" /> </f1:if>
+
+              </a>
+
+            </th>
+
+
+
+
+
+            <th>
+
+              <a href="secure_files?sort=modified&tok=<f1:out value="${sectoken}"/>">Modified<f1:if test="OH.eq(${user.fileSorting},\"modified\")">
+
+                <img src="v2_resources/images/carrot.png" alt="^" /> </f1:if>
+
+              </a>
+
+            </th>
+
+
+
+            <th>
+
+              <a href="secure_files?sort=size&tok=<f1:out value="${sectoken}"/>">Size<f1:if test="OH.eq(${user.fileSorting},\"size\")">
+
+                <img src="v2_resources/images/carrot.png" alt="^" /> </f1:if>
+
+              </a>
+
+            </th>
+
+
+
+            <th>
+
+              <a href="secure_files?sort=author&tok=<f1:out value="${sectoken}"/>">Author<f1:if test="OH.eq(${user.fileSorting},\"author\")">
+
+                <img src="v2_resources/images/carrot.png" alt="^" /> </f1:if>
+
+              </a>
+
+            </th>
+
+
+
+            <!-- <th style="color:#e27025;">Action</th> -->
+
+
+
+          </tr>
+
+
+
+
+
+          <f1:forEach items="${user.files.rows}" var="file">
+
+
+
+
+
+            <tr>
+
+
+
+              <td>
+
+                <a href="download?id=<f1:out escape="FULL" value="${file..id}"/>&tok=<f1:out value="${sectoken}"/>">
+
+                <f1:out escape="FULL" value="${file..name}"/>
+
+              </td>
+
+
+
+
+
+              <td>
+
+                <f1:out escape="FULL" value="${file..modified}"/>
+
+              </td>
+
+
+
+
+
+              <td>
+
+                <f1:out escape="FULL" value="${file..size}"/>
+
+              </td>
+
+
+
+
+
+              <td>
+
+                <f1:out escape="FULL" value="${file..author}"/>
+
+              </td>
+
+
+
+
+
+              <td>
+
+
+
+                <f1:if test="${file..writeable}">
+
+
+
+                  <!-- <a class="button" href="delete?id=<f1:out escape="FULL" value="${file..id}"/>&tok=<f1:out value="${sectoken}"/>">&nbsp;delete&nbsp;</a> -->
+
+
+
+                </f1:if>
+
+
+
+              </td>
+
+
+
+
+
+            </f1:forEach>
+
+
+
+
+
+          </table><br>
+
+
+
+
+
+        </div>
+
+<br>
+
+
+
+
+
+        <form id="submit" method="post" action="upload" ENCTYPE="multipart/form-data"><input name='tok' type="hidden" value='<f1:out value="${sectoken}"/>'>Upload File:<input type="file" name="file" style="color:#141414"/>
+
+</form>
+
+<br>
+
+
+
+      </div>
+
+
+
+
+
+      <f1:include page="'_/v2/footer.htm'"/>
+
+
+
+
+
+    </div>
+    
+    <f1:script src="inline" nonce="true"/>
+    
+    sub = document.getElementById("submit");
+    
+    sub.addEventListener("change", function (event){
+    	document.getElementById('submit').submit();
+    });
+    </script>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = ".";
+    gCommonRootRelPath = ".";
+    gTopicId = "5.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="./template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="./whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="./template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="./template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>AMI SQL and Standard SQL Differences</title>
+<link rel="StyleSheet" href="assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="AMI SQL and Standard SQL Differences">
+        <span>AMI SQL and Standard SQL Differences</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1 style="font-size: 12pt;">AMI SQL and Standard SQL Differences</h1>
+<p style="font-size: 12pt;">For those familiar with standard SQL, these 
+ are the differences:</p>
+<p style="font-size: 12pt;"> </p>
+<p style="font-size: 12pt;">1. Equality is done with ==</p>
+<p style="color: #1155cc; font-family: &#39;Courier New&#39;; background-color: #ffffff; 
+	 font-weight: 400; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa1936"><span style="font-weight: 400;">  AMISQL: SELECT * FROM Users 
+ WHERE userid == 15;</span></b></p>
+<p style="font-family: &#39;Courier New&#39;; background-color: #ffffff; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa1936"><span style="color: #1155cc; font-weight: 400;">  </span></b><span style="line-height: 1.38; color: #cc0000;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa1936" style="font-weight: normal;">MYSQL: 
+ SELECT * FROM Users WHERE userid = 15;</b></span></p>
+<p style="font-size: 12pt;"> </p>
+<p style="font-size: 12pt;">2. Checking for null is done with equality, 
+ ex: == null</p>
+<p style="color: #1155cc; font-family: &#39;Courier New&#39;; background-color: #ffffff; 
+	 font-weight: 400; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19361"><span style="font-weight: 400;">  AMISQL: SELECT * FROM Users 
+ WHERE status == null;</span></b></p>
+<p style="font-family: &#39;Courier New&#39;; background-color: #ffffff; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19361"><span style="color: #1155cc; font-weight: 400;"> </span><span style="color: #1155cc; 
+	 font-weight: bold;"> </span></b><span style="line-height: 1.38; 
+												 color: #cc0000;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19361" style="font-weight: normal;">MYSQL: SELECT * FROM Users WHERE status 
+ IS NULL;</b></span></p>
+<p style="font-size: 12pt;"> </p>
+<p style="font-size: 12pt;">3. Strings are surrounded in double quotes</p>
+<p style="color: #1155cc; font-family: &#39;Courier New&#39;; background-color: #ffffff; 
+	 font-weight: 400; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19362"><span style="font-weight: 400;">  AMISQL: SELECT * FROM Users 
+ WHERE name == &quot;David&quot;;</span></b></p>
+<p style="font-family: &#39;Courier New&#39;; background-color: #ffffff; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19362"><span style="color: #1155cc; font-weight: 400;">  </span></b><span style="line-height: 1.38; color: #cc0000;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19362" style="font-weight: normal;">MYSQL: 
+ SELECT * FROM Users WHERE name = &quot;David&quot;;</b></span></p>
+<p style="font-family: &#39;Courier New&#39;; background-color: #ffffff; line-height: 1.38; 
+	 color: #cc0000; font-weight: normal; font-size: 12pt;"> </p>
+<p style="font-size: 12pt;">4. <b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19364" style="font-weight: normal;"><span style="background-color: #ffffff; font-weight: normal;">&quot;Matches&quot; 
+ (~~) instead of LIKE</span></b></p>
+<p dir="ltr" style="color: #1155cc; font-family: &#39;Courier New&#39;; background-color: #ffffff; 
+	 font-weight: 400; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa193621"><span style="font-weight: 400;">  </span><span style="font-weight: normal;">AMISQL: 
+ SELECT * FROM Users WHERE name ~~ &quot;^Dav&quot;;</span></b></p>
+<p style="font-family: &#39;Courier New&#39;; background-color: #ffffff; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa193621"><span style="color: #1155cc; font-weight: 400;">  </span></b><span style="line-height: 1.38; color: #cc0000;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa193621" style="font-weight: normal;">MYSQL: 
+ SELECT * FROM Users WHERE name LIKE &quot;Dav%&quot;;</b></span></p>
+<p style="font-family: &#39;Courier New&#39;; background-color: #ffffff; font-size: 12pt;"> </p>
+<p style="font-family: &#39;Courier New&#39;; background-color: #ffffff; line-height: 1.38; 
+	 color: #cc0000; font-weight: normal; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19365" style="font-weight: normal;"><span style="font-family: Arial; color: #000000; 
+										 font-weight: 400;">    (See</span> 
+ <span style="font-family: Arial; color: #000000; font-weight: 700;"><a href="3Forge_Ami_Script_files/F1_Text_Matcher.htm" style="font-size: 12pt;">Simplified 
+ Text Matching</a></span> <span style="font-family: Arial; color: #000000; 
+								 font-weight: 400;">for pattern matching 
+ rules/expressions)</span></b></p>
+<p style="font-size: 12pt;"> </p>
+<p style="font-size: 12pt;">5. Boolean expressions &amp;&amp; works same 
+ as AND.  || works same as OR</p>
+<p style="color: #1155cc; font-family: &#39;Courier New&#39;; background-color: #ffffff; 
+	 font-weight: 400; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19363"><span style="font-weight: 400;">  AMISQL: SELECT * FROM Users 
+ WHERE userid == 15 AND status == null &amp;&amp; name == &quot;David&quot;;</span></b></p>
+<p style="font-family: &#39;Courier New&#39;; background-color: #ffffff; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19363"><span style="color: #1155cc; font-weight: 400;"> </span><span style="color: #1155cc; 
+	 font-weight: bold;"> </span></b><span style="line-height: 1.38; 
+												 color: #cc0000;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19363" style="font-weight: normal;">MYSQL: SELECT * FROM Users WHERE userid 
+ = 15 AND status IS NULL &amp;&amp; name = &quot;David&quot;;</b></span></p>
+<p style="font-size: 12pt;"> </p>
+<p style="font-size: 12pt;">6. By default all tables are TEMPORARY, use 
+ the PUBLIC key word to make non-temporary tables:</p>
+<p style="background-color: #ffffff; font-family: &#39;Courier New&#39;; color: #1155cc; 
+	 font-weight: 400; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19366"><span style="font-weight: 400;">  AMISQL: CREATE TABLE MyTemporaryTable(id 
+ String);</span></b></p>
+<p style="font-family: &#39;Courier New&#39;; color: #1155cc; background-color: #ffffff; 
+	 font-weight: 400; font-size: 12pt;"><b id="docs-internal-guid-00ddd18f-7fff-365f-92e1-5bb042fa19366"><span style="font-weight: 400;">  </span><span style="line-height: 1.38; 
+														 font-weight: 400;">AMISQL: 
+ CREATE PUBLIC TABLE MyPermanantTable(id String);</span></b></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

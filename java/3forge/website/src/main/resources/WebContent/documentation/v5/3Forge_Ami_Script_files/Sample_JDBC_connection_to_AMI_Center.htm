@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.5.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Sample JDBC connection to AMI Center</title>
+<link rel="stylesheet" href="../assets/css/3Forge_Ami_Script.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Sample JDBC connection to AMI Center">
+        <span>Sample JDBC connection to AMI Center</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h2 style="font-size: 24pt; margin-top: 5pt; margin-bottom: 15pt; font-family: Arial, sans-serif;">Sample 
+ JDBC connection to AMI Center</h2>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><b><span style="font-family: Consolas; color: #7F0055;">import</span></b> 
+ <span style="font-family: Consolas;">java.sql.*;</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: Consolas; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><b><span style="font-family: Consolas; color: #7F0055;">public</span></b> 
+ <b><span style="font-family: Consolas; color: #7F0055;">class</span></b> 
+ <span style="font-family: Consolas;"><u>AmiJdbcSample</u> {</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: Consolas; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt; margin-left: 40px;"><span style="font-family: Consolas; 
+												 color: #4F6228;">//IMPORTANT 
+ NOTE: be sure to include <b>out.jar</b> in your java classpath. The <b>out.jar</b> 
+ file </span><span style="line-height: normal; text-autospace: none; font-family: Consolas; 
+					 color: #4F6228; font-size: 12pt;">is located in the 
+ <b>lib</b> folder of your ami installation<br/>
+<br/>
+</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><b><span style="font-family: Consolas; color: #7F0055;">    public</span></b> 
+ <b><span style="font-family: Consolas; color: #7F0055;">static</span></b> 
+ <b><span style="font-family: Consolas; color: #7F0055;">final</span></b> 
+ <span style="font-family: Consolas;">String</span> <b><i><span style="font-family: Consolas; 
+	 color: #0000C0;">NEW_LINE</span></i></b> <span style="font-family: Consolas;">= 
+ System.<i>getProperty</i>(</span><span style="font-family: Consolas; color: #2A00FF;">&quot;line.separator&quot;</span><span style="font-family: Consolas;">);</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: Consolas; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">    </span><b><span style="font-family: Consolas; color: #7F0055;">public</span></b> <b><span style="font-family: Consolas; color: #7F0055;">static</span></b> <b><span style="font-family: Consolas; color: #7F0055;">void</span></b> <span style="font-family: Consolas;">main(String</span> <span style="font-family: Consolas; 
+															 color: #6A3E3E;">a</span><span style="font-family: Consolas;">[])</span> <b><span style="font-family: Consolas; 
+														 color: #7F0055;">throws</span></b> 
+ <span style="font-family: Consolas;">SQLException, ClassNotFoundException 
+ {</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: Consolas; font-size: 12pt;">        Class.<i>forName</i>(<span style="color: #2A00FF;">&quot;com.f1.ami.amidb.jdbc.AmiDbJdbcDriver&quot;</span>);</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">        </span><b><span style="font-family: Consolas; color: #7F0055;">final</span></b> <span style="font-family: Consolas;">String</span> <span style="font-family: Consolas; 
+														 color: #6A3E3E;">url</span> 
+ <span style="font-family: Consolas;">=</span> <span style="font-family: Consolas; 
+													 color: #2A00FF;">&quot;jdbc:amisql:localhost:3280?username=demo&amp;password=demo123&quot;</span><span style="font-family: Consolas;">;</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">        </span><b><span style="font-family: Consolas; color: #7F0055;">final</span></b> <span style="font-family: Consolas;">Connection</span> <span style="font-family: Consolas; 
+															 color: #6A3E3E;">conn</span> 
+ <span style="font-family: Consolas;">= DriverManager.<i>getConnection</i>(</span><span style="font-family: Consolas; color: #6A3E3E;">url</span><span style="font-family: Consolas;">);</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">        </span><b><span style="font-family: Consolas; color: #7F0055;">try</span></b> <span style="font-family: Consolas;">{</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">            </span><b><span style="font-family: Consolas; color: #7F0055;">final</span></b> <span style="font-family: Consolas;">ResultSet</span> <span style="font-family: Consolas; 
+															 color: #6A3E3E;">rs</span> 
+ <span style="font-family: Consolas;">=</span> <span style="font-family: Consolas; 
+													 color: #6A3E3E;">conn</span><span style="font-family: Consolas;">.</span> <span style="font-family: Consolas;">createStatement().executeQuery(</span><span style="font-family: Consolas; color: #2A00FF;">&quot;select * from 
+ __TABLE&quot;</span><span style="font-family: Consolas;">);</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: Consolas; font-size: 12pt;">            System.<b><i><span style="color: #0000C0;">out</span></i></b>.println(<i>resultSetToString</i>(<span style="color: #6A3E3E;">rs</span>));</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">        }</span> 
+ <b><span style="font-family: Consolas; color: #7F0055;">finally</span></b> 
+ <span style="font-family: Consolas;">{</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: Consolas; font-size: 12pt;">            <span style="color: #6A3E3E;">conn</span>.close();</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: Consolas; font-size: 12pt;">        }</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: Consolas; font-size: 12pt;">    }</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: Consolas; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">    </span><b><span style="font-family: Consolas; color: #7F0055;">public</span></b> <b><span style="font-family: Consolas; color: #7F0055;">static</span></b> <span style="font-family: Consolas;">String resultSetToString(ResultSet</span> 
+ <span style="font-family: Consolas; color: #6A3E3E;">rs</span><span style="font-family: Consolas;">)</span> 
+ <b><span style="font-family: Consolas; color: #7F0055;">throws</span></b> 
+ <span style="font-family: Consolas;">SQLException {</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">        </span><b><span style="font-family: Consolas; color: #7F0055;">final</span></b> <span style="font-family: Consolas;">StringBuilder</span> <span style="font-family: Consolas; 
+	 color: #6A3E3E;">r</span> <span style="font-family: Consolas;">=</span> 
+ <b><span style="font-family: Consolas; color: #7F0055;">new</span></b> 
+ <span style="font-family: Consolas;">StringBuilder();</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">        </span><b><span style="font-family: Consolas; color: #7F0055;">final</span></b> <span style="font-family: Consolas;">ResultSetMetaData</span> <span style="font-family: Consolas; 
+	 color: #6A3E3E;">metaData</span> <span style="font-family: Consolas;">=</span> 
+ <span style="font-family: Consolas; color: #6A3E3E;">rs</span><span style="font-family: Consolas;">.getMetaData();</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">        </span><b><span style="font-family: Consolas; color: #7F0055;">final</span></b> <b><span style="font-family: Consolas; color: #7F0055;">int</span></b> <span style="font-family: Consolas; color: #6A3E3E;">columnCount</span> 
+ <span style="font-family: Consolas;">=</span> <span style="font-family: Consolas; 
+													 color: #6A3E3E;">metaData</span><span style="font-family: Consolas;">.getColumnCount();</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">        </span><b><span style="font-family: Consolas; color: #7F0055;">for</span></b> <span style="font-family: Consolas;">(</span><b><span style="font-family: Consolas; 
+													 color: #7F0055;">int</span></b> 
+ <span style="font-family: Consolas; color: #6A3E3E;">i</span> <span style="font-family: Consolas;">= 
+ 1;</span> <span style="font-family: Consolas; color: #6A3E3E;">i</span> 
+ <span style="font-family: Consolas;">&lt;=</span> <span style="font-family: Consolas; 
+														 color: #6A3E3E;">columnCount</span><span style="font-family: Consolas;">;</span> <span style="font-family: Consolas; 
+													 color: #6A3E3E;">i</span><span style="font-family: Consolas;">++)</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">            </span><span style="font-family: Consolas; color: #6A3E3E;">r</span><span style="font-family: Consolas;">.append(</span><span style="font-family: Consolas; color: #6A3E3E;">metaData</span><span style="font-family: Consolas;">.getColumnName(</span><span style="font-family: Consolas; 
+	 color: #6A3E3E;">i</span><span style="font-family: Consolas;">)).append(</span><span style="font-family: Consolas; color: #6A3E3E;">i</span> <span style="font-family: Consolas;">==</span> 
+ <span style="font-family: Consolas; color: #6A3E3E;">columnCount</span> 
+ <span style="font-family: Consolas;">?</span> <b><i><span style="font-family: Consolas; 
+															 color: #0000C0;">NEW_LINE</span></i></b> 
+ <span style="font-family: Consolas;">:</span> <span style="font-family: Consolas; 
+													 color: #2A00FF;">&quot;\t&quot;</span><span style="font-family: Consolas;">);</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">        </span><b><span style="font-family: Consolas; color: #7F0055;">while</span></b> <span style="font-family: Consolas;">(</span><span style="font-family: Consolas; 
+													 color: #6A3E3E;">rs</span><span style="font-family: Consolas;">.next())</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">            </span><b><span style="font-family: Consolas; color: #7F0055;">for</span></b> <span style="font-family: Consolas;">(</span><b><span style="font-family: Consolas; 
+													 color: #7F0055;">int</span></b> 
+ <span style="font-family: Consolas; color: #6A3E3E;">i</span> <span style="font-family: Consolas;">= 
+ 1;</span> <span style="font-family: Consolas; color: #6A3E3E;">i</span> 
+ <span style="font-family: Consolas;">&lt;=</span> <span style="font-family: Consolas; 
+														 color: #6A3E3E;">columnCount</span><span style="font-family: Consolas;">;</span> <span style="font-family: Consolas; 
+													 color: #6A3E3E;">i</span><span style="font-family: Consolas;">++)</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">                </span><span style="font-family: Consolas; color: #6A3E3E;">r</span><span style="font-family: Consolas;">.append(</span><span style="font-family: Consolas; color: #6A3E3E;">rs</span><span style="font-family: Consolas;">.getObject(</span><span style="font-family: Consolas; color: #6A3E3E;">i</span><span style="font-family: Consolas;">)).append(</span><span style="font-family: Consolas; color: #6A3E3E;">i</span> <span style="font-family: Consolas;">==</span> 
+ <span style="font-family: Consolas; color: #6A3E3E;">columnCount</span> 
+ <span style="font-family: Consolas;">?</span> <b><i><span style="font-family: Consolas; 
+															 color: #0000C0;">NEW_LINE</span></i></b> 
+ <span style="font-family: Consolas;">:</span> <span style="font-family: Consolas; 
+													 color: #2A00FF;">&quot;\t&quot;</span><span style="font-family: Consolas;">);</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt;"><span style="font-family: Consolas;">       </span> <b><span style="font-family: Consolas; color: #7F0055;">return</span></b> <span style="font-family: Consolas; color: #6A3E3E;">r</span><span style="font-family: Consolas;">.toString();</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: Consolas; font-size: 12pt;">    }</p>
+<p style="font-family: Consolas; font-size: 12pt;">}</p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

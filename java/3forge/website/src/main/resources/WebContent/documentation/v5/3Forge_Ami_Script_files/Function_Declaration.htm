@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.2.4_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Function Declaration</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Function Declaration">
+        <span>Function Declaration</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1><u style="text-decoration: none; ">Function Declaration</u></h1>
+<p style="margin-bottom: 0pt; line-height: Normal; font-size: 12pt; font-family: Arial, sans-serif;">While 
+ there are many common functions available &quot;out of the box&quot;, 
+ custom functions can be declared as well. Function declarations follow 
+ the same naming convention and scoping rules as variables. The syntax 
+ is:</p>
+<p style="font-family: Arial, sans-serif; font-size: 11pt; margin-bottom: 0pt; 
+	 line-height: Normal;"> </p>
+<p style="font-family: Arial, sans-serif; font-size: 11pt; margin-bottom: 0pt; 
+	 line-height: Normal;"> </p>
+<h2><b><span courier="" style="font-weight: bold;">function declaration</span></b> 
+ <span courier=""> </span></h2>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; margin-bottom: 0pt;"><span courier="" style="color: #006dbf;">return_type 
+ function_name</span><span courier="" style="color: #ff0000;">(</span><span courier=""><i>[</i></span><span courier="" style="color: #006dbf;">param_type</span><span style="color: #006dbf;"> </span><span courier="" style="color: #006dbf;"> param_name</span><span courier=""><i>][</i></span><span courier="" style="color: #006dbf;">, 
+ param_type param_name</span> ...<span courier=""><i>]</i></span><span courier="" style="color: #ff0000;">){</span> <span courier="" style="color: #006dbf;">statement_block</span> 
+ <span courier="" style="color: #ff0000;">};</span><span courier=""> </span></p>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 margin-bottom: 0pt;"><i><span courier="" style="font-size: 11pt;">** 
+ Evaluates to <b style="font-size: 11pt;">return_type</b> value</span></i><u><span courier="" style="font-size: 8.0pt;"> </span></u></p>
+<p style="font-size: 13pt; font-style: italic; color: #449938; text-transform: uppercase; 
+	 margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-family: Arial, sans-serif;"><b>Examples</b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">{</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  Double 
+ power(Double n, Integer exponent){</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">    Double 
+ r = n;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">     while((exponent--) 
+ &gt; 1)</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">       r 
+ *= n;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">     return 
+ r;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  };</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  Double 
+ alertPower(Double n, Integer exponent){</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">    session.alert(n 
+ + &quot;^&quot; + exponent + &quot; is &quot; + power(n, exponent));</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  };</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  alertPower(2.0, 
+ 3);</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  alertPower(3.5, 
+ 4);</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">}</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: 0pt; font-size: 12pt; font-family: Arial, sans-serif;">In 
+ this example the <i>power()</i> function is nested inside the alertPower.  Note 
+ that the power method has access to the parameters of the function in 
+ which it is nested (the n and exponent parameters)</p>
+<p style="font-family: Arial, sans-serif; font-size: 11pt; margin-bottom: 0pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">{</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  Double 
+ alertPower(Double n, Integer exponent){</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">    Double 
+ power(){</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">      Double 
+ r = n;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">       while((exponent--) 
+ &gt; 1)</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">         r 
+ *= n;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">       return 
+ r;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">    };</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">    session.alert(n 
+ + &quot;^&quot; + exponent + &quot; is &quot; + power(n, exponent));</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  };</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  alertPower(2.0, 
+ 3);</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  alertPower(3.5, 
+ 4);</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">}</span></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

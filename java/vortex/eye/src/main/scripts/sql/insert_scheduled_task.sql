@@ -1,0 +1,76 @@
+UPDATE ScheduledTasks set active=false where active=true and id=?{id};
+INSERT INTO ScheduledTasks
+(
+  active,
+  id,
+  revision,
+  now,
+  deployment_id,
+  description,
+  options,
+  target_id,
+  task_type,
+  command,
+  timezone,
+  hours,
+  minutes,
+  seconds,
+  weekdays,
+  month_in_years,
+  week_in_months,
+  week_in_years,
+  day_in_months,
+  day_of_week_in_months,
+  day_of_years,
+  state,
+  comments,
+  metadata
+) VALUES (
+  ?{active},
+  ?{id},
+  ?{revision},
+  ?{now},
+  ?{deploymentId},
+  ?{description},
+  ?{options},
+  ?{targetId},
+  ?{type},
+  ?{command},
+  ?{timezone},
+  ?{hours},
+  ?{minutes},
+  ?{seconds},
+  ?{weekdays},
+  ?{monthInYears},
+  ?{weekInMonths},
+  ?{weekInYears},
+  ?{dayInMonths},
+  ?{dayOfWeekInMonths},
+  ?{dayOfYears},
+  ?{state},
+  ?{comments},
+  ?{metadata}
+);
+UPDATE ScheduledTaskStatuses set active=false where active=true and scheduled_task_id=?{id};
+INSERT INTO ScheduledTaskStatuses
+(
+  active,
+  now,
+  scheduled_task_id,
+  status,
+  message,
+  invoked_by,
+  next_runtime,
+  last_runtime,
+  run_count
+) VALUES (
+  ?{active},
+  ?{now},
+  ?{id},
+  ?{status},
+  ?{message},
+  ?{invoked_by},
+  ?{nextRuntime},
+  ?{lastRuntime},
+  ?{runCount}
+);

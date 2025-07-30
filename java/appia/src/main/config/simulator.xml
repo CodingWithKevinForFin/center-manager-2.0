@@ -1,0 +1,50 @@
+<?xml version="1.0"?> <!DOCTYPE XML SYSTEM "simulator.dtd">
+<simulator-deployment>
+
+  <debug-level>3</debug-level>
+
+  <!-- Appia InProc gateway -->
+  <gateway>
+
+    <gateway-class>com.javtech.simulator.gateway.AppiaInProcGateway</gateway-class>
+
+    <!-- Appia config file -->
+    <gateway-param>
+      <name>configFile</name>
+      <value>config/simulator.ini</value>
+    </gateway-param>
+
+  </gateway>
+
+  <!-- Broker module deployment -->
+  <module>
+
+    <module-id>BrokerDKF</module-id>
+    <module-class>com.javtech.simulator.module.broker.BrokerModule</module-class>
+
+    <!-- set delay between fills to 3 sec -->
+    <module-param>
+      <name>delay</name>
+      <value>300</value>
+    </module-param>
+
+    <!-- set fill size to 1000 shares -->
+    <module-param>
+      <name>fillSize</name>
+      <value>1000</value>
+    </module-param>
+
+    <module-param>
+      <name>orderHandlers</name>
+      <value>4</value>    <!-- 4 is the default, see BrokerModule.java -->
+    </module-param>
+
+    <!-- turn gui [on/off] -->
+    <module-param>
+      <name>gui</name>
+      <value>off</value>
+    </module-param>
+
+  </module>
+
+</simulator-deployment>

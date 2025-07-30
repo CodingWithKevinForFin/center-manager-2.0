@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "9.1.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="AMI_Flat_File_Reader (1.3).docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Configuring the Adapter for first use</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Configuring the Adapter for first use">
+        <span>Configuring the Adapter for first use</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Configuring the Adapter for first use</h1>
+<p style="margin-bottom: .0001pt;">1. Open the <b>datamodeler</b> (In Developer 
+ Mode -&gt; Menu Bar -&gt; Dashboard -&gt; Datamodel)</p>
+<p style="margin-bottom: .0001pt;">2. Choose the &quot;<b>Add Datasource</b>&quot; 
+ button</p>
+<p style="margin-bottom: .0001pt;">3. Choose <b>Flat File Reader</b></p>
+<p style="margin-bottom: .0001pt;">4. In the Add datasource dialog:</p>
+<p style="margin-bottom: .0001pt; text-indent: .5in;">Name: Supply a user 
+ defined Name, ex: <i>MyFiles</i></p>
+<p style="margin-bottom: .0001pt; text-indent: .5in;">URL: /full/path/to/directory/containing/files  (ex: 
+ <i>/home/myuser/files</i> )</p>
+<p style="margin-bottom: .0001pt;">                (Keep 
+ in mind that the path is on the machine running AMI, not necessarily your 
+ local desktop)</p>
+<p style="margin-bottom: .0001pt;">5. Click &quot;Add Datasource&quot; 
+ Button</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;"><b>Accessing Files Remotely</b>: You 
+ can also access files on remote machines as well using an <i>AMI Relay</i>. 
+ First install an AMI relay on the machine that contains the files, or 
+ at least has access to the files, you wish to read ( See <i>AMI for the 
+ Enterpise</i> documentation for details on how to install an AMI relay).  Then 
+ in the Add Datasource wizard select the relay in the &quot;Relay To Run 
+ On&quot; dropdown.</p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

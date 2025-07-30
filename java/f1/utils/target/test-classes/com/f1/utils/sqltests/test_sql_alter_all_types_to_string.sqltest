@@ -1,0 +1,63 @@
+****TEST_INPUT_QUERY****
+create table allTypesTbl_copy as select * from allTypesTbl; alter table allTypesTbl_copy modify intCol as intCol String, modify longCol as longCol String, modify doubleCol as doubleCol String, modify charCol as charCol String, modify floatCol as floatCol String, modify booleanCol as booleanCol String, modify byteCol as byteCol String, modify shortCol as shortCol String;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+allTypesTbl
++---------------------------------------------------------------------------------------+
+|                                      allTypesTbl                                      |
++-------+------------------+---------+------------+----------+---------+-------+--------+
+|intCol |longCol           |floatCol |doubleCol   |booleanCol|charCol  |byteCol|shortCol|
+|Integer|Long              |Float    |Double      |Boolean   |Character|Byte   |Short   |
++-------+------------------+---------+------------+----------+---------+-------+--------+
+|1      |123               |12.3     |12.3        |true      |c        |123    |123     |
+!null   !null              !null     !null        !null      !null     !null   !null    |
+|789    |234543342532452436|423.23425|98708.235432|false     |d        |-46    |1234    |
++-------+------------------+---------+------------+----------+---------+-------+--------+
+
+****TEST_RESULT****
+3
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS allTypesTbl_copy  SELECT "*" FROM allTypesTblALTER TABLE allTypesTbl_copy(MODIFY intCol AS intCol String,MODIFY longCol AS longCol String,MODIFY doubleCol AS doubleCol String,MODIFY charCol AS charCol String,MODIFY floatCol AS floatCol String,MODIFY booleanCol AS booleanCol String,MODIFY byteCol AS byteCol String,MODIFY shortCol AS shortCol String)
+
+PROJECTION : 
+SELECT "*" FROM allTypesTbl
+
+NESTING_QUERY : 
+#0 allTypesTbl
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+allTypesTbl
++---------------------------------------------------------------------------------------+
+|                                      allTypesTbl                                      |
++-------+------------------+---------+------------+----------+---------+-------+--------+
+|intCol |longCol           |floatCol |doubleCol   |booleanCol|charCol  |byteCol|shortCol|
+|Integer|Long              |Float    |Double      |Boolean   |Character|Byte   |Short   |
++-------+------------------+---------+------------+----------+---------+-------+--------+
+|1      |123               |12.3     |12.3        |true      |c        |123    |123     |
+!null   !null              !null     !null        !null      !null     !null   !null    |
+|789    |234543342532452436|423.23425|98708.235432|false     |d        |-46    |1234    |
++-------+------------------+---------+------------+----------+---------+-------+--------+
+
+allTypesTbl_copy
++------------------------------------------------------------------------------------+
+|                                  allTypesTbl_copy                                  |
++------+------------------+---------+------------+----------+-------+-------+--------+
+|intCol|longCol           |floatCol |doubleCol   |booleanCol|charCol|byteCol|shortCol|
+|String|String            |String   |String      |String    |String |String |String  |
++------+------------------+---------+------------+----------+-------+-------+--------+
+|1     |123               |12.3     |12.3        |true      |c      |123    |123     |
+!null  !null              !null     !null        !null      !null   !null   !null    |
+|789   |234543342532452436|423.23425|98708.235432|false     |d      |-46    |1234    |
++------+------------------+---------+------------+----------+-------+-------+--------+
+

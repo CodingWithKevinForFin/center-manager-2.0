@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "9.3.1.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="AMI_SSH_Adapter.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Field Definitions Directive (Required)</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Field Definitions Directive (Required)">
+        <span>Field Definitions Directive (Required)</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h2 style="margin-bottom: 1pt;">Field Definitions Directive (Required)</h2>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h3>Syntax</h3>
+<p class="CourierBlue"><span class="CourierBlueStyle">_fields=<i>col1_type 
+ col_name, col2_type col2_name, ...</i></span></p>
+<p class="CourierBlue"> </p>
+<h3>Overview</h3>
+<p style="margin-bottom: .0001pt;">This directive controls the Column names 
+ that will be returned, along with their types.  The order in 
+ which they are defined is the same as the order in which they are returned.  If 
+ the column type is not supplied, the default is String. Special note on 
+ additional columns: If the line number (see _<i>linenum</i> directive) 
+ column is not supplied in the list, it will default to type integer and 
+ be added to the end of the table schema.  Columns defined in 
+ the Pattern (see _<i>pattern</i> directive) but not defined in _<i>fields</i> 
+ will be added to the end of the table schema.</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;">Types should be one of: <i><span class="CourierBlueStyle">String, 
+ Long, Integer, Boolean, Double, Float, UTC</span></i></p>
+<p style="margin-bottom: .0001pt;">Column names must be valid variable 
+ names.</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<h3>Examples</h3>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_fields=&quot;String 
+ account,Long quantity&quot; </span>(define two columns)</p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_fields 
+ =&quot;fname,lname,int age&quot; </span>(define 3 columns, <i>fname</i> 
+ and <i>lname</i> default to String)</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<b><span style="font-size: 16.0pt; line-height: 115%; font-family: Arial, sans-serif;"><br style="clear: all;" clear="all"/>
+</span></b> 
+<p> </p>
+<p> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

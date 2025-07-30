@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = ".";
+    gCommonRootRelPath = ".";
+    gTopicId = "10.0_9";
+  
+//]]></script>
+
+  <script type="text/javascript" src="./template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="./whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="./template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="./template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="AMI Custom Java Plugins.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Custom Java Objects in AmiScript (Ami One, Ami Center, Ami Web)</title>
+<link rel="StyleSheet" href="assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Custom Java Objects in AmiScript (Ami One, Ami Center, Ami Web)">
+        <span>Custom Java Objects in AmiScript (Ami One, Ami Center, Ami Web)</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Custom Java Objects in AmiScript (AMI One, AMI Center, AMI Web)</h1>
+<h2 style="text-decoration: none; "><span>Overview</span></h2>
+<p style="margin-bottom: .0001pt;">AMI script is an object oriented language 
+ where objects can be declared and there methods executed. It is possible 
+ to write your own classes in java and make them accessible via AmiScript.</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;">The class must have the com.f1.ami.web.AmiScriptAccessible 
+ annotation. Constructors and methods that should be accessible via AmiScript 
+ must also be annotated with AmiScriptAccessible. Note the annotation allows 
+ for overriding the <i>name</i> (and <i>params</i> for methods and constructors).</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;"> </p>
+<h2 style="text-decoration: none; ">Property name</h2>
+<p style="margin-bottom: .0001pt;"><span courier="" style="font-size: 8.0pt; 
+										 font-family: &#39;Courier New&#39;, monospace;">ami.db.persister.plugins=</span><i><span courier="" style="font-size: 8.0pt; font-family: &#39;Courier New&#39;, monospace;">comma_delimited_list_of_fully_qualified_java_class_names</span></i><span courier="" style="font-size: 10.0pt;"> </span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;"> </p>
+<h2 style="text-decoration: none; "><span style="text-decoration: none; ">Example 
+ - Java Code</span></h2>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><span style="line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; font-weight: bold;">package</span></font></b> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;"><u>com.demo</u>;</span></font></span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></font></b> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;"><u>com.f1.ami.web.AmiScriptAccessible</u>;</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #646464;">@</span></font><u><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">AmiScriptAccessible</span></font></u><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">(name 
+ =</span></font> <font><span style="font-size: 8.0pt; font-family: Consolas; 
+							 color: #2A00FF;">&quot;TestAccount&quot;</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">)</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></font></b> 
+ <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; 
+				 font-weight: bold;">class</span></font></b> <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">TestClass 
+ {</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;"><span style="mso-tab-count: 1;">       </span></span></font> <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; font-weight: bold;">private</span></font></b> 
+ <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; 
+				 font-weight: bold;">double</span></font></b> <font><span style="font-size: 8.0pt; font-family: Consolas; color: #0000C0;">price</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">;</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;"><span style="mso-tab-count: 1;">       </span></span></font> <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; font-weight: bold;">private</span></font></b> 
+ <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; 
+				 font-weight: bold;">int</span></font></b> <font><span style="font-size: 8.0pt; font-family: Consolas; color: #0000C0;">quantity</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">;</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;"><span style="mso-tab-count: 1;">       </span></span></font> <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; font-weight: bold;">private</span></font></b> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">String</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #0000C0;">name</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">;</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;"><span style="mso-tab-count: 1;">       </span></span></font> <font><span style="font-size: 8.0pt; font-family: Consolas; color: #646464;">@</span></font><u><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">AmiScriptAccessible</span></font></u></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;"><span style="mso-tab-count: 1;">       </span></span></font> <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></font></b> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">TestClass(String</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #6A3E3E;">name</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">) 
+ { </span></font><b><font><span style="font-size: 8.0pt; font-family: Consolas; 
+								 color: #7F0055; font-weight: bold;">this</span></font></b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">.</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #0000C0;">name</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">=</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #6A3E3E;">name</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">; 
+ }</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;"><span style="mso-tab-count: 1;">       </span></span></font> <font><span style="font-size: 8.0pt; font-family: Consolas; color: #646464;">@</span></font><u><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">AmiScriptAccessible</span></font></u><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">(name 
+ =</span></font> <font><span style="font-size: 8.0pt; font-family: Consolas; 
+							 color: #2A00FF;">&quot;setValue&quot;</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">, 
+ params = {</span></font> <font><span style="font-size: 8.0pt; font-family: Consolas; 
+										 color: #2A00FF;">&quot;px&quot;</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">,</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #2A00FF;">&quot;qty&quot;</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">})</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;"><span style="mso-tab-count: 1;">       </span></span></font> <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></font></b> 
+ <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; 
+				 font-weight: bold;">void</span></font></b> <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">setValue(</span></font><b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; font-weight: bold;">double</span></font></b> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #6A3E3E;">price</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">,</span></font> 
+ <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; 
+				 font-weight: bold;">int</span></font></b> <font><span style="font-size: 8.0pt; font-family: Consolas; color: #6A3E3E;">quantity</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">) 
+ {<span style="mso-tab-count: 1;">     </span></span></font></p>
+<p class="MsoNormal" style="margin-top: 0in; margin-right: 0in; margin-left: .5in; 
+	 margin-bottom: .0001pt; text-indent: .5in; line-height: normal; mso-layout-grid-align: none; 
+	 text-autospace: none;"><b><font><span style="font-size: 8.0pt; font-family: Consolas; 
+											 color: #7F0055; font-weight: bold;">this</span></font></b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">.</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #0000C0;">price</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">=</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #6A3E3E;">price</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">;</span></font></p>
+<p class="MsoNormal" style="margin-top: 0in; margin-right: 0in; margin-left: .5in; 
+	 margin-bottom: .0001pt; text-indent: .5in; line-height: normal; mso-layout-grid-align: none; 
+	 text-autospace: none;"><b><font><span style="font-size: 8.0pt; font-family: Consolas; 
+											 color: #7F0055; font-weight: bold;">this</span></font></b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">.</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #0000C0;">quantity</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">=</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #6A3E3E;">quantity</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">;</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-indent: .5in; 
+	 line-height: normal; mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">}</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;"><span style="mso-tab-count: 1;">       </span></span></font> <font><span style="font-size: 8.0pt; font-family: Consolas; color: #646464;">@</span></font><u><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">AmiScriptAccessible</span></font></u><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">(name 
+ =</span></font> <font><span style="font-size: 8.0pt; font-family: Consolas; 
+							 color: #2A00FF;">&quot;describe&quot;</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">)</span></font> 
+ </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;"><span style="mso-tab-count: 1;">       </span></span></font> <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></font></b> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">String 
+ describe() {</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;"><span style="mso-tab-count: 2;">               </span></span></font> <b><font><span style="font-size: 8.0pt; font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></font></b> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #0000C0;">quantity</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">+</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #2A00FF;">&quot;@&quot;</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">+</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #0000C0;">price</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">+</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #2A00FF;">&quot; 
+ for &quot;</span></font> <font><span style="font-size: 8.0pt; font-family: Consolas; 
+										 color: #000000;">+</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #0000C0;">name</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">+</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #2A00FF;">&quot; 
+ is &quot;</span></font> <font><span style="font-size: 8.0pt; font-family: Consolas; 
+									 color: #000000;">+ (</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #0000C0;">quantity</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">*</span></font> 
+ <font><span style="font-size: 8.0pt; font-family: Consolas; color: #0000C0;">price</span></font><font><span style="font-size: 8.0pt; font-family: Consolas; color: #000000;">);</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;"><span style="mso-tab-count: 1;">       </span> }</span></font></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"><font><span style="font-size: 8.0pt; 
+	 font-family: Consolas; color: #000000;">}</span></font></p>
+<p> </p>
+<p style="text-decoration: none; "> </p>
+<h2 style="text-decoration: none; "><span style="text-decoration: none; ">Example 
+ - Configuration</span></h2>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace;"><span class="CourierBlueStyle">amiscript.custom.classes=com.demo.TestClass</span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;"> </p>
+<h2 style="text-decoration: none; "><u style="text-decoration: none; ">Example 
+ - AmiScript</u></h2>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace;"><span class="CourierBlueStyle">TestAccount myAccount=new TestAccount(&quot;ABC&quot;);</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace;"><span class="CourierBlueStyle">myAccount.setValue(40.5,1000);</span></p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">session.log(myAccount.describe());</span><u><span style="font-size: 14.0pt; color: #7030A0;"><br style="clear: all;" clear="all"/>
+</span></u></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,100 @@
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(45deg, #2c1e4a 0%, #06002e  100%);
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+      #ami-title {
+        margin-bottom: 20px;
+      }
+      canvas {
+        position: absolute;
+      }
+      .logo-container {
+        background-color:#06002e55;
+        width: 235px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        user-select: none;
+      }
+      .logo {
+        padding: 15px;
+        width: 200px;
+      }
+      .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .content {
+        position: absolute;
+        width: 350px;
+      }
+      .login-form {
+        background-color: #cccccc;
+        border-radius:10px;
+        border:1px solid white;
+        padding: 20px 15px 35px;
+      }
+      .login-form input {
+        padding: 8px;
+        margin-bottom: 9px;
+        width: 95%;
+        border: 0;
+      }
+      label.field-label {
+      	color: #707070;
+      	padding-bottom: 3px;
+      }
+      .text-white {
+      	color: white;
+      }
+      #username {
+        border-radius:5px;
+        border:1px solid #444444;
+      }
+      #password {
+        border-radius:5px;
+        border:1px solid #444444;
+      }
+      .login-form #login {
+        border-radius:5px;
+        background-color: #263054;
+        color: #ffffff;
+        padding: 8px 35px;
+        border: none;
+        font-size: 16px;
+        margin: 10px 0px;
+        cursor:pointer;
+        width:100%;
+    	transition: all .2s cubic-bezier(0.4, 0, 1, 1);
+      }
+      .login-form #login:hover {
+        filter: saturate(2);
+      }
+      .login-form #waiting {
+      	position: absolute;
+      }
+      #terms {
+      	height: 150px;
+      	overflow: scroll;
+      	background-color:#ffffff;
+      	padding: 5px;
+      	margin-top: 5px;
+      }
+      .login-form .notice, .login-form .error {
+      	color: #BB0000;
+      	text-align: center;
+      	padding-bottom: 3px;
+      }
+      #browsernotice {
+      	background-color: #F2DEDE;
+	    text-align: center;
+      }
+      .browsernotice-warning-text {
+      	padding: 10px;
+      	color: #A94442;
+      }

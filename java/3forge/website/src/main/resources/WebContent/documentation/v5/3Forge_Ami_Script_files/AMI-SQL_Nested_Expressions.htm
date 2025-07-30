@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "5.4_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>AMI-SQL Glossary of Nested Expressions</title>
+<link rel="stylesheet" href="../assets/css/3Forge_Ami_Script.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="AMI-SQL Glossary of Nested Expressions">
+        <span>AMI-SQL Glossary of Nested Expressions</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h2><span style="font-size: 24pt; font-family: Arial, sans-serif;">AMI-SQL 
+ Glossary of Nested Expressions</span><span courier="" style="font-size: 8.0pt;"> </span></h2>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"><b><u><span courier=""><a id="ADD" data-indexterm="ADD"></a><a id="ALTER" data-indexterm="ALTER"></a><a id="AS" data-indexterm="AS"></a><a id="alter_col_expr"></a>alter_col_expr</span></u></b></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.5in; 
+	 text-indent: -1.5in; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span courier="" style="color: #ff0000;">MODIFY</span> <span courier="" style="color: #0070C0;">colname</span><span courier=""> </span><span courier="" style="color: #ff0000;">AS</span><span courier=""> </span><span courier="" style="color: #0070C0;">newname</span><span courier=""> </span><b><span courier="" style="color: #7030A0;"><a href="#type_expr">type_expr</a></span></b><i><span courier="" style="color: #808080;">|</span></i><span courier="" style="color: #ff0000;">ADD</span><span courier=""> </span><span courier="" style="color: #0070C0;">newname</span><span courier=""> 
+ </span><b><span courier="" style="color: #7030A0;"><a href="#type_expr">type_expr</a> 
+ </span><span courier="" style="color: #7030A0; font-weight: normal;">[</span><span courier="" style="font-weight: normal; color: #ff0000;">BEFORE</span><span courier="" style="color: #7030A0;"> </span><span courier="" style="font-weight: normal; 
+														 color: #0070c0;">beforecol</span><span courier="" style="color: #7030A0; font-weight: normal;">]</span></b><i><span courier="" style="color: #808080;">|</span></i><span courier="" style="color: #ff0000;">DROP</span><span courier=""> </span><span courier="" style="color: #0070C0;">colname</span><i><span courier="" style="color: #808080;">|</span></i><span courier="" style="color: #ff0000;">RENAME</span><span courier=""> </span><span courier="" style="color: #0070C0;">colname</span><span courier=""> </span><span courier="" style="color: #ff0000;">TO</span><span courier=""> </span><span courier="" style="color: #0070C0;">newname</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">colname</span></i></b> 
+ -<i><span courier=""> String name of the column to alter</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">newname</span></i></b> 
+ -<i><span courier=""> String name of the column to create</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b style="font-variant-ligatures: normal; 
+											 font-variant-caps: normal; 
+											 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+											 background-color: #ffffff; 
+											 text-decoration-style: initial; 
+											 text-decoration-color: initial;"><i><span courier="">b</span></i><span style="font-family: &#39;Courier New&#39;;"><i>eforecol</i></span></b><i style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;"> <span style="font-family: &#39;Courier New&#39;;">-</span><span style="font-family: &#39;Courier New&#39;;"> 
+ String name of the existing column to add the new column before</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><u><span courier="" style="color: #6d2d9e;"><a id="column_expr"></a>column_expr</span></u></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><span courier="" style="color: #6d2d9e;">expr</span></b> 
+ <span courier=""><i>[</i></span><span courier="" style="color: #ff0000;">AS</span> 
+ <span courier="" style="color: #006dbf;">colname</span><i><span courier="">]|[tablename.]</span></i><span courier="" style="color: #ff0000;">*</span><i><span courier=""> [</span><span courier="" style="font-style: normal; color: #ff0000;">EXCEPT</span><span courier="" style="font-style: normal;"> (</span><span courier="" style="font-style: italic;">colname 
+ [,colname,...]</span><span courier="" style="font-style: normal;">)</span><span courier="" style="font-style: italic;">]</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">colname</span></i></b> 
+ -<i><span courier=""> name of the column that will contain results of 
+ expression</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><i><span courier="">* - expands 
+ to available columns for all tables or specified table</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; color: #7030A0;"><b><span courier=""><a id="expr"></a>expr</span></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><i><span courier="" style="color: #808080;">See 
+ &quot;<b style="color: #808080;"><a href="Standard_Operators_in_order_of_significance.htm">Standard 
+ Operators</a></b>&quot; section</span><span courier="">.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"><b><u><span courier=""><a id="forloop_expr"></a>forloop_expr</span></u></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="" style="color: #ff0000;">FOR</span> 
+ <span courier="">varname</span> <i><span courier="">=</span></i> <span courier="">start_const</span> <span courier="" style="color: #ff0000;">TO</span> 
+ <span courier="">end_const</span> <span courier=""><i>[</i></span><span courier="" style="color: #ff0000;">STEP</span> <span courier="">step</span><i><span courier="">]</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">varname</span></i></b> 
+ -<i><span courier=""> variable that can be referenced by expresions within 
+ the for loop</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">start_const</span></i></b> 
+ -<i><span courier=""> initial value of varname, inclusive</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">end_const</span></i></b> 
+ -<i><span courier=""> last number to loop over, inclusive unless the step 
+ would cause it to be skipped.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">step</span></i></b> 
+ -<i><span courier=""> positive number dictating size to increment or decrement 
+ varname by in each loop cycle.<br/>
+A negative or zero step will cause an error. If start_const &lt;= end_const 
+ then step is used to increment, otherwise decrement.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><i><span courier=""><br/>
+</span></i><b><u><span courier="" style="color: #6d2d9e;"><a id="in_expr"></a>in_expr</span></u></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #808080;">When only 
+ a <b style="color: #808080;">single</b> column will participate in the 
+ in clause:</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #006dbf;">expr</span> 
+ <span courier="" style="color: #ff0000;">IN</span> <span courier=""> </span><span courier="" style="color: #6d2d9e;">(<b style="color: #6d2d9e;">select_clause</b>)</span><span courier="">                           </span><span courier="" style="color: #808080;">(select must return a single column)</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #006dbf;">expr</span> 
+ <span courier="" style="color: #ff0000;">IN</span> <span courier=""> </span><b><span courier="" style="color: #6d2d9e;">values_expr</span><span courier="">                              </span></b> <span courier="" style="color: #808080;">(each entry must be a single value)</span> 
+ <span courier=""><b> </b> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #808080;">When <b style="color: #808080;">two or more columns</b> will participate in 
+ the in clause:</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #ff0000;">(</span><span courier="" style="color: #006dbf;">expr</span><span courier="">,</span><i><span courier="" style="color: #808080;">[</span></i><span courier="">,</span><span courier="" style="color: #0070C0;">expr2</span><span courier=""> </span><span courier="" style="color: #808080;">...</span><i><span courier="" style="color: #808080;">]</span></i><span courier="" style="color: #ff0000;">)</span><span courier="" style="color: #C00000;"> 
+ </span><span courier="" style="color: #808080;">[</span><span courier="" style="color: #ff0000;">NOT</span><span courier="" style="color: #808080;">]</span><span courier=""> </span><span courier="" style="color: #ff0000;">IN</span><span courier=""> </span><span courier="" style="color: #ff0000;">(</span><b><span courier="" style="color: #7030A0;">select_clause</span></b><span courier="" style="color: #ff0000;">)</span><span courier="" style="color: #0070C0;">             </span><span courier=""> </span><span courier="" style="color: #808080;">(select 
+ must return same number of columns)</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #ff0000;">(</span><span courier="" style="color: #006dbf;">expr</span><span courier="">,</span><i><span courier="" style="color: #808080;">[</span></i><span courier="">,</span><span courier="" style="color: #0070C0;">expr2</span><span courier=""> </span><span courier="" style="color: #808080;">...</span><i><span courier="" style="color: #808080;">]</span></i><span courier="" style="color: #ff0000;">)</span><span courier="" style="color: #C00000;"> 
+ </span><span courier="" style="color: #808080;">[</span><span courier="" style="color: #ff0000;">NOT</span><span courier="" style="color: #808080;">]</span><span courier=""> </span><span courier="" style="color: #ff0000;">IN</span><span courier=""> </span><span courier="" style="color: #ff0000;">(</span><b><span courier="" style="color: #7030A0;">values_expr</span></b><i><span courier="" style="color: #808080;">[</span></i><span courier="">,</span><b><span courier="" style="color: #7030A0;">values_expr</span><span courier="" style="color: #808080;">...</span></b><i><span courier="" style="color: #808080;">]</span></i><span courier="" style="color: #ff0000;">)</span><span courier=""> </span><span courier="" style="color: #808080;">(values_expr entry count must match 
+ expr count)</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="">The IN clause evaluates 
+ to true for a given row if the result of expr from the left hand expression 
+ exists in the right hand expression.  If using multiple columns, 
+ the combination of the expr must match the combination of the values_expr 
+ or select_clause for a given row.</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; text-decoration: none; "> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"><b><u><span courier=""><a id="lambda_expr"></a>lambda_expr</span></u></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #ff0000;">{</span><span courier="">statements</span><span courier="" style="color: #ff0000;">}</span><span courier=""> </span><i><span courier="" style="color: #808080;">[</span></i><span courier="" style="color: #ff0000;">AS</span><span courier=""> </span><span courier="" style="color: #0070C0;">colname</span><i><span courier="" style="color: #808080;">]</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="">The lambda expression 
+ allows for contained AMI Script to be executed once per row returned by 
+ the containing select statement.</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">colname</span></i></b> 
+ <span courier="">is the name of the column that the return value of this 
+ lambda will be placed in.</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin: 0in 0in 0.0001pt; color: rgb(34, 34, 34); font-weight: 400; 
+	 orphans: 2; text-align: start; text-indent: 0px; widows: 2; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; 
+	 text-transform: none; white-space: normal; word-spacing: 0px; line-height: 13.75pt; 
+	 background-color: #ffffff; font-size: 11pt; font-family: &#39;Courier New&#39;;"><span style="color: #6d2d9e;"><b><u><a name="nested_select_expr" id="nested_select_expr">nested_select_expr</a></u></b></span></p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 line-height: 13.75pt;"><b><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; 
+									 color: #6d2d9e;">(</span></b><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #006dbf;">select_clause</span><b><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #6d2d9e;">)</span></b><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #000000;"> <i>[</i></span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #ff0000;">AS</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #000000;"> </span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #006dbf;">aliasname</span><i><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #000000;">]</span></i></p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 line-height: 13.75pt;"><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; 
+									 color: #808080;"><b><i>Select_clause</i></b> -<i> inner 
+ query to execute</i></span></p>
+<p style="margin: 0in 0in 0.0001pt; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-size: 11pt; 
+	 font-family: &#39;Courier New&#39;;"><span style="color: #808080;"><b><i>aliasname</i></b> -<i> name 
+ of alias for use in <a href="https://3forge.com/documentation/v3/3Forge_Ami_Script_files/AMI-SQL_Nested_Expressions.htm?rhsyns=%20#column_expr" target="_blank" style="color: #0000ff;">column_expr</a> and 
+ expr</i></span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; text-decoration: none; "> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"><b><u><span courier=""><a id="table_expr"></a>table_expr</span></u></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #006dbf;">tlbname</span> 
+ <span courier=""><i>[</i></span><span courier="" style="color: #ff0000;">AS</span> 
+ <span courier="" style="color: #006dbf;">aliasname</span><i><span courier="">]</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">tblname</span></i></b> 
+ -<i><span courier=""> name of table to include in select</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">aliasname</span></i></b> 
+ -<i><span courier=""> name of alias for use in <a href="#column_expr">column_expr</a> 
+ and expr</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"><b><u><span courier=""><a id="type_expr"></a>type_expr</span></u></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #ff0000;">LONG<i style="color: #ff0000;">|</i>INT<i style="color: #ff0000;">|</i></span><i><span courier="" style="color: #ff0000; font-style: normal;">CHAR|BYTE|SHORT|DOUBLE|FLOAT|UTC|UTCN|BOOLEAN|STRING</span></i><b><span courier=""><br/>
+<br/>
+</span></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"><b><u><span courier=""><a id="values_expr"></a>values_expr</span></u></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">(</span><span courier="" style="color: #006dbf;">val</span> 
+ <span courier=""><i>[</i>,</span><span courier="" style="color: #0070C0;">val2</span><span courier="" style="color: #808080;">...</span><i><span courier="" style="color: #808080;">]</span></i><span courier="" style="color: #C00000;">)</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"><b><u><span courier=""><a id="AND" data-indexterm="AND"></a><a id="where_expr"></a>where_expr</span></u></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #6d2d9e;">expr</span></b><i><span courier="" style="color: #6d2d9e;">|</span></i><b><span courier="" style="color: #6d2d9e;">in_expr</span></b> 
+ <i><span courier="" style="color: #808080;">[</span></i><span courier="" style="color: #ff0000;">AND</span><span courier="">|</span><span courier="" style="color: #ff0000;">OR</span><span courier=""> </span><b><span courier="" style="color: #7030A0;">where_expr</span></b><i><span courier="" style="color: #808080;">]</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="">Expressions with 
+ the added IN clause (in_expr) funtionality </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"><b><u><span courier=""><a id="window_expr"></a>window_expr</span></u></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #ff0000;">WINDOW</span> 
+ <span courier="" style="color: #006dbf;">window_name</span> <span courier="" style="color: #ff0000;">ON</span> <span courier="" style="color: #006dbf;">windowing_expr</span> 
+ <span courier=""><i>[</i></span><span courier="" style="color: #ff0000;">ORDER 
+ BY</span> <span courier="" style="color: #006dbf;">order_expr</span><i><span courier="">]</span></i> <span courier=""> <i>[</i></span><span style="color: #ff0000;">PARTITION</span><span courier="" style="color: #ff0000;"> 
+ BY</span> <span courier="" style="color: #006dbf;">partitioning_expr</span><span courier=""><i>]</i> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">window_name</span></i></b> 
+ -<span courier=""><i> The name of this window which is used in the preceding 
+ col_expr (in the analyze clause). For example, if the name of a window 
+ is &quot;dates&quot; then max(dates.open) would give you the max value 
+ of the open column for that window.</i> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">windowing_expr</span></i></b> 
+ -<i><span courier=""> The boolean expression that defines (for each row) 
+ the other rows that belong to the same window.</span></i></p>
+<p style="margin-bottom: .0001pt; text-align: center; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">order_expr</span></i></b> 
+ -<i><span courier=""> Optional expression which determines the natural 
+ order of rows for the window.  This is important for order dependent 
+ aggregates such as first(...) and last(...)</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">partitioning_expr</span></i></b> 
+ -<i><span courier=""> Optional expression which deterines how the table 
+ is broken up before windowing is considered. In other words, two rows 
+ that evaluate to a different partitioning_expr will never belong to the 
+ same window.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; text-decoration: none; "> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"><b><u><span courier=""><a id="prep_expr"></a>prep_expr</span></u></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">stack</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier=""> </span></b> <i><span courier="" style="color: #808080;">running sum of expr from first 
+ to row n, inclusive</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">count</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier=""> </span></b> <i><span courier="" style="color: #808080;">running count where expr!=null 
+ to the current row, inclusive</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">norm</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">  </span></b> <i><span courier="" style="color: #808080;">similar to stack, but scaled so 
+ that the max value is one. Short hand for:</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 text-indent: .5in; font-family: &#39;Courier New&#39;, monospace; color: #808080; 
+	 font-size: 11pt;"><i><span courier="">  stack(expr)/sum(expr). 
+ See dnorm(...)</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><i><span courier=""><br/>
+</span></i><b><span courier="" style="color: #ff0000;">dnorm</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier=""> </span></b> <i><span courier="" style="color: #808080;">similar to stack, but scaled so 
+ that the min value is zero. Short hand for:</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">  (stack(expr) - expr)/sum(expr). This, in conjunction 
+ with norm(...) can used for preparing area charts   </span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">  that should fill an area, such as a pie chart.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><i><span courier=""><br/>
+</span></i><b><span courier="" style="color: #ff0000;">rank</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier=""> </span></b> <i><span courier=""> </span><span courier="" style="color: #808080;">will 
+ evaluate expr for all rows and the lowest value will get 1, 2<sup style="color: #808080;">nd</sup> 
+ will get 2,</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">  etc. If multiple rows expr evaluate to the 
+ same value, they will get the same    ranking.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><i><span courier=""><br/>
+</span></i><b><span courier="" style="color: #ff0000;">urank</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier=""> </span></b> <i><span courier="" style="color: #808080;">will evaluate expr for all rows 
+ and the lowest value will get 1, 2<sup style="color: #808080;">nd</sup> 
+ will get 2,</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">  etc. If multiple rows expr evaluate to the 
+ same value, the first occurrence gets the lower value.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><i><span courier=""><br/>
+</span></i><b><span courier="" style="color: #ff0000;">unique</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span></b> <i><span courier="" style="color: #808080;">each unique evaluation of expr will return 
+ a unique integer, starting at 1. Repeat</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 text-indent: .5in; font-family: &#39;Courier New&#39;, monospace; color: #808080; 
+	 font-size: 11pt;"><i><span courier="">  occurrences of expr 
+ will return the same integer value.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><i><span courier="">                                               <br/>
+</span></i><b><span courier="" style="color: #ff0000;">offset</span></b><b><span courier="" style="color: #6d2d9e;">(expr,offset)</span></b> <i><span courier="" style="color: #808080;">Will grab the value offset from 
+ the current row. If offset==0 use current</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><i><span courier="">                    row, 
+ negative number is nth prior row, positive number is nth future row.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><i><span courier="">                    Evaluates 
+ to null if offset is out of bounds for current table.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><i><span courier="">                    Ex: 
+ offset(price,-1) for first row returns null, for second row returns first</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><i><span courier="" style="color: #808080;">                    Row&#39;s 
+ price and for nth row returns (n-1)ths row&#39;s price</span><span courier=""> </span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 211.5pt; 
+	 text-indent: -211.5pt; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"> </p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 211.5pt; 
+	 text-indent: -211.5pt; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><b><span courier="" style="color: #ff0000;">kmeansCluster</span></b><b><span courier="" style="color: #6d2d9e;">(expr1,expr2,...,nClusters,seed)</span></b> 
+ <i><span courier="" style="color: #808080;">Clusters data using the k-means 
+ clustering algorithm. Takes one or more expressions, followed by int nClusters 
+ specifying the number of clusters and long seed specifying the random 
+ seed for initializing the model parameters. The seed argument may be set 
+ to null if no specific seed is desired. Returns a column of integers labeling 
+ each record according to its learned cluster. Input expressions must evaluate 
+ to numbers.</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 207.0pt; 
+	 text-indent: -207.0pt; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"> </p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 207.0pt; 
+	 text-indent: -207.0pt; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><b><span courier="" style="color: #ff0000;">emGmmCluster</span></b><b><span courier="" style="color: #6d2d9e;">(expr1,expr2,...,nClusters,seed)</span></b> 
+ <i><span courier="" style="color: #808080;">Same functionality as kmeansCluster(), 
+ but instead uses the expectation-maximization algorithm to train a Gaussian 
+ mixture model.</span></i> <b><span courier=""> </span></b></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 207.0pt; 
+	 text-indent: -207.0pt; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"> </p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 207.0pt; 
+	 text-indent: -207.0pt; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><b><span courier="" style="color: #ff0000;">viGmmCluster</span></b><b><span courier="" style="color: #6d2d9e;">(expr1,expr2,...,nClusters,seed)</span></b> 
+ <i><span courier="" style="color: #808080;">Same functionality as kmeansCluster(), 
+ but instead uses the variational inference algorithm to train a Gaussian 
+ mixture model.</span></i><b><span courier=""> </span></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; text-decoration: none; "> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; text-decoration: none; "> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"><b><u><span courier=""><a id="agg_expr"></a>agg_expr</span></u></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">sum</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">   </span></b> <i><span courier="">              </span><span courier="" style="color: #808080;">Summation of all values, skips 
+ nulls</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 text-indent: -1.0in; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><b><span courier="" style="color: #ff0000;">min</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">                 </span></b> <i><span courier="" style="color: #808080;">Minimum value, skips nulls</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">max</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">                 </span></b> <i><span courier="" style="color: #808080;">Maximum value, skips nulls</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">count</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">               </span></b> <i><span courier="" style="color: #808080;">Count of non-null values</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">countUnique</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">      </span></b>    <i><span courier="" style="color: #808080;">Count of unique non-null values</span><span courier="">                  </span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">cat</span></b><b><span courier="" style="color: #6d2d9e;">(expr, delim, limit)</span></b> 
+    <i><span courier="" style="color: #808080;">Concats 
+ the first limit non-null values to a string using delim</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">avg</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">                 </span></b> <i><span courier="" style="color: #808080;">Average of all non-null values</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">var</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">                 </span></b> <i><span courier="" style="color: #808080;">Population Variance of all non-null 
+ values</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">varS</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">                </span></b> <i><span courier="" style="color: #808080;">Sample Variance of all non-null 
+ values</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">stdev</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">               </span></b> <i><span courier="" style="color: #808080;">Population Standard Deviation of 
+ all non-null values</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">stdevS</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">              </span></b> <i><span courier="" style="color: #808080;">Sample Standard Deviation of all 
+ non-null values</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">first</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">               </span></b> <i><span courier="" style="color: #808080;">First value, may be null if first 
+ value is null</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">last</span></b><b><span courier="" style="color: #6d2d9e;">(expr)</span><span courier="">                 </span></b><i><span courier="" style="color: #808080;">Last value, may be null if last 
+ value is null</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">covar</span></b><b><span courier="" style="color: #6d2d9e;">(expr1, expr2)</span><span courier="">       </span></b> <i><span courier="" style="color: #808080;">Population</span></i><span style="color: #808080;"> 
+ </span><b><span courier="" style="color: #808080;"> </span></b><i><span courier="" style="color: #808080;">Covariance of 1st expr and 2nd 
+ expr where both aren&#39;t null.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">covarS</span></b><b><span courier="" style="color: #6d2d9e;">(expr1, expr2)</span><span courier="">      </span></b> <i><span courier="" style="color: #808080;">Sample</span></i><span style="color: #808080;"> 
+ </span><b><span courier="" style="color: #808080;"> </span></b><i><span courier="" style="color: #808080;">Covariance of 1st expr and 2nd 
+ expr where both aren&#39;t null.</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 117.0pt; 
+	 text-indent: -117.0pt; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><b><span courier="" style="color: #ff0000;">cor</span></b><b><span courier="" style="color: #6d2d9e;">(expr1, expr2)</span><span courier="">         </span></b> <span style="color: #808080; font-style: italic;">Correlation</span><i><span courier="" style="color: #808080;"> of 1st expr and 2nd expr where 
+ both aren&#39;t null. Returns 0 - 1</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">beta</span></b><b><span courier="" style="color: #6d2d9e;">(expr1, expr2)</span><span courier="">        </span></b> <i><span courier="" style="color: #808080;">Beta of 1st expr and 2nd expr where 
+ both are not null. The beta function</span></i></p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080;"><i><span courier="">                           is 
+ defined as beta(x, y) = covar(x, y) / var(y). If stdev(y) = 0, the </span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><i><span courier="">                           </span></i><span courier="" style="font-size: 11pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080;"><i>expression returns NaN.</i></span><span style="font-size: 11pt;"> 
+ </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">avgExp</span><span courier="" style="color: #6d2d9e;">(expr, decay, desc)</span></b>  <span style="color: #808080; font-style: italic;">The exponentially weighted 
+ average of non-null values with a specified decay</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-style: italic; font-size: 11pt;">                           rate. 
+ Desc of true/false means first/last row are highest weighted.</p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span courier="" style="color: #ff0000;">avgGauss</span><span courier="" style="color: #6d2d9e;">(expr, variance)</span></b>   <span style="color: #808080; font-style: italic;">The Gaussian weighted 
+ average of non-null values, such that the middle value</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; color: #808080; font-style: italic;">                           has 
+ highest weight.</p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span style="color: #ff0000;">median</span></b><b><span courier="" style="color: #6d2d9e;">(expr)             </span></b>  <span style="color: #808080; font-style: italic;">The median of all non-null 
+ values.</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; margin-left: 0px;"><b><span courier="" style="color: #ff0000;">percentileCont</span><span courier="" style="color: #6d2d9e;">(expr)       </span></b><span style="color: #808080; font-style: italic;">Returns the value at the 
+ percentile provided. Is interpolated and might not be equal to any value 
+ within the supplied dataset</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><span style="color: #ff0000;">percentileDisc</span></b><b><span courier="" style="color: #6d2d9e;">(expr)       </span></b><span style="color: #808080; font-style: italic;">Returns the value nearest 
+ to the percentile provided</span></p>
+<p> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

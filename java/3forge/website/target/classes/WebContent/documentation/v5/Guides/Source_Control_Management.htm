@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "2.1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2020"/>
+  <title>Source Control Management</title>
+  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css"/>
+  <link rel="stylesheet" type="text/css" href="../assets/css/AMI_Documentation_Style.css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Source Control Management">
+        <span>Source Control Management</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+  <h1>Source Control Management</h1>
+  <h2><a id="Key_Features"></a>Key Features</h2>
+  <p> </p>
+  <p><strong>Source Control Management (SCM) Integration &amp; Tooling</strong></p>
+  <p>Integration with GIT and Perforce. Conveniently check-in/out, diff history within the AMI web-based dashboard builder.</p>
+  <p> </p>
+  <p><strong>Multi-file Linker</strong></p>
+  <p>Dashboards can be comprised of multiple files meaning components can be logically separated for independent management/version control.</p>
+  <p> </p>
+  <p><strong>Abstraction</strong></p>
+  <p>Functionality can be marked virtual and overridden in another file, allowing for dashboard designers to abstract out functionality for custom implementation.</p>
+  <p> </p>
+  <p><strong>Refactoring Tool</strong></p>
+  <p>Components can safely be renamed and/or moved between files. The tool automatically updates and moves dependencies as necessary with naming conflict resolution.</p>
+  <p> </p>
+  <p><strong>Dashboard File Stabilization</strong></p>
+  <p>Changes to a dashboard result in minimum/localized changes to the underlying file. Components can be set to defaults to avoid noisy/unintended changes.</p>
+  <p> </p>
+  <h2><a id="Benefits"></a>Benefits</h2>
+  <p> </p>
+  <p><strong>Team Collaboration</strong></p>
+  <p>By logically dividing a dashboard across files, Teams can simultaneously work on sub-components of the dashboard.</p>
+  <p> </p>
+  <p><strong>Reusable Components</strong></p>
+  <p>Scripts, datamodels, widgets and entire dashboards can be written once and then reused across dashboards.</p>
+  <p> </p>
+  <p><strong>Dashboard Tracking, Versioning, Branching</strong></p>
+  <p>As AMI files are managed by source control, they can be used to label versions of a dashboard, compare versions and manage branching.</p>
+  <p> </p>
+  <p><strong>Merging Independent Projects</strong></p>
+  <p>Existing dashboards can be incorporated into new dashboards making it easy to build super-dashboards cross-incorporating functionality</p>
+  <p> </p>
+  <p><strong>Enterprise Deployment Strategy</strong></p>
+  <p>Treat AMI files just like any other resources that are managed through deployment strategies, such as uDeploy, TeamCity, etc.</p>
+  <p> </p>
+  <p><strong>Dashboard Extension</strong></p>
+  <p>Extend existing dashboards for regional/business line specific usage without needing to maintain multiple near duplicate dashboards.</p>
+  <p> </p>
+  <h2><a id="Full_Backwards_Compatibility"></a>Full Backwards Compatibility</h2>
+  <p> </p>
+  <p><strong>File</strong></p>
+  <p>Loads existing dashboards and automatically converts to the new format. Note: files are still json with the same general structure, just less clutter/redundancy.</p>
+  <p> </p>
+  <p><strong>Usage</strong></p>
+  <p>Users &amp; dashboard developers can continue to develop/maintain dashboards without change. Changes are purely additive, existing functionality has not been changed nor removed.</p>
+  <p> </p>
+  <p><strong>Split Dashboards</strong></p>
+  <p>Split existing dashboards into separate files for better SCM management.</p>
+  <p> </p>
+  <p><strong>Combine Dashboards</strong></p>
+  <p>Utilize multiple existing dashboards to create a single super-dashboard.</p>
+  <h2> </h2>
+  <h2><a id="Key_Concepts"></a>Key Concepts</h2>
+  <p> </p>
+  <p><strong>Dashboard vs. Layout</strong></p>
+  <p>Prior to Source Control Management (SCM), a <em>Dashboard</em> was backed by a single <em>Layout</em> file, so the terms were interchangeable. With SCM, a <i>Dashboard</i> can be an amalgamation of multiple <em>Layout </em>files so the distinction matters:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li><strong>Layout</strong>: an individual .ami file which contains a set of source definitions such as Panels, Datamodels, Relationships, AmiScript, etc. </li>
+    <li>
+      <p><strong>Dashboard </strong><strong>(Root Layout)</strong>: the .ami file that is directly opened (ex: File &gt; Absolute File - Open) is considered a Dashboard, or more specifically the <em>Root Layout</em></p>
+    </li>
+  </ul>
+  <p> </p>
+  <p><img src="../assets/images/scm.absolutefile.jpg"/></p>
+  <p> </p>
+  <p><strong>Included Layouts</strong></p>
+  <p>A layout file can also include pointers to other .ami Layout FIles (Dashboard &gt; Included Layouts). This forms a Parent Layout/Child Layout Relationship.</p>
+  <p> </p>
+  <p><img src="../assets/images/scm.includedlayouts.jpg"/></p>
+  <p> </p>
+  <p> </p>
+  <p><img src="../assets/images/Included Layouts.RightClickMenu.jpg"/></p>
+  <p> </p>
+  <p><strong>Hidden Panels</strong></p>
+  <p>A layout file can define panels that are not directly referenced in the dashboard. If a layout includes a child layout, all of the child layout&#39;s panels are hidden by default. In order to make a child layout&#39;s panel(s) visible, you need to specifically unhide it (Blank Window &gt; Green Button &gt; Unhide Panel). In effect, this is how linking a panel from one layout to another is achieved. </p>
+  <p> </p>
+  <p><img height="178" src="../assets/images/scm.unhidepanel.jpg" width="442"/></p>
+  <p> </p>
+  <h2><a id="Getting_Started"></a>Getting Started</h2>
+  <p> </p>
+  <p>Please ensure this property is set before continuing: <span>ami.scm.plugins=com.f1.ami.plugins.git.AmiGitScmPlugin</span></p>
+  <p> </p>
+  <p><strong>Connecting to Source Control Management (SCM)</strong></p>
+  <p>Navigate to Account &gt; Source Control Settings, select the appropriate source control type and fill in your user credentials. The base path tells AMI where it expects files to reside which are managed under source control, including sub directories. (files outside that directory will not have source control functionality)</p>
+  <p> </p>
+  <p><img height="363" src="../assets/images/scm.scmSettings.jpg" width="655"/></p>
+  <p> </p>
+  <p><strong>Loading/Saving Dashboards in SCM</strong></p>
+  <p>Traditionally, layouts could only be stored under “my layouts” or “cloud”. Now there is an “Absolute” (File &gt; Absolute File - Open) option which allows you to load/save files anywhere on the host. If you wish to use SCM to manage a layout file, it should be located under the SCM base path (Account &gt; Source Control Settings &gt; Base Path). Tip: To move a layout from my layouts into SCM, simply load it (File &gt; My Layouts - Open) and then save it under said SCM base path (File &gt; Absolute File - Save As).</p>
+  <p> </p>
+  <p><strong>Link multiple files to a dashboard</strong></p>
+  <p>Open the project browser (Dashboard &gt; Include Files)</p>
+  <p> </p>
+  <p><em></em><em><u>To add an existing file</u>:</em></p>
+  <p>Right click on the project &gt; Add Child Link from &gt; Existing File &gt; select the file to add.</p>
+  <p> </p>
+  <p><u><em>To add a new file</em></u>:</p>
+  <p>Right click on the project &gt; Add Child Link From &gt; New File &gt; Enter the name of the new, blank file to create.</p>
+  <p> </p>
+  <p>Notes:</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>The alias defines how objects (panels, datamodels, etc.) within this will be referenced within the main dashboard.</li>
+    <li>Read-only: If selected then, you will not be able to save changes made to the objects within the selected file.</li>
+    <li>Relative Path: If true, then the file will be referenced using a path relative to the parent file; otherwise it will be an absolute path. Relative is preferred for portability.</li>
+  </ul>
+  <p> </p>
+  <p><strong>Link to a panel from another file</strong></p>
+  <p>Be sure the other file has been included (see Link Multiple files to a dashboard). Create a blank Panel (Window &gt; New Window), click the blank panel’s green button &gt; unhide panel &gt; choose the panel to display</p>
+  <p> </p>
+  <p><strong>Refactoring</strong></p>
+  <p>To Move a panel (and it’s dependent objects) from one file to another, click on the panels green button &gt; Move to Different Layout &gt; select the layout to move the panel to.</p>
+  <p> </p>
+  <p><strong>Using Source Control</strong></p>
+  <p> </p>
+  <ul class="Disc">
+    <li>Open the project Browser (Dashboard &gt; Included Layouts), right click &gt; Add Child Link From &gt; Choose the appropriate action</li>
+    <li>To see most recent changes : File &gt; Diff against last save</li>
+  </ul>
+  <p> </p>
+  <h2><a id="Additions_to_Layout_Editor"></a>Additions to Layout Editor</h2>
+  <p> </p>
+  <p><strong>Hiding Panels</strong></p>
+  <p><strong></strong><em>Panel&#39;s Green Button &gt; Hide Highlighted Panels</em></p>
+  <p> </p>
+  <p><strong>Unhiding Panels</strong></p>
+  <p>Windows &gt; New Window &gt; Green Button &gt; Unhide Panel &gt; Choose panel to unhide (Note, any blank panel can be used to link to a hidden panel</p>
+  <p> </p>
+  <p><strong>Tab Per Layout </strong></p>
+  <p>Several Resource editor tools are now organized such that there is one editor panel per layout.</p>
+  <p> </p>
+  <ul>
+    <li>
+      <p>Custom methods:</p>
+      <ul>
+        <li>
+          <p>Dashboard &gt; Custom methods…</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Custom css</p>
+      <ul>
+        <li>
+          <p>Dashboard &gt; Css…</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Custom callbacks</p>
+      <ul>
+        <li>
+          <p>Dashboard &gt; Callbacks…</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p> </p>
+  <p><strong>Owning Layout</strong></p>
+  <p>All resources now have the concept of an owning layout:</p>
+  <p> </p>
+  <ul>
+    <li>
+      <p>Variables: </p>
+      <ul>
+        <li>
+          <p>Adding/editing global variables now allows you to choose an owning layout (Dashboard &gt; Variables Table… &gt; Right Click &gt; Add/Edit/Copy &gt; Owning Layout)</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Relationships: </p>
+      <ul>
+        <li>
+          <p>Ability to choose which file owns the relationship (Green Button &gt; Add/Edit Relationship &gt; Owning Layout dropdown).</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Datamodels: </p>
+      <ul>
+        <li>
+          <p>Dashboard &gt; Datamodeler… &gt; Right Click on Datamodel &gt; Config Tab &gt; Owning Layout</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Panels: </p>
+      <ul>
+        <li>
+          <p>Green Button -&gt; Move To Different Layout File -&gt; Move To Layout</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p> </p>
+  <p><strong>Data Modeler</strong></p>
+  <p>There is a list of checkboxes on the left to choose which layout’s datamodels/panels to show (Dashboard -&gt; Datamodeler)</p>
+  <p> </p>
+  <p><strong>Dashboard Objects</strong></p>
+  <p>View for seeing all relationships (Dashboard &gt; Dashboard Objects). Note: This was added to allow access to hidden relationships, which is a new concept. A relationship is hidden if its source or target panel’s are hidden.</p>
+  <p><a href="../GUI/Tools/Dashboard_Objects.htm">Dashboard Objects</a></p>
+  <p> </p>
+  <h2><a id="Advanced_Concepts"></a>Advanced Concepts</h2>
+  <h3>Layout File </h3>
+  <p>Previously an .ami json file was considered a fully-contained dashboard. Now, an .ami file should be thought of as a collection of resources such as panels, datamodels, code, etc. and can contain references to other .ami files. An individual .ami file is referred to as a layout. There are a few key points:</p>
+  <p> </p>
+  <p><strong>Root Layout</strong></p>
+  <p>This is the file that was directly loaded (ex: File &gt; Absolute File - Open) and is used as the “bootstrap” to determine which windows are loaded and displayed within the desktop.</p>
+  <p> </p>
+  <p><strong>Parent/Child Layout Relationship</strong></p>
+  <p>A layout can include any number of child layouts such that each included layout must have a uniquely identifying alias. Note that the root Layout has no parent</p>
+  <p> </p>
+  <p><strong>Layout Alias</strong></p>
+  <p>Each layout (.ami file) within the dashboard is uniquely identified using an alias (note that when you attach a child layout, you are prompted to choose a unique alias). This alias is used to reference objects within the layout.</p>
+  <p> </p>
+  <p><strong>Layout Nesting</strong></p>
+  <p>Because layouts can recursively include other layouts, it’s possible to have child layouts, grandchild layouts, etc. In this case the alias is constructed by dotconcatenation, ex: a.b.c</p>
+  <p> </p>
+  <p><strong>Complex Nesting</strong></p>
+  <p>Circular references are not supported (ex; A.ami -&gt; B.ami -&gt; A.ami). Diamond references are supported (A.ami -&gt; B.ami -&gt; C.ami &amp; A.ami -&gt; D.ami -&gt; C.ami).</p>
+  <p> </p>
+  <p><strong>Read-only/Locked</strong></p>
+  <p>A layout file can be marked as read-only (Dashboard &gt; Included Layouts &gt; (right click) &gt; Permissions). If the same file is referenced multiple times (as with the diamond pattern) then only one instance will be editable, and the others will be locked.</p>
+  <h3>Alias-Dot-Name (ADN)</h3>
+  <p>Previously, all panels where identified by a unique panel ID. Now, uniqueness is enforced by combining a panel’s owning layout’s fully qualified alias plus the Panel Id. Same goes for uniquely identifying datamodels and relationships.</p>
+  <h3>Scoping</h3>
+  <p>Parent layouts have access to the resources of child layouts but child layouts do not have visibility to parent objects. This is an important concept that enforces clean modularization.</p>
+  <h3>Custom AmiScript Methods &amp; Variable Scoping</h3>
+  <p>Because a dashboard can incorporate multiple layout files, it’s possible for the same method definition to exist in duplicate. Depending on where the AmiScript is getting executed, the appropriate version of the method will be run. For example, a parent layout could import two child layouts, each with their own onButton() method. Datamodels (or other resources) in child1 calling onButton() will get child1’s method and Datamodels in child2 calling onButton() will get child2’s version of the method. A subtle detail, if the parent layout did not define its own onButton() method and were to call onButton(), it will get the child with the higher priorities version… (See Dashboard &gt; Included Layouts &gt; (right click) &gt; Move Up Higher Priority/Move Down Lower Priority)</p>
+  <h3>AmiScript Layout Object</h3>
+  <p>A new, important Layout class has been introduced, which is used to represent each layout file loaded within the dashboard. The layout variable is automatically visible within AmiScript (like the session variable) and is associated with the layout that the AmiScript is owned by. This is important because it maintains relative consistency when referencing other objects with AmiScript. Note, this has replaced several methods from the session class and when loading old layouts AMI will automatically convert the code to use the layout object instead.</p>
+  <p> </p>
+  <p>For example, let’s consider a layout B.ami that has two datamodels dm1 and dm2:</p>
+  <p> </p>
+  <p>B.ami</p>
+  <p>→ dm1</p>
+  <p>→ dm2</p>
+  <p> </p>
+  <p>Inside dm1, if we want to get access to dm2 we would write:</p>
+  <p> </p>
+  <p><span style="font-family:&#39;Courier New&#39;;">//I’m inside dm1 Datamodel dm2=layout.getDatamodel(“dm2”);</span></p>
+  <p> </p>
+  <p>Say that we have another layout A.ami that includes B.ami with the alias b and has its own datamodel dm0:</p>
+  <p> </p>
+  <p>A.ami</p>
+  <p>→dm0</p>
+  <p>→b</p>
+  <p>     → dm1</p>
+  <p>     → dm2</p>
+  <p> </p>
+  <p>First, keep in mind the above code will continue to work because its inside dm1 which is owned by layout b so the layout instant represents b. But now, let’s say we want to get dm2 from code inside dm0. We could do either of these:</p>
+  <p> </p>
+  <p>//I’m inside dm0, all three of these result in same value</p>
+  <p>Datamodel dm2;</p>
+  <p>dm2=layout.getChild(“b”).</p>
+  <p>getDatamodel(“dm2”);</p>
+  <p>dm2=layout.getDatamodel(“b.dm2”);</p>
+  <p>dm2=layout.getDatamodel(“b.dm1”).</p>
+  <p>getLayout().getDatamodel(“dm2”);</p>
+  <p> </p>
+  <p>The 3rd method is needlessly complex but highlights the relative nature of layouts and resources… We’re grabbing b’s dm1 datamodel. Then because dm1 and dm2 are in the same layout we can simply do getLayout(). getDatamodel(“dm2”) on dm1.</p>
+  <h3>Virtual Methods</h3>
+  <p>With regards to scoping, it was mentioned that AmiScript within a child layout does not have access to it’s parent’s AmiScript. While generally true, if the layout were to explicitly define a function as virtual and the parent layout were to also define the same method, then the parent’s function will get called instead. In the example below, if we were to call doit() in the child layout, we would see the alerts parent1 and child2 because test1() was marked as virtual, but test2 was not:</p>
+  <p> </p>
+  <p><strong>Child Layout:</strong></p>
+  <p>virtual String test1() {</p>
+  <p>     session.alert(“child1”);</p>
+  <p>}</p>
+  <p>String test2() {</p>
+  <p>     session.alert(“child2”);</p>
+  <p>}</p>
+  <p>Object doit() {</p>
+  <p>     test1();</p>
+  <p>     test2();</p>
+  <p>}</p>
+  <p> </p>
+  <p><strong>Root Layout:</strong></p>
+  <p>String test1() {</p>
+  <p>     session.alert(“parent1”);</p>
+  <p>}</p>
+  <p>String test2() {</p>
+  <p>     session.alert(“parent2”);</p>
+  <p>}</p>
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

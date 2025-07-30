@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "8.2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Realtime Indexes</title>
+<link rel="stylesheet" href="../assets/css/3Forge_Ami_Script.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Realtime Indexes">
+        <span>Realtime Indexes</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h2 style="font-size: 24pt; margin-top: 5pt; margin-bottom: 15pt;">Realtime 
+ Indexes</h2>
+<h3 style="margin-top: 5pt; margin-bottom: 1pt; line-height: 115%; font-size: 19pt; 
+	 color: #7030A0; font-family: Arial, sans-serif; text-decoration: none; "><a name="create_index_clause" id="create_index_clause"><span style="color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; ">create_index 
+ clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; font-size: 13pt; font-weight: bold; 
+	 font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"><span style="font-size: 12pt;">This command allows you to dramatically speed 
+ up common queries. Without indexes, a </span><span style="font-size: 12pt; 
+													 color: #ff0000;">SELECT</span><span style="font-size: 12pt; color: #ff0000;"> </span><span style="font-size: 12pt;">... 
+ </span><span style="font-size: 12pt; color: #ff0000;">WHERE</span><span style="font-size: 12pt; color: #ff0000;"> </span><span style="font-size: 12pt;">clause 
+ needs to scan and consider each row.  But if there is an index 
+ on the column referenced in the WHERE clause, then the query optimizer 
+ will use the index instead. The first column listed is the &quot;top&quot; 
+ level column indexed, and so on.</span> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">There 
+ are three different methods supported for indexing:</p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<ul style="list-style: disc;">
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">HASH</span>: 
+	 Under the hood this is a hashmap. This is the fastest most versatile 
+	 indexing approach but is only useful for queries that directly use 
+	 equality, because the data is stored in an unsorted fashion.</p></li>
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">SORT</span>: 
+	 Under the hood this is a treemap. This has additional overhead to 
+	 a HASH index for both inserting and querying but can be used with 
+	 ordinality comparisons, such as less than, greater than as well as 
+	 equals.</p></li>
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">SERIES</span>: 
+	 Under the hood this is a sorted array. This is a special purpose and 
+	 highly optimized index useful for when data will be inserted in ascending 
+	 order, as entries can quickly be added to the end of the array, and 
+	 queries (including ordinal searches) can use a binary lookup.  If 
+	 data is order out of order the array is forced to do a memcopy which 
+	 can be very expensive.</p></li>
+</ul>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">Constraints 
+ can be added to an index to determine the outcome of a key collision. 
+ Three different types of constraints are supported:</p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<ul style="list-style: disc;">
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">NONE</span>: 
+	 If a constraint is not supplied, this is the default. There is no 
+	 restriction on having multiple rows with the same key.</p></li>
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">UNIQUE</span><span style="line-height: normal;">: An attempt to insert (or update) a 
+	 row such that two rows in the table will have the same key will fail.</span></p></li>
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+		 line-height: normal; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">P</span><span style="color: #ff0000;">RIMARY</span>: 
+	 An attempt to insert a row with the same key as an existing row will 
+	 cause the existing row to be updated instead of a new row being inserted 
+	 (specifically, those cells specified and not participating in the 
+	 index will be updated). This can be thought of as an &quot;UPSERT&quot; 
+	 in other popular databases. An attempt to update a row such that two 
+	 rows in the table will have the same key will fail. Each table can 
+	 have at most one PRIMARY index.</p></li>
+</ul>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt; font-family: ;"><span courier="">                           </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">CREATE 
+ INDEX [IF NOT EXISTS]</span> <span courier="" style="color: #006dbf;">idx_name</span> 
+ <span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="">      </span> <span courier="" style="color: #ff0000;">ON</span> <span courier=""> </span><span courier="" style="color: #006dbf;">tbl_name<i style="color: #006dbf;">(</i>col_name</span> 
+ <span courier=""><b> </b><i>[</i></span><span courier="" style="color: #ff0000;">HASH</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">SORT</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">SERIES</span><span courier=""><i>] [,</i></span><span courier="" style="color: #006dbf;">col_name</span> 
+ <span courier=""><b> </b><i>[</i></span><span courier="" style="color: #ff0000;">HASH</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">SORT</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">SERIES</span><i><span courier="">] ...])</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier=""><i>       [</i></span><span courier="" style="color: #ff0000;">USE</span><span style="color: #ff0000;"> 
+ </span><span courier="" style="color: #ff0000;"><i style="color: #ff0000;"> </i>CONSTRAINT</span><span courier=""><i>=&quot;[</i></span><span courier="" style="color: #ff0000;">NONE</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">UNIQUE</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">PRIMARY</span><i><span courier="">]&quot;]</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><i><span courier="">idx_name</span></i></b> -<i><span courier=""> name of this index to create, each indexs name must be 
+ unique for the table</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><i><span courier="">tbl_name</span></i></b> -<i><span courier=""> name of the table to add the index to</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><i><span courier="">col_name</span></i></b> -<i><span courier=""> name of the column to put the index on.</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; font-size: 13pt; font-weight: bold; 
+	 font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 11pt;"><span style="font-size: 12pt; 
+															 font-family: Arial, sans-serif;">This 
+ example will add an index to the MyTable&#39;s Account and Price column. Queries 
+ that use the Account column or the Account and Price column will be faster.  Note 
+ that queries using only the Price column will not sped up by this index. 
+ This is an ideal index if we know where going to be running queries of 
+ the form: select ... from MyIndex where Account==<i style="font-size: 12pt; 
+													 font-family: Arial, sans-serif;">somevalue</i> 
+ and Price[ &lt;, ==, &gt; ] <i style="font-size: 12pt; font-family: Arial, sans-serif;">somevalue</i></span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: ; font-size: 11pt;"><span courier="">                                </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">CREATE INDEX MyIndex 
+ ON MyTable(Account HASH, Price SORT)</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">CREATE INDEX MyIndex 
+ ON MyTable(Name HASH) USE CONSTRAINT=&quot;PRIMARY&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-top: 5pt; margin-bottom: 1pt; font-weight: bold; font-size: 19pt; 
+	 color: #7030A0; font-family: Arial, sans-serif; text-decoration: none; "><a name="drop_index_clause" id="drop_index_clause"><span style="color: #7030A0; 
+															 font-family: Arial, sans-serif; 
+															 text-decoration: none; ">drop_index 
+ clause</span></a></p>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; font-size: 13pt; font-weight: bold; 
+	 font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: 0pt; font-family: Arial, sans-serif; font-size: 12pt;">Removes 
+ the specified index from the given table, as created by CREATE INDEX</p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="" style="color: #ff0000;">DROP 
+ INDEX</span> <span courier="" style="color: #ff0000;">[IF EXISTS] </span><span courier="">index_name</span> <span courier=""> </span><span courier="" style="color: #ff0000;">ON</span> <span courier=""> tbl_name</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; font-size: 13pt; font-weight: bold; 
+	 font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt; font-family: ;"><span courier="">                      </span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"><span style="font-family: Arial, sans-serif; font-size: 12pt;">This example 
+ will drop the index named MyIndex from the MyTable table.</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+<p><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+		 font-size: 11pt;">Drop index MyIndex on MyTable</span></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

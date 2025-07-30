@@ -1,0 +1,9 @@
+{
+	"type": "record",
+	"name": "Execution",
+	"namespace": "com.codingharbour.avro",
+	"fields": [
+		{"name": "order_id", "type":"string"},
+		{"name": "time", "type":"long", "doc": "Datetime when the order was executed"}
+	]
+}

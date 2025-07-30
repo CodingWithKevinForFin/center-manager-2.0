@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "9.2.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="AMI_Shell_Command_Reader (1.3).docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Overview</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Overview">
+        <span>Overview</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Overview</h1>
+<p style="margin-bottom: .0001pt;">The AMI Shell Command Datasource Adapter 
+ is a highly configurable adapter designed to execute shell commands and 
+ capture the stdout, stderr and exitcode. There are a number of directives 
+ which can be used to control how the command is executed, including setting 
+ environment variables and supplying data to be passed to stdin. The adapter 
+ processes the output from the command. Each line (delineated by a Line 
+ feed) is considered independently for parsing. Note the EXECUTE &lt;sql&gt; 
+ clause supports the full AMI sql language.</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;">Please note, that running the command 
+ will produce 3 tables:</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<ul style="list-style: disc;">
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; font-size: 12pt;">Stdout 
+	 - Contains the contents of standard out</p></li>
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; font-size: 12pt;">Stderr 
+	 - Contains the contents from standard err</p></li>
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; font-size: 12pt;">exitCode 
+	 - Contains the executed code of the process</p></li>
+</ul>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;">(You can limit which tables are returned 
+ using the <i>_include</i> directive)</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;">Generally speaking, the parser can handle 
+ <span style="font-weight: bold;">four</span> (<span style="font-weight: bold;">4</span>) 
+ different methods of parsing:</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<h3><u style="text-decoration: none; ">Delimited list or ordered fields</u> 
+ </h3>
+<p style="margin-bottom: .0001pt;">Example data and query: <span courier=""> <br/>
+</span><span style="color: #632423; font-family: &#39;Courier New&#39;, monospace;"><i style="font-family: &#39;Courier New&#39;, monospace;">11232</i>|<i style="font-family: &#39;Courier New&#39;, monospace;">1000</i>|<i style="font-family: &#39;Courier New&#39;, monospace;">123.20</i><br/>
+<i style="font-family: &#39;Courier New&#39;, monospace;">12412</i>|<i style="font-family: &#39;Courier New&#39;, monospace;">8900</i>|<i style="font-family: &#39;Courier New&#39;, monospace;">430.90</i></span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p class="CourierBlue"><span courier="">CREATE TABLE mytable AS USE _cmd=&quot;my_cmd&quot; 
+ _delim=&quot;|&quot;</span></p>
+<p class="CourierBlue"><span courier="">_fields=&quot;String account, Integer 
+ qty, Double px&quot;</span></p>
+<p class="CourierBlue"><span courier="">EXECUTE SELECT * FROM cmd</span></p>
+<p class="CourierBlue"> </p>
+<h3><u style="text-decoration: none; ">Key value pairs</u></h3>
+<p style="margin-bottom: .0001pt;">Example data and query:</p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #632423;"><span courier="">account=<i>11232</i>|quantity=<i>1000</i>|price=<i>123.20</i><br/>
+account=<i>12412</i>|quantity=<i>8900</i>|price=<i>430.90</i></span></p>
+<p style="margin-bottom: .0001pt; color: #602321;"> </p>
+<p class="CourierBlue"><span class="CourierBlue">CREATE TABLE mytable AS 
+ USE _cmd=&quot;my_cmd&quot; _delim=&quot;|&quot; _equals=&quot;=&quot;</span></p>
+<p class="CourierBlue"><span class="CourierBlue">_fields=&quot;String account, 
+ Integer qty, Double px&quot;</span></p>
+<p class="CourierBlue"><span class="CourierBlue">EXECUTE SELECT * FROM 
+ cmd</span></p>
+<p class="CourierBlue"> </p>
+<h3><u style="text-decoration: none; ">Pattern Capture</u> </h3>
+<p style="margin-bottom: .0001pt;">Example data and query:</p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #602321;"><span courier="">Account <i>11232</i> has <i>1000</i> 
+ shares at $<i>123.20</i> px</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #602321;"><span courier="">Account <i>12412</i> has <i>8900</i> 
+ shares at $<i>430.90</i> px</span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p class="CourierBlue" style="font-family: &#39;Courier New&#39;, monospace;"><span courier="">CREATE TABLE mytable AS USE _cmd=&quot;my_cmd&quot;</span></p>
+<p class="CourierBlue" style="font-family: &#39;Courier New&#39;, monospace;"><span courier="">_fields=&quot;String account, Integer qty, Double px&quot;</span></p>
+<p class="CourierBlue" style="font-family: &#39;Courier New&#39;, monospace;"><span courier="">_pattern=&quot;account,qty,px=Account (.*) has (.*) shares 
+ at \\$(.*) px&quot;</span></p>
+<p class="CourierBlue" style="font-family: &#39;Courier New&#39;, monospace;"><span courier="">EXECUTE SELECT * FROM cmd</span></p>
+<p class="CourierBlue" style="font-family: &#39;Courier New&#39;, monospace;"> </p>
+<h3><u style="text-decoration: none; ">Raw Line</u> </h3>
+<p style="margin-bottom: .0001pt;">If you do not specify a _<i>fields</i>, 
+ _<i>mapping</i> nor _<i>pattern</i> directive then the parser defaults 
+ to a simple row-per-line parser. A &quot;line&quot; column is generated 
+ containing the entire contents of each line from the command&#39;s output</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p class="CourierBlue"><span courier="">CREATE TABLE mytable AS USE _cmd=&quot;my_cmd&quot; 
+ EXECUTE SELECT * FROM cmd</span></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

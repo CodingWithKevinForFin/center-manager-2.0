@@ -1,0 +1,91 @@
+****TEST_INPUT_QUERY****
+SELECT * FROM tableA RIGHT      JOIN empty ON empty.x == tableA.x;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+tableA
++--------------------+
+|       tableA       |
++------+------+------+
+|x     |y     |z     |
+|Double|Double|Double|
++------+------+------+
+|4.0   |5.0   |8.0   |
+|4.0   |11.0  |11.0  |
+|9.0   |7.0   |0.0   |
+|6.0   |13.0  |33.0  |
+|3.0   |8.0   |17.0  |
+|4.0   |17.0  |99.0  |
+|1.0   |1.0   |23.0  |
+|1.0   |7.0   |90.0  |
+|1.0   |5.0   |50.0  |
++------+------+------+
+
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+
+****TEST_RESULT****
++----------------------------------------------------+
+|                    tableA_empty                    |
++------+------+------+-------+-------+-------+-------+
+|x     |y     |z     |n      |empty_x|empty_y|empty_z|
+|Double|Double|Double|Integer|Double |Double |Double |
++------+------+------+-------+-------+-------+-------+
++------+------+------+-------+-------+-------+-------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT "*" FROM tableA RIGHT JOIN empty ON empty . x == tableA . x
+
+PROJECTION : 
+SELECT "*" FROM tableA RIGHT JOIN empty ON empty . x == tableA . x
+
+TEMP_INDEX : 
+On 'tableA.x'
+
+NESTING_QUERY : 
+#0 empty indexing to [empty.x ==> tableA.x]
+
+NESTING_QUERY : 
+#1 tableA
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+tableA
++--------------------+
+|       tableA       |
++------+------+------+
+|x     |y     |z     |
+|Double|Double|Double|
++------+------+------+
+|4.0   |5.0   |8.0   |
+|4.0   |11.0  |11.0  |
+|9.0   |7.0   |0.0   |
+|6.0   |13.0  |33.0  |
+|3.0   |8.0   |17.0  |
+|4.0   |17.0  |99.0  |
+|1.0   |1.0   |23.0  |
+|1.0   |7.0   |90.0  |
+|1.0   |5.0   |50.0  |
++------+------+------+
+
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+

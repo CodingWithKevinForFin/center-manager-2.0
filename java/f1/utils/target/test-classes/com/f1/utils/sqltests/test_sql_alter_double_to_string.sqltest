@@ -1,0 +1,84 @@
+****TEST_INPUT_QUERY****
+create table tA_copy as select * from tA; alter table tA_copy modify x as x String;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+tA
++---------------------+
+|         tA          |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |2.0   |2.0   |
+|1      |3.0   |2.0   |
+|2      |0.0   |3.0   |
+|3      |0.0   |1.0   |
+|4      |4.0   |1.0   |
+|5      |1.0   |4.0   |
+|6      |2.0   |3.0   |
+|7      |4.0   |0.0   |
+|8      |0.0   |0.0   |
+|9      |1.0   |3.0   |
++-------+------+------+
+
+****TEST_RESULT****
+10
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS tA_copy  SELECT "*" FROM tAALTER TABLE tA_copy(MODIFY x AS x String)
+
+PROJECTION : 
+SELECT "*" FROM tA
+
+NESTING_QUERY : 
+#0 tA
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+tA
++---------------------+
+|         tA          |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |2.0   |2.0   |
+|1      |3.0   |2.0   |
+|2      |0.0   |3.0   |
+|3      |0.0   |1.0   |
+|4      |4.0   |1.0   |
+|5      |1.0   |4.0   |
+|6      |2.0   |3.0   |
+|7      |4.0   |0.0   |
+|8      |0.0   |0.0   |
+|9      |1.0   |3.0   |
++-------+------+------+
+
+tA_copy
++---------------------+
+|       tA_copy       |
++-------+------+------+
+|n      |x     |y     |
+|Integer|String|Double|
++-------+------+------+
+|0      |2.0   |2.0   |
+|1      |3.0   |2.0   |
+|2      |0.0   |3.0   |
+|3      |0.0   |1.0   |
+|4      |4.0   |1.0   |
+|5      |1.0   |4.0   |
+|6      |2.0   |3.0   |
+|7      |4.0   |0.0   |
+|8      |0.0   |0.0   |
+|9      |1.0   |3.0   |
++-------+------+------+
+

@@ -1,0 +1,151 @@
+****TEST_INPUT_QUERY****
+{create public table preptest1 as prepare fname, lname, age from prep limit;create public table preptest2 as prepare fname, lname, age from prep limit 0;create public table preptest3 as prepare fname, lname, age from prep limit 3;create public table preptest4 as prepare fname, lname, age from prep limit 2, 0;create public table preptest5 as prepare fname, lname, age from prep limit 2, 1;create public table preptest6 as prepare fname, lname, age from prep limit 4, 3;create public table preptest7 as prepare fname, lname, age from prep limit 4, 4;}
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+prep
++------------------------+
+|          prep          |
++------+---------+-------+
+|fname |lname    |age    |
+|String|String   |Integer|
++------+---------+-------+
+|mir   |ahmed    |23     |
+|peter |sibirzeff|34     |
+|george|lin      |26     |
+|david |lee      |35     |
+|marc  |weinstein|48     |
+|robert|cooke    |27     |
+|bill  |cooke    |39     |
++------+---------+-------+
+
+****TEST_RESULT****
+17
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE PUBLIC TABLE AS preptest1  PREPARE fname,lname,age FROM prep LIMIT nullCREATE PUBLIC TABLE AS preptest2  PREPARE fname,lname,age FROM prep LIMIT 0CREATE PUBLIC TABLE AS preptest3  PREPARE fname,lname,age FROM prep LIMIT 3CREATE PUBLIC TABLE AS preptest4  PREPARE fname,lname,age FROM prep LIMIT 2,0CREATE PUBLIC TABLE AS preptest5  PREPARE fname,lname,age FROM prep LIMIT 2,1CREATE PUBLIC TABLE AS preptest6  PREPARE fname,lname,age FROM prep LIMIT 4,3CREATE PUBLIC TABLE AS preptest7  PREPARE fname,lname,age FROM prep LIMIT 4,4
+
+PROJECTION : 
+PREPARE fname,lname,age FROM prep LIMIT null
+
+PROJECTION : 
+PREPARE fname,lname,age FROM prep LIMIT 0
+
+PROJECTION : 
+PREPARE fname,lname,age FROM prep LIMIT 3
+
+PROJECTION : 
+PREPARE fname,lname,age FROM prep LIMIT 2,0
+
+PROJECTION : 
+PREPARE fname,lname,age FROM prep LIMIT 2,1
+
+PROJECTION : 
+PREPARE fname,lname,age FROM prep LIMIT 4,3
+
+PROJECTION : 
+PREPARE fname,lname,age FROM prep LIMIT 4,4
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+prep
++------------------------+
+|          prep          |
++------+---------+-------+
+|fname |lname    |age    |
+|String|String   |Integer|
++------+---------+-------+
+|mir   |ahmed    |23     |
+|peter |sibirzeff|34     |
+|george|lin      |26     |
+|david |lee      |35     |
+|marc  |weinstein|48     |
+|robert|cooke    |27     |
+|bill  |cooke    |39     |
++------+---------+-------+
+
+preptest2
++---------------------+
+|      preptest2      |
++------+------+-------+
+|fname |lname |age    |
+|String|String|Integer|
++------+------+-------+
++------+------+-------+
+
+preptest1
++------------------------+
+|       preptest1        |
++------+---------+-------+
+|fname |lname    |age    |
+|String|String   |Integer|
++------+---------+-------+
+|mir   |ahmed    |23     |
+|peter |sibirzeff|34     |
+|george|lin      |26     |
+|david |lee      |35     |
+|marc  |weinstein|48     |
+|robert|cooke    |27     |
+|bill  |cooke    |39     |
++------+---------+-------+
+
+preptest4
++---------------------+
+|      preptest4      |
++------+------+-------+
+|fname |lname |age    |
+|String|String|Integer|
++------+------+-------+
++------+------+-------+
+
+preptest3
++------------------------+
+|       preptest3        |
++------+---------+-------+
+|fname |lname    |age    |
+|String|String   |Integer|
++------+---------+-------+
+|mir   |ahmed    |23     |
+|peter |sibirzeff|34     |
+|george|lin      |26     |
++------+---------+-------+
+
+preptest6
++------------------------+
+|       preptest6        |
++------+---------+-------+
+|fname |lname    |age    |
+|String|String   |Integer|
++------+---------+-------+
+|marc  |weinstein|48     |
+|robert|cooke    |27     |
+|bill  |cooke    |39     |
++------+---------+-------+
+
+preptest5
++---------------------+
+|      preptest5      |
++------+------+-------+
+|fname |lname |age    |
+|String|String|Integer|
++------+------+-------+
+|george|lin   |26     |
++------+------+-------+
+
+preptest7
++------------------------+
+|       preptest7        |
++------+---------+-------+
+|fname |lname    |age    |
+|String|String   |Integer|
++------+---------+-------+
+|marc  |weinstein|48     |
+|robert|cooke    |27     |
+|bill  |cooke    |39     |
++------+---------+-------+
+

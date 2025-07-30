@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<f1:if test="com.f1.ami.web.auth.AmiWebLoginHttpHandler.isLoggedIn(request)">
+  <f1:redirect page="com.f1.ami.web.pages.AmiWebPages.URL_PORTALS"/>
+<f1:else/>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    
+  <link rel="icon" href="portal/<f1:out value="${favIcon}"/>" />
+  <title>3forge<f1:out value="${webLoginTitleSuffix}"/></title>
+  <link rel="stylesheet" type="text/css" href="rsc/ami/index2.css">
+  </head>
+  <body onresize="updateBounds()">
+  
+  	<div id="browsernotice"></div>
+	
+    <div class="container">
+    
+      <canvas width=100% height=100% id="canvas">
+      </canvas>
+      
+      <div class="content">
+
+		<!-- code for inserting custom images -->
+        <f1:if test="SH.is(${loginPageLogo})">
+        	<div align="center">
+				<img id="login-custom-logo" src="<f1:out value="com.f1.ami.web.pages.AmiWebPages.URL_CUSTOM_LOGO"/>" width="350px" height="200px">
+			</div>
+       		<h3 class="text-white" align="center">Powered By</h3> 
+		</f1:if>
+       	
+		<div class="logo-container">
+	      <a href="https://3forge.com" target="_blank">
+	       <img src="rsc/ami/menubar_logo3_color2.svg">
+	      </a>
+	    </div>
+		
+        <form id="login-form" class="login-form" method="post" action="login" accept-charset="UTF-8" role="form" >
+            <div class='error'><label for='' id="error-message"><f1:out escape="FULL" value="${error}"/>&nbsp;</label></div>
+            
+            <label class="field-label">Username</label>
+
+            <div><input id="username" name="username" style="margin-top:0px;" type="text" value="<f1:if test="SH.isnt(${username})"><f1:out value="${webLoginDefaultUser}"/></f1:if><f1:out value="${username}"/>"/>
+			  <f1:if test="SH.is(${webLoginDefaultUser})"><BR><span>(Default: <span style='background:yellow'><f1:out value="${webLoginDefaultUser}"/></span>)</span><br><br></f1:if>
+			</div>
+			
+			<label class="field-label">Password</label>
+
+            <div><input type='password' autocomplete='current-password' id="password" name="password" type="text" value=""/>
+			  <f1:if test="SH.is(${webLoginDefaultPass})"><BR><span>(Default: <span style='background:yellow'><f1:out value="${webLoginDefaultPass}"/></span>)</span><br><br></f1:if>
+			 </div>
+			
+			<center>
+				<div><button type="submit" id="login" onclick='onLoginBtnPress()' title="Login"><span id="main-text">Login</span><span id="waiting"></span></button></div>
+				<!-- 
+				<div><input type="submit" id="login" value="&nbsp;Login&nbsp;" onclick='onLoginBtnPress()' title="Login" /></div>
+ 				-->
+			</center>
+			
+			<div class="error" style='color:#FF0000;padding-bottom:10px;'>
+			  <f1:ifNot test="${f1license_status}">
+			    Due to Licensing, process will shutdown at:<BR><B><f1:out value="${f1license_termtime}"/></B><BR>Please visit 3forge.com and generate a license file for application '<b><f1:out value="${f1license_app}"/></b>' on host '<b><f1:out value="${f1license_host}"/></b>'
+			  <f1:else/>
+			    <f1:if test="System.currentTimeMillis() > (Long)${f1license_warnms}">
+			    <f1:out value="${messageLicenseExpires}"/>
+			    </f1:if>
+			  </f1:ifNot>
+			</div>
+          
+          <f1:if test="OH.ne(${termsText},null)">
+				<div> <input type="checkbox" id="accept_agreement" style="width:auto;" name='accept_agreement' title="TermsAndConditions" value='<f1:out value="${termsSignature}"/>'/>I accept the agreement below</div>
+			</f1:if>
+
+			<f1:if test="OH.ne(${termsText},null)">
+			  <div id='terms'><f1:out value="${termsText}"/></div>
+			</f1:if>
+
+        </form>
+        
+        
+
+      </div>
+    
+    </div>
+
+  </body>
+  
+  <script src="rsc/ami/index2.js" type="text/javascript"></script>
+  
+
+</html>
+
+</f1:if>

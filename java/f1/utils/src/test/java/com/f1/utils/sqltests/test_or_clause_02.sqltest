@@ -1,0 +1,18 @@
+****TEST_INPUT_QUERY****
+{long a = 10; return (a == "10" || a == 10L || a == 10d || a == 10.0);}
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+****TEST_RESULT****
+true
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****

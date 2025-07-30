@@ -1,0 +1,13 @@
+#<Timestamp>20121130
+#<Time period>20121130
+#<File Type>MDI
+#<Updated>irregular
+#<Country/Region>USA
+#<Delimiter>,
+#<Subfield Delimiter>|
+#<Subsubfield Delimiter>:
+#<Text Qualifier>"
+#<Version>1.0.BROOKSIDE
+#<Field Names>"validity indicator for quotes","validity indicator for trades","ask quote codes","bid quote codes","trade codes","t","a"
+1,0,|A|B|H|O|R|W|E,|A|B|H|O|R|W|F,M|Q,0.03,100000
+#<EOF>

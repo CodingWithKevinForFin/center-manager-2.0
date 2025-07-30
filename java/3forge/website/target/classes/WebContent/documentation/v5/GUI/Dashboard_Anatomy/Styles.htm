@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "3.2.2_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2020"/>
+  <title>Styles</title>
+  <link rel="StyleSheet" href="../../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Styles">
+        <span>Styles</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+  <h1>Styles</h1>
+  <p dir="ltr">Styling is used to give a unique look and feel to your dashboard, while also providing a consistency across an organization&#39;s various implementations.  All elements within the dashboard can be styled with custom font families, sizes, and colors. </p>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">Panel Styles</h2>
+  <p dir="ltr">Panels inherit from common stylesets but individual styles can be overridden on a panel-by-panel basis. When editing a panel&#39;s style, each option is by default set to inherit, but can be manually overridden. The panel styles are edited by clicking on the panel&#39;s green button and then selecting <strong>Style...</strong> </p>
+  <p>This method is preferred when a panel needs a special styling which differs from the general layout styling.</p>
+  <figure><img height="358" src="../../assets/images/StyleWindowTable.png" width="506"/>
+    <figcaption>Style window for Panel (Table)</figcaption>
+  </figure>
+  <p> </p>
+  <h2 dir="ltr">Stylesets</h2>
+  <p dir="ltr">A styleset is a self contained subset of settings for all of the style-able elements within AMI. Each styleset has a unique name and bust inherited from another styleset. The exception is the DEFAULT styleset which supplies the factory default for style for each style setting within AMI.</p>
+  <p dir="ltr"> </p>
+  <p dir="ltr">Stylesets are managed using the <span style="font-weight: bold;">Dashboard</span> &gt; <span style="font-weight: bold;">Style Manager</span>. Stylesets created using this manager are stored within the root layout&#39;s file by default, but alternatively can be exported and directly saved to a common repository making it available across dashboards.</p>
+  <p> </p>
+  <h2 dir="ltr">Custom CSS</h2>
+  <p dir="ltr">While AMI has hundreds of easy-to-use style options, you can achieve complete control of web styling for forms and fields using custom CSS.  The  custom CSS is accessed from <span style="font-weight: bold;">Dashboard</span> &gt;<span style="font-weight: bold;"> Custom CSS</span>. After creating custom CSS classes, the field&#39;s can then be assigned to a given CSS class.</p>
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% macro get_breadcrumb(nav_item, desired_item, path) %}
+	{% if nav_item == desired_item %}
+		{{ path }}
+	{% endif %}
+	{% if nav_item.children %}
+	  {% for i in nav_item.children %}
+	  	{% set divider = "" if path == "" else " > " %}
+	  	{{ get_breadcrumb(i, page, path ~ divider ~ nav_item.title) }}
+	  {% endfor %}
+	{% endif %}
+{% endmacro %}
+
+{% block content %}
+  <span style="color: var(--md-default-fg-color--light)">
+  {% for i in nav %}
+  	{{ get_breadcrumb(i, page, "") }}
+  {% endfor %}
+  </span>
+  {{ super() }}
+{% endblock %}
+

@@ -1,0 +1,29 @@
+<!ELEMENT simulator-deployment  (debug-level? , niddleware? , gateway , module+)>
+
+<!ELEMENT debug-level  (#PCDATA)>
+
+<!ELEMENT middleware  (middleware-port)>
+
+<!ELEMENT middleware-port  (#PCDATA)>
+
+<!ELEMENT gateway  (gateway-class , gateway-param+)>
+
+<!ELEMENT gateway-class  (#PCDATA)>
+
+<!ELEMENT gateway-param  (name , value)>
+
+<!ELEMENT name  (#PCDATA)>
+
+<!ELEMENT value  (#PCDATA)>
+
+<!ELEMENT module  (module-id , module-class , module-param+, session-list?)>
+
+<!ELEMENT module-class  (#PCDATA)>
+
+<!ELEMENT module-param  (name , value)>
+
+<!ELEMENT session (#PCDATA)>
+
+<!ELEMENT session-list (session+)>
+
+<!ELEMENT module-id (#PCDATA)>

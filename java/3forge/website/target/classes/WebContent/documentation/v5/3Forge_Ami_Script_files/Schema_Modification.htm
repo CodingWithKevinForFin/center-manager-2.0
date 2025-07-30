@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "5.4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Schema Modification</title>
+<link rel="stylesheet" href="../assets/css/3Forge_Ami_Script.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Schema Modification">
+        <span>Schema Modification</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h2 style="font-size: 24pt; margin-top: 5pt; margin-bottom: 15pt; font-family: Arial, sans-serif;">Schema 
+ Modification</h2>
+<h3 style="font-size: 19pt; margin-top: 5pt; margin-bottom: 1pt; color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><a name="create_table_clause" id="create_table_clause"><span style="color: #7030A0; font-family: Arial, sans-serif; 
+									 text-decoration: none; ">create_table_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt;"><span style="font-family: Arial, sans-serif; 
+															 font-size: 12pt;">This 
+ command is used to create a new, empty (no rows) table with a specified 
+ set of columns (names and types).  If another table already 
+ exists with the </span><span style="color: #0070C0; font-family: Arial, sans-serif; 
+								 font-size: 12pt;">tblname,</span><span style="font-family: Arial, sans-serif; font-size: 12pt;"> the existing 
+ table will be implicitly dropped and replaced with the newly created table.</span> 
+  </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt;"><span style="font-size: 12pt; 
+															 font-family: Arial, sans-serif;">At 
+ least one column must be specified, and each column must have a unique 
+ name.</span>          </p>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt;">         </p>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-size: 13pt; 
+	 font-weight: bold; font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">SYNTAX</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier="" style="color: #ff0000;">CREATE 
+ TABLE [IF NOT EXISTS]</span> <span courier="" style="color: #006dbf;">tblname</span> 
+ <span courier="" style="color: #ff0000;">(</span><span courier="" style="color: #006dbf;">col1</span> 
+ <b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#type_expr" style="font-size: 12pt;">type_expr</a></span></b> 
+ <span courier=""> <i>[</i>, </span><span courier="" style="color: #006dbf;">col2</span><span courier=""> <b style="color: #6d2d9e;">type_expr</b> ...<i>]</i></span><span courier="" style="color: #ff0000;">)</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="">tblname</span></i></b> 
+ -<i><span courier=""> string name of the table to create</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="">colN -</span></i></b><i><span courier=""> string name of Nth column to create</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-size: 13pt; 
+	 font-weight: bold; font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; color: #0070C0; font-family: &#39;Courier New&#39;, monospace; 
+	 line-height: Normal; font-size: 12pt;">CREATE TABLE countries (country 
+ String, language String, GDP Double)</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<h3 style="margin-top: 5pt; margin-bottom: 1pt; line-height: Normal; font-size: 19pt; 
+	 color: #7030A0; font-family: Arial, sans-serif; text-decoration: none; "><a id="ANALYZE" data-indexterm="ANALYZE"></a><a id="AS" data-indexterm="AS"></a><a name="create_table_as_clause" id="create_table_as_clause"><span style="color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; ">create_table_as_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">This 
+ command is used to create a new table which has the same schema definition 
+ as the result set of a <span style="color: #7030A0;">select_clause</span>.  If 
+ another table already exists with the <span style="color: #0070C0;">tblname,</span> 
+ the existing table will be implicitly dropped and replaced with the newly 
+ created table.</p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt;"><span style="font-size: 12pt; 
+															 font-family: Arial, sans-serif;">All 
+ rows from the </span><span style="color: #7030A0; font-size: 12pt; font-family: Arial, sans-serif;">select_clause</span><span style="font-size: 12pt; font-family: Arial, sans-serif;">&#39;s result 
+ set will be inserted into the table.</span>      </p>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt;">           </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">SYNTAX</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 line-height: Normal; font-size: 12pt;"><span courier="" style="color: #ff0000;">CREATE 
+ TABLE</span> <span courier="" style="color: #ff0000;">[IF NOT EXISTS] 
+ </span><span courier="" style="color: #006dbf;">tblname</span><b id="docs-internal-guid-38078ef8-7fff-7b5e-90df-b18da6d0ee36" style="font-weight: normal;"><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; 
+										 color: #808080; font-weight: 400; 
+										 font-style: italic;">[</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #808080; 
+	 font-weight: 400;">(</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; 
+										 color: #006dbf; font-weight: 400;">col1</span> 
+ <span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #1155cc; 
+		 font-weight: 400; -webkit-text-decoration-skip: none; text-decoration-skip-ink: none; 
+		 text-decoration: underline; "><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #808080; 
+	 font-weight: 400;"> </span> <span style="font-size: 11pt; 
+												 font-family: &#39;Courier New&#39;; 
+												 color: #808080; font-weight: 400; 
+												 font-style: italic;">[</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #808080; 
+	 font-weight: 400;">,</span> <span style="font-size: 11pt; font-family: &#39;Courier New&#39;; 
+										 color: #0070c0; font-weight: 400;">col2</span> 
+ <span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #1155cc; 
+		 font-weight: 400; -webkit-text-decoration-skip: none; text-decoration-skip-ink: none; 
+		 text-decoration: underline; "><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span> 
+ <span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #808080; 
+		 font-weight: 400; font-style: italic;">...]</span><span style="font-size: 11pt; 
+	 font-family: &#39;Courier New&#39;; color: #c00000; font-weight: 400;">)</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #808080; 
+	 font-weight: 400; font-style: italic;">]</span></b> <span courier="" style="color: #ff0000;">AS</span> <b><span courier="" style="color: #6d2d9e;">select_clause</span></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">CREATE 
+ TABLE</span> <span courier="" style="color: #ff0000;">[IF NOT EXISTS] 
+ </span><span courier="" style="color: #006dbf;">tblname</span><b id="docs-internal-guid-38078ef8-7fff-7b5e-90df-b18da6d0ee361" style="font-weight: normal;"><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; 
+										 color: #808080; font-weight: 400; 
+										 font-style: italic;">[</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #808080; 
+	 font-weight: 400;">(</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; 
+										 color: #006dbf; font-weight: 400;">col1</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 font-family: &#39;Courier New&#39;; 
+												 color: #1155cc; font-weight: 400; 
+												 -webkit-text-decoration-skip: none; 
+												 text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span><span style="font-size: 11pt; 
+	 font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400;"> </span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+													 font-family: &#39;Courier New&#39;; 
+													 color: #808080; font-weight: 400; 
+													 font-style: italic;">[</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #808080; 
+	 font-weight: 400;">,</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #0070c0; 
+	 font-weight: 400;">col2</span><span style="line-height: Normal;"> 
+ </span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #1155cc; 
+				 font-weight: 400; -webkit-text-decoration-skip: none; 
+				 text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 font-family: &#39;Courier New&#39;; 
+												 color: #808080; font-weight: 400; 
+												 font-style: italic;">...]</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #c00000; 
+	 font-weight: 400;">)</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; 
+										 color: #808080; font-weight: 400; 
+										 font-style: italic;">]</span></b> 
+ <span courier="" style="color: #ff0000;">AS</span> <b><span courier="" style="color: #6d2d9e;">analyze_clause</span></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">CREATE 
+ TABLE</span> <span courier="" style="color: #ff0000;">[IF NOT EXISTS] 
+ </span><span courier="" style="color: #006dbf;">tblname</span><b id="docs-internal-guid-38078ef8-7fff-7b5e-90df-b18da6d0ee362" style="font-weight: normal;"><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; 
+										 color: #808080; font-weight: 400; 
+										 font-style: italic;">[</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #808080; 
+	 font-weight: 400;">(</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; 
+										 color: #006dbf; font-weight: 400;">col1</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 font-family: &#39;Courier New&#39;; 
+												 color: #1155cc; font-weight: 400; 
+												 -webkit-text-decoration-skip: none; 
+												 text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span><span style="font-size: 11pt; 
+	 font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400;"> </span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+													 font-family: &#39;Courier New&#39;; 
+													 color: #808080; font-weight: 400; 
+													 font-style: italic;">[</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #808080; 
+	 font-weight: 400;">,</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #0070c0; 
+	 font-weight: 400;">col2</span><span style="line-height: Normal;"> 
+ </span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #1155cc; 
+				 font-weight: 400; -webkit-text-decoration-skip: none; 
+				 text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 font-family: &#39;Courier New&#39;; 
+												 color: #808080; font-weight: 400; 
+												 font-style: italic;">...]</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #c00000; 
+	 font-weight: 400;">)</span><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; 
+										 color: #808080; font-weight: 400; 
+										 font-style: italic;">]</span></b> 
+ <span courier="" style="color: #ff0000;">AS</span> <b><span courier="" style="color: #6d2d9e;">prepare_clause</span></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">CREATE 
+ TABLE</span> <span courier="" style="color: #ff0000;">[IF NOT EXISTS] 
+ </span><span courier="" style="color: #006dbf;">tblname</span><span courier=""><i>[</i></span><span courier="" style="color: #006dbf;">, tblname</span><span style="color: #006dbf;"> 
+ ...</span><span courier=""><i>]</i></span> <span courier=""> </span><span courier="" style="color: #ff0000;">AS</span> <b><span courier="" style="color: #6d2d9e;">execute_clause</span></b></p>
+<p class="MsoNormal" style="margin: 0px 0in 0.0001pt; color: rgb(34, 34, 34); 
+	 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-weight: 400; 
+	 font-family: &#39;Courier New&#39;; font-size: 12pt;"><b><span courier="" style="font-weight: 400; 
+															 color: #ff0000;">C</span></b><span style="color: #ff0000;">REATE TABLE</span><span style="color: #000000;"> </span><span courier="" style="color: #ff0000;">[IF NOT EXISTS] </span><span style="color: #006dbf;">tblname</span><b id="docs-internal-guid-38078ef8-7fff-7b5e-90df-b18da6d0ee3621" style="font-weight: normal;"><span style="font-size: 11pt; color: #808080; font-weight: 400; font-style: italic;">[</span><span style="font-size: 11pt; color: #808080; font-weight: 400;">(</span><span style="font-size: 11pt; color: #006dbf; font-weight: 400;">col1</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 color: #1155cc; font-weight: 400; 
+												 -webkit-text-decoration-skip: none; 
+												 text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span><span style="font-size: 11pt; 
+	 color: #808080; font-weight: 400;"> </span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; color: #808080; font-weight: 400; font-style: italic;">[</span><span style="font-size: 11pt; color: #808080; font-weight: 400;">,</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 color: #0070c0; font-weight: 400;">col2</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 color: #1155cc; font-weight: 400; 
+												 -webkit-text-decoration-skip: none; 
+												 text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span><span style="line-height: Normal;"> 
+ </span><span style="font-size: 11pt; color: #808080; font-weight: 400; 
+				 font-style: italic;">...]</span><span style="font-size: 11pt; 
+														 color: #c00000; 
+														 font-weight: 400;">)</span><span style="font-size: 11pt; color: #808080; font-weight: 400; font-style: italic;">]</span></b><span style="color: #000000;"> </span><span style="color: #ff0000;">AS</span><span style="color: #000000;"> </span><b><span style="color: #6d2d9e; 
+													 font-weight: bold;">describe_clause</span></b></p>
+<p class="MsoNormal" style="margin: 0px 0in 0.0001pt; color: rgb(34, 34, 34); 
+	 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; line-height: 13.75pt; 
+	 font-family: &#39;Courier New&#39;; font-size: 12pt;"><span style="color: #ff0000;">CREATE 
+ TABLE</span><span style="color: #000000;"> </span><span courier="" style="color: #ff0000;">[IF NOT EXISTS] </span><span style="color: #006dbf;">tblname</span><b id="docs-internal-guid-38078ef8-7fff-7b5e-90df-b18da6d0ee3622" style="font-weight: normal;"><span style="font-size: 11pt; color: #808080; font-weight: 400; font-style: italic;">[</span><span style="font-size: 11pt; color: #808080; font-weight: 400;">(</span><span style="font-size: 11pt; color: #006dbf; font-weight: 400;">col1</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 color: #1155cc; font-weight: 400; 
+												 -webkit-text-decoration-skip: none; 
+												 text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span><span style="font-size: 11pt; 
+	 color: #808080; font-weight: 400;"> </span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; color: #808080; font-weight: 400; font-style: italic;">[</span><span style="font-size: 11pt; color: #808080; font-weight: 400;">,</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 color: #0070c0; font-weight: 400;">col2</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 color: #1155cc; font-weight: 400; 
+												 -webkit-text-decoration-skip: none; 
+												 text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span><span style="line-height: Normal;"> 
+ </span><span style="font-size: 11pt; color: #808080; font-weight: 400; 
+				 font-style: italic;">...]</span><span style="font-size: 11pt; 
+														 color: #c00000; 
+														 font-weight: 400;">)</span><span style="font-size: 11pt; color: #808080; font-weight: 400; font-style: italic;">]</span></b><span style="color: #000000;"> </span><span style="color: #ff0000;">AS</span><span style="color: #000000;"> </span><b><span style="color: #6d2d9e;">show_clause</span></b></p>
+<p class="MsoNormal" style="margin: 0px 0in 0.0001pt; color: rgb(34, 34, 34); 
+	 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; line-height: 13.75pt; 
+	 font-family: &#39;Courier New&#39;; font-size: 12pt;"><span style="color: #ff0000;">CREATE 
+ TABLE</span><span style="color: #000000;"> </span><span courier="" style="color: #ff0000;">[IF NOT EXISTS] </span><span style="color: #006dbf;">tblname</span><b id="docs-internal-guid-38078ef8-7fff-7b5e-90df-b18da6d0ee3623" style="font-weight: normal;"><span style="font-size: 11pt; color: #808080; font-weight: 400; font-style: italic;">[</span><span style="font-size: 11pt; color: #808080; font-weight: 400;">(</span><span style="font-size: 11pt; color: #006dbf; font-weight: 400;">col1</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 color: #1155cc; font-weight: 400; 
+												 -webkit-text-decoration-skip: none; 
+												 text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span><span style="font-size: 11pt; 
+	 color: #808080; font-weight: 400;"> </span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; color: #808080; font-weight: 400; font-style: italic;">[</span><span style="font-size: 11pt; color: #808080; font-weight: 400;">,</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 color: #0070c0; font-weight: 400;">col2</span><span style="line-height: Normal;"> </span><span style="font-size: 11pt; 
+												 color: #1155cc; font-weight: 400; 
+												 -webkit-text-decoration-skip: none; 
+												 text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">column_type</a></span><span style="line-height: Normal;"> 
+ </span><span style="font-size: 11pt; color: #808080; font-weight: 400; 
+				 font-style: italic;">...]</span><span style="font-size: 11pt; 
+														 color: #c00000; 
+														 font-weight: 400;">)</span><span style="font-size: 11pt; color: #808080; font-weight: 400; font-style: italic;">]</span></b><span style="color: #000000;"> </span><span style="color: #ff0000;">AS</span><span style="color: #000000;"> </span><b><span style="color: #6d2d9e;">call_clause</span></b></p>
+<p style="margin-bottom: .0001pt;"><b><span courier="" style="font-size: 8.0pt; 
+											 line-height: 115%; font-family: ;">                </span></b></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><i><span courier="" style="font-weight: normal; 
+									 font-style: normal;">tblname</span></i></b> 
+ -<i><span courier="" style="font-style: normal;"> string name of the table 
+ to create</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-size: 13pt; 
+	 color: #449938; text-transform: uppercase; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE TABLE names 
+ AS SELECT first_name, last_name FROM employees</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<h3 style="font-size: 19pt; margin-top: 5pt; margin-bottom: 1pt; color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><a id="ADD" data-indexterm="ADD"></a><a id="ALTER" data-indexterm="ALTER"></a><a id="AS1" data-indexterm="AS"></a><a name="alter_table_clause" id="alter_table_clause"><span style="color: #7030A0; font-family: Arial, sans-serif; 
+									 text-decoration: none; ">alter_table_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="font-size: 13pt; color: #449938; line-height: Normal; margin-top: 15pt; 
+	 margin-bottom: 3pt; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-size: 12pt; 
+	 font-family: Arial, sans-serif;">This command alters the schema (column 
+ names and types) of an existing table.  You can add columns 
+ (<span style="color: #C00000;">ADD</span>), rename columns (<span style="color: #C00000;">RENAME 
+ ... TO</span>), delete columns (<span style="color: #C00000;">DROP</span>), 
+ and change the type of columns (<span style="color: #C00000;">MODIFY</span>).  Note, 
+ when multiple alterations are supplied, they are evaluated left to right. 
+ When changing types, a best effort cast will be applied.</p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">When 
+ adding columns, the new cells will default to null. The column will be 
+ added to the end (right-most) of the table.</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #ff0000;">ALTER TABLE</span> 
+ <span courier="" style="color: #006dbf;">tblname</span> <i><span courier=""> </span></i><b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#alter_col_expr">alter_col_expr</a></span></b> 
+ <span courier=""> </span><i><span courier="">[</span></i><i><span courier="" style="color: #6d2d9e;">,</span></i><span style="color: #6d2d9e;"> 
+ </span><b><span courier="" style="color: #6d2d9e;">alter_col_expr</span></b><span style="color: #6d2d9e;"> </span><span courier="" style="color: #6d2d9e;"> ...</span><span courier=""><i>]</i></span> <span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><i><span courier="" style="font-weight: normal; 
+									 font-style: normal;">tblname</span></i></b> 
+ -<i><span courier="" style="font-style: normal;"> string name of the table 
+ to alter</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">ALTER TABLE AccountHoldings 
+ ADD UserId long, RENAME AccountId TO Account_Id, DROP UserInfo</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">ALTER TABLE AccountHoldings 
+ MODIFY UserId AS UserId INT</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">ALTER TABLE AccountHoldings 
+ RENAME UserId TO UserIds, ADD UserId STRING</span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<h3 style="font-family: Arial, sans-serif; font-size: 19pt; margin-top: 5pt; 
+	 margin-bottom: 1pt; line-height: Normal; color: #7030A0; text-decoration: none; "><a name="rename_table_clause" id="rename_table_clause"><span style="color: #7030A0; 
+	 text-decoration: none; ">rename_table_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">This 
+ command renames an existing table. If another table already exists with 
+ the <span style="color: #0070C0;">newname,</span> the existing table will 
+ be implicitly dropped and replaced with the renamed table.</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">SYNTAX</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">RENAME 
+ TABLE</span> <span courier="" style="color: #006dbf;">tblname</span> <span courier=""><i> </i></span><span courier="" style="color: #ff0000;">TO</span> 
+ <span courier="" style="color: #006dbf;">newname</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">tblname</span></i></b> 
+ -<i><span courier=""> string name of the table to rename</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">newname</span></i></b> 
+ -<i><span courier=""> string name of the new name for the table</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">RENAME TABLE AccountHoldings 
+ TO Accounts</span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<h3 style="margin-top: 5pt; margin-bottom: 1pt; font-family: Arial, sans-serif; 
+	 font-size: 19pt; color: #7030A0; text-decoration: none; "><a name="drop_table_clause" id="drop_table_clause"><span style="color: #7030A0; text-decoration: none; ">drop_table_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;">This 
+ command drops an existing table, along with its schema and all rows. You 
+ can specify multiple tables, separated by commas.</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">SYNTAX</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">DROP 
+ TABLE [IF EXISTS]</span> <span courier="" style="color: #006dbf;">tblname</span> 
+ <span courier=""><i>[</i></span><span courier="" style="color: #006dbf;">, 
+ tblname</span><span style="color: #006dbf;"> ...</span><span courier=""><i>]</i></span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><i><span courier="" style="font-weight: bold;">tblname</span><span courier=""> - string name of the table to create</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-size: 13pt; 
+	 font-weight: bold; font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">DROP TABLE Accounts</span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,27 @@
+****TEST_INPUT_QUERY****
+CREATE TABLE output(a int, b int, c int);
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+****TEST_RESULT****
+null
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS output(a int,b int,c int)  
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+output
++-----------------------+
+|        output         |
++-------+-------+-------+
+|a      |b      |c      |
+|Integer|Integer|Integer|
++-------+-------+-------+
++-------+-------+-------+
+

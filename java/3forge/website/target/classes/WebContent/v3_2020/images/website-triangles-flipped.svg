@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+  <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: #ff8d35;
+      }
+
+      .st0, .st1, .st2, .st3 {
+        fill: none;
+      }
+
+      .st0, .st2, .st3 {
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+
+      .st4 {
+        clip-path: url(#clippath-1);
+      }
+
+      .st5 {
+        fill: #ff8d35;
+      }
+
+      .st2 {
+        stroke: #3b91bb;
+      }
+
+      .st6 {
+        clip-path: url(#clippath);
+      }
+
+      .st3 {
+        stroke: #263054;
+      }
+
+      .st7 {
+        fill: #3b91bb;
+      }
+
+      .st8 {
+        fill: #77cefa;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st1" x="1540.2" y="-270.7" width="378" height="533.3"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <polygon class="st1" points="1540.2 -3.8 1918.2 -270.2 1918.2 262.7 1540.2 -3.8"/>
+    </clipPath>
+  </defs>
+  <polyline class="st8" points="1910.2 1332.7 1910.2 1350.7 1575.5 1034.7 1910.2 718.7 1910.2 1332.7"/>
+  <g class="st6">
+    <g class="st4">
+      <g>
+        <path class="st5" d="M1540.2-28v-114.7"/>
+        <path class="st5" d="M1540.2-142.7v-74.7"/>
+        <path class="st5" d="M1540.2-217.3v-53.6"/>
+        <path class="st5" d="M1891.3-270.9h26.8"/>
+        <path class="st5" d="M1918.2-244"/>
+        <path class="st5" d="M1918.2-172"/>
+        <path class="st5" d="M1918.2-137.3"/>
+        <path class="st5" d="M1918.2-105.3"/>
+        <path class="st5" d="M1918.2-4"/>
+        <path class="st5" d="M1918.2-4v266.7h-378V-3.8"/>
+      </g>
+    </g>
+  </g>
+  <polygon class="st7" points="1954.8 489.4 1954.8 1121.4 1620.2 805.4 1954.8 489.4"/>
+  <polygon class="st2" points="1855.5 704.1 1855.5 1350.7 1507.2 1027.4 1855.5 704.1"/>
+  <polygon class="st3" points="1918.2 554.7 1918.2 816.7 1777.2 685.7 1918.2 554.7"/>
+  <polygon class="st3" points="1920.8 378.7 1920.8 876.7 1655.2 627.7 1920.8 378.7"/>
+  <polygon class="st8" points="1610.2 798.7 1610.2 609.5 1711.5 704.1 1610.2 798.7"/>
+  <polygon class="st0" points="1620.2 656 1620.2 850.7 1725.8 753.4 1620.2 656"/>
+</svg>

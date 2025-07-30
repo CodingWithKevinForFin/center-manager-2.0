@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.6.19";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Table</title>
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Table">
+        <span>Table</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<div style="position:initial;padding-bottom:11pt;">
+<h1 style="font:bold 24pt Arial;color:#4181BD;margin:5pt 0pt 15pt 0pt;"><a name="Table Class Overview" id="Table Class Overview"><span>Table Class Overview</span></a></h1>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Table</b> var = .... ;<br/></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Represents a 2-dimensional data structure with a predefined set of uniquely named, ordered columns. It also has a variant number of rows (see Row).</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Method Definitions</h3>
+<table style="border-collapse:collapse" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1px solid grey">&lt;Constructor&gt;</td>
+<td style="border:1px solid grey;min-width:100px">Create a new table</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">&lt;Constructor&gt;</td>
+<td style="border:1px solid grey;min-width:100px">Create a new table</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getColumnNameAt</td>
+<td style="border:1px solid grey;min-width:100px">Return name of column, or null if the supplied index is outside of the column count</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">iterator</td>
+<td style="border:1px solid grey;min-width:100px">Returns an iterator of Row objects</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">addColumn</td>
+<td style="border:1px solid grey;min-width:100px">Returns null</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getRow</td>
+<td style="border:1px solid grey;min-width:100px">Returns the row at the zero indexed location, or null</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">addRow</td>
+<td style="border:1px solid grey;min-width:100px">Return value associated with key from this sessions global properties. Returns null if key does not exect</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getColumnLocation</td>
+<td style="border:1px solid grey;min-width:100px">Return 0 indexed column position, or -1 if column does not exist in the table</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getColumnType</td>
+<td style="border:1px solid grey;min-width:100px">Return type of column, or null</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">removeColumn</td>
+<td style="border:1px solid grey;min-width:100px">Return true if the table changed as a result</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">insertRow</td>
+<td style="border:1px solid grey;min-width:100px">Return value associated with key from this sessions global properties. Returns null if key does not exect</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">toString</td>
+<td style="border:1px solid grey;min-width:100px">Return a string representing this table</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">toList</td>
+<td style="border:1px solid grey;min-width:100px">Return a list of values for a particular column, or null if the column does not exist. Empty tables will return an empty list</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getTitle</td>
+<td style="border:1px solid grey;min-width:100px">Returns the title of this table, or null if no title</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">query</td>
+<td style="border:1px solid grey;min-width:100px">Run amisql on this table. Use &#39;this&#39; to reference this table in the amisql. Returns the resulting table.</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getColumnsCount</td>
+<td style="border:1px solid grey;min-width:100px">Returns the number of columns in this table</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">setTitle</td>
+<td style="border:1px solid grey;min-width:100px">Set the title of this table</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getRowsCount</td>
+<td style="border:1px solid grey;min-width:100px">Returns the number of rows in this table</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getRows</td>
+<td style="border:1px solid grey;min-width:100px">Return a list of the rows</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getRows</td>
+<td style="border:1px solid grey;min-width:100px">Return a list of the rows</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">removeRow</td>
+<td style="border:1px solid grey;min-width:100px">Return value associated with key from this sessions global properties. Returns null if key does not exect</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getValue</td>
+<td style="border:1px solid grey;min-width:100px">Return value associated with the given key and value. Returns null if column does not exist or row number is out of bounds</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="constructor(title)" id="constructor(title)"><span>constructor(title)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Table table = new Table(String title)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Create a new table</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String title</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>title name</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="constructor(title,map_of_lists)" id="constructor(title,map_of_lists)"><span>constructor(title,map_of_lists)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Table table = new Table(String title, Map map_of_lists)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Create a new table</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String title</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>title name</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Map map_of_lists</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>Map of lists where key will be the column name and value is a list of values, all lists must be same length</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getColumnNameAt(columnPos)" id="getColumnNameAt(columnPos)"><span>getColumnNameAt(columnPos)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Table::getColumnNameAt(Integer columnPos)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return name of column, or null if the supplied index is outside of the column count</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Integer columnPos</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>zero column position</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="iterator()" id="iterator()"><span>iterator()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Iterator Table::iterator()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns an iterator of Row objects</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="addColumn(columnName,columnType,DefaultValue)" id="addColumn(columnName,columnType,DefaultValue)"><span>addColumn(columnName,columnType,DefaultValue)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Table::addColumn(String columnName, String columnType, Object DefaultValue)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns null</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String columnName</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String columnType</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object DefaultValue</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>default value for existing columns or null</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getRow(rowNum)" id="getRow(rowNum)"><span>getRow(rowNum)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Row Table::getRow(Integer rowNum)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns the row at the zero indexed location, or null</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Integer rowNum</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>zero indexed row number, negative to start at end</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="addRow(params)" id="addRow(params)"><span>addRow(params)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Table::addRow(Object ... params)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return value associated with key from this sessions global properties. Returns null if key does not exect</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object ... params</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>list of params</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getColumnLocation(columnName)" id="getColumnLocation(columnName)"><span>getColumnLocation(columnName)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Table::getColumnLocation(String columnName)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return 0 indexed column position, or -1 if column does not exist in the table</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String columnName</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>column name</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getColumnType(columnName)" id="getColumnType(columnName)"><span>getColumnType(columnName)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Table::getColumnType(String columnName)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return type of column, or null</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String columnName</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>name of the column to get the type for</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="removeColumn(columnName)" id="removeColumn(columnName)"><span>removeColumn(columnName)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean Table::removeColumn(String columnName)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return true if the table changed as a result</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String columnName</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>name of column to remove</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="insertRow(rowPosition,params)" id="insertRow(rowPosition,params)"><span>insertRow(rowPosition,params)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Table::insertRow(Integer rowPosition, Object ... params)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return value associated with key from this sessions global properties. Returns null if key does not exect</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Integer rowPosition</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>0 index row position</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object ... params</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>list of params</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="toString(rowDelim,colDelim,options)" id="toString(rowDelim,colDelim,options)"><span>toString(rowDelim,colDelim,options)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Table::toString(String rowDelim, String colDelim, String ... options)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return a string representing this table</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String rowDelim</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>delimiter to seperate rows, default is line return</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String colDelim</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>delimiter to seperate values, default is comma</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String ... options</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>any combination of: INCLUDE_HEADER, INCLUDE_TYPES, INCLUDE_TITLE, SKIP_ROWS</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="toList(columnName)" id="toList(columnName)"><span>toList(columnName)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>List Table::toList(String columnName)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return a list of values for a particular column, or null if the column does not exist. Empty tables will return an empty list</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String columnName</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>name of column to get values for</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getTitle()" id="getTitle()"><span>getTitle()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Table::getTitle()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns the title of this table, or null if no title</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="query(amiSql)" id="query(amiSql)"><span>query(amiSql)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Table Table::query(String amiSql)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Run amisql on this table. Use &#39;this&#39; to reference this table in the amisql. Returns the resulting table.</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String amiSql</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>amiSql to run</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getColumnsCount()" id="getColumnsCount()"><span>getColumnsCount()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Integer Table::getColumnsCount()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns the number of columns in this table</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="setTitle(titleName)" id="setTitle(titleName)"><span>setTitle(titleName)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Table::setTitle(String titleName)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Set the title of this table</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String titleName</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>new title name</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getRowsCount()" id="getRowsCount()"><span>getRowsCount()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Integer Table::getRowsCount()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns the number of rows in this table</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getRows()" id="getRows()"><span>getRows()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>List Table::getRows()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return a list of the rows</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getRows()" id="getRows()"><span>getRows()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>List Table::getRows()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return a list of the rows</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="removeRow(rowPosition)" id="removeRow(rowPosition)"><span>removeRow(rowPosition)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Table::removeRow(Integer rowPosition)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return value associated with key from this sessions global properties. Returns null if key does not exect</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Integer rowPosition</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>0 index row position</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getValue(rowNum,columnName)" id="getValue(rowNum,columnName)"><span>getValue(rowNum,columnName)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Table::getValue(Integer rowNum, String columnName)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return value associated with the given key and value. Returns null if column does not exist or row number is out of bounds</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Integer rowNum</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>zero indexed row number</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String columnName</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>name of column</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sjls</groupId>
+
+    <name>sjlscommon</name>
+    <artifactId>sjlscommon</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.sjls</groupId>
+        <artifactId>sjls</artifactId>
+        <version>1.00-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.f1</groupId>
+            <artifactId>utils</artifactId>
+            <version>1.00-SNAPSHOT</version>
+        </dependency>
+         <dependency> <groupId>com.sjls</groupId> <artifactId>AlgosSchedulers</artifactId> <version>4.12.20130607</version> </dependency> 
+        <dependency> <groupId>com.sjls</groupId> <artifactId>AlgosMOP</artifactId>        <version>2.9.20130607</version> </dependency>
+        <dependency> <groupId>com.sjls</groupId> <artifactId>AlgosLOP</artifactId>        <version>3.5.0</version> </dependency>
+        <dependency> <groupId>com.sjls</groupId> <artifactId>AlgosDOP</artifactId>        <version>2.4.0</version> </dependency>
+        <dependency> <groupId>com.sjls</groupId> <artifactId>AlgosAOP</artifactId>        <version>3.00.20130524</version> </dependency>
+        <dependency> <groupId>com.sjls</groupId> <artifactId>AlgosPS</artifactId>        <version>4.9.0</version> </dependency>
+        <dependency> <groupId>com.sjls</groupId> <artifactId>STARTUtils</artifactId>      <version>1.7.0</version> </dependency>
+        <dependency> <groupId>com.sjls</groupId> <artifactId>STARTCore</artifactId>       <version>3.X-1.13.20140926</version> </dependency>
+        <dependency> <groupId>com.sjls</groupId> <artifactId>STARTCommon</artifactId>     <version>3.X-1.05.20140819</version> </dependency>
+        <dependency> <groupId>com.sjls</groupId> <artifactId>START3FCommon</artifactId>     <version>1.00.20130925</version> </dependency>
+        <dependency> <groupId>com.sjls</groupId> <artifactId>StartFixCert</artifactId>    <version>2.X.20140411</version> </dependency>
+        <dependency> <groupId>com.sjls</groupId> <artifactId>cp_msgs_java</artifactId>    <version>3.X-1.03.20140214</version> </dependency>
+         <dependency> <groupId>com.sjls</groupId> <artifactId>FixCertOfr</artifactId>    <version>3.0.0</version> </dependency>
+        <!-- <dependency> <groupId>com.sjls</groupId> <artifactId>RobecoOfr</artifactId>    <version>1.9</version> </dependency> -->
+        <dependency> <groupId>com.sjls</groupId> <artifactId>brookside-ofr</artifactId>    <version>1.05B.20131008</version> </dependency> 
+
+        <dependency>
+            <groupId>com.sjls</groupId>
+            <artifactId>tcm</artifactId>
+            <version>3.15</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.15</version>
+		</dependency>          
+    </dependencies>
+
+</project>
+

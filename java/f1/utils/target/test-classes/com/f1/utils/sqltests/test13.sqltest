@@ -1,0 +1,45 @@
+****TEST_INPUT_QUERY****
+{create table ts1 (x double);create table ts2 (x double);for(int i=1;i<10;i++) insert into ts2 values(i);}
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+****TEST_RESULT****
+9
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS ts1(x double)  CREATE TABLE AS ts2(x double)  INSERT INTO ts2 VALUES (i)INSERT INTO ts2 VALUES (i)INSERT INTO ts2 VALUES (i)INSERT INTO ts2 VALUES (i)INSERT INTO ts2 VALUES (i)INSERT INTO ts2 VALUES (i)INSERT INTO ts2 VALUES (i)INSERT INTO ts2 VALUES (i)INSERT INTO ts2 VALUES (i)
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+ts2
++------+
+| ts2  |
++------+
+|x     |
+|Double|
++------+
+|1.0   |
+|2.0   |
+|3.0   |
+|4.0   |
+|5.0   |
+|6.0   |
+|7.0   |
+|8.0   |
+|9.0   |
++------+
+
+ts1
++------+
+| ts1  |
++------+
+|x     |
+|Double|
++------+
++------+
+

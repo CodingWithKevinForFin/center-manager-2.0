@@ -1,0 +1,13 @@
+#<Timestamp>20130419 08:28:00
+#<Time period>20130419
+#<File Type>AOP_CONSTANTS
+#<Updated>irregular
+#<Country/Region>US
+#<Delimiter>,
+#<Subfield Delimiter>|
+#<Subsubfield Delimiter>:
+#<Text Qualifier>”
+#<Version>3.0
+#<Field Names>tO,tC_reg,tC_short,tOprime,tO2prime,tCprime,tC2prime,tCprime_short,tC2prime_short
+34200,57600,46800,0:34198|1:34078|2:34078,0:34200|1:34080|2:34080,0:56694|1:56994|2:56994,0:56698|1:57000|2:57000,0:45894|1:46194|2:46194,0:45898|1:46200|2:46200
+#<EOF>

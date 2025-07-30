@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "7.1.0_9";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Inbound Instruction Type Status Message</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Inbound Instruction Type Status Message">
+        <span>Inbound Instruction Type Status Message</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Inbound Instruction Type - Status Message (<span courier="" style="color: #ff0000; 
+													 font-family: &#39;Courier New&#39;, monospace;">M</span>)</h1>
+<p>For each outbound message, the relay will respond with a response instruction 
+ which will notify the application of the acceptance of rejection of the 
+ message. The message will contain the sequence number of the supplied 
+ outbound message. These messages will not contain a timestamp or a sequence 
+ number.</p>
+<p> </p>
+<p><b>Parameters always supplied by relay</b></p>
+<p> </p>
+<p class="NormalCxSpMiddle"><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">S</span>: 
+ The status of the received instruction. A value of 0 indicates it was 
+ successfully processed by the relay; a value of 1 to 255 indicates an 
+ error.</p>
+<p class="NormalCxSpMiddle"><br/>
+<span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">Q</span>: 
+ The sequence number of the instruction sent from the relay.</p>
+<p class="NormalCxSpMiddle"> </p>
+<p class="NormalCxSpMiddle"><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">M</span>: 
+ A human-readable message for the status.</p>
+<p class="NormalCxSpMiddle"> </p>
+<h3><b>Examples</b></h3>
+<p>In the following example, the login message was rejected due to a missing 
+ ID.</p>
+<p> </p>
+<p class="NormalCxSpLast" style="color: #308299; font-family: &#39;Courier New&#39;, monospace;"><span courier="" style="color: #ff0000;">M</span><span courier="">|</span><span courier="" style="color: #ff0000;">Q</span><span courier="">=0|</span><span courier="" style="color: #ff0000;">S</span><span courier="">=1|</span><span courier="" style="color: #ff0000;">M</span><span courier="">=&quot;Missing 
+ required Fields: I&quot;</span></p>
+<p class="NormalCxSpLast"> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package test;
+
+option java_package = "com.f1.test.protos";
+option java_multiple_files = true;
+
+message Order {
+	optional string ticker = 1;
+	optional int32 sharecount = 2;
+	optional int32 price = 3;
+}

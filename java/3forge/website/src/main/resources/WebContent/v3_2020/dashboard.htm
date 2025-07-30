@@ -1,0 +1,1189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<f1:set var="tab" value="'dashboard'" scope="request" />
+<f1:secure/>
+<f1:if test="${isLoggedIn}"><f1:else/>
+  <f1:redirect page="'/login.html'"/>
+</f1:if>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- include header -->
+<f1:include page="'_/v2/head.htm'"/>
+<!-- include navbar -->
+<f1:include page="'_/v2/masthead.htm'"/>
+
+
+
+
+
+<f1:out value="${user.clearTempAttachments}"/>
+
+
+
+
+<body>
+
+
+
+
+
+  <div class="visible-phone" id="secondary-nav">
+
+
+
+    <a href="#" class="scrollToTop">
+
+      <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+    </a>
+
+
+
+
+
+    <noscript>
+
+
+      <a href="#" class="scrollToTop2">
+
+        <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+      </a>
+
+
+    </noscript>
+
+
+
+
+
+    <center>
+
+
+      <h3 class="mobile-h1">Dashboard</h3>
+
+
+    </center>
+
+
+
+
+
+    <a href="secure_account.htm" title="My Account">
+
+
+      <img class="secondary-nav-icon" style="right:0;top:0; color: white;" src="v2_resources/images/account_icon_gray.png" alt="Account"/>
+
+
+    </a>
+
+
+
+  </div>
+
+
+
+
+
+
+  <div id="portal-content">
+
+
+
+
+
+    <noscript>
+
+
+      <div class="formOverlay">
+
+
+        <center>
+
+
+          <h2>
+Most features on this site require JavaScript. Please enable JavaScript before continuing.</h2>
+
+
+        </center>
+
+
+      </div>
+
+
+    </noscript>
+
+
+
+
+
+
+    <!-- banner -->
+
+
+
+
+
+    <f1:if test="OH.eq(${user.statusText},'NEW')">
+
+
+
+
+
+      <!-- free trial banner -->
+
+
+      <div class="banner lt-green-background">
+
+
+
+        <section class="section section-padded">
+
+
+          <div class="container-fluid">
+
+
+            <div class="row-fluid">
+
+
+
+              <h1 class="text-center white section-header">Start making data discoveries</h1>
+
+
+
+
+
+              <center>
+
+
+
+                <p class="lead">Download a trial of AMI with a flexible time period and no data cap</p>
+
+<br>
+
+                <a class="btn-link" href="secure_licenses?tok=<f1:out value="${sectoken}"/>"><button class="btn btn-large btn-info btn-theme3">Get started</button></a>
+
+
+
+              </center>
+
+
+
+            </div>
+
+
+          </div>
+
+
+        </section>
+
+
+
+      </div>
+
+
+
+
+
+    </f1:if>
+
+
+
+
+
+
+
+    <f1:if test="OH.eq(${user.statusText},'VERIFIED')">
+
+
+
+
+
+      <!-- free trial banner -->
+
+
+      <div class="banner lt-green-background">
+
+
+
+        <section class="section section-padded">
+
+
+          <div class="container-fluid">
+
+
+            <div class="row-fluid">
+
+
+
+              <h1 class="text-center white section-header">Start making data discoveries</h1>
+
+
+
+
+
+              <center>
+
+
+
+                <p class="lead">Download a trial of AMI with a flexible time period and no data cap</p>
+
+<br>
+
+                <a class="btn-link" href="secure_licenses.htm"><button class="trial-download-button btn btn-large btn-info btn-theme3">Get started</button></a>
+
+
+
+              </center>
+
+
+
+            </div>
+
+
+          </div>
+
+
+        </section>
+
+
+
+      </div>
+
+
+
+
+
+    </f1:if>
+
+
+
+
+
+
+
+    <f1:if test="OH.eq(${user.statusText},'STARTED_TRIAL')">
+
+
+
+
+
+      <!-- free trial banner -->
+
+
+      <div class="banner lt-green-background">
+
+
+
+        <section class="section section-padded">
+
+
+          <div class="container-fluid">
+
+
+            <div class="row-fluid">
+
+
+
+
+
+              <center>
+
+
+
+                <p id="banner-message" class="lead">Thank you for downloading AMI! Your trial ends in
+</p>
+
+
+
+
+
+                <div id="timer">
+
+
+
+                  <h3 style="color:white;">
+
+
+                    <span class="digit">--</span>days
+
+
+                    <span class="digit">--</span>hrs
+
+
+                    <span class="digit">--</span>min
+
+
+                  </h3>
+
+
+
+                </div>
+
+
+
+
+
+                <a class="btn-link" data-toggle="modal" data-target="#contactFormModal"><button class="btn btn-large btn-info btn-theme2">Need more time?</button></a>
+
+
+
+              </center>
+
+
+
+            </div>
+
+
+          </div>
+
+
+        </section>
+
+
+
+      </div>
+
+
+
+
+
+    </f1:if>
+
+
+
+
+
+
+    <f1:if test="OH.eq(${user.statusText},'ENDED_TRIAL')">
+
+
+
+
+
+      <!-- free trial banner -->
+
+
+      <div class="banner lt-green-background">
+
+
+
+        <section class="section section-padded">
+
+
+          <div class="container-fluid">
+
+
+            <div class="row-fluid">
+
+
+
+              <h2 class="text-center white">Your trial has ended</h2>
+<br>
+
+
+
+              <center>
+
+
+
+                <p class="lead">Contact our team to request an extension, schedule a demo or learn more about the AMI One and AMI Enterprise options.</p>
+
+<br>
+
+
+
+                <a class="btn-link" href="contact_support.htm"><button class="btn btn-large btn-info btn-theme2">Contact us</button></a>
+
+
+
+              </center>
+
+
+
+            </div>
+
+
+          </div>
+
+
+        </section>
+
+
+
+      </div>
+
+
+
+
+
+    </f1:if>
+
+
+
+
+
+
+
+
+    <!-- quick links -->
+
+
+
+
+
+    <f1:if test="OH.ne(${user.statusText},'ENTERPRISE') && OH.ne(${user.statusText},'ADMIN')">
+
+
+
+
+
+      <ul class="unstyled row-fluid">
+
+
+
+
+
+        <!-- first column -->
+
+
+        <li class="span6">
+
+
+
+
+
+          <!-- videos quick link -->
+
+
+          <a href="videos.htm" style="color: #024960;">
+
+
+
+            <div class="white-tile quicklink-lg">
+
+
+
+              <div class="scaleup">
+
+
+                <div class="preview-vids-img"></div>
+
+
+              </div>
+
+
+
+
+
+
+              <img class="videoplaybtn" src="v2_resources/images/play_button.png" alt="&#9655;"/>
+
+
+
+
+
+              <h4 class="preview-description" style="padding-top:30px;">
+Browse the videos</h4>
+
+
+
+            </div>
+
+
+
+          </a>
+
+
+
+
+
+        </li>
+
+
+
+
+
+        <!-- second and third columns -->
+
+
+        <li class="span6">
+
+
+
+
+
+          <!-- top row -->
+
+
+          <ul class="unstyled row-fluid">
+
+
+
+
+
+            <li class="span6">
+
+
+
+
+
+              <!-- devtools quick link -->
+
+
+              <a href="https://doc.3forge.com/getting_started/" target="_blank" style="color: #000000;">
+
+
+                <div class="white-tile quicklink">
+
+
+
+                  <center>
+
+
+
+                    <img class="preview-icon-lg" src="v2_resources/images/tools.png" alt="&#9874;"/>
+
+
+
+                    <p class="preview-description">Learn about AMI developer tools</p>
+
+
+
+                  </center>
+
+
+
+                </div>
+
+
+              </a>
+
+
+
+
+
+            </li>
+
+
+
+
+
+            <li class="span6">
+
+
+
+
+
+              <!-- manual quick link -->
+
+
+              <a href="pdfs/AMI_Front_End_User_Manual_V3.pdf" target="_blank" download style="color: #000000;">
+
+
+                <div class="white-tile quicklink">
+
+
+
+                  <center>
+
+
+
+                    <img class="preview-icon-lg" src="v2_resources/images/manual.png" alt="&#9728;" />
+
+
+
+                    <p class="preview-description">Download the AMI user manual</p>
+
+
+
+                  </center>
+
+
+
+                </div>
+
+
+              </a>
+
+
+
+
+
+            </li>
+
+
+
+
+
+          </ul>
+
+
+
+
+
+          <!-- bottom row -->
+
+
+
+
+          <ul class="unstyled row-fluid">
+
+
+
+
+
+            <li class="span6">
+
+
+
+
+
+              <!-- contact quick link -->
+
+			  
+              <a href="contact_support.htm" style="color: #000000;">
+
+
+                <div class="white-tile quicklink">
+
+
+
+                  <center>
+
+
+
+                    <img class="preview-icon-lg" src="v2_resources/images/contact.png" alt="&#9993;"/>
+
+
+
+                    <p class="preview-description">Contact the support team</p>
+
+
+
+                  </center>
+
+
+
+                </div>
+
+
+              </a>
+
+
+
+
+
+            </li>
+
+
+
+
+
+            <li class="span6">
+
+
+
+
+
+              <!-- purchase quick link -->
+
+
+              <a data-toggle="modal" data-target="#purchaseModal" style="color: #000000;">
+
+
+                <div class="blue-tile quicklink">
+
+
+
+                  <center>
+
+
+
+                    <img class="preview-icon-lg" src="v2_resources/images/go.png" alt="&rarr;"/>
+
+
+
+                    <p style="color:white;margin:0;" class="preview-description">Request a quote</p>
+
+
+
+                  </center>
+
+
+
+                </div>
+
+
+              </a>
+
+
+
+
+
+            </li>
+
+
+
+
+
+          </ul>
+
+
+
+
+
+        </li>
+
+
+
+
+
+      </ul>
+
+
+
+
+
+    </f1:if>
+
+
+
+
+
+
+
+
+    <f1:if test="OH.eq(${user.statusText},'ENTERPRISE')">
+
+
+
+
+
+      <ul class="unstyled row-fluid">
+
+
+
+
+
+        <li class="span9">
+
+
+
+
+
+          <!-- top row -->
+
+
+          <ul class="unstyled row-fluid">
+
+
+
+
+
+            <li class="span4" id="clockcard">
+
+
+
+
+
+              <div class="white-tile quicklink" style="padding:0;">
+
+
+                <div id="timecard">
+
+
+
+
+
+                  <center>
+
+
+
+                    <h1 id="clock"></h1>
+
+
+
+                    <p id="date"></p>
+
+
+
+                  </center>
+
+
+
+
+
+                </div>
+
+
+              </div>
+
+
+
+
+
+              <a href="contact_support.htm" style="color: #000000;">
+
+
+                <div class="white-tile quicklink">
+
+
+
+
+
+                  <center>
+
+
+
+                    <img class="preview-icon-lg" src="v2_resources/images/contact.png" alt="&#9993;"/>
+
+
+
+                    <p class="preview-description">Contact the support team</p>
+
+
+
+                  </center>
+
+
+
+
+
+                </div>
+
+
+              </a>
+
+
+
+
+
+            </li>
+
+
+
+
+
+            <li class="span8" id="doclinks">
+
+
+
+
+
+              <!-- documents quick link -->
+
+
+              <a href="documents.htm" style="color: #000000;">
+
+
+
+                <div class="white-tile quicklink-lg">
+
+
+
+
+
+                  <div class="scaleup">
+
+
+                    <div class="preview-docs-img"></div>
+
+
+                  </div>
+
+
+
+
+
+                  <p class="lead preview-description" style="margin-top:25px;">See latest documentation
+</p>
+
+
+
+
+
+                </div>
+
+
+
+              </a>
+
+
+
+
+
+            </li>
+
+
+
+
+
+          </ul>
+
+
+
+
+
+          <!-- bottom row -->
+
+
+          <ul class="unstyled row-fluid">
+
+
+
+
+
+            <li class="span8" id="videoslink">
+
+
+
+
+
+              <!-- videos quick link -->
+
+
+              <a href="videos.htm" style="color: #000000;">
+
+
+
+                <div class="white-tile quicklink-lg">
+
+
+
+
+
+                  <div class="scaleup">
+
+
+                    <div class="preview-vids-img"></div>
+
+
+                  </div>
+
+
+
+
+
+                  <p class="lead preview-description" style="margin-top: 25px;">Browse the videos
+</p>
+
+
+
+
+
+                </div>
+
+
+
+              </a>
+
+
+
+
+
+            </li>
+
+
+
+
+
+            <li class="span4" id="createnew">
+
+
+
+
+
+              <a href="secure_files?tok=<f1:out value="${sectoken}"/>" style="color: #000000;">
+
+
+
+                <div class="green-tile quicklink">
+
+
+
+
+
+                  <center>
+
+
+
+                    <img class="preview-icon-lg" src="v2_resources/images/files.png" alt="&#8645;"/>
+
+
+
+                    <p>Upload or download files</p>
+
+
+
+                  </center>
+
+
+
+
+
+                </div>
+
+
+
+              </a>
+
+
+
+
+
+              <a href="secure_licenses.htm#createlicense" style="color: #000000;">
+
+
+
+                <div class="green-tile quicklink">
+
+
+
+
+
+                  <center>
+
+
+
+                    <img class="preview-icon-lg" src="v2_resources/images/new_license.png" alt="&#9998;"/>
+
+
+
+                    <p>
+Create a license</p>
+
+
+
+                  </center>
+
+
+
+
+
+                </div>
+
+
+
+              </a>
+
+
+
+
+
+
+            </li>
+
+
+
+
+
+          </ul>
+
+
+
+
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+      </ul>
+
+
+
+
+
+    </f1:if>
+
+
+
+
+
+
+
+
+    <!-- admin -->
+
+
+
+    <f1:if test="OH.eq(${user.statusText},'ADMIN')">
+
+
+
+
+
+      <h2>User Spoofing</h2>
+
+
+
+
+
+      <form action="spoof" method="post" accept-charset="UTF-8" role="form" style="width:500px;">
+
+
+
+        <label id='error' style="color:red;"></label>
+
+
+
+        <input name='tok' type="hidden" value='<f1:out value="${sectoken}"/>'>
+        <input name='username' type="text" placeholder="Username"><br><br>
+
+
+
+        <button class="btn btn-info btn-theme1">Login as user</button>
+
+
+
+      </form>
+
+
+
+
+
+    </f1:if>
+
+
+
+
+
+    <f1:include page="'_/v2/footer.htm'"/>
+
+	</div>
+
+
+
+    <!-- include modals -->
+
+
+
+    <f1:include page="'modals.htm'"/>
+
+
+
+
+
+	<f1:script type="text/javascript" src="v2_resources/javascripts/script.js" nonce="true"/>
+	<f1:script type="text/javascript" src="v2_resources/javascripts/portal.js" nonce="true"/>
+</body>
+
+
+
+
+
+</html>
+
+

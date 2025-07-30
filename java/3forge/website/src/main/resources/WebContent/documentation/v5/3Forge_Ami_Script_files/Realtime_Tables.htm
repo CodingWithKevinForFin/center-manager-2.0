@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "8.1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Realtime Tables</title>
+<link rel="StyleSheet" href="../assets/css/3Forge_Ami_Script.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Realtime Tables">
+        <span>Realtime Tables</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h2 style="font-size: 24pt; margin-top: 5pt; margin-bottom: 15pt; line-height: Normal;">Realtime 
+ Tables</h2>
+<h3 style="margin-top: 5pt; margin-bottom: 1pt; line-height: Normal; font-size: 19pt; 
+	 color: #7030A0; font-family: Arial, sans-serif; text-decoration: none; "><a id="ADD" data-indexterm="ADD"></a><a name="create_public_table" id="create_public_table"><span style="color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; ">create_public_table_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+	 font-size: 12pt;">This command is used to create a new, empty (no 
+ rows) public table with a specified set of columns (names, types, no-null 
+ restriction).  If another public table already exists with the 
+ <span style="color: #0070C0;">tblname,</span> the create table will fail. </p>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+	 font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+	 font-size: 12pt;">At least one column must be specified, and each 
+ column must have a unique name. Columns with the nonull constraint cannot 
+ hold a null value. Updates and inserts in violation of the rule will fail.</p>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+	 font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+	 font-size: 12pt;">The Following <span courier="">Use</span> Options 
+ can be applied to a table:</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<ul style="list-style: circle;">
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">PersistEngine</span> -</p></li>
+	<ul style="list-style: circle;">
+		<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">&quot;FAST&quot;</span>: The table will 
+		 be persisted to disk using a fast, binary protocol. Additional 
+		 options include:</p></li>
+		<ul style="list-style: circle;">
+			<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">&quot;persist_dir&quot; = &quot;/path/to/directory/for/storing/file&quot;</span> 
+			 - this is the directory where the .fast binary file will be 
+			 saved/loaded from</p></li>
+			<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">&quot;persist_compact_percent&quot;</span><span style="color: #ff0000;"> </span><span style="color: #ff0000;">= 
+			 &quot;.95&quot;</span> - a number between 0 and 1 which says 
+			 how much of the file should contain updates &amp; deletes 
+			 before it&#39;s compacted. Because the FAST table uses a journaling 
+			 strategy, updates and deletes will get appended and can create 
+			 large files. Setting a value of .95 would indicate that if 
+			 the file becomes 95% updates and deletes then the file should 
+			 be rebuilt.</p></li>
+		</ul>
+		<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">&quot;TEXT&quot;</span><span style="text-indent: -.25in;">: 
+		 The table will be persisted to disk using a slow, but easy to 
+		 read text file</span></p></li>
+		<ul style="list-style: circle;">
+			<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; 
+			 orphans: 2; text-indent: -24px; widows: 2; -webkit-text-stroke-width: 0px; 
+			 text-decoration-style: initial; text-decoration-color: initial; 
+			 color: #ff0000;">&quot;persist_dir&quot; = &quot;/path/to/directory/for/storing/file&quot;</span> <span style="font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; 
+			 orphans: 2; text-indent: -24px; widows: 2; -webkit-text-stroke-width: 0px; 
+			 text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">- this is 
+			 the directory where the .txt text file will be saved/loaded 
+			 from</span><span style="text-indent: -.25in;"> </span></p></li>
+		</ul>
+	</ul>
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">P</span><span style="text-indent: -.25in; 
+											 color: #ff0000;">ersistEngine=&quot;<i style="color: #ff0000;">Custom&quot;</i></span><span style="text-indent: -.25in;">: 
+	 A custom persist engine will be used (see AMI plugins documentation). 
+	 Note, that </span><span style="text-indent: -.25in; color: #ff0000;">Pe</span><span style="text-indent: -.25in; color: #ff0000;">rsistOpt</span><span style="text-indent: -.25in; color: #ff0000;">ions=&quot;...&quot;</span><span style="text-indent: -.25in;"> is available to pass options to the 
+	 custom plugin.</span></p></li>
+	<li style="list-style: disc; font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; 
+		 font-size: 12pt;"><span style="text-indent: -.25in; color: #ff0000;">B</span><span style="line-height: normal; color: #ff0000;">roadcast=&quot;true&quot;</span><span style="line-height: normal;">: Front end visualizations &amp; external 
+	 listeners will be notified as data is updated in the table.</span></p></li>
+	<li style="list-style: disc; font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: normal; font-family: Arial, sans-serif; 
+		 font-size: 12pt;"><span style="color: #ff0000;">R</span><span style="color: #ff0000;">efreshPeriodMs=&quot;<i style="color: #ff0000;">durration_millis</i>&quot;</span>: 
+	 The period that the table will conflate and broadcast changes to front 
+	 end at.  For example, if a cells&#39; value changes 10 times 
+	 in one second and the refresh period is 500ms, then only ~2 updates 
+	 will be broadcast out (the other 8 will be conflated)</p></li>
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; line-height: normal; font-size: 12pt; 
+		 font-family: Arial, sans-serif;"><span style="color: #ff0000;">OnUndefColumn</span> 
+	 - Behaviour to take when a realtime Object record contains an undefined 
+	 column</p></li>
+	<ul style="list-style: circle;">
+		<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; line-height: normal; font-size: 12pt; 
+			 font-family: Arial, sans-serif;"><span style="color: #ff0000;">&quot;REJECT&quot;</span> 
+		 - The record will be rejected.  This is the default</p></li>
+		<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; line-height: normal; font-size: 12pt; 
+			 font-family: Arial, sans-serif;"><span style="color: #ff0000;">&quot;IGNORE&quot;</span> 
+		 - The  record will be inserted, but the undefined values 
+		 will be ignored</p></li>
+		<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; line-height: normal; font-size: 12pt; 
+			 font-family: Arial, sans-serif;"><span style="color: #ff0000;">&quot;ADD&quot;</span> 
+		 <span style="text-indent: -.25in;">-  The table will automatically 
+		 have the column added.</span></p></li>
+	</ul>
+	<li style="list-style: disc; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+		 line-height: normal; font-size: 12pt; font-family: Arial, sans-serif;"><span style="line-height: normal; font-size: 12pt; font-family: Arial, sans-serif; 
+	 text-indent: -.25in; color: #ff0000;">InitialCapacity=</span><span style="line-height: normal; font-size: 12pt; font-family: Arial, sans-serif; 
+	 text-indent: -.25in; font-style: italic; color: #ff0000;">&quot;number_of_rows&quot;</span><span style="line-height: normal; font-size: 12pt; font-family: Arial, sans-serif; 
+	 text-indent: -.25in;"> - the number of rows to allocate memory for 
+	 when the table is created. Must be at least 1. The default initial 
+	 capacity is 1,000 rows.</span></p></li>
+</ul>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; line-height: normal; 
+	 font-size: 11pt;"> </p>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-size: 13pt; 
+	 font-weight: bold; font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">SYNTAX</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #ff0000;">CREATE 
+ PUBLIC</span><span style="color: #ff0000;"> </span><span courier="" style="color: #ff0000;">TABLE</span> 
+ <span courier="" style="color: #ff0000;">[IF NOT EXISTS] </span><span courier="" style="color: #006dbf;">tblname</span> <span courier="" style="color: #808080;">(</span><span courier="" style="color: #006dbf;">col1</span> <span style="color: #0000ff; 
+															 text-decoration: underline; "><a href="#public_column_type">public_column_type</a></span><span style="color: #808080;"> 
+ </span><span courier="" style="color: #808080;"> <i style="color: #808080;">[</i></span><span courier="" style="color: #808080;">,</span><span courier=""> </span><span courier="" style="color: #0070C0;">col2</span><span courier=""> </span><span courier="" style="color: #0000ff; text-decoration: underline; "><a href="#public_column_type">public_column_type</a></span><span courier="" style="color: #0000ff;"> ...</span><span courier="" style="color: #808080;"><i>]</i></span><span courier="" style="color: #C00000;">)</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">      </span> <span courier=""><i style="color: #808080;">[</i></span><span courier="" style="color: #ff0000;">USE</span> 
+ <i><span courier=""> </span><span courier="" style="color: #808080;">[</span></i><span courier="" style="color: #ff0000;">PersistEngine</span><i><span courier="" style="color: #808080;">=&quot;</span><span courier="">[</span></i><span courier="" style="color: #ff0000;">FAST</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">TEXT</span><i><span courier="" style="color: #808080;">|custom]&quot;]</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 text-indent: .5in; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span courier=""><i style="color: #808080;">[</i></span><span courier="" style="color: #ff0000;">PersistOptions</span><i><span courier="" style="color: #808080;">=&quot;custom_options&quot;]</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 text-indent: .5in; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span courier=""><i style="color: #808080;">[</i></span><span courier="" style="color: #ff0000;">Broadcast</span><span courier=""><i style="color: #808080;">=&quot;[</i></span><span courier="" style="color: #ff0000;">true</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">false</span><i><span courier="" style="color: #808080;">]&quot;]</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 text-indent: .5in; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span courier=""><i style="color: #808080;">[</i></span><span courier="" style="color: #ff0000;">RefreshPeriodMs</span><i><span courier="" style="color: #808080;">=&quot;duration_millis&quot;]</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 text-indent: .5in; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span courier=""><i style="color: #808080;">[</i></span><span courier="" style="color: #ff0000;">OnUndefColumn</span><span courier=""><i style="color: #808080;">=&quot;</i></span><span courier="" style="color: #ff0000;">REJECT</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">IGNORE</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">ADD</span><i><span courier="" style="color: #808080;">&quot;]</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">tblname</span></i></b> 
+ -<i><span courier=""> string name of the table to create</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">colN -</span></i></b><i><span courier=""> string name of Nth column to create</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; color: #0070C0; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;">CREATE PUBLIC TABLE countries (country String NoNull, 
+ language String, GDP Double) USE PersistEngine=&quot;TEXT&quot; Broadcast=&quot;false&quot; 
+ InitialCapacity=&quot;100&quot;</p>
+<p style="margin-bottom: .0001pt; color: #0070C0; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; color: #0070C0; font-family: Arial, sans-serif;"> </p>
+<h3 style="font-size: 19pt; margin-top: 5pt; margin-bottom: 1pt; color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><a id="ANALYZE" data-indexterm="ANALYZE"></a><a id="AS" data-indexterm="AS"></a><a name="create_public_table_as" id="create_public_table_as"><span style="color: #7030A0; font-family: Arial, sans-serif; 
+										 text-decoration: none; ">create_public_table_as_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="color: #449938; font-size: 13pt; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;">This 
+ command is used to create a new table which has the same schema definition 
+ as the result set of a <span style="color: #7030A0;">select_clause</span>.  If 
+ another table already exists with the <span style="color: #0070C0;">tblname,</span> 
+ the create table will fail.</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;">                                                                                      </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">All 
+ rows from the <span style="color: #7030A0;">select_clause</span>&#39;s result 
+ set will be inserted into the table. For valid <span courier="" style="color: #bf0000;">USE</span> 
+ options, see <span style="color: #7030A0;">create_public_table_clause 
+ </span>Options.</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+<h4 style="color: #449938; font-size: 13pt; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">SYNTAX</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 11pt;"><span courier="">CREATE PUBLIC</span> 
+ <span courier=""><i> </i>TABLE</span> <span courier="">[IF NOT EXISTS] 
+ </span><span courier="" style="color: #006dbf;">tblname</span><b id="docs-internal-guid-ec1ad4d0-7fff-75b8-2886-0e3096e92654" style="font-weight: normal;"><span style="font-family: &#39;Courier New&#39;; 
+										 color: #808080; font-weight: 400; 
+										 font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400;">(</span><span style="font-family: &#39;Courier New&#39;; color: #006dbf; font-weight: 400;">col1</span> 
+ <span style="font-family: &#39;Courier New&#39;; color: #1155cc; font-weight: 400; 
+		 -webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">public_column_type</a></span><span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400;"> </span> <span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400; 
+	 font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;; 
+										 color: #808080; font-weight: 400;">,</span> 
+ <span style="font-family: &#39;Courier New&#39;; color: #0070c0; font-weight: 400;">col2</span> 
+ <span style="font-family: &#39;Courier New&#39;; color: #1155cc; font-weight: 400; 
+		 -webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">public_column_type</a></span> <span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400; 
+	 font-style: italic;">...]</span><span style="font-family: &#39;Courier New&#39;; 
+											 color: #c00000; font-weight: 400;">)</span><span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400; 
+	 font-style: italic;">]</span></b> <span courier=""><i style="color: #808080;">[</i>USE</span> 
+ <span style="color: #006dbf;">...</span> <i><span courier="" style="color: #808080;">]</span></i> 
+ <span courier=""> AS</span> <b><span courier="" style="color: #6d2d9e;">select_clause</span></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 11pt;"><span courier="">CREATE PUBLIC</span> 
+ <span courier=""><i> </i>TABLE</span> <span courier="">[IF NOT EXISTS] 
+ </span><span courier="" style="color: #006dbf;">tblname</span><b id="docs-internal-guid-ec1ad4d0-7fff-75b8-2886-0e3096e926541" style="font-weight: normal;"><span style="font-family: &#39;Courier New&#39;; 
+										 color: #808080; font-weight: 400; 
+										 font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400;">(</span><span style="font-family: &#39;Courier New&#39;; color: #006dbf; font-weight: 400;">col1</span> 
+ <span style="font-family: &#39;Courier New&#39;; color: #1155cc; font-weight: 400; 
+		 -webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">public_column_type</a></span><span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400;"> </span> <span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400; 
+	 font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;; 
+										 color: #808080; font-weight: 400;">,</span> 
+ <span style="font-family: &#39;Courier New&#39;; color: #0070c0; font-weight: 400;">col2</span> 
+ <span style="font-family: &#39;Courier New&#39;; color: #1155cc; font-weight: 400; 
+		 -webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">public_column_type</a></span> <span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400; 
+	 font-style: italic;">...]</span><span style="font-family: &#39;Courier New&#39;; 
+											 color: #c00000; font-weight: 400;">)</span><span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400; 
+	 font-style: italic;">]</span></b> <span courier=""><i style="color: #808080;">[</i>USE</span> 
+ <span style="color: #006dbf;">...</span> <i><span courier="" style="color: #808080;">]</span></i> 
+ <span courier=""> AS</span> <b><span courier="" style="color: #6d2d9e;">analyze_clause</span></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 11pt;"><span courier="">CREATE PUBLIC</span> 
+ <span courier=""><i> </i>TABLE</span> <span courier="">[IF NOT EXISTS] 
+ </span><span courier="" style="color: #006dbf;">tblname</span><b id="docs-internal-guid-ec1ad4d0-7fff-75b8-2886-0e3096e926542" style="font-weight: normal;"><span style="font-family: &#39;Courier New&#39;; 
+										 color: #808080; font-weight: 400; 
+										 font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400;">(</span><span style="font-family: &#39;Courier New&#39;; color: #006dbf; font-weight: 400;">col1</span> 
+ <span style="font-family: &#39;Courier New&#39;; color: #1155cc; font-weight: 400; 
+		 -webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">public_column_type</a></span><span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400;"> </span> <span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400; 
+	 font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;; 
+										 color: #808080; font-weight: 400;">,</span> 
+ <span style="font-family: &#39;Courier New&#39;; color: #0070c0; font-weight: 400;">col2</span> 
+ <span style="font-family: &#39;Courier New&#39;; color: #1155cc; font-weight: 400; 
+		 -webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><a href="https://3forge.com/documentation/v5/3Forge_Ami_Script_files/Realtime_Tables.htm?rhhlterm=create%20table&amp;rhsyns=%20#public_column_type" style="text-decoration: none; ">public_column_type</a></span> <span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400; 
+	 font-style: italic;">...]</span><span style="font-family: &#39;Courier New&#39;; 
+											 color: #c00000; font-weight: 400;">)</span><span style="font-family: &#39;Courier New&#39;; color: #808080; font-weight: 400; 
+	 font-style: italic;">]</span></b> <span courier=""><i style="color: #808080;">[</i>USE</span> 
+ <span style="color: #006dbf;">...</span> <i><span courier="" style="color: #808080;">]</span></i> 
+ <span courier=""> AS</span> <b><span courier="" style="color: #6d2d9e;">prepare_clause</span></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 11pt;"><span courier="">CREATE PUBLIC</span> 
+ <span courier=""><i> </i>TABLE</span> <span courier="">[IF NOT EXISTS] 
+ </span><span courier="" style="color: #006dbf;">tblname</span> <span courier=""><i style="color: #808080;">[</i>USE</span> <span style="color: #006dbf;">...</span> 
+ <i><span courier="" style="color: #808080;">]</span></i> <span courier=""> <i style="color: #808080;">[</i></span><span courier="" style="color: #006dbf;">, 
+ tblname</span> <span courier=""><i style="color: #808080;">[</i>USE</span> 
+ <span style="color: #006dbf;">...</span> <i><span courier="" style="color: #808080;">]</span></i> 
+ <span courier=""> </span><span courier="" style="color: #006dbf;">...</span><span courier=""><i style="color: #808080;">]</i></span> <span courier=""> AS</span> 
+ <b><span courier="" style="color: #6d2d9e;">execute_clause</span></b><b><span courier="" style="font-size: 8.0pt;">               </span></b></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-size: 11pt;"><b><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace;">tblname</span></i></b> 
+ -<i><span courier=""> string name of the table to create</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-size: 11pt;"> </p>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; font-size: 13pt; font-weight: bold; 
+	 font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">CREATE PUBLIC TABLE 
+ names USE PersistEngine=&quot;FAST&quot; AS SELECT first_name, last_name 
+ FROM employees</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: Arial, sans-serif;"> </p>
+<h3 style="margin-top: 5pt; margin-bottom: 1pt; font-size: 19pt; color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><a id="ADD1" data-indexterm="ADD"></a><a id="ALTER" data-indexterm="ALTER"></a><a id="AS1" data-indexterm="AS"></a><a name="alter_public_table_clause" id="alter_public_table_clause"><span style="color: #7030A0; font-family: Arial, sans-serif; 
+											 text-decoration: none; ">alter_public_table_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">This 
+ command alters the schema (column names and types) of an existing table.  You 
+ can add columns (<span style="color: #ff0000;">ADD</span>), rename columns 
+ (<span style="color: #ff0000;">RENAME ... TO</span>), delete columns (<span style="color: #ff0000;">DROP</span>), and change the type of columns 
+ (<span style="color: #ff0000;">MODIFY</span>).  Note, when multiple 
+ alterations are supplied, they are evaluated left to right. When changing 
+ types, a best effort cast will be applied.</p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">When 
+ adding columns, the new cells will default to null. The column will be 
+ added to the end (right-most) of the table.</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #ff0000;">ALTER PUBLIC 
+ TABLE</span> <span courier="" style="color: #006dbf;">tblname</span> <i><span courier=""> </span></i><b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#alter_col_expr" style="text-decoration: underline; ">alter_public_col_expr</a></span></b> 
+ <span courier=""> </span><i><span courier="" style="color: #808080;">[</span></i><i><span courier="">,</span></i> <b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#alter_col_expr" style="text-decoration: underline; ">alter_public_col_expr</a></span></b> 
+ <span courier=""> </span><span courier="" style="color: #808080;">...<i style="color: #808080;">]</i></span> <span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">tblname</span></i></b> 
+ -<i><span courier=""> string name of the table to alter</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">ALTER PUBLIC TABLE 
+ AccountHoldings ADD UserId long, RENAME AccountId TO Account_Id, DROP 
+ UserInfo</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">ALTER PUBLIC TABLE 
+ AccountHoldings MODIF UserId AS UserId INT</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">ALTER PUBLIC TABLE 
+ AccountHoldings RENAME UserId TO UserIds, ADD UserId STRING</span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; line-height: Normal;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="font-size: 19pt; font-weight: bold; margin-top: 5pt; margin-bottom: 1pt; 
+	 color: #7030a0; font-family: Arial, sans-serif;"><a id="alter_public_column_expr"></a><span class="Heading3" style="color: #7030a0; font-family: Arial, sans-serif;">alter_public_column_expr</span></p>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<p style="margin: 0in 0in 0.0001pt; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; line-height: 13.75pt; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #006dbf; font-size: 11pt; 
+	 margin-top: 15pt; margin-bottom: 3pt;"><span style="color: #ff0000;">MODIFY</span> 
+ colname <span style="color: #ff0000;">AS</span> newname <span style="color: #0000ff; 
+	 font-weight: bold; text-decoration: underline; "><a href="#public_column_type">public_column_type</a></span> 
+ |<span style="color: #ff0000;">ADD</span> newname <span style="font-weight: bold; 
+														 color: #0000ff; 
+														 text-decoration: underline; "><a href="#public_column_type">public_column_type</a></span> [<span style="color: #ff0000;">BEFORE</span> 
+ beforecol]|<span style="color: #ff0000;">DROP</span> colname|<span style="color: #ff0000;">RENAME</span> 
+ colname <span style="color: #ff0000;">TO</span> newname</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-style: italic;"><span style="font-weight: bold;">colname</span> 
+ - String name of the column to alter</p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-style: italic;"><span style="font-weight: bold;">newname</span> 
+ - String name of the column to create</p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-style: italic;"><span style="font-weight: bold;">beforecol</span> 
+ - String name of the existing column to add the new column before</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<h3 style="font-size: 19pt; margin-top: 5pt; margin-bottom: 1pt; color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><a name="rename_public_table" id="rename_public_table"><span style="color: #7030A0; font-family: Arial, sans-serif; 
+									 text-decoration: none; ">rename_public_table_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;">This 
+ command renames an existing table. If another table already exists with 
+ the <span style="color: #0070C0;">newname,</span> the existing table will 
+ be implicitly dropped and replaced with the renamed table.</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">SYNTAX</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 11pt;"><span courier="">RENAME PUBLIC TABLE</span> 
+ <span courier="" style="color: #006dbf;">tblname</span> <span courier=""><i> </i>TO</span> 
+ <span courier="" style="color: #006dbf;">newname</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">tblname</span></i></b> 
+ -<i><span courier=""> string name of the table to rename</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><b><i><span courier="">newname</span></i></b> 
+ -<i><span courier=""> string name of the new name for the table</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">RENAME PUBLIC TABLE 
+ AccountHoldings TO Accounts</span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<h3 style="margin-top: 5pt; margin-bottom: 1pt; font-size: 19pt; color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><a name="drop_public_table_clause" id="drop_public_table_clause"><span style="color: #7030A0; font-family: Arial, sans-serif; 
+										 text-decoration: none; ">drop_public_table_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">This 
+ command drops an existing table, along with its schema and all rows. You 
+ can specify multiple tables, separated by commas.</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">SYNTAX</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">DROP 
+ PUBLIC TABLE</span> <span courier="" style="color: #ff0000;">[IF EXISTS] 
+ </span><span courier="" style="color: #006dbf;">tblname</span> <span courier=""><i>[</i></span><span courier="" style="color: #006dbf;">, tblname</span><span style="color: #006dbf;"> 
+ ...</span><span courier=""><i>]</i></span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><i><span courier="" style="font-weight: bold;">tblname</span><span courier=""> - string name of the table to create</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">DROP PUBLIC TABLE 
+ Accounts</span></p>
+<p style="margin-bottom: 0pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: 0pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: 0pt; color: #6d2d9e; font-size: 19pt; font-weight: bold; 
+	 font-family: Arial, sans-serif;"><a style="font-family: Arial, sans-serif;" id="public_column_type">public_column_type</a></p>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<p>The following types are supported for columns in public tables.</p>
+<p style="line-height: Normal; margin-bottom: 0pt;">Note on Nulls: If the 
+ NONULL attribute is included, the column does not support null values, 
+ and inserts/updates of null will fail.</p>
+<p style="line-height: Normal; margin-bottom: 0pt;">Note on <span style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000;">NOBROADCAST</span>: Columns with broadcast disabled 
+ will not be included in updates sent to front end visualizations &amp; 
+ external listeners. This is a more granular version of the Broadcast option 
+ at the table level.</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-style: normal;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.8pt; background-color: #ffffff; 
+	 font-style: normal;"><span style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">BYTE</span><span style="font-family: &#39;Courier New&#39;, monospace;"> </span><i><span style="font-size: 12pt; font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span></i><i><span style="font-size: 12pt; color: #ff0000; font-family: &#39;Courier New&#39;, monospace; 
+	 font-style: italic;">NONULL</span></i><i><span style="font-size: 12pt; 
+													 font-family: &#39;Courier New&#39;, monospace; 
+													 font-style: italic;">]</span></i><i><span style="font-size: 12pt; font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span></i><i><span style="font-size: 12pt; color: #ff0000; font-family: &#39;Courier New&#39;, monospace; 
+	 font-style: italic;">NOBROADCAST</span></i><i><span style="font-size: 12pt; 
+														 font-family: &#39;Courier New&#39;; 
+														 font-style: italic;">]</span><span style="font-style: normal; font-size: 12pt; font-family: &#39;Courier New&#39;;"> 
+ </span></i>8-bit signed number (see java.lang.Byte for details on range). 
+ If NONULL is omitted then an extra 1-bit per row is used (precisely, 64-bits 
+ per each 64 rows).</p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.8pt; background-color: #ffffff; 
+	 font-size: 12pt;"><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">SHORT</span><span style="font-family: &#39;Courier New&#39;;"> <i>[</i></span><i><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">NONULL</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">NOBROADCAST</span><span style="font-family: &#39;Courier New&#39;;">]</span><span style="font-family: &#39;Courier New&#39;; 
+														 color: #ff0000;"> 
+ </span></i><span style="font-family: Arial, sans-serif;">16-bit signed 
+ number (see java.lang.Short for details on range). If NONULL is omitted 
+ then an extra 1-bit per row is used (precisely, 64-bits per each 64 rows).</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-style: normal;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">INT</span><span style="font-family: &#39;Courier New&#39;, monospace;"> </span><span style="font-family: &#39;Courier New&#39;, monospace; 
+	 font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;, monospace; 
+										 color: #ff0000; font-style: italic;">NONULL</span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">]</span><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i> 
+ <span style="font-family: Arial, sans-serif;">32-bit signed number (see 
+ java.lang.Integer for details on range). If NONULL is omitted then an 
+ extra 1-bit per row is used (precisely, 64-bits per each 64 rows).</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-style: normal;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">LONG 
+ </span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-style: italic;">NONULL</span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">]</span><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i> 
+ <span style="font-family: Arial, sans-serif;">64-bit signed number (see 
+ java.lang.Long for details on range). If NONULL is omitted then an extra 
+ 1-bit per row is used (precisely, 64-bits per each 64 rows).</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-style: normal;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">DOUBLE 
+ </span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-style: italic;">NONULL</span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">]</span><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i> 
+ <span style="font-family: Arial, sans-serif;">64-bit signed float (see 
+ java.lang.Double for details on range). If NONULL is omitted then an extra 
+ 1-bit per row is used (precisely, 64-bits per each 64 rows).</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-style: normal;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">FLOAT 
+ </span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-style: italic;">NONULL</span><span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">]</span><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i><span style="font-family: &#39;Courier New&#39;, monospace;"> </span><span style="font-family: Arial, sans-serif;">32-bit 
+ signed float (see java.lang.Float for details on range). If NONULL is 
+ omitted then an extra 1-bit per row is used (precisely, 64-bits per each 
+ 64 rows).</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.8pt; background-color: #ffffff; 
+	 font-style: normal;"><span style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">UTC</span> <span style="font-size: 12pt; font-family: &#39;Courier New&#39;; font-style: italic;">[</span><i><span style="font-size: 12pt; font-family: &#39;Courier New&#39;; color: #ff0000; 
+	 font-style: italic;">NONULL</span></i><i><span style="font-size: 12pt; 
+													 font-family: &#39;Courier New&#39;; 
+													 font-style: italic;">]</span></i><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;"> </span>64-bit 
+ unix epoc timestamp in milliseconds. If NONULL is omitted then an extra 
+ 1-bit per row is used (precisely, 64-bits per each 64 rows).</p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; line-height: 13.8pt; 
+	 background-color: #ffffff;"><span style="font-size: 12pt; font-family: &#39;Courier New&#39;; 
+										 color: #ff0000;">UTCN </span><span style="font-size: 12pt; font-family: &#39;Courier New&#39;; font-style: italic;">[</span><i><span style="font-size: 12pt; font-family: &#39;Courier New&#39;; color: #ff0000;">NONULL</span></i><i><span style="font-size: 12pt; font-family: &#39;Courier New&#39;;">]</span></i><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;"> </span><span style="font-size: 12pt; font-family: Arial, sans-serif;">64-bit unix 
+ epoc timestamp in nanoseconds. If NONULL is omitted then an extra 1-bit 
+ per row is used (precisely, 64-bits per each 64 rows).</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-style: normal;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">CHAR 
+ </span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-style: italic;">NONULL</span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">]</span><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i> 
+ <span style="font-family: Arial, sans-serif;">16-bit unicode character 
+ (see.java.lang.Character for details on range). If NONULL is omitted then 
+ an extra 1-bit per row is used (precisely, 64-bits per each 64 rows).</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-style: normal;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">BOOLEAN 
+ </span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-style: italic;">NONULL</span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">]</span><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i> 
+ <span style="font-family: Arial, sans-serif;">1-bit signed Boolean (see 
+ java.lang.Boolean for details on range).</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-style: normal;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">STRING 
+ </span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-style: italic;">NONULL</span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">]</span><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i> 
+ <span style="font-family: Arial, sans-serif;">variable length string. 
+ Each cell is backed by a java.lang.String instance</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">STRING 
+ COMPACT</span> <span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">[</span><span style="color: #ff0000; font-style: italic; font-family: &#39;Courier New&#39;, monospace;">NONULL</span><span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">]</span><i><span style="font-family: &#39;Courier New&#39;, monospace;">[</span></i><i><span style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;, monospace;">] </span></i>4-byte 
+ index into a continuous char array for all values in the column. Values 
+ are limited to 32,766 characters in length. Max total chars per column 
+ (include 2 byte EOL) is 2^31.</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">STRING 
+ COMPACT ASCII</span><span style="font-family: &#39;Courier New&#39;, monospace;"> 
+ </span><span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">[</span><span style="font-style: italic; color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NONULL</span><span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">]</span><i><span style="font-family: &#39;Courier New&#39;, monospace;">[</span></i><i><span style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;, monospace;">]</span></i> 4-byte 
+ index into a continuous byte array for all values in the column. Extended 
+ ascii not supported. Values are limited to 126 chars. Max total chars 
+ per column (include 1 byte EOL) is 2^31</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">ENUM</span> 
+ <span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">[</span><span style="font-style: italic; color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NONULL</span><span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">]</span><i><span style="font-family: &#39;Courier New&#39;, monospace;">[</span></i><i><span style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;, monospace;">]</span></i> 32-bit 
+ index into map of global Strings (map is shared across all public tables)</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">STRING 
+ BITMAP</span> <span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">[</span><span style="font-style: italic; color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NONULL</span><span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">]</span><i><span style="font-family: &#39;Courier New&#39;, monospace;">[</span></i><i><span style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;, monospace;">]</span></i>8-bit, 
+ 16-bit, or 32-bit address into an underlying map of strings (local to 
+ the column). The addressing depends on the number of unique values encountered 
+ in the column: 0 - 255 unique entries is 8-bit, 256 - 65,535 unique entries 
+ is 16-bit, otherwise 32-bit addressing is used. Note that as new unique 
+ values are added, the addressing will automatically escalate as needed. 
+ Note that entries from the underlying map are never removed, even as cells 
+ are updated deleted.</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">BINARY </span><i><span style="font-family: &#39;Courier New&#39;, monospace;">[</span></i><i><span style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NONULL</span></i><i><span style="font-family: &#39;Courier New&#39;, monospace;">][</span></i><i><span style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;, monospace;">]</span> </i><span style="font-family: &#39;Times New Roman&#39;, serif;"> </span>variable 
+ length byte array, useful for storing images and other media. </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">STRING ONDISK</span>  <i style="font-family: &#39;Courier New&#39;, monospace;"><span style="font-family: &#39;Courier New&#39;, monospace;">[</span><span style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NONULL</span><span style="font-family: &#39;Courier New&#39;, monospace;">][</span><span style="color: #ff0000; 
+	 font-family: &#39;Courier New&#39;, monospace;">CACHE=nnnMB</span><span style="font-family: &#39;Courier New&#39;, monospace;">][</span></i><i><span style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;, monospace;">]</span> </i><span style="font-family: &#39;Times New Roman&#39;, serif;"> </span>Same as 
+ a String, but only a 64-bit pointer is kept in memory, which resolves 
+ to a Block on disk, meaning that strings of any length will take up the 
+ same 64-bits in memory. The optional <span style="font-family: &#39;Courier New&#39;; 
+												 color: #ff0000;">CACHE</span> directive 
+ specifies the maximum RAM to use for caching the most recently used values, 
+ supported units are KB,MB,GB and TB (if no unit is specified, then in 
+ bytes),  example to cache 2 gigabytes: <i><span style="font-family: &#39;Courier New&#39;; 
+															 color: #ff0000;">STRING 
+ ONDISK</span></i> <i><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">CACHE=2GB.</span> </i>Cache-misses 
+ will result in reading from disk which can slow down query performance. 
+ </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">BINARY ONDISK</span>  <i style="font-family: &#39;Courier New&#39;, monospace;"><span style="font-family: &#39;Courier New&#39;, monospace;">[</span><span style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NONULL</span><span style="font-family: &#39;Courier New&#39;, monospace;">][</span><span style="color: #ff0000; 
+	 font-family: &#39;Courier New&#39;, monospace;">CACHE=nnnMB</span><span style="font-family: &#39;Courier New&#39;, monospace;">][</span></i><i><span style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;, monospace;">]</span> </i><span style="font-family: &#39;Times New Roman&#39;, serif;"> </span>Same as 
+ a Binary, but only a 64-bit pointer is kept in memory, which resolves 
+ to a Block on disk, meaning that binaries of any length will take up the 
+ same 64-bits in memory. The optional <span style="font-family: &#39;Courier New&#39;; 
+												 color: #ff0000;">CACHE</span> directive 
+ specifies the maximum RAM to use for caching the most recently used values, 
+ supported units are KB,MB,GB and TB (if no unit is specified, then in 
+ bytes), example to cache ~100 megs: <i><span style="font-family: &#39;Courier New&#39;; 
+													 color: #ff0000;">BINARY 
+ ONDISK</span></i> <i><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">CACHE=100000000.</span> </i>Cache-misses 
+ will result in reading from disk which can slow down query performance. 
+ </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">BIGDECIMAL </span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-style: italic;">NONULL</span><span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">]</span><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i><span style="font-family: &#39;Courier New&#39;, monospace;"> </span>Unbounded(variable 
+ length) signed decimal (see java.lang.BigDecimal for details on range). 
+ </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">BIGINTEGER </span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-style: italic;">NONULL</span><span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">]</span><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i><span style="font-family: &#39;Courier New&#39;, monospace;"> </span>Unbounded(variable 
+ length) signed number (see java.lang.BigInteger for details on range). 
+ </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">COMPLEX </span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-style: italic;">NONULL</span><span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">]</span><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i><span style="font-family: &#39;Courier New&#39;, monospace;"> </span>A 128-bit 
+ Complex number, composed of 64-bit signed real and 64-bit signed imaginary 
+ parts. </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">UUID</span><span style="font-family: &#39;Courier New&#39;, monospace; font-style: italic;">[</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-style: italic;">NONULL</span><span style="font-style: italic; font-family: &#39;Courier New&#39;, monospace;">]</span><i><span style="font-family: &#39;Courier New&#39;;">[</span></i><i><span style="font-family: &#39;Courier New&#39;; 
+	 color: #ff0000;">NOBROADCAST</span></i><i><span style="font-family: &#39;Courier New&#39;;">]</span></i><span style="font-family: &#39;Courier New&#39;, monospace;"> </span>a 128-bit 
+ Universally Unique Identifier. </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"> </p>
+<h4 style="font-size: 13pt; color: #449938; text-transform: uppercase; 
+	 font-family: Arial, sans-serif;">Choosing the best column type for 
+ String</h4>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;">Simple 
+ rules: For data that never repeats and is queried often <span style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000;">STRING</span> is the best. For columns with data 
+ that does not repeat but is not queried often <span style="font-family: &#39;Courier New&#39;, monospace; 
+													 color: #ff0000;">STRING 
+ COMPACT</span> (or <span style="font-family: &#39;Courier New&#39;, monospace; 
+							 color: #ff0000;">STRING COMPACT ASCII</span> 
+ for non-extended ascii data) offer a lower memory footprint. For repeating 
+ data, generally <span style="font-family: courier, monospace; color: #ff0000;">STRING 
+ BITMAP</span> is best. Below is a table outlining the advantages/disadvantages 
+ of each.</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; color: rgb(34, 34, 34); 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-style: normal; font-family: Arial, sans-serif;"> </p>
+<table class="m_-5160905304373193505MsoNormalTable" style="color: rgb(34, 34, 34); 
+		 font-family: Arial, Helvetica, sans-serif; font-size: small; font-variant-ligatures: normal; 
+		 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+		 text-decoration-style: initial; text-decoration-color: initial; 
+		 border-collapse: collapse;" cellspacing="0" bgcolor="#FFFFFF" width="100%" cellpadding="1">
+	<tbody><tr>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border: 1pt solid #000000; padding: 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="209"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><b><span style="font-family: Arial, sans-serif; color: #000000;">Type</span></b></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: 1pt solid #000000; border-right: 1pt solid #000000; 
+			 border-bottom: 1pt solid #000000; border-image: initial; border-left: none; 
+			 padding: 0in 5.4pt; padding-left: 0px; padding-top: 0px; padding-right: 0px; 
+			 padding-bottom: 0px;" width="372"><p class="MsoNormal" style="margin: 0px 0in; 
+													 font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;"><b><span style="font-family: Arial, sans-serif; color: #000000;">Storage 
+		 Method</span></b></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: 1pt solid #000000; border-right: 1pt solid #000000; 
+			 border-bottom: 1pt solid #000000; border-image: initial; border-left: none; 
+			 padding: 0in 5.4pt; padding-left: 0px; padding-top: 0px; padding-right: 0px; 
+			 padding-bottom: 0px;" width="204"><p class="MsoNormal" style="margin: 0px 0in; 
+													 font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;"><b><span style="font-family: Arial, sans-serif; color: #000000;">Advantage</span></b></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: 1pt solid #000000; border-right: 1pt solid #000000; 
+			 border-bottom: 1pt solid #000000; border-image: initial; border-left: none; 
+			 padding: 0in 5.4pt; padding-left: 0px; padding-top: 0px; padding-right: 0px; 
+			 padding-bottom: 0px;" width="366"><p class="MsoNormal" style="margin: 0px 0in; 
+													 font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;"><b><span style="font-family: Arial, sans-serif; color: #000000;">Disadvantage</span></b></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: 1pt solid #000000; border-right: 1pt solid #000000; 
+			 border-bottom: 1pt solid #000000; border-image: initial; border-left: none; 
+			 padding: 0in 5.4pt; padding-left: 0px; padding-top: 0px; padding-right: 0px; 
+			 padding-bottom: 0px;" width="492"><p class="MsoNormal" style="margin: 0px 0in; 
+													 font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;"><b><span style="font-family: Arial, sans-serif; color: #000000;">Usage 
+		 Scenario</span></b></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-right: 1pt solid #000000; border-bottom: 1pt solid #000000; 
+			 border-left: 1pt solid #000000; border-image: initial; border-top: none; 
+			 padding: 0in 5.4pt; padding-left: 0px; padding-top: 0px; padding-right: 0px; 
+			 padding-bottom: 0px;" width="209"><p class="MsoNormal" style="margin: 0px 0in; 
+													 font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">STRING</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="372"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Each cell 
+		 is stored as a java.lang.String object.</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="204"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Fastest 
+		 Retrieval</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="366"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">High Memory 
+		 Usage. Internally, each entry is stored as a java object.</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="492"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">For columns 
+		 that have very high cardinality and accessed often or participate 
+		 in indexes. Another use would be when the total data in the column 
+		 (adding up the lengths of all cells in the column) exceeds 2 billion 
+		 chars.</span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-right: 1pt solid #000000; border-bottom: 1pt solid #000000; 
+			 border-left: 1pt solid #000000; border-image: initial; border-top: none; 
+			 padding: 0in 5.4pt; padding-left: 0px; padding-top: 0px; padding-right: 0px; 
+			 padding-bottom: 0px;" width="209"><p class="MsoNormal" style="margin: 0px 0in; 
+													 font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">STRING COMPACT</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="372"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Each cell 
+		 contains a 32-bit address into a continuous char array.15-bits 
+		 are used to store string length. Each cell has a unique address.</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="204"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Low Memory/Object 
+		 usage. A single large continuous array</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="366"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Slower 
+		 Retrieval, as cell values are used a temporary string object may 
+		 be constructed. Frequent deletes or updates that change the cell 
+		 content lengths may result in array-data compaction.</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="492"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">For columns 
+		 that have high cardinality and whose cells are either beyond 126 
+		 chars or have extended ascii. But is not accessed frequently (ex, 
+		 as part of a where clause). For example<span> </span><i>comment</i><span> </span>columns</span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-right: 1pt solid #000000; border-bottom: 1pt solid #000000; 
+			 border-left: 1pt solid #000000; border-image: initial; border-top: none; 
+			 padding: 0in 5.4pt; padding-left: 0px; padding-top: 0px; padding-right: 0px; 
+			 padding-bottom: 0px;" width="209"><p class="MsoNormal" style="margin: 0px 0in; 
+													 font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">STRING COMPACT 
+		 ASCII</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="372"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Each cell 
+		 contains a 32-bit address into a continuous byte array. 7-bits 
+		 are used to store string length. Each cell has a unique address</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="204"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif;">1/2 the memory of a STRING 
+		 COMPACT.</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="366"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Slower 
+		 Retrieval, as cell values are used a temporary string object may 
+		 be constructed. Frequent deletes or updates that change the cell 
+		 content lengths may result in array-data compaction.</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="492"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Same as 
+		 STRING COMPACT, except limited to shorter strings that are basic 
+		 asci (not extended asci)</span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-right: 1pt solid #000000; border-bottom: 1pt solid #000000; 
+			 border-left: 1pt solid #000000; border-image: initial; border-top: none; 
+			 padding: 0in 5.4pt; padding-left: 0px; padding-top: 0px; padding-right: 0px; 
+			 padding-bottom: 0px;" width="209"><p class="MsoNormal" style="margin: 0px 0in; 
+													 font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">STRING BITMAP</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="372"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Each cell 
+		 contains a 8,16 or 32-bit address into a map of unique java.lang.String 
+		 Objects local to the column.  Multiple cells containing 
+		 the same value will share an address.</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="204"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Most Compact.</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="366"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Only used 
+		 for repeating data (lower cardinality). Retrieval is slightly 
+		 slower than a simple STRING column, but much faster than COMPACT 
+		 type columns.</span></p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="492"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="font-family: Arial, sans-serif; color: #000000;">Any scenario 
+		 where columns have lower cardinality and fewer than approximately 
+		 32,000 unique values.</span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-right: 1pt solid #000000; border-bottom: 1pt solid #000000; 
+			 border-left: 1pt solid #000000; border-image: initial; border-top: none; 
+			 padding: 0in 5.4pt; padding-left: 0px; padding-top: 0px; padding-right: 0px; 
+			 padding-bottom: 0px;" width="209"><p class="MsoNormal" style="margin: 0px 0in; 
+													 font-size: 12pt; font-family: &#39;Courier New&#39;; 
+													 color: #ff0000;">ENUM</p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="372"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: Arial, sans-serif;">Each cell 
+		 contains a 32-bit address into a map of unique java.lang.String 
+		 Objects, global to the entire database.  Multiple cells 
+		 containing the same value will share an address, even if those 
+		 cells are on different columns of type ENUM.</p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="204"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: Arial, sans-serif;">Compact.  Note: 
+		 this is generally for legacy, BITMAP is generally preferred</p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="366"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: Arial, sans-serif;">Must be used 
+		 only on columns with low cardinality. Note this is mostly for 
+		 legacy support and STRING BITMAP is prefered.</p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="492"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: Arial, sans-serif;">When several 
+		 columns all use a similar set of values (ex: BUY,SELL, SHORT) 
+		 then all columns can be set to use ENUM.</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-right: 1pt solid #000000; border-bottom: 1pt solid #000000; 
+			 border-left: 1pt solid #000000; border-image: initial; border-top: none; 
+			 padding: 0in 5.4pt; padding-left: 0px; padding-top: 0px; padding-right: 0px; 
+			 padding-bottom: 0px;" width="209"><p class="MsoNormal" style="margin: 0px 0in; 
+													 font-size: 12pt; font-family: &#39;Courier New&#39;, monospace; 
+													 color: #ff0000;">STRING 
+		 ONDISK</p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="372"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="color: rgb(34, 34, 34); font-family: Arial, sans-serif; 
+		 background-color: #ffffff; display: inline	 ! important ; float: none;">Each 
+		 cell contains a 64-bit address into a random-access file. And 
+		 only the most recent values read/wrote are cached in memory</span> 
+		 </p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="204"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: Arial, sans-serif;"><span style="color: rgb(34, 34, 34); 
+		 background-color: #ffffff; display: inline	 ! important ; float: none;">Fixed 
+		 memory size regardless of string length.</span> </p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="366"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="color: rgb(34, 34, 34); font-family: Arial, sans-serif; 
+		 background-color: #ffffff; display: inline	 ! important ; float: none;">Slower 
+		 read times for un-cached Strings</span> </p></td>
+		<td style="vertical-align: top; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; 
+			 margin: 0px; border-top: none; border-left: none; border-bottom: 1pt solid #000000; 
+			 border-right: 1pt solid #000000; padding: 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="492"><p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; 
+							 font-family: &#39;Times New Roman&#39;, serif;"><span style="color: rgb(34, 34, 34); font-family: Arial, sans-serif; 
+		 background-color: #ffffff; display: inline	 ! important ; float: none;">For 
+		 large text documents or those that do not need to be searched 
+		 on</span> </p></td>
+	</tr>
+</tbody></table>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-style: normal;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-style: normal;"> </p>
+<h3 style="margin-top: 5pt; margin-bottom: 1pt; font-size: 19pt; color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><a name="Reserved_columns_on" id="Reserved_columns_on"><span style="color: #7030A0; font-family: Arial, sans-serif; 
+									 text-decoration: none; ">Reserved 
+ columns on public Tables</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<p style="margin-bottom: 0pt; font-family: Arial, sans-serif; font-size: 12pt;">If 
+ any of the following columns are declared they will be automatically populated 
+ by the AMI engine. Note that when creating the table, the column type 
+ MUST match the type specified below, otherwise table creation will fail. 
+ Note all times are since unix epoc in milliseconds.</p>
+<p style="font-family: Arial, sans-serif; font-size: 11pt; margin-bottom: 0pt;"> </p>
+<table style="border: none; margin-left: 6.75pt; margin-right: 6.75pt; 
+		 border-collapse: separate;" cellspacing="0" width="643" align="left" cellpadding="1">
+	<tbody><tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: solid #000000 1.0px; 
+			 border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="43"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;">Name</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="54"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; font-size: 10pt; font-family: Arial, sans-serif;">Type<span courier=""> </span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; font-size: 10pt; font-family: Arial, sans-serif;">Label<span courier=""> </span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="66"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; font-size: 10pt; font-family: Arial, sans-serif;">Mutatable</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="402"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; font-size: 10pt; font-family: Arial, sans-serif;">Description<span courier=""> </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="43"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; color: #ff0000; font-family: &#39;Courier New&#39;, monospace; 
+			 font-size: 10pt;"><span courier="">C</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="54"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+							 font-size: 10pt;"><span courier="">Long</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"><span style="color: #595959;">Created On</span><span courier=""> </span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="66"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="402"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"><span style="color: #595959;">Time that the record was inserted into 
+		 the table</span><span courier=""> </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="43"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; color: #ff0000; font-family: &#39;Courier New&#39;, monospace; 
+			 font-size: 10pt;"><span courier="">D</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="54"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+							 font-size: 10pt;"><span courier="">Long</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"><span style="color: #595959;">AMI ID</span><span courier=""> </span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="66"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="402"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"><span style="color: #595959;">An auto-generated incrementing unique 
+		 id for the row. Unique across all tables.</span><span courier=""> </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="43"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; color: #ff0000; font-family: &#39;Courier New&#39;, monospace; 
+			 font-size: 10pt;"><span courier="">E</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="54"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+							 font-size: 10pt;"><span courier="">Long</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 color: #595959; font-size: 10pt; font-family: Arial, sans-serif;">Expires 
+		 On</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="66"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 color: #595959; font-size: 10pt; font-family: Arial, sans-serif;">INSERT, 
+		 UPDATE</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="402"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 color: #595959; font-size: 10pt; font-family: Arial, sans-serif;">Time 
+		 when the row should be automatically deleted.</p>
+		<p style="margin-bottom: .0001pt; line-height: normal; color: #595959; 
+			 font-size: 10pt; font-family: Arial, sans-serif;">   * 
+		 Negative Number - Offset from now. Ex:  -4000 remove 
+		 four seconds from now</p>
+		<p style="margin-bottom: .0001pt; line-height: normal; color: #595959; 
+			 font-size: 10pt; font-family: Arial, sans-serif;">   * 
+		 Zero or Null - don&#39;t automatically delete</p>
+		<p style="margin-bottom: .0001pt; line-height: normal; font-size: 10pt; 
+			 font-family: Arial, sans-serif;"><span style="color: #595959;">   * 
+		 Positive number - time since epoc to. Ex: 2510712000000L remove 
+		 07/24/2049</span><span courier=""> </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="43"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+			 color: #ff0000; font-size: 10pt;"><span courier="">I<sup>*</sup></span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="54"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+							 font-size: 10pt;"><span courier="">String</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 color: #595959; font-size: 10pt; font-family: Arial, sans-serif;">UniqueID</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="66"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"><span style="color: #595959;">INSERT</span><span courier=""> </span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="402"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"><span style="color: #595959;">The Id(</span><span courier="" style="color: #ff0000;">I</span><span style="color: #595959;">) value supplied from the realtime streaming 
+		 on the Object (</span><span courier="" style="color: #ff0000;">O</span><span style="color: #595959;">) message</span><span courier=""> </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="43"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+			 color: #ff0000; font-size: 10pt;"><span courier="">M</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="54"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+							 font-size: 10pt;"><span courier="">Long</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 color: #595959; font-size: 10pt; font-family: Arial, sans-serif;">Modified 
+		 On</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="66"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="402"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"><span style="color: #595959;">Most recent time that the record was updated 
+		 (initially the time the row was inserted)</span><span courier=""> </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="43"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+			 color: #ff0000; font-size: 10pt;"><span courier="">P</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="54"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+							 font-size: 10pt;"><span courier="">String</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 color: #595959; font-size: 10pt; font-family: Arial, sans-serif;">Login 
+		 ID</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="66"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"><span style="color: #595959;">INSERT</span><span courier=""> </span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="402"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"><span style="color: #595959;">The Login Id (</span><span courier="" style="color: #ff0000;">I</span><span style="color: #595959;">) value supplied from the realtime messaging 
+		 api on the Login (</span><span courier="" style="color: #ff0000;">L</span><span style="color: #595959;">) message</span><span courier=""> </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="43"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+			 color: #ff0000; font-size: 10pt;"><span courier="">V</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="54"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+							 font-size: 10pt;"><span courier="">Int</span></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 color: #595959; font-size: 10pt; font-family: Arial, sans-serif;">Revision</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="66"> </td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="402"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"><span style="color: #595959;">The number of times the record has been 
+		 updated (initially zero)</span><span courier=""> </span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="43"><p style="margin-bottom: .0001pt; 
+			 line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+			 color: #ff0000; font-size: 10pt;">T</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="54"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+							 font-size: 10pt;">Enum</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 color: #595959; font-size: 10pt; font-family: Arial, sans-serif;">Table 
+		 Name</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="66"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="402"><p style="margin-bottom: .0001pt; line-height: normal; 
+							 font-size: 10pt; font-family: Arial, sans-serif;"><span courier="" style="color: #595959;">The name of the table, all 
+		 cells will contain the same value (this is for backwards compatibility)</span><span courier=""> </span></p></td>
+	</tr>
+</tbody></table>
+<p style="font-size: 10pt;"> </p>
+<p style="font-size: 10pt;"> </p>
+<p style="font-size: 10pt;"> </p>
+<p style="font-size: 10pt;"> </p>
+<p style="font-size: 10pt;"> </p>
+<p style="font-size: 10pt;"> </p>
+<p style="font-size: 10pt;"> </p>
+<p style="font-size: 10pt;"> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p style="font-size: 11pt;"> </p>
+<p style="font-size: 11pt;"> </p>
+<p style="font-size: 11pt;"><span courier="" style="font-family: Arial, sans-serif; 
+									 font-size: 12pt;">* </span><span courier="" style="color: #bf0000; font-family: Arial, sans-serif; font-size: 12pt;">I</span><span style="font-family: Arial, sans-serif; font-size: 12pt;"> (and </span><span courier="" style="color: #bf0000; font-family: Arial, sans-serif; 
+	 font-size: 12pt;">P</span><span style="font-family: Arial, sans-serif; 
+									 font-size: 12pt;">) column behavior 
+ can be thought of as a convenient way of supporting the &quot;upsert&quot; 
+ concept:</span><span style="text-indent: -.25in; font-family: Arial, sans-serif;"> 
+ </span></p>
+<ul style="list-style: disc;">
+	<li style="font-size: 12pt;"><span style="text-indent: -.25in; font-family: Arial, sans-serif;">If 
+	 the </span><span courier="" style="text-indent: -.25in; color: #bf0000; 
+						 font-family: Arial, sans-serif;">I</span><span style="text-indent: -.25in; font-family: Arial, sans-serif;"> column 
+	 is defined (but not the P column) AMI treats </span><span courier="" style="text-indent: -.25in; font-family: Arial, sans-serif;">I</span><span style="text-indent: -.25in; font-family: Arial, sans-serif;"> as a 
+	 (pseudo) primary key. An attempt to insert a row with the same non-null 
+	 </span><span courier="" style="text-indent: -.25in; color: #bf0000; 
+					 font-family: Arial, sans-serif;">I</span><span style="text-indent: -.25in; 
+	 font-family: Arial, sans-serif;"> value as an existing row will result 
+	 in an update to the existing row instead of an insert. This is different 
+	 from a standard PRIMARY key in that two rows can exist in a table 
+	 with the same key if the key is null. <i style="font-family: Arial, sans-serif;">Please 
+	 see</i></span><span style="text-indent: -.25in; font-family: Arial, sans-serif;"> 
+	 </span><span courier="" style="text-indent: -.25in; font-family: &#39;Courier New&#39;, monospace; 
+					 color: #006dbf;">CREATE INDEX ... USE CONSTRAINT=&quot;PRIMARY&quot;</span><span style="text-indent: -.25in;"> </span><i><span style="text-indent: -.25in; 
+													 font-family: Arial, sans-serif;">for 
+	 standard primary keys.</span></i></li>
+</ul>
+<p style="margin-bottom: 0pt; text-indent: -.25in; font-family: Arial, sans-serif;"> </p>
+<p style="font-size: 11pt; font-family: Arial, sans-serif;"><span style="font-size: 12pt;">If 
+ both the </span><span courier="" style="color: #bf0000; font-size: 12pt;">P</span><span style="font-size: 12pt;"> and </span><span courier="" style="color: #bf0000; 
+												 font-size: 12pt;">I</span><span style="font-size: 12pt;"> columns are defined, AMI treats the</span><span style="color: #bf0000; font-size: 12pt;"> </span><span courier="" style="color: #bf0000; 
+															 font-size: 12pt;">P 
+ + I</span><span style="font-size: 12pt;"> combination as a (pseudo) primary 
+ key. An attempt to insert a row with the same non-null </span><span courier="" style="color: #bf0000; font-size: 12pt;">P</span><span style="font-size: 12pt;"> 
+ and </span><span courier="" style="color: #bf0000; font-size: 12pt;">I</span><span courier="" style="font-size: 12pt;"> </span><span style="font-size: 12pt;">values 
+ as an existing row will result in an update to the existing row instead 
+ of an insert. This is different from a standard PRIMARY key in that two 
+ rows can exist in a table with the same key if the key contains a null 
+ value. <i style="font-size: 12pt;">Please see</i></span> <span courier="" style="color: #006dbf;">CREATE INDEX ... USE CONSTRAINT=&quot;PRIMARY&quot;</span> 
+ <i style="font-size: 12pt;">for standard primary keys.</i></p>
+<p style="font-size: 19pt; color: #7030a0; font-family: Arial, sans-serif;"><span class="Heading3" style="font-family: Arial, sans-serif; color: #7030a0;"><a id="Table_DefinedBy_Attributes"></a>Table DefinedBy Attributes</span></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

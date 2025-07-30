@@ -1,0 +1,44 @@
+{
+  "includeFiles":[
+  ],
+  "metadata":{
+    "customPrefsImportMode":"reject",
+    "dm":{
+    },
+    "fileVersion":3,
+    "menubarPosition":"top",
+    "rt":{
+    },
+    "stm":{
+      "styles":[
+        {
+          "id":"LAYOUT_DEFAULT",
+          "lb":"Layout Default",
+          "pt":"DEFAULT",
+          "vars":{
+            "colors":[
+              {
+                "name":"$CLR1",
+                "value":"#ef0909"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "transientIdPrefix":"TRANSIENT_"
+  },
+  "portletConfigs":[
+    {
+      "portletBuilderId":"amidesktop",
+      "portletConfig":{
+        "amiPanelId":"@DESKTOP",
+        "amiStyle":{
+          "pt":"LAYOUT_DEFAULT"
+        },
+        "windows":[
+        ]
+      }
+    }
+  ]
+}

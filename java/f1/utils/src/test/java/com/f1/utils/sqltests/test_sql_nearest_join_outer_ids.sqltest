@@ -1,0 +1,1331 @@
+****TEST_INPUT_QUERY****
+create table gteL as select * from large outer join small on large.id == small.id nearest large.n >= small.n order by large.id, large.n;
+create table gtL as select * from large outer join small on large.id == small.id nearest large.n > small.n order by large.id, large.n;
+create table lteL as select * from large outer join small on large.id == small.id nearest large.n <= small.n order by large.id, large.n;
+create table ltL as select * from large outer join small on large.id == small.id nearest large.n < small.n order by large.id, large.n;
+create table gteS as select * from small outer join large on large.id == small.id nearest small.n >= large.n order by small.id, small.n;
+create table gtS as select * from small outer join large on large.id == small.id nearest small.n > large.n order by small.id, small.n;
+create table lteS as select * from small outer join large on large.id == small.id nearest small.n <= large.n order by small.id, small.n;
+create table ltS as select * from small outer join large on large.id == small.id nearest small.n < large.n order by small.id, small.n;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+small
++------------+
+|   small    |
++-------+----+
+|id     |n   |
+|Integer|Long|
++-------+----+
+|0      !null|
+|0      |0   |
+|0      |3   |
+|0      |6   |
+|0      |9   |
+|0      |12  |
+|-1     !null|
+|-1     |0   |
+|-1     |3   |
+|-1     |6   |
+|-1     |9   |
+|-1     |12  |
+|-2     !null|
+|-2     |0   |
+|-2     |3   |
+|-2     |6   |
+|-2     |9   |
+|-2     |12  |
+|-3     !null|
+|-3     |0   |
+|-3     |3   |
+|-3     |6   |
+|-3     |9   |
+|-3     |12  |
+|-4     !null|
+|-4     |0   |
+|-4     |3   |
+|-4     |6   |
+|-4     |9   |
+|-4     |12  |
++-------+----+
+
+large
++------------+
+|   large    |
++-------+----+
+|id     |n   |
+|Integer|Long|
++-------+----+
+|0      !null|
+|0      |0   |
+|0      |1   |
+|0      |2   |
+|0      |3   |
+|0      |4   |
+|0      |5   |
+|0      |6   |
+|0      |7   |
+|0      |8   |
+|0      |9   |
+|0      |10  |
+|0      |11  |
+|0      |12  |
+|0      |13  |
+|0      |14  |
+|1      !null|
+|1      |0   |
+|1      |1   |
+|1      |2   |
+|1      |3   |
+|1      |4   |
+|1      |5   |
+|1      |6   |
+|1      |7   |
+|1      |8   |
+|1      |9   |
+|1      |10  |
+|1      |11  |
+|1      |12  |
+|1      |13  |
+|1      |14  |
+|2      !null|
+|2      |0   |
+|2      |1   |
+|2      |2   |
+|2      |3   |
+|2      |4   |
+|2      |5   |
+|2      |6   |
+|2      |7   |
+|2      |8   |
+|2      |9   |
+|2      |10  |
+|2      |11  |
+|2      |12  |
+|2      |13  |
+|2      |14  |
+|3      !null|
+|3      |0   |
+|3      |1   |
+|3      |2   |
+|3      |3   |
+|3      |4   |
+|3      |5   |
+|3      |6   |
+|3      |7   |
+|3      |8   |
+|3      |9   |
+|3      |10  |
+|3      |11  |
+|3      |12  |
+|3      |13  |
+|3      |14  |
+|4      !null|
+|4      |0   |
+|4      |1   |
+|4      |2   |
+|4      |3   |
+|4      |4   |
+|4      |5   |
+|4      |6   |
+|4      |7   |
+|4      |8   |
+|4      |9   |
+|4      |10  |
+|4      |11  |
+|4      |12  |
+|4      |13  |
+|4      |14  |
++-------+----+
+
+****TEST_RESULT****
+834
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS gteL  SELECT "*" FROM large OUTER JOIN small ON large . id == small . id NEAREST large . n >= small . n ORDER BY ASC large . id,ASC large . nCREATE TABLE AS gtL  SELECT "*" FROM large OUTER JOIN small ON large . id == small . id NEAREST large . n > small . n ORDER BY ASC large . id,ASC large . nCREATE TABLE AS lteL  SELECT "*" FROM large OUTER JOIN small ON large . id == small . id NEAREST large . n <= small . n ORDER BY ASC large . id,ASC large . nCREATE TABLE AS ltL  SELECT "*" FROM large OUTER JOIN small ON large . id == small . id NEAREST large . n < small . n ORDER BY ASC large . id,ASC large . nCREATE TABLE AS gteS  SELECT "*" FROM small OUTER JOIN large ON large . id == small . id NEAREST small . n >= large . n ORDER BY ASC small . id,ASC small . nCREATE TABLE AS gtS  SELECT "*" FROM small OUTER JOIN large ON large . id == small . id NEAREST small . n > large . n ORDER BY ASC small . id,ASC small . nCREATE TABLE AS lteS  SELECT "*" FROM small OUTER JOIN large ON large . id == small . id NEAREST small . n <= large . n ORDER BY ASC small . id,ASC small . nCREATE TABLE AS ltS  SELECT "*" FROM small OUTER JOIN large ON large . id == small . id NEAREST small . n < large . n ORDER BY ASC small . id,ASC small . n
+
+PROJECTION : 
+SELECT "*" FROM large OUTER JOIN small ON large . id == small . id NEAREST large . n >= small . n ORDER BY ASC large . id,ASC large . n
+
+TEMP_INDEX : 
+On 'small.id'
+
+NESTING_QUERY : 
+#0 large indexing to [large.id ==> small.id NEAREST large.n ==> small.n]
+
+NESTING_QUERY : 
+#1 small
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+ORDER_BY : 
+Sorting 104 rows on large.id,large.n (needed 2 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM large OUTER JOIN small ON large . id == small . id NEAREST large . n > small . n ORDER BY ASC large . id,ASC large . n
+
+TEMP_INDEX : 
+On 'small.id'
+
+NESTING_QUERY : 
+#0 large indexing to [large.id ==> small.id NEAREST large.n ==> small.n]
+
+NESTING_QUERY : 
+#1 small
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+ORDER_BY : 
+Sorting 104 rows on large.id,large.n (needed 2 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM large OUTER JOIN small ON large . id == small . id NEAREST large . n <= small . n ORDER BY ASC large . id,ASC large . n
+
+TEMP_INDEX : 
+On 'small.id'
+
+NESTING_QUERY : 
+#0 large indexing to [large.id ==> small.id NEAREST large.n ==> small.n]
+
+NESTING_QUERY : 
+#1 small
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+ORDER_BY : 
+Sorting 104 rows on large.id,large.n (needed 2 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM large OUTER JOIN small ON large . id == small . id NEAREST large . n < small . n ORDER BY ASC large . id,ASC large . n
+
+TEMP_INDEX : 
+On 'small.id'
+
+NESTING_QUERY : 
+#0 large indexing to [large.id ==> small.id NEAREST large.n ==> small.n]
+
+NESTING_QUERY : 
+#1 small
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+ORDER_BY : 
+Sorting 105 rows on large.id,large.n (needed 2 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM small OUTER JOIN large ON large . id == small . id NEAREST small . n >= large . n ORDER BY ASC small . id,ASC small . n
+
+TEMP_INDEX : 
+On 'large.id'
+
+NESTING_QUERY : 
+#0 small indexing to [small.id ==> large.id NEAREST small.n ==> large.n]
+
+NESTING_QUERY : 
+#1 large
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+ORDER_BY : 
+Sorting 104 rows on small.id,small.n (needed 2 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM small OUTER JOIN large ON large . id == small . id NEAREST small . n > large . n ORDER BY ASC small . id,ASC small . n
+
+TEMP_INDEX : 
+On 'large.id'
+
+NESTING_QUERY : 
+#0 small indexing to [small.id ==> large.id NEAREST small.n ==> large.n]
+
+NESTING_QUERY : 
+#1 large
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+ORDER_BY : 
+Sorting 105 rows on small.id,small.n (needed 2 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM small OUTER JOIN large ON large . id == small . id NEAREST small . n <= large . n ORDER BY ASC small . id,ASC small . n
+
+TEMP_INDEX : 
+On 'large.id'
+
+NESTING_QUERY : 
+#0 small indexing to [small.id ==> large.id NEAREST small.n ==> large.n]
+
+NESTING_QUERY : 
+#1 large
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+ORDER_BY : 
+Sorting 104 rows on small.id,small.n (needed 2 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM small OUTER JOIN large ON large . id == small . id NEAREST small . n < large . n ORDER BY ASC small . id,ASC small . n
+
+TEMP_INDEX : 
+On 'large.id'
+
+NESTING_QUERY : 
+#0 small indexing to [small.id ==> large.id NEAREST small.n ==> large.n]
+
+NESTING_QUERY : 
+#1 large
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+ORDER_BY : 
+Sorting 104 rows on small.id,small.n (needed 2 temp columns)
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+gteS
++-----------------------------+
+|            gteS             |
++-------+----+--------+-------+
+|id     |n   |large_id|large_n|
+|Integer|Long|Integer |Long   |
++-------+----+--------+-------+
+!null   !null|0       |1      |
+!null   !null|0       |2      |
+!null   !null|0       |4      |
+!null   !null|0       |5      |
+!null   !null|0       |7      |
+!null   !null|0       |8      |
+!null   !null|0       |10     |
+!null   !null|0       |11     |
+!null   !null|0       |13     |
+!null   !null|0       |14     |
+!null   !null|1       !null   |
+!null   !null|1       |0      |
+!null   !null|1       |1      |
+!null   !null|1       |2      |
+!null   !null|1       |3      |
+!null   !null|1       |4      |
+!null   !null|1       |5      |
+!null   !null|1       |6      |
+!null   !null|1       |7      |
+!null   !null|1       |8      |
+!null   !null|1       |9      |
+!null   !null|1       |10     |
+!null   !null|1       |11     |
+!null   !null|1       |12     |
+!null   !null|1       |13     |
+!null   !null|1       |14     |
+!null   !null|2       !null   |
+!null   !null|2       |0      |
+!null   !null|2       |1      |
+!null   !null|2       |2      |
+!null   !null|2       |3      |
+!null   !null|2       |4      |
+!null   !null|2       |5      |
+!null   !null|2       |6      |
+!null   !null|2       |7      |
+!null   !null|2       |8      |
+!null   !null|2       |9      |
+!null   !null|2       |10     |
+!null   !null|2       |11     |
+!null   !null|2       |12     |
+!null   !null|2       |13     |
+!null   !null|2       |14     |
+!null   !null|3       !null   |
+!null   !null|3       |0      |
+!null   !null|3       |1      |
+!null   !null|3       |2      |
+!null   !null|3       |3      |
+!null   !null|3       |4      |
+!null   !null|3       |5      |
+!null   !null|3       |6      |
+!null   !null|3       |7      |
+!null   !null|3       |8      |
+!null   !null|3       |9      |
+!null   !null|3       |10     |
+!null   !null|3       |11     |
+!null   !null|3       |12     |
+!null   !null|3       |13     |
+!null   !null|3       |14     |
+!null   !null|4       !null   |
+!null   !null|4       |0      |
+!null   !null|4       |1      |
+!null   !null|4       |2      |
+!null   !null|4       |3      |
+!null   !null|4       |4      |
+!null   !null|4       |5      |
+!null   !null|4       |6      |
+!null   !null|4       |7      |
+!null   !null|4       |8      |
+!null   !null|4       |9      |
+!null   !null|4       |10     |
+!null   !null|4       |11     |
+!null   !null|4       |12     |
+!null   !null|4       |13     |
+!null   !null|4       |14     |
+|-4     !null!null    !null   |
+|-4     |0   !null    !null   |
+|-4     |3   !null    !null   |
+|-4     |6   !null    !null   |
+|-4     |9   !null    !null   |
+|-4     |12  !null    !null   |
+|-3     !null!null    !null   |
+|-3     |0   !null    !null   |
+|-3     |3   !null    !null   |
+|-3     |6   !null    !null   |
+|-3     |9   !null    !null   |
+|-3     |12  !null    !null   |
+|-2     !null!null    !null   |
+|-2     |0   !null    !null   |
+|-2     |3   !null    !null   |
+|-2     |6   !null    !null   |
+|-2     |9   !null    !null   |
+|-2     |12  !null    !null   |
+|-1     !null!null    !null   |
+|-1     |0   !null    !null   |
+|-1     |3   !null    !null   |
+|-1     |6   !null    !null   |
+|-1     |9   !null    !null   |
+|-1     |12  !null    !null   |
+|0      !null|0       !null   |
+|0      |0   |0       |0      |
+|0      |3   |0       |3      |
+|0      |6   |0       |6      |
+|0      |9   |0       |9      |
+|0      |12  |0       |12     |
++-------+----+--------+-------+
+
+ltL
++-----------------------------+
+|             ltL             |
++-------+----+--------+-------+
+|id     |n   |small_id|small_n|
+|Integer|Long|Integer |Long   |
++-------+----+--------+-------+
+!null   !null|0       !null   |
+!null   !null|-1      !null   |
+!null   !null|-1      |0      |
+!null   !null|-1      |3      |
+!null   !null|-1      |6      |
+!null   !null|-1      |9      |
+!null   !null|-1      |12     |
+!null   !null|-2      !null   |
+!null   !null|-2      |0      |
+!null   !null|-2      |3      |
+!null   !null|-2      |6      |
+!null   !null|-2      |9      |
+!null   !null|-2      |12     |
+!null   !null|-3      !null   |
+!null   !null|-3      |0      |
+!null   !null|-3      |3      |
+!null   !null|-3      |6      |
+!null   !null|-3      |9      |
+!null   !null|-3      |12     |
+!null   !null|-4      !null   |
+!null   !null|-4      |0      |
+!null   !null|-4      |3      |
+!null   !null|-4      |6      |
+!null   !null|-4      |9      |
+!null   !null|-4      |12     |
+|0      !null|0       |0      |
+|0      |0   |0       |3      |
+|0      |1   |0       |3      |
+|0      |2   |0       |3      |
+|0      |3   |0       |6      |
+|0      |4   |0       |6      |
+|0      |5   |0       |6      |
+|0      |6   |0       |9      |
+|0      |7   |0       |9      |
+|0      |8   |0       |9      |
+|0      |9   |0       |12     |
+|0      |10  |0       |12     |
+|0      |11  |0       |12     |
+|0      |12  !null    !null   |
+|0      |13  !null    !null   |
+|0      |14  !null    !null   |
+|1      !null!null    !null   |
+|1      |0   !null    !null   |
+|1      |1   !null    !null   |
+|1      |2   !null    !null   |
+|1      |3   !null    !null   |
+|1      |4   !null    !null   |
+|1      |5   !null    !null   |
+|1      |6   !null    !null   |
+|1      |7   !null    !null   |
+|1      |8   !null    !null   |
+|1      |9   !null    !null   |
+|1      |10  !null    !null   |
+|1      |11  !null    !null   |
+|1      |12  !null    !null   |
+|1      |13  !null    !null   |
+|1      |14  !null    !null   |
+|2      !null!null    !null   |
+|2      |0   !null    !null   |
+|2      |1   !null    !null   |
+|2      |2   !null    !null   |
+|2      |3   !null    !null   |
+|2      |4   !null    !null   |
+|2      |5   !null    !null   |
+|2      |6   !null    !null   |
+|2      |7   !null    !null   |
+|2      |8   !null    !null   |
+|2      |9   !null    !null   |
+|2      |10  !null    !null   |
+|2      |11  !null    !null   |
+|2      |12  !null    !null   |
+|2      |13  !null    !null   |
+|2      |14  !null    !null   |
+|3      !null!null    !null   |
+|3      |0   !null    !null   |
+|3      |1   !null    !null   |
+|3      |2   !null    !null   |
+|3      |3   !null    !null   |
+|3      |4   !null    !null   |
+|3      |5   !null    !null   |
+|3      |6   !null    !null   |
+|3      |7   !null    !null   |
+|3      |8   !null    !null   |
+|3      |9   !null    !null   |
+|3      |10  !null    !null   |
+|3      |11  !null    !null   |
+|3      |12  !null    !null   |
+|3      |13  !null    !null   |
+|3      |14  !null    !null   |
+|4      !null!null    !null   |
+|4      |0   !null    !null   |
+|4      |1   !null    !null   |
+|4      |2   !null    !null   |
+|4      |3   !null    !null   |
+|4      |4   !null    !null   |
+|4      |5   !null    !null   |
+|4      |6   !null    !null   |
+|4      |7   !null    !null   |
+|4      |8   !null    !null   |
+|4      |9   !null    !null   |
+|4      |10  !null    !null   |
+|4      |11  !null    !null   |
+|4      |12  !null    !null   |
+|4      |13  !null    !null   |
+|4      |14  !null    !null   |
++-------+----+--------+-------+
+
+lteL
++-----------------------------+
+|            lteL             |
++-------+----+--------+-------+
+|id     |n   |small_id|small_n|
+|Integer|Long|Integer |Long   |
++-------+----+--------+-------+
+!null   !null|-1      !null   |
+!null   !null|-1      |0      |
+!null   !null|-1      |3      |
+!null   !null|-1      |6      |
+!null   !null|-1      |9      |
+!null   !null|-1      |12     |
+!null   !null|-2      !null   |
+!null   !null|-2      |0      |
+!null   !null|-2      |3      |
+!null   !null|-2      |6      |
+!null   !null|-2      |9      |
+!null   !null|-2      |12     |
+!null   !null|-3      !null   |
+!null   !null|-3      |0      |
+!null   !null|-3      |3      |
+!null   !null|-3      |6      |
+!null   !null|-3      |9      |
+!null   !null|-3      |12     |
+!null   !null|-4      !null   |
+!null   !null|-4      |0      |
+!null   !null|-4      |3      |
+!null   !null|-4      |6      |
+!null   !null|-4      |9      |
+!null   !null|-4      |12     |
+|0      !null|0       !null   |
+|0      |0   |0       |0      |
+|0      |1   |0       |3      |
+|0      |2   |0       |3      |
+|0      |3   |0       |3      |
+|0      |4   |0       |6      |
+|0      |5   |0       |6      |
+|0      |6   |0       |6      |
+|0      |7   |0       |9      |
+|0      |8   |0       |9      |
+|0      |9   |0       |9      |
+|0      |10  |0       |12     |
+|0      |11  |0       |12     |
+|0      |12  |0       |12     |
+|0      |13  !null    !null   |
+|0      |14  !null    !null   |
+|1      !null!null    !null   |
+|1      |0   !null    !null   |
+|1      |1   !null    !null   |
+|1      |2   !null    !null   |
+|1      |3   !null    !null   |
+|1      |4   !null    !null   |
+|1      |5   !null    !null   |
+|1      |6   !null    !null   |
+|1      |7   !null    !null   |
+|1      |8   !null    !null   |
+|1      |9   !null    !null   |
+|1      |10  !null    !null   |
+|1      |11  !null    !null   |
+|1      |12  !null    !null   |
+|1      |13  !null    !null   |
+|1      |14  !null    !null   |
+|2      !null!null    !null   |
+|2      |0   !null    !null   |
+|2      |1   !null    !null   |
+|2      |2   !null    !null   |
+|2      |3   !null    !null   |
+|2      |4   !null    !null   |
+|2      |5   !null    !null   |
+|2      |6   !null    !null   |
+|2      |7   !null    !null   |
+|2      |8   !null    !null   |
+|2      |9   !null    !null   |
+|2      |10  !null    !null   |
+|2      |11  !null    !null   |
+|2      |12  !null    !null   |
+|2      |13  !null    !null   |
+|2      |14  !null    !null   |
+|3      !null!null    !null   |
+|3      |0   !null    !null   |
+|3      |1   !null    !null   |
+|3      |2   !null    !null   |
+|3      |3   !null    !null   |
+|3      |4   !null    !null   |
+|3      |5   !null    !null   |
+|3      |6   !null    !null   |
+|3      |7   !null    !null   |
+|3      |8   !null    !null   |
+|3      |9   !null    !null   |
+|3      |10  !null    !null   |
+|3      |11  !null    !null   |
+|3      |12  !null    !null   |
+|3      |13  !null    !null   |
+|3      |14  !null    !null   |
+|4      !null!null    !null   |
+|4      |0   !null    !null   |
+|4      |1   !null    !null   |
+|4      |2   !null    !null   |
+|4      |3   !null    !null   |
+|4      |4   !null    !null   |
+|4      |5   !null    !null   |
+|4      |6   !null    !null   |
+|4      |7   !null    !null   |
+|4      |8   !null    !null   |
+|4      |9   !null    !null   |
+|4      |10  !null    !null   |
+|4      |11  !null    !null   |
+|4      |12  !null    !null   |
+|4      |13  !null    !null   |
+|4      |14  !null    !null   |
++-------+----+--------+-------+
+
+gtL
++-----------------------------+
+|             gtL             |
++-------+----+--------+-------+
+|id     |n   |small_id|small_n|
+|Integer|Long|Integer |Long   |
++-------+----+--------+-------+
+!null   !null|-1      !null   |
+!null   !null|-1      |0      |
+!null   !null|-1      |3      |
+!null   !null|-1      |6      |
+!null   !null|-1      |9      |
+!null   !null|-1      |12     |
+!null   !null|-2      !null   |
+!null   !null|-2      |0      |
+!null   !null|-2      |3      |
+!null   !null|-2      |6      |
+!null   !null|-2      |9      |
+!null   !null|-2      |12     |
+!null   !null|-3      !null   |
+!null   !null|-3      |0      |
+!null   !null|-3      |3      |
+!null   !null|-3      |6      |
+!null   !null|-3      |9      |
+!null   !null|-3      |12     |
+!null   !null|-4      !null   |
+!null   !null|-4      |0      |
+!null   !null|-4      |3      |
+!null   !null|-4      |6      |
+!null   !null|-4      |9      |
+!null   !null|-4      |12     |
+|0      !null!null    !null   |
+|0      |0   |0       !null   |
+|0      |1   |0       |0      |
+|0      |2   |0       |0      |
+|0      |3   |0       |0      |
+|0      |4   |0       |3      |
+|0      |5   |0       |3      |
+|0      |6   |0       |3      |
+|0      |7   |0       |6      |
+|0      |8   |0       |6      |
+|0      |9   |0       |6      |
+|0      |10  |0       |9      |
+|0      |11  |0       |9      |
+|0      |12  |0       |9      |
+|0      |13  |0       |12     |
+|0      |14  |0       |12     |
+|1      !null!null    !null   |
+|1      |0   !null    !null   |
+|1      |1   !null    !null   |
+|1      |2   !null    !null   |
+|1      |3   !null    !null   |
+|1      |4   !null    !null   |
+|1      |5   !null    !null   |
+|1      |6   !null    !null   |
+|1      |7   !null    !null   |
+|1      |8   !null    !null   |
+|1      |9   !null    !null   |
+|1      |10  !null    !null   |
+|1      |11  !null    !null   |
+|1      |12  !null    !null   |
+|1      |13  !null    !null   |
+|1      |14  !null    !null   |
+|2      !null!null    !null   |
+|2      |0   !null    !null   |
+|2      |1   !null    !null   |
+|2      |2   !null    !null   |
+|2      |3   !null    !null   |
+|2      |4   !null    !null   |
+|2      |5   !null    !null   |
+|2      |6   !null    !null   |
+|2      |7   !null    !null   |
+|2      |8   !null    !null   |
+|2      |9   !null    !null   |
+|2      |10  !null    !null   |
+|2      |11  !null    !null   |
+|2      |12  !null    !null   |
+|2      |13  !null    !null   |
+|2      |14  !null    !null   |
+|3      !null!null    !null   |
+|3      |0   !null    !null   |
+|3      |1   !null    !null   |
+|3      |2   !null    !null   |
+|3      |3   !null    !null   |
+|3      |4   !null    !null   |
+|3      |5   !null    !null   |
+|3      |6   !null    !null   |
+|3      |7   !null    !null   |
+|3      |8   !null    !null   |
+|3      |9   !null    !null   |
+|3      |10  !null    !null   |
+|3      |11  !null    !null   |
+|3      |12  !null    !null   |
+|3      |13  !null    !null   |
+|3      |14  !null    !null   |
+|4      !null!null    !null   |
+|4      |0   !null    !null   |
+|4      |1   !null    !null   |
+|4      |2   !null    !null   |
+|4      |3   !null    !null   |
+|4      |4   !null    !null   |
+|4      |5   !null    !null   |
+|4      |6   !null    !null   |
+|4      |7   !null    !null   |
+|4      |8   !null    !null   |
+|4      |9   !null    !null   |
+|4      |10  !null    !null   |
+|4      |11  !null    !null   |
+|4      |12  !null    !null   |
+|4      |13  !null    !null   |
+|4      |14  !null    !null   |
++-------+----+--------+-------+
+
+ltS
++-----------------------------+
+|             ltS             |
++-------+----+--------+-------+
+|id     |n   |large_id|large_n|
+|Integer|Long|Integer |Long   |
++-------+----+--------+-------+
+!null   !null|0       !null   |
+!null   !null|0       |2      |
+!null   !null|0       |3      |
+!null   !null|0       |5      |
+!null   !null|0       |6      |
+!null   !null|0       |8      |
+!null   !null|0       |9      |
+!null   !null|0       |11     |
+!null   !null|0       |12     |
+!null   !null|0       |14     |
+!null   !null|1       !null   |
+!null   !null|1       |0      |
+!null   !null|1       |1      |
+!null   !null|1       |2      |
+!null   !null|1       |3      |
+!null   !null|1       |4      |
+!null   !null|1       |5      |
+!null   !null|1       |6      |
+!null   !null|1       |7      |
+!null   !null|1       |8      |
+!null   !null|1       |9      |
+!null   !null|1       |10     |
+!null   !null|1       |11     |
+!null   !null|1       |12     |
+!null   !null|1       |13     |
+!null   !null|1       |14     |
+!null   !null|2       !null   |
+!null   !null|2       |0      |
+!null   !null|2       |1      |
+!null   !null|2       |2      |
+!null   !null|2       |3      |
+!null   !null|2       |4      |
+!null   !null|2       |5      |
+!null   !null|2       |6      |
+!null   !null|2       |7      |
+!null   !null|2       |8      |
+!null   !null|2       |9      |
+!null   !null|2       |10     |
+!null   !null|2       |11     |
+!null   !null|2       |12     |
+!null   !null|2       |13     |
+!null   !null|2       |14     |
+!null   !null|3       !null   |
+!null   !null|3       |0      |
+!null   !null|3       |1      |
+!null   !null|3       |2      |
+!null   !null|3       |3      |
+!null   !null|3       |4      |
+!null   !null|3       |5      |
+!null   !null|3       |6      |
+!null   !null|3       |7      |
+!null   !null|3       |8      |
+!null   !null|3       |9      |
+!null   !null|3       |10     |
+!null   !null|3       |11     |
+!null   !null|3       |12     |
+!null   !null|3       |13     |
+!null   !null|3       |14     |
+!null   !null|4       !null   |
+!null   !null|4       |0      |
+!null   !null|4       |1      |
+!null   !null|4       |2      |
+!null   !null|4       |3      |
+!null   !null|4       |4      |
+!null   !null|4       |5      |
+!null   !null|4       |6      |
+!null   !null|4       |7      |
+!null   !null|4       |8      |
+!null   !null|4       |9      |
+!null   !null|4       |10     |
+!null   !null|4       |11     |
+!null   !null|4       |12     |
+!null   !null|4       |13     |
+!null   !null|4       |14     |
+|-4     !null!null    !null   |
+|-4     |0   !null    !null   |
+|-4     |3   !null    !null   |
+|-4     |6   !null    !null   |
+|-4     |9   !null    !null   |
+|-4     |12  !null    !null   |
+|-3     !null!null    !null   |
+|-3     |0   !null    !null   |
+|-3     |3   !null    !null   |
+|-3     |6   !null    !null   |
+|-3     |9   !null    !null   |
+|-3     |12  !null    !null   |
+|-2     !null!null    !null   |
+|-2     |0   !null    !null   |
+|-2     |3   !null    !null   |
+|-2     |6   !null    !null   |
+|-2     |9   !null    !null   |
+|-2     |12  !null    !null   |
+|-1     !null!null    !null   |
+|-1     |0   !null    !null   |
+|-1     |3   !null    !null   |
+|-1     |6   !null    !null   |
+|-1     |9   !null    !null   |
+|-1     |12  !null    !null   |
+|0      !null|0       |0      |
+|0      |0   |0       |1      |
+|0      |3   |0       |4      |
+|0      |6   |0       |7      |
+|0      |9   |0       |10     |
+|0      |12  |0       |13     |
++-------+----+--------+-------+
+
+gtS
++-----------------------------+
+|             gtS             |
++-------+----+--------+-------+
+|id     |n   |large_id|large_n|
+|Integer|Long|Integer |Long   |
++-------+----+--------+-------+
+!null   !null|0       |0      |
+!null   !null|0       |1      |
+!null   !null|0       |3      |
+!null   !null|0       |4      |
+!null   !null|0       |6      |
+!null   !null|0       |7      |
+!null   !null|0       |9      |
+!null   !null|0       |10     |
+!null   !null|0       |12     |
+!null   !null|0       |13     |
+!null   !null|0       |14     |
+!null   !null|1       !null   |
+!null   !null|1       |0      |
+!null   !null|1       |1      |
+!null   !null|1       |2      |
+!null   !null|1       |3      |
+!null   !null|1       |4      |
+!null   !null|1       |5      |
+!null   !null|1       |6      |
+!null   !null|1       |7      |
+!null   !null|1       |8      |
+!null   !null|1       |9      |
+!null   !null|1       |10     |
+!null   !null|1       |11     |
+!null   !null|1       |12     |
+!null   !null|1       |13     |
+!null   !null|1       |14     |
+!null   !null|2       !null   |
+!null   !null|2       |0      |
+!null   !null|2       |1      |
+!null   !null|2       |2      |
+!null   !null|2       |3      |
+!null   !null|2       |4      |
+!null   !null|2       |5      |
+!null   !null|2       |6      |
+!null   !null|2       |7      |
+!null   !null|2       |8      |
+!null   !null|2       |9      |
+!null   !null|2       |10     |
+!null   !null|2       |11     |
+!null   !null|2       |12     |
+!null   !null|2       |13     |
+!null   !null|2       |14     |
+!null   !null|3       !null   |
+!null   !null|3       |0      |
+!null   !null|3       |1      |
+!null   !null|3       |2      |
+!null   !null|3       |3      |
+!null   !null|3       |4      |
+!null   !null|3       |5      |
+!null   !null|3       |6      |
+!null   !null|3       |7      |
+!null   !null|3       |8      |
+!null   !null|3       |9      |
+!null   !null|3       |10     |
+!null   !null|3       |11     |
+!null   !null|3       |12     |
+!null   !null|3       |13     |
+!null   !null|3       |14     |
+!null   !null|4       !null   |
+!null   !null|4       |0      |
+!null   !null|4       |1      |
+!null   !null|4       |2      |
+!null   !null|4       |3      |
+!null   !null|4       |4      |
+!null   !null|4       |5      |
+!null   !null|4       |6      |
+!null   !null|4       |7      |
+!null   !null|4       |8      |
+!null   !null|4       |9      |
+!null   !null|4       |10     |
+!null   !null|4       |11     |
+!null   !null|4       |12     |
+!null   !null|4       |13     |
+!null   !null|4       |14     |
+|-4     !null!null    !null   |
+|-4     |0   !null    !null   |
+|-4     |3   !null    !null   |
+|-4     |6   !null    !null   |
+|-4     |9   !null    !null   |
+|-4     |12  !null    !null   |
+|-3     !null!null    !null   |
+|-3     |0   !null    !null   |
+|-3     |3   !null    !null   |
+|-3     |6   !null    !null   |
+|-3     |9   !null    !null   |
+|-3     |12  !null    !null   |
+|-2     !null!null    !null   |
+|-2     |0   !null    !null   |
+|-2     |3   !null    !null   |
+|-2     |6   !null    !null   |
+|-2     |9   !null    !null   |
+|-2     |12  !null    !null   |
+|-1     !null!null    !null   |
+|-1     |0   !null    !null   |
+|-1     |3   !null    !null   |
+|-1     |6   !null    !null   |
+|-1     |9   !null    !null   |
+|-1     |12  !null    !null   |
+|0      !null!null    !null   |
+|0      |0   |0       !null   |
+|0      |3   |0       |2      |
+|0      |6   |0       |5      |
+|0      |9   |0       |8      |
+|0      |12  |0       |11     |
++-------+----+--------+-------+
+
+lteS
++-----------------------------+
+|            lteS             |
++-------+----+--------+-------+
+|id     |n   |large_id|large_n|
+|Integer|Long|Integer |Long   |
++-------+----+--------+-------+
+!null   !null|0       |1      |
+!null   !null|0       |2      |
+!null   !null|0       |4      |
+!null   !null|0       |5      |
+!null   !null|0       |7      |
+!null   !null|0       |8      |
+!null   !null|0       |10     |
+!null   !null|0       |11     |
+!null   !null|0       |13     |
+!null   !null|0       |14     |
+!null   !null|1       !null   |
+!null   !null|1       |0      |
+!null   !null|1       |1      |
+!null   !null|1       |2      |
+!null   !null|1       |3      |
+!null   !null|1       |4      |
+!null   !null|1       |5      |
+!null   !null|1       |6      |
+!null   !null|1       |7      |
+!null   !null|1       |8      |
+!null   !null|1       |9      |
+!null   !null|1       |10     |
+!null   !null|1       |11     |
+!null   !null|1       |12     |
+!null   !null|1       |13     |
+!null   !null|1       |14     |
+!null   !null|2       !null   |
+!null   !null|2       |0      |
+!null   !null|2       |1      |
+!null   !null|2       |2      |
+!null   !null|2       |3      |
+!null   !null|2       |4      |
+!null   !null|2       |5      |
+!null   !null|2       |6      |
+!null   !null|2       |7      |
+!null   !null|2       |8      |
+!null   !null|2       |9      |
+!null   !null|2       |10     |
+!null   !null|2       |11     |
+!null   !null|2       |12     |
+!null   !null|2       |13     |
+!null   !null|2       |14     |
+!null   !null|3       !null   |
+!null   !null|3       |0      |
+!null   !null|3       |1      |
+!null   !null|3       |2      |
+!null   !null|3       |3      |
+!null   !null|3       |4      |
+!null   !null|3       |5      |
+!null   !null|3       |6      |
+!null   !null|3       |7      |
+!null   !null|3       |8      |
+!null   !null|3       |9      |
+!null   !null|3       |10     |
+!null   !null|3       |11     |
+!null   !null|3       |12     |
+!null   !null|3       |13     |
+!null   !null|3       |14     |
+!null   !null|4       !null   |
+!null   !null|4       |0      |
+!null   !null|4       |1      |
+!null   !null|4       |2      |
+!null   !null|4       |3      |
+!null   !null|4       |4      |
+!null   !null|4       |5      |
+!null   !null|4       |6      |
+!null   !null|4       |7      |
+!null   !null|4       |8      |
+!null   !null|4       |9      |
+!null   !null|4       |10     |
+!null   !null|4       |11     |
+!null   !null|4       |12     |
+!null   !null|4       |13     |
+!null   !null|4       |14     |
+|-4     !null!null    !null   |
+|-4     |0   !null    !null   |
+|-4     |3   !null    !null   |
+|-4     |6   !null    !null   |
+|-4     |9   !null    !null   |
+|-4     |12  !null    !null   |
+|-3     !null!null    !null   |
+|-3     |0   !null    !null   |
+|-3     |3   !null    !null   |
+|-3     |6   !null    !null   |
+|-3     |9   !null    !null   |
+|-3     |12  !null    !null   |
+|-2     !null!null    !null   |
+|-2     |0   !null    !null   |
+|-2     |3   !null    !null   |
+|-2     |6   !null    !null   |
+|-2     |9   !null    !null   |
+|-2     |12  !null    !null   |
+|-1     !null!null    !null   |
+|-1     |0   !null    !null   |
+|-1     |3   !null    !null   |
+|-1     |6   !null    !null   |
+|-1     |9   !null    !null   |
+|-1     |12  !null    !null   |
+|0      !null|0       !null   |
+|0      |0   |0       |0      |
+|0      |3   |0       |3      |
+|0      |6   |0       |6      |
+|0      |9   |0       |9      |
+|0      |12  |0       |12     |
++-------+----+--------+-------+
+
+small
++------------+
+|   small    |
++-------+----+
+|id     |n   |
+|Integer|Long|
++-------+----+
+|0      !null|
+|0      |0   |
+|0      |3   |
+|0      |6   |
+|0      |9   |
+|0      |12  |
+|-1     !null|
+|-1     |0   |
+|-1     |3   |
+|-1     |6   |
+|-1     |9   |
+|-1     |12  |
+|-2     !null|
+|-2     |0   |
+|-2     |3   |
+|-2     |6   |
+|-2     |9   |
+|-2     |12  |
+|-3     !null|
+|-3     |0   |
+|-3     |3   |
+|-3     |6   |
+|-3     |9   |
+|-3     |12  |
+|-4     !null|
+|-4     |0   |
+|-4     |3   |
+|-4     |6   |
+|-4     |9   |
+|-4     |12  |
++-------+----+
+
+large
++------------+
+|   large    |
++-------+----+
+|id     |n   |
+|Integer|Long|
++-------+----+
+|0      !null|
+|0      |0   |
+|0      |1   |
+|0      |2   |
+|0      |3   |
+|0      |4   |
+|0      |5   |
+|0      |6   |
+|0      |7   |
+|0      |8   |
+|0      |9   |
+|0      |10  |
+|0      |11  |
+|0      |12  |
+|0      |13  |
+|0      |14  |
+|1      !null|
+|1      |0   |
+|1      |1   |
+|1      |2   |
+|1      |3   |
+|1      |4   |
+|1      |5   |
+|1      |6   |
+|1      |7   |
+|1      |8   |
+|1      |9   |
+|1      |10  |
+|1      |11  |
+|1      |12  |
+|1      |13  |
+|1      |14  |
+|2      !null|
+|2      |0   |
+|2      |1   |
+|2      |2   |
+|2      |3   |
+|2      |4   |
+|2      |5   |
+|2      |6   |
+|2      |7   |
+|2      |8   |
+|2      |9   |
+|2      |10  |
+|2      |11  |
+|2      |12  |
+|2      |13  |
+|2      |14  |
+|3      !null|
+|3      |0   |
+|3      |1   |
+|3      |2   |
+|3      |3   |
+|3      |4   |
+|3      |5   |
+|3      |6   |
+|3      |7   |
+|3      |8   |
+|3      |9   |
+|3      |10  |
+|3      |11  |
+|3      |12  |
+|3      |13  |
+|3      |14  |
+|4      !null|
+|4      |0   |
+|4      |1   |
+|4      |2   |
+|4      |3   |
+|4      |4   |
+|4      |5   |
+|4      |6   |
+|4      |7   |
+|4      |8   |
+|4      |9   |
+|4      |10  |
+|4      |11  |
+|4      |12  |
+|4      |13  |
+|4      |14  |
++-------+----+
+
+gteL
++-----------------------------+
+|            gteL             |
++-------+----+--------+-------+
+|id     |n   |small_id|small_n|
+|Integer|Long|Integer |Long   |
++-------+----+--------+-------+
+!null   !null|-1      !null   |
+!null   !null|-1      |0      |
+!null   !null|-1      |3      |
+!null   !null|-1      |6      |
+!null   !null|-1      |9      |
+!null   !null|-1      |12     |
+!null   !null|-2      !null   |
+!null   !null|-2      |0      |
+!null   !null|-2      |3      |
+!null   !null|-2      |6      |
+!null   !null|-2      |9      |
+!null   !null|-2      |12     |
+!null   !null|-3      !null   |
+!null   !null|-3      |0      |
+!null   !null|-3      |3      |
+!null   !null|-3      |6      |
+!null   !null|-3      |9      |
+!null   !null|-3      |12     |
+!null   !null|-4      !null   |
+!null   !null|-4      |0      |
+!null   !null|-4      |3      |
+!null   !null|-4      |6      |
+!null   !null|-4      |9      |
+!null   !null|-4      |12     |
+|0      !null|0       !null   |
+|0      |0   |0       |0      |
+|0      |1   |0       |0      |
+|0      |2   |0       |0      |
+|0      |3   |0       |3      |
+|0      |4   |0       |3      |
+|0      |5   |0       |3      |
+|0      |6   |0       |6      |
+|0      |7   |0       |6      |
+|0      |8   |0       |6      |
+|0      |9   |0       |9      |
+|0      |10  |0       |9      |
+|0      |11  |0       |9      |
+|0      |12  |0       |12     |
+|0      |13  |0       |12     |
+|0      |14  |0       |12     |
+|1      !null!null    !null   |
+|1      |0   !null    !null   |
+|1      |1   !null    !null   |
+|1      |2   !null    !null   |
+|1      |3   !null    !null   |
+|1      |4   !null    !null   |
+|1      |5   !null    !null   |
+|1      |6   !null    !null   |
+|1      |7   !null    !null   |
+|1      |8   !null    !null   |
+|1      |9   !null    !null   |
+|1      |10  !null    !null   |
+|1      |11  !null    !null   |
+|1      |12  !null    !null   |
+|1      |13  !null    !null   |
+|1      |14  !null    !null   |
+|2      !null!null    !null   |
+|2      |0   !null    !null   |
+|2      |1   !null    !null   |
+|2      |2   !null    !null   |
+|2      |3   !null    !null   |
+|2      |4   !null    !null   |
+|2      |5   !null    !null   |
+|2      |6   !null    !null   |
+|2      |7   !null    !null   |
+|2      |8   !null    !null   |
+|2      |9   !null    !null   |
+|2      |10  !null    !null   |
+|2      |11  !null    !null   |
+|2      |12  !null    !null   |
+|2      |13  !null    !null   |
+|2      |14  !null    !null   |
+|3      !null!null    !null   |
+|3      |0   !null    !null   |
+|3      |1   !null    !null   |
+|3      |2   !null    !null   |
+|3      |3   !null    !null   |
+|3      |4   !null    !null   |
+|3      |5   !null    !null   |
+|3      |6   !null    !null   |
+|3      |7   !null    !null   |
+|3      |8   !null    !null   |
+|3      |9   !null    !null   |
+|3      |10  !null    !null   |
+|3      |11  !null    !null   |
+|3      |12  !null    !null   |
+|3      |13  !null    !null   |
+|3      |14  !null    !null   |
+|4      !null!null    !null   |
+|4      |0   !null    !null   |
+|4      |1   !null    !null   |
+|4      |2   !null    !null   |
+|4      |3   !null    !null   |
+|4      |4   !null    !null   |
+|4      |5   !null    !null   |
+|4      |6   !null    !null   |
+|4      |7   !null    !null   |
+|4      |8   !null    !null   |
+|4      |9   !null    !null   |
+|4      |10  !null    !null   |
+|4      |11  !null    !null   |
+|4      |12  !null    !null   |
+|4      |13  !null    !null   |
+|4      |14  !null    !null   |
++-------+----+--------+-------+
+

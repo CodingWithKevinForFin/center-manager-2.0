@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link media="all" rel="stylesheet" href="css/ferris.css">
+	<meta name="robots" content="noindex, nofollow">
+	<style>
+		.paused{
+		animation-play-state:paused;
+	}
+	
+	.cabin:hover {
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+<div class="ferris-wrapper">
+  <div class="wheel-wrapper">
+  	<img loading="eager" src="images/ferris/dashboardcenter-2.webp" rel="preload" style="position: absolute; width: 89%; margin-top: 7%;">
+<!--   	<img src="images/gradientdecor.svg" style="position: absolute; z-index: -1; margin-top: -24%; margin-left: -22%;">
+ -->    <div class="wheel">
+	<img class="spinning" loading="eager" rel="preload" src="images/spincircle.webp" style="position: absolute; width: 128%; margin-top: -14%; margin-left: -14%;">     
+	<div class="cabin">
+	    <img id="realtime" class="interact" loading="eager" rel="preload" src="images/ferris/realtime-2.webp" style="width:158%; margin-top: -99%;">
+	</div>
+	<div class="cabin">
+	    <img id="historical" class="interact" loading="eager" rel="preload" src="images/ferris/historical-2.webp" style="width:158%; margin-top: -74%;">
+	</div>
+	<div class="cabin">
+	    <img id="analytics" class="interact" loading="eager" rel="preload" src="images/ferris/analytics-2.webp" style="width:158%; margin-top: -50%;">
+	</div>
+	<div class="cabin">
+	    <img id="reconciliation" class="interact" loading="eager" rel="preload" src="images/ferris/reconciliation-2.webp" style="width:158%; margin-top: -100%;">
+	</div>
+	<div class="cabin">
+	    <img id="reporting" class="interact" loading="eager" rel="preload" src="images/ferris/reporting-2.webp" style="width:158%; margin-top: -100%;">
+	</div>
+	<div class="cabin">
+	    <img id="risk" class="interact" loading="eager" rel="preload" src="images/ferris/risk-2.webp" style="width:158%; margin-top: -70%;">
+	</div>
+	<div class="cabin">
+	    <img id="transactional" class="interact" loading="eager" rel="preload" src="images/ferris/transactional-2.webp" style="width:158%; margin-top: -75%;">
+	</div>
+	<div class="cabin">
+	    <img id="spreadsheets" class="interact" loading="eager" rel="preload" src="images/ferris/spreadsheets-2.webp" style="width:158%; margin-top: -70%;">
+	</div>
+	<div class="cabin">
+	    <img id="p-l" class="interact" loading="eager" rel="preload" src="images/ferris/p-l-2.webp" style="width:158%; margin-top: -70%;">
+	</div>
+	<div class="cabin">
+	    <img id="monitoring" class="interact" loading="eager" rel="preload" src="images/ferris/monitoring-2.webp" style="width:158%; margin-top: -70%;">
+	</div>
+    </div>
+  </div>
+		</div>
+<f1:script nonce="true" src="inline"/>
+        const cabins = document.querySelectorAll('.cabin');
+        const wheel = document.querySelector('.wheel');
+        const spinning = document.querySelector('.spinning');
+
+        cabins.forEach(cabin => {
+            cabin.addEventListener('mouseover', () => {
+                wheel.classList.add('paused');
+                cabins.forEach(c => c.classList.add('paused'));
+                spinning.classList.add('paused');
+            });
+
+            cabin.addEventListener('mouseout', () => {
+                wheel.classList.remove('paused');
+                cabins.forEach(c => c.classList.remove('paused'));
+                spinning.classList.remove('paused');
+            });
+
+            // Add click event listener to each image inside a cabin
+            const image = cabin.querySelector('img');
+            if (image) {
+                image.addEventListener('click', notifyParent);
+            }
+        });
+
+        wheel.addEventListener('mouseover', () => {
+            wheel.classList.add('paused');
+            cabins.forEach(c => c.classList.add('paused'));
+            spinning.classList.add('paused');
+        });
+
+        wheel.addEventListener('mouseout', () => {
+            wheel.classList.remove('paused');
+            cabins.forEach(c => c.classList.remove('paused'));
+            spinning.classList.remove('paused');
+        });
+
+        function notifyParent(event) {
+            const clickedImage = event.target; // Get the clicked image
+            const parentId = clickedImage.id; // Get its ID
+
+            // Notify the parent based on the ID
+            const parentElement = document.getElementById(parentId);
+            if (parentElement) {
+                console.log('Notifying parent:', parentId);
+                // Your logic to notify the parent
+                window.parent.postMessage({ cabinId: parentId }, '*');
+            } else {
+                console.error('Parent not found:', parentId);
+            }
+        }
+    </script>
+</body>
+
+</html>

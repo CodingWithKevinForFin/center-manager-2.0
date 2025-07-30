@@ -1,0 +1,35 @@
+ID|Description
+GDP|Gross Domestic Product
+GDPC1|Real Gross Domestic Product
+DCOILWTICO|Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma
+GOLDAMGBD228NLBM|Gold Fixing Price 10:30 A.M. (London time) in London Bullion Market, based in U.S. Dollars
+MHHNGSP|Henry Hub Natural Gas Spot Price
+GFDEGDQ188S|Federal Debt: Total Public Debt as Percent of Gross Domestic Product
+GFDEBTN|Federal Debt: Total Public Debt
+FYFSGDA188S|Federal Surplus or Deficit [-] as Percent of Gross Domestic Product
+FYFSD|Federal Surplus or Deficit [-]
+MEHOINUSA672N|Real Median Household Income in the United States
+CES0500000003|Average Hourly Earnings of All Employees: Total Private
+USPRIV|All Employees: Total Private Industries
+MANEMP|All Employees: Manufacturing
+USCONS|All Employees: Construction
+USINFO|All Employees: Information Services
+USSTHPI|All-Transactions House Price Index for the United States
+EXP0004|U.S. Exports of Goods by F.A.S. Basis to World
+IMP0015|U.S. Imports of Goods by Customs Basis from World
+STTMINWGFG|Federal Minimum Wage Rate under the Federal Fair Labor Standards Act
+STTMINWGNY|State Minimum Wage Rate for New York
+DHIDFHVTUR|Vacancy to Unemployment Ratio
+CNERURN|Unemployment Rate in Northeast Census Region
+CMWRUR|Unemployment Rate in Midwest Census Region
+CSOUURN|Unemployment Rate in South Census Region
+CWSTUR|Unemployment Rate in West Census Region
+SFTPINDM114SFRBSF|San Francisco Tech Pulse
+TRFVOLUSM227NFWA|Vehicle Miles Traveled
+TRUCKD11|Truck Tonnage
+AIRRPMTSI|Air Revenue Passenger Miles
+NATURALGAS|Natural Gas Consumption
+RAILPMD11|Rail Passenger Miles
+WHLSLRIRSA|Merchant Wholesalers: Inventories to Sales Ratio
+TTLCONS|Total Construction Spending
+INDPRO|Industrial Production Index

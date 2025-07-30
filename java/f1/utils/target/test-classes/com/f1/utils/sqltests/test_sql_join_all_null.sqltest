@@ -1,0 +1,99 @@
+****TEST_INPUT_QUERY****
+SELECT * FROM nullTableA JOIN nullTableB ON true
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+nullTableB
++-------------+
+| nullTableB  |
++------+------+
+|d     |e     |
+|Double|Double|
++------+------+
+!null  !null  |
+!null  !null  |
+!null  !null  |
++------+------+
+
+nullTableA
++--------------------+
+|     nullTableA     |
++------+------+------+
+|a     |b     |c     |
+|Double|Double|Double|
++------+------+------+
+!null  !null  !null  |
+!null  !null  !null  |
+!null  !null  !null  |
+!null  !null  !null  |
++------+------+------+
+
+****TEST_RESULT****
++----------------------------------+
+|      nullTableA_nullTableB       |
++------+------+------+------+------+
+|a     |b     |c     |d     |e     |
+|Double|Double|Double|Double|Double|
++------+------+------+------+------+
+!null  !null  !null  !null  !null  |
+!null  !null  !null  !null  !null  |
+!null  !null  !null  !null  !null  |
+!null  !null  !null  !null  !null  |
+!null  !null  !null  !null  !null  |
+!null  !null  !null  !null  !null  |
+!null  !null  !null  !null  !null  |
+!null  !null  !null  !null  !null  |
+!null  !null  !null  !null  !null  |
+!null  !null  !null  !null  !null  |
+!null  !null  !null  !null  !null  |
+!null  !null  !null  !null  !null  |
++------+------+------+------+------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT "*" FROM nullTableA JOIN nullTableB ON true
+
+PROJECTION : 
+SELECT "*" FROM nullTableA JOIN nullTableB ON true
+
+NESTING_QUERY : 
+#0 nullTableA
+
+NESTING_QUERY : 
+#1 nullTableB
+
+NONINDEX_WHERE : 
+true
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+nullTableB
++-------------+
+| nullTableB  |
++------+------+
+|d     |e     |
+|Double|Double|
++------+------+
+!null  !null  |
+!null  !null  |
+!null  !null  |
++------+------+
+
+nullTableA
++--------------------+
+|     nullTableA     |
++------+------+------+
+|a     |b     |c     |
+|Double|Double|Double|
++------+------+------+
+!null  !null  !null  |
+!null  !null  !null  |
+!null  !null  !null  |
+!null  !null  !null  |
++------+------+------+
+

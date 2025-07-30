@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <f1:script src="cookiehub.js" nonce="true"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://3forge.com/security" />
+  <title>Security Overview | 3forge</title>
+  <meta name="description" content="Explore 3forge's security overview. Learn how we protect real-time data streaming and low-code app development with state-of-the-art technologies, trusted by global banks & crypto exchanges.">
+  <style>
+  	   *{
+/*   	   	-webkit-text-stroke: 0.1px; */
+  	   	font-family: 'Barlow', sans-serif;
+  	   }
+	  body{
+	  	background-color: white;
+	  }
+	  .gradience {
+	    background-clip: text;
+	    background-image: linear-gradient(93deg, #00a9ff, #ff8629, #ff6f00);
+	    -webkit-text-fill-color: transparent;
+	  }
+	  .title-border{
+ 	  	border-width: thin;
+	    border-top: 0;
+	    border-left: 0;
+	    border-right: 0;
+	    border-image-source: linear-gradient(to left, #c3feff, #00bdff);
+	    border-image-slice: 1;
+	  }
+	  .title-border-md{
+ 	 	border-width: medium;
+	    border-top: 0;
+	    border-left: 0;
+	    border-right: 0;
+	    border-image-source: linear-gradient(to left, #c3feff, #00bdff);
+	    border-image-slice: 1;
+	  }
+	  .gradi-border:hover {
+  	    border-width: thick;
+	    border-bottom: 0;
+	    border-left: 0;
+	    border-right: 0;
+	    border-image-source: linear-gradient(to left, #c3feff, #00bdff);
+	    border-image-slice: 1;
+	  }
+	[id^=gartner-pi-widget][data-theme=dark] * {
+		background: #191919;
+	}
+	[id^=gartner-pi-widget][data-size=line] .gartner-pi-score {
+	    position: relative;
+	    z-index: 8;
+	    vertical-align: bottom;
+	}
+		input[name="username"] {
+	    position: absolute;
+	    left: -999999999px;
+	}
+	input[name="state"] {
+	    position: absolute;
+	    left: -999999999px;
+	}
+	@media (max-width: 1023px){
+		.title-border, .title-border-md{
+			margin-left: 7% !important;
+			margin-right: 7% !important;
+		}
+	}
+  </style>
+  <link media="all" rel="stylesheet" href="css/webv3.css">
+  <link href="./output.css" rel="stylesheet">
+  <link media="all" rel="stylesheet" href="css/inter.css">
+  <f1:include page="'headtags.html'"/>
+</head>
+<body>
+<div class="wrap">
+<f1:include page="'newweb_header_announce.html'"/>
+<section class="bg-white" style=" padding-top: 88px;" id="starting">
+	<div class="h-auto max-w-[74.375rem] mx-auto pt-20 pb-0 md:pb-4">
+	  <div class="grid grid-cols-1 lg:grid-cols-2">
+		<div class="">
+	  		<h1 class="m-0 m-auto text-center lg:m-[initial] lg:text-left text-5xl md:text-6xl font-semibold text-black px-4 lg:px-12 xl:px-0 title-border-md" style="margin-right: 10% !important;">3forge Security Overview</h1>
+	  		<div class="pt-12 px-12 xl:px-0">
+	  		<p class="m-0 m-auto text-center lg:m-[initial] lg:text-left max-w-[40rem] text-black font-medium" style="font-size: 25px;">At 3forge, we prioritize the security of your data and systems. Our commitment to safeguarding your information is embedded in every aspect of our platform and operations. From rigorous security protocols to continuous monitoring and improvements, we strive to ensure that our platform remains robust, reliable, and secure. Here&apos;s an overview of the security practices we have in place to protect your data.</p>		
+			<p class="m-0 m-auto text-center lg:m-[initial] lg:text-left max-w-lg text-black font-medium pt-10" style="font-size: 25px;"></p>
+<!-- 			<div class="m-0 m-auto lg:m-[initial] lg:text-left text-center">
+				<a href="request-poc"><button class="mt-8 px-4 py-1 text-lg text-white bg-orange-500 font-semibold rounded-full border border-orange-500 hover:bg-orange-400 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Request a Free POC</button></a>
+	  			<a href="platform-overview"><button class="lg:ml-[7px] mt-[2%] sm:mt-[0%] px-4 py-1 text-lg text-white bg-orange-500 font-semibold rounded-full border border-orange-500 hover:bg-orange-400 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Explore the Platform</button></a>
+			</div>	 -->
+	  	</div>
+	  	</div>
+	  	<div class="p-8 lg:p-0">
+ 	<img class="m-0 m-auto lg:relative lg:left-[0%] lg:top-[3%]" alt="Crouton Case Studies Under Construction" src="images/soc-2-1.png" style="border-radius:18px;">
+ 	</div>
+	  </div>
+	  <div class="pt-8 pb-8 grid grid-cols-1 lg:grid-cols-3">
+	 	 <div class="order-last lg:order-first">
+	  		<img class="m-0 m-auto lg:m-[initial] lg:relative lg:top-[-7%] p-8 w-[300px]" src="images/soc-2-2.png" alt="SOC 2 Certification">
+	  	</div>	
+	  	 <div class="lg:col-span-2 lg:max-w-[800px]">
+ 		  	<h1 class="m-0 m-auto text-center text-4xl md:text-5xl font-semibold text-black px-12 xl:px-0 title-border-md">SOC 2</h1>
+	  	 	<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 25px;">3forge has been accredited as compliant in accordance with Service Organization Control (SOC) 2 Type II. This accreditation is in line with standards set by the American Institute of Certified Public Accountants (AICPA) for Service Organizations, more commonly known  as SSAE 18.</p>		
+	  	 	<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 25px;">The SOC 2 Type II audit was conducted by Prescient Assurance, ensuring security and compliance for global B2B and SAAS firms. As a recognized public accounting firm in the US and Canada, Prescient Assurance offers a wide range of risk management and assurance services, encompassing but not limited to SOC 2, PCI, ISO, NIST, GDPR, CCPA, HIPAA, and CSA STAR.</p>		
+	  	 </div>  
+	  	</div>
+	 </div>
+</section>
+<section>
+	<div class="h-auto max-w-[74.375rem] mx-auto pt-0 md:pt-12 pb-4">
+		<div class="grid grid-cols-1 lg:grid-cols-3">
+			<div class="p-4">
+				<h1 class="m-0 m-auto text-center lg:text-left text-3xl font-bold text-black px-12 xl:px-0 title-border">Organizational Security</h1>
+				<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 20px;">We implement robust security policies and procedures that are integrated into the fabric of our organization, ensuring a secure operating environment.</p>		
+			</div>
+			<div>
+				<div class="p-4 bg-kindawhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-24.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Information Security Program</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">We have a comprehensive Information Security Program that is communicated and enforced across our organization. Our program adheres to the criteria set forth by the SOC 2 Framework, an industry-recognized standard for information security auditing developed by the American Institute of Certified Public Accountants (AICPA).</p>		
+				</div>
+				<div class="p-4 bg-bluewhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-16.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Third-Party Audits</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">3forge undergoes independent third-party assessments to rigorously test and validate our security and compliance controls.</p>		
+				</div>
+				<div class="p-4 bg-kindawhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-37.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Third-Party Penetration Testing</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">To ensure the resilience of our services, we conduct independent third-party penetration tests at least annually. This helps us identify and mitigate any potential vulnerabilities.</p>		
+				</div>
+			</div>
+			<div>
+				<div class="p-4 bg-bluewhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-27.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Roles and Responsibilities</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">Roles and responsibilities related to our Information Security Program and the protection of customer data are clearly defined and documented. All team members are required to review and accept our security policies.</p>		
+				</div>
+				<div class="p-4 bg-kindawhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-25.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Security Awareness Training</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">Our team members undergo regular security awareness training, covering best practices and critical information security topics such as phishing prevention and password management.</p>		
+				</div>
+				<div class="p-4 bg-bluewhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-19.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Confidentiality</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">Every team member is required to sign and adhere to a confidentiality agreement before starting work at 3forge.</p>		
+				</div>
+				<div class="p-4 bg-kindawhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Background Checks</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">We conduct background checks on all new employees in accordance with local laws to ensure the integrity and trustworthiness of our team.</p>		
+				</div>
+			</div>
+		</div>
+		<div class="grid grid-cols-1 lg:grid-cols-3">
+			<div class="p-4">
+				<h1 class="m-0 m-auto text-center lg:text-left text-3xl font-bold text-black px-12 xl:px-0 title-border">Infrastructure Security</h1>
+				<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 20px;">Our custom-built infrastructure is designed to meet the highest security standards, providing a secure and resilient foundation for our services.</p>		
+			</div>
+			<div>
+				<div class="p-4 bg-kindawhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-8.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Custom-Built Infrastructure</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">3forge operates on a fully custom-built infrastructure, designed and developed in-house to meet the highest security standards. We control every aspect of our platform, from the servers to the software, ensuring a secure and reliable environment for our clients.</p>		
+				</div>
+				<div class="p-4 bg-bluewhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-31.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Data Handling and Security</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">At 3forge, we do not host or store any client data. Instead, our platform serves as a top layer for processing, visualizing, and manipulating data in real time. Your data remains secure in your environment, with 3forge providing the tools to interact with it seamlessly.</p>		
+				</div>
+			</div>
+			<div>
+				<div class="p-4 bg-bluewhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-7.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Vulnerability Scanning</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">3forge performs regular vulnerability scanning and actively monitors for potential threats to maintain a strong security posture.</p>		
+				</div>
+				<div class="p-4 bg-kindawhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-19.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Logging and Monitoring</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">We continuously monitor and log activities across our platform to detect and respond to any anomalies or security incidents.</p>		
+				</div>
+				<div class="p-4 bg-bluewhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-18.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Encryption at Rest and in Transit</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">While we do not store client data, all communications and data interactions within the 3forge platform are encrypted in transit using TLS/SSL protocols to ensure secure processing and transmission.</p>		
+				</div>
+			</div>
+		</div>
+		<div class="grid grid-cols-1 lg:grid-cols-3">
+			<div class="p-4">
+				<h1 class="m-0 m-auto text-center lg:text-left text-3xl font-bold text-black px-12 xl:px-0 title-border">Business Continuity and Disaster Recovery</h1>
+				<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 20px;">We have comprehensive plans in place to ensure the continuity of our operations and rapid recovery in the event of an unforeseen incident.</p>		
+			</div>
+			<div>
+				<div class="p-4 bg-bluewhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-10.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Resilient Infrastructure</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">Our custom-built infrastructure is designed for resilience, minimizing the risk of downtime or service disruption. We continuously monitor our systems and have robust procedures in place to ensure business continuity.</p>		
+				</div>
+			</div>
+			<div>
+				<div class="p-4 bg-kindawhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-32.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Incident Response</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">3forge has a well-defined process for handling information security incidents, including escalation procedures, rapid mitigation, and effective communication.</p>		
+				</div>
+			</div>
+		</div>
+		<div class="grid grid-cols-1 lg:grid-cols-3">
+			<div class="p-4">
+				<h1 class="m-0 m-auto text-center lg:text-left text-3xl font-bold text-black px-12 xl:px-0 title-border">Access Security</h1>
+				<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 20px;">Strict access controls and authentication mechanisms are in place to safeguard our systems, ensuring only authorized personnel have access.</p>		
+			</div>
+			<div>
+				<div class="p-4 bg-kindawhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-14.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Permissions and Authentication</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">Access to our infrastructure and other sensitive tools is restricted to authorized employees based on their roles. We employ Single Sign-On (SSO), 2-factor authentication (2FA), and stringent password policies to enhance security.</p>		
+				</div>
+				<div class="p-4 bg-bluewhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-40.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Quarterly Access Reviews</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">We conduct quarterly reviews of all team members&apos; access to sensitive systems to ensure ongoing compliance with access controls.</p>		
+				</div>
+			</div>
+			<div>
+				<div class="p-4 bg-bluewhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-3.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Least Privilege Access Control</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">We adhere to the principle of least privilege in managing identity and access, ensuring that employees have only the access necessary for their roles.</p>		
+				</div>
+				<div class="p-4 bg-kindawhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-38.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Password Requirements</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">Team members are required to follow strict password complexity requirements to secure access to our systems.</p>		
+				</div>
+				<div class="p-4 bg-bluewhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-4.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Password Managers</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">All company-issued laptops come equipped with password managers to help employees maintain secure and complex passwords.</p>		
+				</div>
+			</div>
+		</div>
+		<div class="grid grid-cols-1 lg:grid-cols-3">
+			<div class="p-4">
+				<h1 class="m-0 m-auto text-center lg:text-left text-3xl font-bold text-black px-12 xl:px-0 title-border">Vendor and Risk Management</h1>
+				<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 20px;">We meticulously evaluate and monitor our vendors to ensure they comply with our stringent security standards and mitigate any associated risks.</p>		
+			</div>
+			<div>
+				<div class="p-4 bg-bluewhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-9.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Annual Risk Assessments</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">We conduct annual risk assessments to identify and address potential security threats, including those related to fraud.</p>		
+				</div>
+			</div>
+			<div>
+				<div class="p-4 bg-kindawhite group hover:scale-[1.06] gradi-border">
+					<img class="w-[50px] m-0 m-auto lg:m-[initial]" src="images/svgs/security-secure-protection-20.svg" alt="Security Icon">
+					<h2 class="m-0 m-auto text-center lg:text-left text-xl font-semibold text-black px-12 xl:px-0 group-hover:font-bold">Vendor Risk Management</h2>
+					<p class="m-0 m-auto text-center px-12 xl:px-0 lg:text-left text-black font-medium pt-4 pb-4" style="font-size: 17px;">We assess vendor risk and conduct appropriate reviews before onboarding new vendors to ensure they meet our security standards.</p>		
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="">
+	<div class="h-auto max-w-[74.375rem] mx-auto">
+	  	  <div class="grid grid-cols-1>">
+		<div class="pt-12">
+	  		<h1 class="m-0 m-auto text-center lg:m-[initial] lg:text-left text-5xl md:text-6xl font-semibold text-black px-12 xl:px-0">Longlasting security</h1>
+	  		<div class="pt-12 px-12 xl:px-0">
+	  		<p class="m-0 m-auto text-center lg:m-[initial] lg:text-left max-w-auto text-black font-medium" style="font-size: 25px;">For more details about our security certifications &amp; attestations, we encourage you to reach out to us. </p>		
+ 			<div class="m-0 m-auto lg:m-[initial] lg:text-left text-center pb-12">
+				<a href="request-poc"><button class="mt-8 px-4 py-1 text-lg text-white bg-orange-500 font-semibold rounded-full border border-orange-500 hover:bg-orange-400 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Request a Free POC</button></a>
+	  			<a href="platform-overview"><button class="lg:ml-[7px] mt-[2%] sm:mt-[0%] px-4 py-1 text-lg text-white bg-orange-500 font-semibold rounded-full border border-orange-500 hover:bg-orange-400 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Explore the Platform</button></a>
+			</div>
+	  	</div>
+	  	</div>
+	  	<div class="p-8 lg:p-0">
+ 	</div>
+	  </div>
+	 </div>
+</section>
+
+
+<f1:include page="'newweb_footer.html'"/>
+</div>
+	<f1:script src="js/util.js" nonce="true"/>
+	<f1:script src="js/flowbite.min.js" nonce="true"/>
+	<f1:script src="js/jquery-3.7.1.min.js" nonce="true"/>
+	<f1:script src="js/jquery.main.js" nonce="true"/>
+	<f1:script src="cookiebutton.js" nonce="true"/>
+	<f1:script src="inline" nonce="true"/>
+			// Function to set a custom cookie indicating the user's choice regarding cookies
+			function setCookieHubCookie(value) {
+			    // Set a cookie named 'cookiehub' with the provided value
+			    document.cookie = 'cookiehub=' + value + '; expires=' + calculateExpirationDate() + '; path=/';
+			}
+			
+			// Function to calculate the expiration date for the cookie (30 days from the current day)
+			function calculateExpirationDate() {
+			    var currentDate = new Date();
+			    var expirationDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 days in milliseconds
+			    return expirationDate.toUTCString();
+			}
+			
+			// Check if the custom cookie indicating the user's choice regarding cookies is set
+			window.addEventListener('load', function() {
+			    var cookieValue = getCookie('cookiehub');
+			    if (!cookieValue) {
+			        // If the custom cookie is not set, display the CookieHub banner
+			        var cpm = {};
+			        window.cookiehub.load(cpm);
+			    }
+			});
+			
+			// Set the custom cookie when the "Accept All Cookies" or "Deny All Cookies" button is clicked
+			document.addEventListener('click', function(event) {
+			    var target = event.target;
+			    if (target.classList.contains('ch2-allow-all-btn')) {
+			        // Set the custom cookie to indicate acceptance of cookies
+			        setCookieHubCookie('allow');
+			    } else if (target.classList.contains('ch2-deny-all-btn')) {
+			        // Set the custom cookie to indicate denial of all cookies
+			        setCookieHubCookie('deny');
+			    }
+			});
+	</script>
+	<f1:script src="inline" nonce="true"/>
+		var count = 0; 
+		function openCookieHubWindow() {
+			if (count == 0) {
+				window.cookiehub.load();
+				count++;
+			}
+			if (count >= 1) {			
+				window.cookiehub.openDialog();
+				count++;
+			}
+		}
+	</script>
+	<f1:script type="text/javascript"
+		src="../js/widget.js" nonce="true"/>
+	</script>
+	<f1:script src="inline" nonce="true" type="text/javascript"/>
+	    GartnerPI_Widget({
+	        size: "line",
+	        theme: "dark",
+	        sourcingLink: "https://gtnr.io/iKfnxw3cA",
+	        widget_id: "ZjA4NTVhMzUtZWUxZi00YmZhLWJmNGEtMWQ4YzU1YjI1ZjUy",
+	        version: "2",
+	        container: document.getElementById("gartner-widget")
+	    });
+	</script>
+	<f1:script src="inline" nonce="true"/>
+	let lastScrollTop = 0;
+	let initialLoad = true;
+	
+	const bottom = document.getElementById("bottomnav");
+	bottom.style.transform = "translate3d(0, 0, 0)";
+	
+	const banner = document.getElementById("sticky-banner");
+	const closeButton = banner.querySelector('[data-dismiss-target="#sticky-banner"]');
+	const navbar = document.getElementById("navbarwhole");
+	const startingElement = document.getElementById("starting");
+	
+	function removeClass(element, className) {
+	    element.classList.remove(...className.split(" "));
+	}
+	
+	startingElement.style.paddingTop = banner.style.display === "none" ? "88px" : "131px";
+	
+	closeButton.addEventListener("click", () => {
+	    // Hide the banner
+	    banner.style.display = "none";
+	
+	    // Adjust navbar styles
+	    removeClass(navbar, "mt-[2.7rem]");
+	    navbar.style.marginTop = "0";
+	
+	    // Adjust starting padding
+	    startingElement.style.paddingTop = "88px";
+	});
+	
+	window.onscroll = function () {
+	    if (window.innerWidth > 500) {
+	        if (!initialLoad) {
+	            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+	            const top = document.getElementById("topnav");
+	
+	            if (currentScroll > lastScrollTop) {
+	                // Scrolling down
+	                top.style.position = "fixed";
+	                top.style.width = "100%";
+	                top.style.zIndex = "100";
+	                top.style.transform = "translate3d(0, -100%, 0)";
+	                top.style.visibility = "hidden";
+	                top.style.transition = "transform 0.2s ease-out";
+	
+	                navbar.style.height = "4.125rem";
+	
+	                bottom.style.position = "fixed";
+	                bottom.style.width = "100%";
+	                bottom.style.zIndex = "100";
+	                bottom.style.transform = "translate3d(0, 0, 0)";
+	            } else {
+	                // Scrolling up
+	                top.style.transition = "transform 0.2s ease-in";
+	                top.style.position = "fixed";
+	                top.style.width = "100%";
+	                top.style.zIndex = "100";
+	                top.style.transform = "translate3d(0, 0, 0)";
+	                top.style.visibility = "visible";
+	
+	                navbar.style.height = "6.688rem";
+	
+	                bottom.style.position = "fixed";
+	                bottom.style.width = "100%";
+	                bottom.style.zIndex = "100";
+	                bottom.style.transform = "translate3d(0, 45px, 0)";
+	            }
+	
+	            lastScrollTop = Math.max(0, currentScroll);
+	        }
+	
+	        initialLoad = false;
+	    }
+	};
+	</script>
+    <f1:script src="inline" nonce="true"/>
+      document.addEventListener("DOMContentLoaded", () => {
+	    const sections = document.querySelectorAll('.transition-section');
+	
+	    // Function to determine the threshold based on screen size
+	    const getThreshold = () => {
+	        const width = window.innerWidth;
+	        console.log(width);
+	        if (width < 600) {
+	            return 0.1; // Smaller screens
+	        } else if (width < 1200) {
+	            return 0.2; // Medium screens
+	        } else if (width < 1600) {
+	            return 0.25; // Larger screens
+	        }
+      	      else {
+	            return 0.3; // Larger screens
+	        }
+	    };
+	
+	    // Initial observer options
+	    const observerOptions = {
+	        root: null, // Use the viewport as the root
+	        rootMargin: '0px',
+	        threshold: getThreshold()
+	    };
+	
+	    // Function to create a new observer with updated options
+	    const createObserver = () => {
+	        return new IntersectionObserver((entries, observer) => {
+	            entries.forEach(entry => {
+	                if (entry.isIntersecting) {
+	                    entry.target.classList.add('visible');
+	                    observer.unobserve(entry.target); // Stop observing once it's visible
+	                }
+	            });
+	        }, observerOptions);
+	    };
+	
+	    let observer = createObserver();
+	
+	    // Observe each section
+	    sections.forEach(section => {
+	        observer.observe(section);
+	    });
+	
+	    // Update observer on window resize
+	    window.addEventListener('resize', () => {
+	        observer.disconnect(); // Disconnect the old observer
+	        observerOptions.threshold = getThreshold(); // Update the threshold
+	        observer = createObserver(); // Create a new observer
+	        sections.forEach(section => {
+	            if (!section.classList.contains('visible')) {
+	                observer.observe(section); // Re-observe sections that are not visible
+	            }
+	        });
+	    });
+	});
+    </script>
+    
+    <f1:script type="text/javascript" src="js/email.min.js" nonce="true"/>
+	<f1:script type="text/javascript" src="inline" nonce="true"/>
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "I3dJ3vzRikpLEq5W-",
+            });
+        })();
+    </script>
+
+	<f1:script src="inline" nonce="true"/>
+	window.onload = function() {
+	    document.getElementById('email-signup').addEventListener('submit', function(event) {
+	        event.preventDefault(); // Prevent the default form submission
+	
+	        var emailInput = document.getElementById('EMBED_FORM_EMAIL_LABEL');
+	        var email = emailInput.value;
+	        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	        	        
+	        var honeypot3 = document.querySelector('input[name="username"]').value;
+     	  	var honeypot4 = document.querySelector('input[name="state"]').value;
+     	  	
+	  		if (honeypot3 || honeypot4) {
+	            alert('Spam detected.');
+	            return false;
+	      	}
+	
+	        if (!emailPattern.test(email)) {
+	            emailInput.value = 'Invalid email entered.';
+	        } else {
+	
+	            emailjs.sendForm('newsletter_service', 'newsletter_form', this)
+	                .then(() => {
+	                    console.log('SUCCESS!');
+	                    window.location.href = "thanks";
+	                }, (error) => {
+	                    console.log('FAILED...', error);
+	                    alert('There was an error with your submission. Please try again.');
+	                });
+	        }
+	    });
+	}
+	</script>
+	
+		<f1:script src="inline" nonce="true"/>
+	 cookiesets = document.getElementById("cookiesettings");
+	 
+	 cookiesets.addEventListener("click", function(event){
+	 	event.preventDefault();
+	 	openCookieHubWindow(); 
+	 	return false;
+	 });
+	</script>
+    
+</body>
+</html>

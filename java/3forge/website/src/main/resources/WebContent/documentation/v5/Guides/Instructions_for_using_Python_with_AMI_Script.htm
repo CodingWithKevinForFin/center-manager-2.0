@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "2.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2020"/>
+  <title>Instructions for using Python with AMI Script</title>
+  <link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Instructions for using Python with AMI Script">
+        <span>Instructions for using Python with AMI Script</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+  <h1>Instructions for Using Python with AMI Script</h1>
+  <h2 dir="ltr" style="font-size: 20pt; color: #000000; font-weight: 400;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="color: #6d2d9e; font-family: Arial, sans-serif; font-weight: bold;">How to load Python Modules in AMI Script</span><span style="font-weight: 400;"> </span></b></h2>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"> </p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-size: 12pt; font-weight: 400;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-weight: 400;">To import python modules, place the import statements inside the python extern block.</span></b></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-size: 12pt; font-weight: 400; font-family: Arial, sans-serif;"><b id="docs-internal-guid-4a060fbc-7fff-7279-7143-8af65170ed6f"><span style="font-weight: 400;">By default AMI looks for Python Libraries in the lib/Lib directory of amione.</span></b></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-size: 12pt; font-weight: 400; font-family: Arial, sans-serif;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f2"><span style="font-weight: 400;">Alternatively, you can also set the JYTHONPATH environmental variable and AMI will load libraries from there.</span></b></p>
+  <p> </p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">{</span></b></span></p>
+  <p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.38; 
+	 font-size: 9pt; font-family: &#39;Courier New&#39;; color: #e01e5a; font-weight: 400;"><span style="font-size:12pt;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-weight: 400;">  CREATE TABLE _TABLE AS USE EXECUTE </span></b><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-weight: 400;">SELECT TableName, Broadcast, RefreshPeriodMs, </span></b><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-weight: 400;">SourceTableNames, PersistEngine, OnUndefColumn, </span></b><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="line-height: 1.38; font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">DefinedBy FROM __TABLE WHERE ${WHERE};</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">  </span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">  double n = 0;</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">  extern python {{</span></b></span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">    import math</span></b></span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">    n = math.pow(2,3)</span></b></span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">  }};</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">  session.log(n);</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">}</span></b></span></p>
+  <p style="line-height: 1.38; font-weight: bold;"> </p>
+  <p style="line-height: 1.38; font-weight: bold;"> </p>
+  <h2 style="line-height: 1.38; font-size: 19pt; font-weight: bold;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-weight: bold;">How to use Python in AMI Script</span></b></h2>
+  <p> </p>
+  <p><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f" style="font-weight: normal;"></b></p>
+  <p> </p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-weight: 400;"><b id="docs-internal-guid-1a95b042-7fff-5602-eacd-bb68251c1c6f"><span style="font-weight: 400;">Below is an example of how you can pass in variables and tables and modify and return them:</span></b></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"> </p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">{</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-size: 9pt; font-family: &#39;Courier New&#39;; color: #e01e5a; font-weight: 400;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-weight: 400;"> CREATE TABLE inTable AS USE ds=AMI </span></b><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="line-height: 1.38; font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">EXECUTE SELECT * FROM __TABLE;</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;"> //INPUT VARIABLES</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;"> String findEngine=&quot;TEXT&quot;;</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;"> Table inTable=select * from inTable;</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;"> //OUTPUT VARIABLES</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;"> int foundCount;</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-size: 9pt; font-family: &#39;Courier New&#39;; color: #e01e5a; font-weight: 400;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-weight: 400;"> Table outTable=new Table(&quot;out&quot;,&quot;Name </span></b><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="line-height: 1.38; font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">String&quot;);</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-size: 9pt; font-family: &#39;Courier New&#39;; color: #e01e5a; font-weight: 400;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-weight: 400;"> //Loop through each row of inTable and </span></b><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-weight: 400;">add TableName to outTable for records that </span></b><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-weight: 400;">have a PersistEngine equal to findEngine </span></b><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="line-height: 1.38; font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">Variable</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-size: 9pt; font-family: &#39;Courier New&#39;; color: #e01e5a; font-weight: 400;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-weight: 400;"> //foundCount is incremented for </span></b><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="line-height: 1.38; font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">each record added to outTable</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;"> extern python{{</span></b></span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">   foundCount = 0</span></b></span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">   for row in inTable.getRows():</span></b></span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-size: 9pt; font-family: &#39;Courier New&#39;; color: #e01e5a; font-weight: 400;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-weight: 400;">     if(row.get(&quot;PersistEngine&quot;) </span></b><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="line-height: 1.38; font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">== &quot;TEXT&quot;):</span></b></span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">       outTable.getRows().add(outTable.newRow(row.get(&quot;TableName&quot;)))</span></b></span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">       foundCount+=1</span></b></span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;"> }};</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;"> create table outTable=outTable;</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;"> session.log(&quot;found: &quot;+foundCount);</span></b></span></p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size:12pt;"><b id="docs-internal-guid-812e07ad-7fff-9c2c-d5e7-53ae08e1eb47"><span style="font-family: &quot;Courier New&quot;; color: rgb(224, 30, 90); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; white-space: pre-wrap; text-decoration: none;">}</span></b></span></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Goals</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Goals">
+        <span>Goals</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1><a style="font-family: Arial, sans-serif;" id="Goals">Goals</a></h1>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;">String templating 
+ is used to ease the dynamic creation of strings.  Some key places 
+ that benefit from string templating:</p>
+<ul style="list-style: disc;">
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: 0pt; 
+		 line-height: Normal; font-size: 12pt; font-family: Arial, sans-serif;">HTML 
+	 generation</p></li>
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: 0pt; 
+		 line-height: Normal; font-size: 12pt; font-family: Arial, sans-serif;">SQL 
+	 generation</p></li>
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: 0pt; 
+		 line-height: Normal; font-size: 12pt; font-family: Arial, sans-serif;">Content-rich 
+	 messages for the end user</p></li>
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: 0pt; 
+		 line-height: Normal; font-size: 12pt; font-family: Arial, sans-serif;">Debugging 
+	 / Logging</p></li>
+</ul>
+<p style="margin-left: 40px; font-family: Arial, sans-serif; text-indent: -.25in; 
+	 margin-bottom: 0pt; line-height: Normal; font-size: 11pt;"> </p>
+<p style="margin-left: 40px; font-family: Arial, sans-serif; text-indent: -.25in; 
+	 margin-bottom: 0pt; line-height: Normal; font-size: 11pt;"> </p>
+<h2><a name="Basic_Usage" id="Basic_Usage"><span class="Heading2" style="color: #6d2d9e; 
+												 font-family: Arial, sans-serif; 
+												 text-decoration: none; ">Basic 
+ Usage</span></a></h2>
+<p style="margin-bottom: 0pt; font-size: 12pt; font-family: Arial, sans-serif;">As 
+ usual, strings are denoted using double quotes at the beginning and end, 
+ ex: &quot;...&quot;.  Within a string, ${...} is recognized 
+ as a special operator.  The text between the curly braces is 
+ interpreted as code to be executed.  For example, the code can 
+ be a simple variable name, or a complex set of expressions.</p>
+<p style="font-family: Arial, sans-serif; margin-bottom: 0pt; font-size: 12pt;"> </p>
+<p style="font-size: 12pt;"><span courier="">  </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace;">&quot;text${code}text${code}...&quot;</span><span courier="">   </span></p>
+<p style="margin-bottom: 0pt; font-size: 12pt; font-family: Arial, sans-serif;">If 
+ you wish to include a literal dollar sign followed by a curly bracket, 
+ the dollar sign must be escaped with a backslash. </p>
+<p style="font-family: Arial, sans-serif; margin-bottom: 0pt; font-size: 12pt;"> </p>
+<p>   <span courier="" style="font-family: &#39;Courier New&#39;, monospace;">&quot;test\${stilltext}text&quot;     </span><span style="font-family: &#39;Courier New&#39;, monospace;"> </span><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace;">//Evaluates 
+ to: test${stilltext}text</span></i><span courier=""> </span></p>
+<p style="margin-bottom: 0pt; line-height: Normal; font-size: 12pt; font-family: Arial, sans-serif;">To 
+ prevent against SQL (and other forms) of injections, ${...} wrapped with 
+ quotes (&#39;), double quotes (&quot;) or back ticks (`) will cause the evaluated 
+ text to be escaped with a backslash (\) accordingly:</p>
+<p style="font-family: Arial, sans-serif; margin-bottom: 0pt; line-height: Normal; 
+	 font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">&quot;text &#39;${code}&#39;&quot;    - 
+ results of code will have &#39; escaped to \&#39;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">&quot;text \&quot;${code}\&quot;&quot;  - 
+ results of code will have &quot; escaped to \&quot;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">&quot;text `${code}`&quot;    - 
+ results of code will have ` escaped to \`</span></p>
+<p style="font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: 0pt; line-height: Normal; font-size: 12pt; font-family: Arial, sans-serif;">For 
+ example:</p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">String foo = &quot;Eric&#39;s&quot;;</span></p>
+<p style="margin-bottom: .0001pt;"><span courier="" style="font-family: &#39;Courier New&#39;, monospace;">String 
+ bar = &quot;NAME LIKE &#39;${foo}&#39;&quot;;</span><span style="font-family: &#39;Courier New&#39;, monospace;"> 
+ </span><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #808080;">//result is: <b style="font-family: &#39;Courier New&#39;, monospace; 
+													 color: #808080;">NAME 
+ LIKE &#39;Eric\&#39;s&#39;</b></span></i><span courier=""> </span></p>
+<p style="font-family: Arial, sans-serif; margin-bottom: 0pt;"> </p>
+<p style="margin-bottom: 0pt; font-family: Arial, sans-serif;">Finally, 
+ null will evaluate to an empty string (&quot;&quot;).<span courier=""> </span></p>
+<p style="margin-bottom: 0pt;"> </p>
+<p style="font-size: 13pt; font-style: italic; color: #449938; text-transform: uppercase; 
+	 margin-top: 15pt; margin-bottom: 3pt; font-family: Arial, sans-serif;"><b>Examples</b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">Integer age = 20;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">String name = &quot;Sue&quot;;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">String message2 
+ = &quot;${name} is ${age} year(s) old&quot;;    </span> <i><span courier="" style="color: #808080;">// Simple Case: <b style="color: #808080;">Sue 
+ is 20 year(s) old</b></span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">String t = &quot;Four 
+ times four is ${4 * 4}&quot;;             </span> <i><span courier="" style="color: #808080;">// Complex Expression: <b style="color: #808080;">Four 
+ times four is 16</b></span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">String t2 = &quot;40/9 
+ is ${formatNumber(40/9d, &quot;#.###&quot;)}&quot;;</span> <i><span courier="" style="color: #808080;">// Calling functions: <b style="color: #808080;">40/9 
+ is 4.444</b></span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">String t2 = &quot;don&#39;t 
+ replace \${name}&quot;;                 </span> <i><span courier="" style="color: #808080;">// Avoid Template: <b style="color: #808080;">don&#39;t 
+ replace ${name}</b></span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">String d = &quot;ain&#39;t&quot;;                 </span></p>
+<p style="margin-bottom: .0001pt;"><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+										 color: #006dbf;">String m1 = &quot;escaping 
+ &#39;${d}&#39; easy&quot;;                   </span><span style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf;"> </span><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #808080;">// 
+ Evaluates to: <b style="font-family: &#39;Courier New&#39;, monospace; color: #808080;">escaping 
+ &#39;ain\&#39;t&#39; easy</b></span></i><span courier=""> </span><i><span courier=""> </span></i></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

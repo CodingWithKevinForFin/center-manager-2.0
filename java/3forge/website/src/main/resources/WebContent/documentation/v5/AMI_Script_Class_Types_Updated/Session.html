@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.6.16";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Session</title>
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Session">
+        <span>Session</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<div style="position:initial;padding-bottom:11pt;">
+<h1 style="font:bold 24pt Arial;color:#4181BD;margin:5pt 0pt 15pt 0pt;"><a name="Session Class Overview" id="Session Class Overview"><span>Session Class Overview</span></a></h1>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Session</b> var = .... ;<br/></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Represents the session for this user&#39;s login. There is a global variable &#39;session&#39; that implements a Session instance and can be used for accessing session level objects such as properties, panels, datamodels, etc.</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Method Definitions</h3>
+<table style="border-collapse:collapse" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1px solid grey">getHostIp</td>
+<td style="border:1px solid grey;min-width:100px">Returns the current host ip, the ip of the remote connection as known by the ami web server</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">callCommand</td>
+<td style="border:1px solid grey;min-width:100px">callBack</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getPanels</td>
+<td style="border:1px solid grey;min-width:100px">Return all AMI panels, not including layout panels such as dividers and tab containers</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getFileSystem</td>
+<td style="border:1px solid grey;min-width:100px">Returns an object for accessing the file system that amiweb is running on</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getSessionId</td>
+<td style="border:1px solid grey;min-width:100px">Returns the current sessionid</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">log</td>
+<td style="border:1px solid grey;min-width:100px">Logs user description followed by dash dash and then a concatenation of supplied arguments to AMISCRIPT logger. Returns message logged.</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">notify</td>
+<td style="border:1px solid grey;min-width:100px">Display a notification to the user in the task tray</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getUsername</td>
+<td style="border:1px solid grey;min-width:100px">Returns the current username, the name used to login with</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getBrowserTitle</td>
+<td style="border:1px solid grey;min-width:100px">return the title shown in the browser title bar</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">setBrowserTitle</td>
+<td style="border:1px solid grey;min-width:100px">set the title shown in the browser title bar. If supplied title is null or blank, sets back to default</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getTimeZone</td>
+<td style="border:1px solid grey;min-width:100px">Returns the current username, the name used to login with</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getGlobalProperty</td>
+<td style="border:1px solid grey;min-width:100px">Return value associated with key from this servers properties, for example a property set in root.properties file. Returns null if property does not exect</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getDatamodel</td>
+<td style="border:1px solid grey;min-width:100px">Return the datamodel for the given ID, or null if not found</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getFieldValue</td>
+<td style="border:1px solid grey;min-width:100px">Convenience method to get value of from a form. Null if form or field doesn&#39;t exist</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">nowNano</td>
+<td style="border:1px solid grey;min-width:100px">Returns the current time in milliseconds since unix epoch</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">warn</td>
+<td style="border:1px solid grey;min-width:100px">Logs at warning level the user description followed by dash dash and then a concatenation of supplied arguments to AMISCRIPT logger. Returns message logged.</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getPanel</td>
+<td style="border:1px solid grey;min-width:100px">Return the panel for the given panelId, or null if not found</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">exec</td>
+<td style="border:1px solid grey;min-width:100px">Runs script deferred. The provided script is Compiled in current thread, but executed outside this call. If provided time is in the past, will execute at earliest opportunity</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">alert</td>
+<td style="border:1px solid grey;min-width:100px">Show alert dialog with given text. Returns null</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">now</td>
+<td style="border:1px solid grey;min-width:100px">Returns the current time in milliseconds since unix epoch</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getProperty</td>
+<td style="border:1px solid grey;min-width:100px">Return value associated with key from this sessions global properties. Returns null if key does not exect</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getValue</td>
+<td style="border:1px solid grey;min-width:100px">Return value associated with key from this sessions attributes. Returns null if key does not exect</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">setValue</td>
+<td style="border:1px solid grey;min-width:100px">Add the key value pair to this session&#39;s attributes and return true if successful</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getRelationship</td>
+<td style="border:1px solid grey;min-width:100px">Returns the relationship, or null if there is no relationship with the given id</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getDesktopLocation</td>
+<td style="border:1px solid grey;min-width:100px">return the location of the desktop, upper left is always zero, the width and height reflect the browser size (minus window border)</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getHostIp()" id="getHostIp()"><span>getHostIp()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::getHostIp()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns the current host ip, the ip of the remote connection as known by the ami web server</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="callCommand(appId,commandId,table)" id="callCommand(appId,commandId,table)"><span>callCommand(appId,commandId,table)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean Session::callCommand(String appId, String commandId, Table table)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+callBack</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String appId</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String commandId</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Table table</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getPanels()" id="getPanels()"><span>getPanels()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Session::getPanels()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return all AMI panels, not including layout panels such as dividers and tab containers</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getFileSystem()" id="getFileSystem()"><span>getFileSystem()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Session::getFileSystem()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns an object for accessing the file system that amiweb is running on</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getSessionId()" id="getSessionId()"><span>getSessionId()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::getSessionId()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns the current sessionid</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="log(message,additionalMessages)" id="log(message,additionalMessages)"><span>log(message,additionalMessages)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::log(Object message, Object ... additionalMessages)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Logs user description followed by dash dash and then a concatenation of supplied arguments to AMISCRIPT logger. Returns message logged.</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object message</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object ... additionalMessages</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="notify(title,body,imageurl,targetPanelId,callbackAttachment)" id="notify(title,body,imageurl,targetPanelId,callbackAttachment)"><span>notify(title,body,imageurl,targetPanelId,callbackAttachment)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::notify(String title, String body, String imageurl, String targetPanelId, Object callbackAttachment)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Display a notification to the user in the task tray</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String title</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String body</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String imageurl</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String targetPanelId</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object callbackAttachment</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getUsername()" id="getUsername()"><span>getUsername()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::getUsername()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns the current username, the name used to login with</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getBrowserTitle()" id="getBrowserTitle()"><span>getBrowserTitle()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::getBrowserTitle()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+return the title shown in the browser title bar</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="setBrowserTitle(title)" id="setBrowserTitle(title)"><span>setBrowserTitle(title)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Session::setBrowserTitle(String title)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+set the title shown in the browser title bar. If supplied title is null or blank, sets back to default</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String title</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getTimeZone()" id="getTimeZone()"><span>getTimeZone()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::getTimeZone()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns the current username, the name used to login with</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getGlobalProperty(key)" id="getGlobalProperty(key)"><span>getGlobalProperty(key)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::getGlobalProperty(String key)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return value associated with key from this servers properties, for example a property set in root.properties file. Returns null if property does not exect</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String key</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getDatamodel(datamodelId)" id="getDatamodel(datamodelId)"><span>getDatamodel(datamodelId)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Datamodel Session::getDatamodel(String datamodelId)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return the datamodel for the given ID, or null if not found</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String datamodelId</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>id of the datamodel</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getFieldValue(formPanelId,fieldId)" id="getFieldValue(formPanelId,fieldId)"><span>getFieldValue(formPanelId,fieldId)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::getFieldValue(String formPanelId, Object fieldId)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Convenience method to get value of from a form. Null if form or field doesn&#39;t exist</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String formPanelId</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object fieldId</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="nowNano()" id="nowNano()"><span>nowNano()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>UTCN Session::nowNano()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns the current time in milliseconds since unix epoch</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="warn(message,additionalMessages)" id="warn(message,additionalMessages)"><span>warn(message,additionalMessages)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::warn(Object message, Object ... additionalMessages)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Logs at warning level the user description followed by dash dash and then a concatenation of supplied arguments to AMISCRIPT logger. Returns message logged.</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object message</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object ... additionalMessages</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getPanel(panelId)" id="getPanel(panelId)"><span>getPanel(panelId)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Panel Session::getPanel(String panelId)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return the panel for the given panelId, or null if not found</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String panelId</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>id of the panel to return</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="exec(when,amiScript)" id="exec(when,amiScript)"><span>exec(when,amiScript)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Session::exec(number when, String amiScript)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Runs script deferred. The provided script is Compiled in current thread, but executed outside this call. If provided time is in the past, will execute at earliest opportunity</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>number when</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>time - negative number is milliseconds in the future from now, zero or positive number is absolute time in millis.</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String amiScript</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>Script to execute</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="alert(alertText,buttonTextAndTitleText)" id="alert(alertText,buttonTextAndTitleText)"><span>alert(alertText,buttonTextAndTitleText)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::alert(Object alertText, Object ... buttonTextAndTitleText)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Show alert dialog with given text. Returns null</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object alertText</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object ... buttonTextAndTitleText</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="now()" id="now()"><span>now()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>UTC Session::now()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns the current time in milliseconds since unix epoch</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getProperty(key)" id="getProperty(key)"><span>getProperty(key)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String Session::getProperty(String key)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return value associated with key from this sessions global properties. Returns null if key does not exect</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String key</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getValue(key)" id="getValue(key)"><span>getValue(key)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object Session::getValue(String key)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return value associated with key from this sessions attributes. Returns null if key does not exect</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String key</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="setValue(key,value)" id="setValue(key,value)"><span>setValue(key,value)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean Session::setValue(String key, Object value)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Add the key value pair to this session&#39;s attributes and return true if successful</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String key</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object value</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getRelationship(relationshipId)" id="getRelationship(relationshipId)"><span>getRelationship(relationshipId)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Relationship Session::getRelationship(String relationshipId)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns the relationship, or null if there is no relationship with the given id</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String relationshipId</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>id of the relationship</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getDesktopLocation()" id="getDesktopLocation()"><span>getDesktopLocation()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Rectangle Session::getDesktopLocation()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+return the location of the desktop, upper left is always zero, the width and height reflect the browser size (minus window border)</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

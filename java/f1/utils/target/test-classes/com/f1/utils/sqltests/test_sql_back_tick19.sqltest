@@ -1,0 +1,19 @@
+****TEST_INPUT_QUERY****
+create table t (x double);
+drop table `t`;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+****TEST_RESULT****
+null
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS t(x double)  DROP TABLE {t}
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****

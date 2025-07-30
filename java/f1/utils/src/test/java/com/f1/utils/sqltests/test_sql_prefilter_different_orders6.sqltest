@@ -1,0 +1,108 @@
+****TEST_INPUT_QUERY****
+select * from tableA, tableF where tableA.y == 5 && tableA.x == 4 && tableF.x == 1;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+tableA
++--------------------+
+|       tableA       |
++------+------+------+
+|x     |y     |z     |
+|Double|Double|Double|
++------+------+------+
+|4.0   |5.0   |8.0   |
+|4.0   |11.0  |11.0  |
+|9.0   |7.0   |0.0   |
+|6.0   |13.0  |33.0  |
+|3.0   |8.0   |17.0  |
+|4.0   |17.0  |99.0  |
+|1.0   |1.0   |23.0  |
+|1.0   |7.0   |90.0  |
+|1.0   |5.0   |50.0  |
++------+------+------+
+
+tableF
++--------------------+
+|       tableF       |
++------+------+------+
+|x     |b     |z     |
+|Double|Double|Double|
++------+------+------+
+|1.0   |2.0   |6.0   |
+|11.0  |0.0   |8.0   |
+|9.0   |8.0   |2.0   |
+|9.0   |3.0   |5.0   |
+|4.0   |3.0   |2.0   |
++------+------+------+
+
+****TEST_RESULT****
++---------------------------------------------+
+|                tableA_tableF                |
++------+------+------+--------+------+--------+
+|x     |y     |z     |tableF_x|b     |tableF_z|
+|Double|Double|Double|Double  |Double|Double  |
++------+------+------+--------+------+--------+
+|4.0   |5.0   |8.0   |1.0     |2.0   |6.0     |
++------+------+------+--------+------+--------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT "*" FROM tableA,tableF WHERE tableA . y == 5 && tableA . x == 4 && tableF . x == 1
+
+PROJECTION : 
+SELECT "*" FROM tableA,tableF WHERE tableA . y == 5 && tableA . x == 4 && tableF . x == 1
+
+PREJOIN_FILTER : 
+For Table 'tableA' ==> ((tableA.y == 5) && (tableA.x == 4))
+
+PREJOIN_FILTER : 
+For Table 'tableF' ==> (tableF.x == 1)
+
+NESTING_QUERY : 
+#0 tableA
+
+NESTING_QUERY : 
+#1 tableF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+tableA
++--------------------+
+|       tableA       |
++------+------+------+
+|x     |y     |z     |
+|Double|Double|Double|
++------+------+------+
+|4.0   |5.0   |8.0   |
+|4.0   |11.0  |11.0  |
+|9.0   |7.0   |0.0   |
+|6.0   |13.0  |33.0  |
+|3.0   |8.0   |17.0  |
+|4.0   |17.0  |99.0  |
+|1.0   |1.0   |23.0  |
+|1.0   |7.0   |90.0  |
+|1.0   |5.0   |50.0  |
++------+------+------+
+
+tableF
++--------------------+
+|       tableF       |
++------+------+------+
+|x     |b     |z     |
+|Double|Double|Double|
++------+------+------+
+|1.0   |2.0   |6.0   |
+|11.0  |0.0   |8.0   |
+|9.0   |8.0   |2.0   |
+|9.0   |3.0   |5.0   |
+|4.0   |3.0   |2.0   |
++------+------+------+
+

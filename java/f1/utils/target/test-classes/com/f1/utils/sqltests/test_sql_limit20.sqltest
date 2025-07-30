@@ -1,0 +1,138 @@
+****TEST_INPUT_QUERY****
+create table t as select * from analyzeInput union select * from analyzeInput; delete from t where n % 2 == 0 limit 4, 9;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+analyzeInput
++---------------------+
+|    analyzeInput     |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |4.0   |-3.4  |
+|1      |8.1   !null  |
+|2      |9.8   |-5.6  |
+|3      |-1.9  |4.9   |
+|4      |2.3   |-9.0  |
+|5      !null  |0.1   |
+|6      |5.7   |8.2   |
+|7      |-2.8  |7.3   |
+|8      !null  |1.2   |
+|9      |-0.3  |2.8   |
+|10     |1.8   |3.4   |
+|11     |6.7   |2.3   |
+|12     |-7.2  !null  |
+|13     |-2.1  |5.9   |
+|14     |1.5   |6.0   |
+|15     |0.0   |9.1   |
+|16     |9.9   |-0.2  |
+|17     !null  |-8.3  |
+|18     |-4.4  |5.8   |
+|19     |2.8   |6.7   |
+|20     |7.7   !null  |
++-------+------+------+
+
+****TEST_RESULT****
+51
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS t  SELECT "*" FROM analyzeInput UNION SELECT "*" FROM analyzeInputDELETE FROM t WHERE n % 2 == 0 LIMIT 4,9
+
+PROJECTION : 
+SELECT "*" FROM analyzeInput UNION SELECT "*" FROM analyzeInput
+
+NESTING_QUERY : 
+#0 analyzeInput
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+NESTING_QUERY : 
+#0 analyzeInput
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+UNION : 
+Combined 2 Tables into 42 rows
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+t
++---------------------+
+|          t          |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |4.0   |-3.4  |
+|1      |8.1   !null  |
+|2      |9.8   |-5.6  |
+|3      |-1.9  |4.9   |
+|4      |2.3   |-9.0  |
+|5      !null  |0.1   |
+|6      |5.7   |8.2   |
+|7      |-2.8  |7.3   |
+|9      |-0.3  |2.8   |
+|11     |6.7   |2.3   |
+|13     |-2.1  |5.9   |
+|15     |0.0   |9.1   |
+|17     !null  |-8.3  |
+|19     |2.8   |6.7   |
+|1      |8.1   !null  |
+|3      |-1.9  |4.9   |
+|4      |2.3   |-9.0  |
+|5      !null  |0.1   |
+|6      |5.7   |8.2   |
+|7      |-2.8  |7.3   |
+|8      !null  |1.2   |
+|9      |-0.3  |2.8   |
+|10     |1.8   |3.4   |
+|11     |6.7   |2.3   |
+|12     |-7.2  !null  |
+|13     |-2.1  |5.9   |
+|14     |1.5   |6.0   |
+|15     |0.0   |9.1   |
+|16     |9.9   |-0.2  |
+|17     !null  |-8.3  |
+|18     |-4.4  |5.8   |
+|19     |2.8   |6.7   |
+|20     |7.7   !null  |
++-------+------+------+
+
+analyzeInput
++---------------------+
+|    analyzeInput     |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |4.0   |-3.4  |
+|1      |8.1   !null  |
+|2      |9.8   |-5.6  |
+|3      |-1.9  |4.9   |
+|4      |2.3   |-9.0  |
+|5      !null  |0.1   |
+|6      |5.7   |8.2   |
+|7      |-2.8  |7.3   |
+|8      !null  |1.2   |
+|9      |-0.3  |2.8   |
+|10     |1.8   |3.4   |
+|11     |6.7   |2.3   |
+|12     |-7.2  !null  |
+|13     |-2.1  |5.9   |
+|14     |1.5   |6.0   |
+|15     |0.0   |9.1   |
+|16     |9.9   |-0.2  |
+|17     !null  |-8.3  |
+|18     |-4.4  |5.8   |
+|19     |2.8   |6.7   |
+|20     |7.7   !null  |
++-------+------+------+
+

@@ -1,0 +1,25 @@
+****TEST_INPUT_QUERY****
+{
+ double power(Double x, Integer exponent) { 
+ Double r = x; 
+ while (exponent-- > 1) { 
+ r *= x; 
+ } 
+ return r;
+ }; return power(2.0, 5);}
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+****TEST_RESULT****
+32.0
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="loader">
+<f1:secure/>
+<head>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-KP5MMRBN');</script>
+		<!-- End Google Tag Manager -->
+		<script src="cookiehub.js"></script>
+	<title>Case Studies</title>
+	<f1:include page="'_/head.htm'"/>
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KP5MMRBN"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<div id="wrapper">
+		<f1:include page="'_/header.html'"/>
+		<main id="main">
+			<section class="visual-section">
+				<div class="container">
+					<div class="decor decor-outline yellow"></div>
+					<div class="decor decor-filled"></div>
+					<div class="visual style-2">
+						<div class="text-holder">
+							<div class="text-wrap smaller">
+								<h1 class="h1">Customer  Stories</h1>
+								<p>3Forge empowers leading financial companies around the world through customizable solutions that generate fast and actionable insights.</p>
+							</div>
+						</div>
+						<div class="img-holder">
+							<img src="images/customer-stories-img.png" srcset="images/customer-stories-img@2x.png 2x" alt="" width="526" height="209">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="text-section viewport-section">
+				<!--<div class="container">
+					<h2 class="h2">Customer Stories</h2>
+					<p>3Forge empowers leading financial companies around the world through customizable solutions dat generate fast and actionable insights.</p>
+				</div> -->
+			</section>
+			<f1:include page="'_/use-cases.html'"/>
+		</main>
+		<f1:include page="'_/footer.html'"/>
+	</div>
+	<script type="text/javascript">
+		// highlight current page in navigation
+		$("#nav-item-casestudies").toggleClass("active");
+	</script>
+	<script src="cookiebutton.js"></script>
+	<script>
+			// Function to set a custom cookie indicating the user's choice regarding cookies
+			function setCookieHubCookie(value) {
+			    // Set a cookie named 'cookiehub' with the provided value
+			    document.cookie = 'cookiehub=' + value + '; expires=' + calculateExpirationDate() + '; path=/';
+			}
+			
+			// Function to calculate the expiration date for the cookie (30 days from the current day)
+			function calculateExpirationDate() {
+			    var currentDate = new Date();
+			    var expirationDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 days in milliseconds
+			    return expirationDate.toUTCString();
+			}
+			
+			// Check if the custom cookie indicating the user's choice regarding cookies is set
+			window.addEventListener('load', function() {
+			    var cookieValue = getCookie('cookiehub');
+			    if (!cookieValue) {
+			        // If the custom cookie is not set, display the CookieHub banner
+			        var cpm = {};
+			        window.cookiehub.load(cpm);
+			    }
+			});
+			
+			// Set the custom cookie when the "Accept All Cookies" or "Deny All Cookies" button is clicked
+			document.addEventListener('click', function(event) {
+			    var target = event.target;
+			    if (target.classList.contains('ch2-allow-all-btn')) {
+			        // Set the custom cookie to indicate acceptance of cookies
+			        setCookieHubCookie('allow');
+			    } else if (target.classList.contains('ch2-deny-all-btn')) {
+			        // Set the custom cookie to indicate denial of all cookies
+			        setCookieHubCookie('deny');
+			    }
+			});
+	</script>
+</body>
+</html>

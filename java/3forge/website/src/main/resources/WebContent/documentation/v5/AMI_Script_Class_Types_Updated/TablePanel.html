@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.6.20";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>TablePanel</title>
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="TablePanel">
+        <span>TablePanel</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<div style="position:initial;padding-bottom:11pt;">
+<h1 style="font:bold 24pt Arial;color:#4181BD;margin:5pt 0pt 15pt 0pt;"><a name="TablePanel Class Overview" id="TablePanel Class Overview"><span>TablePanel Class Overview</span></a></h1>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>TablePanel</b> var = .... ;<br/></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+A visualization Panel of type Table (static or realtime)</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Method Definitions</h3>
+<table style="border-collapse:collapse" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1px solid grey">getLocation</td>
+<td style="border:1px solid grey;min-width:100px">Close this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getSelectedValues</td>
+<td style="border:1px solid grey;min-width:100px">Returns a table, rows are those that are selected, columns are those that are specified in the arg list</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">callCommand</td>
+<td style="border:1px solid grey;min-width:100px">Call the given command. Returns commandUid on success, otherwise null</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">callCommand</td>
+<td style="border:1px solid grey;min-width:100px">Call the given command. Returns null</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getHiddenColumns</td>
+<td style="border:1px solid grey;min-width:100px">Return the names of the columns that are hidden</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getColumnSorting</td>
+<td style="border:1px solid grey;min-width:100px">Get the sort, returns true=ascending, false=descending, null=no sort or column not found</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getColumnsWithSort</td>
+<td style="border:1px solid grey;min-width:100px">Return the names of the columns that have sorts</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getColumnsFilter</td>
+<td style="border:1px solid grey;min-width:100px">Return the names of the columns that have filters</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">callRelationship</td>
+<td style="border:1px solid grey;min-width:100px">Rerun the relationship targeting this panel based on name. Returns true on success</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">setFilter</td>
+<td style="border:1px solid grey;min-width:100px">Add or clear a filter. If values is empty the filter is cleared. Returns true on sucess, false if the column not found</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">callCommandOnSelected</td>
+<td style="border:1px solid grey;min-width:100px">Call the given command on the currently user selected rows</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getType</td>
+<td style="border:1px solid grey;min-width:100px">Return the type of this panel, either: html, div_v, div_h, tabs, or one of the AMI visualization types.</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">callRelationshipId</td>
+<td style="border:1px solid grey;min-width:100px">Rerun the relationship targeting this panel based on id. Returns true on success</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">swapVisibleColumn</td>
+<td style="border:1px solid grey;min-width:100px">Replace a visible column with a currently hidden one, effectively hiding the currently visible one. Returns true if the column arrangement changed as a result</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">requery</td>
+<td style="border:1px solid grey;min-width:100px">Clear the user&#39;s selection</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">exportConfig</td>
+<td style="border:1px solid grey;min-width:100px">export this panels configuration</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">clearUserSelection</td>
+<td style="border:1px solid grey;min-width:100px">Clear the user&#39;s selection</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getColumnLocation</td>
+<td style="border:1px solid grey;min-width:100px">Get the zero-indexed left based position of the column, -1 if hidden, -2 if it doesn&#39;t exist</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">close</td>
+<td style="border:1px solid grey;min-width:100px">Close this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">deletePanel</td>
+<td style="border:1px solid grey;min-width:100px">permanently remove this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">minimize</td>
+<td style="border:1px solid grey;min-width:100px">Minimize the window</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getParent</td>
+<td style="border:1px solid grey;min-width:100px">get the Panel owning this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getFilter</td>
+<td style="border:1px solid grey;min-width:100px">Return the string values that are in a filter for a given column, or null the column is not filtered on or missing</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">bringToFront</td>
+<td style="border:1px solid grey;min-width:100px">Make this panel visible and bring its containing window to the front</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getTitle</td>
+<td style="border:1px solid grey;min-width:100px">Return this panel&#39;s title</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">asFormattedTable</td>
+<td style="border:1px solid grey;min-width:100px">Copy and return the values of this panel as a table</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">sort</td>
+<td style="border:1px solid grey;min-width:100px">Sets the sort</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">addPanelNextToMe</td>
+<td style="border:1px solid grey;min-width:100px">Add a new panel adjacent to this panel by createing a divider portlet. The divider portlet is returned</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">selectRows</td>
+<td style="border:1px solid grey;min-width:100px">Select or deselect all rows. Returns true on success</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">resetColumns</td>
+<td style="border:1px solid grey;min-width:100px">Reset all columns to default locations</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getWindow</td>
+<td style="border:1px solid grey;min-width:100px">Close this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getId</td>
+<td style="border:1px solid grey;min-width:100px">Return this panel&#39;s panel ID</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getStyle</td>
+<td style="border:1px solid grey;min-width:100px">Get the value associated with the supplied style key in this portlets style as a string. Null if key not found</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getStyle</td>
+<td style="border:1px solid grey;min-width:100px">Get the value associated with the supplied style key in this portlets style as a string. Null if key not found</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getVisibleColumns</td>
+<td style="border:1px solid grey;min-width:100px">Return the names of the columns that are visible, from left to right</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getSelectedRows</td>
+<td style="border:1px solid grey;min-width:100px">Return the rows of this panel selected by the suer</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">moveColumnsTo</td>
+<td style="border:1px solid grey;min-width:100px">Move a list of columns to a particular position in the table, or hide them</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getCurrentRelationship</td>
+<td style="border:1px solid grey;min-width:100px">Get the relationship currently applied to this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getStyleNumber</td>
+<td style="border:1px solid grey;min-width:100px">Get the numeric value associated with the supplied style key in this portlets style. Null if key not found, or value is not a number</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getValue</td>
+<td style="border:1px solid grey;min-width:100px">Return value associated with key from this portlet&#39;s attributes. Returns null if key does not exist</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">setValue</td>
+<td style="border:1px solid grey;min-width:100px">Add the key value pair to this portlet&#39;s attributes and return true if successful</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">clearRows</td>
+<td style="border:1px solid grey;min-width:100px">Clear all rows for this table. Returns true on success</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">asTable</td>
+<td style="border:1px solid grey;min-width:100px">Copy and return the values of this panel as a table</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getSelectedValues(columnNames)" id="getSelectedValues(columnNames)"><span>getSelectedValues(columnNames)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Table TablePanel::getSelectedValues(String ... columnNames)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns a table, rows are those that are selected, columns are those that are specified in the arg list</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String ... columnNames</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>names of the columns to include values for</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getHiddenColumns()" id="getHiddenColumns()"><span>getHiddenColumns()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>List TablePanel::getHiddenColumns()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return the names of the columns that are hidden</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getColumnSorting(columnName)" id="getColumnSorting(columnName)"><span>getColumnSorting(columnName)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>String TablePanel::getColumnSorting(String ... columnName)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Get the sort, returns true=ascending, false=descending, null=no sort or column not found</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String ... columnName</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getColumnsWithSort()" id="getColumnsWithSort()"><span>getColumnsWithSort()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>List TablePanel::getColumnsWithSort()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return the names of the columns that have sorts</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getColumnsFilter()" id="getColumnsFilter()"><span>getColumnsFilter()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>List TablePanel::getColumnsFilter()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return the names of the columns that have filters</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="setFilter(columnName,values)" id="setFilter(columnName,values)"><span>setFilter(columnName,values)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean TablePanel::setFilter(String columnName, String ... values)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Add or clear a filter. If values is empty the filter is cleared. Returns true on sucess, false if the column not found</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String columnName</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>name of the column to set a filter for</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String ... values</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>values to filter in</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="callCommandOnSelected(applicationId,cmdId)" id="callCommandOnSelected(applicationId,cmdId)"><span>callCommandOnSelected(applicationId,cmdId)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean TablePanel::callCommandOnSelected(String applicationId, String cmdId)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Call the given command on the currently user selected rows</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String applicationId</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String cmdId</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="swapVisibleColumn(visible,hidden)" id="swapVisibleColumn(visible,hidden)"><span>swapVisibleColumn(visible,hidden)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object TablePanel::swapVisibleColumn(String visible, String hidden)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Replace a visible column with a currently hidden one, effectively hiding the currently visible one. Returns true if the column arrangement changed as a result</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String visible</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>visible column to hide</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String hidden</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>hidden column to show</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="requery()" id="requery()"><span>requery()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean TablePanel::requery()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Clear the user&#39;s selection</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getColumnLocation(columnName)" id="getColumnLocation(columnName)"><span>getColumnLocation(columnName)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Integer TablePanel::getColumnLocation(String columnName)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Get the zero-indexed left based position of the column, -1 if hidden, -2 if it doesn&#39;t exist</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String columnName</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getFilter(columnName)" id="getFilter(columnName)"><span>getFilter(columnName)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>List TablePanel::getFilter(String columnName)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return the string values that are in a filter for a given column, or null the column is not filtered on or missing</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String columnName</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="asFormattedTable()" id="asFormattedTable()"><span>asFormattedTable()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Table TablePanel::asFormattedTable()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Copy and return the values of this panel as a table</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="sort(keepSorting,AorD,ColumnNames)" id="sort(keepSorting,AorD,ColumnNames)"><span>sort(keepSorting,AorD,ColumnNames)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean TablePanel::sort(boolean keepSorting, String AorD, String ... ColumnNames)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Sets the sort</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>boolean keepSorting</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String AorD</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String ... ColumnNames</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="selectRows(shouldSelect)" id="selectRows(shouldSelect)"><span>selectRows(shouldSelect)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object TablePanel::selectRows(boolean shouldSelect)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Select or deselect all rows. Returns true on success</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>boolean shouldSelect</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>If true selects all otherwise deselects all</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="resetColumns()" id="resetColumns()"><span>resetColumns()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean TablePanel::resetColumns()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Reset all columns to default locations</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getVisibleColumns()" id="getVisibleColumns()"><span>getVisibleColumns()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>List TablePanel::getVisibleColumns()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return the names of the columns that are visible, from left to right</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getSelectedRows()" id="getSelectedRows()"><span>getSelectedRows()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>List TablePanel::getSelectedRows()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Return the rows of this panel selected by the suer</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="moveColumnsTo(pos,columnNames)" id="moveColumnsTo(pos,columnNames)"><span>moveColumnsTo(pos,columnNames)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Object TablePanel::moveColumnsTo(Integer pos, String ... columnNames)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Move a list of columns to a particular position in the table, or hide them</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Integer pos</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>zero-indexed left offset Position of the first column, or -1 to hide all columns</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String ... columnNames</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>name of the columns to move, from left to right</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="clearRows()" id="clearRows()"><span>clearRows()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean TablePanel::clearRows()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Clear all rows for this table. Returns true on success</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="asTable()" id="asTable()"><span>asTable()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Table TablePanel::asTable()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Copy and return the values of this panel as a table</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

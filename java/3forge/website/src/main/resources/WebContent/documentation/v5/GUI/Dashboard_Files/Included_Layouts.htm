@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "3.4.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2020"/>
+  <title>Included Layouts</title>
+  <link rel="StyleSheet" href="../../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Included Layouts">
+        <span>Included Layouts</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+  <h1>Included Layouts</h1>
+  <p dir="ltr" style="font-weight: 400;"><b id="docs-internal-guid-a5b7c94e-7fff-3001-5cf0-20d9ac23ca99"><span style="font-weight: 400;">In addition to storing objects within a dashboard, a layout may also include references to child layouts. This means that when a layout is loaded, all of the child layouts are also loaded as well.</span></b></p>
+  <p> </p>
+  <p><span style="color:#000000;">(For additional details on source control management - refer to the <a href="../../Guides/Source_Control_Management.htm">Source Control Management</a> section)</span></p>
+  <p> </p>
+  <p><strong>Using Included Layouts when working with Source Control Management</strong></p>
+  <p> </p>
+  <p>In order to reference child layouts, click on the <strong>Included Layouts</strong> window found under the <strong>Dashboard </strong>menu:</p>
+  <p> </p>
+  <p><img src="../../assets/images/IncludedLayouts.Menu.jpg"/></p>
+  <p> </p>
+  <p>This will open the <strong>Included Layouts </strong>window:</p>
+  <p> </p>
+  <p><img height="488" src="../../assets/images/IncludedLayouts.Window.jpg" width="772"/></p>
+  <p> </p>
+  <p>The &lt;root&gt; entry listed is the current <strong>parent</strong> layout. This window is used to include (add) child layouts to this parent layout. In order to add layouts, right click on the &lt;root&gt; entry and use the menu in order to select the child layout you would like the include: </p>
+  <p> </p>
+  <ul class="Disc">
+    <li>
+      <p>Existing File: layouts which are saved as <strong>Absolute Files </strong>(File &gt; Absolute File - Save As)</p>
+    </li>
+    <li>
+      <p>File in the cloud: layouts saved to the <strong>cloud </strong>(File &gt; Cloud - Save As)</p>
+    </li>
+    <li>
+      <p>File in my layouts: layouts saved <strong>locally </strong>(File &gt; My Layouts - Save As)</p>
+    </li>
+  </ul>
+  <p> </p>
+  <p><img src="../../assets/images/IncludedLayouts.RightClickMenu.jpg"/></p>
+  <p> </p>
+  <p>Once you have selected the layout to include, it will appear under the &lt;root&gt;. You can either include more layouts to the &lt;root&gt; or you can actually include a layout into the child layout by following the same steps above. </p>
+  <p> </p>
+  <p><img src="../../assets/images/IncludedLayouts.RootChild.jpg"/></p>
+  <p> </p>
+  <p>After you click submit, the child layout with its panels and datamodels will be available for use. Opening the datamodeler (<strong>Dashboard </strong>&gt; <strong>Datamodeler</strong>), you will find the datamodel from the child layout with the name of the child layout preceding its Datamodel Name (for example: ChildLayout.Country)</p>
+  <p> </p>
+  <p><img src="../../assets/images/IncludedLayouts.DatamodelChild.jpg"/></p>
+  <p> </p>
+  <p>On the left-hand side of the datamodeler, you will find a list of all the included layouts (along with the parent). Unchecking/checking a layout here will filter out the associated datamodels and panels. This will come in handy when working with many layouts and their components. </p>
+  <p> </p>
+  <p><img src="../../assets/images/IncludedLayouts.DatamodelFilterCheck.jpg"/> <img src="../../assets/images/IncludedLayouts.DatamodelFilterUncheck.jpg"/></p>
+  <p> </p>
+  <p>In order to use a panel from the child layout, first create a blank panel (Windows &gt; New Window). From the panel menu, hover over <strong>Unhide Panel </strong>to see all of the panels that are now included and available for use in the current layout. As seen in the datamodeler, the child components will be named in a similar manner (name of layout.panel ID)</p>
+  <p> </p>
+  <p><img height="381" src="../../assets/images/IncludedLayouts.Unhide.jpg" width="516"/></p>
+  <p> </p>
+  <p> </p>
+  <p><strong>Note</strong>: Deleting the panel and then saving will affect the child layout. To avoid losing layout components, use the <strong>hide</strong> option in order to no longer use the child panel.</p>
+  <p> </p>
+  <p><img height="402" src="../../assets/images/IncludedLayouts.HidePanel.jpg" width="233"/></p>
+  <p> </p>
+  <p> </p>
+  <p>In order to completely disassociate a child layout from the parent layout, return to the Included Layouts window and click <strong>Unlink </strong>in the right click menu. Make sure to save in order to remember this change.</p>
+  <p> </p>
+  <p><img src="../../assets/images/IncludedLayouts.Unlink.jpg"/></p>
+  <p> </p>
+  <p><strong>Note</strong>: When you make a change in a child layout and then save it, it will be reflected on any layouts that has included this child layout.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

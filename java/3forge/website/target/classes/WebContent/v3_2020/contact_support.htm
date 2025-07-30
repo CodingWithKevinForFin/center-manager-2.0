@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f1:set var="tab" value="'contact_support'" scope="request" />
+
+<f1:secure/>
+
+<f1:if test="${isLoggedIn}"><f1:else/>
+
+  <f1:redirect page="'login.html'"/>
+
+</f1:if>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<f1:include page="'_/v2/head.htm'"/>
+
+<f1:include page="'_/v2/masthead.htm'"/>
+
+
+
+<body>
+
+
+
+  <div class="visible-phone" id="secondary-nav">
+
+
+
+    <a href="#" class="scrollToTop">
+
+      <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+    </a>
+
+
+
+    <noscript>
+
+
+
+      <a href="#" class="scrollToTop2">
+
+        <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+      </a>
+
+
+
+    </noscript>
+
+
+
+    <center>
+
+
+
+      <h3 class="mobile-h1">Support</h3>
+
+
+
+    </center>
+
+
+
+    <a href="secure_account.htm" title="My Account">
+
+
+
+      <img class="secondary-nav-icon" style="right:0;top:0;color: white;" src="v2_resources/images/account_icon_gray.png" alt="Account"/>
+
+
+
+    </a>
+
+
+
+  </div>
+
+
+
+  <div id="portal-content">
+
+
+
+    <noscript>
+
+      <div class="formOverlay">
+
+        <center>
+
+          <h2>Most features on this site require JavaScript. Please enable JavaScript before continuing.</h2>
+
+        </center>
+
+      </div>
+
+    </noscript>
+
+
+
+    <h1>Contact Support</h1>
+
+
+
+    <ul class="unstyled row-fluid">
+
+
+
+      <li class="span5 bottom-margin-30x">
+
+
+
+        <form action="" onSubmit="" method="post" class="" id="contactForm"><input id='tok' type="hidden" value='<f1:out value="${sectoken}"/>'>
+
+
+
+          <label style="color:red;" id='csError'></label>
+
+
+
+          <textarea id="message" class="contactFormInput" name="message" placeholder="What is your support question?" rows="7" style="width: 100%;"></textarea>
+
+          <input id='type' type="hidden" value='question'/>
+
+          <input id='func' type="hidden" value='onContactSupportResponse'/>
+
+
+
+          <br><br>
+
+
+
+          <label>What is your preferred contact method?</label>
+
+
+
+          <div class="radio">
+
+            <label>
+
+              <input type="radio" name="contactMethod" id="contactMethod" class="contactFormInput" value="email" checked>
+
+              Email: <f1:out escape="FULL" value="${user.userName}"/>
+
+            </label>
+
+          </div>
+
+          <div class="radio">
+
+            <label>
+
+              <input type="radio" name="contactMethod" id="contactMethod" class="contactFormInput" value="phone">
+
+              Phone: <f1:out escape="FULL"  value="${user.phone}"/>
+
+            </label>
+
+          </div>
+
+
+
+          <br>
+
+
+
+          <label>(Optional) Attach up to 3 Files:</label>
+		  <div id="uploadStatus"></div> 
+		  <input type="file" id="file0" class="contactFormInput" name="pos" value='0'>
+		  <input type="file" id="file1" class="contactFormInput" name="pos" value='1'>
+		  <input type="file" id="file2" class="contactFormInput" name="pos" value='2'>
+		  
+          <hr>
+          
+          </form>
+
+          <label>After submitting the form you will receive a confirmation email containing a copy of your support question.</label><br>
+
+
+
+          <button id="contactSubmit" data-toggle="modal" class="btn btn-info btn-theme1"> Contact Us </button>
+
+
+
+          <p id="contactDelayMsg" class="smalltext delayMsg" style="margin-bottom: 0; padding-left: 0;">If you are uploading attachments, this may take a while. Please do not refresh the page.</p>
+
+
+      </li>
+
+
+
+    </ul>
+
+
+
+    <f1:include page="'_/v2/footer.htm'"/>
+
+
+
+    <!-- submit confirmation -->
+
+    <div class="modal fade" id="submitConfirmation" tabindex="-1" role="dialog" aria-labelledby="submitConfirmation">
+
+      <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+
+
+            <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                <h2 class="modal-title" id="modalTitle">Message sent</h2>
+
+            </div>
+
+
+
+            <div class="modal-body">
+
+
+
+              <p>Your request has been submitted! Our team will follow up shortly.</p>
+
+
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+              <center>
+
+                <button id="" data-toggle="modal" data-dismiss="modal" class="btn btn-info btn-theme1">Close</button>
+
+              </center>
+
+            </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+  <f1:script type="text/javascript" src="js/fileselected.js" nonce="true"/></script>
+
+  <f1:script type="text/javascript" src="v2_resources/javascripts/portal.js" nonce="true"/></script>
+  <f1:script type="text/javascript" src="v2_resources/javascripts/script.js" nonce="true"/></script>
+  
+  
+  <f1:script src="inline" nonce="true"/>
+  	function fileSelected(event, filePos) {
+  		var fileInput = document.getElementById("file" + filePos);
+  		var contactSubmitBtn = document.getElementById("contactSubmit");
+  		var uploadStatus = document.getElementById("uploadStatus");
+  		
+  		var xhr = new XMLHttpRequest();
+  		var formData = new FormData();
+  		if (fileInput.files && fileInput.files.length === 1) {
+			var file = fileInput.files[0];
+			var orig = file.name;
+			var escapedName = escapeFileName(orig);
+			file.name = escapedName;
+		    if (!isValidFileName(orig)) {
+		        alert("The file name contains forbidden characters and cannot be uploaded.");
+		        fileInput.value = "";
+		        return;
+		    }
+			formData.append("file", file);
+			formData.append("tok",'<f1:out value="${sectoken}"/>');
+			formData.append("pos", filePos);
+			xhr.open("post", "attach");
+			xhr.upload.addEventListener("progress", function(event) {
+				contactSubmitBtn.disabled = true;
+				contactSubmitBtn.style.cursor = "not-allowed";
+			    if (event.lengthComputable) {
+			    	var percentComplete = Math.floor(event.loaded / event.total * 100);
+			    	uploadStatus.innerHTML = "Uploading <b>" + escapedName + "</b>(" + percentComplete + "% completed)";
+			  	} else {
+			    	uploadStatus.innerHTML = "Uploading <b>" + escapedName + "...</b>";
+			  	}
+			});
+			xhr.addEventListener("load", function() {
+				contactSubmitBtn.disabled = false;
+				contactSubmitBtn.style.cursor = "pointer";
+				if (xhr.status == 200 && xhr.readyState == 4) {
+					uploadStatus.innerHTML = "Upload complete for <b>" + escapedName + "</b>";
+				} else if (xhr.status == 400) {
+					fileInput.value = "";
+					uploadStatus.innerHTML = "<span style='color:red;'>" + xhr.responseText + "</span>";
+				} else {
+					fileInput.value = "";
+					uploadStatus.innerHTML = "<span style='color:red;'>Unknown Error: Please contact support directly via support@3forge.com</span>";
+				}
+			});
+			xhr.addEventListener("error", function() {
+			    uploadStatus.innerHTML = "Error uploading <b>" + escapedName + "</b>. Please try again or contact <b>support@3forge.com</b> directly";
+			});
+			xhr.addEventListener("abort", function() {
+			    uploadStatus.innerHTML = "Upload cancelled for <b>" + escapedName + "</b>";
+			});
+			xhr.send(formData);
+		} else {
+			// user hit cancel from the file explorer. Send request to clear if there were an existing file uploaded.
+			formData.append("tok",'<f1:out value="${sectoken}"/>');
+			formData.append("pos",filePos);
+			formData.append("detach", "detach");
+			xhr.open("post", "attach");
+			xhr.addEventListener("load", function() {
+				uploadStatus.innerHTML = "";
+			});
+			xhr.send(formData);
+		}
+		
+		function escapeFileName(fileName) {
+		    return fileName.replace(/&/g, "andd")
+		                   .replace(/</g, "arrow")
+		                   .replace(/>/g, "arrow")
+		                   .replace(/"/g, "quote")
+		                   .replace(/'/g, "quote");
+		}
+		
+		function isValidFileName(fileName) {
+    	    const forbiddenChars = /[<>:"/\\|?*]/;
+    		return !forbiddenChars.test(fileName);
+		}
+  	}
+  </script>
+  
+  <f1:script src="inline" nonce="true"/>
+  
+   contactbtn = document.getElementById("contactSubmit");
+   
+   contactbtn.addEventListener('click', function(event) {
+	   event.preventDefault();
+	   ajaxNow("contactSupport",getFields("contactForm"));
+	   onContactSupportResponse("sending","Sending....");
+	   return false;
+   });
+   
+   files1 = document.getElementById("file0");
+   files2 = document.getElementById("file1");
+   files3 = document.getElementById("file2");
+   
+   files1.addEventListener('change', function(event) {
+   	fileSelected(event, 0, '<f1:out value="${sectoken}"/>');
+   	displayFileName(this);
+   });
+   
+   files2.addEventListener('change', function(event) {
+   	fileSelected(event, 1, '<f1:out value="${sectoken}"/>');
+   	displayFileName(this);
+   });
+   
+   files3.addEventListener('change', function(event) {
+   	fileSelected(event, 2, '<f1:out value="${sectoken}"/>');
+   	displayFileName(this);
+   });
+   
+   function displayFileName(input) {
+    const fileName = input.files[0] ? input.files[0].name : "";
+    if (fileName) {
+        const sanitizedFileName = escapeFileName(fileName);
+        const statusDiv = document.getElementById("uploadStatus");
+        const fileId = input.id;
+        
+        statusDiv.innerHTML += `<p>File selected: ${sanitizedFileName} (ID: ${fileId})</p>`;
+	    }
+	}
+	
+	function escapeFileName(fileName) {
+	    return fileName.replace(/&/g, "andd")
+	                   .replace(/</g, "arrow")
+	                   .replace(/>/g, "arrow")
+	                   .replace(/"/g, "quote")
+	                   .replace(/'/g, "quote");
+	}
+  
+  </script>
+</body>
+
+</html>
+

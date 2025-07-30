@@ -1,0 +1,785 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f1:set var="tab" value="'videos'" scope="request" />
+
+<f1:secure/>
+
+<f1:if test="${isLoggedIn}"><f1:else/>
+
+  <f1:redirect page="'login.html'"/>
+
+</f1:if>
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<f1:include page="'_/v2/head.htm'"/>
+
+
+
+<f1:include page="'_/v2/masthead.htm'"/>
+
+
+
+	<body>
+
+
+
+
+
+    <div class="visible-phone" id="secondary-nav">
+
+
+
+
+
+      <a href="#" class="scrollToTop">
+
+        <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+      </a>
+
+
+
+
+
+      <noscript>
+
+
+        <a href="#" class="scrollToTop2">
+
+          <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+        </a>
+
+
+      </noscript>
+
+
+
+
+
+      <center>
+
+
+        <h3 class="mobile-h1">Videos</h3>
+
+
+      </center>
+
+
+
+
+
+      <a href="secure_account.htm" title="My Account">
+
+
+        <img class="secondary-nav-icon" style="right:0;top:0;color:white;" src="v2_resources/images/account_icon_gray.png"/>
+
+
+      </a>
+
+
+
+    </div>
+
+
+
+		<div id="portal-content">
+
+
+
+      <noscript>
+
+        <div class="formOverlay">
+
+          <center>
+
+            <h2>Most features on this site require JavaScript. Please enable JavaScript before continuing.</h2>
+
+          </center>
+
+        </div>
+
+      </noscript>
+
+
+          <f1:if test="OH.eq(${user.statusText},'NEW')">
+
+
+
+            <h3 class="margin-bottom">Featured</h3>
+
+
+
+
+            <ul class="unstyled row-fluid">
+
+
+
+              <li class="span4">
+
+
+
+                <center>
+
+
+                  <a data-toggle="modal" data-target="#verifyEmail">
+
+                    <img class="video-placeholder" src="v2_resources/images/distributed_snapshot.gif" alt="Video" />
+
+                  </a><br><br>
+
+
+                  <h5>Connect vs. collect</h5><br><br>
+
+
+                </center>
+
+
+
+              </li>
+
+
+
+              <li class="span4">
+
+
+
+                <center>
+
+
+                  <a data-toggle="modal" data-target="#verifyEmail">
+
+                    <img class="video-placeholder" src="v2_resources/images/drilldown.png" alt="Video" />
+
+                  </a>
+
+<br><br>
+
+
+                  <h5>3 minute layout challenge</h5><br><br>
+
+
+                </center>
+
+
+
+              </li>
+
+
+
+              <li class="span4">
+
+
+
+                <center>
+
+
+                  <a data-toggle="modal" data-target="#verifyEmail">
+
+                    <img class="video-placeholder" src="v2_resources/images/anvil_behavior_still.jpg" alt="Video" />
+
+                  </a>
+
+<br><br>
+
+
+                  <h5>A tour of the Best Execution dashboard</h5>
+
+<br><br>
+                </center>
+
+
+
+              </li>
+
+
+
+            </ul><br><br>
+
+
+
+            <h3 class="margin-bottom">Tutorials</h3>
+
+
+
+            <ul class="unstyled row-fluid">
+
+
+
+              <li class="span3">
+
+
+
+                <center>
+
+
+                  <a data-toggle="modal" data-target="#verifyEmail">
+
+                    <img class="video-placeholder" src="v2_resources/images/styling3_still.jpg" alt="Video" />
+
+                  </a>
+
+<br><br>
+
+
+                  <h5>Getting started</h5>
+
+                  <p>3 videos</p><br>
+
+
+                </center>
+
+
+
+              </li>
+
+
+
+              <li class="span3">
+
+
+
+                <center>
+
+
+                  <a data-toggle="modal" data-target="#verifyEmail">
+
+                    <img class="video-placeholder" src="v2_resources/images/add_multi_datasources_still.jpg" alt="Video" />
+
+                  </a>
+
+<br><br>
+
+
+                  <h5>Databases</h5>
+
+                  <p>4 videos</p><br>
+
+
+                </center>
+
+
+
+              </li>
+
+
+
+              <li class="span3">
+
+
+
+                <center>
+
+
+                  <a data-toggle="modal" data-target="#verifyEmail">
+
+                    <img class="video-placeholder" src="v2_resources/images/governance_still.jpg" alt="Video" />
+
+                  </a><br><br>
+
+
+                  <h5>Tables</h5>
+
+                  <p>5 videos</p><br>
+
+
+                </center>
+
+
+
+              </li>
+
+
+
+              <li class="span3">
+
+
+
+                <center>
+
+
+                  <a data-toggle="modal" data-target="#verifyEmail">
+
+                    <img class="video-placeholder" src="v2_resources/images/visual_wizard_still.jpg" alt="Video" />
+
+                  </a>
+
+<br><br>
+
+
+                  <h5>Charting</h5>
+
+                  <p>9 videos</p><br>
+
+
+                </center>
+
+
+
+              </li>
+
+
+
+            </ul>
+
+<br>
+
+
+
+            <ul class="unstyled row-fluid">
+
+
+
+              <li class="span3">
+
+
+
+                <center>
+
+
+                  <a data-toggle="modal" data-target="#verifyEmail">
+
+                    <img class="video-placeholder" src="v2_resources/images/bluegreen_dashboard.png" alt="Video" />
+
+                  </a>
+
+<br><br>
+
+
+                  <h5>Forms</h5>
+
+                  <p>4 videos</p><br>
+
+
+                </center>
+
+
+
+              </li>
+
+
+
+              <li class="span3">
+
+
+
+                <center>
+
+
+                  <a data-toggle="modal" data-target="#verifyEmail">
+
+                    <img class="video-placeholder" src="v2_resources/images/publish.png" alt="Video" />
+
+                  </a><br><br>
+
+
+                  <h5>Collaboration</h5>
+
+                  <p>4 videos</p><br>
+
+
+                </center>
+
+
+
+              </li>
+
+
+
+              <li class="span3">
+
+
+
+                <center>
+
+
+                  <a data-toggle="modal" data-target="#verifyEmail">
+
+                    <img class="video-placeholder" src="v2_resources/images/fast_ami_still.jpg" alt="Video" />
+
+                  </a><br><br>
+
+
+                  <h5>Real-time</h5>
+
+                  <p>2 videos</p><br>
+
+
+                </center>
+
+
+
+              </li>
+
+
+			<li class="span3">
+
+
+
+
+
+                <center>
+
+
+
+                  <a data-toggle="modal" data-target="#verifyEmail">
+
+                    <img class="video-placeholder" src="v2_resources/images/fast_ami_still.jpg" alt="Video" />
+
+                  </a><br><br>
+
+
+
+                  <h5>Real-time 2</h5>
+
+                  <p>2 videos</p><br>
+
+
+
+                </center>
+
+
+
+
+
+            </li>
+
+
+            </ul>
+
+
+
+          </f1:if>
+
+
+
+          <f1:if test="OH.ne(${user.statusText},'NEW')">
+
+
+
+            <h3 class="margin-bottom">Featured</h3>
+
+
+
+
+
+
+            <ul class="unstyled row-fluid">
+
+
+
+              <li class="span4">
+
+
+
+                <center>
+
+
+                  <div class="wistia-video-embed">
+<f1:script src="js/a7xxf74dff.jsonp" nonce="true"/><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:56.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_a7xxf74dff popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;width:100%">&nbsp;</span></div></div></div>
+
+
+                  <br>
+
+
+                  <h5>Connect vs. collect</h5>
+<br><br>
+
+                </center>
+
+
+
+              </li>
+
+
+
+              <li class="span4">
+
+
+
+                <center>
+
+
+                  <div class="wistia-video-embed"><f1:script src="//fast.wistia.com/embed/medias/350446l45s.jsonp"  nonce="true"/><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_350446l45s popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;width:100%">&nbsp;</span></div></div></div>
+
+
+                  <br>
+
+
+                  <h5>3 minute layout challenge</h5>
+<br><br>
+
+                </center>
+
+
+
+              </li>
+
+
+
+              <li class="span4">
+
+
+
+                <center>
+
+
+                  <div class="wistia-video-embed">
+<f1:script src="//fast.wistia.com/embed/medias/v3bmolo00z.jsonp"  nonce="true"/><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:54.17% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_v3bmolo00z popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;width:100%">&nbsp;</span></div></div></div>
+
+
+                  <br>
+
+
+                  <h5>A tour of the Best Execution dashboard</h5>
+<br><br>
+
+                </center>
+
+
+
+              </li>
+
+
+
+
+            </ul>
+
+<br><br>
+
+
+
+            <!-- updated tutorials -->
+
+            <h3 class="margin-bottom">Tutorials</h3>
+
+			  <!-- First Row -->
+
+              <ul class="unstyled row-fluid">
+
+	              <li class="span3">
+
+	                <center>
+
+	                  <div class="wistia-video-embed">
+
+						<f1:script src="https://fast.wistia.com/embed/medias/is45k0ebtm.jsonp"  nonce="true"/><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:56.56% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_is45k0ebtm popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+
+	                  </div>
+
+	                  <br>
+
+	                  <h5>1. Installing AMI</h5>
+
+	                </center>
+
+	              </li>
+
+	              
+
+	              <li class="span3">
+
+	                <center>
+
+	                  <div class="wistia-video-embed">
+
+	              		<f1:script src="https://fast.wistia.com/embed/medias/ixybw4g275.jsonp"  nonce="true"/><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:54.06% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_ixybw4g275 popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+
+	                 </div>
+
+	                  <br>
+
+	                  <h5>2. Dashboard Layout</h5>
+
+	                </center>
+
+	              </li>
+
+	             
+
+	              <li class="span3">
+
+	                <center>
+
+	                  <div class="wistia-video-embed">
+
+					 	<f1:script src="https://fast.wistia.com/embed/medias/g8a1rrrfx5.jsonp"  nonce="true"/><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:54.06% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_g8a1rrrfx5 popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+
+					 </div>
+
+	                  <br>
+
+	                  <h5>3. Working with Static Databases</h5>
+
+	                </center>
+
+	              </li>
+
+	              
+
+	              <li class="span3">
+
+	                <center>
+
+	                  <div class="wistia-video-embed">
+
+	                	<f1:script src="https://fast.wistia.com/embed/medias/tqev9vvoqo.jsonp"  nonce="true"/><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:54.06% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_tqev9vvoqo popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+
+	                  </div>
+
+	                  <br>
+
+	                  <h5>4. Working with Real-Time Data</h5>
+
+	                </center>
+
+	              </li>
+
+	          </ul>
+
+	          
+
+	          <!-- Second Row  -->
+
+	          <ul class="unstyled row-fluid">
+
+	              <li class="span3">
+
+	                <center>
+
+	                  <div class="wistia-video-embed">
+
+	               		<f1:script src="https://fast.wistia.com/embed/medias/mhhax9b4xu.jsonp"  nonce="true"/><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:54.06% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_mhhax9b4xu popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+
+	               	  </div>
+
+	                  <br>
+
+	                  <h5>5. AMI Script</h5>
+
+	                </center>
+
+	              </li>
+
+	              
+
+	              <li class="span3">
+
+	                <center>
+
+	                  <div class="wistia-video-embed">
+
+	                  	<f1:script src="https://fast.wistia.com/embed/medias/y84xvaq7qz.jsonp"  nonce="true"/></script><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:54.06% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_y84xvaq7qz popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+
+	               	  </div> 
+
+	               	  <br>
+
+	                  <h5>6. Working with Static Databases &Iota;&Iota;</h5>
+
+	                </center>
+
+	              </li>
+
+	              
+
+	              <li class="span3">
+
+	                <center>
+
+	                  <div class="wistia-video-embed">
+
+	                  	<f1:script src="https://fast.wistia.com/embed/medias/0zwd6qxpal.jsonp"  nonce="true"/><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:54.06% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_0zwd6qxpal popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+
+	               	  </div> 
+
+	               	  <br>
+
+	                  <h5>7. Advanced Analytics</h5>
+
+	                </center>
+
+	
+
+	              </li>
+
+	              <li class="span3">
+
+	                <center>
+
+	                  <div class="wistia-video-embed">
+	                  	<f1:script src="https://fast.wistia.com/embed/medias/xxr7e25n0g.jsonp"  nonce="true"/><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:54.06% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_xxr7e25n0g popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+
+	               	  </div> 
+
+	               	  <br>
+
+	                  <h5>8. Real-Time Streaming API</h5>
+
+	                </center>
+
+	
+
+	              </li>
+	              
+
+	          </ul>
+
+	          <!-- Third Row  -->
+
+	          <ul class="unstyled row-fluid">
+
+	              <li class="span3">
+
+	                <center>
+
+	                  <div class="wistia-video-embed">
+	               		<f1:script src="https://fast.wistia.com/embed/medias/cqcm372chg.jsonp"  nonce="true"/><f1:script src="https://fast.wistia.com/assets/external/E-v1.js"  nonce="true"/><div class="wistia_responsive_padding" style="padding:54.06% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_cqcm372chg popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;position:relative;width:100%">&nbsp;</span></div></div>
+
+	               	  </div>
+
+	                  <br>
+
+	                  <h5>9. Getting Started with Multiple-Layout Dashboard</h5>
+
+	                </center>
+
+	              </li>
+	          </ul>
+          </f1:if>
+
+          
+
+         
+
+
+
+      <f1:include page="'_/v2/footer.htm'"/>
+
+		</div>
+
+
+
+
+
+    <!-- include modals -->
+
+
+
+
+
+    <f1:include page="'modals.htm'"/>
+    
+    <f1:script nonce="true" src="v2_resources/javascripts/bundle.es5.min.js"/>
+
+	</body>
+
+</html>
+
+

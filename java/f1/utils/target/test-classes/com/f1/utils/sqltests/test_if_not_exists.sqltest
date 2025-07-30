@@ -1,0 +1,49 @@
+****TEST_INPUT_QUERY****
+{create table if not exists x (x int); create table if not exists y (y int); insert into x values(1); insert into y values(1); }
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+x
++-------+
+|   x   |
++-------+
+|x      |
+|Integer|
++-------+
+|0      |
++-------+
+
+****TEST_RESULT****
+2
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS IF NOT EXISTS x(x int)  CREATE TABLE AS IF NOT EXISTS y(y int)  INSERT INTO x VALUES (1)INSERT INTO y VALUES (1)
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+y
++-------+
+|   y   |
++-------+
+|y      |
+|Integer|
++-------+
+|1      |
++-------+
+
+x
++-------+
+|   x   |
++-------+
+|x      |
+|Integer|
++-------+
+|0      |
+|1      |
++-------+
+

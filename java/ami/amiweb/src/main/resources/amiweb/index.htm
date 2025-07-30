@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><style>
+#footer {
+  bottom:-80px;  left:-50px;
+  width:110%;
+  height:550px;   /* Height of the footer */
+  background:#6cf;
+}#terms{  left:50%;  top:50%;   width:900px;  height:250px;  overflow:auto;  border:1px solid black;  background:white;  margin: 200px 0px 0px -450px;  color:black;}
+div{  position:absolute;}  body,textarea{  overflow:hidden;	font-family: arial;
+	font-size: 12px;	color:black;
+}
+a{  font-size:10px;  color:#444444;}.block{  background:black;  width:26px;  height:26px;  border-width:1px;  border-style:solid;}
+
+#dialog {
+  width:392px;
+  height:200px;
+  border:1px solid black;
+  left: 50%;
+  top:  50%;
+  margin: -70px 0 0 -196px;  padding:0px;
+}
+#title {
+  left: 50%;
+  top: 50%;
+  margin: -230px 0px 0px -196px;
+  width:392px;  height:216px;
+}
+
+ul, ol, li
+{
+	list-style-type: none;
+}
+
+li
+{
+	margin: .75em;
+	padding-left: 20px;
+}
+fieldset
+{
+	position: relative;
+	float: left;
+	clear: both;
+	width: 100%;
+	margin: 0 0 -1em 0;
+	padding: 0 0 1em 0;
+}
+
+fieldset.login
+{
+	width: 350px;
+	clear: both;
+	margin-left: 275px;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+fieldset.login label
+{
+}
+fieldset.login fieldset.submit
+{
+	padding-left: 7em;
+	margin: 0;
+}
+
+fieldset.no-legend ol
+{
+	padding: 1em 1em 0 1em;
+}
+
+#login
+{
+	border: solid 1px #008800;	background: #008800;
+	color: #f1f1f1 !important;
+	text-decoration: none !important;
+	cursor: pointer;
+	padding:2px !important;
+	font-family: Gill Sans MT, Gill Sans, Arial, Helvetica, Sans-Serif;
+}
+
+.error{
+    color:#D80000;    font-weight:bold;
+}
+
+
+
+</style>
+<HEAD>
+  <link rel="icon" href="<f1:out value="${favIcon}"/>" />
+<title>3Forge<f1:out value="${webLoginTitleSuffix}"/></title>
+</HEAD>
+<div style='z-index:100;color:#FF0000;width:392px;height:40px;left: 50%;top:50%;font-size:14px;text-align:center;margin: 140px 0px 0px -196px; padding: 0px'>  <f1:ifNot test="${f1license_status}">    Due to Licensing, process will shutdown at:<BR><B><f1:out value="${f1license_termtime}"/></B><BR>Please visit 3forge.com and generate a license file for application '<b><f1:out value="${f1license_app}"/></b>' on host '<b><f1:out value="${f1license_host}"/></b>'  <f1:else/>    <f1:if test="System.currentTimeMillis() > (Long)${f1license_warnms}">    WARNING: License Expires soon: <B><f1:out value="${f1license_termtime}"/></B>    </f1:if>  </f1:ifNot></div><body style="margin:0px;">
+<div style="position:top left;padding:10px"><a href='http://3forge.com'><img src="3forge.jpg"></a></div>
+<div style="background:url('amicloud.jpg');background-repeat:no-repeat;overflow:hidden;background-position:left bottom;background-size:100% 400px" id="footer"'></div>
+<div id="title"><img src="3forge_ami.jpg"/></div>
+<div id="dialog"><div style='left:0px;right:0px;top:0px;bottom:0px;background:white;opacity:.6;border:0px solid black'></div>
+				<form action="login" method='post'>
+  							<f1:if test="OH.eq(${resetPwd},Boolean.TRUE)"><div style='left:0px;right:0px;top:05px;text-align:center' class='error'><f1:out escape="FULL" value="${error}"/>&nbsp;</label></div>
+<div style='left:0px;right:0px;top: 20px;text-align:center'><img src='username.gif'></div>
+<div style='left:0px;right:0px;top: 40px;text-align:center'><B><input id="username" name="username" type="text" value="<f1:out value="${username}"/>"/></div>
+<div style='left:1px;right:0px;top: 70px;text-align:center'><img src='password.gif'></div>
+<div style='left:0px;right:0px;top: 90px;text-align:center'><B><input type='password' autocomplete='current-password' id="password" name="password" type="text" value="<f1:out value="${password}"/>"/></div><div style='left:1px;right:0px;top:120px;text-align:center'>New Password:</div>
+<div style='left:0px;right:0px;top:140px;text-align:center'><B><input type='password' autocomplete='new-password' id="new_password" name="new_password" type="text" value=""/></div><div style='left:0px;right:0px;top:170px;text-align:center'> <input type="submit" id="login" value="&nbsp;Change Password&nbsp;" title="Login" /></div>
+							<f1:else/><div style='left:0px;right:0px;top:05px;text-align:center' class='error'><f1:out escape="FULL" value="${error}"/>&nbsp;</label></div>
+<div style='left:0px;right:0px;top: 30px;text-align:center'><img src='username.gif'></div><div style='left:0px;right:0px;top: 50px;text-align:center'><B><input id="username" name="username" type="text" value="<f1:if test="SH.isnt(${username})"><f1:out value="${webLoginDefaultUser}"/></f1:if><f1:out value="${username}"/>"/>  <f1:if test="SH.is(${webLoginDefaultUser})"><BR><span style='font-weight: normal'>(Default: <span style='color:black;background:yellow'><f1:out value="${webLoginDefaultUser}"/></span>)</span></f1:if></div>
+<div style='left:1px;right:0px;top: 90px;text-align:center'><img src='password.gif'></div><div style='left:0px;right:0px;top:110px;text-align:center'><B><input type='password' autocomplete='current-password' id="password" name="password" type="text" value=""/>  <f1:if test="SH.is(${webLoginDefaultPass})"><BR><span style='font-weight: normal'>(Default: <span style='color:black;background:yellow'><f1:out value="${webLoginDefaultPass}"/></span>)</span></f1:if>   </div><f1:if test="OH.ne(${termsText},null)"><div style='left:0px;right:0px;top:135px;text-align:center'> <input type="checkbox" id="accept_agreement" name='accept_agreement' title="TermsAndConditions" value='<f1:out value="${termsSignature}"/>'/>I accept the agreement below</div>
+</f1:if><div style='left:0px;right:0px;top:160px;text-align:center'> <input type="submit" id="login" value="&nbsp;Login&nbsp;" title="Login" /></div>
+							</f1:if>
+<div style='left:10px;bottom:10px;text-align:left'> <a href="mailto:<f1:out value="server.getProperties().getOptional(\"contact.email\",\"support@3forge.com?subject=Ami Account Request\")"/>&body=Please create a new Ami account.">I need an account<a/><br>
+<a href="reset.htm">I forgot my password<a/></div>
+                </form>
+</div>
+<f1:if test="OH.ne(${termsText},null)">  <div id='terms'><f1:out value="${termsText}"/></div></f1:if></body><script>    var remainingBlocks=[];    var frame=rand(0,2500)*4;    var start=frame;    var r1=rand(1000,1400);    var r2=rand(1400,3300);    var r3=rand(3500,4000);    var bottom=-380;    process();    <f1:if test="${login_animated}">	   ROTATE_INTERVAL=window.setInterval(function(){		   process();	   }, 40 );    <f1:else/>		var footer=document.getElementById('footer');		footer.style.backgroundSize='100% 50%'; 		footer.style.bottom='0px';    </f1:if>    if(document.getElementById('username').value)      document.getElementById('password').focus();    else      document.getElementById('username').focus();			function process(){		frame+=4;		var footer=document.getElementById('footer');		if(bottom<-81){			bottom=-400+320*Math.sin(Math.PI*(frame-start)/1000);		    footer.style.bottom=bottom+'px';		}		var h=(100+15*Math.sin(Math.PI*(frame)/r1));
+		var w=(215+115*Math.cos(Math.PI+Math.PI*frame/r2));
+		var d=(2*Math.cos(Math.PI+Math.PI*frame/r3));		footer.style.backgroundSize=w+'% '+h+'%'; 		/*		rotate(footer,d);		*/			}	var COLORS=['#EEEEEE','#CCFFCC','#BBFFBB','#AAFFAA','#77FF77','#44FF44','#44FF44','#44FF44','#00FF00','#00EE00','#00DD00','#00CC00','#00BB00','#00AA00','#008800','#006600','#000000'];	var BCOLOR=['#FFFFFF','#FFFFCC','#FFFFBB','#FFFFAA','#FFFF77','#FFFF44','#FFFF44','#FFFF66','#FFFF88','#FFFFAA','#FFFFCC','#FFFFCC','#FFFFCC','#FFFFDD','#FFFFEE','#FFFFFF','#FFFFFF'];	var currentBlocks=[];	var amiFrame=0;
+	function processAmi(){		if(remainingBlocks.length>0 || currentBlocks.length>0){			for(var i in this.remainingBlocks){			  var currentBlock=remainingBlocks[i];			  update(currentBlock);			}			if(remainingBlocks.length>0 && (amiFrame++)%1 ==0){			  var idx=rand(0,remainingBlocks.length);			  var currentBlock=remainingBlocks[idx];	          currentBlock.count=1;			  remainingBlocks.splice(idx,1);			  currentBlocks[currentBlocks.length]=currentBlock;			}			for(var i in this.currentBlocks){			  var currentBlock=currentBlocks[i];			  	          currentBlock.style.background=COLORS[currentBlock.count];	          currentBlock.style.borderColor=BCOLOR[currentBlock.count];	          var nu=update(currentBlock);	          if(currentBlock.count==COLORS.length || (currentBlock.green && currentBlock.count==15)){	             if(!nu){	        	   currentBlock.style.borderColor='white';	               var r=currentBlock;	               currentBlock.onmouseover=function(){var r=arguments.callee.r;r.green=!r.green;r.style.background=r.green ? '#008800' : '#000000'};	               currentBlock.onmouseover.r=currentBlock;			       currentBlocks.splice(i--,1);			       currentBlock=null;	             }	          }else	        	  currentBlock.count++;			}		}else			window.clearInterval(AMI_INTERVAL);	}    function rotate(elm,deg){
+	    var s="rotate(" + deg + "deg)";	    elm.style['transform']=s;
+	    elm.style['-moz-transform']=s;
+	    elm.style['-o-transform']=s;
+	    elm.style['-webkit-transform']=s;
+	    elm.style['-ms-transform']=s;
+    }	AMI_INTERVAL=window.setInterval(function(){		processAmi();	},  25 );		    function rand(min,max){        return min+ Math.floor(Math.random()*(max-min))    }        var currentStage=0;    var stageCompletedCount=0;    var remainingBeforeNextStage=0;        function nwBlock(x,y,green){      if(!green)    	  green=false;
+      var r=document.createElement('div');      var midX=7*28;      var midY=3*28;      r.tx=[midX+(x*28-midX)*.9+4,x*28];      r.ty=[midY+(y*28-midY)*.9+4,y*28];      r.ts=[24,26];      r.speed=[.17,.1];      r.stage=0;      r.x=rand(midX,midX+(x*28-midX)*-10);      r.y=rand(midY,midY+(y*28-midY)*10);      r.s=rand(10,100);      r.green=green;	  r.className='block';	  r.style.background=COLORS[0];	  r.style.borderColor=BCOLOR[0];	  remainingBeforeNextStage++;	  update(r);	  remainingBlocks[remainingBlocks.length]=r;
+      return r;
+    };        var cnt=0;    function update(b){      var stage=b.stage;      if(stage>=b.tx.length)    	  return false;      if(stage>currentStage)    	  return true;	  if(b.tx[stage]==b.x && b.ty[stage]==b.y && b.ts[stage]==b.s){		  b.stage++;		  stageCompletedCount++;		  if(stageCompletedCount>=remainingBeforeNextStage){			  currentStage++;			  stageCompletedCount=0;		  }		  return true;	  }	  var speed=b.speed[stage];	  b.x=towards(b.x,b.tx[stage],speed);	  b.y=towards(b.y,b.ty[stage],speed);	  b.s=towards(b.s,b.ts[stage],speed);	  var s=b.style;	  s.left=1+b.x+'px';
+	  s.top=b.y+'px';	  s.width=s.height=b.s+'px';	  return true;    }    function towards(s,t,speed){    	if(s===t)    		return t;    	var diff=t-s;    	if(Math.abs(s-t)<1)    		return t;    	return (s+t*speed)/(1+speed);    }
+        var title=document.getElementById('title');    title.appendChild(nwBlock(0,1));    title.appendChild(nwBlock(0,2));    title.appendChild(nwBlock(0,3));    title.appendChild(nwBlock(1,0));    title.appendChild(nwBlock(1,2));    title.appendChild(nwBlock(2,0));    title.appendChild(nwBlock(2,2));    title.appendChild(nwBlock(3,1));    title.appendChild(nwBlock(3,2));    title.appendChild(nwBlock(3,3));        title.appendChild(nwBlock(5,0));    title.appendChild(nwBlock(5,1));    title.appendChild(nwBlock(5,2));    title.appendChild(nwBlock(5,3));    title.appendChild(nwBlock(6,1));    title.appendChild(nwBlock(7,2));    title.appendChild(nwBlock(8,1));    title.appendChild(nwBlock(9,0));    title.appendChild(nwBlock(9,1));    title.appendChild(nwBlock(9,2));    title.appendChild(nwBlock(9,3));        title.appendChild(nwBlock(11,0));    title.appendChild(nwBlock(11,3));    title.appendChild(nwBlock(12,0));    title.appendChild(nwBlock(12,1));    title.appendChild(nwBlock(12,2));    title.appendChild(nwBlock(12,3));    title.appendChild(nwBlock(13,0));    title.appendChild(nwBlock(13,3,true));    </script>

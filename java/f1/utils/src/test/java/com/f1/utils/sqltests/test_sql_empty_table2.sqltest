@@ -1,0 +1,49 @@
+****TEST_INPUT_QUERY****
+select sum(x) from empty group by y;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+
+****TEST_RESULT****
++------+
+|empty |
++------+
+|sum_x |
+|Double|
++------+
++------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT sum(x) FROM empty GROUP BY y
+
+PROJECTION : 
+SELECT sum(x) FROM empty GROUP BY y
+
+GROUPING : 
+Grouped 0 rows into 0 buckets
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+

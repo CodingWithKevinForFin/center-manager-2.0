@@ -1,0 +1,116 @@
+****TEST_INPUT_QUERY****
+create table out as select * from analyzeInput where x < 0.0 || x > 8.0 || x == null || y < 0.0 || y > 8.0 || y == null
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+analyzeInput
++---------------------+
+|    analyzeInput     |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |4.0   |-3.4  |
+|1      |8.1   !null  |
+|2      |9.8   |-5.6  |
+|3      |-1.9  |4.9   |
+|4      |2.3   |-9.0  |
+|5      !null  |0.1   |
+|6      |5.7   |8.2   |
+|7      |-2.8  |7.3   |
+|8      !null  |1.2   |
+|9      |-0.3  |2.8   |
+|10     |1.8   |3.4   |
+|11     |6.7   |2.3   |
+|12     |-7.2  !null  |
+|13     |-2.1  |5.9   |
+|14     |1.5   |6.0   |
+|15     |0.0   |9.1   |
+|16     |9.9   |-0.2  |
+|17     !null  |-8.3  |
+|18     |-4.4  |5.8   |
+|19     |2.8   |6.7   |
+|20     |7.7   !null  |
++-------+------+------+
+
+****TEST_RESULT****
+17
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS out  SELECT "*" FROM analyzeInput WHERE x < 0.0 || x > 8.0 || x == null || y < 0.0 || y > 8.0 || y == null
+
+PROJECTION : 
+SELECT "*" FROM analyzeInput WHERE x < 0.0 || x > 8.0 || x == null || y < 0.0 || y > 8.0 || y == null
+
+PREJOIN_FILTER : 
+For Table 'analyzeInput' ==> ((x < 0.0D) || (x > 8.0D) || (x == null) || (y < 0.0D) || (y > 8.0D) || (y == null))
+
+NESTING_QUERY : 
+#0 analyzeInput
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+analyzeInput
++---------------------+
+|    analyzeInput     |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |4.0   |-3.4  |
+|1      |8.1   !null  |
+|2      |9.8   |-5.6  |
+|3      |-1.9  |4.9   |
+|4      |2.3   |-9.0  |
+|5      !null  |0.1   |
+|6      |5.7   |8.2   |
+|7      |-2.8  |7.3   |
+|8      !null  |1.2   |
+|9      |-0.3  |2.8   |
+|10     |1.8   |3.4   |
+|11     |6.7   |2.3   |
+|12     |-7.2  !null  |
+|13     |-2.1  |5.9   |
+|14     |1.5   |6.0   |
+|15     |0.0   |9.1   |
+|16     |9.9   |-0.2  |
+|17     !null  |-8.3  |
+|18     |-4.4  |5.8   |
+|19     |2.8   |6.7   |
+|20     |7.7   !null  |
++-------+------+------+
+
+out
++---------------------+
+|         out         |
++-------+------+------+
+|n      |x     |y     |
+|Integer|Double|Double|
++-------+------+------+
+|0      |4.0   |-3.4  |
+|1      |8.1   !null  |
+|2      |9.8   |-5.6  |
+|3      |-1.9  |4.9   |
+|4      |2.3   |-9.0  |
+|5      !null  |0.1   |
+|6      |5.7   |8.2   |
+|7      |-2.8  |7.3   |
+|8      !null  |1.2   |
+|9      |-0.3  |2.8   |
+|12     |-7.2  !null  |
+|13     |-2.1  |5.9   |
+|15     |0.0   |9.1   |
+|16     |9.9   |-0.2  |
+|17     !null  |-8.3  |
+|18     |-4.4  |5.8   |
+|20     |7.7   !null  |
++-------+------+------+
+

@@ -1,0 +1,135 @@
+section {
+	padding: 60px;
+}
+.search-container {
+	display: flex;
+    justify-content: center;
+}
+.faq-searchbox {
+	width: 23.438rem;
+    height: 3.125rem;
+    border-radius: 50px !important;
+    border: 2px solid #F16900 !important;
+    padding: 15px !important;
+    box-shadow: 0 5px 4px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+.catMinimalInfoContainer {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.category {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+.category .catLeft {
+	width: 1.563rem;
+	height: 1.563rem;
+	border: 1px solid grey;
+	cursor: pointer;
+	margin-right: 10px;
+	font-weight: 900;
+    text-align: center;
+    color: white;
+    border-radius: 3px;
+}
+.categoryName {
+	font-size: 25px;
+	font-weight: 500;
+	color: #f16900;
+	border-bottom: 1px solid #c1c1c1;
+}
+.faq-question {
+	font-size: 20px;
+	font-weight: 500;
+	color: #0e91bb;
+}
+.faq-answer {
+	font-size: 20px;
+}
+.catFaqContainer {
+	margin-left: 35px;
+	font-size: 20px;
+}
+.faq-container > div {
+	margin-bottom: 20px;
+}
+.catFaqContainer {
+	transition: .5s ease;
+}
+.catFaqContainer > div {
+	background: #fbfbfb;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 4px rgb(0 0 0 / 3%), 0 1px 2px rgb(0 0 0 / 8%);
+}
+.faq-link {
+	font-size: 15px;
+	color: #f16900;
+	font-weight: 400;
+	text-decoration: underline;
+}
+.category-div {
+	color: #f16900;
+	margin-left: 10px;
+    border: 1px solid #f16900;
+    padding: 2px 15px 3px 15px;
+    font-size: 15px;
+    border-radius: 15px;
+}
+.instructions {
+	margin: 20px 0 20px 0;
+}
+#show-categories-btn {
+	background: #f16900;
+    color: white;
+    border: 1px solid #f16900;
+    padding: 1px 5px 4px 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+#show-categories-btn:hover {
+	background: white;
+	border: 1px solid #f16900;
+	color: #f16900;
+}
+/* SMALL TO MID-SIZED LAPTOPS */
+@media all and (min-width: 981px) and (max-width: 1800px) {
+
+}
+
+/*TABLET*/
+@media all and (min-width: 577px) and (max-width: 980px) {
+
+}
+/*MOBILE*/
+@media all and (max-width: 576px) {
+	section {
+		padding: 5px;
+	}
+	.category .catLeft {
+		width: 20px;
+		height: 20px;
+	}
+	.categoryName {
+		font-size: 20px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

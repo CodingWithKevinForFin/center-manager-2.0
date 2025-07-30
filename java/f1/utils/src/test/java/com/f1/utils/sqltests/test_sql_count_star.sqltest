@@ -1,0 +1,87 @@
+****TEST_INPUT_QUERY****
+select count(*) from input where category == "A";
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+input
++-----------------------------+
+|            input            |
++--------+------+------+------+
+|category|x     |y     |z     |
+|String  |Double|Double|Double|
++--------+------+------+------+
+|A       |-4.2  |5.5   |8.8   |
+|B       |4.0   |11.1  !null  |
+|A       |0.9   |-0.8  |0.4   |
+|A       !null  |-4.7  |33.4  |
+|C       |-3.3  !null  |16.1  |
+|C       |4.9   |-17.1 |-99.0 |
+|B       |1.2   |1.3   |-23.4 |
+|B       !null  |-7.7  |90.1  |
+|C       |4.2   |5.0   !null  |
+|A       |9.9   |5.0   |34.5  |
+|B       |-3.4  |3.2   |22.2  |
+|C       |-0.8  |8.9   !null  |
+|C       !null  |-9.8  !null  |
+|D       !null  !null  !null  |
++--------+------+------+------+
+
+****TEST_RESULT****
++------+
+|input |
++------+
+|count_|
+|Long  |
++------+
+|4     |
++------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT count("*") FROM input WHERE category == "A"
+
+PROJECTION : 
+SELECT count("*") FROM input WHERE category == "A"
+
+PREJOIN_FILTER : 
+For Table 'input' ==> (category == "A")
+
+NESTING_QUERY : 
+#0 input
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 4 rows into 1 buckets
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+input
++-----------------------------+
+|            input            |
++--------+------+------+------+
+|category|x     |y     |z     |
+|String  |Double|Double|Double|
++--------+------+------+------+
+|A       |-4.2  |5.5   |8.8   |
+|B       |4.0   |11.1  !null  |
+|A       |0.9   |-0.8  |0.4   |
+|A       !null  |-4.7  |33.4  |
+|C       |-3.3  !null  |16.1  |
+|C       |4.9   |-17.1 |-99.0 |
+|B       |1.2   |1.3   |-23.4 |
+|B       !null  |-7.7  |90.1  |
+|C       |4.2   |5.0   !null  |
+|A       |9.9   |5.0   |34.5  |
+|B       |-3.4  |3.2   |22.2  |
+|C       |-0.8  |8.9   !null  |
+|C       !null  |-9.8  !null  |
+|D       !null  !null  !null  |
++--------+------+------+------+
+

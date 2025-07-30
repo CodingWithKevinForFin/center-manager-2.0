@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "2.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2020"/>
+  <title>Instructions for Running Center &amp; Relay Independently</title>
+  <link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Instructions for Running Center &amp; Relay Independently">
+        <span>Instructions for Running Center &amp; Relay Independently</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+  <h1>Instructions for Running Center &amp; Relay Independently</h1>
+  <p> </p>
+  <p dir="ltr"><span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+					 font-variant-ligatures: normal; font-variant-caps: normal; 
+					 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+					 background-color: #ffffff; text-decoration-style: initial; 
+					 text-decoration-color: initial; display: inline	 ! important ; 
+					 float: none;">The same AMI binary is configured to run as a center, relay, web or a combination of the three. Add one of the following configuration blocks to your </span><b style="color: rgb(34, 34, 34); 
+	 font-family: Arial, Helvetica, sans-serif; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;">amione/config/local.properties</b><span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; 
+	 widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; display: inline	 ! important ; 
+	 float: none;"> to control what is run. If the local.properties file does not exist, please create it.  Note, that 3270 is the default port but can be changed.</span><span style="font-size: 12pt;"></span></p>
+  <p dir="ltr"> </p>
+  <p dir="ltr"><span>Finally, keep in mind that the center starts up the server port and multiple clients (relays/web) can connect to a single center.</span></p>
+  <p dir="ltr"> </p>
+  <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">#Default: Run the <b style="font-size:12pt">center,relay,web</b></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+  <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                      <font face="monospace">
+                                        <font size="4">
+                                          <font style="font-family: monospace; font-size: 12pt;">ami.components=relay,center,web</font>
+                                        </font>
+                                      </font>
+                                    </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+  <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                      <font face="monospace">
+                                        <font size="4">
+                                          <font style="font-family: monospace; font-size: 12pt;">ami.center.port=3270</font>
+                                        </font>
+                                      </font>
+                                    </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+  <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                      <font face="monospace">
+                                        <font size="4">
+                                          <font style="font-family: monospace; font-size: 12pt;">ami.center.host=localhost</font>
+                                        </font>
+                                      </font>
+                                    </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+  <p> </p>
+  <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">#Run the <b style="font-size:12pt">center</b></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+  <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+    <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                          <font face="monospace">
+                                            <font size="4">
+                                              <font style="font-family: monospace; font-size: 12pt;">ami.components=center</font>
+                                            </font>
+                                          </font>
+                                        </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+    <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                          <font face="monospace">
+                                            <font size="4">
+                                              <font style="font-family: monospace; font-size: 12pt;">ami.center.port=3270</font>
+                                            </font>
+                                          </font>
+                                        </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+  </div>
+  <p> </p>
+  <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">#Run the <b style="font-size:12pt">relay</b></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+  <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+    <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                        <font face="monospace">
+                                          <font size="4">
+                                            <font style="font-family: monospace; font-size: 12pt;">ami.components=relay</font>
+                                          </font>
+                                        </font>
+                                      </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+    <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                        <font face="monospace">
+                                          <font size="4">
+                                            <font style="font-family: monospace; font-size: 12pt;">ami.center.port=3270</font>
+                                          </font>
+                                        </font>
+                                      </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+    <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                        <font face="monospace">
+                                          <font size="4">
+                                            <font style="font-family: monospace; font-size: 12pt;">ami.center.host=host.running.center</font>
+                                          </font>
+                                        </font>
+                                      </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+  </div>
+  <p> </p>
+  <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">#Run the <b style="font-size:12pt">web</b></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+  <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+    <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                          <font face="monospace">
+                                            <font size="4">
+                                              <font style="font-family: monospace; font-size: 12pt;">ami.components=web</font>
+                                            </font>
+                                          </font>
+                                        </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+    <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                          <font face="monospace">
+                                            <font size="4">
+                                              <font style="font-family: monospace; font-size: 12pt;">ami.center.port=3270</font>
+                                            </font>
+                                          </font>
+                                        </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+    <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                          <font face="monospace">
+                                            <font size="4">
+                                              <font style="font-family: monospace; font-size: 12pt;">ami.center.host=host.running.center</font>
+                                            </font>
+                                          </font>
+                                        </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+    <p> </p>
+    <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">#Run the <b style="font-size:12pt">center,web</b></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+    <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+      <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                            <font face="monospace">
+                                              <font size="4">
+                                                <font style="font-family: monospace; font-size: 12pt;">ami.components=center,web</font>
+                                              </font>
+                                            </font>
+                                          </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+      <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                            <font face="monospace">
+                                              <font size="4">
+                                                <font style="font-family: monospace; font-size: 12pt;">ami.center.port=3270</font>
+                                              </font>
+                                            </font>
+                                          </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+      <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                            <font face="monospace">
+                                              <font size="4">
+                                                <font style="font-family: monospace; font-size: 12pt;">ami.center.host=localhost</font>
+                                              </font>
+                                            </font>
+                                          </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+      <p> </p>
+      <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">#Run the <b style="font-size:12pt">center</b>,<b style="font-size:12pt">relay</b></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+      <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+        <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                              <font face="monospace">
+                                                <font size="4">
+                                                  <font style="font-family: monospace; font-size: 12pt;">ami.components=center,relay</font>
+                                                </font>
+                                              </font>
+                                            </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+        <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                              <font face="monospace">
+                                                <font size="4">
+                                                  <font style="font-family: monospace; font-size: 12pt;">ami.center.port=3270</font>
+                                                </font>
+                                              </font>
+                                            </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+        <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                              <font face="monospace">
+                                                <font size="4">
+                                                  <font style="font-family: monospace; font-size: 12pt;">ami.center.host=localhost</font>
+                                                </font>
+                                              </font>
+                                            </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+        <p> </p>
+        <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">#Run the <b style="font-size:12pt">web,relay</b></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+        <div style="text-align:start; -webkit-text-stroke-width:0px"><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+          <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                                <font face="monospace">
+                                                  <font size="4">
+                                                    <font style="font-family: monospace; font-size: 12pt;">ami.components=web,relay</font>
+                                                  </font>
+                                                </font>
+                                              </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+          <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                                <font face="monospace">
+                                                  <font size="4">
+                                                    <font style="font-family: monospace; font-size: 12pt;">ami.center.port=3270</font>
+                                                  </font>
+                                                </font>
+                                              </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+          <div><span style="font-size:small"><span style="color:#222222"><span style="font-family:Arial, Helvetica, sans-serif"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-variant-caps:normal"><span style="font-weight:400"><span style="letter-spacing:normal"><span style="orphans:2"><span style="text-transform:none"><span style="white-space:normal"><span style="widows:2"><span style="word-spacing:0px"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="font-size:12pt">
+                                                <font face="monospace">
+                                                  <font size="4">
+                                                    <font style="font-family: monospace; font-size: 12pt;">ami.center.host=</font>
+                                                  </font>
+                                                </font>host.running.center
+                                              </span> </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

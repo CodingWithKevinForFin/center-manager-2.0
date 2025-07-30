@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 452.15 1628.45">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #ff8d35;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-1, .cls-3, .cls-4 {
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-6 {
+        fill: #ff8d35;
+      }
+
+      .cls-3 {
+        stroke: #3b91bb;
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-4 {
+        stroke: #263054;
+      }
+
+      .cls-8 {
+        fill: #3b91bb;
+      }
+
+      .cls-9 {
+        fill: #77cefa;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="37.46" y="1094.88" width="378" height="533.33"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <polygon class="cls-2" points="415.46 1094.88 415.46 1627.67 37.46 1361.28 415.46 1094.88"/>
+    </clipPath>
+  </defs>
+  <polyline class="cls-9" points="407.46 24.88 407.46 638.88 72.76 322.88 407.46 6.88 407.46 24.88"/>
+  <g class="cls-7">
+    <g class="cls-5">
+      <g>
+        <path class="cls-6" d="M37.46,1500.21v-114.67"/>
+        <path class="cls-6" d="M37.46,1574.88v-74.67"/>
+        <path class="cls-6" d="M37.46,1628.45v-53.58"/>
+        <path class="cls-6" d="M415.46,1628.45h-26.83"/>
+        <path class="cls-6" d="M37.46,1361.28v-266.4h378v266.67"/>
+      </g>
+    </g>
+  </g>
+  <polygon class="cls-8" points="117.46 552.21 452.15 236.21 452.15 868.21 117.46 552.21"/>
+  <polygon class="cls-3" points="4.41 330.18 352.78 6.88 352.78 653.48 4.41 330.18"/>
+  <polygon class="cls-4" points="274.54 671.9 415.46 540.92 415.46 802.88 274.54 671.9"/>
+  <polygon class="cls-4" points="152.55 729.88 418.12 480.88 418.12 978.88 152.55 729.88"/>
+  <polygon class="cls-9" points="208.79 653.48 107.44 748.04 107.44 558.92 208.79 653.48"/>
+  <polygon class="cls-1" points="223.01 604.21 117.46 506.88 117.46 701.54 223.01 604.21"/>
+</svg>

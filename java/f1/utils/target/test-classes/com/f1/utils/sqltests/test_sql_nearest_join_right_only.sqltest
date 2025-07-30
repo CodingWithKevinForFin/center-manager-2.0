@@ -1,0 +1,304 @@
+****TEST_INPUT_QUERY****
+create table gteS as select * from large right only join small on true nearest large.n >= small.n order by large.n;
+create table gtS as select * from large right only join small on true nearest large.n > small.n order by large.n;
+create table lteS as select * from large right only join small on true nearest large.n <= small.n order by large.n;
+create table ltS as select * from large right only join small on true nearest large.n < small.n order by large.n;
+create table gteL as select * from small right only join large on true nearest small.n >= large.n order by small.n;
+create table gtL as select * from small right only join large on true nearest small.n > large.n order by small.n;
+create table lteL as select * from small right only join large on true nearest small.n <= large.n order by small.n;
+create table ltL as select * from small right only join large on true nearest small.n < large.n order by small.n;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+small
++-----+
+|small|
++-----+
+|n    |
+|Long |
++-----+
+!null |
+|0    |
+|3    |
+|6    |
+|9    |
+|12   |
++-----+
+
+large
++-----+
+|large|
++-----+
+|n    |
+|Long |
++-----+
+!null |
+|0    |
+|1    |
+|2    |
+|3    |
+|4    |
+|5    |
+|6    |
+|7    |
+|8    |
+|9    |
+|10   |
+|11   |
+|12   |
+|13   |
+|14   |
++-----+
+
+****TEST_RESULT****
+7
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS gteS  SELECT "*" FROM large RIGHT ONLY JOIN small ON true NEAREST large . n >= small . n ORDER BY ASC large . nCREATE TABLE AS gtS  SELECT "*" FROM large RIGHT ONLY JOIN small ON true NEAREST large . n > small . n ORDER BY ASC large . nCREATE TABLE AS lteS  SELECT "*" FROM large RIGHT ONLY JOIN small ON true NEAREST large . n <= small . n ORDER BY ASC large . nCREATE TABLE AS ltS  SELECT "*" FROM large RIGHT ONLY JOIN small ON true NEAREST large . n < small . n ORDER BY ASC large . nCREATE TABLE AS gteL  SELECT "*" FROM small RIGHT ONLY JOIN large ON true NEAREST small . n >= large . n ORDER BY ASC small . nCREATE TABLE AS gtL  SELECT "*" FROM small RIGHT ONLY JOIN large ON true NEAREST small . n > large . n ORDER BY ASC small . nCREATE TABLE AS lteL  SELECT "*" FROM small RIGHT ONLY JOIN large ON true NEAREST small . n <= large . n ORDER BY ASC small . nCREATE TABLE AS ltL  SELECT "*" FROM small RIGHT ONLY JOIN large ON true NEAREST small . n < large . n ORDER BY ASC small . n
+
+PROJECTION : 
+SELECT "*" FROM large RIGHT ONLY JOIN small ON true NEAREST large . n >= small . n ORDER BY ASC large . n
+
+NESTING_QUERY : 
+#0 small indexing to [small.n ==> large.n]
+
+NESTING_QUERY : 
+#1 large
+
+NONINDEX_WHERE : 
+true
+
+ORDER_BY : 
+Sorting 0 rows on large.n (needed 1 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM large RIGHT ONLY JOIN small ON true NEAREST large . n > small . n ORDER BY ASC large . n
+
+NESTING_QUERY : 
+#0 small indexing to [small.n ==> large.n]
+
+NESTING_QUERY : 
+#1 large
+
+NONINDEX_WHERE : 
+true
+
+ORDER_BY : 
+Sorting 0 rows on large.n (needed 1 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM large RIGHT ONLY JOIN small ON true NEAREST large . n <= small . n ORDER BY ASC large . n
+
+NESTING_QUERY : 
+#0 small indexing to [small.n ==> large.n]
+
+NESTING_QUERY : 
+#1 large
+
+NONINDEX_WHERE : 
+true
+
+ORDER_BY : 
+Sorting 0 rows on large.n (needed 1 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM large RIGHT ONLY JOIN small ON true NEAREST large . n < small . n ORDER BY ASC large . n
+
+NESTING_QUERY : 
+#0 small indexing to [small.n ==> large.n]
+
+NESTING_QUERY : 
+#1 large
+
+NONINDEX_WHERE : 
+true
+
+ORDER_BY : 
+Sorting 1 rows on large.n (needed 1 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM small RIGHT ONLY JOIN large ON true NEAREST small . n >= large . n ORDER BY ASC small . n
+
+NESTING_QUERY : 
+#0 large indexing to [large.n ==> small.n]
+
+NESTING_QUERY : 
+#1 small
+
+NONINDEX_WHERE : 
+true
+
+ORDER_BY : 
+Sorting 2 rows on small.n (needed 1 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM small RIGHT ONLY JOIN large ON true NEAREST small . n > large . n ORDER BY ASC small . n
+
+NESTING_QUERY : 
+#0 large indexing to [large.n ==> small.n]
+
+NESTING_QUERY : 
+#1 small
+
+NONINDEX_WHERE : 
+true
+
+ORDER_BY : 
+Sorting 3 rows on small.n (needed 1 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM small RIGHT ONLY JOIN large ON true NEAREST small . n <= large . n ORDER BY ASC small . n
+
+NESTING_QUERY : 
+#0 large indexing to [large.n ==> small.n]
+
+NESTING_QUERY : 
+#1 small
+
+NONINDEX_WHERE : 
+true
+
+ORDER_BY : 
+Sorting 0 rows on small.n (needed 1 temp columns)
+
+PROJECTION : 
+SELECT "*" FROM small RIGHT ONLY JOIN large ON true NEAREST small . n < large . n ORDER BY ASC small . n
+
+NESTING_QUERY : 
+#0 large indexing to [large.n ==> small.n]
+
+NESTING_QUERY : 
+#1 small
+
+NONINDEX_WHERE : 
+true
+
+ORDER_BY : 
+Sorting 1 rows on small.n (needed 1 temp columns)
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+gteS
++------------+
+|    gteS    |
++----+-------+
+|n   |small_n|
+|Long|Long   |
++----+-------+
++----+-------+
+
+ltL
++------------+
+|    ltL     |
++----+-------+
+|n   |large_n|
+|Long|Long   |
++----+-------+
+!null!null   |
++----+-------+
+
+lteL
++------------+
+|    lteL    |
++----+-------+
+|n   |large_n|
+|Long|Long   |
++----+-------+
++----+-------+
+
+gtL
++------------+
+|    gtL     |
++----+-------+
+|n   |large_n|
+|Long|Long   |
++----+-------+
+!null|12     |
+!null|13     |
+!null|14     |
++----+-------+
+
+ltS
++------------+
+|    ltS     |
++----+-------+
+|n   |small_n|
+|Long|Long   |
++----+-------+
+!null!null   |
++----+-------+
+
+gtS
++------------+
+|    gtS     |
++----+-------+
+|n   |small_n|
+|Long|Long   |
++----+-------+
++----+-------+
+
+lteS
++------------+
+|    lteS    |
++----+-------+
+|n   |small_n|
+|Long|Long   |
++----+-------+
++----+-------+
+
+small
++-----+
+|small|
++-----+
+|n    |
+|Long |
++-----+
+!null |
+|0    |
+|3    |
+|6    |
+|9    |
+|12   |
++-----+
+
+large
++-----+
+|large|
++-----+
+|n    |
+|Long |
++-----+
+!null |
+|0    |
+|1    |
+|2    |
+|3    |
+|4    |
+|5    |
+|6    |
+|7    |
+|8    |
+|9    |
+|10   |
+|11   |
+|12   |
+|13   |
+|14   |
++-----+
+
+gteL
++------------+
+|    gteL    |
++----+-------+
+|n   |large_n|
+|Long|Long   |
++----+-------+
+!null|13     |
+!null|14     |
++----+-------+
+

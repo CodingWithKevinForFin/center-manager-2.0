@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "7.1_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Backend API (2.13).docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>JSON AMI Command Invocation User Form Definition</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="JSON AMI Command Invocation User Form Definition">
+        <span>JSON AMI Command Invocation User Form Definition</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>JSON AMI Command Invocation User Form Definition:</h1>
+<h3 style="text-decoration: none; "><u style="text-decoration: none; ">Structure</u></h3>
+<p style="margin-bottom: .0001pt; line-height: normal;">The below structure 
+ demonstrates how to construct a well-formed input user form. Forms have 
+ support for input fields which can contain any number of input arguments. 
+  Note that a form definition with neither a <b><span courier="" style="color: #ff0000; 
+															 font-family: &#39;Courier New&#39;, monospace;">form</span></b> 
+ stanza nor a <b><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">timeout</span></b> 
+ stanza will result in no dialog and immediate execution of the command 
+ when the user selects the command.</p>
+<p style="margin-bottom: .0001pt; line-height: normal;"> </p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">{</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">  &quot;</span><span courier="" style="color: #ff0000;">form</span><span courier="">&quot;:</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">    {</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">      &quot;</span><span courier="" style="color: #ff0000;">inputs</span><span courier="">&quot;:</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">        [</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">          {</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">            &quot;</span><span courier="" style="color: #ff0000;">label</span><span courier="">&quot;: 
+ </span><i><span courier="" style="color: #308299;">string</span></i><span courier="">,</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">            &quot;</span><span courier="" style="color: #ff0000;">required</span><span courier="">&quot;: 
+ </span><i><span courier="" style="color: #308299;">boolean</span></i><span courier="">,</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">            &quot;</span><span courier="" style="color: #ff0000;">var</span><span courier="">&quot;: 
+ </span><i><span courier="" style="color: #308299;">string</span></i><span courier="">,</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">            &quot;</span><span courier="" style="color: #ff0000;">type</span><span courier="">&quot;: 
+ </span><i><span courier="" style="color: #308299;">string</span></i></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">          }</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">        ],</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">      &quot;</span><span courier="" style="color: #ff0000;">buttons</span><span courier="">&quot;:</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">        [</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">          {</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">            &quot;</span><span courier="" style="color: #ff0000;">label</span><span courier="">&quot;: 
+ </span><i><span courier="" style="color: #308299;">string</span></i><span courier="">,</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">            &quot;</span><span courier="" style="color: #ff0000;">type</span><span courier="">&quot;: 
+ </span><i><span courier="" style="color: #308299;">string</span></i></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">          }</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">        ],</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">      &quot;</span><span courier="" style="color: #ff0000;">width</span><span courier="">&quot;: 
+ </span><span courier=""><i style="color: #308299;">number</i></span><span courier="">,</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">      &quot;</span><span courier="" style="color: #ff0000;">height</span><span courier="">&quot;: 
+ </span><span courier="" style="color: #31849B;"><i>number</i></span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">      &quot;</span><span courier="" style="color: #ff0000;">labelWidth</span><span courier="">&quot;: 
+ </span><span courier="" style="color: #31849B;"><i>number</i></span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">    },</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">  &quot;</span><span courier="" style="color: #ff0000;">timeout</span><span courier="">&quot;: </span><i><span courier="" style="color: #31849B;">number</span></i></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="">}</span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"> </p>
+<h3><b>Example</b></h3>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: &#39;Courier New&#39;, monospace;"><span courier="">C|I=&quot;Test&quot;|N=&quot;Testing Command&quot;|L=3|H=&quot;This 
+ is a test&quot;|W=&#39;T==&quot;Test Executions&quot; &amp;&amp; user.username==&quot;jsmith&quot; 
+ &amp;&amp; Quantity&gt;100&#39;|M=&quot;0-1&quot;|A=&#39;{&quot;form&quot;:{&quot;inputs&quot;:[{&quot;label&quot;:&quot;Symbol&quot;,&quot;required&quot;:true, 
+ &quot;var&quot;:&quot;symbol&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;label&quot;:&quot;Reason&quot;,&quot;pattern&quot;:&quot;[0-9a-z]+&quot;,&quot;required&quot;: 
+ true, &quot;var&quot;: &quot;reason&quot;,&quot;type&quot;:&quot;textarea&quot;},{&quot;label&quot;:&quot;Employee 
+ ID&quot;,&quot;required&quot;:true, &quot;var&quot;:&quot;ID&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;label&quot;:&quot;Other&quot;,&quot;required&quot;: 
+ false, &quot;var&quot;:&quot;other&quot;,&quot;type&quot;:&quot;textarea&quot;},{&quot;label&quot;: 
+ &quot;Team&quot;,&quot;required&quot;: true, &quot;var&quot;: &quot;team&quot;,&quot;type&quot;:&quot;select&quot;, 
+ &quot;options&quot;:[{&quot;value&quot;:&quot;a&quot;,&quot;text&quot;:&quot;A&quot;},{&quot;value&quot;:&quot;b&quot;,&quot;text&quot;:&quot;B&quot;},{&quot;value&quot;:&quot;c&quot;,&quot;text&quot;:&quot;C&quot;}]},{&quot;label&quot;: 
+ &quot;Mode&quot;,&quot;required&quot;: true, &quot;var&quot;: &quot;mode&quot;,&quot;type&quot;:&quot;select&quot;, 
+ &quot;options&quot;:[{&quot;value&quot;:&quot;emergency&quot;,&quot;text&quot;:&quot;Emergency&quot;},{&quot;value&quot;:&quot;normal&quot;,&quot;text&quot;:&quot;Normal&quot;},{&quot;value&quot;:&quot;urgent&quot;,&quot;text&quot;:&quot;Urgent&quot;}],&quot;enabled&quot;:true}],&quot;buttons&quot;:[{&quot;type&quot;:&quot;cancel&quot;,&quot;label&quot;:&quot;Ignore&quot;},{&quot;type&quot;:&quot;submit&quot;,&quot;label&quot;:&quot;Confirm&quot;}],&quot;width&quot;:500,&quot;height&quot;:500},&quot;timeout&quot;:100000}&#39;</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal;"> </p>
+<p style="text-align: center;"><img src="image011.png" alt="" width="509" height="521" border="0"/></p>
+<p style="margin-bottom: .0001pt; line-height: normal; font-family: ;"> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

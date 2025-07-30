@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "3.3.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Accessing Dashboard Objects</title>
+<link rel="StyleSheet" href="../../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Accessing Dashboard Objects">
+        <span>Accessing Dashboard Objects</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Accessing Dashboard Objects</h1>
+<h3 dir="ltr">Mutating Dashboard Objects via AmiScript</h3>
+<p dir="ltr">When AmiScript is used to change an Object in a dashboard, 
+ it is considered overriding a default value. This is an important distinction 
+ from changing an Object using editor mode. This prevents AmiScript from 
+ changing the permanent definition of a layout. In other words, layouts 
+ are built using editor mode. They are then temporarily modified using 
+ AmiScript.</p>
+<p dir="ltr"> </p>
+<p dir="ltr">For example, if you were to move a field by dragging it in 
+ editor mode, that would have a lasting effect on the dashboard (doing 
+ a diff across history, you would see a change to the layout file). If 
+ you were to move the field using AmiScript, that would be temporary. In 
+ this case, rebuilding the  layout would cause the field to snap 
+ back to the original position.</p>
+<h3 dir="ltr">Object Identifiers</h3>
+<p dir="ltr">Panels, Datamodels, Relationships within AMI have unique identifiers 
+ used to identify objects within a layout. The Identifier is assigned when 
+ creating the object and can be changed in developer mode. These identifiers 
+ are useful for referencing objects within AmiScript and as a convenient 
+ labeling system for organizing/searching objects. Note: the unique restriction 
+ only applies to objects of the same type, for example, a datamodel and 
+ relationship can have the same ID.</p>
+<h3 dir="ltr">Layout Alias &amp; Alias-Dot-Id</h3>
+<p dir="ltr">A dashboard can be composed of many Layout files, but each 
+ layout file must also have a unique layout alias. It&#39;s possible to have 
+ a dashboard with two separate layouts both with an object of the same 
+ type and ID. Uniqueness of an objects&#39; identity is still maintained by 
+ considering the object&#39;s owning layout&#39;s alias plus the object&#39;s ID, referred 
+ to as an alias-dot-id notation.</p>
+<h3 dir="ltr">Accessing Objects in Multi-Layout Dashboards</h3>
+<p dir="ltr">Keep in mind that all objects are &quot;owned&quot; by a layout 
+ object and a dashboard can be composed of many layout files. As such, 
+ objects are accessed using the Layout object. Likewise, all dashboard 
+ objects have a getLayout() method for accessing the owning layout. See 
+ <a href="../Dashboard_Anatomy/Layouts.htm">Layout</a> topic for more details</p>
+<br/>
+
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

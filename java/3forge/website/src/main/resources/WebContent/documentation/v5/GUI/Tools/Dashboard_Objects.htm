@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "3.5.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2020"/>
+  <title>Dashboard Objects</title>
+  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css"/>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/AMI_Documentation_Style.css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Dashboard Objects">
+        <span>Dashboard Objects</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+  <h1>Dashboard Objects</h1>
+  <p>A great tool to keep track of all the different components while building a layout is the <strong>Dashboard Objects</strong> tool. As a layout grows, it may become difficult to keep track of all of the panels, relationships, and datamodels that are being used. </p>
+  <p> </p>
+  <p>To use this tool, select <strong>Dashboard Objects</strong> under the Dashboard menu (you must be in developer mode). This will bring up the dashboard objects window</p>
+  <p> </p>
+  <p><img src="../../assets/images/DashboardObjects.Menu.jpg"/></p>
+  <p> </p>
+  <p><img height="505" src="../../assets/images/DashboardObjects.Window.jpg" width="929"/></p>
+  <p> </p>
+  <p>The dashboard objects tool consists of 3 tabs: <strong>Relationships</strong>, <strong>Datamodels</strong>, and <strong>Panels</strong></p>
+  <p> </p>
+  <p>Layouts included (<a href="../Dashboard_Files/Included_Layouts.htm">Included Layouts</a>) with the <strong>Read Only</strong> option will have its components (relationships, datamodels, and panels) show up as <strong>Read </strong>under the <strong>Permissions </strong>column in the dashboard objects window</p>
+  <p> </p>
+  <p>Note: new objects show up in real time in the dashboard objects window (adding a new panel with the window open will show a new entry for the added panel)</p>
+  <p> </p>
+  <p><strong>Relationships</strong></p>
+  <p> </p>
+  <table border="1" cellpadding="1" cellspacing="1" style="border-collapse: collapse; width: 849px;">
+    <colgroup>
+      <col style="width: 165px;"/>
+      <col style="width: 673px;"/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <td style="">Owning Layout</td>
+        <td style="">Name of the original owner of the relationship</td>
+      </tr>
+      <tr>
+        <td style="">Relationship Id</td>
+        <td style="">Unique ID given to relationships. Found in the Relationship ID field of Relationship windows. Relationship ID&#39;s may be reused if they belong to differing layouts.</td>
+      </tr>
+      <tr>
+        <td style="">Source Panel Id</td>
+        <td style="">Panel ID of the source panel of the relationship</td>
+      </tr>
+      <tr>
+        <td style="">Target Panel Id</td>
+        <td style="">Panel ID of the target panel of the relationship</td>
+      </tr>
+      <tr>
+        <td style="">Permissions</td>
+        <td style="">Writable or read only</td>
+      </tr>
+      <tr>
+        <td style="">Source Panel Visibility</td>
+        <td style="">Is the source panel hidden or visible</td>
+      </tr>
+      <tr>
+        <td style="">Target Panel Visibility</td>
+        <td style="">Is the target panel hidden or visible</td>
+      </tr>
+      <tr>
+        <td style="">Relationship</td>
+        <td style="">Description of the relationship (Source --&gt; Panel)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>When in the Relationships tab, <strong>double clicking</strong> on a relationship will bring up that relationship&#39;s window. This makes it easier to edit the relationship without having to find the target panel in order to use the panel menu&#39;s <strong>Edit Relationship</strong> option.<br/>
+     </p>
+  <p><strong>Datamodels</strong></p>
+  <p> </p>
+  <table border="1" cellpadding="1" cellspacing="1" style="border-collapse: collapse; width: 854px;">
+    <colgroup>
+      <col style="width: 165px;"/>
+      <col style="width: 1657px;"/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <td style="">Owning Layout</td>
+        <td>Name of the original owner of the datamodel</td>
+      </tr>
+      <tr>
+        <td style="">Datamodel Id</td>
+        <td>Name of the datamodel. Child datamodels are named with the layout name followed by the datamodel ID (ex: Child.City - Child is the name of the layout, City is the Datamodel ID)</td>
+      </tr>
+      <tr>
+        <td style="">Permissions</td>
+        <td>Writable or read only</td>
+      </tr>
+      <tr>
+        <td style="">Type</td>
+        <td>Type of object</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Double clicking on a datamodel will bring up the datamodel editor for editing.</p>
+  <p> </p>
+  <p><strong>Panels</strong></p>
+  <p> </p>
+  <table border="1" cellpadding="1" cellspacing="1" style="border-collapse: collapse; width: 858px;">
+    <colgroup>
+      <col style="width: 119px;"/>
+      <col style="width: 732px;"/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <td>Owning Layout</td>
+        <td style="">Name of the original owner of the datamodel</td>
+      </tr>
+      <tr>
+        <td>Panel Id</td>
+        <td style="">Name of the panel. Child panels are named with the layout name followed by the panel ID (ex: Child.Country - Child is the name of the layout, Country is the Panel ID)</td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td style="">Type of panel - Realtime Table, Datasource Table, Form, Chart, etc.</td>
+      </tr>
+      <tr>
+        <td>Visibility</td>
+        <td style="">Visible or Hidden. Panels belonging to included layouts are hidden by default. Panels can also be hidden using the panel menu option - <strong>Hide Highlighted Panel. </strong>Note: this is not the same as making a window hidden (Window menu &gt; Type &gt; Hidden)</td>
+      </tr>
+      <tr>
+        <td>Permissions</td>
+        <td style="">Writable or read only</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><strong>Search</strong></p>
+  <p> </p>
+  <p>The search bar found at the top of the dashboard object window can be used to find anything that matches the name across all three tabs. The number of matches will be reflected in the name of the tab. For example, searching for City will return 3 results under the Datamodels tab (this is reflected in the tab)</p>
+  <p> </p>
+  <p><img height="224" src="../../assets/images/DashboardObjects.SearchResults.jpg" width="797"/></p>
+  <p> </p>
+  <p>Right clicking on a component and selecting <strong>Show Configuration </strong>will open up the JSON with the search term highlighted. Show configuration can be used outside of a search in order to view the JSON of any object in the layout.</p>
+  <p> </p>
+  <p> </p>
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

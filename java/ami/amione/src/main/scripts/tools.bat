@@ -1,0 +1,1 @@
+@echo offset APPDIR=%~dp0cd "%APPDIR%\.."java -classpath "%APPDIR%\..\lib\out.jar" com.f1.ami.amicommon.AmiTools %*

@@ -1,0 +1,329 @@
+@font-face {
+    font-family: "Barlow-ExtraLight";
+    src: url("//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/barlow/v1/51v0xj5VPw1cLYHNhfd8NFtXRa8TVwTICgirnJhmVJw.woff2") format("woff2"),
+    url("//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff/s/barlow/v1/51v0xj5VPw1cLYHNhfd8ND8E0i7KZn-EPnyo3HZu7kw.woff") format("woff");
+	font-display: block;
+}
+
+@font-face {
+	font-family: 'Barlow';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Barlow Regular'), local('Barlow-Regular'), url("//static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/barlow/v4/7cHpv4kjgoGqM7E_A8s5ynghnQci.woff2") format('woff2');
+	unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+	font-display: block;
+}
+
+body {
+  /* Full screen width and height */
+  width: 100%;
+  min-height: 100vh;
+
+  /* Centers the container in the middle of the screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  /* background-color: #080f25; */
+}
+
+.w3-bar .w3-button {
+    white-space: normal;
+}
+
+.w3-black, .w3-hover-black:hover {
+    color: #fff !important;
+    background-color: #000 !important;
+}
+.w3-large {
+    font-size: 25px !important;
+    font-weight: 700;
+}
+
+.w3-btn, .w3-button {
+    border: none;
+    display: none;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    width: 41px;
+    height: 36px;
+    top: -348px;
+    position: relative;
+}
+
+#container {
+  perspective: 40px;
+}
+
+#inner {
+  width: 20em;
+  height: 18em;
+/*   background-color: #080f25; */
+  background-color: #000000;
+/*   box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2); */
+  width: 1000px;
+  height: 500px;
+  border-radius: 18px;
+}
+
+#helper {
+  color: white;
+  padding: 0.2em;
+  border-radius: 5%;
+  background-color: grey;
+  
+  position: absolute;
+  z-index: 0;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+#container .inner {
+    transition: transform 0.1s;
+    -webkit-transition: transform 0.1s;
+    -moz-transition: transform 0.1s;
+    -o-transition: transform 0.1s;
+}
+
+#map {
+     transition: transform 0.1s;
+    -webkit-transition: transform 0.1s;
+    -moz-transition: transform 0.1s;
+    -o-transition: transform 0.1s;
+    width: auto;
+    height: auto;
+    position: relative;
+}
+
+#ldnpic {
+	display: none;
+    position: relative;
+    left: 62%;
+    margin-top: -431px;
+    opacity: 0.5;
+    filter: grayscale(1);
+}
+
+.nycinfo {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+.ldninfo {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+.sgeinfo {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+#nycpic {
+	display: none;
+    position: relative;
+    left: 52%;
+    margin-top: -453px;
+    opacity: 0.5;
+    pointer-events: none;
+    filter: grayscale(1);
+}
+
+#nyaddress {
+	display: none;
+	color: white;
+	position: absolute;
+    top: 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 312px;
+    font-size: 26px;
+    padding: 122px 104px;
+    font-family: 'Barlow';
+    font-weight: 300;
+    right: -8px;
+}
+
+#nyo {
+	display: none;
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10 110px;
+    font-size: 47px;
+    font-family: 'Barlow';
+    font-weight: 300;
+    right: 10px;
+}
+
+#ldnaddress {
+	display: none;
+	position: relative;
+	color: white;
+	position: absolute;
+    top: 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 312px;
+    font-size: 26px;
+    padding: 122px 104px;
+    font-family: 'Barlow';
+    right: -85px;
+    top: 35px;
+    font-weight: 300;
+}
+
+#ldno {
+	display: none;
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10 110px;
+    font-size: 47px;
+    font-family: 'Barlow';
+    width: 100%;
+    max-width: 29%;
+    right: -8%;
+    font-weight: 300;
+}
+
+#sgeaddress {
+	display: none;
+	position: relative;
+	color: white;
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 312px;
+    font-size: 26px;
+    padding: 122px 104px;
+    font-family: 'Barlow';
+    font-weight: 300;
+    right: -21px;
+    top: 26px;
+}
+
+#sgeo {
+	display: none;
+   	position: absolute;
+    top: 0;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10 110px;
+    font-size: 47px;
+    font-family: 'Barlow';
+    font-weight: 300;
+    right: -83px;
+    top: 43px;
+}
+
+#sgepic {
+	display: none;
+    position: relative;
+    left: 52%;
+    margin-top: -262px;
+    opacity: 0.5;
+    filter: grayscale(1);
+}
+
+.shiny {
+  color: white;
+  position: relative;
+  border: none;
+  padding: 10px 15px;
+  background: #3984ff;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#nyglow {
+   position: absolute;
+   top: 109px;
+   left: 212px;
+   width: 100px;
+   height: 100px;
+   background: radial-gradient(#e7982a, #3984ff00 72%);
+   opacity: 1.8;
+   transition: opacity 0.2s;
+}
+
+#ldnglow {
+   position: absolute;
+   top: 94px;
+   left: 379px;
+   width: 100px;
+   height: 100px;
+   background: radial-gradient(#e7982a, #3984ff00 57%);
+   opacity: 1.8;
+   transition: opacity 0.2s;
+}
+
+#sgeglow {
+   position: absolute;
+   top: 274px;
+   left: 726px;
+   width: 100px;
+   height: 100px;
+   background: radial-gradient(#e7982a, #3984ff00 51%);
+   opacity: 1.8;
+   transition: opacity 0.2s;
+}
+
+.shiny::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--y, 0) * 1px - 50px);
+  left: calc(var(--x, 0) * 1px - 50px);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(#e7982a, #3984ff00 70%);
+
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.shiny:hover::after {
+  /* opacity: 0.8; */
+  opacity: 0;
+}
+
+.object {
+  animation: MoveUpDown 1s linear infinite;
+  position: absolute;
+/*   left: 0;
+  bottom: 0; */
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+<div class="object">
+  hello world!
+</div>

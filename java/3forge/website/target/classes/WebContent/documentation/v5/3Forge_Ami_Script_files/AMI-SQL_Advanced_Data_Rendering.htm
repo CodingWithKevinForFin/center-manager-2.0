@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "5.4_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Assigning Query results to local variables</title>
+<link rel="StyleSheet" href="../assets/css/3Forge_Ami_Script.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Assigning Query results to local variables">
+        <span>Assigning Query results to local variables</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<p>AMI Script supports the ability to execute queries and store the results 
+ into local variables. There are various ways the query results can be 
+ stored, beyond just Table objects, see type Coercion rules below.</p>
+<p>This is the general form:</p>
+<p style="font-family: &#39;Courier New&#39;, monospace; margin-bottom: 0pt; line-height: Normal; 
+	 color: #ff0000;">type var_name = query;</p>
+<p style="font-family: &#39;Courier New&#39;, monospace; line-height: Normal; margin-bottom: 0pt;"> </p>
+<p style="font-family: &#39;Courier New&#39;, monospace;">type - the type of local 
+ variable to store the query result.</p>
+<p style="font-family: &#39;Courier New&#39;, monospace;">Var_name - Name of the 
+ local</p>
+<p style="font-family: &#39;Courier New&#39;, monospace;">Query - <span style="font-style: italic;">a 
+ valid sql query. Either <a href="Query_Clauses.htm#select_clause">select_clause</a>, 
+ <a href="Query_Clauses.htm#analyze_clause">analyze_clause</a>, or <a href="Query_Clauses.htm#prepare_clause">prepare_clause</a></span></p>
+<p> </p>
+<p>Valid Type Coercion rules are listed below.  Please note that 
+ an attempt to coerce the query result to an invalid type, will result 
+ in null. </p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-family: &#39;Courier New&#39;; 
+	 color: #006dbf;">Table mytable = SELECT * from SampleTable;</p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-family: &#39;Courier New&#39;; 
+	 color: #006dbf;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p><u>List</u>:  Query results that have a single column can be stored 
+ to a List. Each value in the query result will be inserted into the list 
+ in order.<span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+				 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+				 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+				 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+				 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+				 text-decoration-style: initial; text-decoration-color: initial;">                                                                                                                                                                                                                                                   </span></p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-family: &#39;Courier New&#39;; 
+	 color: #006dbf;">List myvals = select SampleColumn from SampleTable;</p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-family: &#39;Courier New&#39;; 
+	 color: #006dbf;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p><u>Set</u>: Query results that have a single column can be stored to 
+ a Set. Each value in the query result will be inserted into the set in 
+ order, ignoring duplicate values (as per set&#39;s contract).<span style="font-size: 12pt; 
+	 font-family: &#39;Times New Roman&#39;, serif; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">                                                                                                                                                                               </span></p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-family: &#39;Courier New&#39;; 
+	 color: #006dbf;">Set myvals = select SampleColumn from SampleTable;</p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-family: &#39;Courier New&#39;; 
+	 color: #006dbf;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p><u>Map</u>: Query results that have a single row can be stored to a 
+ map. The map&#39;s keys will be the columns&#39; names, and the map&#39;s values will 
+ be the values of the first (and only) row.</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-family: &#39;Courier New&#39;; 
+	 color: #006dbf;">Map myvals = select * from SampleTable limit 1;</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p><u>Primitives</u>: Queries that result in a single value (one row and 
+ one column) can be stored to a primitive variable.  The value 
+ of the single cell is what will be stored.</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; line-height: 13.75pt; 
+	 font-family: &#39;Courier New&#39;; color: #006dbf;">Long myCount = select 
+ count(*) from SampleTable;</p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-family: &#39;Courier New&#39;; 
+	 color: #006dbf;">String myName = select max(name) from SampleTable;</p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,44 @@
+****TEST_INPUT_QUERY****
+analyze sum(win.x) from empty window win on y - 3 < win.y && win.y < y + 3;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+
+****TEST_RESULT****
++---------+
+|sum_win_x|
+|Double   |
++---------+
++---------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+ANALYZE sum(win . x) FROM empty WINDOW win ON y - 3 < win . y && win . y < y + 3
+
+PROJECTION : 
+ANALYZE sum(win . x) FROM empty WINDOW win ON y - 3 < win . y && win . y < y + 3
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+

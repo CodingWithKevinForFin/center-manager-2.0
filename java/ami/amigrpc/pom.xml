@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ami</groupId>
+
+    <name>amigrpc</name>
+    <artifactId>amigrpc</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.ami</groupId>
+        <artifactId>ami</artifactId>
+        <version>1.00-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <dependencies>
+      <dependency>
+        <groupId>com.ami</groupId>
+        <artifactId>amirelay</artifactId>
+        <version>1.00-SNAPSHOT</version>
+      </dependency>
+        <dependency>
+        <groupId>com.ami</groupId>
+        <artifactId>amiweb</artifactId>
+        <version>1.00-SNAPSHOT</version>
+      </dependency>
+		<dependency>
+		  <groupId>io.grpc</groupId>
+		  <artifactId>grpc-netty-shaded</artifactId>
+		  <version>1.67.1</version>
+		  <scope>runtime</scope>
+		</dependency>
+		<dependency>
+		  <groupId>io.grpc</groupId>
+		  <artifactId>grpc-protobuf</artifactId>
+		  <version>1.67.1</version>
+		</dependency>
+		<dependency>
+		  <groupId>io.grpc</groupId>
+		  <artifactId>grpc-stub</artifactId>
+		  <version>1.67.1</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.apache.tomcat</groupId>
+		  <artifactId>annotations-api</artifactId>
+		  <version>6.0.53</version>
+		  <scope>provided</scope>
+		</dependency>
+      <dependency>
+		  <groupId>com.google.protobuf</groupId>
+		  <artifactId>protobuf-java</artifactId>
+		  <version>4.29.0-RC1</version>
+      </dependency>
+    </dependencies>
+</project>
+

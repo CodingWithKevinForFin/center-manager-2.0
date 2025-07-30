@@ -1,0 +1,108 @@
+/* DO NOT MODIFY THIS FILE WHILE AMI IS RUNNING, CONTENTS ARE MODIFIED BY AMI  */
+
+/*CUSTOM METHODS*/
+
+CREATE METHOD {
+  boolean method1(){
+        return true; 
+    }
+;
+
+  boolean method10(){
+        return true; 
+    };
+
+  boolean method11(){
+        return true; 
+    }
+;
+
+  boolean method110(){
+        return true; 
+    };
+
+  boolean method111(){
+        return true; 
+    };
+
+  boolean method1110(){
+        return true; 
+    };
+
+  boolean method1111(){
+        return true && method1110(); 
+    };
+
+  boolean method1112(){
+        return true && method1111(); 
+    };
+
+  boolean method112(){
+        return true; 
+    };
+
+  boolean method2(){
+        return true; 
+    };
+}
+
+/*TABLES AND INDEXES*/
+
+CREATE PUBLIC TABLE abc(`20_day` Integer,`30_day` Integer) USE RefreshPeriodMs="100" OnUndefColumn="REJECT" InitialCapacity="100";
+
+
+CREATE PUBLIC TABLE abcd(`20_day` Integer,`30_day` Integer) USE RefreshPeriodMs="100" OnUndefColumn="REJECT" InitialCapacity="100";
+
+
+CREATE PUBLIC TABLE acc(group String,id String) USE RefreshPeriodMs="100" OnUndefColumn="REJECT" InitialCapacity="100";
+
+
+CREATE PUBLIC TABLE accInfo(id String,val Integer) USE RefreshPeriodMs="100" OnUndefColumn="REJECT" InitialCapacity="100";
+
+
+CREATE PUBLIC TABLE Accounts(account String,region String,qty Integer,px Double) USE RefreshPeriodMs="100" OnUndefColumn="REJECT" InitialCapacity="100";
+
+
+CREATE PUBLIC TABLE MktData(Date Long,Symbol String,Price Double) USE RefreshPeriodMs="100" OnUndefColumn="REJECT" InitialCapacity="100";
+CREATE TRIGGER myAmiscriptTrigger OFTYPE AMISCRIPT ON MktData PRIORITY 0 USE onInsertedScript="logWarn(123)";
+
+
+CREATE PUBLIC TABLE MyTable(c1 Integer,c2 Short,c3 Long,c4 Double,c5 Character,
+                            c6 Boolean,c7 String) USE PersistEngine="FAST" persist_encrypter="default" RefreshPeriodMs="100" OnUndefColumn="REJECT" InitialCapacity="100";
+
+
+CREATE PUBLIC TABLE PortfolioMonitoringJoined(bundle String,instrument_id String,trading_strategy String,business_strategy String,pm String,
+                                              custom_1 String,custom_2 String,custom_3 String,quantity Double,USD_pv Double,
+                                              security String,instrument String) USE PersistEngine="FAST" RefreshPeriodMs="100" OnUndefColumn="REJECT" InitialCapacity="100";
+
+
+CREATE PUBLIC TABLE Summary(act String,region String,cnt Integer,value Double) USE RefreshPeriodMs="100" OnUndefColumn="REJECT" InitialCapacity="100";
+
+
+CREATE PUBLIC TABLE tree(Region String,Country String,City String,Quantity Long) USE PersistEngine="FAST" RefreshPeriodMs="100" OnUndefColumn="REJECT" InitialCapacity="100";
+
+
+
+/*TIMERS*/
+
+/*PROCEDURES*/
+CREATE PROCEDURE testProc1 OFTYPE AMISCRIPT USE 
+script="""
+int i = use ds="AMI" EXECUTE SELECT 1;
+"""
+ arguments="";
+
+CREATE PROCEDURE testProc2 OFTYPE AMISCRIPT USE 
+script="""
+int i = SELECT 1;
+"""
+ arguments="";
+
+CREATE PROCEDURE updatePortfolioProcedure OFTYPE AMISCRIPT USE script="\nTable t = SELECT * FROM PortfolioMonitoringJoined;\nfor (row r : t) {\nif (rand() < 0.3) {\nUPDATE PortfolioMonitoringJoined SET quantity = (int)(rand() * 100) * 1000 WHERE instrument_id == \"${r.get(\"instrument_id\")}\";\n}\nif (rand() < 0.3) {\nUPDATE PortfolioMonitoringJoined SET USD_pv = (int)(rand() * 100) * 1000 WHERE instrument_id == \"${r.get(\"instrument_id\")}\";\n}\n}\n" arguments="";
+
+
+/*MULTI-TABLE TRIGGERS*/
+CREATE TRIGGER MyTrigger OFTYPE AGGREGATE ON Accounts,Summary PRIORITY 0 USE selects="cnt=count(*),value=sum(qty*px)" groupBys="act=account,region=region";
+
+
+/*DBOS*/

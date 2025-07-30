@@ -1,0 +1,41 @@
+UPDATE SsoUser set active=false where id=?{id} and active;
+INSERT INTO SsoUser
+(
+  active,
+  id,
+  now,
+  expires,
+  revision,
+  user_name,
+  first_name,
+  last_name,
+  phone_number,
+  password,
+  email,
+  company,
+  max_bad_attempts,
+  reset_question,
+  reset_answer,
+  status,
+  group_id,
+  encoding_algorithm
+) VALUES (
+  ?{active},
+  ?{id},
+  ?{now},
+  ?{expires},
+  ?{revision},
+  ?{user_name},
+  ?{first_name},
+  ?{last_name},
+  ?{phone_number},
+  ?{password},
+  ?{email},
+  ?{company},
+  ?{max_bad_attempts},
+  ?{reset_question},
+  ?{reset_answer},
+  ?{status},
+  ?{group_id},
+  ?{encoding_algorithm}
+);

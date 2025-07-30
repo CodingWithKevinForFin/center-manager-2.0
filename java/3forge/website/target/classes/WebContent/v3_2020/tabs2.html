@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="tabs.css">
+<link rel="stylesheet" href="tabs2.css">
+<body>
+
+<div class="w3-bar w3-black">
+  <button class="w3-third tablink w3-bottombar w3-hover-light-grey" onclick="openCity('Center')">Center</button>
+  <button class="w3-third tablink w3-bottombar w3-hover-light-grey" onclick="openCity('Relay')">Relay</button>
+  <button class="w3-third tablink w3-bottombar w3-hover-light-grey" onclick="openCity('Web')">Web</button>
+  <button class="w3-third tablink w3-bottombar w3-hover-light-grey" onclick="openCity('Web Balancer')">Web Balancer</button>
+  <button class="w3-third tablink w3-bottombar w3-hover-light-grey" onclick="openCity('Web Manager')">Web Manager</button>
+</div>
+
+<div id="Center" class="w3-container city">
+  <h2>Center</h2>
+</div>
+
+<div id="Relay" class="w3-container city" style="display:none">
+  <h2>Relay</h2>
+</div>
+
+<div id="Web" class="w3-container city" style="display:none">
+  <h2>Web</h2>
+</div>
+
+<div id="Web Balancer" class="w3-container city" style="display:none">
+  <h2>Web Balancer</h2>
+</div>
+
+<div id="Web Manager" class="w3-container city" style="display:none">
+  <h2>Web Manager</h2>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" border-gradient border-gradient-purple only-bottom", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " border-gradient border-gradient-purple only-bottom";
+}
+</script>
+
+</body>
+</html>

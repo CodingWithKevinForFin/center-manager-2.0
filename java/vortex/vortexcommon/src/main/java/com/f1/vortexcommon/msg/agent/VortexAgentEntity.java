@@ -1,0 +1,88 @@
+/* The contents of this file are subject to the terms and conditions of the 3Forge LLC. End User License agreement Version 1.0 */
+
+package com.f1.vortexcommon.msg.agent;
+
+import com.f1.base.Lockable;
+import com.f1.base.PID;
+import com.f1.base.PartialMessage;
+import com.f1.base.VID;
+import com.f1.vortexcommon.msg.VortexEntity;
+
+@VID("F1.VA.AE")
+public interface VortexAgentEntity extends VortexEntity, PartialMessage, Lockable {
+
+	//TODO: move all of these to Vortex Entity
+	byte TYPE_CRON = 1;
+	byte TYPE_EVENT = 2;
+	byte TYPE_FILE = 3;
+	byte TYPE_FILE_SYSTEM = 4;
+	byte TYPE_MACHINE = 5;
+	byte TYPE_NET_ADDRESS = 6;
+	byte TYPE_NET_LINK = 7;
+	byte TYPE_NET_CONNECTION = 8;
+	byte TYPE_PROCESS = 9;
+	byte TYPE_DB_DATABASE = 10;
+	byte TYPE_DB_COLUMN = 11;
+	byte TYPE_DB_OBJECT = 12;
+	byte TYPE_DB_PRIVILEDGE = 13;
+	byte TYPE_DB_SERVER = 14;
+	byte TYPE_DB_TABLE = 15;
+	byte TYPE_AUDIT_EVENT_RULE = 16;
+	byte TYPE_EXPECTATION = 17;
+	byte TYPE_DEVICE = 18;
+	byte TYPE_BUILD_PROCEDURE = 19;
+	byte TYPE_BUILD_RESULT = 20;
+	byte TYPE_DEPLOYMENT_SET = 21;
+	byte TYPE_DEPLOYMENT = 22;
+	byte TYPE_MACHINE_EVENT = 23;
+	byte TYPE_BACKUP_DESTINATION = 24;
+	byte TYPE_BACKUP = 25;
+	byte TYPE_SCHEDULED_TASK = 26;
+	byte TYPE_METADATA_FIELD = 27;
+	byte TYPE_CLOUD_INTERFACE = 28;
+	byte TYPE_BACKUP_FILE = 29;
+	byte TYPE_VAULT_ENTRY = 30;
+	byte TYPE_CLOUD_MACHINE_INFO = 31;
+	//byte TYPE_AMI_APP = 31;
+	//byte TYPE_AMI_ALERT = 32;
+	//byte TYPE_AMI_OBJECT = 33;
+	//byte TYPE_AMI_COMMAND_DEF = 34;
+
+	long MASK_TYPE_CRON = 1 << TYPE_CRON;
+	long MASK_TYPE_EVENT = 1 << TYPE_EVENT;
+	long MASK_TYPE_FILE = 1 << TYPE_FILE;
+	long MASK_TYPE_FILE_SYSTEM = 1 << TYPE_FILE_SYSTEM;
+	long MASK_TYPE_MACHINE = 1 << TYPE_MACHINE;
+	long MASK_TYPE_NET_ADDRESS = 1 << TYPE_NET_ADDRESS;
+	long MASK_TYPE_NET_LINK = 1 << TYPE_NET_LINK;
+	long MASK_TYPE_NET_CONNECTION = 1 << TYPE_NET_CONNECTION;
+	long MASK_TYPE_PROCESS = 1 << TYPE_PROCESS;
+	long MASK_TYPE_DB_DATABASE = 1 << TYPE_DB_DATABASE;
+	long MASK_TYPE_DB_COLUMN = 1 << TYPE_DB_COLUMN;
+	long MASK_TYPE_DB_OBJECT = 1 << TYPE_DB_OBJECT;
+	long MASK_TYPE_DB_PRIVILEDGE = 1 << TYPE_DB_PRIVILEDGE;
+	long MASK_TYPE_DB_SERVER = 1 << TYPE_DB_SERVER;
+	long MASK_TYPE_DB_TABLE = 1 << TYPE_DB_TABLE;
+	long MASK_TYPE_AUDIT_EVENT_RULE = 1 << TYPE_AUDIT_EVENT_RULE;
+	long MASK_TYPE_EXPECTATION = 1 << TYPE_EXPECTATION;
+	long MASK_TYPE_DEVICE = 1 << TYPE_DEVICE;
+	long MASK_TYPE_BUILD_PROCEDURE = 1 << TYPE_BUILD_PROCEDURE;
+	long MASK_TYPE_BUILD_RESULT = 1 << TYPE_BUILD_RESULT;
+	long MASK_TYPE_DEPLOYMENT_SET = 1 << TYPE_DEPLOYMENT_SET;
+	long MASK_TYPE_DEPLOYMENT = 1 << TYPE_DEPLOYMENT;
+	long MASK_TYPE_MACHINE_EVENT = 1 << TYPE_MACHINE_EVENT;
+	long MASK_TYPE_BACKUP_DESTINATION = 1 << TYPE_BACKUP_DESTINATION;
+	long MASK_TYPE_BACKUP = 1 << TYPE_BACKUP;
+	long MASK_TYPE_SCHEDULED_TASK = 1 << TYPE_SCHEDULED_TASK;
+	long MASK_TYPE_METADATA_FIELD = 1 << TYPE_METADATA_FIELD;
+	long MASK_TYPE_CLOUD_INTERFACE = 1 << TYPE_CLOUD_INTERFACE;
+	long MASK_TYPE_CLOUD_MACHINE_INFO = 1 << TYPE_CLOUD_MACHINE_INFO;
+
+	byte PID_MACHINE_INSTANCE_ID = 24;
+
+	@PID(PID_MACHINE_INSTANCE_ID)
+	public long getMachineInstanceId();
+	public void setMachineInstanceId(long machineInstanceId);
+
+	public VortexAgentEntity clone();
+}

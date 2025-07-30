@@ -1,0 +1,70 @@
+****TEST_INPUT_QUERY****
+select * from empty join empty2 on true;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+empty2
++----------------------------+
+|           empty2           |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+
+****TEST_RESULT****
++----------------------------------------------------------------+
+|                          empty_empty2                          |
++-------+------+------+------+--------+--------+--------+--------+
+|n      |x     |y     |z     |empty2_n|empty2_x|empty2_y|empty2_z|
+|Integer|Double|Double|Double|Integer |Double  |Double  |Double  |
++-------+------+------+------+--------+--------+--------+--------+
++-------+------+------+------+--------+--------+--------+--------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT "*" FROM empty JOIN empty2 ON true
+
+PROJECTION : 
+SELECT "*" FROM empty JOIN empty2 ON true
+
+NESTING_QUERY : 
+#0 empty
+
+NESTING_QUERY : 
+#1 empty2
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+empty2
++----------------------------+
+|           empty2           |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+

@@ -1,0 +1,1 @@
+insert into FileInputData(id,filename,upload_time) values(?{id},?{filename},?{upload_time});

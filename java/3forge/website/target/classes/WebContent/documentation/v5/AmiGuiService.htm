@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = ".";
+    gCommonRootRelPath = ".";
+    gTopicId = "10.0_12";
+  
+//]]></script>
+
+  <script type="text/javascript" src="./template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="./whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="./template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="./template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>AmiGuiService</title>
+<link rel="StyleSheet" href="assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="AmiGuiService">
+        <span>AmiGuiService</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>AmiGuiService</h1>
+<p style="font-family: Arial, sans-serif;"><u><span style="mso-bidi-font-size: 11.0pt; 
+													 line-height: 115%;">AmiGuiService</span></u> 
+ - A mechanism for bridging AmiScript to/from JavaScript. This plugin enables 
+ JavaScript code to be accessible from AmiScript, through a well-defined 
+ AmiScript API. It&#39;s bidirectional:</p>
+<p style="font-family: Arial, sans-serif;"> </p>
+<ol style="list-style: upper-alpha;">
+	<li style="font-family: Arial, sans-serif;"><p style="line-height: 115%; 
+													 font-family: Arial, sans-serif;">Calls 
+	 to JavaScript from within the browser can, in turn, invoke AmiScript 
+	 callbacks</p></li>
+	<li style="font-family: Arial, sans-serif;"><p style="font-family: Arial, sans-serif; 
+													 line-height: 115%;">Calls 
+	 to Amiscript from within the dashboard can, in turn, call JavaScript 
+	 within the browser.</p></li>
+</ol>
+<p style="font-family: Arial, sans-serif; line-height: 115%;"> </p>
+<h2>How this works</h2>
+<p style="font-size: 11.0pt; line-height: 115%; font-family: Arial, sans-serif; 
+	 mso-ascii-theme-font: minor-latin; mso-fareast-theme-font: minor-latin; 
+	 mso-hansi-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;;"><span style="mso-bidi-theme-font: minor-bidi; 
+													 mso-ansi-language: EN-US; 
+													 mso-fareast-language: EN-US; 
+													 mso-bidi-language: AR-SA; 
+													 font-family: Arial, sans-serif; 
+													 font-size: 12pt;">In 
+ order to interact with AmiScript in the webserver and with JavaScript 
+ in the web browser, two blocks of adapter code must be written. Each of 
+ these two blocks of code are started as singletons which communicate over 
+ the AMI HTTP[S] transport (this transport is, however, transparent to 
+ you when building these adapters). The webserver&#39;s singleton is one per 
+ user session and the JavaScript singleton object is started when the browser 
+ loads.</span><span style="mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; 
+					 mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+					 mso-spacerun: yes; font-family: Arial, sans-serif; 
+					 font-size: 12pt;"> </span><span style="mso-bidi-theme-font: minor-bidi; 
+															 mso-ansi-language: EN-US; 
+															 mso-fareast-language: EN-US; 
+															 mso-bidi-language: AR-SA; 
+															 font-family: Arial, sans-serif; 
+															 font-size: 12pt;">These 
+ two objects are responsible for communication between their respective 
+ environments and each other:</span><span style="mso-bidi-theme-font: minor-bidi; 
+											 mso-ansi-language: EN-US; 
+											 mso-fareast-language: EN-US; 
+											 mso-bidi-language: AR-SA;"> 
+ </span></p>
+<p style="font-size: 11.0pt; line-height: 115%; font-family: Arial, sans-serif; 
+	 mso-ascii-theme-font: minor-latin; mso-fareast-theme-font: minor-latin; 
+	 mso-hansi-theme-font: minor-latin; mso-fareast-font-family: Arial;"> </p>
+<p style="font-size: 11.0pt; line-height: 115%; font-family: Arial, sans-serif; 
+	 mso-ascii-theme-font: minor-latin; mso-fareast-theme-font: minor-latin; 
+	 mso-hansi-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+	 text-align: center;"><img src="assets/images/AmiGuiService 01.jpg" alt="" style="border: none;" width="541" height="330" border="0"/></p>
+<p style="font-size: 11.0pt; line-height: 115%; font-family: Arial, sans-serif; 
+	 mso-ascii-theme-font: minor-latin; mso-fareast-theme-font: minor-latin; 
+	 mso-hansi-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"> </p>
+<h2>Deep Dive</h2>
+<h3><b><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; 
+			 mso-fareast-font-family: Arial; mso-fareast-theme-font: minor-latin; 
+			 mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &#39;Times New Roman&#39;; 
+			 mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; 
+			 mso-fareast-language: EN-US; mso-bidi-language: AR-SA; font-weight: bold; 
+			 mso-bidi-font-weight: normal; font-family: Arial, sans-serif;">Initializing</span></b> 
+ </h3>
+<p> </p>
+<ol style="list-style: decimal;">
+	<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">First, 
+	 a Java plugin implementing the </span><i><span style="font-style: italic; 
+													 mso-bidi-font-style: normal;">com.f1.ami.web.guiplugin.AmiWebGuiServicePlugin</span></i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"> 
+	 is initiated when the Ami Web Server starts up.</span><span style="mso-spacerun: yes;"> </span><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">The 
+	 class name must be specified in the ami.guiservice.plugins property. 
+	 Note, that only one instance is started up per JVM.</span></li>
+	<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">Each 
+	 time a user logs in, the </span><i><span style="font-style: italic; 
+												 mso-bidi-font-style: normal;">AmiWebGuiServicePlugin::createGuiIntegrationAdapter</span></i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"> 
+	 is called which returns a custom class implementing the AmiWebGuiServiceAdapter 
+	 interface.</span></li>
+	<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">Each 
+	 time the page is refreshed, including on initial login, the following 
+	 methods are called on the AmiWebGuiServiceAdapter (These methods initialize 
+	 the browser&#39;s JavaScript environment):</span><span> </span></li>
+	<ol style="list-style: lower-alpha;">
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+		 font-style: italic; mso-bidi-font-style: normal;">getJavascriptLibraries</span></i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">() 
+		 -&gt; Your adapter returns a list of libraries to load. This tells 
+		 the browser which libraries to load, if any, for this custom adapter.</span><span> 
+		 </span></li>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+		 font-style: italic; mso-bidi-font-style: normal;">getJavascriptInitialization</span></i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">() 
+		 -&gt; Your adapter should return JavaScript to be executed in 
+		 the browser at pageLoad and allows for any custom initialization.</span></li>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">g</span><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+		 font-style: italic; mso-bidi-font-style: normal;">etJavascriptNewInstance</span></i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">() 
+		 -&gt; Your adapter must return the JavaScript necessary for generating 
+		 a JavaScript singleton that will receive/send messages.</span><span style="mso-spacerun: yes;"> </span><span style="line-height: 115%; 
+														 mso-ascii-theme-font: minor-latin; 
+														 mso-fareast-font-family: Arial; 
+														 mso-fareast-theme-font: minor-latin; 
+														 mso-hansi-theme-font: minor-latin; 
+														 mso-bidi-font-family: &#39;Times New Roman&#39;; 
+														 mso-bidi-theme-font: minor-bidi; 
+														 mso-ansi-language: EN-US; 
+														 mso-fareast-language: EN-US; 
+														 mso-bidi-language: AR-SA;">This 
+		 JavaScript must implement a function called </span><i><span style="font-style: italic; 
+		 mso-bidi-font-style: normal;">registerAmiGuiServicePeer(peer)</span></i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"> 
+		 which, typically, just stores the peer argument in a member variable 
+		 for later use.</span></li>
+	</ol>
+</ol>
+<h3><b><span style="font-weight: bold; mso-bidi-font-weight: normal; font-family: Arial, sans-serif;">Registering 
+ AmiScript API</span></b> </h3>
+<p> </p>
+<ol style="list-style: decimal;">
+	<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">Declaring 
+	 methods that can be called from AmiScript.</span><span> </span></li>
+</ol>
+<p style="margin-left: 40px; font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">Within 
+ the AmiScript environment a single object will be available that represents 
+ the singleton. Similar to the </span><i><span style="font-style: italic; 
+												 mso-bidi-font-style: normal;">session</span></i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"> 
+ object which implements the </span><i><span style="font-style: italic; 
+											 mso-bidi-font-style: normal;">Session</span></i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"> 
+ AmiScript class, this object will have a predetermined name, class name 
+ and available methods. Here are how those are defined:</span></p>
+<ol style="list-style: decimal; font-size: 12pt;">
+	<ol style="list-style: lower-alpha; font-size: 12pt;">
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+		 font-style: italic; mso-bidi-font-style: normal;">AmiWebGuiServiceAdapter:: 
+		 getAmiscriptClassname()</span></i><span> </span><span style="line-height: 115%; 
+		 mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">-&gt; 
+		 Your adapter should returns the name of the class that is represented 
+		 by the singleton (analagous to </span><i><span style="font-style: italic; 
+														 mso-bidi-font-style: normal;">Session</span></i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">).</span><span style="mso-spacerun: yes;"> </span><span style="line-height: 115%; 
+														 mso-ascii-theme-font: minor-latin; 
+														 mso-fareast-font-family: Arial; 
+														 mso-fareast-theme-font: minor-latin; 
+														 mso-hansi-theme-font: minor-latin; 
+														 mso-bidi-font-family: &#39;Times New Roman&#39;; 
+														 mso-bidi-theme-font: minor-bidi; 
+														 mso-ansi-language: EN-US; 
+														 mso-fareast-language: EN-US; 
+														 mso-bidi-language: AR-SA;"> The 
+		 singleton object will have the same name but prefixed with two 
+		 underbars (__).</span><span> </span></li>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+		 font-style: italic; mso-bidi-font-style: normal;">AmiWebGuiServiceAdapter::getAmiScriptMethods</span></i><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">() 
+		 -&gt;</span><span style="mso-spacerun: yes;"> </span><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"> Your 
+		 adapter should returns a list of methods that can be called on 
+		 the custom singleton</span></li>
+	</ol>
+</ol>
+<ol start="2" style="list-style: decimal; font-size: 12pt;">
+	<li style="font-family: Arial, sans-serif;"><span>Declaring AmiScript 
+	 callbacks.</span></li>
+</ol>
+<p style="margin-left: 40px;">The callbacks allow for dashboard developers 
+ to declare their own AmiScript that gets executed when the callback is 
+ invoked. The dashboard develo<span style="font-family: Arial, sans-serif;">pers 
+ can edit the callbacks under dashboard -&gt; Custom Gui Service Callbacks 
+ -&gt; &lt;Your custom service&gt;</span></p>
+<ol style="list-style: decimal; font-size: 12pt;">
+	<ol style="list-style: lower-alpha; font-size: 12pt;">
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+		 font-style: italic; mso-bidi-font-style: normal;"><i>AmiWebGuiServiceAdapter::</i> 
+		 </span><span style="font-style: italic; mso-bidi-font-style: normal; 
+						 line-height: 115%; mso-ascii-theme-font: minor-latin; 
+						 mso-fareast-font-family: Arial; mso-fareast-theme-font: minor-latin; 
+						 mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &#39;Times New Roman&#39;; 
+						 mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; 
+						 mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><i>getAmiScriptCallbacks() 
+		 -&gt;</i> Your adapter should return a list of callbacks available 
+		 for overriding</span><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; 
+									 mso-fareast-font-family: Arial; 
+									 mso-fareast-theme-font: minor-latin; 
+									 mso-hansi-theme-font: minor-latin; 
+									 mso-bidi-font-family: &#39;Times New Roman&#39;; 
+									 mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; 
+									 mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">.</span></li>
+	</ol>
+</ol>
+<h3> <b>Binding it together</b></h3>
+<p> </p>
+<ol style="list-style: decimal;">
+	<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">AmiScript 
+	 to Javascript:</span><span> </span></li>
+</ol>
+<p style="margin-left: 40px; font-family: Arial, sans-serif; line-height: 115%; 
+	 mso-ascii-theme-font: minor-latin; mso-fareast-theme-font: minor-latin; 
+	 mso-hansi-theme-font: minor-latin; mso-fareast-font-family: Arial;"><span style="mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">(See 
+ Registering AmiScript API.1 for registering methods that can be called 
+ in AmiScript:</span></p>
+<ol style="list-style: decimal;">
+	<ol style="list-style: lower-alpha; font-size: 12pt;">
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">A 
+		 user invokes an AmiScript method on your custom singleton.</span><span> 
+		 </span></li>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="mso-add-space: auto; mso-list: l0 level2 lfo1; line-height: 115%; 
+		 mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+		 font-style: italic; mso-bidi-font-style: normal;">When a dashboard 
+		 developer calls the custom AmiScript API you&#39;ve provided in step 
+		 (a), then </span><i><span style="font-style: italic; mso-bidi-font-style: normal;">AmiWebGuiServiceAdapter</span></i><span style="mso-add-space: auto; mso-list: l0 level2 lfo1; line-height: 115%; 
+		 mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+		 font-style: italic; mso-bidi-font-style: normal;">::</span><i><span style="font-style: italic; mso-bidi-font-style: normal;">onAmiScriptMethod</span></i><span style="mso-add-space: auto; mso-list: l0 level2 lfo1; line-height: 115%; 
+		 mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+		 font-style: italic; mso-bidi-font-style: normal;"> is called.</span><span style="mso-spacerun: yes;"> </span><span style="mso-add-space: auto; 
+														 mso-list: l0 level2 lfo1; 
+														 line-height: 115%; 
+														 mso-ascii-theme-font: minor-latin; 
+														 mso-fareast-font-family: Arial; 
+														 mso-fareast-theme-font: minor-latin; 
+														 mso-hansi-theme-font: minor-latin; 
+														 mso-bidi-font-family: &#39;Times New Roman&#39;; 
+														 mso-bidi-theme-font: minor-bidi; 
+														 mso-ansi-language: EN-US; 
+														 mso-fareast-language: EN-US; 
+														 mso-bidi-language: AR-SA; 
+														 font-style: italic; 
+														 mso-bidi-font-style: normal;"> This 
+		 allows for you to do any validation, data massaging, etc before 
+		 sending off to JavaScript.</span></li>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">Call 
+		 executeJavascriptCallback on the supplied peer.</span><span style="mso-spacerun: yes;"> </span><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"> Here 
+		 is an example of steps b and c, skipping validation, data massaging: 
+		 </span></li>
+	</ol>
+</ol>
+<p style="margin-left: 80px; mso-fareast-font-family: Arial; mso-fareast-theme-font: minor-latin; 
+	 line-height: 115%; font-family: &#39;Courier New&#39;; mso-ansi-language: EN-US; 
+	 mso-fareast-language: EN-US; mso-bidi-language: AR-SA; font-size: 12pt;">public 
+ Object onAmiScriptMethod(String name, Object[] args, AmiWebGuiServiceAdapterPeer 
+ peer) {peer.executeJavascriptCallback(name, args);return null;}</p>
+<p style="line-height: 115%; font-family: &#39;Courier New&#39;; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; 
+	 mso-bidi-language: AR-SA; margin-left: 40px; font-size: 12pt;"><span style="font-family: Arial, sans-serif;">    d.</span> 
+ <span style="font-family: Arial, sans-serif;">The Javascript singleton 
+ (as defined in Initializing.3.C) will have the method and arguments called 
+ on it</span></p>
+<ol start="2" style="list-style: decimal;">
+	<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">JavaScript 
+	 to AmiScript:</span><span> </span></li>
+</ol>
+<p style="margin-left: 40px; font-family: Arial, sans-serif; line-height: 115%; 
+	 mso-ascii-theme-font: minor-latin; mso-fareast-theme-font: minor-latin; 
+	 mso-hansi-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+	 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi;"><span style="mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">(See 
+ Registering AmiScript API.2 for registering callbacks inside AmiScript)</span></p>
+<ol style="list-style: decimal;">
+	<ol style="list-style: lower-alpha; font-size: 12pt;">
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;">A 
+		 JavaScript function is called on the singleton.</li>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;">The 
+		 JavaScript <span>singleton&#39;s method should then call: peer.sendToServer(methodName,arg1,arg2,...); 
+		 (Note: the peer is supplied on startup in the </span><span style="font-style: italic;">registerAmiGuiServicePeer 
+		 </span><span>function)</span></li>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">The 
+		 backend Java adapter&#39;s AmiWebGuiServiceAdapter:: onCallFromJavascript(…) 
+		 is called. At this point, your adapter can do validation, data 
+		 massaging, etc. before passing off to A</span><span style="line-height: 115%; 
+															 mso-ascii-theme-font: minor-latin; 
+															 mso-fareast-font-family: Arial; 
+															 mso-fareast-theme-font: minor-latin; 
+															 mso-hansi-theme-font: minor-latin; 
+															 mso-bidi-font-family: &#39;Times New Roman&#39;; 
+															 mso-bidi-theme-font: minor-bidi; 
+															 mso-ansi-language: EN-US; 
+															 mso-fareast-language: EN-US; 
+															 mso-bidi-language: AR-SA;">miScript</span></li>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">Call 
+		 executeAmiScriptCallback on the supplied peer. Here is an example 
+		 of steps c and d, skipping validation, data massaging, etc:</span><span style="line-height: 115%; font-family: Arial, sans-serif; mso-ascii-theme-font: minor-latin; 
+		 mso-fareast-font-family: Arial; mso-fareast-theme-font: minor-latin; 
+		 mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &#39;Times New Roman&#39;; 
+		 mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; 
+		 mso-bidi-language: AR-SA;"><br/>
+		</span><span style="line-height: 115%; font-family: &#39;Courier New&#39;; 
+					 mso-fareast-font-family: Arial; mso-fareast-theme-font: minor-latin; 
+					 mso-ansi-language: EN-US; mso-fareast-language: EN-US; 
+					 mso-bidi-language: AR-SA;">public void onCallFromJavascript(String 
+		 name, Object args[], AmiWebGuiServiceAdapterPeer peer) { peer.executeAmiScriptCallback(name, 
+		 args);}</span> </li>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;">AmiScript 
+		 call back is executed</li>
+	</ol>
+</ol>
+<p> </p>
+<p style="font-family: Arial, sans-serif; margin-left: 0px;"> </p>
+<h2>Full Example</h2>
+<p class="MsoNormal" style="tab-stops: center 3.25in; line-height: 115%; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">The following example 
+ shows a simple example of calling a method on JavaScript from AmiScript, 
+ and invoking an AmiScript callback from JavaScript.</p>
+<p class="MsoNormal" style="tab-stops: center 3.25in; line-height: 115%; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p class="MsoNormal" style="tab-stops: center 3.25in; line-height: 115%; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">Specifically, the 
+ example declares an AmiScript custom object called <i><span style="font-style: italic; 
+															 mso-bidi-font-style: normal;">__GuiSample</span></i> 
+ of type <i><span style="font-style: italic; mso-bidi-font-style: normal;">GuiSample</span></i> 
+ with a single method called <i><span style="font-style: italic; mso-bidi-font-style: normal;">getDate(String)</span></i> 
+ and a single callback called <i><span style="font-style: italic; mso-bidi-font-style: normal;">onDateDetermined(…)</span></i>. 
+ When the <i><span style="font-style: italic; mso-bidi-font-style: normal;">getDate(…)</span></i> 
+ AmiScript is executed, the user is presented with a native JavaScript 
+ alert and then the current date from the browser is sent back to the AmiScript 
+ via the onDateDetermined(..) callback.</p>
+<p class="MsoNormal" style="tab-stops: center 3.25in; line-height: 115%; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p class="MsoNormal" style="tab-stops: center 3.25in; line-height: 115%; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">Note, that in this 
+ simple example the JavaScript class is defined inside the getJavascriptInitialization() 
+ method but generally this would be declared in a dedicated JavaScript 
+ library and loaded via getJavascriptLibraries().</p>
+<p class="MsoNormal" style="tab-stops: center 3.25in; line-height: 115%; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p class="MsoNormal" style="line-height: 115%; mso-bidi-font-weight: normal; 
+	 font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold;"><b><span style="font-weight: bold;">local.properties:</span></b></p>
+<p class="MsoNormal" style="line-height: 115%; mso-bidi-font-weight: normal; 
+	 font-family: Arial, sans-serif; font-weight: bold; font-size: 12pt;"> </p>
+<p class="MsoNormal" style="line-height: 115%; font-family: Arial, sans-serif; 
+	 font-size: 12pt;">ami.guiservice.plugins=samples.AmiWebGuiServicePlugin_Sample<br/>
+<br/>
+<b><span style="font-weight: bold; mso-bidi-font-weight: normal;">AmiWebGuiServicePlugin_Sample.java:</span></b></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">package</span></b> 
+ <span style="font-family: Consolas;">samples;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></b> 
+ <span style="font-family: Consolas;">com.f1.ami.web.AmiWebGuiServiceAdapter;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></b> 
+ <span style="font-family: Consolas;">com.f1.ami.web.AmiWebGuiServicePlugin;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></b> 
+ <span style="font-family: Consolas;">com.f1.ami.web.AmiWebService;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></b> 
+ <span style="font-family: Consolas;">com.f1.container.ContainerTools;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></b> 
+ <span style="font-family: Consolas;">com.f1.utils.PropertyController;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">class</span></b> 
+ <span style="font-family: Consolas;">AmiWebGuiServicePlugin_Sample</span> 
+ <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">implements</span></b> 
+ <span style="font-family: Consolas;">AmiWebGuiServicePlugin {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">void</span></b> 
+ <span style="font-family: Consolas;">init(ContainerTools tools, PropertyController 
+ props) {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <span style="font-family: Consolas;">String getPluginId() {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></b> 
+ <span style="font-family: Consolas; color: #2A00FF;">&quot;GUISAMPLE&quot;</span><span style="font-family: Consolas;">;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <span style="font-family: Consolas;">AmiWebGuiServiceAdapter createGuiIntegrationAdapter(AmiWebService 
+ service) {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></b> 
+ <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">new</span></b> 
+ <span style="font-family: Consolas;">AmiWebGuiServiceAdapter_Sample();</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;">}</p>
+<p><br style="mso-special-character: line-break;"/>
+</p>
+<p class="MsoNormal" style="line-height: 115%; mso-bidi-font-weight: normal; 
+	 font-size: 12pt; font-weight: bold; font-family: Arial, sans-serif;"><b><span style="font-weight: bold;">AmiWebGuiServiceAdapter_Sample.java:</span></b></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; font-family: Arial; 
+	 line-height: 115%; font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">package</span></b> 
+ <span style="font-family: Consolas;">samples;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></b> 
+ <span style="font-family: Consolas;">java.util.Collections;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></b> 
+ <span style="font-family: Consolas;">java.util.List;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></b> 
+ <span style="font-family: Consolas;">com.f1.ami.web.AmiWebGuiServiceAdapter;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></b> 
+ <span style="font-family: Consolas;">com.f1.ami.web.AmiWebGuiServiceAdapterPeer;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></b> 
+ <span style="font-family: Consolas;">com.f1.utils.CH;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">import</span></b> 
+ <span style="font-family: Consolas;">com.f1.utils.structs.table.derived.ParamsDefinition;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">class</span></b> 
+ <span style="font-family: Consolas;">AmiWebGuiServiceAdapter_Sample</span> 
+ <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">implements</span></b> 
+ <span style="font-family: Consolas;">AmiWebGuiServiceAdapter {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">private</span></b> 
+ <span style="font-family: Consolas;">AmiWebGuiServiceAdapterPeer</span> 
+ <span style="font-family: Consolas; color: #0000C0;">peer</span><span style="font-family: Consolas;">;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">void</span></b> 
+ <span style="font-family: Consolas;">init(AmiWebGuiServiceAdapterPeer 
+ peer) {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">this</span></b><span style="font-family: Consolas;">.</span><span style="font-family: Consolas; 
+													 color: #0000C0;">peer</span> 
+ <span style="font-family: Consolas;">= peer;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <span style="font-family: Consolas;">String getGuiServiceId() {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></b> 
+ <span style="font-family: Consolas; color: #2A00FF;">&quot;GUISAMPLE&quot;</span><span style="font-family: Consolas;">;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <span style="font-family: Consolas;">String getDescription() {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></b> 
+ <span style="font-family: Consolas; color: #2A00FF;">&quot;Gui Sample&quot;</span><span style="font-family: Consolas;">;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <span style="font-family: Consolas;">String getAmiscriptClassname() {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span><span style="font-family: Consolas;"> </span><span style="font-family: Consolas; 
+														 mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></b> 
+ <span style="font-family: Consolas; color: #2A00FF;">&quot;GuiSample&quot;</span><span style="font-family: Consolas;">;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <span style="font-family: Consolas;">List&lt;ParamsDefinition&gt; getAmiscriptMethods() 
+ {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></b> 
+ <span style="font-family: Consolas;">CH.l(</span><b><span style="font-family: Consolas; 
+															 color: #7F0055; 
+															 font-weight: bold;">new</span></b> 
+ <span style="font-family: Consolas;">ParamsDefinition(</span><span style="font-family: Consolas; 
+	 color: #2A00FF;">&quot;getDate&quot;</span><span style="font-family: Consolas;">, 
+ Object.</span><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">class</span></b><span style="font-family: Consolas;">,</span> <span style="font-family: Consolas; 
+													 color: #2A00FF;">&quot;String 
+ message&quot;</span><span style="font-family: Consolas;">));</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <span style="font-family: Consolas;">Object onAmiScriptMethod(String name, 
+ Object[] args) {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">this</span></b><span style="font-family: Consolas;">.</span><span style="font-family: Consolas; 
+													 color: #0000C0;">peer</span><span style="font-family: Consolas;">.executeJavascriptCallback(name, args);</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></b> 
+ <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">null</span></b><span style="font-family: Consolas;">;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <span style="font-family: Consolas;">List&lt;ParamsDefinition&gt; getAmiScriptCallbacks() 
+ {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></b> 
+ <span style="font-family: Consolas;">CH.l(</span><b><span style="font-family: Consolas; 
+															 color: #7F0055; 
+															 font-weight: bold;">new</span></b> 
+ <span style="font-family: Consolas;">ParamsDefinition(</span><span style="font-family: Consolas; 
+	 color: #2A00FF;">&quot;onDateDetermined&quot;</span><span style="font-family: Consolas;">, 
+ Object.</span><b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">class</span></b><span style="font-family: Consolas;">,</span> <span style="font-family: Consolas; 
+													 color: #2A00FF;">&quot;String 
+ value&quot;</span><span style="font-family: Consolas;">));</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">void</span></b> 
+ <span style="font-family: Consolas;">onCallFromJavascript(String name, 
+ Object args[]) {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">this</span></b><span style="font-family: Consolas;">.</span><span style="font-family: Consolas; 
+													 color: #0000C0;">peer</span><span style="font-family: Consolas;">.executeAmiScriptCallback(name, args);</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <span style="font-family: Consolas;">String getJavascriptInitialization() 
+ {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span><span style="font-family: Consolas;"> StringBuilder js =</span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">new</span></b> 
+ <span style="font-family: Consolas;">StringBuilder();</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 2;">               </span> js.append(<span style="color: #2A00FF;">&quot;function GuiSampleJavascript(){}\n&quot;</span>);</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 2;">               </span> 
+ </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; mso-layout-grid-align: none; 
+	 text-autospace: none; font-family: Consolas; font-size: 10pt; margin-left: 40px;"> js.append(<span style="color: #2A00FF;">&quot;GuiSampleJavascript.prototype.registerAmiGuiServicePeer=function(peer){this.peer=peer;}\n&quot;</span>);</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> <span style="mso-tab-count: 1;">       </span> 
+ </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; mso-layout-grid-align: none; 
+	 text-autospace: none; font-family: Consolas; font-size: 10pt; margin-left: 40px;"> js.append(<span style="color: #2A00FF;">&quot;GuiSampleJavascript.prototype.getDate=function(message){alert(message);this.peer.sendToServer(&#39;onDateDetermined&#39;,Date.now());}\n&quot;</span>);</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></b> 
+ <span style="font-family: Consolas;">js.toString();</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <span style="font-family: Consolas;">String getJavascriptNewInstance() 
+ {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></b> 
+ <span style="font-family: Consolas; color: #2A00FF;">&quot;new GuiSampleJavascript()&quot;</span><span style="font-family: Consolas;">;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <span style="font-family: Consolas; color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 1;">       </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">public</span></b> 
+ <span style="font-family: Consolas;">List&lt;String&gt; getJavascriptLibraries() 
+ {</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt;"><span style="font-family: Consolas; mso-tab-count: 2;">               </span> <b><span style="font-family: Consolas; color: #7F0055; font-weight: bold;">return</span></b> 
+ <span style="font-family: Consolas;">Collections.EMPTY_LIST;</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;">}</p>
+<p> </p>
+<p> </p>
+<p class="MsoNormal" style="line-height: 115%; mso-bidi-font-weight: normal; 
+	 font-family: Arial, sans-serif; font-weight: bold; font-size: 12pt;"><b><span style="font-weight: bold;">Inside the dashboard, create a new html 
+ panel, add a button and set the button&#39;s script to:</span></b></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas; 
+	 font-size: 10pt;">__GuiSample.getDate(&quot;Getting your local date!&quot;);</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none;"> </p>
+<p class="MsoNormal" style="font-family: Arial, sans-serif;"><b><span style="line-height: 115%; 
+	 font-weight: bold; mso-bidi-font-weight: normal;">Inside the dashboard, 
+ set the AmScript under Dashboard -&gt; Custom Gui Service Callbacks -&gt; 
+ Gui Sample Callbacks... -&gt; onDateDetermined tab to the following</span></b>:</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-size: 10pt; 
+	 font-family: Consolas, monospace;">session.alert(&quot;Browser&#39;s timestamp 
+ is: &quot;+ value);</p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal" style="line-height: 115%; mso-bidi-font-weight: normal; 
+	 font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold;"><b><span style="font-weight: bold;">Running the example:</span></b></p>
+<p class="MsoNormal" style="line-height: 115%; mso-bidi-font-weight: normal; 
+	 font-family: Arial, sans-serif; font-weight: bold; font-size: 12pt;"> </p>
+<p class="MsoNormal" style="line-height: 115%; font-family: Arial, sans-serif; 
+	 font-size: 12pt;">Clicking the button, will now generate a JavaScript 
+ alert saying &quot;Getting your local date!&quot; and then an AmiScript 
+ alert displaying &quot;Browser&#39;s timestamp is: &lt;unixtimestamp&gt;&quot;</p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

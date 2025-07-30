@@ -1,0 +1,129 @@
+****TEST_INPUT_QUERY****
+update A left only join B on A.n == B.n set n=999  where n % 2 == 0 limit 1, 5;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+A
++-------+
+|   A   |
++-------+
+|n      |
+|Integer|
++-------+
+|0      |
+|1      |
+|2      |
+|3      |
+|4      |
+|5      |
+|6      |
+|7      |
+|8      |
+|9      |
+|10     |
+|11     |
+|12     |
+|13     |
+|14     |
++-------+
+
+B
++-------+
+|   B   |
++-------+
+|n      |
+|Integer|
++-------+
+|5      |
+|6      |
+|7      |
+|8      |
+|9      |
+|10     |
+|11     |
+|12     |
+|13     |
+|14     |
+|15     |
+|16     |
+|17     |
+|18     |
+|19     |
++-------+
+
+****TEST_RESULT****
+2
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+UPDATE A LEFT ONLY JOIN B ON A . n == B . n SET n = 999 WHERE n % 2 == 0 LIMIT 1,5
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+((n % 2) == 0)
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+A
++-------+
+|   A   |
++-------+
+|n      |
+|Integer|
++-------+
+|0      |
+|1      |
+|999    |
+|3      |
+|999    |
+|5      |
+|6      |
+|7      |
+|8      |
+|9      |
+|10     |
+|11     |
+|12     |
+|13     |
+|14     |
++-------+
+
+B
++-------+
+|   B   |
++-------+
+|n      |
+|Integer|
++-------+
+|5      |
+|6      |
+|7      |
+|8      |
+|9      |
+|10     |
+|11     |
+|12     |
+|13     |
+|14     |
+|15     |
+|16     |
+|17     |
+|18     |
+|19     |
++-------+
+

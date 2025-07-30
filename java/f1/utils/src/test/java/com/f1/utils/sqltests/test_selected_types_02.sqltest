@@ -1,0 +1,64 @@
+****TEST_INPUT_QUERY****
+select (double) s > 5 from t
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+t
++------+
+|  t   |
++------+
+|s     |
+|String|
++------+
+|3     |
+|5     |
+|6     |
+|9     |
++------+
+
+****TEST_RESULT****
++-------+
+|   t   |
++-------+
+|s_5    |
+|Boolean|
++-------+
+|false  |
+|false  |
+|true   |
+|true   |
++-------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT (double) s > 5 FROM t
+
+PROJECTION : 
+SELECT (double) s > 5 FROM t
+
+NESTING_QUERY : 
+#0 t
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+t
++------+
+|  t   |
++------+
+|s     |
+|String|
++------+
+|3     |
+|5     |
+|6     |
+|9     |
++------+
+

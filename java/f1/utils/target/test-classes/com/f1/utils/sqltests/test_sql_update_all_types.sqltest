@@ -1,0 +1,39 @@
+****TEST_INPUT_QUERY****
+insert into allTypes values (0, 1, 1L, 1.2, 1.2, 'c', "s", true, 2, 3);
+update allTypes set intCol=null, longCol=null, doubleCol=null, floatCol=null, charCol=null, stringCol=null, booleanCol=null, byteCol=null, shortCol=null where id == 0;
+
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+allTypes
++------------------------------------------------------------------------------------------+
+|                                         allTypes                                         |
++-------+-------+-------+---------+--------+---------+---------+----------+-------+--------+
+|id     |intCol |longCol|doubleCol|floatCol|charCol  |stringCol|booleanCol|byteCol|shortCol|
+|Integer|Integer|Long   |Double   |Float   |Character|String   |Boolean   |Byte   |Short   |
++-------+-------+-------+---------+--------+---------+---------+----------+-------+--------+
++-------+-------+-------+---------+--------+---------+---------+----------+-------+--------+
+
+****TEST_RESULT****
+2
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+INSERT INTO allTypes VALUES (0, 1, 1L, 1.2, 1.2, c, "s", true, 2, 3)UPDATE allTypes SET intCol = null,longCol = null,doubleCol = null,floatCol = null,charCol = null,stringCol = null,booleanCol = null,byteCol = null,shortCol = null WHERE id == 0
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+allTypes
++------------------------------------------------------------------------------------------+
+|                                         allTypes                                         |
++-------+-------+-------+---------+--------+---------+---------+----------+-------+--------+
+|id     |intCol |longCol|doubleCol|floatCol|charCol  |stringCol|booleanCol|byteCol|shortCol|
+|Integer|Integer|Long   |Double   |Float   |Character|String   |Boolean   |Byte   |Short   |
++-------+-------+-------+---------+--------+---------+---------+----------+-------+--------+
+|0      !null   !null   !null     !null    !null     !null     !null      !null   !null    |
++-------+-------+-------+---------+--------+---------+---------+----------+-------+--------+
+

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.6.22";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>TabsPanel</title>
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="TabsPanel">
+        <span>TabsPanel</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<div style="position:initial;padding-bottom:11pt;">
+<h1 style="font:bold 24pt Arial;color:#4181BD;margin:5pt 0pt 15pt 0pt;"><a name="TabsPanel Class Overview" id="TabsPanel Class Overview"><span>TabsPanel Class Overview</span></a></h1>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>TabsPanel</b> var = .... ;<br/></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+A Panel of Tabs for containing sub panels)</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Method Definitions</h3>
+<table style="border-collapse:collapse" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1px solid grey">addTab</td>
+<td style="border:1px solid grey;min-width:100px">get the tab at a zero-indexed location, null if out of bounds</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getLocation</td>
+<td style="border:1px solid grey;min-width:100px">Close this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">callCommand</td>
+<td style="border:1px solid grey;min-width:100px">Call the given command. Returns commandUid on success, otherwise null</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">callCommand</td>
+<td style="border:1px solid grey;min-width:100px">Call the given command. Returns null</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">callRelationship</td>
+<td style="border:1px solid grey;min-width:100px">Rerun the relationship targeting this panel based on name. Returns true on success</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getType</td>
+<td style="border:1px solid grey;min-width:100px">Return the type of this panel, either: html, div_v, div_h, tabs, or one of the AMI visualization types.</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">callRelationshipId</td>
+<td style="border:1px solid grey;min-width:100px">Rerun the relationship targeting this panel based on id. Returns true on success</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getSelectedTab</td>
+<td style="border:1px solid grey;min-width:100px">get the tab that is currently vizible, or null if there are no tabs</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">exportConfig</td>
+<td style="border:1px solid grey;min-width:100px">export this panels configuration</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">clearUserSelection</td>
+<td style="border:1px solid grey;min-width:100px">Clear the user&#39;s selection</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">close</td>
+<td style="border:1px solid grey;min-width:100px">Close this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">deletePanel</td>
+<td style="border:1px solid grey;min-width:100px">permanently remove this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">minimize</td>
+<td style="border:1px solid grey;min-width:100px">Minimize the window</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getParent</td>
+<td style="border:1px solid grey;min-width:100px">get the Panel owning this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getTabFor</td>
+<td style="border:1px solid grey;min-width:100px">get the tab at a zero-indexed location, null if out of bounds</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getTabsCount</td>
+<td style="border:1px solid grey;min-width:100px">get the tab at a particular location, zero being the first</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">bringToFront</td>
+<td style="border:1px solid grey;min-width:100px">Make this panel visible and bring its containing window to the front</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getTitle</td>
+<td style="border:1px solid grey;min-width:100px">Return this panel&#39;s title</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">addPanelNextToMe</td>
+<td style="border:1px solid grey;min-width:100px">Add a new panel adjacent to this panel by createing a divider portlet. The divider portlet is returned</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getWindow</td>
+<td style="border:1px solid grey;min-width:100px">Close this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getId</td>
+<td style="border:1px solid grey;min-width:100px">Return this panel&#39;s panel ID</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getStyle</td>
+<td style="border:1px solid grey;min-width:100px">Get the value associated with the supplied style key in this portlets style as a string. Null if key not found</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getStyle</td>
+<td style="border:1px solid grey;min-width:100px">Get the value associated with the supplied style key in this portlets style as a string. Null if key not found</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getCurrentRelationship</td>
+<td style="border:1px solid grey;min-width:100px">Get the relationship currently applied to this panel</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getTabAt</td>
+<td style="border:1px solid grey;min-width:100px">get the tab at a zero-indexed location, null if out of bounds</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getStyleNumber</td>
+<td style="border:1px solid grey;min-width:100px">Get the numeric value associated with the supplied style key in this portlets style. Null if key not found, or value is not a number</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">getValue</td>
+<td style="border:1px solid grey;min-width:100px">Return value associated with key from this portlet&#39;s attributes. Returns null if key does not exist</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">setValue</td>
+<td style="border:1px solid grey;min-width:100px">Add the key value pair to this portlet&#39;s attributes and return true if successful</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="addTab(position,title,configuration)" id="addTab(position,title,configuration)"><span>addTab(position,title,configuration)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Tab TabsPanel::addTab(Integer position, String title, Map configuration)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+get the tab at a zero-indexed location, null if out of bounds</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Integer position</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>Zero indexed position of where to add tab</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>String title</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>name of tab</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Map configuration</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>configuration of new child</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getSelectedTab()" id="getSelectedTab()"><span>getSelectedTab()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Tab TabsPanel::getSelectedTab()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+get the tab that is currently vizible, or null if there are no tabs</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getTabFor(position)" id="getTabFor(position)"><span>getTabFor(position)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Tab TabsPanel::getTabFor(Panel position)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+get the tab at a zero-indexed location, null if out of bounds</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Panel position</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>Zero indexed position of tab to get</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getTabsCount()" id="getTabsCount()"><span>getTabsCount()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Integer TabsPanel::getTabsCount()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+get the tab at a particular location, zero being the first</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="getTabAt(position)" id="getTabAt(position)"><span>getTabAt(position)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Tab TabsPanel::getTabAt(Integer position)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+get the tab at a zero-indexed location, null if out of bounds</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Integer position</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>Zero indexed position of tab to get</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

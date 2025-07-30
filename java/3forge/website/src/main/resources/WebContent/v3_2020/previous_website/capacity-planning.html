@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="loader">
+<f1:secure/>
+<head>
+	<title>Capacity Planning</title>
+	<f1:include page="'_/head.htm'"/>
+	<link media="all" rel="stylesheet" href="css/cp.css">
+</head>
+<body>
+	<div id="wrapper">
+		<f1:include page="'_/header.html'"/>
+		<main id="main">
+			<section class="visual-section">
+				<div class="container">
+					<div class="decor decor-outline purple"></div>
+					<div class="decor decor-filled"></div>
+					<div class="visual style-2">
+						<div class="text-holder">
+							<div class="text-wrap">
+								<h1 class="h1">Capacity Planning</h1>
+							</div>
+						</div>
+						<div class="img-holder z-index-p">
+							<img src="images/company.png" srcset="images/company@2x.png 2x" alt="" width="526" height="252">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="text-info-section viewport-section cp-section">
+				<div class="container">
+				<div class="cp-container">
+						<div class="cp-title">Capacity Planning Calculator</div>
+						<div  id="cp-result" class="cp-result"></div>
+						<div> </div>
+					<div class = "cp-field-container">
+							<!--<label for="num-tables" class="input-label">Tables:</label>-->
+							<button type="submit" name="add-table" id="add-table" class="btn add-table">Add Table</button><br>
+						<div class="cp-form-container">
+							<div class="cp-field-container">
+								<!--<label for="num-rows" class="input-label">Number of rows:</label>-->
+								<!--<input type="number" name="num-rows" id="num-rows" class="inputbox cp-field">-->
+							</div>
+							<div class="cp-field-container">
+								<!--<label for="num-indices" class="input-label">Number of indices:</label>-->
+								<!--<input type="number" name="num-indices" id="num-indices" class="inputbox cp-field">-->
+							</div>
+							<div class="cp-field-container">
+								<div class="num-cols-input">
+									<!--<label for="num-cols" class="input-label">Columns:</label>-->
+									<!--  <input type="number" name="num-cols" id="num-cols" class="inputbox cp-field">  -->
+									<!--<button type="submit" name="add-col" id="add-col" class="btn add-col">Add Column</button><br>-->
+								</div>
+								<div class="cols-container" id="cols-container">
+									<!-- CONTENT HERE WILL BE GENERATED PROGRAMATICALLY -->
+								</div>
+							</div>
+							<div class="cp-field-container cal-cap-btn-container">
+								<button type="submit" name="calculate" class="btn" id="calc-cap">Calculate Capacity</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<f1:include page="'_/footer.html'"/>
+	</div>
+	<script type="text/javascript" src="js/cp.js"></script>
+</body>
+</html>

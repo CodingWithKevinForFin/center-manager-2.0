@@ -1,0 +1,21 @@
+[
+  {
+    "id":"NOVA_LIGHT_SPARSE",
+    "pt":"NOVA_LIGHT",
+    "lb":"Nova Light (Sparse)",
+    "vl":{
+      "treegrid":{
+        "fontSz":14.0,
+        "rowHt":31.0,
+        "headerFontSz":16.0,
+        "headerHt":30.0
+      },
+      "table":{
+        "fontSz":14.0,
+        "rowHt":31.0,
+        "headerFontSz":16.0,
+        "headerHt":30.0
+      }
+    }
+  }
+]

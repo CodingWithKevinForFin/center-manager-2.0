@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = ".";
+    gCommonRootRelPath = ".";
+    gTopicId = "9.3_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="./template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="./whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="./template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="./template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Generic JDBC Adapter</title>
+<link rel="StyleSheet" href="assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Generic JDBC Adapter">
+        <span>Generic JDBC Adapter</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Generic JDBC Adapter</h1>
+<h2>Using the Generic JDBC Adapter:</h2>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p>This adapter can be used to connect to generic JDBC drivers that AMI 
+ does not have direct support for. Before using the generic driver, please 
+ contact support as there may already be a driver available for download. 
+ When using the generic driver, you must deposit the necessary jar files 
+ required by the JDBC driver into the ./lib directory, found inside the 
+ AMI installation.</p>
+<p> </p>
+<p>After selecting the Generic JDBC driver, you can supply options to direct 
+ how the AMI datasource adapter will access the underlying JDBC database.</p>
+<h3 style="text-decoration: none; "><u style="text-decoration: none; ">URL</u></h3>
+<p>The url as would be supplied to Java&#39;s java.sql.DriverManager.getConnection(…) 
+ method.  The ${USERNAME} will be replaced with supplied username 
+ and ${PASSWORD} will be replaced with the supplied password</p>
+<h3 style="text-decoration: none; "><u style="text-decoration: none; ">Options</u></h3>
+<p>Note that options are key=value pairs that are comma delimited. Use 
+ a backslash to escape commas or equal signs within a value.</p>
+<p> </p>
+<p><b>DRIVER_CLASS</b><span> -</span> fully qualified class name of 
+ JdbcDriver, must be available in class path (under lib directory) - required</p>
+<p><b>SHOW_TABLES_CLAUSE</b><span> -</span> optional - The SQL to 
+ execute to retrieve all tables from the datasource (first column is considered). 
+ If not supplied, the table selection wizard will be empty</p>
+<p><b>PREVIEW_TABLE_CLAUSE</b><span> -</span> optional - The SQL to 
+ execute to retrieve sample data from a table.  The SQL must 
+ contains a ${TABLE} and ${LIMIT} which will be replaced by the table name 
+ and a numeric limit.  If not supplied, no sample data will be 
+ available for a selected table in the wizard</p>
+<p><b>SUGGGESTED_CLAUSE</b><span> -</span> optional - The SQL to execute 
+ to put in the datamodeler to retrieve data from a table.  The 
+ SQL should contain a ${TABLE} which will be replaced by the table name 
+ and a numeric limit.  If not supplied, a generic best guess 
+ will be automatically generated.</p>
+<h3 style="text-decoration: none; "><u style="text-decoration: none; ">The 
+ following example would connect to a mysql database</u></h3>
+<p>(The database is on localhost called mydb accessed with myusername and 
+ mypassword)</p>
+<p> </p>
+<p>Name:</p>
+<p><b>Generic</b></p>
+<p> </p>
+<p>URL:</p>
+<p><b>jdbc:mysql://<i>localhost</i>:3306/<i>mydb</i>?user=${USERNAME}&amp;password=${PASSWORD}</b></p>
+<p> </p>
+<p>Username:</p>
+<p><b><i>myusername</i></b></p>
+<p> </p>
+<p>Password:</p>
+<p><b><i>mypassword</i></b></p>
+<p> </p>
+<p>Options:</p>
+<p><b>DRIVER_CLASS=com.mysql.jdbc.Driver,SHOW_TABLES_CLAUSE=show tables,PREVIEW_TABLE_CLAUSE=select 
+ * from ${TABLE} limit ${LIMIT},SUGGESTED_CLAUSE=select * from ${TABLE} 
+ where ${WHERE}</b></p>
+<p> </p>
+<p>Relay to Run on:</p>
+<p><b>&lt;No Relay, Run on Center&gt;</b></p>
+<p> </p>
+<p>Permitted Overrides:</p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

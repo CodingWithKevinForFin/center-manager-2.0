@@ -1,0 +1,27 @@
+# Each message is passed through the relay rules engine to determine the centers (see ami.centers property) that should receive the message. 
+# Starting at the highest priority rule, if the MESSAGE_TYPES and OBJECT_TYPES and PARAM_TYPES match the message then 
+# the fields defined in the PARAM_TYPES are extracted from the message and passed into the EXPRESSION. If the expression returns true then
+# the message is sent to all centers in the ROUTE_LIST. Note, the ON_TRUE and ON_FALSE determine what to do next respective to the outcome. 
+# The ROUTE_NAME is useful for user identification and debugging.
+#
+# Note: Having no rules means all messages get routed to all centers
+#
+#  Format:
+#  RouteName;Priority;messageTypes;ObjectTypes;ParamTypes;Expression;RouteList;OnTrue;OnFalse;
+#     RouteName    - Unique name of rule
+#     Priority     - Lowest number executes first,ties determined using alphabetical route name
+#     MessageTypes - Comma delimited list of messages types, only O (object), D (delete), C (Command) and S (Status) are supported, * - all types
+#     ObjectTypes  - Comma delimited list of types to evaluate by this rule. Blank - skip rule, * - all types
+#     ParamTypes   - Comma delimited list of param types for the rule in the format: Name Type [nonull]
+#     Expression   - Expression to evaluate, must return boolean, true return value indicates rule succeeded
+#     Routelist    - Comma delimited list of centers to send message to. Blank - no centers, * - all servers
+#     OnTrue       - Action if Expression returns true: BREAK - stop evaluating rules, blank - continue evaluating next rule
+#     OnFalse      - Action if Expression returns false or null: BREAK - stop evaluating rules, blank - Continue evaluating next rule
+#     
+#  Example:
+#     #For NewOrder and Cancel messages with a symbol, route based on symbol. For all other messages router to all centers
+#     RULE0;0;O,D;NewOrder,Cancel;Symbol String nonull;Symbol < "F";Center0;BREAK;
+#     RULE1;1;O,D;NewOrder,Cancel;Symbol String nonull;Symbol < "Q";Center1;BREAK;
+#     RULE2;2;O,D;NewOrder,Cancel;Symbol String nonull;true        ;Center2;BREAK;
+#     RULE3;3;*;*;;true;*;BREAK;
+#

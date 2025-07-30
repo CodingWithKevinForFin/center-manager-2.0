@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>ami</name>
+
+    <groupId>com.ami</groupId>
+    <artifactId>ami</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+  
+   <parent>
+          <groupId>com.3f</groupId>
+          <artifactId>3f</artifactId>
+          <version>1.00-SNAPSHOT</version>
+          <relativePath>../</relativePath>
+    </parent>
+    
+    <modules>
+        <module>amiclient</module>
+        <module>amicenter</module>
+        <module>amicenterfull</module>
+        <module>amirelay</module>
+        <module>amirelayfull</module>
+        <module>amiweb</module>
+        <module>amiwebfull</module>
+        <module>amicommon</module>
+        <module>amione</module>
+        <module>amimongo</module>
+        <module>amimysql</module>
+        <module>amipostgresql</module>
+        <module>amioracle</module>
+        <module>amisybase</module>
+        <module>amiamps</module>
+        <module>amisample</module>
+        <module>amimapbox</module>
+        <module>amiexcel</module>
+        <module>amidb2</module>
+        <module>amihbase</module>
+        <module>amiimpala</module>
+        <module>amispark</module>
+        <module>amirdata</module>
+        <module>amissh</module>
+        <module>amionetick</module>
+        <module>amip4</module>
+        <module>amigit</module>
+        <module>amitest</module>
+        <module>amicouchbase</module>
+        <module>amisaml</module>
+        <module>amichroniclequeue</module>
+        <module>amisqlite</module>
+        <module>amiignite</module>
+        <module>amivertica</module>
+        <module>amiavro</module>
+        <module>amiwebbalancer</module>
+        <module>amiwebmanager</module>
+        <module>amiazurevault</module>
+        <module>amiawskms</module>
+        <module>amiokta</module>
+        <module>amiredis</module>
+        <module>amihibernate</module>
+        <module>amihibernate-5-2</module>
+        <module>amiparquet</module>
+        <module>amildap</module>
+        <module>amikafkaavro</module>
+        <module>amikafkajson</module>
+        <module>amikafkaprotobuf</module>
+        <module>amiawssqs</module>
+        <module>amihazelcast</module>
+        <module>amisnowflake</module>
+        <module>amigrpc</module>
+    </modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+    
+
+</project>
+

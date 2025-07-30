@@ -1,0 +1,41 @@
+****TEST_INPUT_QUERY****
+int x = 10; do { x-=2; insert into t values (x);} while (x > 0);
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+t
++-------+
+|   t   |
++-------+
+|x      |
+|Integer|
++-------+
++-------+
+
+****TEST_RESULT****
+5
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+INSERT INTO t VALUES (x)INSERT INTO t VALUES (x)INSERT INTO t VALUES (x)INSERT INTO t VALUES (x)INSERT INTO t VALUES (x)
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+t
++-------+
+|   t   |
++-------+
+|x      |
+|Integer|
++-------+
+|8      |
+|6      |
+|4      |
+|2      |
+|0      |
++-------+
+

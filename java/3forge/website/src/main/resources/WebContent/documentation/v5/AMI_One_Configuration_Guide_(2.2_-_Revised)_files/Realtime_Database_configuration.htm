@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "6.2.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="AMI One Configuration Guide (2.2 - Revised).docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Realtime Database configuration</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Realtime Database configuration">
+        <span>Realtime Database configuration</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Realtime Database Configuration Properties</h1>
+<ul style="list-style: disc;">
+	<li style="font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.datasource.timeout.millis</span><span courier="">:</span> Default amount of time, in milliseconds, AMI will 
+	 wait for a datasource to respond to a query before timing out. Default 
+	 is 60000 (one minute)</p></li>
+	<li style="font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.datasource.concurrent.queries.per.user</span><span courier="">:</span> The max number of queries to a specific datasource 
+	 from a specific user that can be invoked simultaneously.  Default 
+	 is 5</p></li>
+	<li style="font-size: 12pt;"><p><span class="CourierBlueStyle">ami.db.schema.config.files</span><span class="CourierBlueStyle" style="font-family: Arial, sans-serif;">: 
+	 </span><span class="CourierBlueStyle" style="font-family: Arial, sans-serif; 
+					 color: #000000;">A comma delimited list of sql files 
+	 to execute on startup</span></p></li>
+	<li style="font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.db.schema.managed.file</span><span courier="">:</span> <span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+								 font-variant-ligatures: normal; font-variant-caps: normal; 
+								 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+								 background-color: #ffffff; text-decoration-style: initial; 
+								 text-decoration-color: initial; display: inline	 ! important ; 
+								 float: none;">The file that contains the 
+	 schema to execute on startup, as defined via the command line.  For 
+	 example, if a user creates a new public table, this file will be updated 
+	 to include the modified schema so that next time AMI is restarted 
+	 the table still exists.</span> </p></li>
+	<li style="font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.db.table.default.refresh.period.millis</span><span courier="">:</span> The max delay for refreshing changes to the front 
+	 end.  (See RefreshPeriodMs column in the __TABLE table)</p></li>
+	<li style="font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.db.max.stack.size</span><span courier="">:</span> The max stack size for nesting triggers / procedure 
+	 calls. Default is 4</p></li>
+	<li style="font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.db.persist.dir</span><span courier="">:</span> For tables with persistence, the directory that 
+	 the data is stored in.  (See PersistEngine in the USE options 
+	 of the CREATE PUBLIC TABLE clause)</p></li>
+	<li style="font-size: 12pt;"><p style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+									 font-size: small; font-variant-ligatures: normal; 
+									 font-variant-caps: normal; background-color: #ffffff; 
+									 orphans: 2; widows: 2;"><span class="CourierBlueStyle">ami.db.persist.dir.system.tables</span><span style="-webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial;">: </span><span style="-webkit-text-stroke-width: 0px; 
+													 text-decoration-style: initial; 
+													 text-decoration-color: initial; 
+													 font-size: 12pt;">The 
+	 directory where the contents of system tables (ex: __TABLE, __COLUMN, 
+	 ...)  are stored by default.</span></p></li>
+	<li style="font-size: 12pt;"><p><span class="CourierBlueStyle">ami.db.persist.dir.system.table.[__<i style="font-size: 12pt;">system_table_name</i>]</span>: <span>The 
+	 Directory where the contents of a specific system table is stored. 
+	 Ex: <i>ami.db.persist.dir.system.table.__DATASOURCE=/var/mydatasources</i></span></p></li>
+	<li style="font-size: 12pt;"><p><span class="CourierBlueStyle">ami.db.timer.logging.enabled</span>: 
+	 Default is true, which says that each time a timer is fired a log 
+	 line will be written to the log file.  In instances where 
+	 timers are firing frequently, it is optimal to set this to false</p></li>
+	<li style="font-size: 12pt; font-weight: normal;"><p><span class="CourierBlueStyle">ami.db.console.port</span><span courier="">:</span> The port for connecting via telnet command line 
+	 interface. Default is 3290</p></li>
+	<li style="font-size: 12pt; font-weight: normal;"><p><span style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf;">ami.db.console.port.bindaddr</span>: Optional. Specifies 
+	 the network interface that the <i>ami.db.console.port.bindaddr </i>server 
+	 port will be bound to</p></li>
+	<li style="font-size: 12pt; font-weight: normal;"><p><span class="CourierBlueStyle">ami.db.console.port.whitelist</span><span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; background-color: #ffffff;">: 
+	 </span><span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+					 font-variant-ligatures: normal; font-variant-caps: normal; 
+					 font-weight: 400; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+					 text-decoration-style: initial; text-decoration-color: initial; 
+					 background-color: #ffffff;">provide either a list, 
+	 file or plugin for blocking/granting access based on foreign network 
+	 address. Syntax is either file:&lt;file_containing_a_hostname_patterns_per_line&gt; 
+	 or text:&lt;comma_delimited_list_of_hostname_patterns&gt; or plugin:&lt;class_name_implementing_com.f1.ami.amicommon.AmiServerSocketEntitlementsPlugin&gt;</span></p></li>
+	<li style="font-size: 12pt; font-weight: normal;"><p><span class="CourierBlueStyle">ami.db.console.history.dir</span><span courier="">:</span> The directory that stores command line history</p></li>
+	<li style="font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.db.console.history.max.lines</span><span courier="">:</span> Max number of lines to store, default is 10000</p></li>
+	<li style="font-size: 12pt; font-weight: normal;"><p><span class="CourierBlueStyle">ami.db.jdbc.port</span><span courier="">:</span> The port for connecting to AMI via the AMI JDBC 
+	 driver. Default is 3280</p></li>
+	<li style="font-size: 12pt; font-weight: normal;"><p><span style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf;">ami.db.jdbc.port.bindaddr</span>: Optional. Specifies 
+	 the network interface that the <i>ami.db.jdbc.port </i>server 
+	 port will be bound to</p></li>
+	<li style="font-size: 12pt; font-weight: normal;"><p><span class="CourierBlueStyle">ami.db.jdbc.port.whitelist</span>: 
+	 provide either a list of permitted hostname patterns or plugin for 
+	 blocking/granting access based on foreign network address. Syntax 
+	 is either file:&lt;file_containing_a_hostname_patterns_per_line&gt; 
+	 or text:&lt;comma_delimited_list_of_hostname_patterns&gt; or plugin:&lt;class_name_implementing_com.f1.ami.amicommon.AmiServerSocketEntitlementsPlugin&gt;</p></li>
+	<li style="font-size: 12pt; font-weight: normal;"><p><span class="CourierBlueStyle"><a id="ami.db.anonymous.datasources.enabled"></a>ami.db.anonymous.datasources.enabled</span>: 
+	 should users be able to access undefined-datasources dynamically (via 
+	 the USE DS_ADAPTER directive)</p></li>
+	<li style="font-size: 12pt; font-weight: normal;"><p><span class="CourierBlueStyle">ami.db.disable.functions</span>: 
+	 Comma delimited list of functions to disable, by default strDecrypt 
+	 is disabled</p></li>
+	<li style="font-size: 12pt; font-weight: normal;"><p><span class="CourierBlueStyle">ami.db.default.permissions</span>: 
+	 When a user logs into the database and does not have an AMIDB_PERMISSIONS 
+	 option associated with there account, what are the default permissions. 
+	 Should be a comma delimited combination of READ, WRITE, ALTER, and 
+	 EXECUTE. Blank means no permissions, default is all permissions( READ,WRITE,ALTER,EXECUTE)</p></li>
+	<li style="font-size: 12pt; font-weight: normal;"><p><span class="CourierBlueStyle">amiscript.db.variable.</span><i style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span class="CourierBlueStyle">varname</span></i><span style="color: rgb(34, 34, 34); 
+														 font-family: Arial, Helvetica, sans-serif; 
+														 font-size: small; 
+														 font-variant-ligatures: normal; 
+														 font-variant-caps: normal; 
+														 font-weight: 400; 
+														 orphans: 2; widows: 2; 
+														 -webkit-text-stroke-width: 0px; 
+														 background-color: #ffffff; 
+														 text-decoration-style: initial; 
+														 text-decoration-color: initial; 
+														 display: inline	 ! important ; 
+														 float: none;">: 
+	 </span><span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+					 font-variant-ligatures: normal; font-variant-caps: normal; 
+					 font-weight: 400; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+					 background-color: #ffffff; text-decoration-style: initial; 
+					 text-decoration-color: initial; display: inline	 ! important ; 
+					 float: none;">Declare a readonly variable available 
+	 in the AMI Center database.  The value should be wrapped 
+	 in quotes for a string, or properly formatted to indicate the type. 
+	 Note, you can see</span><span style="color: rgb(34, 34, 34); font-variant-ligatures: normal; 
+									 font-variant-caps: normal; font-weight: 400; 
+									 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+									 background-color: #ffffff; text-decoration-style: initial; 
+									 text-decoration-color: initial; display: inline	 ! important ; 
+									 float: none; font-family: Arial, sans-serif;"> 
+	 declared variables via SHOW VARS. Examples:</span><span style="font-family: Arial, sans-serif;"> 
+	 </span></p></li>
+	<ul style="list-style: disc;">
+		<li style="font-weight: normal; font-size: 12pt; font-family: Arial, sans-serif;"><p style="font-family: Arial, sans-serif;"><span style="color: rgb(34, 34, 34); 
+															 font-variant-ligatures: normal; 
+															 font-variant-caps: normal; 
+															 font-weight: 400; 
+															 orphans: 2; 
+															 widows: 2; 
+															 -webkit-text-stroke-width: 0px; 
+															 background-color: #ffffff; 
+															 text-decoration-style: initial; 
+															 text-decoration-color: initial; 
+															 display: inline	 ! important ; 
+															 float: none;">amiscript.db.variable.hello=&quot;world&quot;  //declare 
+		 a string named hello</span> </p></li>
+		<li style="font-size: 12pt; font-weight: normal;"><p><span style="color: rgb(34, 34, 34); 
+		 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+		 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+		 text-decoration-style: initial; text-decoration-color: initial; 
+		 display: inline	 ! important ; float: none; font-family: Arial, sans-serif;">amiscript.db.variable.num=123L  //declare 
+		 a long named num.</span></p></li>
+	</ul>
+</ul>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

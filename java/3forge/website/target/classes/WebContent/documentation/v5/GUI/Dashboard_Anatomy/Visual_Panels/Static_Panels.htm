@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "3.2.1.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2020"/>
+  <title>Static Panels</title>
+  <link rel="StyleSheet" href="../../../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Static Panels">
+        <span>Static Panels</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+  <h1>Static Panels</h1>
+  <p dir="ltr">A Static Panel renders data from one more more datamodels. It is important to have an understanding of the datamodeler and how to build datamodels before using static visual panels (see <span style="font-weight: bold;"><a href="../../Tools/Tools.htm">Datamodeler</a></span> tool).</p>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">Tables</h2>
+  <p dir="ltr">Provides a tabular view of data from a datamodel. The columns can either be predetermined or change dynamically as the underlying data changes. Data can be sorted, filtered, and exported by end users. As users click on rows, they can execute relationships or present menu items. Custom columns can be added when in Layout Editor mode. Tables can also be configured to allow edit mode, where users can double click on row(s) to edit select values.</p>
+  <p dir="ltr"> </p>
+  <figure><img alt="An example of a table." src="../../../assets/images/table.png" title="Table"/>
+    <figcaption>
+      <p>Example of a table.</p>
+    </figcaption>
+    <p> </p>
+  </figure>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">Trees</h2>
+  <p dir="ltr">Provides a tree view of data from a datamodel where data is grouped and aggregated up by one or more fields. The tree’s nodes can be expanded/contracted by end users. Data can be sorted, filtered, and exported by end users as well. As users click on rows, they can execute relationships or present menu items. Custom columns can be added when in Layout Editor mode. In the example below, the countries are grouped by continent, and branches can be expanded by clicking the right-pointing arrow as South America has been here. </p>
+  <p dir="ltr"> </p>
+  <figure><img src="../../../assets/images/tree.PNG"/>
+    <figcaption>
+      <p>Example of table tree.</p>
+    </figcaption>
+  </figure>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">Heatmaps</h2>
+  <p dir="ltr">Provides a heatmap view of tabular data from a datamodel, where data is grouped and aggregated by one or two levels. Users can zoom in and click on nodes to run relationships. In this example, highest level grouping is continent and second level is country.</p>
+  <p dir="ltr"> </p>
+  <figure><img src="../../../assets/images/treemap.PNG"/>
+    <figcaption>
+      <p>Example of a heatmap.</p>
+    </figcaption>
+  </figure>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">2D Charts</h2>
+  <p dir="ltr">Provides a 2D graphical representation of data from one or more datamodels. End users can zoom in and click on elements within the chart to run relationships. Plots, Axes, and Layers can be added when in Layout Editor Mode. AMI supports 10 different types of 2D charts with flexibility to adapt and customize for different use cases.</p>
+  <p dir="ltr"><img src="../../../assets/images/2dmenu.PNG"/></p>
+  <h3 dir="ltr">Plot</h3>
+  <p dir="ltr">One or more plots can be added to a chart, forming a grid of plots. Each plot can contain any number of layers, stacked from front to back such that the front layer will obscure data from layers behind it, depending on the transparency of each layer.</p>
+  <h3 dir="ltr">Axis</h3>
+  <p dir="ltr">Any number of horizontal axes can be added to the top and bottom of a column of plots and any number or vertical axis can be added to the left or right of a row of plots. Users can zoom and pan on the axis, effectively controlling the rendering position of all layers attached to it.</p>
+  <h3 dir="ltr">XY Layer</h3>
+  <p dir="ltr">A type of layer for plotting data using a Cartesian coordinate system. The layer can be linked to one horizontal and one vertical axis. Users can zoom in and pan XY layers which will update the linked axis, and the zoom state of any other layers linked to the same axis. </p>
+  <h3 dir="ltr">Radial Layer</h3>
+  <p dir="ltr">A type of layer for plotting data using the polar coordinate system.</p>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">3D Charts</h2>
+  <p dir="ltr">Provides a 3D graphical representation of data from one or more datamodels. There are surface layers for producing smooth surfaces and scatter plots for rendering individual points in 3d space. End users can zoom, rotate and adjust the Field of View. Any number of layers can be added in Layout Editor Mode.</p>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">Maps</h2>
+  <p dir="ltr">Provides a geographic representation of data from one or more datamodels and using MapBox™ data for the background satellite/street view. End users can zoom.  Users can zoom and pan on the data and select nodes to run relationships. Any number of layers can be added in Layout Editor mode.</p>
+  <p> </p>
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

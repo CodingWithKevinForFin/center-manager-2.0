@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "3.4_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2020"/>
+  <title>External to Layout Files</title>
+  <link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="External to Layout Files">
+        <span>External to Layout Files</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+  <h1>External to Layout Files</h1>
+  <p dir="ltr"><b id="docs-internal-guid-fcd7e767-7fff-499b-7756-029d31ecba97"><span style="font-weight: 400;">Nearly everything is stored within the layout file itself with a few exceptions. These are important to cover, as the layouts will likely have dependencies on them. When moving layouts across instances of AMI, it is important that these are setup consistently across the AMI instances.</span></b></p>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">Datasources</h2>
+  <p dir="ltr"><b id="docs-internal-guid-fcd7e767-7fff-499b-7756-029d31ecba97"><span style="font-weight: 400;">The Definition of a datasource does not live inside the layout, it is stored inside the Ami Center&#39;s __DATASOURCE table (see Ami Center Documentation). Layouts simply reference a datasource by name, and it is expected that there is a datasource available matching that name, otherwise the datamodel can not run. This separation makes moving dashboards across environments easier. For example, a datasource may have a particular configuration in the QA environment and a different configuration in Production, but because these details are not stored in the layout, the same layout can easily be used for both. </span></b></p>
+  <p dir="ltr"> </p>
+  <p dir="ltr"><b id="docs-internal-guid-fcd7e767-7fff-499b-7756-029d31ecba97" style="font-weight: normal;">In circumstances where the datasource must be stored in the layout, one can use an <span style="font-weight: 400; 
+	 font-style: italic;">anonymous</span> <span style="font-weight: 400; 
+												 font-style: italic;">datasource</span> (see <a href="../AMI_One_Configuration_Guide_(2.2_-_Revised)_files/Realtime_Database_configuration.htm#ami.db.anonymous.datasources.enabled">ami.db.anonymous.datasources.enabled</a> property)</b></p>
+  <p dir="ltr"> </p>
+  <p dir="ltr">In the frontend datasources can be accessed through <strong>Dashboard &gt; Data Modeler... </strong>where they are represented with blue icons as shown in the figure below.</p>
+  <p dir="ltr"> </p>
+  <figure><img height="279" src="../assets/images/Datasources.png" width="567"/>
+    <figcaption>Datasource icons</figcaption>
+  </figure>
+  <p dir="ltr"> A new Datasource can be added by clicking on the option <strong>Attach Datasource. </strong>This action will open up the <span style="font-family:&#39;Courier New&#39;">ATTACH DATASOURCE</span> wizard where a new datasource can be attached by user, after specifying it&#39;s type and properties.</p>
+  <p dir="ltr"> </p>
+  <figure><img height="404" src="../assets/images/AttachDatasourceWizard.png" width="542"/>
+    <figcaption>Attach Datasource wizard</figcaption>
+  </figure>
+  <p dir="ltr"> </p>
+  <p dir="ltr"> </p>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">Resources</h2>
+  <p dir="ltr"><b id="docs-internal-guid-fcd7e767-7fff-499b-7756-029d31ecba97"><span style="font-weight: 400;">Larger binary resources like images, audio clips, and video clips are stored and accessed using our resource manager (</span><span style="font-weight: bold;">Menu</span><span style="font-weight: 400;"> &gt; </span><span style="font-weight: bold;">Dashboard</span><span style="font-weight: 400;"> &gt; </span><span style="font-weight: bold;">Resource Manager</span><span style="font-weight: 400;">). These resources can then be referenced by name inside the layouts. This helps keep layouts small and promotes a separation between the layouts&#39; logic vs. the look &amp; feel.</span></b></p>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">Default StyleSets</h2>
+  <p dir="ltr" style="font-weight: 400;"><b id="docs-internal-guid-fcd7e767-7fff-499b-7756-029d31ecba97"><span style="font-weight: 400;">Style sets can be saved inside a layout or can be exported and saved in the AMI Server. At that point, the styleset is considered </span><span style="font-weight: 400; font-style: italic;">readonly</span><span style="font-weight: 400;"> but can be used across layouts. The layouts will reference the style by the style&#39;s ID.</span></b></p>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">User Preferences &amp; Settings</h2>
+  <p dir="ltr"><b id="docs-internal-guid-fcd7e767-7fff-499b-7756-029d31ecba97"><span style="font-weight: 400;">As would be expected, these are not saved in the layout and are actually stored on a per user basis.</span></b></p>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">Plugins</h2>
+  <p dir="ltr"><b id="docs-internal-guid-fcd7e767-7fff-499b-7756-029d31ecba97"><span style="font-weight: 400;">Plugins are used to interface AMI with external systems such as SSO/Entitlement Servers, Source Control Management tools, etc. These plugins are configured at the AMI Web (or AMI One) and are then referenced/used by the layout files.</span></b></p>
+  <p dir="ltr"> </p>
+  <h2 dir="ltr">Configuration Properties</h2>
+  <p dir="ltr" style="font-weight: 400;"><b id="docs-internal-guid-fcd7e767-7fff-499b-7756-029d31ecba97"><span style="font-weight: 400;">Like all server applications, AMI has configurable properties used to control how AMI operates. In addition, certain properties can be made available for use as session variables (see </span><span style="font-weight: bold;"><a href="Scripting/Session_Variables.htm">Session Variables</a></span><span style="font-weight: 400;">). These are usually stored in a local.properties file.</span></b></p>
+  <p> </p>
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

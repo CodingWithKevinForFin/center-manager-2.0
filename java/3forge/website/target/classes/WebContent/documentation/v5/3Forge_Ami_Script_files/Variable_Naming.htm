@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="MS-HKWD" content="first "/>
+<meta name="MS-HKWD" content="ticks "/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Variable Naming</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+<meta name="rh-index-keywords" content="first,ticks "/></head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Variable Naming">
+        <span>Variable Naming</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1><u style="text-decoration: none; "><a style="font-family: Arial, sans-serif; 
+											 font-size: 24pt;" id="Variable_Naming">Variable 
+ Naming</a></u></h1>
+<p style="font-family: Arial, sans-serif; font-size: 11pt; margin-bottom: 0pt; 
+	 line-height: Normal;"><span style="font-size: 12pt; font-family: Arial, sans-serif;">Case-sensitive 
+ combination of a-z, A-Z, _, 0-9.  The first character must not 
+ be a number. Alternatively, variables can be wrapped in back ticks (`), 
+ in which case all characters are supported, allowing for accessibility 
+ with external language references.  Note: </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+															 font-size: 12pt;">`</span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;">test</span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+										 font-size: 12pt;">`</span> <span style="font-size: 12pt; font-family: Arial, sans-serif;">is equivalent 
+ to</span> <span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #006dbf; font-size: 12pt;">test</span><span style="font-size: 12pt; 
+	 font-family: Arial, sans-serif;">. Variables are declared with the 
+ following syntax (the value will default to null if an expression is not 
+ supplied):</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; line-height: Normal; 
+	 font-size: 12pt; font-family: Arial, sans-serif;"><b><i><span courier="">type 
+ variable_name [ = expression][, variable_name [ = expression] ... ];</span></i></b></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-size: 11pt; font-family: Arial, sans-serif; 
+	 line-height: Normal;"> </p>
+<h2 style="background-color: Transparent; text-transform: uppercase; font-weight: bold; 
+	 font-style: normal; font-family: Arial, sans-serif; font-size: 19pt; 
+	 color: #6d2d9e; text-decoration: none; "><a name="Literals_Constants" id="Literals_Constants" style="background-color: Transparent; 
+												 text-transform: uppercase; 
+												 font-weight: bold; font-style: normal; 
+												 font-family: Arial, sans-serif; 
+												 font-size: 19pt; color: #6d2d9e; 
+												 text-decoration: none; ">Literals 
+ (Constants)</a></h2>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 line-height: Normal; font-size: 12pt;"><b><i><span courier="" style="color: #006dbf; 
+														 font-weight: normal; 
+														 font-style: normal;">digits</span></i></b><span courier="">         </span><i><span courier="" style="color: #808080; font-style: normal;">Int constant</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><span courier="" style="color: #ff0000; font-weight: normal;">0x</span></b><b><i><span courier="" style="color: #006dbf; font-weight: normal; font-style: normal;">digits</span></i></b><span courier="">       </span><i><span courier="" style="color: #808080; font-style: normal;">Hex Int constant</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><span courier="" style="color: #ff0000; font-weight: normal;">0</span></b><b><i><span courier="" style="color: #006dbf; font-weight: normal; font-style: normal;">digits</span></i></b> 
+ <span courier="">       </span><i><span courier="" style="color: #808080; font-style: normal;">Octal Int constant</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><i><span courier="" style="color: #006dbf; font-weight: normal; 
+									 font-style: normal;">digits</span></i></b><b><span courier="" style="color: #ff0000; font-weight: normal;">L</span></b> 
+ <span courier="">       </span><i><span courier="" style="color: #808080; font-style: normal;">Long constant</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><span courier="" style="color: #ff0000; font-weight: normal;">0x</span></b><b><i><span courier="" style="color: #006dbf; font-weight: normal; font-style: normal;">digits</span></i></b><b><span courier="" style="color: #ff0000; font-weight: normal;">L</span></b> 
+ <span courier="">     </span><i><span courier="" style="color: #808080; font-style: normal;">Hex long constant</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><span courier="" style="color: #ff0000; font-weight: normal;">0</span></b><b><i><span courier="" style="color: #006dbf; font-weight: normal; font-style: normal;">digits</span></i></b><b><span courier="" style="color: #ff0000; font-weight: normal;">L</span></b> 
+ <span courier="">      </span><i><span courier="" style="color: #808080; font-style: normal;">Octal long constant</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><i><span courier="" style="color: #006dbf; font-weight: normal; 
+									 font-style: normal;">digits</span></i></b><b><span courier="" style="color: #006dbf; font-weight: normal;">.</span></b><b><i><span courier="" style="color: #006dbf; font-weight: normal; font-style: normal;">digits</span></i></b> 
+  <i><span courier="" style="color: #808080; font-style: normal;">Float 
+ constant.  Note, scientific (aka &#39;E&#39;) notation is supported</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><i><span courier="" style="color: #006dbf; font-weight: normal; 
+									 font-style: normal;">digits</span></i></b><b><span courier="" style="color: #006dbf; font-weight: normal;">.</span></b><b><i><span courier="" style="color: #006dbf; font-weight: normal; font-style: normal;">digits</span></i></b><b><span courier="" style="color: #006dbf; font-weight: normal;">D</span></b><span courier=""> <i style="font-style: normal;">Double constant.  Note, 
+ scientific (aka &#39;E&#39;) notation is supported</i> </span></p>
+<p style="margin-bottom: .0001pt; margin-left: 1.0in; text-indent: -1.0in; 
+	 font-family: &#39;Courier New&#39;, monospace;"><b><span courier="" style="color: #ff0000; 
+														 font-weight: normal;">&quot;</span></b><b><i><span courier="" style="color: #006dbf; font-weight: normal; font-style: normal;">chars</span></i></b><span courier=""><b style="color: #ff0000; font-weight: normal;">&quot;</b>        </span><i><span courier="" style="color: #808080; font-style: normal;">String constant.  Use 
+ backslash (\) to escape quotes, backslash (\\)   and other 
+ control chars, ex: \n. </span></i><i><span courier="" style="color: #808080; 
+											 font-style: normal;">A string 
+ can be defined over multiple lines using a trailing backslash on all </span></i><i style="font-style: normal;"><span courier="" style="text-indent: -1.0in; 
+										 font-family: &#39;Courier New&#39;, monospace; 
+										 color: #808080; font-size: 12pt; 
+										 font-style: normal;">but the last 
+ line, note that preceding white space is trimmed out for subsequent lines. 
+ Please see <b style="font-weight: normal; font-style: normal;">String 
+ Templating</b> </span><span courier="" style="text-indent: -1.0in; font-family: &#39;Courier New&#39;, monospace; 
+							 color: #808080; font-size: 12pt; font-style: normal;">section 
+ for  details on ${...} syntax</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">\n\r\t&lt;space&gt;</span> 
+  <i><span courier="" style="font-style: normal;">White space (token 
+ delimiter)</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<h3 style="line-height: Normal; text-transform: uppercase; font-size: 19pt; 
+	 margin-top: 5pt; margin-bottom: 1pt; font-family: Arial, sans-serif; 
+	 color: #6d2d9e; font-style: normal; text-decoration: none; "><a name="Reserved_Types" id="Reserved_Types" style="font-style: normal;"><span class="Heading3" style="color: #6d2d9e; 
+															 font-style: normal; 
+															 text-decoration: none; ">Reserved 
+ Types</span></a></h3>
+<p style="font-size: 12pt; margin-bottom: 0pt; line-height: Normal; font-family: Arial, sans-serif;">All 
+ reserved types&#39; values are immutable. Null is a valid value</p>
+<p style="font-family: Arial, sans-serif; margin-bottom: 0pt; line-height: Normal; 
+	 font-size: 11pt;"> </p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 text-indent: -1.0in; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"><b><i style="font-weight: normal; font-style: normal;"><span courier="" style="color: #006dbf; 
+															 font-weight: normal; 
+															 font-style: normal;">Long</span><span courier="" style="font-weight: normal; font-style: normal;">          </span></i></b> <i><span courier="" style="color: #808080; font-style: normal;">64 bit signed 
+ whole number</span></i><b><i><span courier="" style="font-weight: normal; 
+									 font-style: normal;"> </span></i></b></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 text-indent: -1.0in; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"><b><i style="font-weight: normal; font-style: normal;"><span courier="" style="color: #006dbf; 
+															 font-weight: normal; 
+															 font-style: normal;">Double</span><span courier="" style="font-weight: normal; font-style: normal;">        </span></i></b> <i><span courier="" style="color: #808080; font-style: normal;">64 bit signed 
+ float</span></i><b><i><span courier="" style="font-weight: normal; font-style: normal;"> </span></i></b></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 text-indent: -1.0in; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"><b><i style="font-weight: normal; font-style: normal;"><span courier="" style="color: #006dbf; 
+															 font-weight: normal; 
+															 font-style: normal;">String</span><span courier="" style="font-weight: normal; font-style: normal;">        </span></i></b> <i><span courier="" style="color: #808080; font-style: normal;">Variable length 
+ string of UTF 8 characters</span></i><b><i><span courier="" style="font-weight: normal; 
+													 font-style: normal;"> </span></i></b></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 text-indent: -1.0in; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"><b><i style="font-weight: normal; font-style: normal;"><span courier="" style="color: #006dbf; 
+															 font-weight: normal; 
+															 font-style: normal;">Integer</span><span courier="" style="font-weight: normal; font-style: normal;">       </span></i></b> <i><span courier="" style="color: #808080; font-style: normal;">32 bit signed 
+ whole number</span></i><b><i><span courier="" style="font-weight: normal; 
+									 font-style: normal;"> </span></i></b></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 text-indent: -1.0in; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"><b><i style="font-weight: normal; font-style: normal;"><span courier="" style="color: #006dbf; 
+															 font-weight: normal; 
+															 font-style: normal;">Float</span><span courier="" style="font-weight: normal; font-style: normal;">         </span></i></b> <i><span courier="" style="color: #808080; font-style: normal;">32 bit signed 
+ float</span></i><b><i><span courier="" style="font-weight: normal; font-style: normal;"> </span></i></b></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 text-indent: -1.0in; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"><b><i style="font-weight: normal; font-style: normal;"><span courier="" style="color: #006dbf; 
+															 font-weight: normal; 
+															 font-style: normal;">Byte</span><span courier="" style="font-weight: normal; font-style: normal;">          </span></i></b> <i><span courier="" style="color: #808080; font-style: normal;">8 bit signed 
+ whole number</span></i><b><i><span courier="" style="font-weight: normal; 
+									 font-style: normal;"> </span></i></b></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 text-indent: -1.0in; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"><b><i><span courier="" style="color: #006dbf; font-weight: normal; font-style: normal;">Boolean</span></i></b><b><span courier="" style="font-weight: normal;">       </span></b> <i><span courier="" style="color: #808080; font-style: normal;">boolean (true 
+ or false)</span></i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 1.0in; 
+	 text-indent: -1.0in; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"><b><i style="font-weight: normal; font-style: normal;"><span courier="" style="color: #006dbf; 
+															 font-weight: normal; 
+															 font-style: normal;">Number</span><span courier="" style="font-weight: normal; font-style: normal;">        </span></i></b> <i><span courier="" style="color: #808080; font-style: normal;">Base class 
+ for Long,Double,Integer,Float,Byte</span></i></p>
+<p style="margin-bottom: .0001pt; margin-left: 1.0in; text-indent: -1.0in; 
+	 font-family: &#39;Courier New&#39;, monospace; line-height: Normal; font-size: 12pt;"><b><i style="font-weight: normal; font-style: normal;"><span courier="" style="color: #006dbf; 
+															 font-weight: normal; 
+															 font-style: normal;">UTC</span><span courier="" style="font-weight: normal; font-style: normal;">           </span></i></b> <i><span courier="" style="color: #808080; font-style: normal;">Timestamp with 
+ millisecond precision (since unix epoch)</span></i></p>
+<p style="margin-bottom: .0001pt; margin-left: 1.0in; text-indent: -1.0in; 
+	 font-family: &#39;Courier New&#39;, monospace; font-size: 11pt; line-height: Normal;"> </p>
+<p style="margin-bottom: .0001pt; margin-left: 1.0in; text-indent: -1.0in; 
+	 font-family: &#39;Courier New&#39;, monospace; font-size: 11pt; line-height: Normal; 
+	 color: #808080;"> </p>
+<p style="margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-size: 13pt; 
+	 font-style: italic; color: #449938; text-transform: uppercase; font-family: Arial, sans-serif;"><b>Examples</b></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 line-height: Normal; font-size: 12pt;"><span courier="">Integer i 
+ = 32;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">Double d = 4.3, f = 132.d;</span> 
+ <i><span courier="" style="color: #808080;">//declaring multiple variables</span></i></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">Integer j = 0xaabcc;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">String test = &quot;hello world&quot;;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">String Test = &quot;Hello \</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">               world&quot;; 
+     <i style="color: #808080;">//Multi line</i> </span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">Integer lng = 100000000000L;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">Boolean flag = true;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">Byte some_thing = null;</span></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,543 @@
+****TEST_INPUT_QUERY****
+create table testABC as select * from sA, sB, sC;
+create table testCAB as select * from sC, sA, sB;
+create table testBCA as select * from sB, sC, sA;
+create table testCBA as select * from sC, sB, sA;
+create table testACB as select * from sA, sC, sB;
+create table testBAC as select * from sB, sA, sC;
+create table testABCfilt as select * from sA, sB, sC where sA.nm == sB.nm && sA.nm == sC.nm && sB.nm == sC.nm;
+create table testCABfilt as select * from sC, sA, sB where sA.nm == sB.nm && sA.nm == sC.nm && sB.nm == sC.nm;
+create table testBCAfilt as select * from sB, sC, sA where sA.nm == sB.nm && sA.nm == sC.nm && sB.nm == sC.nm;
+create table testCBAfilt as select * from sC, sB, sA where sA.nm == sB.nm && sA.nm == sC.nm && sB.nm == sC.nm;
+create table testACBfilt as select * from sA, sC, sB where sA.nm == sB.nm && sA.nm == sC.nm && sB.nm == sC.nm;
+create table testBACfilt as select * from sB, sA, sC where sA.nm == sB.nm && sA.nm == sC.nm && sB.nm == sC.nm;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+sA
++---------------------+
+|         sA          |
++------+------+-------+
+|nm    |x     |y      |
+|String|Double|Integer|
++------+------+-------+
+|B     |5.0   !null   |
+|A     !null  |11     |
+!null  |7.0   |0      |
++------+------+-------+
+
+sB
++---------------------+
+|         sB          |
++------+------+-------+
+|nm    |x     |y      |
+|String|Double|Integer|
++------+------+-------+
+|B     |2.0   !null   |
+|A     !null  |8      |
++------+------+-------+
+
+sC
++---------------------+
+|         sC          |
++------+------+-------+
+|nm    |x     |y      |
+|String|Double|Integer|
++------+------+-------+
+|A     !null  |44     |
+|B     |7.0   |6      |
+!null  |5.0   !null   |
++------+------+-------+
+
+****TEST_RESULT****
+120
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS testABC  SELECT "*" FROM sA,sB,sCCREATE TABLE AS testCAB  SELECT "*" FROM sC,sA,sBCREATE TABLE AS testBCA  SELECT "*" FROM sB,sC,sACREATE TABLE AS testCBA  SELECT "*" FROM sC,sB,sACREATE TABLE AS testACB  SELECT "*" FROM sA,sC,sBCREATE TABLE AS testBAC  SELECT "*" FROM sB,sA,sCCREATE TABLE AS testABCfilt  SELECT "*" FROM sA,sB,sC WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nmCREATE TABLE AS testCABfilt  SELECT "*" FROM sC,sA,sB WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nmCREATE TABLE AS testBCAfilt  SELECT "*" FROM sB,sC,sA WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nmCREATE TABLE AS testCBAfilt  SELECT "*" FROM sC,sB,sA WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nmCREATE TABLE AS testACBfilt  SELECT "*" FROM sA,sC,sB WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nmCREATE TABLE AS testBACfilt  SELECT "*" FROM sB,sA,sC WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nm
+
+PROJECTION : 
+SELECT "*" FROM sA,sB,sC
+
+NESTING_QUERY : 
+#0 sA
+
+NESTING_QUERY : 
+#1 sB
+
+NESTING_QUERY : 
+#2 sC
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM sC,sA,sB
+
+NESTING_QUERY : 
+#0 sC
+
+NESTING_QUERY : 
+#1 sA
+
+NESTING_QUERY : 
+#2 sB
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM sB,sC,sA
+
+NESTING_QUERY : 
+#0 sB
+
+NESTING_QUERY : 
+#1 sC
+
+NESTING_QUERY : 
+#2 sA
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM sC,sB,sA
+
+NESTING_QUERY : 
+#0 sC
+
+NESTING_QUERY : 
+#1 sB
+
+NESTING_QUERY : 
+#2 sA
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM sA,sC,sB
+
+NESTING_QUERY : 
+#0 sA
+
+NESTING_QUERY : 
+#1 sC
+
+NESTING_QUERY : 
+#2 sB
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM sB,sA,sC
+
+NESTING_QUERY : 
+#0 sB
+
+NESTING_QUERY : 
+#1 sA
+
+NESTING_QUERY : 
+#2 sC
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM sA,sB,sC WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nm
+
+TEMP_INDEX : 
+On 'sB.nm'
+
+TEMP_INDEX : 
+On 'sC.nm'
+
+NESTING_QUERY : 
+#0 sA indexing to [sA.nm ==> sB.nm, sA.nm ==> sC.nm]
+
+NESTING_QUERY : 
+#1 sB
+
+NESTING_QUERY : 
+#2 sC
+
+NONINDEX_WHERE : 
+(sB.nm == sC.nm)
+
+PROJECTION : 
+SELECT "*" FROM sC,sA,sB WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nm
+
+TEMP_INDEX : 
+On 'sB.nm'
+
+TEMP_INDEX : 
+On 'sC.nm'
+
+NESTING_QUERY : 
+#0 sA indexing to [sA.nm ==> sB.nm, sA.nm ==> sC.nm]
+
+NESTING_QUERY : 
+#1 sC
+
+NESTING_QUERY : 
+#2 sB
+
+NONINDEX_WHERE : 
+(sB.nm == sC.nm)
+
+PROJECTION : 
+SELECT "*" FROM sB,sC,sA WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nm
+
+TEMP_INDEX : 
+On 'sB.nm'
+
+TEMP_INDEX : 
+On 'sC.nm'
+
+NESTING_QUERY : 
+#0 sA indexing to [sA.nm ==> sB.nm, sA.nm ==> sC.nm]
+
+NESTING_QUERY : 
+#1 sB
+
+NESTING_QUERY : 
+#2 sC
+
+NONINDEX_WHERE : 
+(sB.nm == sC.nm)
+
+PROJECTION : 
+SELECT "*" FROM sC,sB,sA WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nm
+
+TEMP_INDEX : 
+On 'sB.nm'
+
+TEMP_INDEX : 
+On 'sC.nm'
+
+NESTING_QUERY : 
+#0 sA indexing to [sA.nm ==> sB.nm, sA.nm ==> sC.nm]
+
+NESTING_QUERY : 
+#1 sC
+
+NESTING_QUERY : 
+#2 sB
+
+NONINDEX_WHERE : 
+(sB.nm == sC.nm)
+
+PROJECTION : 
+SELECT "*" FROM sA,sC,sB WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nm
+
+TEMP_INDEX : 
+On 'sB.nm'
+
+TEMP_INDEX : 
+On 'sC.nm'
+
+NESTING_QUERY : 
+#0 sA indexing to [sA.nm ==> sB.nm, sA.nm ==> sC.nm]
+
+NESTING_QUERY : 
+#1 sC
+
+NESTING_QUERY : 
+#2 sB
+
+NONINDEX_WHERE : 
+(sB.nm == sC.nm)
+
+PROJECTION : 
+SELECT "*" FROM sB,sA,sC WHERE sA . nm == sB . nm && sA . nm == sC . nm && sB . nm == sC . nm
+
+TEMP_INDEX : 
+On 'sB.nm'
+
+TEMP_INDEX : 
+On 'sC.nm'
+
+NESTING_QUERY : 
+#0 sA indexing to [sA.nm ==> sB.nm, sA.nm ==> sC.nm]
+
+NESTING_QUERY : 
+#1 sB
+
+NESTING_QUERY : 
+#2 sC
+
+NONINDEX_WHERE : 
+(sB.nm == sC.nm)
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+testCAB
++-----------------------------------------------------------------+
+|                             testCAB                             |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sA_nm |sA_x  |sA_y   |sB_nm |sB_x  |sB_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|A     !null  |44     |B     |5.0   !null   |B     |2.0   !null   |
+|A     !null  |44     |B     |5.0   !null   |A     !null  |8      |
+|A     !null  |44     |A     !null  |11     |B     |2.0   !null   |
+|A     !null  |44     |A     !null  |11     |A     !null  |8      |
+|A     !null  |44     !null  |7.0   |0      |B     |2.0   !null   |
+|A     !null  |44     !null  |7.0   |0      |A     !null  |8      |
+|B     |7.0   |6      |B     |5.0   !null   |B     |2.0   !null   |
+|B     |7.0   |6      |B     |5.0   !null   |A     !null  |8      |
+|B     |7.0   |6      |A     !null  |11     |B     |2.0   !null   |
+|B     |7.0   |6      |A     !null  |11     |A     !null  |8      |
+|B     |7.0   |6      !null  |7.0   |0      |B     |2.0   !null   |
+|B     |7.0   |6      !null  |7.0   |0      |A     !null  |8      |
+!null  |5.0   !null   |B     |5.0   !null   |B     |2.0   !null   |
+!null  |5.0   !null   |B     |5.0   !null   |A     !null  |8      |
+!null  |5.0   !null   |A     !null  |11     |B     |2.0   !null   |
+!null  |5.0   !null   |A     !null  |11     |A     !null  |8      |
+!null  |5.0   !null   !null  |7.0   |0      |B     |2.0   !null   |
+!null  |5.0   !null   !null  |7.0   |0      |A     !null  |8      |
++------+------+-------+------+------+-------+------+------+-------+
+
+testCBA
++-----------------------------------------------------------------+
+|                             testCBA                             |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sB_nm |sB_x  |sB_y   |sA_nm |sA_x  |sA_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|A     !null  |44     |B     |2.0   !null   |B     |5.0   !null   |
+|A     !null  |44     |B     |2.0   !null   |A     !null  |11     |
+|A     !null  |44     |B     |2.0   !null   !null  |7.0   |0      |
+|A     !null  |44     |A     !null  |8      |B     |5.0   !null   |
+|A     !null  |44     |A     !null  |8      |A     !null  |11     |
+|A     !null  |44     |A     !null  |8      !null  |7.0   |0      |
+|B     |7.0   |6      |B     |2.0   !null   |B     |5.0   !null   |
+|B     |7.0   |6      |B     |2.0   !null   |A     !null  |11     |
+|B     |7.0   |6      |B     |2.0   !null   !null  |7.0   |0      |
+|B     |7.0   |6      |A     !null  |8      |B     |5.0   !null   |
+|B     |7.0   |6      |A     !null  |8      |A     !null  |11     |
+|B     |7.0   |6      |A     !null  |8      !null  |7.0   |0      |
+!null  |5.0   !null   |B     |2.0   !null   |B     |5.0   !null   |
+!null  |5.0   !null   |B     |2.0   !null   |A     !null  |11     |
+!null  |5.0   !null   |B     |2.0   !null   !null  |7.0   |0      |
+!null  |5.0   !null   |A     !null  |8      |B     |5.0   !null   |
+!null  |5.0   !null   |A     !null  |8      |A     !null  |11     |
+!null  |5.0   !null   |A     !null  |8      !null  |7.0   |0      |
++------+------+-------+------+------+-------+------+------+-------+
+
+testBCAfilt
++-----------------------------------------------------------------+
+|                           testBCAfilt                           |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sC_nm |sC_x  |sC_y   |sA_nm |sA_x  |sA_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|B     |2.0   !null   |B     |7.0   |6      |B     |5.0   !null   |
+|A     !null  |8      |A     !null  |44     |A     !null  |11     |
++------+------+-------+------+------+-------+------+------+-------+
+
+testABCfilt
++-----------------------------------------------------------------+
+|                           testABCfilt                           |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sB_nm |sB_x  |sB_y   |sC_nm |sC_x  |sC_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|B     |5.0   !null   |B     |2.0   !null   |B     |7.0   |6      |
+|A     !null  |11     |A     !null  |8      |A     !null  |44     |
++------+------+-------+------+------+-------+------+------+-------+
+
+testCABfilt
++-----------------------------------------------------------------+
+|                           testCABfilt                           |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sA_nm |sA_x  |sA_y   |sB_nm |sB_x  |sB_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|B     |7.0   |6      |B     |5.0   !null   |B     |2.0   !null   |
+|A     !null  |44     |A     !null  |11     |A     !null  |8      |
++------+------+-------+------+------+-------+------+------+-------+
+
+testBCA
++-----------------------------------------------------------------+
+|                             testBCA                             |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sC_nm |sC_x  |sC_y   |sA_nm |sA_x  |sA_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|B     |2.0   !null   |A     !null  |44     |B     |5.0   !null   |
+|B     |2.0   !null   |A     !null  |44     |A     !null  |11     |
+|B     |2.0   !null   |A     !null  |44     !null  |7.0   |0      |
+|B     |2.0   !null   |B     |7.0   |6      |B     |5.0   !null   |
+|B     |2.0   !null   |B     |7.0   |6      |A     !null  |11     |
+|B     |2.0   !null   |B     |7.0   |6      !null  |7.0   |0      |
+|B     |2.0   !null   !null  |5.0   !null   |B     |5.0   !null   |
+|B     |2.0   !null   !null  |5.0   !null   |A     !null  |11     |
+|B     |2.0   !null   !null  |5.0   !null   !null  |7.0   |0      |
+|A     !null  |8      |A     !null  |44     |B     |5.0   !null   |
+|A     !null  |8      |A     !null  |44     |A     !null  |11     |
+|A     !null  |8      |A     !null  |44     !null  |7.0   |0      |
+|A     !null  |8      |B     |7.0   |6      |B     |5.0   !null   |
+|A     !null  |8      |B     |7.0   |6      |A     !null  |11     |
+|A     !null  |8      |B     |7.0   |6      !null  |7.0   |0      |
+|A     !null  |8      !null  |5.0   !null   |B     |5.0   !null   |
+|A     !null  |8      !null  |5.0   !null   |A     !null  |11     |
+|A     !null  |8      !null  |5.0   !null   !null  |7.0   |0      |
++------+------+-------+------+------+-------+------+------+-------+
+
+testBACfilt
++-----------------------------------------------------------------+
+|                           testBACfilt                           |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sA_nm |sA_x  |sA_y   |sC_nm |sC_x  |sC_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|B     |2.0   !null   |B     |5.0   !null   |B     |7.0   |6      |
+|A     !null  |8      |A     !null  |11     |A     !null  |44     |
++------+------+-------+------+------+-------+------+------+-------+
+
+sC
++---------------------+
+|         sC          |
++------+------+-------+
+|nm    |x     |y      |
+|String|Double|Integer|
++------+------+-------+
+|A     !null  |44     |
+|B     |7.0   |6      |
+!null  |5.0   !null   |
++------+------+-------+
+
+testABC
++-----------------------------------------------------------------+
+|                             testABC                             |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sB_nm |sB_x  |sB_y   |sC_nm |sC_x  |sC_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|B     |5.0   !null   |B     |2.0   !null   |A     !null  |44     |
+|B     |5.0   !null   |B     |2.0   !null   |B     |7.0   |6      |
+|B     |5.0   !null   |B     |2.0   !null   !null  |5.0   !null   |
+|B     |5.0   !null   |A     !null  |8      |A     !null  |44     |
+|B     |5.0   !null   |A     !null  |8      |B     |7.0   |6      |
+|B     |5.0   !null   |A     !null  |8      !null  |5.0   !null   |
+|A     !null  |11     |B     |2.0   !null   |A     !null  |44     |
+|A     !null  |11     |B     |2.0   !null   |B     |7.0   |6      |
+|A     !null  |11     |B     |2.0   !null   !null  |5.0   !null   |
+|A     !null  |11     |A     !null  |8      |A     !null  |44     |
+|A     !null  |11     |A     !null  |8      |B     |7.0   |6      |
+|A     !null  |11     |A     !null  |8      !null  |5.0   !null   |
+!null  |7.0   |0      |B     |2.0   !null   |A     !null  |44     |
+!null  |7.0   |0      |B     |2.0   !null   |B     |7.0   |6      |
+!null  |7.0   |0      |B     |2.0   !null   !null  |5.0   !null   |
+!null  |7.0   |0      |A     !null  |8      |A     !null  |44     |
+!null  |7.0   |0      |A     !null  |8      |B     |7.0   |6      |
+!null  |7.0   |0      |A     !null  |8      !null  |5.0   !null   |
++------+------+-------+------+------+-------+------+------+-------+
+
+sA
++---------------------+
+|         sA          |
++------+------+-------+
+|nm    |x     |y      |
+|String|Double|Integer|
++------+------+-------+
+|B     |5.0   !null   |
+|A     !null  |11     |
+!null  |7.0   |0      |
++------+------+-------+
+
+sB
++---------------------+
+|         sB          |
++------+------+-------+
+|nm    |x     |y      |
+|String|Double|Integer|
++------+------+-------+
+|B     |2.0   !null   |
+|A     !null  |8      |
++------+------+-------+
+
+testACBfilt
++-----------------------------------------------------------------+
+|                           testACBfilt                           |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sC_nm |sC_x  |sC_y   |sB_nm |sB_x  |sB_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|B     |5.0   !null   |B     |7.0   |6      |B     |2.0   !null   |
+|A     !null  |11     |A     !null  |44     |A     !null  |8      |
++------+------+-------+------+------+-------+------+------+-------+
+
+testBAC
++-----------------------------------------------------------------+
+|                             testBAC                             |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sA_nm |sA_x  |sA_y   |sC_nm |sC_x  |sC_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|B     |2.0   !null   |B     |5.0   !null   |A     !null  |44     |
+|B     |2.0   !null   |B     |5.0   !null   |B     |7.0   |6      |
+|B     |2.0   !null   |B     |5.0   !null   !null  |5.0   !null   |
+|B     |2.0   !null   |A     !null  |11     |A     !null  |44     |
+|B     |2.0   !null   |A     !null  |11     |B     |7.0   |6      |
+|B     |2.0   !null   |A     !null  |11     !null  |5.0   !null   |
+|B     |2.0   !null   !null  |7.0   |0      |A     !null  |44     |
+|B     |2.0   !null   !null  |7.0   |0      |B     |7.0   |6      |
+|B     |2.0   !null   !null  |7.0   |0      !null  |5.0   !null   |
+|A     !null  |8      |B     |5.0   !null   |A     !null  |44     |
+|A     !null  |8      |B     |5.0   !null   |B     |7.0   |6      |
+|A     !null  |8      |B     |5.0   !null   !null  |5.0   !null   |
+|A     !null  |8      |A     !null  |11     |A     !null  |44     |
+|A     !null  |8      |A     !null  |11     |B     |7.0   |6      |
+|A     !null  |8      |A     !null  |11     !null  |5.0   !null   |
+|A     !null  |8      !null  |7.0   |0      |A     !null  |44     |
+|A     !null  |8      !null  |7.0   |0      |B     |7.0   |6      |
+|A     !null  |8      !null  |7.0   |0      !null  |5.0   !null   |
++------+------+-------+------+------+-------+------+------+-------+
+
+testCBAfilt
++-----------------------------------------------------------------+
+|                           testCBAfilt                           |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sB_nm |sB_x  |sB_y   |sA_nm |sA_x  |sA_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|B     |7.0   |6      |B     |2.0   !null   |B     |5.0   !null   |
+|A     !null  |44     |A     !null  |8      |A     !null  |11     |
++------+------+-------+------+------+-------+------+------+-------+
+
+testACB
++-----------------------------------------------------------------+
+|                             testACB                             |
++------+------+-------+------+------+-------+------+------+-------+
+|nm    |x     |y      |sC_nm |sC_x  |sC_y   |sB_nm |sB_x  |sB_y   |
+|String|Double|Integer|String|Double|Integer|String|Double|Integer|
++------+------+-------+------+------+-------+------+------+-------+
+|B     |5.0   !null   |A     !null  |44     |B     |2.0   !null   |
+|B     |5.0   !null   |A     !null  |44     |A     !null  |8      |
+|B     |5.0   !null   |B     |7.0   |6      |B     |2.0   !null   |
+|B     |5.0   !null   |B     |7.0   |6      |A     !null  |8      |
+|B     |5.0   !null   !null  |5.0   !null   |B     |2.0   !null   |
+|B     |5.0   !null   !null  |5.0   !null   |A     !null  |8      |
+|A     !null  |11     |A     !null  |44     |B     |2.0   !null   |
+|A     !null  |11     |A     !null  |44     |A     !null  |8      |
+|A     !null  |11     |B     |7.0   |6      |B     |2.0   !null   |
+|A     !null  |11     |B     |7.0   |6      |A     !null  |8      |
+|A     !null  |11     !null  |5.0   !null   |B     |2.0   !null   |
+|A     !null  |11     !null  |5.0   !null   |A     !null  |8      |
+!null  |7.0   |0      |A     !null  |44     |B     |2.0   !null   |
+!null  |7.0   |0      |A     !null  |44     |A     !null  |8      |
+!null  |7.0   |0      |B     |7.0   |6      |B     |2.0   !null   |
+!null  |7.0   |0      |B     |7.0   |6      |A     !null  |8      |
+!null  |7.0   |0      !null  |5.0   !null   |B     |2.0   !null   |
+!null  |7.0   |0      !null  |5.0   !null   |A     !null  |8      |
++------+------+-------+------+------+-------+------+------+-------+
+

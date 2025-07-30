@@ -1,0 +1,559 @@
+****TEST_INPUT_QUERY****
+create table sumDEF as select sum(sD.x) as d, sum(sE.x) as e, sum(sF.x) as f from sD, sE, sF;
+create table minDEF as select min(sD.x) as d, min(sE.x) as e, min(sF.x) as f from sD, sE, sF;
+create table maxDEF as select max(sD.x) as d, max(sE.x) as e, max(sF.x) as f from sD, sE, sF;
+create table countDEF as select count(sD.x) as d, count(sE.x) as e, count(sF.x) as f from sD, sE, sF;
+create table countUniqueDEF as select countUnique(sD.x) as d, countUnique(sE.x) as e, countUnique(sF.x) as f from sD, sE, sF;
+create table avgDEF as select avg(sD.x) as d, avg(sE.x) as e, avg(sF.x) as f from sD, sE, sF;
+create table varDEF as select var(sD.x) as d, var(sE.x) as e, var(sF.x) as f from sD, sE, sF;
+create table varSDEF as select varS(sD.x) as d, varS(sE.x) as e, varS(sF.x) as f from sD, sE, sF;
+create table stdevDEF as select stdev(sD.x) as d, stdev(sE.x) as e, stdev(sF.x) as f from sD, sE, sF;
+create table stdevSDEF as select stdevS(sD.x) as d, stdevS(sE.x) as e, stdevS(sF.x) as f from sD, sE, sF;
+create table firstDEF as select first(sD.x) as d, first(sE.x) as e, first(sF.x) as f from sD, sE, sF;
+create table lastDEF as select last(sD.x) as d, last(sE.x) as e, last(sF.x) as f from sD, sE, sF;
+create table covarDEF as select covar(sD.x, sE.x) as d, covar(sE.x, sF.x) as e, covar(sF.x, sD.x) as f from sD, sE, sF;
+create table covarSDEF as select covarS(sD.x, sE.x) as d, covarS(sE.x, sF.x) as e, covarS(sF.x, sD.x) as f from sD, sE, sF;
+create table corDEF as select cor(sD.x, sE.x) as d, cor(sE.x, sF.x) as e, cor(sF.x, sD.x) as f from sD, sE, sF;
+create table betaDEF as select beta(sD.x, sE.x) as d, beta(sE.x, sF.x) as e, beta(sF.x, sD.x) as f from sD, sE, sF;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+sF
++------+
+|  sF  |
++------+
+|x     |
+|Double|
++------+
+|-2.0  |
+|-1.0  |
+|0.0   |
+|1.0   |
++------+
+
+sE
++------+
+|  sE  |
++------+
+|x     |
+|Double|
++------+
+|2.0   |
+|3.0   |
+|4.0   |
+|5.0   |
++------+
+
+sD
++------+
+|  sD  |
++------+
+|x     |
+|Double|
++------+
+|0.0   |
+|1.0   |
+|2.0   |
+|3.0   |
++------+
+
+****TEST_RESULT****
+16
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS sumDEF  SELECT sum(sD . x) AS d,sum(sE . x) AS e,sum(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS minDEF  SELECT min(sD . x) AS d,min(sE . x) AS e,min(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS maxDEF  SELECT max(sD . x) AS d,max(sE . x) AS e,max(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS countDEF  SELECT count(sD . x) AS d,count(sE . x) AS e,count(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS countUniqueDEF  SELECT countUnique(sD . x) AS d,countUnique(sE . x) AS e,countUnique(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS avgDEF  SELECT avg(sD . x) AS d,avg(sE . x) AS e,avg(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS varDEF  SELECT var(sD . x) AS d,var(sE . x) AS e,var(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS varSDEF  SELECT varS(sD . x) AS d,varS(sE . x) AS e,varS(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS stdevDEF  SELECT stdev(sD . x) AS d,stdev(sE . x) AS e,stdev(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS stdevSDEF  SELECT stdevS(sD . x) AS d,stdevS(sE . x) AS e,stdevS(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS firstDEF  SELECT first(sD . x) AS d,first(sE . x) AS e,first(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS lastDEF  SELECT last(sD . x) AS d,last(sE . x) AS e,last(sF . x) AS f FROM sD,sE,sFCREATE TABLE AS covarDEF  SELECT covar(sD . x,sE . x) AS d,covar(sE . x,sF . x) AS e,covar(sF . x,sD . x) AS f FROM sD,sE,sFCREATE TABLE AS covarSDEF  SELECT covarS(sD . x,sE . x) AS d,covarS(sE . x,sF . x) AS e,covarS(sF . x,sD . x) AS f FROM sD,sE,sFCREATE TABLE AS corDEF  SELECT cor(sD . x,sE . x) AS d,cor(sE . x,sF . x) AS e,cor(sF . x,sD . x) AS f FROM sD,sE,sFCREATE TABLE AS betaDEF  SELECT beta(sD . x,sE . x) AS d,beta(sE . x,sF . x) AS e,beta(sF . x,sD . x) AS f FROM sD,sE,sF
+
+PROJECTION : 
+SELECT sum(sD . x) AS d,sum(sE . x) AS e,sum(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT min(sD . x) AS d,min(sE . x) AS e,min(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT max(sD . x) AS d,max(sE . x) AS e,max(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT count(sD . x) AS d,count(sE . x) AS e,count(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT countUnique(sD . x) AS d,countUnique(sE . x) AS e,countUnique(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT avg(sD . x) AS d,avg(sE . x) AS e,avg(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT var(sD . x) AS d,var(sE . x) AS e,var(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT varS(sD . x) AS d,varS(sE . x) AS e,varS(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT stdev(sD . x) AS d,stdev(sE . x) AS e,stdev(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT stdevS(sD . x) AS d,stdevS(sE . x) AS e,stdevS(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT first(sD . x) AS d,first(sE . x) AS e,first(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT last(sD . x) AS d,last(sE . x) AS e,last(sF . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT covar(sD . x,sE . x) AS d,covar(sE . x,sF . x) AS e,covar(sF . x,sD . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT covarS(sD . x,sE . x) AS d,covarS(sE . x,sF . x) AS e,covarS(sF . x,sD . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT cor(sD . x,sE . x) AS d,cor(sE . x,sF . x) AS e,cor(sF . x,sD . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT beta(sD . x,sE . x) AS d,beta(sE . x,sF . x) AS e,beta(sF . x,sD . x) AS f FROM sD,sE,sF
+
+NESTING_QUERY : 
+#0 sD
+
+NESTING_QUERY : 
+#1 sE
+
+NESTING_QUERY : 
+#2 sF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+stdevDEF
++-----------------------------------------------------+
+|                      stdevDEF                       |
++-----------------+-----------------+-----------------+
+|d                |e                |f                |
+|Double           |Double           |Double           |
++-----------------+-----------------+-----------------+
+|1.118033988749895|1.118033988749895|1.118033988749895|
++-----------------+-----------------+-----------------+
+
+varDEF
++--------------------------------------------+
+|                   varDEF                   |
++------------------+------+------------------+
+|d                 |e     |f                 |
+|Double            |Double|Double            |
++------------------+------+------------------+
+|1.2500000000000002|1.25  |1.2500000000000002|
++------------------+------+------------------+
+
+sumDEF
++--------------------+
+|       sumDEF       |
++------+------+------+
+|d     |e     |f     |
+|Double|Double|Double|
++------+------+------+
+|96.0  |224.0 |-32.0 |
++------+------+------+
+
+lastDEF
++--------------------+
+|      lastDEF       |
++------+------+------+
+|d     |e     |f     |
+|Double|Double|Double|
++------+------+------+
+|3.0   |5.0   |1.0   |
++------+------+------+
+
+sF
++------+
+|  sF  |
++------+
+|x     |
+|Double|
++------+
+|-2.0  |
+|-1.0  |
+|0.0   |
+|1.0   |
++------+
+
+sE
++------+
+|  sE  |
++------+
+|x     |
+|Double|
++------+
+|2.0   |
+|3.0   |
+|4.0   |
+|5.0   |
++------+
+
+avgDEF
++--------------------+
+|       avgDEF       |
++------+------+------+
+|d     |e     |f     |
+|Double|Double|Double|
++------+------+------+
+|1.5   |3.5   |-0.5  |
++------+------+------+
+
+sD
++------+
+|  sD  |
++------+
+|x     |
+|Double|
++------+
+|0.0   |
+|1.0   |
+|2.0   |
+|3.0   |
++------+
+
+countDEF
++--------------+
+|   countDEF   |
++----+----+----+
+|d   |e   |f   |
+|Long|Long|Long|
++----+----+----+
+|64  |64  |64  |
++----+----+----+
+
+firstDEF
++--------------------+
+|      firstDEF      |
++------+------+------+
+|d     |e     |f     |
+|Double|Double|Double|
++------+------+------+
+|0.0   |2.0   |-2.0  |
++------+------+------+
+
+stdevSDEF
++-------------------------------------------------------+
+|                       stdevSDEF                       |
++------------------+-----------------+------------------+
+|d                 |e                |f                 |
+|Double            |Double           |Double            |
++------------------+-----------------+------------------+
+|1.1268723396380222|1.126872339638022|1.1268723396380222|
++------------------+-----------------+------------------+
+
+covarSDEF
++-----------------------------------------------------------------+
+|                            covarSDEF                            |
++---------------------+---------------------+---------------------+
+|d                    |e                    |f                    |
+|Double               |Double               |Double               |
++---------------------+---------------------+---------------------+
+|7.894919286223335E-16|5.639228061588096E-17|1.409807015397024E-16|
++---------------------+---------------------+---------------------+
+
+betaDEF
++------------------------------------------------------------------+
+|                             betaDEF                              |
++---------------------+---------------------+----------------------+
+|d                    |e                    |f                     |
+|Double               |Double               |Double                |
++---------------------+---------------------+----------------------+
+|6.217248937900876E-16|4.440892098500625E-17|1.1102230246251563E-16|
++---------------------+---------------------+----------------------+
+
+maxDEF
++--------------------+
+|       maxDEF       |
++------+------+------+
+|d     |e     |f     |
+|Double|Double|Double|
++------+------+------+
+|3.0   |5.0   |1.0   |
++------+------+------+
+
+varSDEF
++----------------------------------------------------+
+|                      varSDEF                       |
++----------------+------------------+----------------+
+|d               |e                 |f               |
+|Double          |Double            |Double          |
++----------------+------------------+----------------+
+|1.26984126984127|1.2698412698412698|1.26984126984127|
++----------------+------------------+----------------+
+
+countUniqueDEF
++--------------+
+|countUniqueDEF|
++----+----+----+
+|d   |e   |f   |
+|Long|Long|Long|
++----+----+----+
+|4   |4   |4   |
++----+----+----+
+
+minDEF
++--------------------+
+|       minDEF       |
++------+------+------+
+|d     |e     |f     |
+|Double|Double|Double|
++------+------+------+
+|0.0   |2.0   |-2.0  |
++------+------+------+
+
+corDEF
++------------------------------------------------------------------+
+|                              corDEF                              |
++---------------------+---------------------+----------------------+
+|d                    |e                    |f                     |
+|Double               |Double               |Double                |
++---------------------+---------------------+----------------------+
+|6.217248937900875E-16|4.440892098500625E-17|1.1102230246251563E-16|
++---------------------+---------------------+----------------------+
+
+covarDEF
++------------------------------------------------------------------+
+|                             covarDEF                             |
++---------------------+---------------------+----------------------+
+|d                    |e                    |f                     |
+|Double               |Double               |Double                |
++---------------------+---------------------+----------------------+
+|7.771561172376096E-16|5.551115123125783E-17|1.3877787807814457E-16|
++---------------------+---------------------+----------------------+
+

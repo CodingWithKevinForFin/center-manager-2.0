@@ -1,0 +1,71 @@
+****TEST_INPUT_QUERY****
+select * from t; create table tAgg as select count(`Name With Spaces`) from t;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+t
++----------------+
+|       t        |
++----------------+
+|Name With Spaces|
+|String          |
++----------------+
+|x               |
++----------------+
+
+****TEST_RESULT****
++----------------+
+|       t        |
++----------------+
+|Name With Spaces|
+|String          |
++----------------+
+|x               |
++----------------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT "*" FROM tCREATE TABLE AS tAgg  SELECT count(`Name With Spaces`) FROM t
+
+PROJECTION : 
+SELECT "*" FROM t
+
+NESTING_QUERY : 
+#0 t
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT count(`Name With Spaces`) FROM t
+
+GROUPING : 
+Grouped 1 rows into 1 buckets
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+t
++----------------+
+|       t        |
++----------------+
+|Name With Spaces|
+|String          |
++----------------+
+|x               |
++----------------+
+
+tAgg
++----------------------+
+|         tAgg         |
++----------------------+
+|count_Name_With_Spaces|
+|Long                  |
++----------------------+
+|1                     |
++----------------------+
+

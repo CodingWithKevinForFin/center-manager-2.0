@@ -1,0 +1,78 @@
+****TEST_INPUT_QUERY****
+delete from A left join B on A.n != B.n;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+A
++-------+
+|   A   |
++-------+
+|n      |
+|Integer|
++-------+
+|0      |
+|1      |
+|2      |
+|3      |
+|4      |
++-------+
+
+B
++-------+
+|   B   |
++-------+
+|n      |
+|Integer|
++-------+
+|2      |
+|3      |
+|4      |
+|5      |
+|6      |
++-------+
+
+****TEST_RESULT****
+5
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+DELETE FROM A LEFT JOIN B ON A . n != B . n
+
+NESTING_QUERY : 
+#0 A
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+(A.n != B.n)
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+A
++-------+
+|   A   |
++-------+
+|n      |
+|Integer|
++-------+
++-------+
+
+B
++-------+
+|   B   |
++-------+
+|n      |
+|Integer|
++-------+
+|2      |
+|3      |
+|4      |
+|5      |
+|6      |
++-------+
+

@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.vortex</groupId>
+
+    <name>eye</name>
+    <artifactId>eye</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.vortex</groupId>
+        <artifactId>vortex</artifactId>
+        <version>1.00-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.vortex</groupId>
+            <artifactId>agent</artifactId>
+            <version>1.00-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.f1</groupId>
+            <artifactId>speedloggerSlf4j</artifactId>
+            <version>1.00-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+	    <groupId>ch.ethz.ganymed</groupId>
+	    <artifactId>ganymed-ssh2</artifactId>
+	    <version>build210</version>
+        </dependency>
+        <dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.9.1</version>
+		</dependency>
+        
+    </dependencies>
+    
+</project>
+

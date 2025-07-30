@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "7.1.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Outbound Instruction Type Object</title>
+<link rel="StyleSheet" href="../assets/css/AMI_One_Configuration_Guide_(2.2_-_Revised).css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Outbound Instruction Type Object">
+        <span>Outbound Instruction Type Object</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Outbound Instruction Type - Object (<span courier="" style="color: #ff0000; 
+												 font-family: &#39;Courier New&#39;, monospace;">O</span>)<span courier=""> </span></h1>
+<p>Used to create facts about an object.</p>
+<p> </p>
+<p><b>Required fields supplied by application</b></p>
+<p> </p>
+<p><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">T</span>: 
+ Object type for grouping objects</p>
+<p> </p>
+<p><b>Optional parameters supplied by application</b></p>
+<p> </p>
+<p><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">I</span>: 
+ A unique string ID for the object used for updating the object later. 
+ Subsequent messages with the same object ID (<span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+													 color: #ff0000;">I</span>) 
+ and same running process ID (<span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+									 color: #ff0000;">I</span>) provided 
+ in the login (<span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+					 color: #ff0000;">L</span>) will cause an update.</p>
+<p> </p>
+<p><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">E</span>: 
+ Expires on; <i>negative</i> for how far into the future from the time 
+ of message receipt in AMI center and <i>positive</i> numbers are exact 
+ dates in the future based on Epoch time. Units are <u>milliseconds</u></p>
+<p> </p>
+<p><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">A</span>: 
+ Associated alert ID (<span style="color: #ff0000; font-weight: bold;">DEPRECATED</span>)</p>
+<p> </p>
+<h3><b>Example</b></h3>
+<p>In the below example, an &quot;Order&quot; object is created. This object 
+ has some custom parameters (|qty=1223|filled=13222|status=&quot;OverFill&quot;) 
+ and a lifespan of 100 seconds (E=-100000L).</p>
+<p> </p>
+<p><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">O</span><span courier="">|</span><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">I</span><span courier="">=&quot;Order1374&quot;|</span><span courier="" style="color: #ff0000; 
+													 font-family: &#39;Courier New&#39;, monospace;">T</span><span courier="">=&quot;Order&quot;|qty=1223|filled=13222|status=&quot;OverFill&quot;|E=-100000L</span></p>
+<p> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

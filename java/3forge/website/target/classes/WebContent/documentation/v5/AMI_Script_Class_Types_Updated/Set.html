@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.6.17";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Set</title>
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Set">
+        <span>Set</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<div style="position:initial;padding-bottom:11pt;">
+<h1 style="font:bold 24pt Arial;color:#4181BD;margin:5pt 0pt 15pt 0pt;"><a name="Set Class Overview" id="Set Class Overview"><span>Set Class Overview</span></a></h1>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Set</b> var = .... ;<br/></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+A mutable collection of unique data entries. Attempts to add duplicates will be ignored. Entries are stored in the order inserted (Backed by Java LinkedHashSet)</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Method Definitions</h3>
+<table style="border-collapse:collapse" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1px solid grey">&lt;Constructor&gt;</td>
+<td style="border:1px solid grey;min-width:100px">Returns true if the set contains ANY of the supplied values</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">iterator</td>
+<td style="border:1px solid grey;min-width:100px">returns an iterator over the entries</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">contains</td>
+<td style="border:1px solid grey;min-width:100px">Returns true if the set contains ANY of the supplied values</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">size</td>
+<td style="border:1px solid grey;min-width:100px">Get the size of this set</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">addAll</td>
+<td style="border:1px solid grey;min-width:100px">adds all elements from provided list</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">venn</td>
+<td style="border:1px solid grey;min-width:100px">Returns a new set of values which is a combination of this set and the other set. Consider the two sets comprising a venn diagram and the three boolean flags determining which portions of the diagram are included in the final set</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">add</td>
+<td style="border:1px solid grey;min-width:100px">Adds all supplied values if they don&#39;t already exist. Returns true if the set changed as a result of this call</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">remove</td>
+<td style="border:1px solid grey;min-width:100px">Remove all supplied values if they exist. Returns true if the set changed as a result of this call</td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey">clear</td>
+<td style="border:1px solid grey;min-width:100px">true is the set changed as a result</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="constructor(value)" id="constructor(value)"><span>constructor(value)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Set set = new Set(Object ... value)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns true if the set contains ANY of the supplied values</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object ... value</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="iterator()" id="iterator()"><span>iterator()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Iterator Set::iterator()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+returns an iterator over the entries</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="contains(value)" id="contains(value)"><span>contains(value)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean Set::contains(Object ... value)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns true if the set contains ANY of the supplied values</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object ... value</b></td>
+<td style="border:1px solid grey;min-width:100px;"></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="size()" id="size()"><span>size()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Integer Set::size()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Get the size of this set</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="venn(otherSet,inThis,inOther,inBoth)" id="venn(otherSet,inThis,inOther,inBoth)"><span>venn(otherSet,inThis,inOther,inBoth)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>Set Set::venn(Set otherSet, boolean inThis, boolean inOther, boolean inBoth)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Returns a new set of values which is a combination of this set and the other set. Consider the two sets comprising a venn diagram and the three boolean flags determining which portions of the diagram are included in the final set</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Set otherSet</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>the other set, that along with this set constitutes a Venn diagram</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>boolean inThis</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>include values that are only in this set</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>boolean inOther</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>include values that are only in the other set</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>boolean inBoth</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>include values that are in both sets</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="add(values)" id="add(values)"><span>add(values)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean Set::add(Object ... values)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Adds all supplied values if they don&#39;t already exist. Returns true if the set changed as a result of this call</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object ... values</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>values to add</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="remove(values)" id="remove(values)"><span>remove(values)</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean Set::remove(Object ... values)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Remove all supplied values if they exist. Returns true if the set changed as a result of this call</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1pt solid grey"><b>Object ... values</b></td>
+<td style="border:1px solid grey;min-width:100px;"><i>values to remove</i></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h2 style="font:bold 19pt Arial;color:#7030a0;text-transform:lowercase;margin:5pt 0pt 1pt 0pt;"><a name="clear()" id="clear()"><span>clear()</span></a></h2>
+<hr style="box-sizing:border-box;margin:0;height:2px;border:1.5px solid #7030a0;background:#7030a0;"/>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>boolean Set::clear()</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+true is the set changed as a result</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse;" cellspacing="1" width="100%" cellpadding="1"></table>
+</div>
+</div>
+</div>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

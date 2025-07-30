@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "8.6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Realtime Tools</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Realtime Tools">
+        <span>Realtime Tools</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Realtime Tools</h1>
+<h2><a style="font-family: Arial, sans-serif;" id="show_clause">show_clause</a></h2>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h3><u style="text-decoration: none; ">OVERVIEW</u></h3>
+<p style="margin-bottom: 0pt; line-height: Normal; font-family: Arial, sans-serif; 
+	 font-size: 12pt;">Provides a table listing all records and relevant 
+ Metadata of a particular type with optional filtering and sorting. Note, 
+ for tables, only PUBLIC tables are listed.</p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; color: #ff0000; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">SHOW</span> 
+ <span courier="" style="color: #006dbf;">object_type</span> <span courier=""><i>[</i></span><span courier="" style="color: #ff0000;">WHERE</span> <b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#where_expr" style="font-size: 12pt;">where_expr</a></span></b> 
+ <span courier=""><i>] [</i></span><span courier="" style="color: #ff0000;">ORDER 
+ BY</span> <b><span courier="" style="color: #6d2d9e;">expr</span></b> 
+ <span courier=""><i>[</i></span><span courier="" style="color: #ff0000;">ASC</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">DESC</span><span courier=""><i>] [,</i> <b style="color: #6d2d9e;">expr</b> <i>[</i></span><span courier="" style="color: #ff0000;">ASC</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">DESC</span><span courier=""><i>]</i> 
+ ...<i>]]</i></span></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #006dbf;">object_type</span> 
+ -<b><i><span courier=""> </span></i></b></p>
+<div style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;">
+	<b style="color: #808080; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"><i>Either 
+	 TABLES, COLUMNS, COMMANDS, DATASOURCES, DATASOURCE_TYPES, PROCEDURES,</i></b> 
+	 
+</div>
+<p style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; 
+	 widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; margin: 0in 0in 0.0001pt; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080;"><b><i>PROPERTIES, 
+ RESOURCES, TRIGGERS, TIMERS, CONNECTIONS, RELAYS, PLUGINS, SESSIONS, VARS, 
+ PROCESSES, METHODS</i></b></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<h3><u style="font-family: Arial, sans-serif; text-decoration: none; ">EXAMPLES</u><span courier="" style="font-size: 8.0pt; line-height: 115%;">                     </span></h3>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-size: 12pt; 
+	 font-family: Arial, sans-serif;">This example will return all tables 
+ whose name contains &quot;data&quot; and will order the results by the 
+ number of columns in the table.<span courier=""> </span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">SHOW TABLES WHERE 
+ TableName =~ &quot;data&quot; ORDER BY ColumnsCount</span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="font-family: Arial, sans-serif;"> </p>
+<h2><a style="font-family: Arial, sans-serif;" id="describe_clause">describe_clause</a></h2>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h3><u style="text-decoration: none; ">OVERVIEW</u></h3>
+<p style="margin-bottom: 0pt; font-size: 12pt; font-family: Arial, sans-serif;">Provides 
+ a table containing with an &quot;SQL&quot; column containing the statement(s) 
+ necessary to reconstruct the supplied table,trigger,timer,procedure or 
+ index.</p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 12pt;"><span courier="">DESCRIBE TABLE</span> 
+ <span courier="" style="color: #006dbf;">table_name</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 12pt;"><span courier="">DESCRIBE TRIGGER</span> 
+ <span courier="" style="color: #006dbf;">trigger_name</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 12pt;"><span courier="">DESCRIBE TIMER</span> 
+ <span courier="" style="color: #006dbf;">timer_name</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 12pt;"><span courier="">DESCRIBE PROCEDURE</span> 
+ <span courier="" style="color: #006dbf;">procedure_name</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">DESCRIBE 
+ INDEX</span><span style="color: #ff0000;"> </span><span courier="" style="color: #006dbf;">index_name</span><span style="color: #ff0000;"> </span><span courier="" style="color: #ff0000;">ON</span><span style="color: #ff0000;"> </span><span courier="" style="color: #006dbf;">table_name</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<h3><u style="text-decoration: none; ">EXAMPLES</u></h3>
+<p style="margin-bottom: .0001pt; font-size: 12pt;"><span style="font-family: Arial, sans-serif;">This 
+ example will return the create statement that can be used to create the 
+ __COLUMN table and its pk index.</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: ; font-size: 12pt;"><span courier="">                                                 </span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">DESCRIBE TABLE __COLUMN;</span></p>
+<p style="font-family: Arial, sans-serif; margin-bottom: 0pt;"> </p>
+<p style="font-family: Arial, sans-serif; margin-bottom: 0pt;"> </p>
+<h2><a style="font-family: Arial, sans-serif;" id="disable_and_enable">disable 
+ and enable</a></h2>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h3><u style="text-decoration: none; ">OVERVIEW</u></h3>
+<p style="margin-bottom: 0pt; line-height: Normal; font-size: 12pt; font-family: Arial, sans-serif;">Used 
+ to disable/enable triggers and timers by name. Disabled triggers and timers 
+ will not get executed when they otherwise would. By default, when triggers 
+ and timers are created they are enabled. Check the enabled/disabled status 
+ using <span style="color: #ff0000;">SHOW TRIGGERS</span> and <span style="color: #ff0000;">SHOW 
+ TIMERS</span>.</p>
+<p style="font-family: Arial, sans-serif; margin-bottom: 0pt; color: #C00000; 
+	 font-size: 12pt;"> </p>
+<p style="font-family: &#39;Courier New&#39;, monospace; margin-bottom: 0pt; font-size: 12pt;"><span courier="" style="color: #ff0000;">DISABLE TRIGGER</span><span style="color: #ff0000;"> 
+ </span><span courier="" style="color: #006dbf;">trigger_name</span><span courier="" style="color: #ff0000;"> </span></p>
+<p style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; margin-bottom: 0pt; 
+	 font-size: 12pt;"><span courier="">ENABLE TRIGGER</span> <span courier="" style="color: #006dbf;">trigger_name</span><span courier=""> </span></p>
+<p style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; margin-bottom: 0pt; 
+	 font-size: 12pt;"><span courier="">DISABLE TIMER</span> <span courier="" style="color: #006dbf;">timer_name</span><span courier=""> </span></p>
+<p style="margin-bottom: 0pt; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"><span courier="" style="color: #ff0000;">ENABLE TIMER</span><span style="color: #ff0000;"> 
+ </span><span courier="" style="color: #006dbf;">timer_name</span></p>
+<p style="margin-bottom: 0pt;"> </p>
+<h3><u style="font-family: Arial, sans-serif; text-decoration: none; ">EXAMPLES</u></h3>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-size: 12pt; 
+	 font-family: Arial, sans-serif;">This example will disable the trigger 
+ named <i>my_trigger</i> and enable the timer my_timer<span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">DISABLE TRIGGER 
+ my_trigger;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">ENABLE TIMER my_timer;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<h2><a style="font-family: Arial, sans-serif;" id="show_table_clause">show 
+ table clause</a></h2>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h3><u style="text-decoration: none; ">OVERVIEW</u></h3>
+<p><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+		 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+		 text-decoration-style: initial; text-decoration-color: initial; 
+		 display: inline	 ! important ; float: none;">Provides a </span><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; background: rgb(252, 255, 0);">table</span><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; display: inline	 ! important ; 
+	 float: none;"> listing all columns and relevant Metadata of a 
+ particular table with optional filtering and sorting.</span> </p>
+<p style="margin-bottom: 0pt; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #ff0000; font-size: 12pt;">SHOW</span><span style="font-variant-ligatures: normal; 
+														 font-variant-caps: normal; 
+														 orphans: 2; widows: 2; 
+														 -webkit-text-stroke-width: 0px; 
+														 background-color: #ffffff; 
+														 text-decoration-style: initial; 
+														 text-decoration-color: initial; 
+														 font-family: &#39;Courier New&#39;; 
+														 color: #808080; 
+														 font-size: 12pt;"> </span><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #ff0000; font-size: 12pt;">TABLE</span><span style="font-size: 12pt;"> </span><b style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;"><u><span style="font-family: &#39;Courier New&#39;; color: #0000ff; font-size: 12pt;">table_expr</span></u></b><span style="font-size: 12pt;"> </span><span style="font-variant-ligatures: normal; 
+												 font-variant-caps: normal; 
+												 orphans: 2; widows: 2; 
+												 -webkit-text-stroke-width: 0px; 
+												 background-color: #ffffff; 
+												 text-decoration-style: initial; 
+												 text-decoration-color: initial; 
+												 font-family: &#39;Courier New&#39;; 
+												 color: #808080; font-size: 12pt;"> <i style="font-size: 12pt;">[</i></span><span style="font-variant-ligatures: normal; 
+												 font-variant-caps: normal; 
+												 orphans: 2; widows: 2; 
+												 -webkit-text-stroke-width: 0px; 
+												 background-color: #ffffff; 
+												 text-decoration-style: initial; 
+												 text-decoration-color: initial; 
+												 font-family: &#39;Courier New&#39;; 
+												 color: #ff0000; font-size: 12pt;">WHERE</span><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #808080; font-size: 12pt;"> </span><b style="font-variant-ligatures: normal; 
+														 font-variant-caps: normal; 
+														 orphans: 2; widows: 2; 
+														 -webkit-text-stroke-width: 0px; 
+														 background-color: #ffffff; 
+														 text-decoration-style: initial; 
+														 text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;"><a href="https://3forge.com/documentation/v2/3Forge_Ami_Script_files/AMI-SQL_Nested_Expressions.htm#where_expr" target="_blank" style="color: rgb(17, 85, 204); 
+											 font-size: 12pt;">where_expr</a></span></b><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #808080; font-size: 12pt;"> <i style="font-size: 12pt;">] 
+ [</i></span><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+					 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+					 background-color: #ffffff; text-decoration-style: initial; 
+					 text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+					 color: #ff0000; font-size: 12pt;">ORDER BY</span><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #808080; font-size: 12pt;"> </span><b style="font-variant-ligatures: normal; 
+														 font-variant-caps: normal; 
+														 orphans: 2; widows: 2; 
+														 -webkit-text-stroke-width: 0px; 
+														 background-color: #ffffff; 
+														 text-decoration-style: initial; 
+														 text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #6d2d9e; font-size: 12pt;">expr</span></b><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #808080; font-size: 12pt;"> <i style="font-size: 12pt;">[</i></span><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #ff0000; font-size: 12pt;">ASC</span><i style="font-variant-ligatures: normal; 
+													 font-variant-caps: normal; 
+													 orphans: 2; widows: 2; 
+													 -webkit-text-stroke-width: 0px; 
+													 background-color: #ffffff; 
+													 text-decoration-style: initial; 
+													 text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #808080; font-size: 12pt;">|</span></i><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #ff0000; font-size: 12pt;">DESC</span><i style="font-variant-ligatures: normal; 
+													 font-variant-caps: normal; 
+													 orphans: 2; widows: 2; 
+													 -webkit-text-stroke-width: 0px; 
+													 background-color: #ffffff; 
+													 text-decoration-style: initial; 
+													 text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #808080; font-size: 12pt;">] 
+ [,</span></i><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+					 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+					 background-color: #ffffff; text-decoration-style: initial; 
+					 text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+					 color: #808080; font-size: 12pt;"> </span><b style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #6d2d9e; font-size: 12pt;">expr</span></b><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #808080; font-size: 12pt;"> <i style="font-size: 12pt;">[</i></span><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #ff0000; font-size: 12pt;">ASC</span><i style="font-variant-ligatures: normal; 
+													 font-variant-caps: normal; 
+													 orphans: 2; widows: 2; 
+													 -webkit-text-stroke-width: 0px; 
+													 background-color: #ffffff; 
+													 text-decoration-style: initial; 
+													 text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #808080; font-size: 12pt;">|</span></i><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #ff0000; font-size: 12pt;">DESC</span><i style="font-variant-ligatures: normal; 
+													 font-variant-caps: normal; 
+													 orphans: 2; widows: 2; 
+													 -webkit-text-stroke-width: 0px; 
+													 background-color: #ffffff; 
+													 text-decoration-style: initial; 
+													 text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #808080; font-size: 12pt;">]</span></i><span style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-family: &#39;Courier New&#39;; 
+	 color: #808080; font-size: 12pt;"> ...<i style="font-size: 12pt;">]]</i></span><span style="color: #ff0000;"> </span></p>
+<p style="margin-bottom: 0pt;"> </p>
+<h3><u style="font-family: Arial, sans-serif; text-decoration: none; ">EXAMPLES</u><span courier="" style="font-size: 8.0pt;">                                </span></h3>
+<p style="font-family: Arial, sans-serif;">This example will return all columns for 
+ the myorders table, alphabetized by name. </p>
+<p class="MsoNormal" style="margin: 0px 0in 0.0001pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-family: &#39;Courier New&#39;; 
+	 color: #006dbf; font-size: 12pt;">SHOW TABLE myorders order 
+ by ColumnName</p>
+<p class="MsoNormal" style="margin: 0px 0in 0.0001pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; line-height: 13.75pt; font-family: &#39;Courier New&#39;; 
+	 color: #006dbf; font-size: 12pt;"> </p>
+<h2><a id="setlocal"></a>setlocal</h2>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h3><span style="font-weight: bold; font-style: normal; font-variant-ligatures: normal; 
+			 font-variant-caps: normal; letter-spacing: normal; orphans: 2; 
+			 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+			 -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+			 text-decoration-color: initial; background-color: #ffffff;"><i><span style="font-size: 13pt; font-family: Arial, sans-serif; color: #449938;">OVERVIEW</span></i></span></h3>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 line-height: 13.8pt;"><span style="font-family: Arial, sans-serif; 
+								 color: #000000;">Controls local variables 
+ for the command line session. These local variables dictate behavior of 
+ the command line interface.</span></p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 line-height: 13.8pt;"> </p>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 line-height: 13.8pt;"><span style="font-family: &#39;Courier New&#39;; color: #ff0000;">Setlocal<span> </span></span><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">varname = value</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<h3><i><span style="font-size: 13pt; font-family: Arial, sans-serif; color: #449938;">VARIABLES</span></i></h3>
+<p><span style="font-size: 12pt; font-family: &#39;Courier New&#39;; color: #006dbf;">limit</span><span> -</span> 
+ The default limit to apply to queries (similar to the limit field in the 
+ datamodel), -1 means no default limit</p>
+<p> </p>
+<p><span style="font-size: 12pt; font-family: &#39;Courier New&#39;; color: #006dbf;">max_print_chars</span><span> -</span> 
+ Total number of characters to print to the console for a query result. 
+ This prevents from very large query results overwhelming terminal</p>
+<p> </p>
+<p><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">multiline</span> - 
+ If set to <span style="font-family: &#39;Courier New&#39;; color: #006dbf;">&quot;off&quot;</span> then 
+ pressing enter will automatically execute the user entered text.</p>
+<p style="margin-left: 80px;">If set to<span> </span><span style="font-family: &#39;Courier New&#39;; 
+	 color: #006dbf;">&quot;on&quot;</span><span> </span>then pressing 
+ enter will progress to a new line for additional input.  Pressing 
+ enter twice in succession will execute the users entered text.</p>
+<p> </p>
+<p><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">show_plan</span> - 
+ If set to <span style="font-family: &#39;Courier New&#39;; color: #006dbf;">&quot;off&quot;</span> the 
+ engine will not show the query plan, this is more efficient as some overhead 
+ is necessary to gather and display this importation. </p>
+<p style="margin-left: 80px;">If set to<span> </span><span style="font-family: &#39;Courier New&#39;; 
+	 color: #006dbf;">&quot;on&quot;</span><span> </span>then the 
+ engine will produce verbose output on the steps and time taking for each 
+ step in the query. This can be useful for optimizing your queries.</p>
+<p> </p>
+<p><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">t</span><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">imeout</span><span> -</span> 
+ Amount of time in milliseconds that the console will hang waiting for 
+ a response. It must be a positive number</p>
+<p> </p>
+<p><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">u</span><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">nprintable_chars</span> - 
+ Determines how to print unprintable ASCII characters, for example 0x01 
+ (SOH). </p>
+<p style="margin-left: 200px;">If set to <span style="font-family: &#39;Courier New&#39;; 
+													 color: #006dbf;">&quot;marker&quot;</span> then 
+ an upside down question mark (<span style="font-size: 12.0pt; line-height: 115%; 
+									 mso-fareast-font-family: Arial; 
+									 mso-fareast-theme-font: minor-latin; 
+									 mso-ansi-language: EN-US; mso-fareast-language: EN-US; 
+									 mso-bidi-language: AR-SA; font-family: Arial, sans-serif;">¿</span>) 
+ is printed in place of any unprintable chars (default)</p>
+<p style="margin-left: 200px;">If set to <span class="CourierBlueStyle">&quot;show&quot;</span> 
+ the raw, unprintable, is sent to stdout.</p>
+<p style="margin-left: 200px;">If set to<span> </span><span style="font-family: &#39;Courier New&#39;; 
+	 color: #006dbf;">&quot;hide&quot;</span><span> </span>then nothing 
+ is printed.</p>
+<p style="margin-left: 200px;">If set to <span style="font-family: &#39;Courier New&#39;; 
+													 color: #006dbf;">&quot;show_code&quot;</span> then 
+ an upside down question mark (<span style="font-size: 12.0pt; line-height: 115%; 
+									 mso-fareast-font-family: Arial; 
+									 mso-fareast-theme-font: minor-latin; 
+									 mso-ansi-language: EN-US; mso-fareast-language: EN-US; 
+									 mso-bidi-language: AR-SA; font-family: Arial, sans-serif;">¿</span>) 
+ is printed followed by the chars 4 digit hexcode is printed. For example, 
+ the SOH would be printed as:  <span style="font-size: 12.0pt; 
+												 line-height: 115%; mso-fareast-font-family: Arial; 
+												 mso-fareast-theme-font: minor-latin; 
+												 mso-ansi-language: EN-US; 
+												 mso-fareast-language: EN-US; 
+												 mso-bidi-language: AR-SA; 
+												 font-family: Arial, sans-serif;">¿</span>0001</p>
+<p style="margin-left: 0px;"> </p>
+<p style="margin-left: 0px;"><span class="CourierBlueStyle">datetime_format</span> 
+ - The format to use when printing UTC and UTCN columns. If set to empty 
+ string, the Raw long value (unix epoch) is printed. The default is <span style="font-style: italic;">YYYY-MM-DD HH:mm:ss.SSS.z</span></p>
+<p style="margin-left: 0px; font-style: normal;"> </p>
+<p style="margin-left: 0px; font-style: normal;"><span class="CourierBlueStyle">timezone</span> 
+ - Works in conjunction with datetime_format, to determine local time for 
+ display. For example <span style="font-style: italic;">EST5EDT</span> 
+ would be used for New York. Default is <span style="font-style: italic;">UTC</span></p>
+<p style="margin-left: 0px;"> </p>
+<p style="margin-left: 0px;"><span class="CourierBlueStyle">string_template</span><span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; display: inline	 ! important ; 
+	 float: none;"> </span><span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+								 font-variant-ligatures: normal; font-variant-caps: normal; 
+								 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+								 background-color: #ffffff; text-decoration-style: initial; 
+								 text-decoration-color: initial; display: inline	 ! important ; 
+								 float: none;">- Should commands interpret 
+ string templates (default is off)</span> </p>
+<p style="margin-left: 160px; font-size: 12pt;"> <span style="color: rgb(34, 34, 34); 
+															 font-family: Arial, Helvetica, sans-serif; 
+															 font-variant-ligatures: normal; 
+															 font-variant-caps: normal; 
+															 orphans: 2; 
+															 widows: 2; 
+															 -webkit-text-stroke-width: 0px; 
+															 background-color: #ffffff; 
+															 text-decoration-style: initial; 
+															 text-decoration-color: initial; 
+															 display: inline	 ! important ; 
+															 float: none;">if 
+ set to &quot;on&quot; then ${...} will be evaluated and replaced with 
+ the contents</span> </p>
+<p style="margin-left: 160px; font-size: 12pt;"> <span style="color: rgb(34, 34, 34); 
+															 font-family: Arial, Helvetica, sans-serif; 
+															 font-variant-ligatures: normal; 
+															 font-variant-caps: normal; 
+															 orphans: 2; 
+															 widows: 2; 
+															 -webkit-text-stroke-width: 0px; 
+															 background-color: #ffffff; 
+															 text-decoration-style: initial; 
+															 text-decoration-color: initial; 
+															 display: inline	 ! important ; 
+															 float: none;">if 
+ set to &quot;off&quot; then ${...} will be treated as a literal.</span></p>
+<p style="margin-left: 0px;"> </p>
+<p style="margin-left: 0px;"><span class="CourierBlueStyle">password_encrypt</span><span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; display: inline	 ! important ; 
+	 float: none;"> - </span><span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+									 font-variant-ligatures: normal; font-variant-caps: normal; 
+									 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+									 background-color: #ffffff; text-decoration-style: initial; 
+									 text-decoration-color: initial; display: inline	 ! important ; 
+									 float: none;">Should commands interpret 
+ string templates (default is off)</span> </p>
+<p style="margin-left: 160px; font-size: 12pt;"><span style="color: rgb(34, 34, 34); 
+														 font-family: Arial, Helvetica, sans-serif; 
+														 font-variant-ligatures: normal; 
+														 font-variant-caps: normal; 
+														 orphans: 2; widows: 2; 
+														 -webkit-text-stroke-width: 0px; 
+														 background-color: #ffffff; 
+														 text-decoration-style: initial; 
+														 text-decoration-color: initial; 
+														 display: inline	 ! important ; 
+														 float: none;">If 
+ set to &quot;on&quot; then</span> <i style="color: rgb(34, 34, 34); 
+											 font-family: Arial, Helvetica, sans-serif; 
+											 font-variant-ligatures: normal; 
+											 font-variant-caps: normal; 
+											 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+											 background-color: #ffffff; 
+											 text-decoration-style: initial; 
+											 text-decoration-color: initial;">login</i><span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; 
+	 widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; display: inline	 ! important ; 
+	 float: none;"> command should be supplied with an encrypted password. 
+ The password will be decryped using the key stored on the ami server.  Note, 
+ use strEncrypt(...) method to get the encrypted version of a plain text 
+ password. Ex: select strEncrypt(&quot;demopass&quot;);</span></p>
+<p style="margin-left: 160px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; background-color: #ffffff; 
+	 display: inline	 ! important ; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 font-size: 12pt;"><span style="text-decoration-style: initial; text-decoration-color: initial;">If 
+ set to &quot;off&quot; then login command should be supplied with plain 
+ text password.</span></p>
+<p style="margin-left: 0px;"> </p>
+<h3><i><span style="font-size: 13pt; font-family: Arial, sans-serif; color: #449938;">EXAMPLES</span></i></h3>
+<p style="margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 line-height: 13.8pt;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">setlocal 
+ timeout=30000</span></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

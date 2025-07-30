@@ -1,0 +1,61 @@
+****TEST_INPUT_QUERY****
+select (true ? d : s) as c1, (false ? d : s) as c2, (true ? d : i) as c3, (false ? d : i) as c4, (true ? d : l) as c4, (false ? d : l) as c5 from t
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+t
++--------------------------+
+|            t             |
++------+-------+------+----+
+|s     |i      |d     |l   |
+|String|Integer|Double|Long|
++------+-------+------+----+
+|1     |1      |1.0   |1   |
+|2     |2      |2.0   |2   |
+|3     |3      |3.0   |3   |
++------+-------+------+----+
+
+****TEST_RESULT****
++-----------------------------------------+
+|                    t                    |
++------+------+------+------+------+------+
+|c1    |c2    |c3    |c4    |c5    |c6    |
+|String|String|Double|Double|Double|Double|
++------+------+------+------+------+------+
+|1.0   |1     |1.0   |1.0   |1.0   |1.0   |
+|2.0   |2     |2.0   |2.0   |2.0   |2.0   |
+|3.0   |3     |3.0   |3.0   |3.0   |3.0   |
++------+------+------+------+------+------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT (true ? d:s) AS c1,(false ? d:s) AS c2,(true ? d:i) AS c3,(false ? d:i) AS c4,(true ? d:l) AS c4,(false ? d:l) AS c5 FROM t
+
+PROJECTION : 
+SELECT (true ? d:s) AS c1,(false ? d:s) AS c2,(true ? d:i) AS c3,(false ? d:i) AS c4,(true ? d:l) AS c4,(false ? d:l) AS c5 FROM t
+
+NESTING_QUERY : 
+#0 t
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+t
++--------------------------+
+|            t             |
++------+-------+------+----+
+|s     |i      |d     |l   |
+|String|Integer|Double|Long|
++------+-------+------+----+
+|1     |1      |1.0   |1   |
+|2     |2      |2.0   |2   |
+|3     |3      |3.0   |3   |
++------+-------+------+----+
+

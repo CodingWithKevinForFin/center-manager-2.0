@@ -1,0 +1,9 @@
+// #1
+// insert data - no index
+uc2:id=0xd9ff69e6,id2=0x1a989da61,name=0x103dfd935
+
+// #2
+// complex index - insert data
+uc2:id=0xd9ff69e6,id2=0x1a989da61,name=0x103dfd935
+uc:id=0x9154f144,id2=0x12f85d071,name=0xfe307d25
+

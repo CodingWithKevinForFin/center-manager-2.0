@@ -1,0 +1,78 @@
+UPDATE Deployments set active=false where active=true and id=?{id};
+INSERT INTO Deployments
+(
+  active,
+  id,
+  revision,
+  now,
+  deployment_set_id,
+  procedure_id,
+  target_user,
+  target_directory,
+  target_machine_uid,
+  generated_properties_file,
+  properties,
+  generated_files,
+  env_vars,
+  start_script_file,
+  stop_script_file,
+  description,
+  scripts_directory,
+  metadata,
+  install_script_file,
+  uninstall_script_file,
+  verify_script_file,
+  auto_delete_files,
+  log_directories,
+  options
+) VALUES (
+  ?{active},
+  ?{id},
+  ?{revision},
+  ?{now},
+  ?{deployment_set_id},
+  ?{procedure_id},
+  ?{target_user},
+  ?{target_directory},
+  ?{target_machine_uid},
+  ?{generated_properties_file},
+  ?{properties},
+  ?{generated_files},
+  ?{env_vars},
+  ?{start_script_file},
+  ?{stop_script_file},
+  ?{description},
+  ?{scripts_directory},
+  ?{metadata},
+  ?{install_script_file},
+  ?{uninstall_script_file},
+  ?{verify_script_file},
+  ?{auto_delete_files},
+  ?{log_directories},
+  ?{options}
+);
+UPDATE DeploymentStatuses set active=false where active=true and deployment_id=?{id};
+INSERT INTO DeploymentStatuses
+(
+  active,
+  now,
+  deployment_id,
+  status,
+  running_pid,
+  running_process_uid,
+  message,
+  build_result_id,
+  deployed_instance_id,
+  build_invoked_by
+) VALUES (
+  ?{active},
+  ?{now},
+  ?{id},
+  ?{status},
+  ?{running_pid},
+  ?{running_process_uid},
+  ?{message},
+  ?{build_result_id},
+  ?{deployed_instance_id},
+  ?{build_invoked_by}
+);

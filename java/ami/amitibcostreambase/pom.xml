@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ami</groupId>
+    <name>amistreambase</name>
+    <artifactId>amistreambase</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.ami</groupId>
+        <artifactId>ami</artifactId>
+        <version>1.00-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <dependencies>
+      <dependency>
+        <groupId>com.ami</groupId>
+        <artifactId>amirelay</artifactId>
+        <version>1.00-SNAPSHOT</version>
+      </dependency>
+		<dependency>
+		    <groupId>com.tibco.ep.sb</groupId>
+		    <artifactId>client-core</artifactId>
+		    <version>10.4.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.tibco.ep.sb</groupId>
+		    <artifactId>server</artifactId>
+		    <version>10.4.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.tibco.ep.sb</groupId>
+		    <artifactId>client-deps</artifactId>
+		    <version>10.4.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.tibco.ep.sb</groupId>
+		    <artifactId>icu4j</artifactId>
+		    <version>58.2</version>
+		</dependency>
+    </dependencies>
+</project>
+

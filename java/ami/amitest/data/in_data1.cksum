@@ -1,0 +1,491 @@
+// #1
+// alter table - add
+primary:b=0x1ecb98d31,s=0x158e542a0,c=0xfcb19e31,a=0xa38863ef
+
+// #2
+// alter table - rename
+primary:b=0x1ecb98d31,c=0xfcb19e31,a=0xa38863ef,addr=0x158e542a0
+
+// #3
+// alter table - drop
+primary:b=0x1ecb98d31,s=0x158e542a0,c=0x7af6487b,a=0xa38863ef
+
+// #4
+// alter table - before
+primary:b=0x1ecb98d31,s=0x158e542a0,c=0x608b9328,a=0xa38863ef,x=0x17c798a2f
+
+// #5
+// alter table - change column type
+primary:b=0x836575d7,s=0x52fe827a,c=0x33c670cb,a=0x5c588c3f
+
+// #6
+// logical "and" and "as"
+primary:b=0x1ecb98d31,s=0x158e542a0,c=0x154086ed3,a=0xa38863ef
+target:b=0xb4aa0bad,s=0xb04a8fc0,c=0xfcaa1230,a=0x2397ebd8
+
+// #7
+// logical "or"
+target:b=0x16954175a,s=0x105e6c026,c=0x12041fe08,a=0x472fd7b0
+
+// #8
+// logical "not"
+target:b=0x1380f8184,s=0xa89ab2e0,c=0x8aeb602b,a=0x7ff07817
+
+// #9
+// order by "asc"
+primary:b=0x1ecb98d31,s=0x158e542a0,c=0x7af6487b,a=0x17c9a8a47
+target:b=0xb4aa0bad,s=0xb04a8fc0,c=0x2397ebd8,a=0x2397ebd8
+
+// #10
+// order by "desc" and "limit"
+target:b=0x836575d7,s=0x52fe827a,c=0x33c670cb,a=0x5c588c3f
+
+// #11
+// "in" clause
+primary:b=0x1ecb98d31,s=0x158e542a0,c=0x154086ed3,a=0xa38863ef
+target:b=0x16954175a,s=0x105e6c026,c=0x12041fe08,a=0x472fd7b0
+
+// #12
+// count(*)
+primary:b=0x1ecb98d31,s=0x158e542a0,c=0x154086ed3,a=0xa38863ef
+target:count_=0xab1c4d94
+
+// #13
+// countUnique(*)
+target:countUnique_=0xbeed39b
+
+// #14
+// cat()
+target:cat_b_3=0xefb67115,cat_a_2=0xf8107c73
+
+// #15
+// avgGauss()
+target:avgGauss_b_0_2=0x9ec2c111
+
+// #16
+// avgGauss()
+target2:avgExp_b_0_3_false=0xac4c5278
+target:avgExp_b_0_3_true=0x10d0832c
+
+// #17
+// sum()
+target:sum_b=0xcc58bf05,sum_c=0x992d05bf,sum_a=0xa3c643f1
+
+// #18
+// min()
+target:min_a=0x2397ebd8,min_b=0xb4aa0bad,min_c=0x2397ebd8
+
+// #19
+// max()
+target:max_a=0x5c588c3f,max_b=0x836575d7,max_c=0x33c670cb
+
+// #20
+// avg()
+target:avg_a=0x90a648ca,avg_b=0x246c584,avg_c=0xc5d80cd0
+
+// #21
+// var()
+target:var_a=0x556d0839,var_c=0xcbd1c2c6,var_b=0x8359062b
+
+// #22
+// varS()
+target:varS_a=0x19a38511,varS_b=0x4b368323,varS_c=0x4e0e942c
+
+// #23
+// stdev()
+target:stdev_c=0x102cd233,stdev_a=0x4e6743d9,stdev_b=0x34fc16df
+
+// #24
+// stdevS()
+target:stdevS_a=0x1c4900e7,stdevS_c=0x9f3b4b06,stdevS_b=0x9d775301
+
+// #25
+// first()
+target:first_b=0x836575d7,first_a=0x5c588c3f,first_c=0x33c670cb
+
+// #26
+// last()
+target:last_c=0x2397ebd8,last_b=0xb4aa0bad,last_a=0x2397ebd8
+
+// #27
+// covar()
+target:covar_a_b=0xf81a6cb,covar_b_c=0x50f1f4ea
+
+// #28
+// covarS()
+target:covarS_b_c=0x85214042,covarS_a_b=0xa8ba4db0
+
+// #29
+// cor()
+target:cor_b_c=0x4faa940e,cor_a_b=0xe5f605c9
+
+// #30
+// beta()
+target:beta_b_c=0xa885696c,beta_a_b=0x5ff2979d
+
+// #31
+// median()
+target:median_a=0x4a4b88d9,median_b=0x50d09686,median_c=0x331ff22c
+
+// #32
+// describe table
+target:SQL=0xe4e0a012
+
+// #33
+// show table
+target:Type=0x3008d52f7,NoNull=0xa49c8e50,Position=0x215f7c03e,Options=0x3fffffffc,ColumnName=0x2637e04fe
+
+// #34
+// delete
+primary:b=0x1380f8184,s=0xa89ab2e0,c=0x575e5ca3,a=0x159029e6f
+
+// #35
+// except
+target:b=0x1ecb98d31,s=0x158e542a0,a=0x17c9a8a47
+
+// #36
+// group by
+primary:num=0x322bd927f,country=0x54ea87218
+target:count_num=0x1a91639bf,country=0x243f69ac5
+
+// #37
+// having
+target:count_num=0xab1c4d94,country=0xccb007c7
+
+// #38
+// index and show
+target:IndexPosition=0xcbcc4f7d,DefinedBy=0xc71e39ec,IndexType=0x460b4be,Constraint=0x4ecb28a5,TableName=0x43e7e0ea,ColumnName=0xf8617ce2,IndexName=0xebf1652e
+
+// #39
+// set and update
+target:b=0x2134478dd,s=0x1567e3819,c=0x4b38e661,a=0x17c9a8a47
+
+// #40
+// truncate
+primary:b=0x92d3685,s=0xe96ccf9c,c=0xc641547e,a=0x145895a2
+
+// #41
+// realtime - left join
+target:duplicates_s=0x1be020f7c,b=0x1ecb98d31,s=0x158e542a0,c=0x7af6487b,a=0xa38863ef,z=0x23144e180,y=0x24638845b,x=0x19ec9fdcd
+
+// #42
+// realtime - right join
+target:duplicates_s=0x6ad9264d,b=0x138e73c58,s=0x1088048fb,c=0xe948374c,a=0x111da52c0,z=0xe9d94056,y=0xe4622dde,x=0x9f5e6310
+
+// #43
+// realtime - outer join
+target:duplicates_s=0x1d5dcb34f,b=0x2a23b53b2,s=0x20e670921,c=0x130780efc,a=0x1590a2a70,z=0x254dccd58,y=0x24f65bae0,x=0x20a61f012
+
+// #44
+// realtime - left only join
+target:duplicates_s=0x16b038d02,b=0x16954175a,s=0x105e6c026,c=0x12041fe08,a=0x472fd7b0,z=0x16b038d02,y=0x16b038d02,x=0x16b038d02
+
+// #45
+// realtime - right only join
+target:duplicates_s=0x17daa3d3,b=0xb581c681,s=0xb581c681,c=0xb581c681,a=0xb581c681,z=0xc641547e,y=0x66b3ca71,x=0x4090eb1
+
+// #46
+// realtime - inner join
+target:duplicates_s=0x52fe827a,b=0x836575d7,s=0x52fe827a,c=0x33c670cb,a=0x5c588c3f,z=0xc641547e,y=0xdb34f759,x=0x33c670cb
+
+// #47
+// nearest
+target:a_time=0x3330c65b8,time=0x220a1abd8,px=0x228b4a77a,a_px=0x1301eb46b
+
+// #48
+// use
+target:Schema=0xaa29aa18f,TableName=0x8c17d042a
+
+// #49
+// concurrent
+b:time=0x220a1abd8,px=0x228b4a77a
+a:time=0x26ccb113a,px=0xd6c517b8
+target:Schema=0xaa29aa18f,TableName=0x8c17d042a
+
+// #50
+// partition by
+target:sum_y=0xdc490456,y=0x1508d0ac7,x=0xc9cda92a
+
+// #51
+// unpack
+target:accounts=0x367f0cddc,orderId=0x3c1336155
+
+// #52
+// analyze and window
+target:min=0x6ac7c388,max=0x21dfe2307,sum=0x9b535261
+
+// #53
+// prepare and stack()
+target:acc_qty=0xcc579f90,account=0x1377e17ce,qty=0x1d65d2e66
+
+// #54
+// norm()
+target:acc_qty=0x147d596ad,account=0x1377e17ce,qty=0x1d65d2e66
+
+// #55
+// dnorm()
+target:acc_qty=0x184195322,account=0x1377e17ce,qty=0x1d65d2e66
+
+// #56
+// rank()
+target:acc_qty=0x128fc371b
+
+// #57
+// urank()
+target:acc_qty=0x128fc371b
+
+// #58
+// streaming realtime - left join trigger
+target:b=0x1ecb98d31,s=0xfe36e346,c=0x7af6487b,a=0xa38863ef,z=0x220855383,y=0x220855383,x=0x220855383
+
+// #59
+// streaming realtime - right join trigger
+target:b=0xb581c681,s=0xb581c681,c=0xb581c681,a=0xb581c681,z=0x8e414de3,y=0xa4fb90be,x=0x9e10d6f0
+
+// #60
+// streaming realtime - outer join trigger
+target:b=0x31120478d,s=0x2ad4e4d10,c=0x39bfb82c3,a=0x1cab8dcf5,z=0x309cd8acf,y=0x2ef83c79a,x=0x3596c8fdb
+
+// #61
+// streaming realtime - left only join trigger
+target:b=0x1dac02be7,s=0xe4c051bd,c=0x2358f04ab,a=0x18d6d2af8,z=0x220855383,y=0x220855383,x=0x220855383
+
+// #62
+// streaming realtime - right only join trigger
+target:b=0x6618ffa89,s=0x6618ffa89,c=0x6618ffa89,a=0x6618ffa89,z=0x46ec368cb,y=0x49b01a276,x=0x2ebeb7804
+
+// #63
+// streaming realtime - outer only join trigger
+target:b=0x4b8dae9d5,s=0x3653de460,c=0x4042c6b31,a=0x47af407ff,z=0x50dcf51e2,y=0x5665f41d5,x=0x56630cce4
+
+// #64
+// streaming realtime - inner join trigger
+target:b=0x1a1764bd7,s=0x3ad1f096,c=0x1252625de,a=0x12c5224d3,z=0xccc4aadc,y=0x125549acf,x=0x1252625de
+
+// #65
+// streaming realtime - left join trigger disable
+duplicates:s=0xf20c1c75,z=0xc641547e,y=0xdb34f759,x=0x33c670cb
+primary:b=0x1ecb98d31,s=0xfe36e346,c=0x7af6487b,a=0xa38863ef
+target:b=0x0,s=0x0,c=0x0,a=0x0,z=0x0,y=0x0,x=0x0
+
+// #66
+// streaming realtime - left join trigger enable
+target:b=0x1ddff5d07,s=0xfe36e346,c=0x2c4fc051f,a=0x2715da1eb,z=0x220855383,y=0x220855383,x=0x220855383
+
+// #67
+// priority
+target:b=0x1b9b71045,s=0x1436ee462,c=0x1a84be5ff,a=0x14996116b
+
+// #68
+// sync
+target:b=0x21dfe2307,s=0x1b6314fe6,c=0xa15c7dd6,a=0x6ac7c388
+
+// #69
+// step/for
+target:b=0x23493647ca,s=0x226e901380,c=0x2ad0584f62,a=0x6f3ac1030
+
+// #70
+// stored procedure and call
+target:b=0x19ec34bf5,s=0xbe4e093a,c=0x6bb6f245,a=0x24a90c873
+
+// #71
+// subqueries
+target:total_marks=0xbdec7e7c,studentid=0xe4a7881f
+
+// #72
+// insering table with NULL/not NULL columns
+target:b=0x1388a8a0d,s=0x10b1df6e7,c=0x575e5ca3,a=0x7ff07817
+
+// #73
+// abs()
+target:absnum=0xe13f6d7d
+
+// #74
+// acos()
+target:a=0x212d20abe
+
+// #75
+// asin()
+target:a=0x1673e5299
+
+// #76
+// atan()
+target:a=0x1fa751685
+
+// #77
+// brighten()
+target:a=0x2844b41a0
+
+// #78
+// colorCycle()
+target:a=0x1c69e612f
+
+// #79
+// cos()
+target:a=0x1c965f1ae
+
+// #80
+// cycle()
+target:s=0x191f43c7f
+
+// #81
+// datePart() and datePartNum()
+target:a=0x28bcb8b99
+
+// #82
+// digamma()
+target:s=0x2392dff93
+
+// #83
+// exp()
+target:value=0x8614f6db
+
+// #84
+// gradient()
+target:a=0x51c841db
+
+// #85
+// isInstanceOf()
+target:a=0x248cc0bb8
+
+// #86
+// jsonExtract()
+target:a=0x20934c347
+
+// #87
+// ln()
+target:a=0x10f32ffcb
+
+// #88
+// lnGamma()
+target:a=0x1a11fff75
+
+// #89
+// log()
+target:a=0x23a42f76b
+
+// #90
+// noNull()
+target:a=0x2df2efd10
+
+// #91
+// parseDate()
+target:a=0x13f1ee176
+
+// #92
+// parseJson()
+target:b=0xed0dde80,c=0x29272394,a=0x2eb3d3ec
+
+// #93
+// power()
+target:a=0x1ae4d952b
+
+// #94
+// quote()
+target:a=0xbc0b1e5d
+
+// #95
+// round()
+target:a=0x3c4c71fd5
+
+// #96
+// roundDown()
+target:a=0x3c4ca2955
+
+// #97
+// scale()
+target:a=0x1b070b946
+
+// #98
+// sin()
+target:a=0x193f521c1
+
+// #99
+// strAfter()
+target:a=0x4767027c8
+
+// #100
+// strAfterLast()
+target:a=0x44be6f9fc
+
+// #101
+// strBefore()
+target:a=0x393302266
+
+// #102
+// strBeforeLast()
+target:a=0x34c71a491
+
+// #103
+// strIndexOf()
+target:a=0x66b7f025c
+
+// #104
+// strLen()
+target:a=0x23fb66bc0
+
+// #105
+// strReplace()
+target:a=0x1dd97e1ee
+
+// #106
+// strSplice()
+target:a=0x187205df5
+
+// #107
+// strStrip()
+target:a=0x208b68f0e
+
+// #108
+// strSubstring
+target:a=0x26061d172
+
+// #109
+// strTrim()
+target:a=0x192c03b18
+
+// #110
+// switch()
+target:a=0x1209fdec4
+
+// #111
+// tan()
+target:a=0x15300ad5f
+
+// #112
+// timezoneOffset()
+target:a=0x1672c8d6b
+
+// #113
+// toJson
+target:a=0xc69d390f
+
+// #114
+// primary index -> will do upsert
+primary:d=0xb4aa0bad,b=0xfcaa1230,s=0x52fe827a,c=0x33c670cb,a=0x8e414de3
+
+// #115
+// unique index with hash
+primary:d=0xdb34f759,b=0x836575d7,s=0x52fe827a,c=0x33c670cb,a=0x2eb3d3ec
+
+// #116
+// unique index with sort
+primary:d=0xdb34f759,b=0x836575d7,s=0x52fe827a,c=0x33c670cb,a=0x2eb3d3ec
+
+// #117
+// unique index with series
+primary:d=0xdb34f759,b=0x836575d7,s=0x4551f752,c=0x33c670cb,a=0x2eb3d3ec
+
+// #118
+// no constraint index
+primary:d=0x1f692cd77,b=0x1d18c3c12,s=0xf8fb876e,c=0x9b535261,a=0x1194dae0e
+
+// #119
+// table name with backticks and out to compare with checksum data
+`primary tbl`:d=0x1f692cd77,b=0x1d18c3c12,s=0xebc069f3,c=0x9b535261,a=0x1194dae0e
+
+// #120
+// table name with backticks
+`primary tbl`:d=0x1f692cd77,b=0x1d18c3c12,s=0xebc069f3,c=0x9b535261,a=0x1194dae0e
+target:d=0x1f692cd77,b=0x1d18c3c12,s=0xebc069f3,c=0x9b535261,a=0x1194dae0e
+

@@ -1,0 +1,952 @@
+INF 20250728-03:50:32.328 EST5EDT [main] com.f1.utils.EnvironmentDump::startup: EnvironmentDump: 
++----------------------------------
+| Visit http://3forge.com
+| 3forge.com
++----------------------------------
+|          Startup Class: com.f1.ami.one.AmiOneMain
+|           Startup Time: Mon Jul 28 15:50:16 CST 2025
+|            Working Dir: C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione
+|             Local Host: DESKTOP-SPJ30HA
+|                    Pid: 16580
+|          F1 ProcessUid: F1-vP6SMdMlMJjmwPlgFXLaN3
+|              CPU Count: 16
+|           Avail.Memory: 27.79 GB (29,841,424,384 B)
+|         Line Seperator: \r\n
+|              Java Home: C:\Program Files\Java\jdk1.8.0_144\jre
+|           Java Version: 1.8.0_144
+|            Java Vendor: Oracle Corporation
+|          Java Compiler: null
+|           RC5 Strength: unlimited
+|           OS - Version: Windows 10 - 10.0
+|               OS Arch.: amd64
+|           Current Time: Mon Jul 28 15:50:31 CST 2025
+|       Default TimeZone: Asia/Shanghai
+|        Default Charset: UTF-8
+|        Default Country: GB
+|       Default Language: en
+|                   User: YuanYao
+|              User Home: C:\Users\XPS17-6
++----------------------------------
+|            License App: *
+|       License Instance: id=537363
+|           License Host: DESKTOP-SPJ30HA
+|     License Start Date: 20230103
+|       License End Date: 20230631
+|           License Text: 3FKEY|amione|id=537363|DESKTOP-SPJ30HA|20230103|20230631|5uFzoz8DslW
++----------------------------------
+|         Max Code Cache: 240.00 MB (251,658,240 B)
+|          Max Metaspace: -1 (-1 B)
+| Max Compressed Class Space: 1,024.00 MB (1,073,741,824 B)
+|      Max PS Eden Space: 7.25 GB (7,785,152,512 B)
+|  Max PS Survivor Space: 1,237.00 MB (1,297,088,512 B)
+|         Max PS Old Gen: 19.33 GB (20,759,183,360 B)
++----------------------------------
+|        Java Ext. Dirs.: C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext
+|                         C:\WINDOWS\Sun\Java\lib\ext
++----------------------------------
+|         Java Classpath: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amicenterfull\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amicenter\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amiclient\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amimysql\target\classes
+|                         C:\Users\XPS17-6\.m2\repository\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar                                            (cksum  328620269 989495)
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amipostgresql\target\classes
+|                         C:\Users\XPS17-6\.m2\repository\org\postgresql\postgresql\42.5.1\postgresql-42.5.1.jar                                                       (cksum  2244275653 1046770)
+|                         C:\Users\XPS17-6\.m2\repository\org\checkerframework\checker-qual\3.5.0\checker-qual-3.5.0.jar                                               (cksum  2979987771 214381)
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amioracle\target\classes
+|                         C:\Users\XPS17-6\.m2\repository\com\oracle\database\jdbc\ojdbc8\18.3.0.0\ojdbc8-18.3.0.0.jar                                                 (cksum  3117199756 4161744)
+|                         C:\Users\XPS17-6\.m2\repository\com\oracle\database\jdbc\ucp\18.3.0.0\ucp-18.3.0.0.jar                                                       (cksum  2946875236 1398331)
+|                         C:\Users\XPS17-6\.m2\repository\com\oracle\database\security\oraclepki\18.3.0.0\oraclepki-18.3.0.0.jar                                       (cksum  616846848 307817)
+|                         C:\Users\XPS17-6\.m2\repository\com\oracle\database\security\osdt_cert\18.3.0.0\osdt_cert-18.3.0.0.jar                                       (cksum  428903403 205152)
+|                         C:\Users\XPS17-6\.m2\repository\com\oracle\database\security\osdt_core\18.3.0.0\osdt_core-18.3.0.0.jar                                       (cksum  632447450 306854)
+|                         C:\Users\XPS17-6\.m2\repository\com\oracle\database\ha\simplefan\18.3.0.0\simplefan-18.3.0.0.jar                                             (cksum  2422278117 29103)
+|                         C:\Users\XPS17-6\.m2\repository\com\oracle\database\ha\ons\18.3.0.0\ons-18.3.0.0.jar                                                         (cksum  1406026635 144428)
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amiexcel\target\classes
+|                         C:\Users\XPS17-6\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar                                                                       (cksum  2447798899 2964641)
+|                         C:\Users\XPS17-6\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar                                                      (cksum  1621239660 353793)
+|                         C:\Users\XPS17-6\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar                                     (cksum  4112784218 751914)
+|                         C:\Users\XPS17-6\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar                                               (cksum  3848271875 2213560)
+|                         C:\Users\XPS17-6\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar                                                           (cksum  53205422 327135)
+|                         C:\Users\XPS17-6\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar                                                             (cksum  876577705 24510)
+|                         C:\Users\XPS17-6\.m2\repository\org\apache\logging\log4j\log4j-api\2.18.0\log4j-api-2.18.0.jar                                               (cksum  808181675 315115)
+|                         C:\Users\XPS17-6\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar                                                           (cksum  3173872267 2010497)
+|                         C:\Users\XPS17-6\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar                                                 (cksum  2273665205 5898622)
+|                         C:\Users\XPS17-6\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar                                                        (cksum  2835078702 2196526)
+|                         C:\Users\XPS17-6\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar                                                                 (cksum  857601846 220536)
+|                         C:\Users\XPS17-6\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar                                           (cksum  2857232926 1018316)
+|                         C:\Users\XPS17-6\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar                                                        (cksum  4211464670 111978)
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amidb2\target\classes
+|                         C:\Users\XPS17-6\.m2\repository\db2\db2-jdbc\jcc4\db2-jdbc-jcc4.jar                                                                          (cksum  2671106260 3894263)
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amissh\target\classes
+|                         C:\Users\XPS17-6\.m2\repository\ch\ethz\ganymed\ganymed-ssh2\262\ganymed-ssh2-262.jar                                                        (cksum  1554228428 307216)
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amisqlite\target\classes
+|                         C:\Users\XPS17-6\.m2\repository\org\xerial\sqlite-jdbc\3.32.3.3\sqlite-jdbc-3.32.3.3.jar                                                     (cksum  1440535618 7229330)
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amirelayfull\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amirelay\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\email\target\classes
+|                         C:\Users\XPS17-6\.m2\repository\javax\mail\mail\1.5.0-b01\mail-1.5.0-b01.jar                                                                 (cksum  2168249791 519087)
+|                         C:\Users\XPS17-6\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar                                                           (cksum  1905591197 62983)
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amiwebfull\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amiweb\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\suiteweb\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\container\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\msg\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\povo\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\suiteutils\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\office\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\pdf\target\classes
+|                         C:\Users\XPS17-6\.m2\repository\com\github\librepdf\openpdf\1.3.30\openpdf-1.3.30.jar                                                        (cksum  1596750534 2128282)
+|                         C:\Users\XPS17-6\.m2\repository\com\bloomberglp\blpapi\3.24.7.1\blpapi-3.24.7.1.jar                                                          (cksum  1676439480 1835123)
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amimapbox\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amip4\target\classes
+|                         C:\Users\XPS17-6\.m2\repository\com\perforce\p4java\2021.1.2163843\p4java-2021.1.2163843.jar                                                 (cksum  3467861038 1143289)
+|                         C:\Users\XPS17-6\.m2\repository\com\jcraft\jzlib\1.1.3\jzlib-1.1.3.jar                                                                       (cksum  2625884971 71976)
+|                         C:\Users\XPS17-6\.m2\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar                                                   (cksum  3331513742 434678)
+|                         C:\Users\XPS17-6\.m2\repository\com\google\code\findbugs\jsr305\3.0.1\jsr305-3.0.1.jar                                                       (cksum  2269566376 19943)
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amiokta\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amiwebbalancer\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amicommon\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\bootstrap\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\console\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\codegen\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\stringmaker\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\speedlogger\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\msgdirect\target\classes
+|                         C:\Users\XPS17-6\.m2\repository\org\python\jython-standalone\2.7.1\jython-standalone-2.7.1.jar                                               (cksum  2069543333 41135585)
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\speedloggerSlf4j\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\utils\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\base\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\f1\http\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amiwebmanager\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amiazurevault\target\classes
+|                         C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amiawskms\target\classes
+|                         C:\Users\XPS17-6\Desktop\Setup\eclipse-jee-2019-12-R-win32-x86_64\eclipse\configuration\org.eclipse.osgi\411\0\.cp\lib\javaagent-shaded.jar  (cksum  277290167 136132)
++----------------------------------
+|         Boot Classpath: C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar   (cksum  705113351 3492573)
+|                         C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar          (cksum  4082233393 63467130)
+|                         C:\Program Files\Java\jdk1.8.0_144\jre\lib\sunrsasign.jar  (missing)
+|                         C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar        (cksum  1810152763 646305)
+|                         C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar         (cksum  3116343031 116446)
+|                         C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar    (cksum  3045810668 3090155)
+|                         C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar         (cksum  1030928814 560581)
+|                         C:\Program Files\Java\jdk1.8.0_144\jre\classes             (missing)
++----------------------------------
+|          Jvm arguments: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:55014
+|                         -Djava.util.logging.manager=com.f1.speedlogger.sun.SunSpeedLoggerLogManager
+|                         -Df1.license.mode=dev
+|                         -Dproperty.f1.autocoded.disabled=false
+|                         -Dproperty.f1.logging.mode=info
+|                         -Xms29g
+|                         -javaagent:C:\Users\XPS17-6\Desktop\Setup\eclipse-jee-2019-12-R-win32-x86_64\eclipse\configuration\org.eclipse.osgi\411\0\.cp\lib\javaagent-shaded.jar
+|                         -Dfile.encoding=UTF-8
++----------------------------------
+|              Arguments: 
++----------------------------------
+|       Property Sources: file:C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\src\main\config\defaults.properties     (cksum  1312354644 9151)
+|                         code:AmiStartup.java
+|                         file:C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\src\main\config\local.properties        (cksum  3057078018 261)
+|                         system:property.f1.logging.mode
+|                         file:C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\src\main\config\speedlogger.properties  (cksum  775681285 2628)
+|                         code:AmiOneMain.java
+|                         system:property.f1.autocoded.disabled
++----------------------------------
+|              Env. Vars: ALLUSERSPROFILE=C:\ProgramData
+|                         APPDATA=C:\Users\XPS17-6\AppData\Roaming
+|                         CLASSPATH=C:\Program Files\Java\jdk1.8.0_144\lib;C:\Program Files\Java\jdk1.8.0_144\jre\lib
+|                         COMMONPROGRAMFILES=C:\Program Files\Common Files
+|                         COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+|                         COMMONPROGRAMW6432=C:\Program Files\Common Files
+|                         COMPUTERNAME=DESKTOP-SPJ30HA
+|                         COMSPEC=C:\WINDOWS\system32\cmd.exe
+|                         DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+|                         EFC_27272_1262719628=1
+|                         EFC_27272_1592913036=1
+|                         EFC_27272_2283032206=1
+|                         EFC_27272_2775293581=1
+|                         EFC_27272_3789132940=1
+|                         FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+|                         FPS_BROWSER_USER_PROFILE_STRING=Default
+|                         HOMEDRIVE=C:
+|                         HOMEPATH=\Users\XPS17-6
+|                         IGNITE_HOME=C:\other db\ignite\apache-ignite-2.16.0-bin
+|                         JAVA_HOME=C:\Program Files\Java\jdk1.8.0_144
+|                         JAVA_VERSION=1.7
+|                         LOCALAPPDATA=C:\Users\XPS17-6\AppData\Local
+|                         LOGONSERVER=\\DESKTOP-SPJ30HA
+|                         NUMBER_OF_PROCESSORS=16
+|                         ONEDRIVE=C:\Users\XPS17-6\OneDrive
+|                         ONEDRIVECONSUMER=C:\Users\XPS17-6\OneDrive
+|                         ORBIT_UPDATE_INTERVAL=15m0s
+|                         OS=Windows_NT
+|                         PATH=C:\Program Files\Java\jdk1.8.0_144\jre\bin;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\PuTTY\;C:\Program Files (x86)\apache-maven-3.8.4\bin;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\sqlite;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Java\jre1.8.0_144;C:\q\w64;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Perforce\;C:\Users\XPS17-6\AppData\Roaming\.dotnet;C:\Users\XPS17-6\AppData\Local\Microsoft\WindowsApps;C:\Users\XPS17-6\AppData\Local\Programs\Microsoft VS Code\bin;C:\q\w64;C:\Users\XPS17-6\.dotnet\tools;;C:\Users\XPS17-6\Desktop\Setup\eclipse-jee-2019-12-R-win32-x86_64\eclipse;
+|                         PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+|                         PROCESSOR_ARCHITECTURE=AMD64
+|                         PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+|                         PROCESSOR_LEVEL=6
+|                         PROCESSOR_REVISION=a502
+|                         PROGRAMDATA=C:\ProgramData
+|                         PROGRAMFILES=C:\Program Files
+|                         PROGRAMFILES(X86)=C:\Program Files (x86)
+|                         PROGRAMW6432=C:\Program Files
+|                         PROMPT=$P$G
+|                         PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+|                         PUBLIC=C:\Users\Public
+|                         QHOME=c:\q
+|                         SESSIONNAME=Console
+|                         SYSTEMDRIVE=C:
+|                         SYSTEMROOT=C:\WINDOWS
+|                         TEMP=C:\Users\XPS17-6\AppData\Local\Temp
+|                         TMP=C:\Users\XPS17-6\AppData\Local\Temp
+|                         USERDOMAIN=AzureAD
+|                         USERDOMAIN_ROAMINGPROFILE=AzureAD
+|                         USERNAME=YuanYao
+|                         USERPROFILE=C:\Users\XPS17-6
+|                         WINDIR=C:\WINDOWS
+|                         ZES_ENABLE_SYSMAN=1
++----------------------------------
+|             Properties: ami.admin.auth.plugin.class=com.f1.ami.web.auth.AmiAuthenticatorFileBacked
+|                         ami.aes.key.file=persist/amikey.aes
+|                         ami.aes.key.strength=128
+|                         ami.allow.site.framed=true
+|                         ami.auth.plugin.class=com.f1.ami.web.auth.AmiAuthenticatorFileBacked
+|                         ami.center.host=localhost
+|                         ami.center.port=1470
+|                         ami.components=relay,center,web
+|                         ami.datasource.concurrent.queries.per.user=5
+|                         ami.datasource.plugins=com.f1.ami.plugins.mysql.AmiMysqlDatasourcePlugin,com.f1.ami.center.ds.AmiKxDatasourcePlugin,com.f1.ami.center.ds.AmiFlatFileDatasourcePlugin,com.f1.ami.center.ds.AmiShellDatasourcePlugin,com.f1.ami.center.ds.AmiAmiDbDatasourcePlugin,com.f1.ami.center.ds.AmiGenericJdbcDatasourcePlugin,com.f1.ami.plugins.postgresql.AmiPostgresqlDatasourcePlugin,com.f1.ami.plugins.oracle.AmiOracleDatasourcePlugin,com.f1.ami.plugins.excel.AmiExcelDatasourcePlugin,com.f1.ami.plugins.db2.AmiDb2DatasourcePlugin,com.f1.ami.plugins.ssh.AmiSshDatasourcePlugin,com.f1.ami.plugins.ssh.AmiSftpDatasourcePlugin,com.f1.ami.center.ds.AmiQuandlDatasourcePlugin,com.f1.ami.center.ds.AmiFredDatasourcePlugin,com.f1.ami.center.ds.AmiOneTickDatasourcePlugin,com.f1.ami.plugins.restapi.AmiRestAPIDatasourcePlugin,com.f1.ami.plugins.sqlite.AmiSqLiteDatasourcePlugin
+|                         ami.datasource.timeout.millis=60000
+|                         ami.db.auth.plugin.class=com.f1.ami.web.auth.AmiAuthenticatorFileBacked
+|                         ami.db.console.history.dir=./history
+|                         ami.db.console.history.max.lines=10000
+|                         ami.db.console.port=1490
+|                         ami.db.dialect.plugins=com.f1.ami.center.dialects.AmiDbDialectPlugin_Tableau,com.f1.ami.center.dialects.AmiDbDialectPlugin_Hibernate
+|                         ami.db.disable.functions=strDecrypt
+|                         ami.db.jdbc.port=1480
+|                         ami.db.max.stack.size=16
+|                         ami.db.persist.dir=persist
+|                         ami.db.persister.plugins=
+|                         ami.db.procedure.plugins=com.f1.ami.center.procs.AmiStoredProcFactory_Debug
+|                         ami.db.schema.config.files=data/config.amisql
+|                         ami.db.schema.managed.file=data/managed_schema.amisql
+|                         ami.db.table.default.refresh.period.millis=100
+|                         ami.db.timer.plugins=com.f1.ami.center.timers.AmiTimerFactory_Debug
+|                         ami.db.trigger.plugins=com.f1.ami.center.triggers.AmiTriggerFactory_Debug
+|                         ami.default.user.timezone=EST5EDT
+|                         ami.font.files=./data/fonts/*.ttf
+|                         ami.font.java.mappings=Courier=Courier New
+|                         ami.fonts.in.browser=Arial,Courier,Georgia,Impact,Lucida,Times New Roman,Verdana,Segoe UI
+|                         ami.jdbc.auth.plugin.class=com.f1.ami.web.auth.AmiAuthenticatorFileBacked
+|                         ami.license.file=./f1license.txt
+|                         ami.log.messages=true
+|                         ami.port=1489
+|                         ami.port.wait.for.center=true
+|                         ami.relay.dictionary.files=data/*.relay.dictionary
+|                         ami.relay.fh.active=ssocket
+|                         ami.relay.fh.ssocket.class=com.f1.ami.relay.fh.AmiServerSocketFH
+|                         ami.relay.fh.ssocket.props.amiId=Server_Socket
+|                         ami.relay.fh.ssocket.start=true
+|                         ami.relay.id=relay_0
+|                         ami.relay.invokables=com.f1.ami.relay.plugins.AmiRelayInvokablePlugin_LoadFile,com.f1.ami.relay.plugins.AmiRelayInvokablePlugin_Replay
+|                         ami.relay.routes.file=data/relay.routes
+|                         ami.relay.transforms.file=data/relay.transforms
+|                         ami.resources.dir=./resources
+|                         ami.resources.monitor.period.millis=5000
+|                         ami.rest.auth.plugin.cache.duration=10 seconds
+|                         ami.rest.auth.plugin.class=com.f1.ami.web.auth.AmiAuthenticatorFileBacked
+|                         ami.rest.plugin.classes=com.f1.ami.amicommon.rest.AmiRestPlugin_Version,com.f1.ami.amicommon.rest.AmiRestPlugin_Whoami,com.f1.ami.amicommon.rest.AmiRestPlugin_Whatsmyip,com.f1.ami.amicommon.rest.AmiRestPlugin_Stats,com.f1.ami.center.AmiRestPlugin_Query
+|                         ami.rest.uses.web.port=true
+|                         ami.sampledata.file=./src/main/config/../data/sample_data.txt
+|                         ami.session.timeout.seconds=600000
+|                         ami.shared.layouts.dir=./src/main/config/../data/shared
+|                         ami.style.files=data/styles/*.amistyle.json
+|                         ami.web.auth.plugin.class=com.f1.ami.web.auth.AmiAuthenticatorFileBacked
+|                         ami.web.default.ISADMIN=false
+|                         ami.web.default.ISDEV=false
+|                         ami.web.default.MAXSESSIONS=1
+|                         ami.web.default.to.admin=false
+|                         ami.web.disable.license.wizard=false
+|                         ami.web.headless.file=data/headless.txt
+|                         ami.web.license.auth.url=https://3forge.com
+|                         ami.web.panel.mapbox.class=com.f1.ami.plugins.mapbox.AmiWebMapboxPlugin
+|                         ami.web.panels=mapbox
+|                         ami.webbalancer.http.port=14330
+|                         ami.webbalancer.routes.file=data/webbalancer.routes
+|                         ami.webbalancer.server.alive.check.period=5 seconds
+|                         ami.webbalancer.session.timeout.period=1 minute
+|                         ami.webbalancer.sessions.file=persist/webbalancer.sessions
+|                         BLANK=
+|                         f1.appname=AmiOne
+|                         f1.autocoded.dir=C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione/.autocoded
+|                         f1.autocoded.dir.clean=false
+|                         f1.autocoded.disabled=false
+|                         f1.conf.dir=./src/main/config
+|                         f1.conf.filename=root.properties
+|                         f1.console.history.file=C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione/.console_history.txt
+|                         f1.console.port=1485
+|                         f1.console.prompt=AmiOne>
+|                         f1.converter.class=
+|                         f1.dir.seperator=\
+|                         f1.inspecting.mode=false
+|                         f1.license.warning.days=30
+|                         f1.locale=default
+|                         f1.localhost=DESKTOP-SPJ30HA
+|                         f1.log.performance.level=
+|                         f1.logfilename=AmiOne
+|                         f1.logging.mode=info
+|                         f1.logs.dir=C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione/log
+|                         f1.main.classname=com.f1.ami.one.AmiOneMain
+|                         f1.main.simpleclassname=AmiOneMain
+|                         f1.messages.packages=
+|                         f1.monitoring.enabled=false
+|                         f1.path.seperator=;
+|                         f1.plugins.dir=C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione/plugins
+|                         f1.properties.secret.key.files=
+|                         f1.pwd=C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione
+|                         f1.runtime.dir=C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione
+|                         f1.scripts.dir=C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione/scripts
+|                         f1.suspend=false
+|                         f1.terminate.file=./src/main/config/../.amionemain.prc
+|                         f1.textbundle.dir=C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione
+|                         f1.textbundle.files=bundle.txt
+|                         f1.textbundle.options=KEY_MISSING_DEBUG,LOG_STACKTRACE
+|                         f1.threadpool.aggressive=true
+|                         f1.threadpool.default.size=8
+|                         f1.threadpool.fast.execute=true
+|                         f1.timezone=UTC
+|                         f1.userhome=C:\Users\XPS17-6
+|                         f1.username=YuanYao
+|                         http.allow.methods=GET,POST
+|                         http.port=14332
+|                         idfountain.batchsize=1000000
+|                         idfountain.path=data/idfountain
+|                         speedlogger.appender.AMIMESSAGES_APPENDER.pattern=%d{YMD-h:m:s.S z} %m%n
+|                         speedlogger.appender.AMIMESSAGES_APPENDER.timezone=EST5EDT
+|                         speedlogger.appender.AMIMESSAGES_APPENDER.type=BasicAppender
+|                         speedlogger.appender.AMISTATS_APPENDER.pattern=%m%n
+|                         speedlogger.appender.AMISTATS_APPENDER.type=BasicAppender
+|                         speedlogger.appender.AMITRACKER_APPENDER.pattern=%d{YMD-h:m:s.S z} %m%n
+|                         speedlogger.appender.AMITRACKER_APPENDER.timezone=EST5EDT
+|                         speedlogger.appender.AMITRACKER_APPENDER.type=BasicAppender
+|                         speedlogger.appender.BASIC_APPENDER.pattern=%P %d{YMD-h:m:s.S z} [%t] %c::%M: %m %D%n
+|                         speedlogger.appender.BASIC_APPENDER.timezone=EST5EDT
+|                         speedlogger.appender.BASIC_APPENDER.type=BasicAppender
+|                         speedlogger.appender.SIMPLE_APPENDER.pattern=%P %d{YMD-h:m:s.S z} [%t] %c: %m %D%n
+|                         speedlogger.appender.SIMPLE_APPENDER.timezone=EST5EDT
+|                         speedlogger.appender.SIMPLE_APPENDER.type=BasicAppender
+|                         speedlogger.sink.AMIMESSAGES_SINK.fileName=C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione/log/AmiMessages.log
+|                         speedlogger.sink.AMIMESSAGES_SINK.maxFiles=10
+|                         speedlogger.sink.AMIMESSAGES_SINK.maxFileSizeMb=1000
+|                         speedlogger.sink.AMIMESSAGES_SINK.type=file
+|                         speedlogger.sink.AMISTATS_SINK.fileName=C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione/log/AmiOne.amilog
+|                         speedlogger.sink.AMISTATS_SINK.maxFiles=10
+|                         speedlogger.sink.AMISTATS_SINK.maxFileSizeMb=1000
+|                         speedlogger.sink.AMISTATS_SINK.type=file
+|                         speedlogger.sink.FILE_SINK.fileName=C:/Users/XPS17-6/Perforce/Yuan_branch/makers/yuan_round/java/ami/amione/log/AmiOne.log
+|                         speedlogger.sink.FILE_SINK.maxFiles=10
+|                         speedlogger.sink.FILE_SINK.maxFileSizeMb=1000
+|                         speedlogger.sink.FILE_SINK.type=file
+|                         speedlogger.stream.=BASIC_APPENDER;FILE_SINK;INFO
+|                         speedlogger.stream.AMI=BASIC_APPENDER;FILE_SINK;OFF
+|                         speedlogger.stream.AMI_ACTIVITY_TRACKER=AMITRACKER_APPENDER;FILE_SINK;ALL
+|                         speedlogger.stream.AMI_MESSAGES=AMIMESSAGES_APPENDER;AMIMESSAGES_SINK;INFO
+|                         speedlogger.stream.AMI_STATS=AMISTATS_APPENDER;AMISTATS_SINK;ALL
+|                         speedlogger.stream.AMISCRIPT.LOGINFO=SIMPLE_APPENDER;FILE_SINK;INF
+|                         speedlogger.stream.AMISCRIPT.LOGWARN=SIMPLE_APPENDER;FILE_SINK;WRN
+|                         sso.key.portlet.layout=portletlayout_ami
+|                         sso.namespace=AMI
+|                         users.access.file=./data/access.txt
+|                         users.access.file.encrypt.mode=off
+|                         users.access.file.for.entitlements=off
+|                         web.title=yuan_round
+|                         webTitle=3forge AMI
++----------------------------------
+|     Default Properties: 
++----------------------------------
+|   F1 Global properties: f1.global.disable.systemexit=false
+|                         f1.global.env.property.prefix=property_
+|                         f1.global.max.collection.to.delineate=30
+|                         f1.global.max.debug.string.length=10240
+|                         f1.global.password.mask=************
+|                         f1.global.password.substitute=******
+|                         f1.global.procinfosink.file=./.f1proc.txt
+|                         f1.global.replace.checked.thrown=true
+|                         f1.global.sys.property.prefix=property.
+|                         f1.global.title=3forge.com
++----------------------------------
+ 
+INF 20250728-03:50:32.351 EST5EDT [main] com.f1.utils.IOH::openServerSocketWithReason: Started server socket for F1 Console (f1.console.port)  on port 1485 
+INF 20250728-03:50:32.358 EST5EDT [main] com.f1.console.impl.ConsoleManagerImpl::<init>: Console history file at: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\.console_history.txt 
+INF 20250728-03:50:32.412 EST5EDT [main] com.f1.console.impl.ConsoleServerImpl::<init>: Console Server listening on: 0.0.0.0/0.0.0.0:1485:1485 
+INF 20250728-03:50:36.178 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami REST Authenticator Plugin class: com.f1.ami.web.auth.AmiAuthenticatorFileBacked PluginID:FILE 
+WRN 20250728-03:50:36.180 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::logSecurityWarning: SECURITY-WARNING: NON-ENCRYPTED PASSWORDS STORED IN C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\access.txt  (See instructions for users.access.file.encrypt.mode option to force encryption) 
+INF 20250728-03:50:36.182 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami REST Authenticator Plugin class: com.f1.ami.web.auth.AmiAuthenticatorFileBacked 
+INF 20250728-03:50:36.184 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadAuthenticatorPlugin: PLUGIN MANAGER: CACHING SUCCESSFUL LOGINS TO Ami REST Authenticator Plugin FOR 10000 MILLIS 
+INF 20250728-03:50:36.189 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded rest plugins class: com.f1.ami.amicommon.rest.AmiRestPlugin_Version PluginID:REST_VERSION 
+INF 20250728-03:50:36.190 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized rest plugins class: com.f1.ami.amicommon.rest.AmiRestPlugin_Version 
+INF 20250728-03:50:36.192 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded rest plugins class: com.f1.ami.amicommon.rest.AmiRestPlugin_Whoami PluginID:REST_WHOAMI 
+INF 20250728-03:50:36.192 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized rest plugins class: com.f1.ami.amicommon.rest.AmiRestPlugin_Whoami 
+INF 20250728-03:50:36.194 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded rest plugins class: com.f1.ami.amicommon.rest.AmiRestPlugin_Whatsmyip PluginID:REST_WHATSMYIP 
+INF 20250728-03:50:36.194 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized rest plugins class: com.f1.ami.amicommon.rest.AmiRestPlugin_Whatsmyip 
+INF 20250728-03:50:36.198 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded rest plugins class: com.f1.ami.amicommon.rest.AmiRestPlugin_Stats PluginID:REST_STATS 
+INF 20250728-03:50:36.198 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized rest plugins class: com.f1.ami.amicommon.rest.AmiRestPlugin_Stats 
+INF 20250728-03:50:36.202 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded rest plugins class: com.f1.ami.center.AmiRestPlugin_Query PluginID:REST_QUERY 
+INF 20250728-03:50:36.202 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized rest plugins class: com.f1.ami.center.AmiRestPlugin_Query 
+INF 20250728-03:50:36.591 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::init: Threadpool operating in Aggressive mode. 8 default threads 
+INF 20250728-03:50:36.720 EST5EDT [main] com.f1.utils.LocaleFormatterManager::lockBundleTextFiles: Bundle Text Files:  
+INF 20250728-03:50:37.448 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::execute: Received runnable before started, queueing action. 
+INF 20250728-03:50:37.473 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Web Authenticator Plugin class: com.f1.ami.web.auth.AmiAuthenticatorFileBacked PluginID:FILE 
+WRN 20250728-03:50:37.473 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::logSecurityWarning: SECURITY-WARNING: NON-ENCRYPTED PASSWORDS STORED IN C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\access.txt  (See instructions for users.access.file.encrypt.mode option to force encryption) 
+INF 20250728-03:50:37.473 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Web Authenticator Plugin class: com.f1.ami.web.auth.AmiAuthenticatorFileBacked 
+INF 20250728-03:50:37.581 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Web Panel Plugin class: com.f1.ami.plugins.mapbox.AmiWebMapboxPlugin PluginID:mapbox 
+INF 20250728-03:50:37.582 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Web Panel Plugin class: com.f1.ami.plugins.mapbox.AmiWebMapboxPlugin 
+WRN 20250728-03:50:37.588 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::logSecurityWarning: SECURITY-WARNING: AES-STRENGTH BELOW 256  (Set ami.aes.key.strength=256 to resolve this) 
+INF 20250728-03:50:37.589 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::initCertificate: Reading key file for encrypting/decrypting: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\amikey.aes 
+WRN 20250728-03:50:37.702 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::logSecurityWarning: SECURITY-WARNING: AMI WEB has been configured with an overly permissive CORS policy of '*', it is recommended to update the property `ami.web.permitted.cors.origins` to a list of permitted origins delimited by `|`: origin|origin2... 
+INF 20250728-03:50:37.729 EST5EDT [main] com.f1.ami.web.AmiWebFontsManager::<init>: Testing Graphics... 
+INF 20250728-03:50:37.790 EST5EDT [main] com.f1.ami.web.AmiWebFontsManager::<init>: Graphics Succesfully loaded. 
+INF 20250728-03:50:37.803 EST5EDT [main] com.f1.utils.IOH::openServerSocketWithReason: Started server socket for Http Server on port 14332 
+INF 20250728-03:50:37.840 EST5EDT [main] com.f1.ami.amicommon.centerclient.AmiCenterClientState::initPersisted: localhost:1470 (seqnum=-1) Precaching: {} 
+INF 20250728-03:50:37.840 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@ Verified 80 ConstainerScope objects 
+INF 20250728-03:50:37.840 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@ Container Starting dispatching sequence 
+INF 20250728-03:50:37.840 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::startDispatching: Dispatching 1 event(s) 
+INF 20250728-03:50:37.842 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::startDispatching: Dispatching 0 runnables(s) 
+INF 20250728-03:50:37.843 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:37.843 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:37.843 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@ 3FORGE STARTUP SEQUENCE COMPLETE FOR CONTAINER: AmiWeb 
+INF 20250728-03:50:37.843 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:37.843 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:37.912 EST5EDT [F1POOL-00] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onUserSnapshotRequest: localhost:1470 (seqnum=-1) User !!AMI_WEB!! requested: [__RELAY, __TABLE, __CONNECTION, __COLUMN, __INDEX, __REPLICATION, __PLUGIN, __TRIGGER, __TIMER, __PROPERTY, __COMMAND, __DATASOURCE, __CENTER, DBO, __DATASOURCE_TYPE, __RESOURCE, __STATS, __PROCEDURE] of which [__RELAY, __TABLE, __CONNECTION, __COLUMN, __INDEX, __REPLICATION, __PLUGIN, __TRIGGER, __TIMER, __PROPERTY, __COMMAND, __DATASOURCE, __CENTER, DBO, __DATASOURCE_TYPE, __RESOURCE, __STATS, __PROCEDURE] will be requested from the Ami Center 
+INF 20250728-03:50:38.307 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::init: Threadpool operating in Aggressive mode. 8 default threads 
+INF 20250728-03:50:38.926 EST5EDT [main] com.f1.utils.ids.FileBackedLongSequenceIdGenerator::<init>: Using id generating file located at:C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\idfountain\EYE 
+INF 20250728-03:50:38.949 EST5EDT [main] com.f1.msgdirect.MsgDirectServerSocket::<init>: MSGDIRECT_SERVER_LISTENING: 1470 
+INF 20250728-03:50:39.149 EST5EDT [main] com.f1.ami.center.table.AmiImdbScriptManager::<init>: Disabling function: strDecrypt 
+INF 20250728-03:50:39.352 EST5EDT [MSGDIRECT_RECN-001] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1470--web.to.center--client,plain,write] 
+INF 20250728-03:50:39.886 EST5EDT [main] CONTAINERSCOPE_PREINIT::init: Concurrent queries to imdb enabled 
+INF 20250728-03:50:39.892 EST5EDT [main] CONTAINERSCOPE_PREINIT::init: Min Period for checking: 500 
+INF 20250728-03:50:39.893 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::execute: Received runnable before started, queueing action. 
+INF 20250728-03:50:39.969 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.mysql.AmiMysqlDatasourcePlugin PluginID:MYSQL 
+INF 20250728-03:50:39.969 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.mysql.AmiMysqlDatasourcePlugin 
+INF 20250728-03:50:39.976 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiKxDatasourcePlugin PluginID:KDB 
+INF 20250728-03:50:39.976 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiKxDatasourcePlugin 
+INF 20250728-03:50:39.982 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiFlatFileDatasourcePlugin PluginID:FLAT_FILE 
+INF 20250728-03:50:39.982 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiFlatFileDatasourcePlugin 
+INF 20250728-03:50:39.987 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiShellDatasourcePlugin PluginID:SHELL 
+INF 20250728-03:50:39.987 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiShellDatasourcePlugin 
+INF 20250728-03:50:39.992 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiAmiDbDatasourcePlugin PluginID:AMIDB 
+INF 20250728-03:50:39.992 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiAmiDbDatasourcePlugin 
+INF 20250728-03:50:39.997 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiGenericJdbcDatasourcePlugin PluginID:GENERIC_JDBC 
+INF 20250728-03:50:39.998 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiGenericJdbcDatasourcePlugin 
+INF 20250728-03:50:40.003 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.postgresql.AmiPostgresqlDatasourcePlugin PluginID:POSTGRES 
+INF 20250728-03:50:40.003 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.postgresql.AmiPostgresqlDatasourcePlugin 
+INF 20250728-03:50:40.009 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.oracle.AmiOracleDatasourcePlugin PluginID:ORACLE 
+INF 20250728-03:50:40.009 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.oracle.AmiOracleDatasourcePlugin 
+INF 20250728-03:50:40.017 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.excel.AmiExcelDatasourcePlugin PluginID:MSEXCEL 
+INF 20250728-03:50:40.017 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.excel.AmiExcelDatasourcePlugin 
+INF 20250728-03:50:40.022 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.db2.AmiDb2DatasourcePlugin PluginID:IBMDB2 
+INF 20250728-03:50:40.022 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.db2.AmiDb2DatasourcePlugin 
+INF 20250728-03:50:40.029 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.ssh.AmiSshDatasourcePlugin PluginID:SSH 
+INF 20250728-03:50:40.029 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.ssh.AmiSshDatasourcePlugin 
+INF 20250728-03:50:40.030 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.ssh.AmiSftpDatasourcePlugin PluginID:SFTP 
+INF 20250728-03:50:40.030 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.ssh.AmiSftpDatasourcePlugin 
+INF 20250728-03:50:40.033 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiQuandlDatasourcePlugin PluginID:QUANDL 
+INF 20250728-03:50:40.033 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiQuandlDatasourcePlugin 
+INF 20250728-03:50:40.035 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiFredDatasourcePlugin PluginID:FRED 
+INF 20250728-03:50:40.035 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiFredDatasourcePlugin 
+INF 20250728-03:50:40.041 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiOneTickDatasourcePlugin PluginID:ONETICK 
+INF 20250728-03:50:40.041 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiOneTickDatasourcePlugin 
+INF 20250728-03:50:40.049 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.restapi.AmiRestAPIDatasourcePlugin PluginID:RESTAPI 
+INF 20250728-03:50:40.049 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.restapi.AmiRestAPIDatasourcePlugin 
+INF 20250728-03:50:40.054 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.sqlite.AmiSqLiteDatasourcePlugin PluginID:SQLITE 
+INF 20250728-03:50:40.054 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.sqlite.AmiSqLiteDatasourcePlugin 
+INF 20250728-03:50:40.060 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Trigger Plugin class: com.f1.ami.center.triggers.AmiTriggerFactory_Debug PluginID:DEBUG 
+INF 20250728-03:50:40.060 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Trigger Plugin class: com.f1.ami.center.triggers.AmiTriggerFactory_Debug 
+INF 20250728-03:50:40.063 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Timer Plugin class: com.f1.ami.center.timers.AmiTimerFactory_Debug PluginID:DEBUG 
+INF 20250728-03:50:40.063 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Timer Plugin class: com.f1.ami.center.timers.AmiTimerFactory_Debug 
+INF 20250728-03:50:40.065 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Procedure Plugin class: com.f1.ami.center.procs.AmiStoredProcFactory_Debug PluginID:DEBUG 
+INF 20250728-03:50:40.065 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Procedure Plugin class: com.f1.ami.center.procs.AmiStoredProcFactory_Debug 
+INF 20250728-03:50:40.252 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Db Authenticator Plugin class: com.f1.ami.web.auth.AmiAuthenticatorFileBacked PluginID:FILE 
+WRN 20250728-03:50:40.253 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::logSecurityWarning: SECURITY-WARNING: NON-ENCRYPTED PASSWORDS STORED IN C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\access.txt  (See instructions for users.access.file.encrypt.mode option to force encryption) 
+INF 20250728-03:50:40.253 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Db Authenticator Plugin class: com.f1.ami.web.auth.AmiAuthenticatorFileBacked 
+INF 20250728-03:50:40.254 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Jdbc Authenticator Plugin class: com.f1.ami.web.auth.AmiAuthenticatorFileBacked PluginID:FILE 
+WRN 20250728-03:50:40.254 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::logSecurityWarning: SECURITY-WARNING: NON-ENCRYPTED PASSWORDS STORED IN C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\access.txt  (See instructions for users.access.file.encrypt.mode option to force encryption) 
+INF 20250728-03:50:40.254 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Jdbc Authenticator Plugin class: com.f1.ami.web.auth.AmiAuthenticatorFileBacked 
+WRN 20250728-03:50:40.254 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::logSecurityWarning: SECURITY-WARNING: AES-STRENGTH BELOW 256  (Set ami.aes.key.strength=256 to resolve this) 
+INF 20250728-03:50:40.255 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::initCertificate: Reading key file for encrypting/decrypting: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\amikey.aes 
+INF 20250728-03:50:40.263 EST5EDT [main] com.f1.ami.center.table.AmiImdbScriptManager::executedSqlFile: Processing Schema script: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\config\preschema.amisql (missing) 
+INF 20250728-03:50:40.266 EST5EDT [main] com.f1.ami.center.table.AmiImdbScriptManager::executedSqlFile: Processing Schema script: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\managed_schema.amisql (cksum  2331238674 3639) 
+INF 20250728-03:50:40.319 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE METHOD {boolean method1(){return true; };boolean method10(){return true; };boolean method11(){return true; };boolean method110(){return true; };boolean method111(){return true; };boolean method1110(){return true; };boolean method1111(){return true && method1110(); };boolean method1112(){return true && method1111(); };boolean method112(){return true; };boolean method2(){return true; }; } 
+INF 20250728-03:50:40.336 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onEnd: MANAGED_FILE::END_QUERY 
+INF 20250728-03:50:40.340 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PUBLIC TABLE abc(`20_day` Integer,`30_day` Integer)  USE RefreshPeriodMs="100",OnUndefColumn="REJECT",InitialCapacity="100" 
+INF 20250728-03:50:40.341 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PUBLIC TABLE abcd(`20_day` Integer,`30_day` Integer)  USE RefreshPeriodMs="100",OnUndefColumn="REJECT",InitialCapacity="100" 
+INF 20250728-03:50:40.341 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PUBLIC TABLE acc(group String,id String)  USE RefreshPeriodMs="100",OnUndefColumn="REJECT",InitialCapacity="100" 
+INF 20250728-03:50:40.341 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PUBLIC TABLE accInfo(id String,val Integer)  USE RefreshPeriodMs="100",OnUndefColumn="REJECT",InitialCapacity="100" 
+INF 20250728-03:50:40.342 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PUBLIC TABLE Accounts(account String,region String,qty Integer,px Double)  USE RefreshPeriodMs="100",OnUndefColumn="REJECT",InitialCapacity="100" 
+INF 20250728-03:50:40.343 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PUBLIC TABLE MktData(Date Long,Symbol String,Price Double)  USE RefreshPeriodMs="100",OnUndefColumn="REJECT",InitialCapacity="100" 
+INF 20250728-03:50:40.344 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE TRIGGER myAmiscriptTrigger  OFTYPE AMISCRIPT  ON MktData PRIORITY 0    USE onInsertedScript="logWarn(123)" 
+INF 20250728-03:50:40.350 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onEnd: MANAGED_FILE::END_QUERY 
+INF 20250728-03:50:40.350 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PUBLIC TABLE MyTable(c1 Integer,c2 Short,c3 Long,c4 Double,c5 Character,c6 Boolean,c7 String)  USE PersistEngine="FAST",persist_encrypter="default",RefreshPeriodMs="100",OnUndefColumn="REJECT",InitialCapacity="100" 
+INF 20250728-03:50:40.357 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PUBLIC TABLE PortfolioMonitoringJoined(bundle String,instrument_id String,trading_strategy String,business_strategy String,pm String,custom_1 String,custom_2 String,custom_3 String,quantity Double,USD_pv Double,security String,instrument String)  USE PersistEngine="FAST",RefreshPeriodMs="100",OnUndefColumn="REJECT",InitialCapacity="100" 
+INF 20250728-03:50:40.358 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PUBLIC TABLE Summary(act String,region String,cnt Integer,value Double)  USE RefreshPeriodMs="100",OnUndefColumn="REJECT",InitialCapacity="100" 
+INF 20250728-03:50:40.358 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PUBLIC TABLE tree(Region String,Country String,City String,Quantity Long)  USE PersistEngine="FAST",RefreshPeriodMs="100",OnUndefColumn="REJECT",InitialCapacity="100" 
+INF 20250728-03:50:40.358 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PROCEDURE testProc1  OFTYPE AMISCRIPT    USE script="
+int i = use ds=\"AMI\" EXECUTE SELECT 1;
+",arguments="" 
+INF 20250728-03:50:40.360 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onEnd: MANAGED_FILE::END_QUERY 
+INF 20250728-03:50:40.360 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PROCEDURE testProc2  OFTYPE AMISCRIPT    USE script="
+int i = SELECT 1;
+",arguments="" 
+INF 20250728-03:50:40.360 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onEnd: MANAGED_FILE::END_QUERY 
+INF 20250728-03:50:40.360 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE PROCEDURE updatePortfolioProcedure  OFTYPE AMISCRIPT    USE script="
+Table t = SELECT * FROM PortfolioMonitoringJoined;
+for (row r : t) {
+if (rand() < 0.3) {
+UPDATE PortfolioMonitoringJoined SET quantity = (int)(rand() * 100) * 1000 WHERE instrument_id == \"${r.get(\"instrument_id\")}\";
+}
+if (rand() < 0.3) {
+UPDATE PortfolioMonitoringJoined SET USD_pv = (int)(rand() * 100) * 1000 WHERE instrument_id == \"${r.get(\"instrument_id\")}\";
+}
+}
+",arguments="" 
+INF 20250728-03:50:40.361 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onEnd: MANAGED_FILE::END_QUERY 
+INF 20250728-03:50:40.361 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onStart: MANAGED_FILE::START_QUERY CREATE TRIGGER MyTrigger  OFTYPE AGGREGATE  ON Accounts,Summary PRIORITY 0    USE selects="cnt=count(*),value=sum(qty*px)",groupBys="act=account,region=region" 
+INF 20250728-03:50:40.383 EST5EDT [main] com.f1.ami.center.AmiCenterSqlPlanListener::onEnd: MANAGED_FILE::END_QUERY 
+INF 20250728-03:50:40.383 EST5EDT [main] com.f1.ami.center.table.AmiImdbScriptManager::executedSqlFile: Processing Schema script: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\config.amisql (missing) 
+INF 20250728-03:50:40.384 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startServices: Starting AmiServices, step STEP1_IMDB_INITIALIZED 
+INF 20250728-03:50:40.384 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTables 
+INF 20250728-03:50:40.384 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __CENTER 
+INF 20250728-03:50:40.384 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Text::init: For table __CENTER, Using TEXT based persister at C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\__CENTER.dat 
+INF 20250728-03:50:40.385 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Loading table: __CENTER 
+INF 20250728-03:50:40.392 EST5EDT [main] com.f1.ami.center.AmiSysCommandsUtils::readObjectsFromDisk: Restoring Table '__CENTER' from file: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\__CENTER.dat 
+INF 20250728-03:50:40.394 EST5EDT [main] com.f1.utils.ids.FileBackedLongSequenceIdGenerator::<init>: Using id generating file located at:C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\idfountain\CENTER 
+INF 20250728-03:50:40.402 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::execute: Received runnable before started, queueing action. 
+INF 20250728-03:50:40.402 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Done loading table: __CENTER needs compacting=false 
+INF 20250728-03:50:40.402 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __COLUMN 
+INF 20250728-03:50:40.402 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __COMMAND 
+INF 20250728-03:50:40.402 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __CONNECTION 
+INF 20250728-03:50:40.402 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __DATASOURCE 
+INF 20250728-03:50:40.403 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Text::init: For table __DATASOURCE, Using TEXT based persister at C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\__DATASOURCE.dat 
+INF 20250728-03:50:40.404 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Loading table: __DATASOURCE 
+INF 20250728-03:50:40.405 EST5EDT [main] com.f1.ami.center.AmiSysCommandsUtils::readObjectsFromDisk: Restoring Table '__DATASOURCE' from file: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\__DATASOURCE.dat 
+INF 20250728-03:50:40.424 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Done loading table: __DATASOURCE needs compacting=false 
+INF 20250728-03:50:40.424 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __DATASOURCE_TYPE 
+INF 20250728-03:50:40.424 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __DBO 
+INF 20250728-03:50:40.424 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __INDEX 
+INF 20250728-03:50:40.424 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __PLUGIN 
+INF 20250728-03:50:40.424 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __PROCEDURE 
+INF 20250728-03:50:40.425 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __PROPERTY 
+INF 20250728-03:50:40.425 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __RELAY 
+INF 20250728-03:50:40.425 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __REPLICATION 
+INF 20250728-03:50:40.425 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Text::init: For table __REPLICATION, Using TEXT based persister at C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\__REPLICATION.dat 
+INF 20250728-03:50:40.426 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Loading table: __REPLICATION 
+INF 20250728-03:50:40.427 EST5EDT [main] com.f1.ami.center.AmiSysCommandsUtils::readObjectsFromDisk: Restoring Table '__REPLICATION' from file: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\__REPLICATION.dat 
+INF 20250728-03:50:40.427 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Done loading table: __REPLICATION needs compacting=false 
+INF 20250728-03:50:40.427 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __RESOURCE 
+INF 20250728-03:50:40.427 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __STATS 
+INF 20250728-03:50:40.427 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __TABLE 
+INF 20250728-03:50:40.428 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __TIMER 
+INF 20250728-03:50:40.428 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: __TRIGGER 
+INF 20250728-03:50:40.428 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: abc 
+INF 20250728-03:50:40.428 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: abcd 
+INF 20250728-03:50:40.428 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: acc 
+INF 20250728-03:50:40.428 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: accInfo 
+INF 20250728-03:50:40.428 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: Accounts 
+INF 20250728-03:50:40.428 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: MktData 
+INF 20250728-03:50:40.428 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: MyTable 
+INF 20250728-03:50:40.428 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Loading table: MyTable 
+INF 20250728-03:50:40.429 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Fast::loadTableFromPersist: Restoring Table from file: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\MyTable.sfast 
+INF 20250728-03:50:40.431 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::execute: Received runnable before started, queueing action. 
+INF 20250728-03:50:40.431 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Fast::loadTableFromPersist: Processed 4 instructions from 2 blocks for 'MyTable' (Complete) 
+INF 20250728-03:50:40.431 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Fast::loadTableFromPersist: Restored 1 row(s) to 'MyTable' from file in 3 milliseconds: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\MyTable.sfast 
+INF 20250728-03:50:40.432 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Done loading table: MyTable needs compacting=false 
+INF 20250728-03:50:40.432 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: PortfolioMonitoringJoined 
+INF 20250728-03:50:40.432 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Loading table: PortfolioMonitoringJoined 
+INF 20250728-03:50:40.433 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Fast::loadTableFromPersist: Restoring Table from file: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\PortfolioMonitoringJoined.fast 
+INF 20250728-03:50:40.434 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Fast::loadTableFromPersist: Processed 11 instructions from 1 blocks for 'PortfolioMonitoringJoined' (Complete) 
+INF 20250728-03:50:40.434 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Fast::loadTableFromPersist: Restored 9 row(s) to 'PortfolioMonitoringJoined' from file in 2 milliseconds: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\PortfolioMonitoringJoined.fast 
+INF 20250728-03:50:40.434 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Done loading table: PortfolioMonitoringJoined needs compacting=false 
+INF 20250728-03:50:40.434 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: Summary 
+INF 20250728-03:50:40.435 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTable: tree 
+INF 20250728-03:50:40.435 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Loading table: tree 
+INF 20250728-03:50:40.435 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Fast::loadTableFromPersist: Restoring Table from file: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\tree.fast 
+INF 20250728-03:50:40.436 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Fast::loadTableFromPersist: Processed 3 instructions from 1 blocks for 'tree' (Complete) 
+INF 20250728-03:50:40.436 EST5EDT [main] com.f1.ami.center.table.persist.AmiTablePersister_Fast::loadTableFromPersist: Restored 1 row(s) to 'tree' from file in 1 milliseconds: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\persist\tree.fast 
+INF 20250728-03:50:40.436 EST5EDT [main] com.f1.ami.center.table.AmiTableImpl::startup: Done loading table: tree needs compacting=false 
+INF 20250728-03:50:40.436 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startServices: Starting AmiServices, step STEP2_TABLES_INITIALIZED 
+INF 20250728-03:50:40.436 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiProcedures 
+INF 20250728-03:50:40.436 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __ADD_CENTER (com.f1.ami.center.sysschema.AmiSchemaProc_ADD_CENTER) 
+INF 20250728-03:50:40.437 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __ADD_DATASOURCE (com.f1.ami.center.sysschema.AmiSchemaProc_ADD_DATASOURCE) 
+INF 20250728-03:50:40.437 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __ADD_REPLICATION (com.f1.ami.center.sysschema.AmiSchemaProc_ADD_REPLICATION) 
+INF 20250728-03:50:40.437 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __GET_TIMEZONE (com.f1.ami.center.sysschema.AmiSchemaProc_GET_TIMEZONE) 
+INF 20250728-03:50:40.437 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __MARK_HISTORICAL_PARTITION_FOR_APPEND (com.f1.ami.center.sysschema.AmiSchemaProc_MARK_HISTORICAL_PARTITION_FOR_APPEND) 
+INF 20250728-03:50:40.438 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __OPTIMIZE_HISTORICAL_TABLE (com.f1.ami.center.sysschema.AmiSchemaProc_OPTIMIZE_HISTORICAL_TABLE) 
+INF 20250728-03:50:40.438 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __REMOVE_CENTER (com.f1.ami.center.sysschema.AmiSchemaProc_REMOVE_CENTER) 
+INF 20250728-03:50:40.438 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __REMOVE_DATASOURCE (com.f1.ami.center.sysschema.AmiSchemaProc_REMOVE_DATASOURCE) 
+INF 20250728-03:50:40.438 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __REMOVE_REPLICATION (com.f1.ami.center.sysschema.AmiSchemaProc_REMOVE_REPLICATION) 
+INF 20250728-03:50:40.438 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __RESET_TIMER_STATS (com.f1.ami.center.sysschema.AmiSchemaProc_RESET_TIMER_STATS) 
+INF 20250728-03:50:40.438 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __RESET_TRIGGER_STATS (com.f1.ami.center.sysschema.AmiSchemaProc_RESET_TRIGGER_STATS) 
+INF 20250728-03:50:40.438 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __SCHEDULE_TIMER (com.f1.ami.center.sysschema.AmiSchemaProc_SCHEDULE_TIMER) 
+INF 20250728-03:50:40.438 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __SET_TIMEZONE (com.f1.ami.center.sysschema.AmiSchemaProc_SET_TIMEZONE) 
+INF 20250728-03:50:40.438 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __SHOW_TIMER_ERROR (com.f1.ami.center.sysschema.AmiSchemaProc_SHOW_TIMER_ERROR) 
+INF 20250728-03:50:40.438 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: __SHOW_TRIGGER_ERROR (com.f1.ami.center.sysschema.AmiSchemaProc_SHOW_TRIGGER_ERROR) 
+INF 20250728-03:50:40.438 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: testProc1 (com.f1.ami.center.procs.AmiStoredProc_AmiScript) 
+INF 20250728-03:50:40.494 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: testProc2 (com.f1.ami.center.procs.AmiStoredProc_AmiScript) 
+INF 20250728-03:50:40.502 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiStoredProc: updatePortfolioProcedure (com.f1.ami.center.procs.AmiStoredProc_AmiScript) 
+INF 20250728-03:50:40.583 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startServices: Starting AmiServices, step STEP3_TRIGGERS_INITIALIZED 
+INF 20250728-03:50:40.583 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTriggers 
+INF 20250728-03:50:40.584 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTrigger on MktData: myAmiscriptTrigger (com.f1.ami.center.triggers.AmiTrigger_AmiScript) 
+INF 20250728-03:50:40.590 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTrigger on Accounts,Summary: MyTrigger (com.f1.ami.center.triggers.agg.AmiTrigger_Aggregate) 
+INF 20250728-03:50:40.618 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startServices: Starting AmiServices, step STEP4_PROCEDURES_INITIALIZED 
+INF 20250728-03:50:40.618 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiTimers 
+INF 20250728-03:50:40.618 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startServices: Starting AmiServices, step STEP5_DBOS_INITIALIZED 
+INF 20250728-03:50:40.618 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startupAmiSchema: Starting AmiDbos 
+INF 20250728-03:50:40.642 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::execute: Received runnable before started, queueing action. 
+INF 20250728-03:50:40.645 EST5EDT [main] com.f1.ami.center.sysschema.AmiSchema::writeManagedSchemaFile: Updated C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\managed_schema.amisql 
+INF 20250728-03:50:40.727 EST5EDT [main] com.f1.ami.center.triggers.agg.AmiTrigger_Aggregate::rebuildTargetTable: Rebuilt AGGREGATE trigger 'MyTrigger' in 4467 micros 
+INF 20250728-03:50:40.728 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startServices: Starting AmiServices, step STEP6_TRIGGERS_FIRED 
+INF 20250728-03:50:40.728 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::fireTriggers: Calling onInserted(...) on AmiTriggers from persisted data 
+INF 20250728-03:50:40.728 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::fireTriggers: Starting AmiTrigger on MktData: myAmiscriptTrigger (com.f1.ami.center.triggers.AmiTrigger_AmiScript) 
+INF 20250728-03:50:40.728 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::fireTriggers: Starting AmiTrigger on Accounts,Summary: MyTrigger (com.f1.ami.center.triggers.agg.AmiTrigger_Aggregate) 
+INF 20250728-03:50:40.728 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::startServices: Starting AmiServices, step STEP7_TIMERS_INITIALIZED 
+INF 20250728-03:50:40.728 EST5EDT [main] com.f1.ami.center.table.AmiImdbObjectsManager::fireTriggers: Imdb Startup Complete 
+INF 20250728-03:50:40.743 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded DB Dialect Plugin class: com.f1.ami.center.dialects.AmiDbDialectPlugin_Tableau PluginID:TABLEAU 
+INF 20250728-03:50:40.743 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized DB Dialect Plugin class: com.f1.ami.center.dialects.AmiDbDialectPlugin_Tableau 
+INF 20250728-03:50:40.744 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded DB Dialect Plugin class: com.f1.ami.center.dialects.AmiDbDialectPlugin_Hibernate PluginID:HIBERNATE 
+INF 20250728-03:50:40.744 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized DB Dialect Plugin class: com.f1.ami.center.dialects.AmiDbDialectPlugin_Hibernate 
+INF 20250728-03:50:40.751 EST5EDT [main] com.f1.utils.IOH::openServerSocketWithReason: Started server socket for AMI JDBC on port 1480 
+INF 20250728-03:50:40.755 EST5EDT [main] com.f1.ami.center.console.AmiCenterConsole::<init>: History File: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\history\ami_console.history 
+INF 20250728-03:50:40.761 EST5EDT [main] com.f1.utils.IOH::openServerSocketWithReason: Started server socket for AMI Command Line Interface on port 1490 
+INF 20250728-03:50:40.768 EST5EDT [main] com.f1.ami.amicommon.centerclient.AmiCenterClientState::initPersisted: Center1 (seqnum=-1) Precaching: {} 
+INF 20250728-03:50:40.770 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@ Verified 255 ConstainerScope objects 
+INF 20250728-03:50:40.770 EST5EDT [MSGDIRECT_RECN-004] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1370--web.to.center--client,plain,write] 
+INF 20250728-03:50:40.770 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@ Container Starting dispatching sequence 
+INF 20250728-03:50:40.770 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::startDispatching: Dispatching 4 event(s) 
+INF 20250728-03:50:40.770 EST5EDT [main] com.f1.utils.LocaleFormatterManager::lockBundleTextFiles: Bundle Text Files:  
+INF 20250728-03:50:40.771 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::startDispatching: Dispatching 0 runnables(s) 
+INF 20250728-03:50:40.771 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:40.771 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onUserSnapshotRequest: Center1 (seqnum=-1) User !!AMICENTER!! requested: [__TABLE, __COLUMN, __INDEX] of which [__TABLE, __COLUMN, __INDEX] will be requested from the Ami Center 
+INF 20250728-03:50:40.772 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:40.772 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@ 3FORGE STARTUP SEQUENCE COMPLETE FOR CONTAINER: AmiCenter 
+INF 20250728-03:50:40.772 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:40.772 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:40.772 EST5EDT [MSGDIRECT_RECN-004] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1370--center.to.web--client,plain,read] 
+INF 20250728-03:50:40.774 EST5EDT [MSGDIRECT_RECN-004] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1370--center.to.web$F1-vP6SMdMlMJjmwPlgFXLaN3--client,plain,read] 
+INF 20250728-03:50:40.777 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onAmiCenterConnect: Center1 (seqnum=-1) Ami Center Connect 
+INF 20250728-03:50:40.780 EST5EDT [MSGDIRECT_PROC-008] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:55045---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-03:50:40.780 EST5EDT [MSGDIRECT_PROC-009] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:55049---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-03:50:40.781 EST5EDT [MSGDIRECT_PROC-008] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:55045---1--web.to.center--server,plain,read] 
+INF 20250728-03:50:40.781 EST5EDT [MSGDIRECT_PROC-009] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:55049---1--web.to.center--server,plain,read] 
+INF 20250728-03:50:40.781 EST5EDT [MSGDIRECT_RECN-001] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1470--center.to.web--client,plain,read] 
+INF 20250728-03:50:40.782 EST5EDT [MSGDIRECT_PROC-011] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:55055---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-03:50:40.783 EST5EDT [MSGDIRECT_PROC-011] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:55055---1--center.to.web--server,plain,write] 
+INF 20250728-03:50:40.783 EST5EDT [MSGDIRECT_PROC-012] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:55054---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-03:50:40.784 EST5EDT [MSGDIRECT_PROC-012] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:55054---1--center.to.web--server,plain,write] 
+INF 20250728-03:50:40.784 EST5EDT [MSGDIRECT_PROC-014] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:55056---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-03:50:40.784 EST5EDT [MSGDIRECT_RECN-001] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1470--center.to.web$F1-vP6SMdMlMJjmwPlgFXLaN3--client,plain,read] 
+INF 20250728-03:50:40.785 EST5EDT [MSGDIRECT_PROC-014] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:55056---1--center.to.web$F1-NJprxo0nUUe53RvRIZuqso--server,plain,write] 
+INF 20250728-03:50:40.786 EST5EDT [MSGDIRECT_PROC-015] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:55057---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-03:50:40.788 EST5EDT [MSGDIRECT_PROC-015] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:55057---1--center.to.web$F1-vP6SMdMlMJjmwPlgFXLaN3--server,plain,write] 
+INF 20250728-03:50:40.788 EST5EDT [F1POOL-00] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onAmiCenterConnect: localhost:1470 (seqnum=-1) Ami Center Connect 
+INF 20250728-03:50:40.812 EST5EDT [F1POOL-00] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Received Snapshot Request From: !!AMICENTER!! for: [__TABLE, __COLUMN, __INDEX] 
+INF 20250728-03:50:40.816 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: Center1 (seqnum=-1) Center responded with final snapshot, seqnum=60, messages=0, types=__TABLE,__COLUMN,__INDEX 
+INF 20250728-03:50:40.817 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__TABLE] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.817 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__COLUMN] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.817 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__INDEX] Finished snapshot, deltas skipped=0, deltas applied=0 
+WRN 20250728-03:50:40.817 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: Center1 (seqnum=-1) Received other snapshot response before primary snapshot response 
+INF 20250728-03:50:40.833 EST5EDT [F1POOL-00] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Returning Snapshot to: !!AMICENTER!! at seqnum 1. AmiDb Counts: 0 
+INF 20250728-03:50:40.833 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: Center1 (seqnum=-1) Center responded with intermediate snapshot, seqnum=60, messages=0, types=__TABLE,__COLUMN,__INDEX 
+INF 20250728-03:50:40.835 EST5EDT [F1POOL-00] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Received Snapshot Request From: !!AMI_WEB!! for: [__RELAY, __TABLE, __CONNECTION, __COLUMN, __INDEX, __REPLICATION, __PLUGIN, __TRIGGER, __TIMER, __PROPERTY, __COMMAND, __DATASOURCE, __CENTER, DBO, __DATASOURCE_TYPE, __RESOURCE, __STATS, __PROCEDURE] 
+INF 20250728-03:50:40.839 EST5EDT [F1POOL-00] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Returning Snapshot to: !!AMI_WEB!! at seqnum 1. AmiDb Counts: 3 
+INF 20250728-03:50:40.868 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: Center1 (seqnum=-1) Center responded with final snapshot, seqnum=60, messages=3963, types=__TABLE,__COLUMN,__INDEX 
+WRN 20250728-03:50:40.871 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__TABLE] Invalid state, received snapshot seqnum: 60 
+WRN 20250728-03:50:40.871 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__COLUMN] Invalid state, received snapshot seqnum: 60 
+WRN 20250728-03:50:40.871 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__INDEX] Invalid state, received snapshot seqnum: 60 
+INF 20250728-03:50:40.872 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: Center1 (seqnum=-1) Received final primary snapshot response, marking cache as snapshot processed, setting seqnum=60 
+INF 20250728-03:50:40.873 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: localhost:1470 (seqnum=-1) Center responded with intermediate snapshot, seqnum=1, messages=0, types=__RELAY,__TABLE,__CONNECTION,__COLUMN,__INDEX,__REPLICATION,__PLUGIN,__TRIGGER,__TIMER,__PROPERTY,__COMMAND,__DATASOURCE,__CENTER,DBO,__DATASOURCE_TYPE,__RESOURCE,__STATS,__PROCEDURE 
+INF 20250728-03:50:40.873 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: localhost:1470 (seqnum=-1) Center responded with final snapshot, seqnum=1, messages=3, types=__RELAY,__TABLE,__CONNECTION,__COLUMN,__INDEX,__REPLICATION,__PLUGIN,__TRIGGER,__TIMER,__PROPERTY,__COMMAND,__DATASOURCE,__CENTER,DBO,__DATASOURCE_TYPE,__RESOURCE,__STATS,__PROCEDURE 
+INF 20250728-03:50:40.881 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__RELAY] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.881 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__TABLE] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.881 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__CONNECTION] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.881 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__COLUMN] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.881 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__INDEX] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.881 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__REPLICATION] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.881 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__PLUGIN] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.881 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__TRIGGER] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.881 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__TIMER] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.881 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__PROPERTY] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.881 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__COMMAND] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.882 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__DATASOURCE] Finished snapshot, deltas skipped=2, deltas applied=0 
+INF 20250728-03:50:40.882 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__CENTER] Finished snapshot, deltas skipped=1, deltas applied=0 
+INF 20250728-03:50:40.882 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [DBO] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.882 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__DATASOURCE_TYPE] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.882 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__RESOURCE] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.882 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__STATS] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.882 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: localhost:1470 (seqnum=-1) [__PROCEDURE] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-03:50:40.882 EST5EDT [F1POOL-01] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: localhost:1470 (seqnum=-1) Received final primary snapshot response, marking cache as snapshot processed, setting seqnum=1 
+INF 20250728-03:50:41.116 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::init: Threadpool operating in Aggressive mode. 8 default threads 
+INF 20250728-03:50:41.153 EST5EDT [main] com.f1.ami.relay.AmiRelayJournal::<init>: Guaranteed Messaging Disabled 
+INF 20250728-03:50:41.206 EST5EDT [main] com.f1.ami.relay.AmiRelayTransformManager::parseTransforms: Parsing Transform Table from: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\relay.transforms 
+INF 20250728-03:50:41.209 EST5EDT [main] com.f1.ami.relay.AmiRelayRoutes::parse: Parsing Relay Route Table from: C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\relay.routes 
+INF 20250728-03:50:41.221 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Relay Command Plugin class: com.f1.ami.relay.plugins.AmiRelayInvokablePlugin_LoadFile PluginID:LoadFile 
+INF 20250728-03:50:41.221 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Relay Command Plugin class: com.f1.ami.relay.plugins.AmiRelayInvokablePlugin_LoadFile 
+INF 20250728-03:50:41.228 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Relay Command Plugin class: com.f1.ami.relay.plugins.AmiRelayInvokablePlugin_Replay PluginID:Replay 
+INF 20250728-03:50:41.228 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Relay Command Plugin class: com.f1.ami.relay.plugins.AmiRelayInvokablePlugin_Replay 
+INF 20250728-03:50:41.233 EST5EDT [main] com.f1.ami.relay.AmiRelayServer::initFH: Initializing fh - com.f1.ami.relay.fh.AmiServerSocketFH@72de5a2c 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.relay.AmiRelayServer::initAndStartFH: Started fh com.f1.ami.relay.fh.AmiServerSocketFH@72de5a2c successfully 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.mysql.AmiMysqlDatasourcePlugin PluginID:MYSQL 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.mysql.AmiMysqlDatasourcePlugin 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiKxDatasourcePlugin PluginID:KDB 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiKxDatasourcePlugin 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiFlatFileDatasourcePlugin PluginID:FLAT_FILE 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiFlatFileDatasourcePlugin 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiShellDatasourcePlugin PluginID:SHELL 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiShellDatasourcePlugin 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiAmiDbDatasourcePlugin PluginID:AMIDB 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiAmiDbDatasourcePlugin 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiGenericJdbcDatasourcePlugin PluginID:GENERIC_JDBC 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiGenericJdbcDatasourcePlugin 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.postgresql.AmiPostgresqlDatasourcePlugin PluginID:POSTGRES 
+INF 20250728-03:50:41.236 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.postgresql.AmiPostgresqlDatasourcePlugin 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.oracle.AmiOracleDatasourcePlugin PluginID:ORACLE 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.oracle.AmiOracleDatasourcePlugin 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.excel.AmiExcelDatasourcePlugin PluginID:MSEXCEL 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.excel.AmiExcelDatasourcePlugin 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.db2.AmiDb2DatasourcePlugin PluginID:IBMDB2 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.db2.AmiDb2DatasourcePlugin 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.ssh.AmiSshDatasourcePlugin PluginID:SSH 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.ssh.AmiSshDatasourcePlugin 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.ssh.AmiSftpDatasourcePlugin PluginID:SFTP 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.ssh.AmiSftpDatasourcePlugin 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiQuandlDatasourcePlugin PluginID:QUANDL 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiQuandlDatasourcePlugin 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiFredDatasourcePlugin PluginID:FRED 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiFredDatasourcePlugin 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.center.ds.AmiOneTickDatasourcePlugin PluginID:ONETICK 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.center.ds.AmiOneTickDatasourcePlugin 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.restapi.AmiRestAPIDatasourcePlugin PluginID:RESTAPI 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.restapi.AmiRestAPIDatasourcePlugin 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Datasource Plugin class: com.f1.ami.plugins.sqlite.AmiSqLiteDatasourcePlugin PluginID:SQLITE 
+INF 20250728-03:50:41.237 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Datasource Plugin class: com.f1.ami.plugins.sqlite.AmiSqLiteDatasourcePlugin 
+INF 20250728-03:50:41.241 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@ Verified 125 ConstainerScope objects 
+INF 20250728-03:50:41.241 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@ Container Starting dispatching sequence 
+INF 20250728-03:50:41.241 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::startDispatching: Dispatching 0 event(s) 
+INF 20250728-03:50:41.241 EST5EDT [main] com.f1.container.impl.BasicThreadPoolController::startDispatching: Dispatching 0 runnables(s) 
+INF 20250728-03:50:41.242 EST5EDT [MSGDIRECT_RECN-017] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1470--relay.to.center--client,plain,write] 
+INF 20250728-03:50:41.242 EST5EDT [MSGDIRECT_PROC-018] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:55059---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-03:50:41.243 EST5EDT [MSGDIRECT_PROC-018] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:55059---1--relay.to.center--server,plain,read] 
+INF 20250728-03:50:41.243 EST5EDT [MSGDIRECT_PROC-019] com.f1.utils.LocaleFormatterManager::lockBundleTextFiles: Bundle Text Files:  
+INF 20250728-03:50:41.243 EST5EDT [MSGDIRECT_RECN-017] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1470--center.to.relay--client,plain,read] 
+INF 20250728-03:50:41.244 EST5EDT [MSGDIRECT_PROC-020] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:55060---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-03:50:41.244 EST5EDT [MSGDIRECT_PROC-020] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:55060---1--center.to.relay--server,plain,write] 
+INF 20250728-03:50:41.245 EST5EDT [MSGDIRECT_RECN-017] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1470--center.to.relay$F1-vP6SMdMlMJjmwPlgFXLaN3--client,plain,read] 
+INF 20250728-03:50:41.245 EST5EDT [MSGDIRECT_PROC-022] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:55061---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-03:50:41.246 EST5EDT [MSGDIRECT_PROC-022] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:55061---1--center.to.relay$F1-vP6SMdMlMJjmwPlgFXLaN3--server,plain,write] 
+INF 20250728-03:50:41.246 EST5EDT [F1POOL-00] com.f1.ami.center.AmiCenterRelayConnectionStatusProcessor::processAction: Received a new connection from: '127.0.0.1', puid: F1-vP6SMdMlMJjmwPlgFXLaN3. Requesting snapshot. 
+INF 20250728-03:50:41.254 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:41.254 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:41.254 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@ 3FORGE STARTUP SEQUENCE COMPLETE FOR CONTAINER: AmiRelay 
+INF 20250728-03:50:41.254 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:41.254 EST5EDT [main] com.f1.container.impl.BasicContainer::info: @@@@@@  
+INF 20250728-03:50:41.254 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Loaded Ami Console Authenticator Plugin class: com.f1.ami.web.auth.AmiAuthenticatorFileBacked PluginID:FILE 
+WRN 20250728-03:50:41.256 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::logSecurityWarning: SECURITY-WARNING: NON-ENCRYPTED PASSWORDS STORED IN C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\data\access.txt  (See instructions for users.access.file.encrypt.mode option to force encryption) 
+INF 20250728-03:50:41.257 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadPlugin: PLUGIN MANAGER: Initialized Ami Console Authenticator Plugin class: com.f1.ami.web.auth.AmiAuthenticatorFileBacked 
+INF 20250728-03:50:41.257 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadEncrypter: PLUGIN MANAGER: Disabled Ami Password Encrypter using default encrypter: com.f1.ami.amicommon.encrypt.AmiSimplePasswordEncrypter 
+INF 20250728-03:50:41.258 EST5EDT [main] com.f1.ami.amicommon.encrypt.AmiSimplePasswordEncrypter::init: Simple Password Encrypter is using default charset UTF-16LE 
+INF 20250728-03:50:41.258 EST5EDT [main] com.f1.ami.amicommon.AmiUtils::loadEncrypter: PLUGIN MANAGER: Initialized Ami Password Encrypter class: com.f1.ami.amicommon.encrypt.AmiSimplePasswordEncrypter 
+INF 20250728-03:50:41.265 EST5EDT [main] com.f1.ami.amicommon.AmiStartup::startupComplete: Resource File 'ami_amione.build.txt' not found 
+INF 20250728-03:50:41.268 EST5EDT [main] com.f1.utils.EnvironmentDump::startupComplete: Additionally declared properties: 
++----------------------------------
+| Startup duration(millis): 25,185
++----------------------------------
+|      SpeedLogger Sinks: AMIMESSAGES_SINK=File:C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\log\AmiMessages.log
+|                         AMISTATS_SINK=File:C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\log\AmiOne.amilog
+|                         FILE_SINK=File:C:\Users\XPS17-6\Perforce\Yuan_branch\makers\yuan_round\java\ami\amione\log\AmiOne.log
+|                         STDOUT_SINK=Console
++----------------------------------
+|  SpeedLogger Appenders: AMIMESSAGES_APPENDER=%d{YMD-h:m:s.S z} %m%n
+|                         AMISTATS_APPENDER=%m%n
+|                         AMITRACKER_APPENDER=%d{YMD-h:m:s.S z} %m%n
+|                         BASIC_APPENDER=%P %d{YMD-h:m:s.S z} [%t] %c::%M: %m %D%n
+|                         SIMPLE_APPENDER=%P %d{YMD-h:m:s.S z} [%t] %c: %m %D%n
++----------------------------------
+|    SpeedLogger Streams: =BASIC_APPENDER;FILE_SINK;INF
+|                         AMI=BASIC_APPENDER;FILE_SINK;OFF
+|                         AMI_ACTIVITY_TRACKER=AMITRACKER_APPENDER;FILE_SINK;ALL
+|                         AMI_MESSAGES=AMIMESSAGES_APPENDER;AMIMESSAGES_SINK;INF
+|                         AMI_STATS=AMISTATS_APPENDER;AMISTATS_SINK;ALL
+|                         AMISCRIPT.LOGINFO=SIMPLE_APPENDER;FILE_SINK;INF
+|                         AMISCRIPT.LOGWARN=SIMPLE_APPENDER;FILE_SINK;WRN
+|                         com=BASIC_APPENDER;STDOUT_SINK;INF,BASIC_APPENDER;FILE_SINK;INF
+|                         java=BASIC_APPENDER;STDOUT_SINK;INF,BASIC_APPENDER;FILE_SINK;INF
+|                         net=BASIC_APPENDER;STDOUT_SINK;INF,BASIC_APPENDER;FILE_SINK;INF
+|                         org=BASIC_APPENDER;STDOUT_SINK;INF,BASIC_APPENDER;FILE_SINK;INF
++----------------------------------
+|     Default Properties: ami.amilog.stats.period=15 SECONDS
+|                         ami.amiscript.default.limit=10000
+|                         ami.amiscript.default.timeout=60 seconds
+|                         ami.auth.timeout.ms=5000
+|                         ami.center.log.stats.period.millis=15000
+|                         ami.center.publish.changes.period.millis=500
+|                         ami.center.relay.batch.messages.max=1000
+|                         ami.centers=
+|                         ami.chart.threading.threadPoolSize=100
+|                         ami.cloud.dir=data/cloud
+|                         ami.content.security.policy=img-src 'self' https://*.mapbox.com data: w3.org/svg/2000; default-src https://*.mapbox.com 'self' 'unsafe-inline' 'unsafe-eval' blob:;font-src 'self' data:
+|                         ami.db.anonymous.datasources.enabled=true
+|                         ami.db.console.prompt=
+|                         ami.db.enable.concurrent.queries=true
+|                         ami.db.jdbc.protocol.version=2
+|                         ami.db.jdbc.ssl.port=-1
+|                         ami.db.onstartup.ondisk.defrag=true
+|                         ami.db.preschema.config.files=config/preschema.amisql
+|                         ami.db.session.check.period.seconds=60
+|                         ami.db.session.timeout=24 HOURS
+|                         ami.db.timer.logging.enabled=true
+|                         ami.db.write.lock.wait.millis=1000
+|                         ami.debug=false
+|                         ami.frames.per.second=15.0
+|                         ami.hdb.blocksize=8192
+|                         ami.hdb.filehandles.max=32
+|                         ami.hdb.root.dir=hdb
+|                         ami.log.query.max.chars=2000
+|                         ami.login.default.pass=
+|                         ami.login.default.user=
+|                         ami.login.page.animated=true
+|                         ami.login.page.title=
+|                         ami.password.encrypterami.password.encrypter.charset=
+|                         ami.persisiter.fast.on.schema.mismatch.assume.legacy=false
+|                         ami.relay.check.config.file.changes.period.ms=2000
+|                         ami.relay.guaranteed.messaging.enabled=false
+|                         ami.relay.persist.dir=.\persist
+|                         ami.relay.routes.debug=false
+|                         ami.relay.routes.rules.cache.size=10000
+|                         ami.relay.transforms.debug=false
+|                         ami.request.timeout.seconds=180
+|                         ami.rest.show.endpoints=true
+|                         ami.rest.show.errors=true
+|                         ami.session.check.period.seconds=60
+|                         ami.stats.period.millis=20000
+|                         ami.stats.retention.millis=86400000
+|                         ami.unknown.realtime.table.behavior=3
+|                         ami.web.ajax.compression.level=-1
+|                         ami.web.ajax.compression.min.size.bytes=1024
+|                         ami.web.http.connections.max=100
+|                         ami.web.http.connections.timeout.ms=300000
+|                         ami.web.http.debug=off
+|                         ami.web.http.slow.response.warn.log.request.size=1024
+|                         ami.web.http.slow.response.warn.ms=5000
+|                         ami.web.max.rows.per.snapshot=100000
+|                         ami.web.message.license.expires=WARNING: License Expires soon: ${LICENSE_EXPIRES_DATE}
+|                         ami.web.message.max.sessions=Session limit reached, please choose a current session below
+|                         ami.web.permitted.cors.origins=*
+|                         ami.web.portal.dialog.header.title=
+|                         ami.web.precached.tables=
+|                         ami.web.resource.cache.ttl=60 SECONDS
+|                         ami.web.resources.dir=web_resources
+|                         ami.web.show.wait.icon.after.duration=2000 milliseconds
+|                         http.slow.session.lock.warn.ms=1000
+|                         web.favicon=rsc/favicon.ico
+|                         web.logged.out.url=/
++----------------------------------
+|   F1 Global properties: f1.global.disable.systemexit=false
+|                         f1.global.env.property.prefix=property_
+|                         f1.global.max.collection.to.delineate=30
+|                         f1.global.max.debug.string.length=10240
+|                         f1.global.password.mask=************
+|                         f1.global.password.substitute=******
+|                         f1.global.procinfosink.file=./.f1proc.txt
+|                         f1.global.replace.checked.thrown=true
+|                         f1.global.sys.property.prefix=property.
+|                         f1.global.title=3forge.com
++----------------------------------
+ 
+INF 20250728-03:50:41.293 EST5EDT [F1POOL-02] com.f1.ami.center.AmiCenterRelayOnConnectResponseProcessor::processAction: Received response from relay 'relay_0' at 'DESKTOP-SPJ30HA'. Guaranteed Messaging Disabled, ProcessUid=F1-vP6SMdMlMJjmwPlgFXLaN3 
+INF 20250728-03:50:41.298 EST5EDT [F1POOL-00] com.f1.utils.IOH::openServerSocketWithReason: Started server socket for AMI Server Socket on port 1489 
+INF 20250728-03:50:41.300 EST5EDT [F1POOL-00] com.f1.ami.relay.fh.AmiServerSocketFH::startServerPort: To access AMI server connection: telnet DESKTOP-SPJ30HA 1489 
+INF 20250728-03:50:41.302 EST5EDT [F1POOL-02] com.f1.ami.center.AmiCenterRelayGetSnapshotResponseProcessor::processAction: Received snapshot with 0 message(s) from relay relay_0 (processuid=F1-vP6SMdMlMJjmwPlgFXLaN3). Resetting seqnum from -1 to 0 
+INF 20250728-04:22:53.323 EST5EDT [MSGDIRECT_PROC-009] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [127.0.0.1:55049---1--web.to.center--server,plain,read]: Connection reset 
+INF 20250728-04:22:53.323 EST5EDT [MSGDIRECT_PROC-006] com.f1.msgdirect.MsgDirectClientSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [localhost:1370--center.to.web--client,plain,read] 
+INF 20250728-04:22:53.323 EST5EDT [MSGDIRECT_PROC-007] com.f1.msgdirect.MsgDirectClientSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [localhost:1370--center.to.web$F1-vP6SMdMlMJjmwPlgFXLaN3--client,plain,read] 
+INF 20250728-04:22:53.323 EST5EDT [MSGDIRECT_PROC-005] com.f1.msgdirect.MsgDirectClientSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [localhost:1370--web.to.center--client,plain,write] 
+WRN 20250728-04:22:53.323 EST5EDT [MSGDIRECT_PROC-014] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_CLOSED_ERROR_READING: [127.0.0.1:55056---1--center.to.web$F1-NJprxo0nUUe53RvRIZuqso--server,plain,write]
+java.net.SocketException:Unrecognized Windows Sockets error: 0: recv failed
+ > at java.net.SocketInputStream.socketRead0(SocketInputStream.java:-2)
+ > at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+ > at java.net.SocketInputStream.read(SocketInputStream.java:171)
+ > at java.net.SocketInputStream.read(SocketInputStream.java:141)
+ > at com.f1.utils.FastBufferedInputStream.fill(FastBufferedInputStream.java:88)
+ > at com.f1.utils.FastBufferedInputStream.read(FastBufferedInputStream.java:97)
+ > at java.io.DataInputStream.readInt(DataInputStream.java:387)
+ > at com.f1.msgdirect.MsgDirectServerSocket$ServerConnection.run(MsgDirectServerSocket.java:375)
+ > at java.lang.Thread.run(Thread.java:748)
+ 
+WRN 20250728-04:22:53.323 EST5EDT [MSGDIRECT_PROC-011] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_CLOSED_ERROR_READING: [127.0.0.1:55055---1--center.to.web--server,plain,write]
+java.net.SocketException:Unrecognized Windows Sockets error: 0: recv failed
+ > at java.net.SocketInputStream.socketRead0(SocketInputStream.java:-2)
+ > at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+ > at java.net.SocketInputStream.read(SocketInputStream.java:171)
+ > at java.net.SocketInputStream.read(SocketInputStream.java:141)
+ > at com.f1.utils.FastBufferedInputStream.fill(FastBufferedInputStream.java:88)
+ > at com.f1.utils.FastBufferedInputStream.read(FastBufferedInputStream.java:97)
+ > at java.io.DataInputStream.readInt(DataInputStream.java:387)
+ > at com.f1.msgdirect.MsgDirectServerSocket$ServerConnection.run(MsgDirectServerSocket.java:375)
+ > at java.lang.Thread.run(Thread.java:748)
+ 
+INF 20250728-04:22:53.324 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onAmiCenterDisconnect: Center1 (seqnum=163) Ami Center Disconnected, clearing cache 
+INF 20250728-04:23:23.053 EST5EDT [MSGDIRECT_RECN-004] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1370--center.to.web--client,plain,read] 
+INF 20250728-04:23:27.664 EST5EDT [MSGDIRECT_PROC-024] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:59459---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-04:23:27.665 EST5EDT [MSGDIRECT_PROC-024] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:59459---1--web.to.center--server,plain,read] 
+INF 20250728-04:23:27.667 EST5EDT [MSGDIRECT_PROC-025] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:59460---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-04:23:27.667 EST5EDT [MSGDIRECT_PROC-025] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:59460---1--center.to.web--server,plain,write] 
+INF 20250728-04:23:27.669 EST5EDT [F1POOL-02] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Received Snapshot Request From: !!AMICENTER!! for: [__TABLE, __COLUMN, __INDEX] 
+INF 20250728-04:23:27.670 EST5EDT [F1POOL-02] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Returning Snapshot to: !!AMICENTER!! at seqnum 103. AmiDb Counts: 225 
+INF 20250728-04:23:27.670 EST5EDT [MSGDIRECT_PROC-026] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:59461---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-04:23:27.670 EST5EDT [MSGDIRECT_PROC-026] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:59461---1--center.to.web$F1-iUYFtgE44YeCGFRBlmqsqW--server,plain,write] 
+INF 20250728-04:23:27.680 EST5EDT [MSGDIRECT_RECN-004] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1370--center.to.web$F1-vP6SMdMlMJjmwPlgFXLaN3--client,plain,read] 
+INF 20250728-04:23:27.694 EST5EDT [F1POOL-00] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Received Snapshot Request From: !!AMICENTER!! for: [__TABLE, __COLUMN, __INDEX] 
+INF 20250728-04:23:27.694 EST5EDT [F1POOL-00] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Returning Snapshot to: !!AMICENTER!! at seqnum 103. AmiDb Counts: 225 
+INF 20250728-04:23:27.736 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onChanges: Center1 (seqnum=-1) Not Connected, ignoring: 1 
+INF 20250728-04:23:27.945 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onChanges: Center1 (seqnum=-1) Not Connected, ignoring: 2 
+INF 20250728-04:23:28.028 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onChanges: Center1 (seqnum=-1) Not Connected, ignoring: 3 
+INF 20250728-04:23:28.466 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onChanges: Center1 (seqnum=-1) Not Connected, ignoring: 4 
+INF 20250728-04:23:29.688 EST5EDT [MSGDIRECT_RECN-004] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1370--web.to.center--client,plain,write] 
+INF 20250728-04:23:29.691 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onAmiCenterConnect: Center1 (seqnum=-1) Ami Center Connect 
+INF 20250728-04:23:29.744 EST5EDT [F1POOL-00] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: Center1 (seqnum=-1) Center responded with intermediate snapshot, seqnum=4, messages=0, types=__TABLE,__COLUMN,__INDEX 
+INF 20250728-04:23:29.766 EST5EDT [F1POOL-00] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: Center1 (seqnum=-1) Center responded with final snapshot, seqnum=4, messages=3963, types=__TABLE,__COLUMN,__INDEX 
+INF 20250728-04:23:29.770 EST5EDT [F1POOL-00] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__TABLE] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-04:23:29.770 EST5EDT [F1POOL-00] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__COLUMN] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-04:23:29.772 EST5EDT [F1POOL-00] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__INDEX] Finished snapshot, deltas skipped=0, deltas applied=0 
+INF 20250728-04:23:29.772 EST5EDT [F1POOL-00] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: Center1 (seqnum=-1) Received final primary snapshot response, marking cache as snapshot processed, setting seqnum=4 
+INF 20250728-04:48:17.586 EST5EDT [MSGDIRECT_PROC-026] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [127.0.0.1:59461---1--center.to.web$F1-iUYFtgE44YeCGFRBlmqsqW--server,plain,write]: Connection reset 
+INF 20250728-04:48:17.586 EST5EDT [MSGDIRECT_PROC-025] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [127.0.0.1:59460---1--center.to.web--server,plain,write]: Connection reset 
+INF 20250728-04:48:17.586 EST5EDT [MSGDIRECT_PROC-024] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [127.0.0.1:59459---1--web.to.center--server,plain,read]: Connection reset 
+INF 20250728-04:48:17.586 EST5EDT [MSGDIRECT_PROC-027] com.f1.msgdirect.MsgDirectClientSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [localhost:1370--center.to.web--client,plain,read] 
+INF 20250728-04:48:17.588 EST5EDT [MSGDIRECT_PROC-028] com.f1.msgdirect.MsgDirectClientSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [localhost:1370--center.to.web$F1-vP6SMdMlMJjmwPlgFXLaN3--client,plain,read] 
+INF 20250728-04:48:17.589 EST5EDT [F1POOL-00] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onAmiCenterDisconnect: Center1 (seqnum=83) Ami Center Disconnected, clearing cache 
+INF 20250728-04:48:17.589 EST5EDT [MSGDIRECT_PROC-029] com.f1.msgdirect.MsgDirectClientSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [localhost:1370--web.to.center--client,plain,write] 
+INF 20250728-04:48:50.118 EST5EDT [MSGDIRECT_RECN-004] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1370--web.to.center--client,plain,write] 
+INF 20250728-04:48:55.115 EST5EDT [MSGDIRECT_PROC-030] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:60963---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-04:48:55.115 EST5EDT [MSGDIRECT_PROC-030] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:60963---1--web.to.center--server,plain,read] 
+INF 20250728-04:48:55.118 EST5EDT [MSGDIRECT_PROC-031] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:60964---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-04:48:55.119 EST5EDT [MSGDIRECT_PROC-031] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:60964---1--center.to.web--server,plain,write] 
+INF 20250728-04:48:55.121 EST5EDT [MSGDIRECT_PROC-032] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_SERVER_ACCEPT: [127.0.0.1:60965---1--<NO_TOPIC>--server,plain,write] 
+INF 20250728-04:48:55.122 EST5EDT [MSGDIRECT_PROC-032] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_ESTABLISHED: [127.0.0.1:60965---1--center.to.web$F1-S35SIf12rRboS085ykSrOi--server,plain,write] 
+INF 20250728-04:48:55.122 EST5EDT [F1POOL-00] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Received Snapshot Request From: !!AMICENTER!! for: [__TABLE, __COLUMN, __INDEX] 
+INF 20250728-04:48:55.122 EST5EDT [F1POOL-00] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Returning Snapshot to: !!AMICENTER!! at seqnum 179. AmiDb Counts: 225 
+INF 20250728-04:48:55.131 EST5EDT [MSGDIRECT_RECN-004] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1370--center.to.web--client,plain,read] 
+INF 20250728-04:48:55.133 EST5EDT [MSGDIRECT_RECN-004] com.f1.msgdirect.MsgDirectConnection::reconnectClients: MSGDIRECT_CONNECTION_ESTABLISHED: [localhost:1370--center.to.web$F1-vP6SMdMlMJjmwPlgFXLaN3--client,plain,read] 
+INF 20250728-04:48:55.135 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onAmiCenterConnect: Center1 (seqnum=-1) Ami Center Connect 
+INF 20250728-04:48:55.145 EST5EDT [F1POOL-00] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Received Snapshot Request From: !!AMICENTER!! for: [__TABLE, __COLUMN, __INDEX] 
+INF 20250728-04:48:55.146 EST5EDT [F1POOL-00] com.f1.ami.center.AmiCenterClientSnapshotRequestProcessor::processRequest: Returning Snapshot to: !!AMICENTER!! at seqnum 179. AmiDb Counts: 225 
+INF 20250728-04:48:55.247 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: Center1 (seqnum=-1) Center responded with intermediate snapshot, seqnum=1, messages=0, types=__TABLE,__COLUMN,__INDEX 
+INF 20250728-04:48:55.254 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: Center1 (seqnum=-1) Center responded with final snapshot, seqnum=1, messages=3963, types=__TABLE,__COLUMN,__INDEX 
+INF 20250728-04:48:55.256 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__TABLE] Finished snapshot, deltas skipped=225, deltas applied=0 
+INF 20250728-04:48:55.258 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__COLUMN] Finished snapshot, deltas skipped=3553, deltas applied=0 
+INF 20250728-04:48:55.258 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::setSnapshotSeqnum: Center1 (seqnum=-1) [__INDEX] Finished snapshot, deltas skipped=185, deltas applied=0 
+INF 20250728-04:48:55.258 EST5EDT [F1POOL-02] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onSnapshotResponse: Center1 (seqnum=-1) Received final primary snapshot response, marking cache as snapshot processed, setting seqnum=1 
+INF 20250728-06:30:53.931 EST5EDT [MSGDIRECT_PROC-035] com.f1.msgdirect.MsgDirectClientSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [localhost:1370--center.to.web$F1-vP6SMdMlMJjmwPlgFXLaN3--client,plain,read] 
+INF 20250728-06:30:53.931 EST5EDT [MSGDIRECT_PROC-034] com.f1.msgdirect.MsgDirectClientSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [localhost:1370--center.to.web--client,plain,read] 
+INF 20250728-06:30:53.931 EST5EDT [MSGDIRECT_PROC-032] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [127.0.0.1:60965---1--center.to.web$F1-S35SIf12rRboS085ykSrOi--server,plain,write]: Connection reset 
+INF 20250728-06:30:53.931 EST5EDT [MSGDIRECT_PROC-031] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [127.0.0.1:60964---1--center.to.web--server,plain,write]: Connection reset 
+INF 20250728-06:30:53.931 EST5EDT [MSGDIRECT_PROC-030] com.f1.msgdirect.MsgDirectServerSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [127.0.0.1:60963---1--web.to.center--server,plain,read]: Connection reset 
+INF 20250728-06:30:53.931 EST5EDT [MSGDIRECT_PROC-033] com.f1.msgdirect.MsgDirectClientSocket::run: MSGDIRECT_CONNECTION_CLOSED_REMOTELY: [localhost:1370--web.to.center--client,plain,write] 
+INF 20250728-06:30:53.935 EST5EDT [F1POOL-00] com.f1.ami.amicommon.centerclient.AmiCenterClientState::onAmiCenterDisconnect: Center1 (seqnum=331) Ami Center Disconnected, clearing cache 

@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Table Search</title>
+<link rel="StyleSheet" href="../AMI_One_Configuration_Guide_(2.2_-_Revised).css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "..";
+gCommonRootRelPath = "..";
+gTopicId = "";
+</script>
+</head>
+
+<body class="topicbody">
+<script type="text/javascript" src="../ehlpdhtm.js"></script>
+
+<h1>Table Search</h1>
+<p>AMI’s search field is a powerful filtering tool which allows the user 
+ to quickly search for interested records while providing a rich language 
+ for advanced searching. Searches can simply be keyed into the search field 
+ and the filter is applied once the enter key is pressed. For real-time 
+ tables, the search is actively evaluated in real-time as records are added, 
+ updated, and removed.</p>
+<p>&#160;</p>
+<p><img src="../Table_Search_01.jpg" alt="" style=" border:none; width:100%; max-width:206px;" border="0" /></p>
+<p>&#160;</p>
+<p>Searches are applied on a row by row basis, meaning either an entire 
+ row meets the search criteria or the row will be filtered out. Hidden 
+ columns are not included in the search. Each row is represented as a single 
+ string with all of the cells in the row concatenated together from left 
+ to right and tab delimited, with an additional tab at the beginning and 
+ end</p>
+<p>&#160;</p>
+<p class="Examples_Small">Example</p>
+<p>&#160;</p>
+<p><img src="../Table_Search_02.jpg" alt="" style=" border:none; width:100%; max-width:883px;" border="0" /></p>
+<p>&#160;</p>
+<p><i style="mso-bidi-font-style: normal;">Would be evaluated as</i>: <span 
+	 class="CourierBlueStyle">\tOrder\tORD-00132\t3F-00000\t4,600\t\$47\.36\tB\tCGNX\t6,800\tDAY\t</span></p>
+<p>&#160;</p>
+<hr align="center" />
+<p>By default, the search does partial matching – so if any part of the 
+ row matches the search text, the row is considered a match</p>
+<p>&#160;</p>
+<p><img src="../Table_Search_03.jpg" alt="" style=" border:none; width:100%; max-width:963px;" border="0" /></p>
+<p style="font-style: italic; font-size: 10pt;">Searching for <span class="CourierBlueStyle" 
+	 style="font-style: normal; font-size: 10pt;">ea</span></p>
+<p>&#160;</p>
+<p><span class="CourierBlueStyle">\t</span> can be used to make the search 
+ more specific: </p>
+<p>&#160;</p>
+<p><img src="../chrome_2018-03-05_15-38-46.jpg" alt="" style=" border:none; width:100%; max-width:963px;" border="0" /></p>
+<p><span class="CourierBlueStyle" style="font-size: 10pt;">\tea</span><span 
+	 style="font-size: 10pt;"> </span><i style="mso-bidi-font-style: normal;"><span 
+	 style="line-height: 115%; mso-fareast-font-family: Arial; mso-fareast-theme-font: minor-latin; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+	 font-size: 10pt;">will show any matches that start with ea</span></i> 
+ </p>
+<p>&#160;</p>
+<p><img src="../Table_Search_05.jpg" alt="" style=" border:none; width:100%; max-width:961px;" border="0" /></p>
+<p style="font-size: 10pt;"><span class="CourierBlueStyle" style="font-size: 10pt;">ea\t</span> 
+ <i style="mso-bidi-font-style: normal;"><span style="line-height: 115%; 
+												 mso-fareast-font-family: Arial; 
+												 mso-fareast-theme-font: minor-latin; 
+												 mso-ansi-language: EN-US; 
+												 mso-fareast-language: EN-US; 
+												 mso-bidi-language: AR-SA;">will 
+ show any matches that end with ea</span></i></p>
+<p style="font-size: 8pt;">&#160;</p>
+<p style="font-size: 8pt; mso-bidi-font-style: normal; line-height: 115%; 
+	 mso-fareast-font-family: Arial; mso-fareast-theme-font: minor-latin; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><img src="../Table_Search_06.jpg" alt="" style=" border:none; width:100%; max-width:962px;" border="0" /></p>
+<p style="mso-bidi-font-style: normal; line-height: 115%; mso-fareast-font-family: Arial; 
+	 mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; 
+	 mso-bidi-language: AR-SA; font-size: 8pt;"><span class="CourierBlueStyle" 
+														 style="font-size: 10pt;">\tea\t</span><span 
+	 style="font-size: 10pt;"> <i style="font-size: 10pt;">returns an exact 
+ match</i></span> </p>
+<p>&#160;</p>
+<hr align="center" />
+<p>By default, the search is case insensitive, but this can be changed 
+ by prefixing the search with a tilde (~) </p>
+<p>&#160;</p>
+<p><img src="../Table_Search_07.jpg" alt="" style=" border:none; width:100%; max-width:962px;" border="0" /></p>
+<p style="font-size: 10pt;"><i style="mso-bidi-font-style: normal;">Case 
+ insensitive search</i> <span style="mso-bidi-font-size: 12.0pt; line-height: 115%; 
+								 font-family: 'Times New Roman', serif; 
+								 mso-fareast-font-family: 'Times New Roman'; 
+								 color: #222222; mso-ansi-language: EN-US; 
+								 mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">–</span> 
+ <span class="CourierBlueStyle" style="font-size: 10pt;">\tgt\t</span></p>
+<p>&#160;</p>
+<p><img src="../Table_Search_08.jpg" alt="" style=" border:none; width:100%; max-width:961px;" border="0" /></p>
+<p style="font-size: 10pt;"><i style="mso-bidi-font-style: normal;">Case 
+ sensitive search</i> <span style="line-height: 115%; font-family: 'Times New Roman', serif; 
+							 mso-fareast-font-family: 'Times New Roman'; 
+							 color: #222222; mso-ansi-language: EN-US; 
+							 mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">–</span> 
+ <span class="CourierBlueStyle" style="font-size: 10pt;">~\tGT\t</span></p>
+<p>&#160;</p>
+<hr align="center" />
+<p><u>Note</u>: Using special characters – when your search will include 
+ special characters (not numbers and letters), it is best practice to escape 
+ them using a backslash (\). </p>
+<p>&#160;</p>
+<p style="font-size: 10pt;"><img src="../Table_Search_09.jpg" alt="" style=" border:none; width:100%; max-width:961px;" border="0" /></p>
+<p style="font-size: 10pt; font-style: italic;">Without escape</p>
+<p style="font-size: 10pt; font-style: italic;">&#160;</p>
+<p style="font-size: 10pt; font-style: italic;"><img src="../Table_Search_04.jpg" style=" border:none; width:100%; max-width:963px;" alt="" border="0" /></p>
+<p style="font-size: 10pt;"><span style="font-style: italic;">With escape</span></p>
+<hr align="center" />
+<p>For complex searching, it is possible to use a combination of conditional 
+ clauses which include and (…&amp;…) or (…|…) along with the conditional 
+ stanza (… ? … : …)</p>
+<p>&#160;</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; color: Transparent; 
+	 font-style: normal;"><img src="../Table_Search_11.jpg" alt="" style=" border:none; width:100%; max-width:961px;" border="0" /></p>
+<p style="font-family: Arial, sans-serif; color: Transparent; font-style: normal; 
+	 font-size: 10pt;"><span class="CourierBlueStyle" style="font-size: 10pt;">(\tb\t)&amp;(\tioc\t)&amp;(\t3,500\t)</span></p>
+<p>&#160;</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; color: Transparent; 
+	 font-style: normal;"><img src="../Table_Search_12.jpg" alt="" style=" border:none; width:100%; max-width:961px;" border="0" /></p>
+<p style="font-family: Arial, sans-serif; color: Transparent; font-style: normal; 
+	 font-size: 10pt;"><span class="CourierBlueStyle" style="font-size: 10pt;">(\tea\t)|(\tamzn\t)</span></p>
+</body>
+</html>

@@ -1,0 +1,1884 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "5.2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Query Clauses</title>
+<link rel="stylesheet" href="../assets/css/3Forge_Ami_Script.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+<meta name="rh-index-keywords" content="AS,ASC"/></head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Query Clauses">
+        <span>Query Clauses</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h2 style="font-size: 24pt; margin-top: 5pt; margin-bottom: 15pt; line-height: Normal; 
+	 font-family: Arial, sans-serif;">Query Clauses</h2>
+<h3 style="margin-top: 5pt; margin-bottom: 1pt; line-height: Normal; font-size: 19pt; 
+	 color: #6d2d9e; font-family: Arial, sans-serif; text-decoration: none; "><a name="select_clause" id="select_clause"><span style="color: #6d2d9e; 
+													 font-family: Arial, sans-serif; 
+													 text-decoration: none; ">select_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<p style="font-size: 13pt; font-weight: bold; font-style: italic; color: #449938; 
+	 text-transform: uppercase; margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></p>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-size: 12pt; 
+	 font-family: Arial, sans-serif;">This clause allows the combination 
+ of Filtering (<span style="color: #C00000;">WHERE</span>), Sorting (<span style="color: #C00000;">ORDER BY</span>), Aggregating (<span style="color: #C00000;">GROUP 
+ BY</span>), Projecting (<span style="color: #C00000;">SELECT</span> ...) 
+ and Cropping (<span style="color: #C00000;">LIMIT</span>) of individual 
+ tables.  Next, the results may be combined via Unions (<span style="color: #C00000;">UNION</span>) and/or Joins (<span style="color: #C00000;">FROM</span> 
+ ... <span style="color: #c00000;">JOIN ON</span>). Complex Strings containing 
+ delimited data can be split into distinct rows via the <span style="color: #c00000;">UNPACK</span> 
+ operation. Finally, see the <span style="color: #7030A0;"><a href="Schema_Modification.htm#create_table_as_clause" style="font-size: 12pt; font-family: Arial, sans-serif;">create_table_as_clause</a></span> 
+ for storing the final result of a select clause into another table.</p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<ul style="list-style: circle;">
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">To 
+	 aggregate data, use the <span style="color: #C00000;">GROUP BY</span> 
+	 clause to identify any number of columns or derived values that should 
+	 be used to group rows. Provide an alias (<span style="color: #C00000;">AS</span>) 
+	 for derived values to be used within the select clause. The select 
+	 columns can only use aggregate functions (min, max, count, sum) on 
+	 underlying rows and columns declared in the group-by clause</p></li>
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">To 
+	 filter data, provide a <span style="color: #C00000;">WHERE</span> 
+	 clause which evaluates to a Boolean.  True indicates don&#39;t 
+	 filter. When filtering in conjunction with aggregating (<span style="color: #C00000;">GROUP 
+	 BY</span>), those records filtered out will not be considered for 
+	 aggregation.  To filter rows after aggregation, use the 
+	 <span style="color: #C00000;">HAVING</span> clause.</p></li>
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">For 
+	 projecting, supply columns to include in the <span style="color: #C00000;">SELECT</span> 
+	 clause.  Derived values may be provided. Provide an alias 
+	 (<span style="color: #C00000;">AS</span>) for derived values or to 
+	 rename a column.  Use star (*) to include all columns or 
+	 tblname.* to include only those columns from a particular table provided 
+	 in the <span style="color: #C00000;">FROM</span> clause.</p></li>
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">To 
+	 crop out rows, use the <span style="color: #C00000;">LIMIT</span> 
+	 clause. You may provide a number of rows to skip (<span courier="" style="color: #006dbf;">offset</span>) 
+	 and a number of maximum rows to return (<span courier="" style="color: #006dbf;">rowcount</span>).</p></li>
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">To 
+	 sort, use the <span style="color: #C00000;">ORDER BY</span> clause. 
+	 If multiple expressions are given the left-most takes priority.</p></li>
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">To 
+	 union (concatenate) the results from multiple select clauses, use 
+	 the <span style="color: #C00000;">UNION</span> clause. The column 
+	 names and types from the first select clause will provide the result 
+	 set schema definition.  All select clauses participating 
+	 in a union must define the same number of columns. Note: this operates 
+	 like a <i>union all</i> in many databases.</p></li>
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">To 
+	 join (blend) tables, supply all tables together in the <span style="color: #C00000;">FROM</span> 
+	 clause and a Cartesian product will be provided. For more advanced 
+	 Joins, you can use a combination of the LEFT, RIGHT, OUTER, JOIN, 
+	 ON and NEAREST clauses. See <span style="font-weight: bold; font-style: italic; 
+										 color: #449938;">JOINING DATA</span> 
+	 section for details</p></li>
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">To 
+	 process String columns containing multi-value delimited data, use 
+	 the <span style="color: #c00000;">UNPACK</span> <span style="color: #006dbf;">col</span><span style="color: #0000ff;"> </span><span style="color: #c00000;">ON</span> 
+	 <span style="color: #006dbf;">delimeter</span> expression. This will 
+	 split the string such that each entry will result in a new row.</p></li>
+</ul>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+<p style="font-size: 13pt; font-weight: bold; font-style: italic; text-transform: uppercase; 
+	 color: #449938; margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">SYNTAX</u></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 line-height: Normal; font-size: 12pt;"><span courier="" style="color: #ff0000;">SELECT</span> 
+ <b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#column_expr" style="font-size: 12pt;">column_expr</a></span></b><i><span courier="">|</span></i><b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#lambda_expr" style="font-size: 12pt;">lambda_expr</a></span></b> 
+ <span courier=""> </span><i><span courier="">[</span></i><i><span courier="">,</span></i> <i><span courier=""> </span></i><b><span courier="" style="color: #6d2d9e;">column_expr</span></b><i><span courier="">|</span></i><b><span courier="" style="color: #6d2d9e;">lambda_expr</span></b> 
+ <span courier=""> ...<i>]</i></span> <span courier="" style="color: #ff0000;">FROM</span><span courier=""> <b style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#table_expr" style="font-size: 12pt;">table_expr</a>|</b></span><b style="color: #0000ff; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;"><a href="AMI-SQL_Nested_Expressions.htm#nested_select_expr" style="font-size: 12pt;">nested_select_expr</a></span></b> 
+ <span courier=""> <i>[</i>, </span><span courier=""><b style="color: #6d2d9e;">table_expr|</b></span><b style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #6d2d9e;">nested_select_expr</span></b><span courier="" style="color: #6d2d9e;">  ...</span><i><span courier="">]|</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">    <i>[[</i></span><span courier="" style="color: #ff0000;">LEFT</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">RIGHT</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">OUTER</span><span courier="" style="font-style: italic;">]</span><span courier="" style="color: #ff0000;"> </span><span courier="" style="font-style: italic;">[</span><span courier="" style="color: #ff0000;">ONLY</span><span courier="" style="font-style: italic;">]</span><span courier=""> </span><span courier="" style="color: #ff0000;">JOIN</span><span courier=""> </span><span courier="" style="font-style: italic;">[</span><span courier=""><b style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#table_expr" style="font-size: 12pt;">table_expr</a>|</b></span><b style="font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#nested_select_expr" style="font-size: 12pt;">nested_select_expr</a></span><span style="font-family: &#39;Courier New&#39;; color: #6d2d9e; font-style: italic;">]</span></b><span courier=""> </span><span courier="" style="font-style: italic;">[</span><span courier="" style="color: #ff0000;">ON</span><span courier=""> <b style="color: #6d2d9e;">expr</b></span><i><span courier="" style="font-style: italic;">]</span><span courier=""> [</span><span courier="" style="font-style: normal; color: #ff0000;">NEAREST</span><span courier="" style="color: #ff0000;"> </span><span courier="" style="font-style: normal; 
+														 color: #0000ff;">nearest_expr</span><span courier="">]]</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">    <i>[</i></span><span courier="" style="color: #ff0000;">WHERE</span><span courier=""> <b style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#where_expr" style="font-size: 12pt;">where_expr</a></b> 
+ </span><i><span courier="">]</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">    <i>[</i></span><span courier="" style="color: #ff0000;">GROUP BY</span><span courier="" style="color: #6d2d9e;"> 
+ <b style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#column_expr" style="font-size: 12pt;">column_expr</a></b></span><span courier=""> <i>[</i></span><span courier="" style="color: #6d2d9e;">, 
+ <b style="color: #6d2d9e;">column_expr</b> ...</span><span courier=""><i>] 
+ [</i></span><span courier="" style="color: #ff0000;">HAVING</span><span courier=""> <b style="color: #6d2d9e;">expr</b> </span><i><span courier="">]]</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">    <i>[</i></span><span courier="" style="color: #ff0000;">ORDER BY</span><span courier=""> 
+ <b style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#expr" style="font-size: 12pt;">expr</a></b> 
+ <i>[</i></span><span courier="" style="color: #ff0000;">ASC</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">DESC</span><span courier=""><i>] [,</i> <b style="color: #6d2d9e;">expr</b> <i>[</i></span><span courier="" style="color: #ff0000;">ASC</span><span courier=""><i>|</i></span><span courier="" style="color: #ff0000;">DESC</span><span courier=""><i>]</i> 
+ ...<i>]]</i></span></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><i><span courier="">    [</span><span courier="" style="font-style: normal; color: #ff0000;">UNPACK</span><span courier="" style="font-style: normal;"> </span><span courier="" style="font-style: normal; 
+															 color: #006dbf;">col_to_unpack</span><span courier="" style="font-style: normal;"> </span><span courier="" style="font-style: normal; 
+															 color: #ff0000;">ON</span><span courier="" style="font-style: normal;"> </span><span courier="" style="font-style: normal; 
+															 color: #006dbf;">unpack_delimiter</span><span courier=""> [</span><span courier="" style="font-style: normal;">,</span><span courier="" style="font-style: normal; color: #006dbf;">col_to_unpack</span><span courier="" style="font-style: normal;"> </span><span courier="" style="font-style: normal; 
+															 color: #ff0000;">ON</span><span courier="" style="font-style: normal;"> </span><span courier="" style="font-style: normal; 
+															 color: #006dbf;">unpack_delimiter</span><span courier="">]]</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">    <i>[</i></span><span courier="" style="color: #ff0000;">LIMIT</span><span courier=""> <i>[</i></span><span courier="" style="color: #006dbf;">offset</span><span courier="">,<i>]</i> 
+ </span><span courier="" style="color: #006dbf;">rowcount</span><i><span courier="">]</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier=""><i>[</i></span><span courier="" style="color: #ff0000;">UNION</span> 
+ <span courier=""><b style="color: #6d2d9e;">select_clause</b><i>]</i> </span></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><i><span courier="">offset</span></i></b> -<i><span courier=""> integer number of rows to skip</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><i><span courier="">rowcount</span></i></b> -<i><span courier=""> integer number of maximum rows that will be returned</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in 3pt; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; white-space: normal; 
+	 widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-size: 13pt; color: #449938; text-transform: uppercase; 
+	 background-color: #ffffff; font-family: Arial, sans-serif;"><b><i><span style="background: rgb(255, 255, 255);">JOINING DATA</span></i></b></p>
+<p class="MsoNormal" style="margin: 0px 0in; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; 
+	 font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; line-height: 13.75pt;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt; 
+	 line-height: 13.75pt; background-color: #ffffff; color: #000000; background-image: url(initial); 
+	 background-position: initial; background-repeat: initial; background-attachment: initial; 
+	 font-family: Arial, sans-serif;"><u>Simple Cartesian Joins</u>:</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt; 
+	 line-height: 13.75pt; color: #000000; font-family: Arial, sans-serif; 
+	 background-color: #ffffff;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; 
+	 font-size: 12pt; line-height: 13.75pt; background-color: #ffffff; 
+	 background-image: url(initial); background-position: initial; background-repeat: initial; 
+	 background-attachment: initial; font-family: Arial, sans-serif;"><span style="color: #000000;">Any number of tables can be joined by simply 
+ listing them after the </span><span style="color: rgb(192, 0, 0);">FROM</span><span style="color: #000000;"> clause which will produce a Cartesian 
+ product, such that a row will be returned for each possible combination 
+ of rows from the source table.  For example, the Cartesian product 
+ of a table with 5 rows and another table with 3 rows will produce 15 rows 
+ (5x3=15). Of course, the WHERE clause can be used to limit results to 
+ only the interesting combinations.</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt; 
+	 line-height: 13.75pt; color: #000000; font-family: Arial, sans-serif; 
+	 background-color: #ffffff;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt; 
+	 line-height: 13.75pt; background-color: #ffffff; color: #000000; background-image: url(initial); 
+	 background-position: initial; background-repeat: initial; background-attachment: initial; 
+	 font-family: Arial, sans-serif;"><u>Handling Rows that don&#39;t match 
+ rows in other tables</u>:</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt; 
+	 line-height: 13.75pt; color: #000000; font-family: Arial, sans-serif; 
+	 background-color: #ffffff;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; color: rgb(34, 34, 34); orphans: 2; 
+	 widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; word-spacing: 0px; line-height: 13.75pt; font-family: Arial, sans-serif; 
+	 background-image: url(initial); background-position: initial; background-repeat: initial; 
+	 background-attachment: initial;"><span style="color: #000000; background-color: #ffffff;">For 
+ more granular control when joining two tables, use the </span><span style="color: rgb(192, 0, 0);">JOIN</span><span style="color: #000000;"> syntax.  There 
+ are 7 types of statements, let&#39;s assume two tables </span><span style="color: #006dbf;">a</span><span style="color: #000000;"> and </span><span style="color: #006dbf;">b</span><span style="color: #000000;">:</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; 
+	 font-size: 12pt; line-height: 13.75pt; font-family: Arial, sans-serif;"> </p>
+<ul style="list-style: disc;">
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-family: Arial, sans-serif; 
+		 font-size: 12pt;"><p class="MsoNormal" style="margin: 0px 0in; 
+								 color: rgb(34, 34, 34); font-style: normal; 
+								 font-weight: 400; orphans: 2; widows: 2; 
+								 -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+								 text-decoration-color: initial; background-color: #ffffff; 
+								 font-variant-ligatures: normal; font-variant-caps: normal; 
+								 letter-spacing: normal; text-align: start; 
+								 text-indent: 0px; text-transform: none; 
+								 white-space: normal; word-spacing: 0px; 
+								 line-height: 13.75pt; font-size: 12pt; 
+								 font-family: Arial, sans-serif;"><b>FULL 
+	 JOIN:</b><span style="color: rgb(192, 0, 0); background-image: url(initial); 
+					 background-position: initial; background-repeat: initial; 
+					 background-attachment: initial;"> FROM</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> </span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">a</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> </span><span style="color: rgb(192, 0, 0); background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">JOIN</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> </span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">b</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> </span><span style="color: rgb(192, 0, 0); background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">ON</span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> expr</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> - 
+	 This is the same as </span><i><span style="color: rgb(192, 0, 0); 
+												 background-image: url(initial); 
+												 background-position: initial; 
+												 background-repeat: initial; 
+												 background-attachment: initial;">FROM</span></i><i><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> </span></i><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">a</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">,</span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">b </span><i><span style="color: rgb(192, 0, 0); background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">WHERE</span></i> expr</p></li>
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-family: Arial, sans-serif; 
+		 font-size: 12pt;"><p class="MsoNormal" style="margin: 0px 0in; 
+								 color: rgb(34, 34, 34); font-style: normal; 
+								 font-variant-ligatures: normal; font-variant-caps: normal; 
+								 font-weight: 400; letter-spacing: normal; 
+								 orphans: 2; text-align: start; text-indent: 0px; 
+								 text-transform: none; white-space: normal; 
+								 widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+								 text-decoration-style: initial; text-decoration-color: initial; 
+								 line-height: 13.75pt; background-color: #ffffff; 
+								 font-family: Arial, sans-serif; background-image: url(initial); 
+								 background-position: initial; background-repeat: initial; 
+								 background-attachment: initial; font-size: 12pt;"><span style="color: #000000;"><b>LEFT JOIN:</b></span><span style="color: rgb(192, 0, 0);"> FROM</span><span style="color: #000000;"> </span><span style="color: #006dbf;">a</span><span style="color: #000000;"> </span><span style="color: rgb(192, 0, 0);">LEFT</span><span style="color: #000000;"> </span><span style="color: rgb(192, 0, 0);">JOIN</span><span style="color: #000000;"> </span><span style="color: #006dbf;">b</span><span style="color: #000000;"> </span><span style="color: rgb(192, 0, 0);">ON</span><span style="color: #006dbf;"> expr</span><span style="color: #000000;"> - 
+	 A FULL JOIN plus all records from table </span><span style="color: #006dbf;">a</span><span style="color: #000000;"> that would otherwise be omitted (due 
+	 to the </span><span style="color: #006dbf;">expr</span><span style="color: #000000;">).</span></p></li>
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-family: Arial, sans-serif; 
+		 font-size: 12pt;"><p class="MsoNormal" style="margin: 0px 0in; 
+								 color: rgb(34, 34, 34); font-style: normal; 
+								 font-variant-ligatures: normal; font-variant-caps: normal; 
+								 font-weight: 400; letter-spacing: normal; 
+								 orphans: 2; text-align: start; text-indent: 0px; 
+								 text-transform: none; white-space: normal; 
+								 widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+								 text-decoration-style: initial; text-decoration-color: initial; 
+								 line-height: 13.75pt; background-color: #ffffff; 
+								 font-size: 12pt; font-family: Arial, sans-serif;"><b>LEFT 
+	 ONLY JOIN:</b> <span style="color: rgb(192, 0, 0); background-image: url(initial); 
+								 background-position: initial; background-repeat: initial; 
+								 background-attachment: initial;">FROM</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> </span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">a</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> </span><span style="color: rgb(192, 0, 0); background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">LEFT</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> </span><span style="color: rgb(192, 0, 0); background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">ONLY</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> </span><span style="color: rgb(192, 0, 0); background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">JOIN</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> </span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">b</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> </span><span style="color: rgb(192, 0, 0); background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">ON</span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> expr </span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">-</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> Includes 
+	 only records from table </span><span style="color: #006dbf; background-image: url(initial); 
+												 background-position: initial; 
+												 background-repeat: initial; 
+												 background-attachment: initial;">a</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> that 
+	 would otherwise be omitted (due to the </span><span style="color: #006dbf; 
+	 background-image: url(initial); background-position: initial; background-repeat: initial; 
+	 background-attachment: initial;">expr</span>).</p></li>
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-family: Arial, sans-serif; 
+		 font-size: 12pt;"><p class="MsoNormal" style="margin: 0px 0in; 
+								 color: rgb(34, 34, 34); font-style: normal; 
+								 font-variant-ligatures: normal; font-variant-caps: normal; 
+								 font-weight: 400; letter-spacing: normal; 
+								 orphans: 2; text-align: start; text-indent: 0px; 
+								 text-transform: none; white-space: normal; 
+								 widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+								 text-decoration-style: initial; text-decoration-color: initial; 
+								 line-height: 13.75pt; background-color: #ffffff; 
+								 font-family: Arial, sans-serif; background-image: url(initial); 
+								 background-position: initial; background-repeat: initial; 
+								 background-attachment: initial; font-size: 12pt;"><span style="color: #000000;"><b>RIGHT JOIN:</b></span><span style="color: rgb(192, 0, 0);"> FROM</span><span style="color: #000000;"> </span><span style="color: #006dbf;">a</span><span style="color: #000000;"> </span><span style="color: rgb(192, 0, 0);">RIGHT</span><span style="color: #000000;"> </span><span style="color: rgb(192, 0, 0);">JOIN</span><span style="color: #000000;"> </span><span style="color: #006dbf;">b</span><span style="color: #000000;"> </span><span style="color: rgb(192, 0, 0);">ON</span><span style="color: #006dbf;"> expr</span><span style="color: #000000;"> - 
+	 A FULL JOIN plus all records from table </span><span style="color: #006dbf;">b</span><span style="color: #000000;"> that would otherwise be omitted (due 
+	 to the </span><span style="color: #006dbf;">expr</span><span style="color: #000000;">). (similar to LEFT JOIN, swapping </span><span style="color: #006dbf;">a</span><span style="color: #000000;"> and </span><span style="color: #006dbf;">b</span><span style="color: #000000;">)</span></p></li>
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-family: Arial, sans-serif; 
+		 font-size: 12pt;"><p class="MsoNormal" style="margin: 0px 0in; 
+								 color: rgb(34, 34, 34); font-style: normal; 
+								 font-variant-ligatures: normal; font-variant-caps: normal; 
+								 font-weight: 400; letter-spacing: normal; 
+								 orphans: 2; text-align: start; text-indent: 0px; 
+								 text-transform: none; white-space: normal; 
+								 widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+								 text-decoration-style: initial; text-decoration-color: initial; 
+								 line-height: 13.75pt; background-color: #ffffff; 
+								 font-family: Arial, sans-serif; background-image: url(initial); 
+								 background-position: initial; background-repeat: initial; 
+								 background-attachment: initial; font-size: 12pt;"><span style="color: #000000;"><b>RIGHT ONLY JOIN:</b> </span><span style="color: rgb(192, 0, 0);">FROM</span><span style="color: #000000;"> </span><span style="color: #006dbf;">a</span><span style="color: #000000;"> </span><span style="color: rgb(192, 0, 0);">RIGHT ONLY</span><span style="color: #000000;"> </span><span style="color: rgb(192, 0, 0);">JOIN</span><span style="color: #000000;"> </span><span style="color: #006dbf;">b</span><span style="color: #000000;"> </span><span style="color: rgb(192, 0, 0);">ON</span><span style="color: #006dbf;"> expr </span><span style="color: #000000;">-</span><span style="color: #000000;"> Includes 
+	 only records from table </span><span style="color: #006dbf;">b</span><span style="color: #000000;"> that would otherwise be omitted (due 
+	 to the </span><span style="color: #006dbf;">expr</span><span style="color: #000000;">). (similar to LEFT ONLY JOIN, swapping </span><span style="color: #006dbf;">a</span><span style="color: #000000;"> and </span><span style="color: #006dbf;">b</span><span style="color: #000000;">)</span></p></li>
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-family: Arial, sans-serif; 
+		 font-size: 12pt;"><p class="MsoNormal" style="margin: 0px 0in; 
+								 color: rgb(34, 34, 34); font-style: normal; 
+								 font-variant-ligatures: normal; font-variant-caps: normal; 
+								 font-weight: 400; letter-spacing: normal; 
+								 orphans: 2; text-align: start; text-indent: 0px; 
+								 text-transform: none; white-space: normal; 
+								 widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+								 text-decoration-style: initial; text-decoration-color: initial; 
+								 line-height: 13.75pt; background-color: #ffffff; 
+								 font-size: 12pt; font-family: Arial, sans-serif;"><b>OUTER 
+	 JOIN</b>: A FULL JOIN plus all records from table <span style="color: #006dbf; 
+	 background-image: url(initial); background-position: initial; background-repeat: initial; 
+	 background-attachment: initial;">a</span><span style="color: #000000; 
+													 background-image: url(initial); 
+													 background-position: initial; 
+													 background-repeat: initial; 
+													 background-attachment: initial;"> and 
+	 from table</span><span style="color: #006dbf; background-image: url(initial); 
+							 background-position: initial; background-repeat: initial; 
+							 background-attachment: initial;"> b</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> that 
+	 would otherwise be omitted (due to the </span>expr</p></li>
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-family: Arial, sans-serif; 
+		 font-size: 12pt;"><p class="MsoNormal" style="margin: 0px 0in; 
+								 color: rgb(34, 34, 34); font-style: normal; 
+								 font-variant-ligatures: normal; font-variant-caps: normal; 
+								 font-weight: 400; letter-spacing: normal; 
+								 orphans: 2; text-align: start; text-indent: 0px; 
+								 text-transform: none; white-space: normal; 
+								 widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+								 text-decoration-style: initial; text-decoration-color: initial; 
+								 line-height: 13.75pt; background-color: #ffffff; 
+								 background-image: url(initial); background-position: initial; 
+								 background-repeat: initial; background-attachment: initial; 
+								 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #000000;"><b>OUTER ONLY JOIN</b>: Includes only records 
+	 from table </span><span style="color: #006dbf;">a </span><span style="color: #000000;">and from table</span><span style="color: #006dbf;"> b</span><span style="color: #000000;"> that would otherwise be omitted (due 
+	 to the </span><span style="color: #006dbf;">expr</span><span style="color: #000000;">).</span></p></li>
+</ul>
+<p class="MsoNormal" style="margin: 0px 0in; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; 
+	 font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; line-height: 13.75pt;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt; 
+	 line-height: 13.75pt; background-color: #ffffff; color: #000000; background-image: url(initial); 
+	 background-position: initial; background-repeat: initial; background-attachment: initial; 
+	 font-family: Arial, sans-serif;"><u>Joining to a nearest match</u>:</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt; 
+	 line-height: 13.75pt; color: #000000; font-family: Arial, sans-serif; 
+	 background-color: #ffffff;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; 
+	 font-size: 12pt; line-height: 13.75pt; background-color: #ffffff; 
+	 background-image: url(initial); background-position: initial; background-repeat: initial; 
+	 background-attachment: initial; font-family: Arial, sans-serif;"><span style="color: #000000;">Use the </span><span style="color: rgb(192, 0, 0);">NEAREST</span><span style="color: #000000;"> clause in conjunction with one of the 
+ above 7 JOIN clauses to match two records where there may not be an exact 
+ match, such as doing an &quot;as-of&quot; join with timestamps. After 
+ the </span><span style="color: rgb(192, 0, 0);">ON</span><span style="color: #000000;"> clause, 
+ include a </span><span style="color: rgb(192, 0, 0);">NEAREST </span><span style="color: #006dbf;">fuzzy_clause</span><span style="color: #000000;">.</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt; 
+	 line-height: 13.75pt; color: #000000; font-family: Arial, sans-serif; 
+	 background-color: #ffffff;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; color: rgb(34, 34, 34); orphans: 2; 
+	 widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; word-spacing: 0px; line-height: 13.75pt; font-family: Arial, sans-serif; 
+	 background-image: url(initial); background-position: initial; background-repeat: initial; 
+	 background-attachment: initial;"><span style="color: #000000; background-color: #ffffff;">Consider: </span><span style="color: #006dbf;">a</span><span style="color: #000000;"> </span><span style="color: rgb(192, 0, 0);">JOIN</span><span style="color: #000000;"> </span><span style="color: #006dbf;">b </span><span style="color: rgb(192, 0, 0);">ON</span><span style="color: #006dbf;"> on_expr </span><span style="color: rgb(192, 0, 0);">NEAREST</span><span style="color: #006dbf;"> fuzzy_clause</span><span style="color: #000000;">, 
+ where the fuzzy clause is one of the 5 syntaxes:      </span></p>
+<p class="MsoNormal" style="margin: 0px 0in; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; 
+	 font-size: 12pt; line-height: 13.75pt; font-family: Arial, sans-serif;"> </p>
+<ul style="list-style: disc;">
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-size: 12pt; 
+		 font-family: Arial, sans-serif;"><p class="MsoNormal" style="margin: 0px 0in; 
+											 color: rgb(34, 34, 34); font-weight: 400; 
+											 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+											 text-decoration-style: initial; 
+											 text-decoration-color: initial; 
+											 background-color: #ffffff; 
+											 font-style: normal; font-variant-ligatures: normal; 
+											 font-variant-caps: normal; 
+											 letter-spacing: normal; text-align: start; 
+											 text-indent: 0px; text-transform: none; 
+											 white-space: normal; word-spacing: 0px; 
+											 line-height: 13.75pt; font-size: 12pt; 
+											 font-family: Arial, sans-serif;"><span style="color: #006dbf;">a.cola</span><b><span style="color: #000000; 
+													 background-image: url(initial); 
+													 background-position: initial; 
+													 background-repeat: initial; 
+													 background-attachment: initial;"> == </span></b><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">b.colb</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"><b> -</b> 
+	 For each row in table </span><span style="color: #006dbf; background-image: url(initial); 
+											 background-position: initial; 
+											 background-repeat: initial; 
+											 background-attachment: initial;">a</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">, join 
+	 with the row in table </span><span style="color: #006dbf; background-image: url(initial); 
+											 background-position: initial; 
+											 background-repeat: initial; 
+											 background-attachment: initial;">b</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> that 
+	 satisfies </span><span style="color: #006dbf; background-image: url(initial); 
+								 background-position: initial; background-repeat: initial; 
+								 background-attachment: initial;">on_expr</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> and 
+	 has the smallest delta between </span><span style="color: #006dbf; 
+														 background-image: url(initial); 
+														 background-position: initial; 
+														 background-repeat: initial; 
+														 background-attachment: initial;">cola</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> and </span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">colb</span>.</p></li>
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-size: 12pt; 
+		 font-family: Arial, sans-serif;"><p class="MsoNormal" style="margin: 0px 0in; 
+											 color: rgb(34, 34, 34); font-style: normal; 
+											 font-variant-ligatures: normal; 
+											 font-variant-caps: normal; 
+											 font-weight: 400; letter-spacing: normal; 
+											 orphans: 2; text-align: start; 
+											 text-indent: 0px; text-transform: none; 
+											 white-space: normal; widows: 2; 
+											 word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+											 text-decoration-style: initial; 
+											 text-decoration-color: initial; 
+											 line-height: 13.75pt; background-color: #ffffff; 
+											 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #006dbf;">a.cola</span><b><span style="color: #000000; 
+													 background-image: url(initial); 
+													 background-position: initial; 
+													 background-repeat: initial; 
+													 background-attachment: initial;"> &lt;= </span></b><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">b.colb</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"><b> -</b> 
+	 For each row in table </span><span style="color: #006dbf; background-image: url(initial); 
+											 background-position: initial; 
+											 background-repeat: initial; 
+											 background-attachment: initial;">a</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">, join 
+	 with the row in table </span><span style="color: #006dbf; background-image: url(initial); 
+											 background-position: initial; 
+											 background-repeat: initial; 
+											 background-attachment: initial;">b</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> that 
+	 satisfies </span><span style="color: #006dbf; background-image: url(initial); 
+								 background-position: initial; background-repeat: initial; 
+								 background-attachment: initial;">on_expr</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> and </span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">cola </span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">is less 
+	 than or equal to</span><span style="color: #006dbf; background-image: url(initial); 
+									 background-position: initial; background-repeat: initial; 
+									 background-attachment: initial;"> colb</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> and 
+	 has the smallest delta between </span><span style="color: #006dbf; 
+														 background-image: url(initial); 
+														 background-position: initial; 
+														 background-repeat: initial; 
+														 background-attachment: initial;">cola</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> and </span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">colb</span>.</p></li>
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-size: 12pt; 
+		 font-family: Arial, sans-serif;"><p class="MsoNormal" style="margin: 0px 0in; 
+											 color: rgb(34, 34, 34); font-style: normal; 
+											 font-variant-ligatures: normal; 
+											 font-variant-caps: normal; 
+											 font-weight: 400; letter-spacing: normal; 
+											 orphans: 2; text-align: start; 
+											 text-indent: 0px; text-transform: none; 
+											 white-space: normal; widows: 2; 
+											 word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+											 text-decoration-style: initial; 
+											 text-decoration-color: initial; 
+											 line-height: 13.75pt; background-color: #ffffff; 
+											 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #006dbf;">a.cola</span><b><span style="color: #000000; 
+													 background-image: url(initial); 
+													 background-position: initial; 
+													 background-repeat: initial; 
+													 background-attachment: initial;"> &gt;= </span></b><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">b.colb</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"><b> -</b> 
+	 For each row in table </span><span style="color: #006dbf; background-image: url(initial); 
+											 background-position: initial; 
+											 background-repeat: initial; 
+											 background-attachment: initial;">a</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">, join 
+	 with the row in table </span><span style="color: #006dbf; background-image: url(initial); 
+											 background-position: initial; 
+											 background-repeat: initial; 
+											 background-attachment: initial;">b</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> that 
+	 satisfies </span><span style="color: #006dbf; background-image: url(initial); 
+								 background-position: initial; background-repeat: initial; 
+								 background-attachment: initial;">on_expr</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> and </span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">cola </span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">is greater 
+	 than or equal to</span><span style="color: #006dbf; background-image: url(initial); 
+									 background-position: initial; background-repeat: initial; 
+									 background-attachment: initial;"> colb</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> and 
+	 has the smallest delta between </span><span style="color: #006dbf; 
+														 background-image: url(initial); 
+														 background-position: initial; 
+														 background-repeat: initial; 
+														 background-attachment: initial;">cola</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> and </span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">colb</span>.</p></li>
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-size: 12pt; 
+		 font-family: Arial, sans-serif;"><p class="MsoNormal" style="margin: 0px 0in; 
+											 color: rgb(34, 34, 34); font-style: normal; 
+											 font-variant-ligatures: normal; 
+											 font-variant-caps: normal; 
+											 font-weight: 400; letter-spacing: normal; 
+											 orphans: 2; text-align: start; 
+											 text-indent: 0px; text-transform: none; 
+											 white-space: normal; widows: 2; 
+											 word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+											 text-decoration-style: initial; 
+											 text-decoration-color: initial; 
+											 line-height: 13.75pt; background-color: #ffffff; 
+											 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #006dbf;">a.cola</span><b><span style="color: #000000; 
+													 background-image: url(initial); 
+													 background-position: initial; 
+													 background-repeat: initial; 
+													 background-attachment: initial;"> &lt; </span></b><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">b.colb</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"><b> -</b> 
+	 For each row in table </span><span style="color: #006dbf; background-image: url(initial); 
+											 background-position: initial; 
+											 background-repeat: initial; 
+											 background-attachment: initial;">a</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">, join 
+	 with the row in table </span><span style="color: #006dbf; background-image: url(initial); 
+											 background-position: initial; 
+											 background-repeat: initial; 
+											 background-attachment: initial;">b</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> that 
+	 satisfies </span><span style="color: #006dbf; background-image: url(initial); 
+								 background-position: initial; background-repeat: initial; 
+								 background-attachment: initial;">on_expr</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> and </span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">cola </span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">is less 
+	 than </span><span style="color: #006dbf; background-image: url(initial); 
+							 background-position: initial; background-repeat: initial; 
+							 background-attachment: initial;">colb</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> and 
+	 has the smallest delta between </span><span style="color: #006dbf; 
+														 background-image: url(initial); 
+														 background-position: initial; 
+														 background-repeat: initial; 
+														 background-attachment: initial;">cola</span><span style="color: #000000; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;"> and </span><span style="color: #006dbf; background-image: url(initial); background-position: initial; 
+	 background-repeat: initial; background-attachment: initial;">colb</span>.</p></li>
+	<li style="color: rgb(34, 34, 34); text-transform: none; font-size: 12pt; 
+		 font-family: Arial, sans-serif;"><p class="MsoNormal" style="margin: 0px 0in; 
+											 color: rgb(34, 34, 34); font-style: normal; 
+											 font-variant-ligatures: normal; 
+											 font-variant-caps: normal; 
+											 font-weight: 400; letter-spacing: normal; 
+											 orphans: 2; text-align: start; 
+											 text-indent: 0px; text-transform: none; 
+											 white-space: normal; widows: 2; 
+											 word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+											 text-decoration-style: initial; 
+											 text-decoration-color: initial; 
+											 line-height: 13.75pt; background-color: #ffffff; 
+											 background-image: url(initial); 
+											 background-position: initial; 
+											 background-repeat: initial; 
+											 background-attachment: initial; 
+											 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #006dbf;">a.cola</span><b><span style="font-weight: 400; 
+													 color: #000000;"> &gt; </span></b><span style="color: #006dbf;">b.colb</span><span style="color: #000000;"><b> -</b> 
+	 For each row in table </span><span style="color: #006dbf;">a</span><span style="color: #000000;">, join with the row in table </span><span style="color: #006dbf;">b</span><span style="color: #000000;"> that 
+	 satisfies </span><span style="color: #006dbf;">on_expr</span><span style="color: #000000;"> and </span><span style="color: #006dbf;">cola </span><span style="color: #000000;">is greater than </span><span style="color: #006dbf;">colb</span><span style="color: #000000;"> and has the smallest delta between </span><span style="color: #006dbf;">cola</span><span style="color: #000000;"> and </span><span style="color: #006dbf;">colb</span><span style="color: #000000;">.</span></p></li>
+</ul>
+<p class="gmail-m_-6648809899713874107MsoListParagraph" style="font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; 
+	 margin: 0in 0in 0.0001pt 0.5in; line-height: 13.75pt; color: #000000; 
+	 font-size: 12pt; font-family: Arial, sans-serif; background-color: #ffffff;"> </p>
+<p class="MsoNormal" style="margin: 0px 0in; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; 
+	 font-size: 12pt; line-height: 13.75pt; background-color: #ffffff; 
+	 background-image: url(initial); background-position: initial; background-repeat: initial; 
+	 background-attachment: initial; font-family: Arial, sans-serif;"><span style="color: #000000;">Note the ordering of table </span><span style="color: #006dbf;">a</span><span style="color: #000000;"> vs </span><span style="color: #006dbf;">b</span><span style="color: #000000;"> in 
+ the </span><span style="color: #006dbf;">fuzzy_clause</span><span style="color: #000000;"> does not matter. For example  </span><span style="color: #006dbf;">b.colb</span><b><span style="color: #000000;"> &gt;= </span></b><span style="color: #006dbf;">a.cola </span><span style="color: #000000;">is 
+ the same as </span><span style="color: #006dbf;">a.cola </span><b><span style="color: #000000;">&lt;= </span></b><span style="color: #006dbf;">b.colb</span></p>
+<p style="font-size: 13pt; font-style: italic; color: #449938; text-transform: uppercase; 
+	 margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-family: Arial, sans-serif;"><b>GENERAL 
+ Examples</b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">SELECT age, dob, 
+ weight, name FROM Patients</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">SELECT age, dob, 
+ weight, name FROM Patients WHERE name =~ &quot;mr&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">SELECT count(*) 
+ as cnt, age, avg(dob), stdev(weight) FROM Patients GROUP BY age ORDER 
+ BY age</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">SELECT * FROM Patients, 
+ Accounts WHERE Patients.id == Accounts.patient_id</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;">SELECT * FROM Orders JOIN MarketData 
+ ON Orders.symbol==MarketData.symbol NEAREST marketData.time&lt;=Orders.time</p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;">SELECT * EXCEPT (OrderID, Quantity) 
+ from Orders; <span style="font-style: italic; color: #808080;">//return 
+ all Orders data except the OrderID and Quantity Columns</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 12pt; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; background-color: #ffffff;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;"><span style="font-style: italic; 
+	 color: #808080;">S</span>ELECT * FROM Orders where OrderId in 
+ (&quot;a1&quot;,&quot;a2&quot;,&quot;b1&quot;);</span></span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">SELECT * FROM 
+ Orders where OrderId in (select origOrderId from AnotherTable);</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">SELECT * FROM 
+ Orders where (OrderId, account) in ((&quot;a1&quot;,&quot;account1&quot;),(&quot;a2&quot;,&quot;account1&quot;),(&quot;b1&quot;,&quot;account2&quot;));</span></p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-family: &#39;Courier New&#39;; color: #006dbf;">SELECT 
+ * FROM Orders where (OrderId, account) in (select origOrderId, origAccount 
+ from AnotherTable);</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-family: &#39;Courier New&#39;; color: #006dbf;">SELECT 
+ DISTINCT EXAMPLE</p>
+<p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-family: &#39;Courier New&#39;; color: #006dbf;">SELECT 
+ symbol FROM MarketData GROUP BY symbol; <span style="font-style: italic; 
+												 color: #808080;">//Get 
+ unique symbols from the MarketData table.</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 13pt; font-style: italic; 
+	 color: #449938; text-transform: uppercase; line-height: Normal; font-family: Arial, sans-serif;"><b>NEAREST 
+ JOIN Examples</b></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; background-color: #ffffff;"><span style="font-family: &#39;Courier New&#39;; color: rgb(119, 147, 60);">//Assume 
+ two existing tables: Orders and MarketData</span></span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">AMIDB&gt; SELECT * FROM  Orders;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+-------------------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|      Orders       |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|time|sym   |Price  |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|Long|String|Integer|</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|120 |IBM   |3050   |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|200 |IBM   |3150   |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|250 |IBM   |3250   |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|20  |MSFT  |7550   |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|150 |MSFT  |7750   |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">AMIDB&gt; SELECT * FROM MarketData;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+-------------------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|    MarketData     |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|time|sym   |Price  |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|Long|String|Integer|</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|100 |IBM   |3020   |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|200 |IBM   |3180   |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|110 |MSFT  |7730   |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|180 |MSFT  |7780   |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: rgb(119, 147, 60);">//A 
+ JOIN will only include orders that have a satisfactory market data event. 
+ Note, we’re also calculating the price delta from the order vs the market</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">AMIDB&gt; select *,Orders.Price-MarketData.Price 
+ as delta from Orders JOIN MarketData ON Orders.sym==MarketData.sym NEAREST 
+ Orders.time&gt;=MarketData.time ORDER by Orders.time;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+---------------------------------------------------------------------------+     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|                             Orders_MarketData                             |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+---------------+--------------+----------------+-------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|time|sym   |Price  |MarketData_time|MarketData_sym|MarketData_Price|delta  |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|Long|String|Integer|Long           |String        |Integer         |Integer|</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+---------------+--------------+----------------+-------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|120 |IBM   |3050   |100            |IBM           |3020            |30     |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|150 |MSFT  |7750   |110            |MSFT          |7730            |20     |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|200 |IBM   |3150   |200            |IBM           |3180            |-30    |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|250 |IBM   |3250   |200            |IBM           |3180            |70     |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+---------------+--------------+----------------+-------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: rgb(119, 147, 60);">//A 
+ LEFT JOIN will include all orders, event those without a market data event 
+ (using null as a place holder).</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">AMIDB&gt; select *,Orders.Price-MarketData.Price 
+ as delta from Orders LEFT JOIN MarketData ON Orders.sym==MarketData.sym NEAREST 
+ Orders.time&gt;=MarketData.time ORDER by Orders.time;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+---------------------------------------------------------------------------+     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|                             Orders_MarketData                             |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+---------------+--------------+----------------+-------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|time|sym   |Price  |MarketData_time|MarketData_sym|MarketData_Price|delta  |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|Long|String|Integer|Long           |String        |Integer         |Integer|</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+---------------+--------------+----------------+-------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|20  |MSFT  |7550   |null           |null          |null            |null   |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|120 |IBM   |3050   |100            |IBM           |3020            |30     |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|150 |MSFT  |7750   |110            |MSFT          |7730            |20     |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|200 |IBM   |3150   |200            |IBM           |3180            |-30    |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">|250 |IBM   |3250   |200            |IBM           |3180            |70     |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">+----+------+-------+---------------+--------------+----------------+-------+</span></p>
+<p style="font-weight: bold; color: #449938; font-size: 13pt; font-style: italic; 
+	 text-transform: uppercase; margin-top: 15pt; margin-bottom: 3pt; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">Join Examples</u></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">Let&#39;s assume we 
+ have the two tables A and B, each with 1 column:</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none;"><span style="font-size: 8.0pt;"><br/>
+</span><span style="color: #17365D; font-family: &#39;Courier New&#39;, monospace; 
+			 font-size: 11pt;">+---+</span><span style="font-family: &#39;Courier New&#39;, monospace; 
+												 font-size: 11pt;">   </span><span style="color: #E36C0A; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;">+---+</span><span style="font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;">  </span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span style="color: #17365D;">| 
+ a |</span>   <span style="color: #E36C0A;">| b |</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span style="color: #17365D;">|aid|</span> 
+   <span style="color: #E36C0A;">|bid|</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span style="color: #17365D;">+---+</span> 
+   <span style="color: #E36C0A;">+---+</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span style="color: #17365D;">| 
+ 1 |</span>   <span style="color: #E36C0A;">| 2 |</span> </p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span style="color: #17365D;">| 
+ 2 |</span>   <span style="color: #E36C0A;">| 3 |</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span style="color: #17365D;">+---+</span> 
+   <span style="color: #E36C0A;">+---+</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 11pt; margin-bottom: 0pt;"> </p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">We can see 
+ that the value <b>1</b> only exists in the <b>A</b> table, the value <b>3</b> 
+ exists only in the <b>B</b> table and the value <b>2</b> existing in both 
+ tables.  When comparing the data between them there are, exhaustively 
+ speaking, 7 different ways you could want to see what matches and what 
+ doesn&#39;t.</p>
+<table style="border: none; border-collapse: separate;" cellspacing="0" width="100%" cellpadding="1">
+	<tbody><tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: solid #000000 1.0px; 
+			 border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="163"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; font-size: 10pt; font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="48"><p style="margin-bottom: .0001pt; 
+			 text-align: center; line-height: normal; font-size: 10pt; 
+			 font-family: Arial, sans-serif;"><b>JOIN</b></p>
+		<p style="margin-bottom: .0001pt; text-align: center; line-height: normal; 
+			 font-size: 10pt; font-family: Arial, sans-serif;"> </p>
+		<p style="margin-bottom: .0001pt; text-align: center; line-height: normal; 
+			 color: #4F81BD; font-size: 10pt; font-family: Arial, sans-serif;"><b><img src="image017.png" alt="" width="24" height="14" border="0"/></b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="60"><p style="margin-bottom: .0001pt; 
+			 text-align: center; line-height: normal; font-size: 10pt; 
+			 font-family: Arial, sans-serif;"><b>OUTER JOIN</b></p>
+		<p style="margin-bottom: .0001pt; text-align: center; line-height: normal; 
+			 font-size: 10pt; font-family: Arial, sans-serif;"><img src="image019.png" alt="" width="25" height="15" border="0"/></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; 
+			 text-align: center; line-height: normal; font-size: 10pt; 
+			 font-family: Arial, sans-serif;"><b>OUTER ONLY JOIN</b></p>
+		<p style="margin-bottom: .0001pt; text-align: center; line-height: normal; 
+			 color: #4F81BD; font-size: 10pt; font-family: Arial, sans-serif;"><b><img src="image021.png" alt="" width="24" height="14" border="0"/></b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="48"><p style="margin-bottom: .0001pt; 
+			 text-align: center; line-height: normal; font-size: 10pt; 
+			 font-family: Arial, sans-serif;"><b>LEFT JOIN</b></p>
+		<p style="margin-bottom: .0001pt; text-align: center; line-height: normal; 
+			 color: #4F81BD; font-size: 10pt; font-family: Arial, sans-serif;"><b><img src="image023.png" alt="" width="25" height="15" border="0"/></b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="72"><p style="margin-bottom: .0001pt; 
+			 text-align: center; line-height: normal; font-size: 10pt; 
+			 font-family: Arial, sans-serif;"><b>LEFT ONLY JOIN</b></p>
+		<p style="margin-bottom: .0001pt; text-align: center; line-height: normal; 
+			 font-size: 10pt; font-family: Arial, sans-serif;"><img src="image025.png" alt="" width="24" height="14" border="0"/></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="60"><p style="margin-bottom: .0001pt; 
+			 text-align: center; line-height: normal; font-size: 10pt; 
+			 font-family: Arial, sans-serif;"><b>RIGHT JOIN</b></p>
+		<p style="margin-bottom: .0001pt; text-align: center; line-height: normal; 
+			 font-size: 10pt; font-family: Arial, sans-serif;"><img src="image027.png" alt="" width="23" height="14" border="0"/></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; 
+			 text-align: center; line-height: normal; font-size: 10pt; 
+			 font-family: Arial, sans-serif;"><b>RIGHT ONLY JOIN</b></p>
+		<p style="margin-bottom: .0001pt; text-align: center; line-height: normal; 
+			 color: #4F81BD; font-size: 10pt; font-family: Arial, sans-serif;"><b><img src="image029.png" alt="" width="24" height="14" border="0"/></b></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="163"><p style="margin-bottom: .0001pt; 
+			 text-align: center; line-height: normal; color: #00B050; font-size: 10pt; 
+			 font-family: Arial, sans-serif;"><b>Include Matches?</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="48"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #00B050; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="60"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #00B050; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #00B050; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="48"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #00B050; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="72"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #00B050; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="60"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #00B050; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #4F81BD; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"> </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="163"><p style="margin-bottom: .0001pt; 
+			 text-align: center; line-height: normal; color: #365F91; font-size: 10pt; 
+			 font-family: Arial, sans-serif;"><b>Includes Left W/O a Match 
+		 on Right</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="48"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #365F91; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="60"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #365F91; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #365F91; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="48"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #365F91; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="72"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #365F91; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="60"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; font-size: 10pt; font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #4F81BD; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"> </p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="163"><p style="margin-bottom: .0001pt; 
+			 text-align: center; line-height: normal; color: #984806; font-size: 10pt; 
+			 font-family: Arial, sans-serif;"><b>Includes Right W/O a Match 
+		 on Left</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="48"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #4F81BD; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="60"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #984806; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #984806; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="48"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #984806; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="72"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #984806; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="60"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #984806; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="78"><p style="margin-bottom: .0001pt; text-align: center; 
+							 line-height: normal; color: #984806; font-size: 10pt; 
+							 font-family: Arial, sans-serif;"><b>YES</b></p></td>
+	</tr>
+</tbody></table>
+<p> </p>
+<p><img src="image031.png" alt="" width="26" height="14" border="0"/> <b style="font-weight: normal; font-family: Arial, sans-serif;"><span style="color: #4F81BD; font-family: Arial, sans-serif; font-weight: bold;">JOIN 
+ Syntax</span><span style="color: #4F81BD; font-weight: normal; font-family: Arial, sans-serif;"> 
+ -</span></b><span style="font-family: Arial, sans-serif;"> Return only 
+ those rows with values that coexist in both tables.  (Note, 
+ this is the same as the natural join <i style="font-style: normal; font-family: Arial, sans-serif;">select 
+ * from a,b where a.aid==b.bid</i>)</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none;"><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #6d2d9e; 
+	 font-size: 11pt;">SELECT * FROM</span></b><span style="color: #006dbf; 
+													 font-family: &#39;Courier New&#39;, monospace; 
+													 font-size: 11pt;"> 
+ </span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+				 font-size: 11pt;">a</span><span style="color: #006dbf; 
+												 font-family: &#39;Courier New&#39;, monospace; 
+												 font-size: 11pt;"> </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #6d2d9e; 
+	 font-size: 11pt;">JOIN</span></b><span style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+											 font-size: 11pt;"> </span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;">b</span><span style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+									 font-size: 11pt;"> </span><b><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;">on</span></b><span style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+											 font-size: 11pt;"> </span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;">a.aid==b.bid</span><span courier="" style="font-size: 8.0pt;"><br/>
+</span><span style="color: #548DD4; font-family: &#39;Courier New&#39;, monospace; 
+			 font-size: 10pt;">+---------+</span></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|   a_b   |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|aid 
+ |bid |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">| 
+ 2  | 2  |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p><img src="image033.png" alt="" width="26" height="16" border="0"/><b><span style="color: #4F81BD;"> </span><span style="color: #4F81BD; 
+												 font-family: Arial, sans-serif; 
+												 font-weight: bold;">OUTER 
+ JOIN Syntax</span></b><span style="font-family: Arial, sans-serif;"> - 
+ Return all rows from both tables.</span><span style="font-size: 8.0pt;"> </span> 
+ </p>
+<p style="margin-bottom: .0001pt; font-size: 11pt;"><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+															 color: #6d2d9e;">SELECT 
+ * FROM</span></b><span style="font-family: &#39;Courier New&#39;, monospace;"> 
+ </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #006dbf;">a</span><span style="font-family: &#39;Courier New&#39;, monospace; 
+												 color: #006dbf;"> </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #6d2d9e;">OUTER 
+ JOIN</span></b><span style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf;"> 
+ </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #006dbf;">b</span><span style="font-family: &#39;Courier New&#39;, monospace; 
+												 color: #006dbf;"> </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf;">on</span></b><span style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf;">a.aid==b.bid</span><b><span courier=""> </span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+---------+                         </p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|   a_b 
+   |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|aid 
+ |bid |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">| 
+ 1  |null|</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">| 
+ 2  | 2  |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|null| 
+ 3  |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p> </p>
+<p><img src="image035.png" alt="" width="26" height="16" border="0"/> <b><span style="color: #4F81BD; font-family: Arial, sans-serif; font-weight: bold;">OUTER 
+ ONLY JOIN Syntax</span></b><span style="font-family: Arial, sans-serif;"> 
+ - Return rows in the left table that don&#39;t have matching rows in the right 
+ table and rows in the right table that don&#39;t have matching rows in the 
+ left table.</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace;"><b><span courier="" style="color: #6d2d9e; font-size: 11pt;">SELECT * FROM</span></b><span style="color: #006dbf; font-size: 11pt;"> </span><span courier="" style="color: #006dbf; 
+															 font-size: 11pt;">a</span><span style="color: #006dbf; font-size: 11pt;"> </span><b><span courier="" style="color: #6d2d9e; font-size: 11pt;">OUTER ONLY JOIN</span></b><span style="color: #006dbf; font-size: 11pt;"> </span><span courier="" style="color: #006dbf; 
+															 font-size: 11pt;">b</span><span style="color: #006dbf; font-size: 11pt;"> </span><b><span courier="" style="color: #6d2d9e; font-size: 11pt;">on</span></b><span style="color: #006dbf; 
+	 font-size: 11pt;"> </span><span courier="" style="color: #006dbf; 
+									 font-size: 11pt;">a.aid==b.bid</span><b><span courier="" style="font-size: 8.0pt;"> </span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+---------+</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|   a_b 
+   |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|aid 
+ |bid |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">| 
+ 1  |null|</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|null| 
+ 3  |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p> </p>
+<p><img src="image037.png" alt="" width="26" height="16" border="0"/> <b><span style="color: #4F81BD; font-family: Arial, sans-serif; font-weight: bold;">LEFT 
+ JOIN Syntax</span></b><span style="font-family: Arial, sans-serif;"> - 
+ Return all rows from the left table and only the rows in the right table 
+ matching rows in the left table.</span><span style="font-size: 8.0pt;"> </span> 
+ </p>
+<p style="margin-bottom: .0001pt;"><b><span courier="" style="color: #6d2d9e; 
+											 font-family: &#39;Courier New&#39;, monospace; 
+											 font-size: 11pt;">SELECT * 
+ FROM</span></b><span style="font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"> 
+ </span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+				 font-size: 11pt;">a</span><span style="color: #006dbf; 
+												 font-family: &#39;Courier New&#39;, monospace; 
+												 font-size: 11pt;"> </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #6d2d9e; 
+	 font-size: 11pt;">LEFT JOIN</span></b><span style="color: #006dbf; 
+												 font-family: &#39;Courier New&#39;, monospace; 
+												 font-size: 11pt;"> </span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;">b</span><span style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+									 font-size: 11pt;"> </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #6d2d9e; 
+	 font-size: 11pt;">on</span></b><span style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+											 font-size: 11pt;"> </span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;">a.aid==b.bid</span><b><span courier="" style="font-size: 8.0pt;"> </span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+---------+                       </p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|   a_b 
+   |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|aid 
+ |bid |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">| 
+ 1  |null|</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">| 
+ 2  | 2  |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p> </p>
+<p><img src="image039.png" alt="" width="26" height="14" border="0"/> <b><span style="color: #4F81BD; font-family: Arial, sans-serif; font-weight: bold;">LEFT 
+ ONLY JOIN Syntax</span></b><span style="font-family: Arial, sans-serif;"> 
+ - Return only rows in the left table that don&#39;t have matching rows in 
+ the right table.</span><span style="font-size: 8.0pt;"> </span> </p>
+<p style="margin-bottom: .0001pt;"><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+											 color: #6d2d9e; font-size: 11pt;">SELECT 
+ * FROM</span></b><span style="font-family: &#39;Courier New&#39;, monospace; color: #6d2d9e; 
+						 font-size: 11pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+														 color: #006dbf; 
+														 font-size: 11pt;">a</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #6d2d9e; font-size: 11pt;"> 
+ </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #6d2d9e; font-size: 11pt;">LEFT ONLY JOIN</span></b><span style="font-family: &#39;Courier New&#39;, monospace; color: #6d2d9e; font-size: 11pt;"> 
+ </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #006dbf; font-size: 11pt;">b</span><span style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #6d2d9e; font-size: 11pt;"> </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+														 color: #6d2d9e; 
+														 font-size: 11pt;">on</span></b><span style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"> 
+ </span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+				 font-size: 11pt;">a.aid==b.bid</span><b><span courier="" style="font-size: 8.0pt;"> </span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+---------+    </p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|   a_b 
+   |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|aid 
+ |bid |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">| 
+ 1  |null|</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p><img src="image041.png" alt="" width="22" height="14" border="0"/> <b><span style="color: #4F81BD; font-family: Arial, sans-serif; font-weight: bold;">RIGHT 
+ JOIN Syntax</span></b><span style="font-family: Arial, sans-serif;"> - 
+ Return all rows from the right table and only the rows in the left table 
+ matching rows in the right table.  (Note, this is equivalent 
+ to ...<i style="font-style: normal; font-family: Arial, sans-serif;">FROM 
+ b LEFT JOIN a</i> ...)</span></p>
+<p style="margin-bottom: .0001pt;"><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+											 color: #6d2d9e; font-size: 11pt;">SELECT 
+ * FROM</span></b><span style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+						 font-size: 11pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+														 color: #006dbf; 
+														 font-size: 11pt;">a</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf; font-size: 11pt;"> 
+ </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #6d2d9e; font-size: 11pt;">RIGHT JOIN</span></b><span style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf; font-size: 11pt;"> 
+ </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #006dbf; font-size: 11pt;">b</span><span style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+														 color: #6d2d9e; 
+														 font-size: 11pt;">on</span></b><span style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf; font-size: 11pt;"> 
+ </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #006dbf; font-size: 11pt;">a.aid==b.bid</span><b><span courier="" style="font-size: 8.0pt;"> </span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+---------+</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|   a_b 
+   |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|aid 
+ |bid |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">| 
+ 2  | 2  |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|null| 
+ 3  |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p style="font-size: 8.0pt; font-family: ;"><b><span courier="">                                                                        </span></b></p>
+<p><img src="image043.png" alt="" width="26" height="14" border="0"/> <b><span style="color: #4F81BD; font-family: Arial, sans-serif; font-weight: bold;">RIGHT 
+ ONLY JOIN Syntax</span></b><span style="font-family: Arial, sans-serif;"> 
+ - Return only rows in the right table that don&#39;t have matching rows in 
+ the left table.  (Note, this is equivalent to ...<i style="font-style: normal; 
+	 font-family: Arial, sans-serif;">FROM b LEFT ONLY JOIN a</i> ...)</span></p>
+<p style="margin-bottom: .0001pt;"><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+											 color: #6d2d9e; font-size: 11pt;">SELECT 
+ * FROM</span></b><span style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+						 font-size: 11pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+														 color: #006dbf; 
+														 font-size: 11pt;">a</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf; font-size: 11pt;"> 
+ </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #6d2d9e; font-size: 11pt;">RIGHT ONLY JOIN</span></b><span style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf; font-size: 11pt;"> 
+ </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #006dbf; font-size: 11pt;">b</span><span style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+														 color: #6d2d9e; 
+														 font-size: 11pt;">on</span></b><span style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf; font-size: 11pt;"> 
+ </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #006dbf; font-size: 11pt;">a.aid==b.bid</span><b><span courier="" style="font-size: 8.0pt;"> </span></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+---------+    </p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|   a_b 
+   |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|aid 
+ |bid |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">|null| 
+ 3  |</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;">+----+----+</p>
+<p style="margin-bottom: .0001pt; line-height: normal; text-autospace: none; 
+	 color: #548DD4; font-family: &#39;Courier New&#39;, monospace; font-size: 10pt;"> </p>
+<p style="line-height: normal; text-autospace: none; margin-top: 15pt; 
+	 margin-bottom: 3pt; font-size: 13pt; font-weight: bold; font-style: italic; 
+	 color: #459939; font-family: Arial, sans-serif;">UNPACK EXAMPLE</p>
+<p dir="ltr" style="line-height: 1.3749999999999998; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: &#39;Courier New&#39;; color: #006dbf; background-color: transparent; 
+	 font-weight: 400;"><b id="docs-internal-guid-b274dcdc-7fff-ac47-0c5c-70d7551d5df7"><span style="font-weight: 400;">CREATE TABLE Orders (orderId String,accounts 
+ String);</span></b></p>
+<p dir="ltr" style="line-height: 1.3749999999999998; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: &#39;Courier New&#39;; color: #006dbf; background-color: transparent; 
+	 font-weight: 400;"><b id="docs-internal-guid-b274dcdc-7fff-ac47-0c5c-70d7551d5df7"><span style="font-weight: 400;">INSERT INTO Orders VALUES(&quot;ord1&quot;,&quot;a1,a2,a3&quot;),(&quot;ord2&quot;,&quot;b4,b5&quot;),(&quot;ord3&quot;,&quot;&quot;);</span></b></p>
+<p dir="ltr" style="line-height: 1.3749999999999998; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: &#39;Courier New&#39;; color: #006dbf; background-color: transparent; 
+	 font-weight: 400;"><b id="docs-internal-guid-b274dcdc-7fff-ac47-0c5c-70d7551d5df7"><span style="font-weight: 400;">SELECT * FROM Orders UNPACK accounts ON 
+ &quot;,&quot;;</span></b></p>
+<p dir="ltr" style="line-height: 1.3749999999999998; margin-top: 0pt; margin-bottom: 0pt; 
+	 background-color: #ffffff;"> </p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">+----------------+</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">|     Orders     |</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">+-------+--------+</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">|orderId|accounts|</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">|String 
+ |String  |</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">+-------+--------+</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">|ord1   |a1      |</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">|ord1   |a2      |</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">|ord1   |a3      |</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">|ord2   |b4      |</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">|ord2   |b5      |</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">|ord3   |        |</span></p>
+<p style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial; margin: 0in 0in 0.0001pt; font-size: 12pt; 
+	 line-height: 13.75pt; font-family: &#39;Courier New&#39;; color: #006dbf; 
+	 background-color: #ffffff;"><span style="background: rgb(255, 255, 255);">+-------+--------+</span></p>
+<br class="Apple-interchange-newline"/>
+
+<h3 style="margin-top: 5pt; margin-bottom: 1pt; font-size: 19pt; color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><a name="analyze_clause" id="analyze_clause"><span style="color: #7030A0; font-family: Arial, sans-serif; 
+								 text-decoration: none; ">analyze_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; font-weight: bold; font-style: italic; 
+	 font-size: 13pt; color: #449938; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;">This 
+ command runs analysis on a table. Analysis is performed on rows contained 
+ in a defined window, similar to a self-join. Each window can define an 
+ order-by to allow for finer control over the order in which an aggregate 
+ is applied.  Multiple windows may be defined. See <span style="color: #7030A0;"><a href="AMI-SQL_Nested_Expressions.htm#window_expr" style="font-size: 12pt; 
+	 font-family: &#39;Courier New&#39;, monospace;">window_expr</a></span> in 
+ nested expressions for details.</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;">When 
+ adding columns, the new cells will default to null. The column will be 
+ added to the end (right-most) of the table.</p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="" style="color: #ff0000;">ANALYZE</span> 
+ <b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#agg_expr">agg_expr</a></span></b> 
+ <i><span courier="">[</span></i><i><span courier="" style="color: #6d2d9e;">,</span></i><span style="color: #6d2d9e;"> </span><b><span courier="" style="color: #6d2d9e;">agg_expr</span></b><span style="color: #6d2d9e;"> ...</span><span courier=""><i>]</i></span> 
+ <span courier=""> </span><span courier="" style="color: #ff0000;">FROM</span> 
+ <span courier="" style="color: #006dbf;">tblname</span> <span courier=""> </span><b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#window_expr">window_expr</a></span></b> 
+ <span courier=""> </span><i><span courier="">[</span></i><i><span courier="" style="color: #6d2d9e;">,</span></i><span style="color: #6d2d9e;"> 
+ </span><span courier="" style="color: #6d2d9e;"> </span><b><span courier="" style="color: #6d2d9e;">window_expr</span></b><span style="color: #6d2d9e;"> 
+ </span><span courier="" style="color: #6d2d9e;"> ...</span><span courier=""><i>]</i></span> <span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><i><span courier="">tblname</span></i></b> -<i><span courier=""> string name of the table to alter the schema of</span></i></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<h4 style="color: #449938; margin-top: 15pt; margin-bottom: 3pt; font-size: 12pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">CREATE TABLE</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">  final_table AS</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">ANALYZE</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">  a_date AS date,</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">  BETA(win.a_open, win.b_open) 
+ AS beta,</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">  COR(win.a_open, win.b_open) 
+ AS cor</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">FROM source_table</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">WINDOW</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">  win ON win.date &lt;= 
+ date + __date_range &amp;&amp; date &lt;= win.date</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;"> </p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;"> </p>
+<h3 style="margin-top: 5pt; margin-bottom: 1pt; line-height: Normal; font-size: 19pt; 
+	 color: #7030A0; font-family: Arial, sans-serif; text-decoration: none; "><a name="prepare_clause" id="prepare_clause"><span style="color: #7030A0; 
+													 font-family: Arial, sans-serif; 
+													 text-decoration: none; ">prepare_clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">This 
+ command allows the user to &quot;prepare&quot; additional columns whose 
+ values are calculated as aggregates across rows. For example, a running 
+ sum needs to consider not just the current row, but all rows before the 
+ current row. This can be accomplished using the <span style="color: #C00000;">STACK()</span> 
+ method inside a <span style="color: #C00000;">PREPARE</span> clause (see 
+ example below).</p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<ul style="list-style: disc;">
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #C00000;">ORDER 
+	 BY</span>: In many cases, the ordering of rows in the input table 
+	 is important, especially for running sums. The <span style="color: #C00000;">ORDER 
+	 BY</span> clause is useful to guarantee the correct ordering. </p></li>
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #C00000;">PARTITION 
+	 BY</span>: Used to perform many aggregates on a single table, each 
+	 aggregate considering only a subset of the table&#39;s rows based on some 
+	 grouping criteria. </p></li>
+</ul>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">PREPARE</span> 
+ <b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#prep_expr" style="font-size: 12pt;">prep_expr</a></span></b> 
+ <i><span courier="">[</span></i><i><span courier="" style="color: #6d2d9e;">,</span></i><span style="color: #6d2d9e;"> </span><b><span courier="" style="color: #6d2d9e;">prep_expr</span></b><span style="color: #6d2d9e;"> ...</span><span courier=""><i>]</i></span> 
+ <span courier=""> </span><span courier="" style="color: #ff0000;">FROM</span> 
+ <span courier="" style="color: #006dbf;">tblname</span> <span courier=""><i> </i> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier=""><i>  [</i></span><span courier="" style="color: #ff0000;">ORDER BY</span> <b><span courier="" style="color: #6d2d9e;">expr</span></b> <i><span courier="" style="color: #808080;">[</span></i><span courier="" style="color: #ff0000;">ASC</span><i><span courier="" style="color: #808080;">|</span></i><span courier="" style="color: #ff0000;">DESC</span><i><span courier="" style="color: #808080;">] 
+ [</span><span courier="" style="color: #6d2d9e;">,</span></i><span courier="" style="color: #6d2d9e;"> </span><b><span courier="" style="color: #6d2d9e;">expr</span></b><span courier=""> </span><i><span courier="" style="color: #808080;">[</span></i><span courier="" style="color: #ff0000;">ASC</span><i><span courier="" style="color: #808080;">|</span></i><span courier="" style="color: #ff0000;">DESC</span><i><span courier="" style="color: #808080;">]</span></i><span courier=""> </span><span courier="" style="color: #808080;">...<i>]]</i></span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier=""> </span> <span courier=""><i>[</i></span><span courier="" style="color: #ff0000;">PARTITION BY</span> <b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#column_expr" style="font-size: 12pt;">column_expr</a></span></b> 
+ <span courier=""><i>[</i>, </span><b><span courier="" style="color: #7030A0;">column_expr</span></b><span courier=""> </span><span courier="" style="color: #808080;">...<i>]</i></span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="">tblname</span></i></b> 
+ -<i><span courier=""> string name of the table to alter the schema of</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; font-size: 12pt;"><span style="font-family: Arial, sans-serif;">This 
+ example will produce a running sum of the qty column order by extime on 
+ a per-account basis</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE TABLE</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  final_table 
+ AS</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">PREPARE account, 
+ qty, extime, STACK(qty) as acc_qty FROM table ORDER BY extime</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">PARTITION BY account</span></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

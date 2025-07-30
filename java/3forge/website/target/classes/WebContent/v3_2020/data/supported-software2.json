@@ -1,0 +1,528 @@
+[
+	{
+		"category": "platform",
+		"name": "Windows",
+		"desc": "windows",
+		"imgSrc": "documentation/v5/assets/images/logos-windows.png",
+		"id": "ss1"
+	},
+	{
+		"category": "platform",
+		"name": "Android",
+		"desc": "android",
+		"imgSrc": "documentation/v5/assets/images/logos-android.png",
+		"id": "ss2"
+	},
+	{
+		"category": "platform",
+		"name": "Apple",
+		"desc": "apple",
+		"imgSrc": "documentation/v5/assets/images/logos-apple.png",
+		"id": "ss3"
+	},
+	{
+		"category": "platform",
+		"name": "Linux",
+		"desc": "linux",
+		"imgSrc": "documentation/v5/assets/images/logos-linux.png",
+		"id": "ss4"
+	},
+	{
+		"category": "datasource",
+		"name": "AMI Database",
+		"desc": "hello there",
+		"imgSrc": "documentation/v5/assets/images/logos-amidb.png",
+		"id": "ss5"
+	},
+	{
+		"category": "datasource",
+		"name": "Flat File",
+		"desc": "this is crazy",
+		"imgSrc": "documentation/v5/assets/images/logos-ff-reader.png",
+		"categoryName": "Datasources",
+		"adapterFile": "path/to/adapter/file",
+		"officialPageAddress": "https://www.3forge.com",
+		"id": "ss6"
+	},
+	{
+		"category": "datasource",
+		"name": "AMI Shell",
+		"desc": "here's my number",
+		"imgSrc": "documentation/v5/assets/images/logos-amishell.png",
+		"id": "ss7"
+	},
+	{
+		"category": "datasource",
+		"name": "Excel",
+		"desc": "call me maybe",
+		"imgSrc": "documentation/v5/assets/images/logos-excel.png",
+		"id": "ss8"
+	},
+	{
+		"category": "datasource",
+		"name": "Fred",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-fred.png",
+		"adapterFile": "path/to/adapter/file",
+		"officialPageAddress": "https://www.3forge.com",
+		"id": "ss9"
+	},
+	{
+		"category": "datasource",
+		"name": "Quandl",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-quandl.png",
+		"id": "ss10"
+	},
+	{
+		"category": "datasource",
+		"name": "Oracle",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-oracle.png",
+		"id": "ss11"
+	},
+	{
+		"category": "datasource",
+		"name": "Microsoft SQL",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-ms-sql.png",
+		"adapterFile": "path/to/adapter/file",
+		"officialPageAddress": "https://www.3forge.com",
+		"id": "ss12"
+	},
+	{
+		"category": "datasource",
+		"name": "MySQL",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-my-sql.png",
+		"id": "ss13"
+	},
+	{
+		"category": "datasource",
+		"name": "IBM DB2",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-ibm-db2.png",
+		"id": "ss14"
+	},
+	{
+		"category": "datasource",
+		"name": "SAP Sybase",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-sybase.png",
+		"id": "ss15"
+	},
+	{
+		"category": "datasource",
+		"name": "SybaseIQ",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-sybaseiq.png",
+		"id": "ss16"
+	},
+	{
+		"category": "datasource",
+		"name": "KX",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-kx.png",
+		"id": "ss17"
+	},
+	{
+		"category": "datasource",
+		"name": "Hadoop",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-hadoop.png",
+		"id": "ss18"
+	},
+	{
+		"category": "datasource",
+		"name": "Mongo DB",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-mongo.png",
+		"id": "ss19"
+	},
+	{
+		"category": "datasource",
+		"name": "Apache Spark",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-spark.png",
+		"id": "ss20"
+	},
+	{
+		"category": "datasource",
+		"name": "R",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-r.png",
+		"id": "ss21"
+	},
+	{
+		"category": "datasource",
+		"name": "Impala",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-impala-2.png",
+		"id": "ss22"
+	},
+	{
+		"category": "datasource",
+		"name": "PostgreSQL",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-postgre.png",
+		"id": "ss23"
+	},
+	{
+		"category": "datasource",
+		"name": "Phoenix",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-phoenix.png",
+		"id": "ss24"
+	},
+	{
+		"category": "datasource",
+		"name": "Greenplum",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/greenplumb.png",
+		"id": "ss25"
+	},
+	{
+		"category": "datasource",
+		"name": "Netezza",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/netezza.png",
+		"id": "ss26"
+	},
+	{
+		"category": "datasource",
+		"name": "MemSQL",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/memsql_logo_1024x512-square.png",
+		"id": "ss27"
+	},
+	{
+		"category": "datasource",
+		"name": "Couchbase",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/couchbase.png",
+		"id": "ss28"
+	},
+	{
+		"category": "datasource",
+		"name": "Chronicle Queue",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/chronicle.png",
+		"id": "ss29"
+	},
+	{
+		"category": "datasource",
+		"name": "SQLite",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/sqlite.png",
+		"id": "ss30"
+	},
+	{
+		"category": "datasource",
+		"name": "REST API",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/webapi.png",
+		"id": "ss31"
+	},
+	{
+		"category": "datasource",
+		"name": "Snowflake",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/snowflake.png",
+		"id": "ss32"
+	},
+	{
+		"category": "datasource",
+		"name": "Hazelcast",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/hazlecast.png",
+		"id": "ss33"
+	},
+	{
+		"category": "datasource",
+		"name": "Symphony",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/symphony.png",
+		"id": "ss34"
+	},
+	{
+		"category": "datasource",
+		"name": "Apache Ignite",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/ignite.png",
+		"id": "ss35"
+	},
+	{
+		"category": "datasource",
+		"name": "HP Vertica",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/vertica.png",
+		"id": "ss36"
+	},
+	{
+		"category": "datasource",
+		"name": "Hive",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/Apache_Hive.svg",
+		"id": "ss67"
+	},
+	{
+		"category": "datasource",
+		"name": "Deephaven",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/Logo-Community-OnLight.svg",
+		"id": "ss68"
+	},
+	{
+		"category": "datasource",
+		"name": "Bloomberg",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logo-bloomberg.png",
+		"id": "ss69"
+	},
+				{
+		"category": "datasource",
+		"name": "SingleStore",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/single_store_logo.png",
+		"id": "ss74"
+	},
+	{
+		"category": "msg-feed-handler",
+		"name": "Solace Systems",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logo-solace.png",
+		"id": "ss37"
+	},
+	{
+		"category": "msg-feed-handler",
+		"name": "60 East-Amps",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logo-amps.png",
+		"id": "ss38"
+	},
+	{
+		"category": "msg-feed-handler",
+		"name": "Tibco",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logo-tibco.png",
+		"id": "ss39"
+	},
+	{
+		"category": "msg-feed-handler",
+		"name": "ActiveMQ",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logo-activemq.png",
+		"id": "ss40"
+	},
+	{
+		"category": "msg-feed-handler",
+		"name": "RabbitMQ",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logo-rabbitmq.png",
+		"categoryName": "sdjlaskdfj",
+		"id": "ss41"
+	},
+	{
+		"category": "msg-feed-handler",
+		"name": "KX Streaming",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-kx.png",
+		"id": "ss42"
+	},
+	{
+		"category": "msg-feed-handler",
+		"name": "Kafka",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/kafka.png",
+		"id": "ss43"
+	},
+	{
+		"category": "msg-feed-handler",
+		"name": "OneTick",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/onetick_final.png",
+		"id": "ss44"
+	},
+	{
+		"category": "msg-feed-handler",
+		"name": "Chronicle Queue",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/chronicle.png",
+		"id": "ss45"
+	},
+	{
+		"category": "msg-feed-handler",
+		"name": "FIX",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/FIX_svg.svg",
+		"id": "ss70"
+	},
+		{
+		"category": "msg-feed-handler",
+		"name": "Amazon SQS",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/amazon-sqs.png",
+		"id": "ss71"
+	},
+		{
+		"category": "msg-feed-handler",
+		"name": "Aeron",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/Aeron-logo-black.svg",
+		"id": "ss72"
+	},
+			{
+		"category": "msg-feed-handler",
+		"name": "IBM MQ",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/ibm-mq.png",
+		"id": "ss75"
+	},
+	{
+		"category": "browser",
+		"name": "Chrome",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-chrome.png",
+		"id": "ss46"
+	},
+	{
+		"category": "browser",
+		"name": "Firefox",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-firefox.png",
+		"id": "ss47"
+	},
+	{
+		"category": "browser",
+		"name": "Edge",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/edge.png",
+		"id": "ss48"
+	},
+	{
+		"category": "browser",
+		"name": "Safari",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-safari.png",
+		"id": "ss50"
+	},
+	{
+		"category": "source-control",
+		"name": "Git",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/git.png",
+		"id": "ss51"
+	},
+	{
+		"category": "source-control",
+		"name": "Perforce",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/perforce.png",
+		"id": "ss52"
+	},
+	{
+		"category": "desk-container",
+		"name": "interop.io (Finsemble)",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/interop_io_updated_Logo.jpg",
+		"id": "ss53"
+	},
+			{
+		"category": "desk-container",
+		"name": "Here (OpenFin)",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/openfin_logo.svg",
+		"id": "ss73"
+	},
+	{
+		"category": "cloud-provider",
+		"name": "AWS",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/aws.png",
+		"id": "ss54"
+	},
+	{
+		"category": "cloud-provider",
+		"name": "Oracle",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/logos-oracle.png",
+		"id": "ss55"
+	},
+	{
+		"category": "cloud-provider",
+		"name": "Google Cloud Platform",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/google_cloud.png",
+		"id": "ss56"
+	},
+	{
+		"category": "cloud-provider",
+		"name": "Rackspace",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/rackspace.png",
+		"id": "ss57"
+	},
+	{
+		"category": "cloud-provider",
+		"name": "Azure",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/azure.png",
+		"id": "ss58"
+	},
+	{
+		"category": "entitlement-sso",
+		"name": "SAML",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/saml_final.png",
+		"id": "ss59"
+	},
+	{
+		"category": "entitlement-sso",
+		"name": "Active Directory",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/active_dir.png",
+		"id": "ss60"
+	},
+	{
+		"category": "entitlement-sso",
+		"name": "Kerberos",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/kerberos_final.png",
+		"id": "ss61"
+	},
+	{
+		"category": "partner",
+		"name": "Oracle",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/oracle_final.png",
+		"id": "ss62"
+	},
+	{
+		"category": "partner",
+		"name": "EDM Council",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/edm_final.png",
+		"id": "ss63"
+	},
+	{
+		"category": "partner",
+		"name": "Chronicle Software",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/chronicle.png",
+		"id": "ss64"
+	},
+	{
+		"category": "sec-key-mng",
+		"name": "Microsoft Azure Vault",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/key-vault.png",
+		"id": "ss65"
+	},
+	{
+		"category": "sec-key-mng",
+		"name": "Amazon Key Management Service",
+		"desc": "",
+		"imgSrc": "documentation/v5/assets/images/aws-kms.png",
+		"id": "ss66"
+	}
+]

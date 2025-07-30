@@ -1,0 +1,20 @@
+SELECT 
+  last as 'last',
+  bid as 'bid',
+  ask as 'ask',
+  cp as 'cp',         
+  quote_date as 'quote_date',              
+  symbol as 'symbol',      
+  volume as 'volume',
+  expiry_date as 'expiry',
+  strike_price as 'strike_price',
+  option_symbol as 'option_symbol',
+  u_close as 'u_close',
+  open_interest as 'open_interest',
+  file_id as 'file_id',
+  implied_vol as 'implied_vol',
+  vega as 'vega',
+  gamma as 'gamma',
+  delta as 'delta',
+  theta as 'theta'
+FROM DailyOptionData WHERE  symbol = ?{symbol} and quote_date >= ?{qdate1} and quote_date <= ?{qdate2}

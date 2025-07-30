@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="loader">
+<f1:secure/>
+<head>
+   		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-KP5MMRBN');</script>
+		<!-- End Google Tag Manager -->
+		<script src="cookiehub.js"></script>
+	<title>Contact Us</title>
+	<f1:include page="'_/head.htm'"/>
+	<link media="all" rel="stylesheet" href="css/contact-modal.css">
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KP5MMRBN"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<!-- test -->
+	<div id="wrapper">
+		<f1:include page="'_/header.html'"/>
+		<main id="main">
+		    <div id="contact-modal" class="modal">
+			   	  <div class="modal-content" style="text-align: center;">
+				      <span class="close">&times;</span>
+				      <img class="recaptcha-bot" src="images/bot.svg" alt="bot"></img> 	
+				      <div class="modal-header">
+					      <h4>I am not a robot</h4>
+				  	  </div>
+				  	  <hr>
+					  <p class="modal-text">What is <span id="left-operand"></span> multiplied by <span id="right-operand"></span>?</p>
+					  <p id="recaptcha-message" style="color:red;"></p>
+					  <form id="answers-container">
+				      </form>
+					  <br><br>
+					  <div class="btn-holder">
+				      	<button id="modal-submit-button" class="btn xl">submit</button>
+				      </div>
+			      </div>
+		    </div>
+			<section class="visual-section">
+				<div class="container">
+					<div class="decor decor-outline"></div>
+					<div class="decor decor-filled"></div>
+					<div class="visual">
+						<div class="text-holder">
+							<div class="text-wrap">
+								<h1 class="h1">Contact Us</h1>
+								<p>For a product demo, support help, or general information, please fill out the form below, and our team will follow up shortly.</p>
+							</div>
+						</div>
+						<div class="img-holder">
+							<img src="images/contact-img.png" srcset="images/contact-img@2x.png 2x" alt="" width="548" height="313">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="contact-section viewport-section">
+				<div class="container">
+					<div class="contact-block">
+						<ul class="contact-list">
+							<li>
+								<h3 class="h3">Addresses (NYC | London | Singapore)</h3>
+								<address>
+									<span class="icon icon-location-pin"></span>
+									225 Broadway, Suite 1615<br> New York, NY 10007, USA.
+								</address>
+								<address>
+									<span class="icon icon-location-pin"></span>
+									30 Churchill Place<br>London E14 5EU
+								</address>
+								<address>
+									<span class="icon icon-location-pin"></span>
+									15 Beach Road<br> Singapore 189677
+								</address>
+							</li>
+							<li>
+								<h3 class="h3">E-MAIL</h3>
+								<span class="email">
+									<span class="icon icon-envelope"></span>
+									<a href="mailto:&#105;&#110;&#102;&#111;&#064;&#051;&#102;&#111;&#114;&#103;&#101;&#046;&#099;&#111;&#109;">info@3forge.com</a>
+								</span>
+							</li>
+							<li>
+								<h3 class="h3">GET SOCIAL</h3>
+								<ul class="social-network">
+									<li><a href="https://www.linkedin.com/company/3forge/" target="_blank"><span class="icon icon-linkedin"></span></a></li>
+									<li><a href="https://www.facebook.com/3forge/" target="_blank"><span class="icon icon-facebook"></span></a></li>
+									<li><a href="https://twitter.com/3forge_nyc"  target="_blank"><span class="icon icon-twitter"></span></a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="contact-form">
+						<label style="color: red;"><f1:out value="${cu_errors}"/></label>
+						<form class="info-form form-validation" id="contact-form" action="/contactUs" method="post" onSubmit="true">
+							<input type="hidden" id="hash-code" name="hash-code" value="">
+							<h2 class="h2">Get in Touch</h2>
+							<div class="form-container">
+									<div class="form-row">
+									<div class="form-col">
+										<div class="input-holder">
+											<input name="full-name" type="text" placeholder="Your Name" value="<f1:out value="${cu_fullname}"/>" data-required="true">
+										</div>
+									</div>
+									<div class="form-col">
+										<div class="input-holder">
+											<input name="email" type="email" placeholder="Business Email" value="<f1:out value="${cu_email}"/>" data-required="true">
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-col">
+										<div class="input-holder">
+											<input name="phone" type="text" data-regexp="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" placeholder="Phone Number" value="<f1:out value="${cu_phone}"/>" data-type="text" data-required="true">
+										</div>
+									</div>
+									<div class="form-col">
+										<div class="input-holder">
+											<input name="company" type="text" placeholder="Company" value="<f1:out value="${cu_company}"/>" data-required="true">
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-col full">
+										<div class="input-holder">
+											<textarea name="message" cols="30" rows="10" placeholder="Message" value="<f1:out value="${cu_message}"/>" data-required="true"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="captcha-box"></div>
+								<div class="btn-holder">
+									<input type="submit" id="contact-submit-btn" value="Send Message" class="btn xl">
+								</div>
+							</div>
+							<div class="message">
+								<p>Thank you message</p>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<section class="map-section viewport-section position-relative">
+				<div class="bg-stretch">
+					<span data-srcset="images/map-placeholder.png, images/map-placeholder@2x.png 2x"></span>
+				</div>
+				<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AoPm19Kf9txz7zo8cToqw1sFHVeu8HvR" width="640" height="480"></iframe>
+			</section>
+		</main>
+		<f1:include page="'_/footer.html'"/>
+	</div>
+	
+	<script type="text/javascript">
+		document.getElementById("contact-submit-btn").addEventListener('click', recaptcha, false);
+		var UPPER_RANGE = 11;
+		function recaptcha(e) {
+			e.preventDefault(); // may be unnecessary
+			$("#contact-modal").slideDown();
+			document.getElementById("recaptcha-message").innerText = "";
+			prepareQuestion();
+		}
+		
+		function prepareQuestion() {
+			// create two operands
+			var leftOperand = Math.floor(Math.random() * UPPER_RANGE);
+			var rightOperand = Math.floor(Math.random() * UPPER_RANGE);
+			document.getElementById("left-operand").innerText = leftOperand;
+			document.getElementById("right-operand").innerText = rightOperand;
+			
+			// create answer choices
+			var numOfChoices = 4;
+			var correctAnswer = leftOperand * rightOperand;
+			var choices = new Set();
+			choices.add(correctAnswer);
+			while (choices.size != numOfChoices)
+				choices.add(generateWrongChoice(choices));
+			
+			//create radio buttons with answer choices
+			clearExistingChoices();
+			var choicesArray = Array.from(choices);
+			shuffleChoices(choicesArray);
+			createRadioButtons(choicesArray);
+		}
+		function clearExistingChoices() {
+			var radioContainer = document.getElementById("answers-container");
+			while(radioContainer.firstChild)
+				radioContainer.removeChild(radioContainer.lastChild);
+		}
+		/* Randomize array in-place using Durstenfeld shuffle algorithm source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array */
+		function shuffleChoices(array) {
+		    for (var i = array.length - 1; i > 0; i--) {
+		        var j = Math.floor(Math.random() * (i + 1));
+		        var temp = array[i];
+		        array[i] = array[j];
+		        array[j] = temp;
+		    }
+		}
+		
+		function generateWrongChoice(existingChoices) {
+			var newChoice = Math.floor(Math.random() * UPPER_RANGE) * Math.floor(Math.random() * UPPER_RANGE);
+			while (existingChoices.has(newChoice))
+				newChoice = Math.floor(Math.random() * UPPER_RANGE) * Math.floor(Math.random() * UPPER_RANGE);
+			return newChoice;
+		}
+		
+		function createRadioButtons(choicesArray) {
+			var radioContainer = document.getElementById("answers-container");
+			var labelIdPrefix = "label-";
+			for (var i = 0; i < choicesArray.length; i++) {
+				var label = document.createElement("label");
+				var input = document.createElement("input");
+				label.setAttribute("class", "choice-label");
+				label.setAttribute("for", labelIdPrefix + i);
+				label.appendChild(document.createTextNode("" + choicesArray[i]));
+				
+				input.setAttribute("type", "radio");
+				input.setAttribute("id", labelIdPrefix + i);
+				input.setAttribute("name", "choice");
+				input.setAttribute("value", choicesArray[i]);
+				
+				radioContainer.appendChild(label);
+				radioContainer.appendChild(input);
+			}
+		}
+		
+		function isAnswerCorrect() {
+			var expected = 	parseInt(document.getElementById("left-operand").innerText) * parseInt(document.getElementById("right-operand").innerText);
+			var radios = document.getElementsByName("choice");
+			var actual = null;
+			for (var i = 0; i < radios.length; i++)
+				if (radios[i].checked)
+					actual = parseInt(radios[i].value);
+			if (actual === null)
+				return null;
+			return expected === actual;
+		}
+		
+		$("#modal-submit-button").on('click', function() {
+			document.getElementById("recaptcha-message").innerText = "";
+			if (isAnswerCorrect() === null)
+				document.getElementById("recaptcha-message").innerText = "Please select one of the following choices.";
+			else if (isAnswerCorrect()) {
+				closeModal();
+				validateFormAndSubmit();
+			} else {
+				document.getElementById("recaptcha-message").innerText = "Wrong answer, please try again.";
+				prepareQuestion();
+			}
+		});
+		
+		function validateFormAndSubmit(){
+			var url = 'getContactFormKey';
+			var par = new XMLHttpRequest();
+			par.onerror=function(o){onAjaxError(o);};
+			par.onreadystatechange=function(o){
+				document.getElementById("hash-code").value=par.responseText;
+				document.getElementById("contact-form").submit();
+			};
+			par.open("GET",url,true);
+			par.setRequestHeader("Content-type","text/plain");
+			par.send();
+		}
+		
+		$(".close").on('click', closeModal);
+		
+		window.addEventListener("click", function(event) {
+			if (event.target == document.getElementById("contact-modal")) {
+				closeModal();
+			}
+		});
+		
+		function closeModal() {
+			$("#contact-modal").slideUp();
+		}
+		
+		// event listener for radio button change
+		$("#answers-container").on("change", function() {
+			document.getElementById("recaptcha-message").innerText = "";
+		});
+	</script>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

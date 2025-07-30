@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.f1</groupId>
+
+	<name>pdf</name>
+	<artifactId>pdf</artifactId>
+	<version>1.00-SNAPSHOT</version>
+
+	<parent>
+		<groupId>com.f1</groupId>
+		<artifactId>f1</artifactId>
+		<version>1.00-SNAPSHOT</version>
+		<relativePath>../</relativePath>
+	</parent>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.f1</groupId>
+			<artifactId>utils</artifactId>
+			<version>1.00-SNAPSHOT</version>
+		</dependency>
+			
+		<dependency>
+			<groupId>com.github.librepdf</groupId>
+			<artifactId>openpdf</artifactId>
+			<version>1.3.30</version> 
+			<!-- latest version to date -->
+			<!-- 1.3.25 earliest vuln free version-->
+		</dependency>
+	</dependencies>
+</project>
+

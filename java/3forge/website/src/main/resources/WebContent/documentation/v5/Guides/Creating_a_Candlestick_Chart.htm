@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "2.0_7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Creating a Candlestick Chart</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Creating a Candlestick Chart">
+        <span>Creating a Candlestick Chart</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Creating a Candlestick Chart</h1>
+<p>In this example we will go through how to create a custom candlestick 
+ chart. This type of visualization is very common with price data. Assuming 
+ that we are working on some <span style="font-weight: bold;">raw</span> 
+ or <span style="font-weight: bold;">prepared</span> data, we should have 
+ similar to the following columns:</p>
+<p> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><b id="docs-internal-guid-db1ebd34-7fff-b7a8-6080-4e43311ea6be"><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #000000; 
+	 background-color: transparent; font-weight: 400; font-style: normal; 
+	 font-variant: normal; vertical-align: baseline; white-space: pre-wrap; 
+	 text-decoration: none; ">Time,Open,High,Low,Close</span></b></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-size: 11pt; font-family: &#39;Courier New&#39;; font-weight: 400;"><b id="docs-internal-guid-db1ebd34-7fff-b7a8-6080-4e43311ea6be"><span style="font-weight: 400;">20201023-09:31:00,203.73,203.75,203.29,203.75</span></b></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">After attaching 
+ the <span style="font-weight: bold;">Datasource</span> and creating the 
+ <span style="font-weight: bold;">Datamodel</span> we select a <span style="font-weight: bold;">Scatter 
+ Plot</span> chart</p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-size: 11pt; font-family: &#39;Courier New&#39;;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"><img src="../assets/images/Candlechart1.png" style="border: none;" alt="" border="0"/></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">Then we start configuring 
+ our plot by selecting <span style="font-weight: bold;">Time</span> on 
+ the X axis and <span style="font-weight: bold;">High</span> on the Y axis</p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"><img src="../assets/images/Candlechart2.png" style="border: none;" alt="" border="0"/></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">Next, by clicking 
+ on the <span style="font-weight: bold;">Advanced</span> tab we are able 
+ to make the following options:</p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"><img src="../assets/images/Candlechart3.png" style="border: none;" alt="" border="0"/></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">By overriding the 
+ <span style="font-weight: bold;">Bottom</span> of the Marker with <span style="font-weight: bold;">Low</span> variable and making the Markers 
+ <span style="font-weight: bold;">1 px</span> thin and <span style="font-weight: bold;">square</span> 
+ we have created vertical black lines which range from <span style="font-weight: bold;">High</span> 
+ to <span style="font-weight: bold;">Low</span>. The result so far looks 
+ like this:</p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"><img src="../assets/images/Candlechart4.png" style="border: none;" alt="" border="0"/></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">Let&#39;s call our first 
+ layer <span style="font-weight: bold;">LowToHigh</span>. Now, it&#39;s time 
+ to add a <span style="font-weight: bold;">Layer</span> to our plot. The 
+ new one will be <span style="font-weight: bold;">OpenToClose</span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"><img src="../assets/images/Candlechart5.png" style="border: none;" alt="" border="0"/></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">This time we select 
+ <span style="font-weight: bold;">Time</span> at <span style="font-weight: bold;">X</span> 
+ axis, <span style="font-weight: bold;">Close</span> at <span style="font-weight: bold;">Y</span> 
+ axis and <span style="font-weight: bold;">Open</span> as <span style="font-weight: bold;">Bottom</span> 
+ of our Markers. The Markers are wider (e.g., <span style="font-weight: bold;">5 
+ px</span>) and the coloring is conditional on the <span style="font-weight: bold;">Formula</span>:</p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"><b id="docs-internal-guid-36c3fabf-7fff-ad76-0ff9-6eaaa372ae0e"><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; font-weight: 400;">Open 
+ &lt; Close ? &quot;#5fbf00&quot; : &quot;#ff0000&quot;</span></b> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">Optionally, a <span style="font-weight: bold;">Border Color</span> for the Markers can 
+ be set to make them more distinguishable.</p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">The final result 
+ is shown below:</p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"><img src="../assets/images/Candlechart6.png" style="border: none;" alt="" border="0"/></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<img src="../assets/images/Candlechart7.png" style="border: none;" alt="" border="0"/><br class="Apple-interchange-newline"/>
+
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

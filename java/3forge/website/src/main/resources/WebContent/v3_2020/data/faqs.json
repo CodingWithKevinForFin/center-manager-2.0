@@ -1,0 +1,362 @@
+[
+	{
+		"category" : "General",
+		"question" : "What is 3forge AMI?",
+		"answer": "3forge AMI is the only out of box low code application development platform with performance at scale and 100% flexibility",
+		"doclink": ""
+	},
+	{
+		"category" : "General",
+		"question" : "In what global regions is 3forge AMI licensed/supported?",
+		"answer": "3forge has multiple offices around the world and can license and provide 24x6 follow the sun global support. See our company website for list of 3forge offices.",
+		"doclink": "https://www.3forge.com/company.html"
+	},
+	{
+		"category" : "General",
+		"question" : "How is AMI licensed?",
+		"answer": " 3forge AMI is typically licensed by product type and global region.",
+		"doclink": ""
+	},
+	{
+		"category" : "General",
+		"question" : "How much does it cost to license AMI?",
+		"answer": "3forge AMI pricing is confidential and will require execution of an NDA before pricing is released to a potential client.",
+		"doclink": ""
+	},
+	{
+		"category" : "General",
+		"question" : "Can I get a free trial license of AMI?",
+		"answer": " A trial AMI license is typically only provided for a short duration when 3forge is engaged for a Proof Of Concept (POC) with a new customer.",
+		"doclink": ""
+	},
+	{
+		"category" : "General",
+		"question" : "Is AMI the only product sold and supported by 3forge?",
+		"answer": "3forge also sells and supports a complementary product called Order Management Aggregation System (OMAS) which can read FIX messages (real-time streaming or from a file), rebuild order state and aggregate message attributes.",
+		"doclink": ""
+	},
+	{
+		"category" : "General",
+		"question" : "Who owns the business logic that can be created using the 3forge products?",
+		"answer": "The 3forge customer owns the business logic that is created using the 3forge products.",
+		"doclink": ""
+	},
+	{
+		"category" : "General",
+		"question" : "What languages do we support?",
+		"answer": "We support multilingual variable names and characters. Keywords are not supported to be multilingual.",
+		"doclink": ""
+	},
+	{
+		"category" : "Compatibility",
+		"question" : "On which O/S platforms can AMI be installed and run?",
+		"answer": "AMI can be run on Windows, Android, Linux, and Apple. ",
+		"doclink": "https://doc.3forge.com/supported_software/#platforms"
+	},
+	{
+		"category" : "Compatibility",
+		"question" : "What databases/data sources are supported by AMI?",
+		"answer": "AMI supports a large selection of databases and data sources including KX, PostgreSQL, MySQL. ",
+		"doclink": "https://doc.3forge.com/supported_software/#datasources"
+	},
+	{
+		"category" : "Compatibility",
+		"question" : "What messaging feed handlers does AMI support?",
+		"answer": " AMI supports a comprehensive list of messaging feed handlers which includes Solace Systems, Tibco, Kafka, and more.",
+		"doclink": "https://doc.3forge.com/supported_software/#messaging-feed-handlers"
+	},
+	{
+		"category" : "Compatibility",
+		"question" : "In what browsers can I run AMI?",
+		"answer": "AMI supports many major browsers like Chrome, FireFox, Edge, Internet Explorer, and Safari. ",
+		"doclink": "https://doc.3forge.com/supported_software/#browsers"
+	},
+	{
+		"category" : "Compatibility",
+		"question": "How can we add customized code to the UIs?  What languages are supported?",
+		"answer" : "AMI uses amiscript which is a combination of Java, SQL, and string templates. We support the use of R and Python and we provide a Java Plugin API which allows support for other languages as well.",
+		"doclink": "https://doc.3forge.com/web/using_amiscript/?h=python#how-to-load-python-modules-in-ami-script"
+	},
+	{
+		"category" : "Compatibility",
+		"question" : "Can AMI interact with existing systems?",
+		"answer": "AMI's supported protocols include FIX, SOLACE and REST. In addition, AMI's supported formats include JSON, FIX, and Protobuf.",
+		"doclink": "https://doc.3forge.com/supported_software/"
+	},
+	{
+		"category" : "Installation & Setup",
+		"question" : "What is the required operating environment for AMI?",
+		"answer": "Minimum and suggested operating environment requirements can be found in the link below. ",
+		"doclink": "https://doc.3forge.com/getting_started/first_time_setup/?h=suggeste#minimum-environment"
+	},
+	{
+		"category" : "Installation & Setup",
+		"question" : "What is the suggested operating environment for AMI?",
+		"answer": "The suggested amount of RAM will depend on the specific messaging capacity requirements of the use case. Click read more to see the numbers we suggest.",
+		"doclink": "https://doc.3forge.com/getting_started/first_time_setup/?h=suggeste#suggested-operating-environment"
+	},
+	{
+		"category" : "Installation & Setup",
+		"question" : "Is AMI easy to install?",
+		"answer": "AMI is very easy to install and can be downloaded, installed, and configured in a matter of minutes.",
+		"doclink": "https://doc.3forge.com/getting_started/first_time_setup/"
+	},
+	{
+		"category" : "Developing with AMI",
+		"question" : "In what programming language is 3forge AMI written?",
+		"answer": "AMI is written entirely in Java.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Developing with AMI",
+		"question" : "What skills and/or experience is required to develop in the 3forge AMI platform?",
+		"answer": "Ideally, a developer using 3forge AMI is a subject matter expert with experience in Java and SQL.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Developing with AMI",
+		"question" : "What third party products are required to run 3forge AMI?",
+		"answer": "3forge AMI requires no other products other than the OS and has no third party product dependencies.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Developing with AMI",
+		"question" : "Can multiple engineers work on the same UI/dashboard at the same time?  How?",
+		"answer": "Yes, different engineers can work on different \"layout files\" simultaneously, hence concurrently working on a \"dashboard\". Dashboards consist of any number of files, which we call \"layout files\" (note, layouts can be shared across dashboards, even recursively). ",
+		"doclink": ""
+	},	
+	{
+		"category" : "Developing with AMI",
+		"question" : "Is there a console to start/stop components (AMI Relays, AMI Center)?",
+		"answer": "Customers have built such consoles in AMI. If one chooses to not use AMI as its process manager of choice, we would suggest managing AMI using your solution of choice: docker, autosys etc.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Developing with AMI",
+		"question" : "Does the 3forge AMI application support CRUD operations?",
+		"answer": "Yes, Creates and Updates are generally handled as an UPSERT concept.",
+		"doclink": "https://doc.3forge.com/common_visualizations/crud_table/?h=crud"
+	},	
+	{
+		"category" : "Developing with AMI",
+		"question" : "How do you support complex data types (i.e. protobuf)?",
+		"answer": "Complex data structures are represented as JSON. This is not to be confused with our COMPLEX type which is reals and imaginaries.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Developing with AMI",
+		"question" : "How is data managed in the platform when > 1 user is looking at the same data?  Data duplication in the platform?  Data locking to prevent errors/race conditions?",
+		"answer": "A single copy of the values is kept and soft pointers are facilitated to support multiple users. Because cell values are immutable, data locking is not a concern.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Developing with AMI",
+		"question" : "How can data within 3forge AMI be queried?",
+		"answer": "Complex SQL is supported including continuous queries, joining, grouping, aggregating, pivots, filtering, and full text search.",
+		"doclink": "https://doc.3forge.com/cheatsheets/ami_sql/?h=sql"
+	},
+	{
+		"category" : "Fail-over & Recovery",
+		"question" : "What fail-over and redundancy configurations are supported by 3forge AMI?",
+		"answer": "We support hot/hot and hot/warm configurations.",
+		"doclink": ""
+	},
+	{
+		"category" : "Fail-over & Recovery",
+		"question" : "What is the typically production configuration for customers?",
+		"answer": "Typically our clients have one instance of AMI ONE running with over 200 GBs of RAM and more than 16 CPU cores. Using two servers(one for web server and one for relay).",
+		"doclink": ""
+	},	
+	{
+		"category" : "Fail-over & Recovery",
+		"question" : "How does failover/redundancy work?",
+		"answer": "Data can be duplicated hot/hot across instances. The AMI suite includes a web load balancer for managing user experience in such scenarios.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Fail-over & Recovery",
+		"question" : "How does component recovery work?",
+		"answer": "Relays are stored and forward, so they just pick up where they left off.  Center uses table-level persistent stores for recovery (note, it is transactional to avoid partial/corrupt edge recovery).  Web is not stateful, other than user preferences which can be configured to be stored in the AMI user preferences server (this is beyond scope of this question).",
+		"doclink": ""
+	},
+	{
+		"category" : "Performance & Scalability",
+		"question" : "How many messages per second can AMI support?",
+		"answer": "AMI can typically support 50,000 messages per second.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Performance & Scalability",
+		"question" : "How can AMI be scaled to increase performance and capacity?",
+		"answer": "AMI can be scaled both vertically and horizontally for all components(Center, Relay, and Web).",
+		"doclink": "https://doc.3forge.com/architecture/?h=horizontal#vertical-horizontal-scaling"
+	},	
+	{
+		"category" : "Security & Entitlements",
+		"question" : "Can AMI be integrated with our firm's single sign-on authentication?",
+		"answer": "Yes, we support OAUTH, SAML, and Active Directory.",
+		"doclink": "https://doc.3forge.com/authentication_and_entitlements/oauth/"
+	},	
+	{
+		"category" : "Security & Entitlements",
+		"question" : "What level of entitlements exist in AMI?",
+		"answer": "AMI is capable of entitlements at the window level, row or column level, and even down to the cell level. In addition, if the application is receiving both real-time and delayed market data, these can also be entitled separately.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Security & Entitlements",
+		"question" : "What authentication (who you are) is provided?",
+		"answer": "In an enterprise setting, customers implement the AmiAuthenticator.java.The results of the above plugin provide a map of settings which can be used throughout dashboards to control visibility/functionality etc.  ",
+		"doclink": "https://doc.3forge.com/custom_java_plugins/entitlements/?h=entitlem"
+	},	
+	{
+		"category" : "Release Management",
+		"question" : "What source control products can I use with AMI?",
+		"answer": "AMI can be used with source control products like Perforce and Git.",
+		"doclink": "https://doc.3forge.com/supported_software/"
+	},	
+	{
+		"category" : "Release Management",
+		"question" : "How often are new releases of AMI published?",
+		"answer": "Releases can be as often as daily, weekly, monthly, and quarterly.",
+		"doclink": "https://doc.3forge.com/architecture/?h=releases#fast-track-releases"
+	},	
+	{
+		"category" : "Release Management",
+		"question" : "Are release notes available for new AMI versions?",
+		"answer": "Yes, release notes are typically published quarterly.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Release Management",
+		"question" : "How do we receive new releases?",
+		"answer": "New releases are downloaded through the customer portal on the 3forge website. Customers are notified when a new release has been assigned for download.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Release Management",
+		"question" : "Are new releases backwards compatible?",
+		"answer": "Yes, new releases are backwards compatible.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Release Management",
+		"question" : "Can it integrate with SCCS like Git/Bitbucket?",
+		"answer": "Yes, we have a GIT adapter (amongst others).",
+		"doclink": "https://doc.3forge.com/supported_software/"
+	},	
+	{
+		"category" : "Release Management",
+		"question" : "Is there version control and comparison tools for creating a Diff between two versions of 3forge AMI?",
+		"answer": "Yes, we offer comparisons across entire dashboards. In addition, we have a smart comparison feature which can compare individual components within a layout. Version control would be maintained by the SCCS of your choice.",
+		"doclink": "https://doc.3forge.com/supported_software/"
+	},	
+	{
+		"category" : "Release Management",
+		"question" : "How do new UI/dashboard versions get promoted to production?",
+		"answer": "New dashboard versions can be promoted to production through SCC.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Release Management",
+		"question" : "How can new UI/dashboards be rolled?",
+		"answer": "After beginning a dashboard, mark it for add in SCCS and follow the standard SCCS procedure.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Testing",
+		"question" : "How is unit, integration, and regression testing supported?",
+		"answer": "Unit Testing: Customers often build layouts that import other subject layouts specifically for testing the subject layout. Integration & Regression testing: Because Ami is web based, any front-end testing solution for web products can be used.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Testing",
+		"question" : "How can I performance test 3forge AMI?",
+		"answer": "We recommend performance testing based on simulating production data.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Troubleshooting & Support",
+		"question" : "What troubleshooting tools are available in 3forge AMI?",
+		"answer": "We have a debugger, command line utilities, log files, and tools to analyze log files. Contact us for more information.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Troubleshooting & Support",
+		"question" : "What logging is available in 3forge AMI?",
+		"answer": "We support configurable extensive logging.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Troubleshooting & Support",
+		"question" : "How long does it take to restart and recover 3forge AMI?",
+		"answer": "Restarting and recovery depend on the amount of data being consumed. Contact us for more information.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Troubleshooting & Support",
+		"question" : "What mechanisms are in place to tell how the platform is running (i.e. monitoring, high water mark, etc.)?",
+		"answer": "All AMI instances produce a real time log file which can be loaded into a dashboard showing many user/machine/data metrics visually. The dashboarding solution can be configured to access many distributed AMI instances, hence providing a consolidated tool.",
+		"doclink": "https://doc.3forge.com/troubleshooting/logs/"
+	},	
+	{
+		"category" : "Troubleshooting & Support",
+		"question" : "How do we perform upgrades?",
+		"answer": "Simply download and install over your existing version. In addition, upgrades are backwards compatible.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Troubleshooting & Support",
+		"question" : "What is the support model?",
+		"answer": "Our offices in New York, London, and Singapore provide a 24x6 support hotline. We also offer development and onsite consulting if applicable.",
+		"doclink": "https://www.3forge.com/company.html"
+	},	
+	{
+		"category" : "Troubleshooting & Support",
+		"question" : "Is AMI able to keep track of a user interaction?",
+		"answer": "AMI features the ability to audit user interactivity by logging user clicks and activity.",
+		"doclink": ""
+	},
+	{
+		"category" : "Troubleshooting & Support",
+		"question" : "What can cause AMI to shutdown abruptly?",
+		"answer": "If you are running AMI on a Linux machine and your AMI instance suddenly crashes, it may be due to the OOM (out-of-memory) killer. See the link below to read more about OOM killer and how to configure it. OOM killer is a Linux kernel mechanism that kills processes to maintain system operability when memory is critically low.",
+		"doclink": "https://www.oracle.com/technical-resources/articles/it-infrastructure/dev-oom-killer.html"
+	},	
+	{
+		"category" : "Miscellaneous",
+		"question" : "Can end users have different screen layouts?",
+		"answer": "Yes, AMI can be configured and each user can have their own preferences that can be applied to the dashboard.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Miscellaneous",
+		"question" : "Where does 3forge store its dashboard code?",
+		"answer": "Dashboard code is stored in JSON format inside the web-server.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Miscellaneous",
+		"question" : "How do components in the platform communicate?",
+		"answer": "The separate components of AMI communicate over TCP connection.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Miscellaneous",
+		"question" : "Do Relays and Centers have open APIs that we can leverage?",
+		"answer": "Yes, we provide API for streaming messages in realtime.",
+		"doclink": "https://doc.3forge.com/reference/ami_realtime_messages/?h=realtime"
+	},	
+	{
+		"category" : "Miscellaneous",
+		"question" : "Is AMI ADA compliant?",
+		"answer": "Yes, dashboards can be configured with a high-contrast option for visually impaired.",
+		"doclink": ""
+	},	
+	{
+		"category" : "Miscellaneous",
+		"question" : "What does the AMI GUI include?",
+		"answer": "AMI supports multiple windows, custom layouts, and personalized themes.",
+		"doclink": "https://doc.3forge.com/web/layouts/?h=layout"
+	}	
+]

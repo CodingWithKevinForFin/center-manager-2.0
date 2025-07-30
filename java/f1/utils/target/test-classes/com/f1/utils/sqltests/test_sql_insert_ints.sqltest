@@ -1,0 +1,49 @@
+****TEST_INPUT_QUERY****
+insert into intsEmpty values (2.3), (5.6), (0.9), (1.4), (1), (2), (0), (3f), (3F), (3d), (3D), (3l), (3L);
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+intsEmpty
++---------+
+|intsEmpty|
++---------+
+|x        |
+|Integer  |
++---------+
++---------+
+
+****TEST_RESULT****
+13
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+INSERT INTO intsEmpty VALUES (2.3), (5.6), (0.9), (1.4), (1), (2), (0), (3.0D), (3.0D), (3.0), (3.0), (3L), (3L)
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+intsEmpty
++---------+
+|intsEmpty|
++---------+
+|x        |
+|Integer  |
++---------+
+|2        |
+|5        |
+|0        |
+|1        |
+|1        |
+|2        |
+|0        |
+|3        |
+|3        |
+|3        |
+|3        |
+|3        |
+|3        |
++---------+
+

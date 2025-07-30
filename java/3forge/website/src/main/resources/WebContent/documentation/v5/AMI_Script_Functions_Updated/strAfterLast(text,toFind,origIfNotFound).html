@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.7.0_56";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>strAfterLast(text,toFind,origIfNotFound)</title>
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="strAfterLast(text,toFind,origIfNotFound)">
+        <span>strAfterLast(text,toFind,origIfNotFound)</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>strAfterLast(<i>String text, String toFind, boolean origIfNotFound</i>)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Get the portion of a string after the last occurence of a delimiter. If the delimiter is not found, then return either the original string or null depending on origIfNotFound param</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Return Value</h3>
+String or null</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1px solid grey"><b>String text</b></td>
+<td style="border:1px solid grey;min-width:100px"><i>The base string to get a substring from</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey"><b>String toFind</b></td>
+<td style="border:1px solid grey;min-width:100px"><i>the delimiter to find</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey"><b>boolean origIfNotFound</b></td>
+<td style="border:1px solid grey;min-width:100px"><i>If the toFind parameter doesn&#39;t exist in the text: then return text if true or null if false</i></td>
+</tr>
+</tbody></table>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Examples</h3>
+<span style="font-family:Courier New;color:#096fc1;">String r1 = strAfterLast(&quot;What now&quot;,&quot; &quot;,true); <i>// r1 == now</i><br/>
+String r2 = strAfterLast(&quot;what,now&quot;,&quot; &quot;,true); <i>// r2 == what,now</i><br/>
+Object r3 = strAfterLast(&quot;what,now&quot;,&quot; &quot;,false); <i>// r3 == null</i><br/>
+Object r4 = strAfterLast(&quot;what,now&quot;,null,false); <i>// r4 == null</i><br/>
+String r5 = strAfterLast(&quot;what,now&quot;,null,true); <i>// r5 == what,now</i><br/>
+Object r6 = strAfterLast(null,&quot; &quot;,false); <i>// r6 == null</i><br/>
+String r7 = strAfterLast(&quot;An example,of, multiple, delims&quot;,&quot;, &quot;,true); <i>// r7 == delims</i><br/></span></div>
+</div>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.7.0_17";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>formatDate(unixEpoch,pattern,timezone)</title>
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="formatDate(unixEpoch,pattern,timezone)">
+        <span>formatDate(unixEpoch,pattern,timezone)</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<div style="font:12pt Arial;color:black;line-height:1;">
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Definition</h3>
+<b>formatDate(<i>number unixEpoch, String pattern, String timezone</i>)</b></div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Description</h3>
+Formats the supplied unix epoch time to a legible string date/time based on the supplied pattern and timezone. The pattern is constructed by combining words listed below
+<p><u><b>Pattern</b></u></p>
+Words for including number components. (Note: Including fewer repeating characters will result in variable-width formatting while extra repeating chars will pad with unncessary extra zeros):
+<ul>
+<li><b>yy</b> - 2 Digit Year</li>
+<li><b>yyyy</b> - 4 Digit Year</li>
+<li><b>MM</b> - Month in year</li>
+<li><b>ww</b> - Week in year</li>
+<li><b>WW</b> - Week in month</li>
+<li><b>DDD</b> - Day in year</li>
+<li><b>dd</b> - Day in month</li>
+<li><b>FF</b> - Day of week in month</li>
+<li><b>HH</b> - Hour in day ranging from 0-23</li>
+<li><b>kk</b> - Hour in day ranging from 1-24</li>
+<li><b>KK</b> - Hour in AM/PM ranging from 0-11</li>
+<li><b>hh</b> - Hour in AM/PM ranging from 1-12</li>
+<li><b>mm</b> - Minute in hour</li>
+<li><b>ss</b> - Second in minute</li>
+<li><b>SSS</b> - Millisecond</li>
+<li><b>rrr</b> - Microsecond (Note: See below section on supplying unix epoch time)</li>
+<li><b>RRR</b> - Nanosecond (Note: See below section on supplying unix epoch time)</li>
+</ul>
+<p>Words for including text components:</p>
+<ul>
+<li><b>M</b> - Month in year as 3 letter code. Ex: <i>Jan</i></li>
+<li><b>MMMM</b> - Month in year as full name. Ex: <i>January</i></li>
+<li><b>E</b> - Day in week as 3 letter code. Ex: <i>Mon</i></li>
+<li><b>EEEE</b> - Day in week as full name. Ex: <i>Monday</i></li>
+<li><b>z</b> - Time zone code Ex: <i>EST</i></li>
+<li><b>zzzz</b> - Time zone full name. Ex: <i>Eastern Standard Time</i></li>
+<li><b>Z</b> - Timezone offset from UTC in hours and minutes, of the form [+-]hhmm. Ex: <i>-0500</i></li>
+<li><b>a</b> - AM/PM marker. Ex: <i>AM</i></li>
+<li><b>G</b> - Era designator. Ex: <i>AD</i></li>
+</ul>
+Syntax for including literal text:
+<ul>
+<li><b>&#39;&#39;</b> - Single quote. Ex: <i>&#39;</i></li>
+<li><b>&#39;Some Text&#39;</b> - Literal text with quotes removed. Ex: <i>Some Text</i></li>
+<li><b><i>non-letters</i></b> - Interpreted as a literal. Ex: <i>:</i></li>
+</ul>
+<p><u><b>Supplying unix epoch time</b></u></p>
+When passing in the unixEpoch as a UTC or UTCN, the formatter will automatically understand the supplied precision. When Supplying as a number it is normally interpreted in milliseconds, unless the pattern calls for greater precision by using the letters <b>r</b> or <b>R</b>:
+<ul>
+<li><b>Nanoseconds</b> -If the pattern contains the letter <b>R</b> the unix epoch time should be in <b>nanoseconds</b> since 1/1/1970</li>
+<li><b>Microseconds</b> - If the pattern has <b>r</b> letter but not the letter <b>R</b>, the unix epoch time should be in <b>microseconds</b> since 1/1/1970</li>
+<li><b>Milliseconds</b> - If the pattern does not have the letter <b>r</b> nor the letter <b>R</b> the unix epoch time should be in <b>millisecconds</b> since 1/1/1970</li>
+</ul>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Return Value</h3>
+String legible date/time based on supplied time and format</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Parameter Definition</h3>
+<table style="border-collapse:collapse" cellspacing="1" width="100%" cellpadding="1">
+<tbody><tr style="min-height:11pt;">
+<td style="border:1px solid grey"><b>number unixEpoch</b></td>
+<td style="border:1px solid grey;min-width:100px"><i>Number of milli,micro or nanoseconds since 1/1/1970 in UTC timezone, depending on pattern. If the pattern contains n then nanoseconds, If the pattern contains u then microseconds, otherwise milliseconds.</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey"><b>String pattern</b></td>
+<td style="border:1px solid grey;min-width:100px"><i>Pattern string. See Letters above for details.</i></td>
+</tr>
+<tr style="min-height:11pt;">
+<td style="border:1px solid grey"><b>String timezone</b></td>
+<td style="border:1px solid grey;min-width:100px"><i>TimeZone to format time in</i></td>
+</tr>
+</tbody></table>
+</div>
+<div style="position:initial;padding-bottom:11pt;">
+<h3 style="font:italic bold 13pt Arial;text-transform:uppercase;color:#459939;margin:15pt 0pt 3pt 0pt;">Examples</h3>
+<span style="font-family:Courier New;color:#096fc1;">String r1 = formatDate(1464215270786L,&quot;yyyyMMdd-HH:mm:ss.SSS&quot;,&quot;EST5EDT&quot;); <i>// r1 == 20160525-18:27:50.786</i><br/>
+String r2 = formatDate(1464215270786L,&quot;MMMM/dd/yyyy-HH:mm:ss zzz&quot;,&quot;EST5EDT&quot;); <i>// r2 == May/25/2016-18:27:50 EDT</i><br/>
+String r3 = formatDate(1540407446123456L,&quot;MMMM/dd/yyyy-HH:mm:ss.SSS.rrr zzz&quot;,&quot;EST5EDT&quot;); <i>// r3 == October/24/2018-14:57:26.123.456 EDT</i><br/>
+String r4 = formatDate(1540407446123456789L,&quot;MMMM/dd/yyyy-HH:mm:ss.SSS.rrr.RRR zzz&quot;,&quot;EST5EDT&quot;); <i>// r4 == October/24/2018-14:57:26.123.456.789 EDT</i><br/>
+String r5 = formatDate(113232L,&quot;HH:mm:ss&quot;,&quot;UTC&quot;); <i>// r5 == 00:01:53</i><br/></span></div>
+</div>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

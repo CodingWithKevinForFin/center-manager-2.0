@@ -1,0 +1,1 @@
+package com.f1.console;public interface ConsoleEvent {	static final public byte TYPE_LOGIN = 1;	static final public byte TYPE_LOGOUT = 2;	static final public byte TYPE_STARTUP = 3;	static final public byte TYPE_COMMAND = 4;	String getText();	long getTime();	String getConnectionDescription();	byte getType();	String getUsername();}

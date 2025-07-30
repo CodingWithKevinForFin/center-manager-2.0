@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ami</groupId>
+
+    <name>amigit</name>
+    <artifactId>amigit</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.ami</groupId>
+        <artifactId>ami</artifactId>
+        <version>1.00-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <dependencies>
+      <dependency>
+        <groupId>com.ami</groupId>
+        <artifactId>amicommon</artifactId>
+        <version>1.00-SNAPSHOT</version>
+      </dependency>
+      <!-- 
+      <dependency>
+      	<groupId>com.jcraft</groupId>
+      	<artifactId>jsch</artifactId>
+      	<version>0.1.55</version>
+      </dependency>
+  	  <dependency>
+	  	<groupId>org.eclipse.jgit</groupId>
+  		<artifactId>org.eclipse.jgit.ssh.apache</artifactId>
+  		<version>5.11.1.202105131744-r</version>
+	  </dependency>
+ 	  -->
+ 	  
+ 	  <!--
+  	  <dependency>
+	  	<groupId>org.eclipse.jgit</groupId>
+  		<artifactId>org.eclipse.jgit</artifactId>
+  		<version>3.7.1.201504261725</version>
+	  </dependency>
+ 	  -->
+	  <dependency>
+		<groupId>org.eclipse.jgit</groupId>
+		<artifactId>org.eclipse.jgit.ssh.apache</artifactId>
+		<version>5.10.0.202012080955-r</version>
+	</dependency>
+	  <!-- 
+	        <dependency>
+      	<groupId>org.slf4j</groupId>
+      	<artifactId>slf4j-api</artifactId>
+      	<version>1.7.2</version>
+      </dependency>
+      <dependency>
+  		<groupId>com.googlecode.javaewah</groupId>
+  		<artifactId>javaewah</artifactId>
+  		<version>1.1.6</version>
+  	  </dependency> 
+  	  <dependency>
+  	 	<groupId>org.apache.httpcomponents</groupId>
+  	 	<artifactId>httpclient</artifactId>
+  	 	<version>4.5.2</version>
+  	  </dependency>
+  	  <dependency>
+        <groupId>org.eclipse.jgit</groupId>
+        <artifactId>org.eclipse.jgit.java7</artifactId>
+        <version>3.7.1.201504261725</version>
+      </dependency>
+      -->
+    </dependencies>
+</project>
+

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "8.4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Realtime Timers</title>
+<link rel="stylesheet" href="../assets/css/3Forge_Ami_Script.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Realtime Timers">
+        <span>Realtime Timers</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h2 style="margin-top: 5pt; margin-bottom: 15pt; line-height: Normal; font-size: 24pt;">Realtime 
+ Timers</h2>
+<h3 style="line-height: Normal; margin-top: 5pt; margin-bottom: 1pt;"><a name="create_timer_clause" id="create_timer_clause"><span style="line-height: 115%; 
+	 color: #7030A0; font-size: 19pt; font-family: Arial, sans-serif; text-decoration: none; ">create_timer 
+ clause</span></a>                                                                               
+ </h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h4 style="margin-top: 15pt; margin-bottom: 3pt; font-size: 13pt; font-weight: bold; 
+	 font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;">This 
+ command allows you to add script that will be executed on a periodic basis. 
+ A special variable _time will be available as a local variable to the 
+ executing script</p>
+<p style="margin-bottom: .0001pt; font-family: ; font-size: 11pt;"><span courier="">                                            </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier="" style="color: #ff0000;">CREATE 
+ TIMER</span> <span courier="" style="color: #ff0000;">[IF NOT EXISTS] 
+ </span><span courier="" style="color: #006dbf;">timer_name</span> <span courier=""> </span><span courier="" style="color: #ff0000;">OFTYPE</span><span style="color: #ff0000;"> </span><span courier="" style="color: #ff0000;"> </span><b><span courier="" style="color: #ff0000;">AMISCRIPT</span></b><span style="color: #ff0000;"> 
+ </span><span courier="" style="color: #ff0000;"> ON</span> <span courier=""><b>&quot;</b></span><span courier="" style="color: #006dbf;">schedule</span><b><span courier="">&quot;</span></b> <span courier="">[</span><span courier="" style="color: #ff0000;">PRIORITY</span> <span courier="" style="color: #006dbf;">priority</span><span courier="">]</span> <span courier="" style="color: #ff0000;">USE</span> 
+ <span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><span courier="" style="color: #ff0000;">script=&quot;</span></b><i><span courier="">AmiScript to Run When timer is executed</span></i><b><span courier="">&quot;</span></b><b><span courier=""> </span></b></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><i><span courier="">[</span></i><b><span courier="" style="color: #ff0000;">vars=&quot;</span></b><i><span courier="">Variables shared by the timer, a comma delimited list of 
+ type varname&quot;</span></i><i><span courier="">]</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier=""><i>[</i><b style="color: #ff0000;">onStartupScript=&quot;</b><i>AmiScript 
+ to Run When the timer is created&quot;]</i> </span></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: Arial, sans-serif; 
+	 font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="">timer_name</span></i></b> 
+ -<i><span courier=""> name of the timer to create,  each timer&#39;s 
+ name must be unique within the database</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="">priority</span></i></b> 
+ -<i><span courier=""> a number, triggers with lowest value are executed 
+ first. Only considered when two or more timers have the same exact scheduled 
+ time.</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="">Schedule</span></i></b> 
+ -<i><span courier=""> either:</span></i></p>
+<p class="ListParagraphCxSpFirst" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; text-indent: -.25in; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 12pt;"><i><span courier="">(a) </span></i><i><span courier="">A positive number defining 
+ the period in milliseconds between timer executions.</span></i></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; text-indent: -.25in; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 12pt;"><i><span courier="">(b) </span></i><i><span courier="">Crontab style entry 
+ declaring the schedule of when the timer should be execute:</span></i></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><span courier=""> *   *   *   *   *   * 
+ TIMEZONE</span></b></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier="">/|\ /|\ /|\ /|\ 
+ /|\ /|\</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier=""> |   |   |   |   |   |</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier=""> |   |   |   |   |   +-- 
+ Weekdays: (0-6) or (SUN,MON,TUE,WED,THU,FRI,SAT)</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier=""> |   |   |   |   +------ 
+ Months: (1-12) or (JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier=""> |   |   |   |                             SEP,OCT,NOV,DEC)</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier=""> |   |   |   +---------- 
+ Day of Month: (1-31)</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier=""> |   |   +-------------- 
+ Hour of Day: (0-23)</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier=""> |   +------------------ 
+ Minute of Hour: (0-59)</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier=""> +---------------------- 
+ Second of Minute: (0-59)</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"> </p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier="">Such that * can 
+ be substituted with the following:</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier="">                * 
+ =&gt; all values,  ex: *        (same 
+ as 0,1,2,3,4,...)</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier="">              num 
+ =&gt; specific value, ex:  4</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier="">    nun,num2,num3 
+ =&gt; set of values, ex 4,5,9</span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier="">            */num 
+ =&gt; period of num, ex: */5    (same as 0,5,10,15,...)</span></p>
+<p class="ListParagraphCxSpLast" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 71.25pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier="">          num-num2=&gt; 
+ Range of nums,ex:   3-5   (same as 3,4,5)</span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;">In 
+ these examples assume we have the tables <i>A(a boolean)</i> and table 
+ <i>B(time utc, cnt int)</i>.  These timers, when executed, will 
+ insert a row into table B with the count of records in A.</p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">//Executes every 
+ 500 milliseconds</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE TIMER t1 
+ OFTYPE AMISCRIPT ON &quot;500&quot; USE script=&quot;int cnt; select cnt 
+ =count(*) from A; INSERT INTO b(_time,cnt)&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">//Executes every 
+ second, on the second</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE TIMER t2 
+ OFTYPE AMISCRIPT ON &quot;* * * * * * UTC&quot; USE script=&quot;int cnt; 
+ select cnt=count(*) from A; INSERT INTO b(_time,cnt)&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">//Executes every 
+ fifth minute</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE TIMER t3 
+ OFTYPE AMISCRIPT ON &quot;* */5 * * * * UTC&quot; USE script=&quot;int 
+ cnt; select cnt=count(*) from A; INSERT INTO b(_time,cnt)&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">//Executes on the 
+ first second of every hour Monday through friday</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE TIMER t4 
+ OFTYPE AMISCRIPT ON &quot;0 0 * * * MON-FRI UTC&quot; USE script=&quot;int 
+ cnt; select cnt=count(*) from A; INSERT INTO b(_time,cnt)&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">//Execute every 
+ Monday at 9:30 eastern standard time</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE TIMER t5 
+ OFTYPE AMISCRIPT ON &quot;0 30 9 * * MON EST5EDT&quot; USE script=&quot; 
+ int cnt; select cnt=count(*) from A; INSERT INTO b(_time,cnt)&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<h3 style="margin-top: 5pt; margin-bottom: 1pt; font-size: 19pt; color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><a name="drop_timer_clause" id="drop_timer_clause"><span style="color: #7030A0; font-family: Arial, sans-serif; 
+									 text-decoration: none; ">drop_timer 
+ clause</span></a></h3>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">DROP TIMER</span> 
+ <span courier="" style="color: #ff0000;">[IF EXISTS] </span><span courier="" style="color: #006dbf;">timer_name</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<h4 style="font-family: Arial, sans-serif; line-height: Normal; color: #449938; 
+	 font-size: 13pt; margin-top: 15pt; margin-bottom: 3pt;"><u style="font-family: Arial, sans-serif; 
+	 text-decoration: none; ">EXAMPLES</u><span courier="" style="font-size: 8.0pt;">                      </span></h4>
+<p style="margin-bottom: .0001pt; font-size: 11pt;"><span style="font-size: 12pt; 
+															 font-family: Arial, sans-serif;">This 
+ example will drop the timer MyTimer from the database</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="" style="font-size: 12pt;">DROP 
+ TIMER MyTimer</span><u><span style="font-size: 14.0pt; font-family: Arial, sans-serif; 
+								 color: #7030A0;"><br style="clear: all;"/>
+</span></u> </p>
+<p> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

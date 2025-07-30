@@ -1,0 +1,1734 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "10.0_13";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Custom Relay Feed Handler</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Custom Relay Feed Handler">
+        <span>Custom Relay Feed Handler</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Custom Relay Feed Handler</h1>
+<h2>Overview</h2>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt;">The 
+ Feed Handler Plugin allows for the very efficient processing incoming 
+ streams of data to be transmitted into the AMI Center using AMI&#39;s proprietary 
+ protocol.  Generally one feed handler will be written per type 
+ of messaging bus.</p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<h2 style="text-decoration: none; "><u style="text-decoration: none; ">Properties</u></h2>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt;">Setting 
+ up properties in the relay to instantiate a feed handler. In this example, 
+ the feed handler will have the name my_feedhandler_name:</p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">ami.relay.fh.active=$${ami.relay.fh.active},<i><span style="color: rgb(31, 73, 125);">my_feedhandler_name</span></i></span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">ami.relay.fh.<i><span style="color: rgb(31, 73, 125);">my</span>_<span style="color: rgb(31, 73, 125);">feedhandler</span>_<span style="color: rgb(31, 73, 125);">name</span></i>.start=true</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">ami.relay.fh.<i><span style="color: rgb(31, 73, 125);">my</span>_<span style="color: rgb(31, 73, 125);">feedhandler</span>_<span style="color: rgb(31, 73, 125);">name</span></i>.class=<i>class.that.extends.com.f1.ami.relay.AmiFHBase</i></span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;;">ami.relay.fh.<i><span style="color: rgb(31, 73, 125);">my</span>_<span style="color: rgb(31, 73, 125);">feedhandler</span>_<span style="color: rgb(31, 73, 125);">name</span></i>.props.<i><span style="color: rgb(31, 73, 125);">my_custom_property</span></i>=<i><span style="color: rgb(31, 73, 125);">my_cutom_value</span></i></span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<h2 style="text-decoration: none; "><u style="text-decoration: none; ">Feed 
+ Handler Interface</u></h2>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt;">You 
+ will implement this interface, only this interface in most cases.  Please 
+ note that an AmiRelayIn will be passed to the init function, and this 
+ is used to send messages into AMI.</p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">package</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>com.f1.ami.relay.fh;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">import</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>com.f1.ami.relay.AmiRelayIn;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">import</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>com.f1.ami.relay.AmiRelayOut;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">import</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>com.f1.utils.PropertyController;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//Represents 
+ a single instance of an AMI Relay Feed Handler</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">interface</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>AmiFH<span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">extends</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>AmiRelayOut 
+ {</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">static</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><i><span style="font-size: 10pt; font-family: Consolas; color: rgb(0, 0, 192);">STATUS_STARTED</span></i><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>= 
+ 1;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">static</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><i><span style="font-size: 10pt; font-family: Consolas; color: rgb(0, 0, 192);">STATUS_STOPPED</span></i><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>= 
+ 2;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">static</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><i><span style="font-size: 10pt; font-family: Consolas; color: rgb(0, 0, 192);">STATUS_FAILED</span></i><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>= 
+ 3;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">static</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><i><span style="font-size: 10pt; font-family: Consolas; color: rgb(0, 0, 192);">STATUS_STARTING</span></i><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>= 
+ 4;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">static</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><i><span style="font-size: 10pt; font-family: Consolas; color: rgb(0, 0, 192);">STATUS_STOPPING</span></i><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>= 
+ 5;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">static</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><i><span style="font-size: 10pt; font-family: Consolas; color: rgb(0, 0, 192);">STATUS_START_FAILED</span></i><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>= 
+ 6;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">static</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><i><span style="font-size: 10pt; font-family: Consolas; color: rgb(0, 0, 192);">STATUS_STOP_FAILED</span></i><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>= 
+ 7;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">static</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">final</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>String<span> </span></span><i><span style="font-size: 10pt; font-family: Consolas; color: rgb(0, 0, 192);">PCE_STATUS_CHANGED</span></i><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>=<span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(42, 0, 255);">&quot;STATUS_CHANGED&quot;</span><span style="font-size: 10pt; font-family: Consolas; color: #000000;">;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//called 
+ during AMI startup</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//  id 
+ - unique id per relay/runtime</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//  name 
+ - name of the relay, ex: my_feedhandler_name</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//  sysProps 
+ - all properties inside ami relay</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">       </span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//  props 
+ - properties specified to this feed handler</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">       </span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//  endpoint 
+ - the endpoint for sending messages into AMI. You should hold onto this 
+ and call methods on it as messages stream in, etc.</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>init(</span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>id, 
+ String name, PropertyController sysProps, PropertyController props, AmiRelayIn 
+ endpoint);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//called 
+ when this feedhandler is started/stopped. Typically, start is called 
+ immediately after all successful init has been called</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>start();</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>stop();</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">       </span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//Return 
+ the status of this feedhandler (see constants) the string version is for 
+ the convenience of users to see why the current status is what it is.</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>getStatus();</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>String 
+ getStatusReason();</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//the 
+ AppId (aka loginId) associated with this connection. See Reserved Columns, 
+ column P for details)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>String 
+ getAppId();</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">       </span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//time 
+ and place and description of the connection, not required but convenient 
+ for end users diagnosing connections</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">long</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>getConnectionTime();</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>getRemotePort();<span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//ex: 
+ 1234</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>String 
+ getRemoteIp();<span> </span></span><span style="font-size: 10pt; 
+												 font-family: Consolas; 
+												 color: rgb(63, 127, 95);">//ex:  myhost</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>String 
+ getDescription();</span><span style="font-size: 10pt; font-family: Consolas; 
+								 color: rgb(63, 127, 95);">//ex: someprotocol://myhost:1234</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-size: 10pt; font-family: Consolas;"><span style="color: #000000;">       </span><span style="color: rgb(63, 127, 95);">//when durability is enabled this 
+ will be called back when the message has been successfully persisted (see 
+ ami.relay.guaranteed.messaging.enabled)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-size: 10pt; font-family: Consolas;"><span style="color: #000000;">       </span><b><span style="color: rgb(127, 0, 85);">public</span></b><span style="color: #000000;"> </span><b><span style="color: rgb(127, 0, 85);">void</span></b><span style="color: #000000;"> onAck(</span><b><span style="color: rgb(127, 0, 85);">long</span></b><span style="color: #000000;"> seqnum);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 font-size: 10pt; font-family: Consolas; margin-left: 40px;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-size: 10pt; font-family: Consolas;"><span style="color: #000000;">       </span><span style="color: rgb(63, 127, 95);">//E (execute command) See real-time 
+ messaging api for details. Note that implementation is optional. If there 
+ was an unexpected error, write the details to errorSink. The server is 
+ for advanced internal use</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-size: 10pt; font-family: Consolas;"><span style="color: #000000;">       </span><b><span style="color: rgb(127, 0, 85);">public</span></b><span style="color: #000000;"> </span><b><span style="color: rgb(127, 0, 85);">void</span></b><span style="color: #000000;"> </span>call(AmiRelayServer 
+ server, AmiRelayRunAmiCommandRequest action, StringBuilder errorSink)<span style="color: #000000;">;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">}</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<h2 style="text-decoration: none; "><u style="text-decoration: none; ">AmiRelayIn 
+ Interface</u></h2>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial; font-size: 12pt;">This 
+ is implemented by AMI and is how a feed handler (AmiFH) instance actually 
+ communicates with AMI. For example, if a feed handler wants to insert 
+ a new row into AMI, it could call the onObject(...) method. Each AmiRelay 
+ will be assigned its own personal AmiRelayIn</p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">package</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>com.f1.ami.relay;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">import</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>java.util.Set;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">import</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>java.util.concurrent.ThreadFactory;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">import</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>com.f1.ami.relay.fh.AmiFH;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">import</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>com.f1.ami.relay.plugins.AmiRelayInvokablePlugin;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">import</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>com.f1.container.ContainerTools;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//Please 
+ note, it&#39;s assumed the user is very familiar with the AMI Real-time Messaging 
+ API</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//For 
+ the encodedMap(s) parameters:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//  (A) 
+ you can use the com.f1.ami.relay.AmiRelayMapToBytesConverter::toBytes(...) 
+ method to conveniently convert a map of<span> </span><u>params</u><span> </span>to 
+ the expected byte protocol.</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//  (B) 
+ you can implement the following protocol directly, see protocol at bottom 
+ of interface definition</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">interface</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>AmiRelayIn 
+ {</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">static</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><i><span style="font-size: 10pt; font-family: Consolas; color: rgb(0, 0, 192);">RESPONSE_STATUS_OK</span></i><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>= 
+ 0;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">static</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><i><span style="font-size: 10pt; font-family: Consolas; color: rgb(0, 0, 192);">RESPONSE_STATUS_NOT_FOUND</span></i><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>= 
+ 1;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">static</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><i><span style="font-size: 10pt; font-family: Consolas; color: rgb(0, 0, 192);">RESPONSE_STATUS_ERROR</span></i><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>= 
+ 2;</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//S 
+ (status) message</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>onStatus(</span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">byte</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;">[] 
+ encodedMap);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//R 
+ (response to execute command) message.</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>onResponse(String 
+ I_uniqueId,<span> </span></span><b><span style="font-size: 10pt; 
+												 font-family: Consolas; 
+												 color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>S_status, 
+ String M_message, String X_executeAmiScript,<span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">byte</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;">[][] 
+ encodedMaps);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//X 
+ (exit) message.  Clean=true means it was an expected exit, false 
+ is unexpected,<span> </span><u>ex</u><span> </span>line dropped</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>onLogout(</span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">byte</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;">[] 
+ encodedMap,<span> </span></span><b><span style="font-size: 10pt; 
+												 font-family: Consolas; 
+												 color: rgb(127, 0, 85);">boolean</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>clean);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//L 
+ (login) message</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>onLogin(String 
+ O_options, String PL_plugin,<span> </span></span><b><span style="font-size: 10pt; 
+	 font-family: Consolas; color: rgb(127, 0, 85);">byte</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;">[] 
+ encodedMap);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//C 
+ (command definition) message</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>onCommandDef(String 
+ I_id, String N_name,<span> </span></span><b><span style="font-size: 10pt; 
+														 font-family: Consolas; 
+														 color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>L_level, 
+ String W_whereRowLevel, String T_wherePanelLevel, String H_help, String 
+ A_formDefinition,</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">                     String 
+ X_executeAmiScript,<span> </span></span><b><span style="font-size: 10pt; 
+														 font-family: Consolas; 
+														 color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>P_priority, 
+ String E_enabled, String S_style, String M_multipleSelectMode, String 
+ F_fields,<span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; 
+											 color: rgb(127, 0, 85);">byte</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;">[] 
+ encodedMap,<span> </span></span><b><span style="font-size: 10pt; 
+												 font-family: Consolas; 
+												 color: rgb(127, 0, 85);">int</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>callbacksMask);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//O 
+ (object) message for batching. Set seqNum=-1 for no seqNum. All arrays 
+ should have same number of arguments.</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>onObjects(</span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">long</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>seqNum, 
+ String[] I_ids, String[] T_types,<span> </span></span><b><span style="font-size: 10pt; 
+	 font-family: Consolas; color: rgb(127, 0, 85);">long</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>E_expiresOn,<span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">byte</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;">[][] 
+ encodedMaps);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//O 
+ (object) message. Set seqNum=-1 for no seqNum</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>onObject(</span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">long</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>seqNum, 
+ String I_id, String T_type,<span> </span></span><b><span style="font-size: 10pt; 
+	 font-family: Consolas; color: rgb(127, 0, 85);">long</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>E_expiresOn,<span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">byte</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;">[] 
+ encodedMap);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//D 
+ (delete) message. All arrays should have same number of arguments.</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>onObjectDelete(</span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">long</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>origSeqnum, 
+ String[] I_ids, String T_type,<span> </span></span><b><span style="font-size: 10pt; 
+	 font-family: Consolas; color: rgb(127, 0, 85);">byte</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;">[][] 
+ encodedMaps);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//when 
+ the connection is established, this should be supplied.  The 
+ optional encoded map will show as parameters on this connection</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>onConnection(</span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">byte</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;">[] 
+ encodedMap);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//when 
+ the connection has an unexpected error, this should be supplied.  The 
+ optional encoded map will show as parameters on this connection.  error 
+ is user-readable a message</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>onError(</span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">byte</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;">[] 
+ encodedMap, CharSequence error);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//Tools 
+ for this AMI instance, internal use</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>ContainerTools 
+ getTools();</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//For 
+ creating additional thread</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">       </span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"> ThreadFactory 
+ getThreadFactory();</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-style: normal; 
+	 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+	 letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; 
+	 text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; 
+	 -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; 
+	 text-decoration-color: initial; font-size: 10pt; font-family: Consolas;"><span style="color: #000000;">       </span><span style="color: rgb(63, 127, 95);">//Advanced feature: To start another 
+ (typically sub) <u style="text-decoration: none; ">feed handler</u>.</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">void</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>initAndStartFH(AmiFH 
+ fh2, String string);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//Advanced 
+ feature: get invokable<span> </span><u>plugins</u><span> </span>(see 
+ ami.relay.invokables property)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>AmiRelayInvokablePlugin 
+ getInvokable(String typ);</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">      <span> </span></span><b><span style="font-size: 10pt; font-family: Consolas; color: rgb(127, 0, 85);">public</span></b><span style="font-size: 10pt; font-family: Consolas; color: #000000;"><span> </span>Set&lt;String&gt; 
+ getInvokableTypes();</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: #000000;">}</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//  EncodedMap 
+ Protocol:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   TotalMessage:  &lt;-- 
+ this is what should be passed in as encodedMaps</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//       KeyValuePairCount 
+ (signed short) &lt;--number of entries in this map</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//       Key[]  &lt;- 
+ back to back entry of all key names.  (see below)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//       Value[] 
+ &lt;- back to back entry of all values, note there is a different protocol 
+ depending on type</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Key:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//            StringLengthOfKey 
+ (signed byte)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     <span> </span><u>Ascii</u><span> </span>Representation 
+ of key&#39;s chars (byte array)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for<span> </span><u>Int</u><span> </span>between 0x80 ... 0x7f:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x0A 
+ value (byte)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for<span> </span><u>Int</u><span> </span>between  0x8000 
+ ... 0x7fff:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x0B 
+ value (2 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for<span> </span><u>Int</u><span> </span>between  0x800000 
+ ... 0x7fffff:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x0C 
+ value (3 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for<span> </span><u>Int</u><span> </span>between  0x80000000 
+ ... 0x7fffffff:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x0D 
+ value (4 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Long between 0x80 ... 0x7f:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x0E 
+ value (byte)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Long between  0x8000 ... 0x7fff:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x0F 
+ value (2 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Long between  0x800000 ... 0x7fffff:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x10 
+ value (3 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Long between  0x80000000 ... 0x7fffffff:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x11value 
+ (4 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Long between  0x8000000000 ... 0x7fffffffff:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x12 
+ value (5 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Long between  0x800000000000 ... 0x7fffffffffff:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x13 
+ value (6 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Long between  0x80000000000000 ... 0x7fffffffffffff:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x14 
+ value (7 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Long between  0x8000000000000000 ... 0x7fffffffffffffff:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x15 
+ value (8 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">// 
+   Value for Double:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x06 
+ value (8 bytes) (see Double.doubleToLongBits)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Float:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x05 
+ value (4 bytes) (see Float.floatToIntBits)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Character:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x1A 
+ value (2 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Boolean True:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x02 
+ 0x01</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for Boolean False:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x02 
+ 0x00</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for string &lt;=127 chars in length and simple ASCII (all chars between 
+ 0 ... 127)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x09</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      number_of_chars 
+ (byte)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      bytes 
+ of string (1 byte per char)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for string &gt;127 chars in length and simple ASCII (all chars between 
+ 0 ... 127)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x08</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      number_of_chars 
+ (<u>int</u>)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      bytes 
+ of string (1 byte per char)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for string with extended ASCII (at least one char not between 0 ... 127)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x07</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      number_of_chars 
+ (<u>int</u>)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      chars 
+ of string (2 bytes per char)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for UTC</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x1E</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      milliseconds 
+ since epoch (6 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for NANO<span> </span><u>timestamp</u></span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x1F</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      nanoseconds 
+ since epoch (8 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   Value 
+ for binary data (<u>aka</u><span> </span>byte array)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      0x28</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//      number_of_bytes 
+ (4 bytes)</span></p>
+<p class="MsoNormal" style="margin: 0px; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 color: rgb(63, 127, 95); font-size: 10pt; font-family: Consolas;">//      bytes 
+ (1 byte per byte of raw data)</p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 text-decoration-style: initial; text-decoration-color: initial; background-color: #ffffff;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);"><span style="color: rgb(63, 127, 95);"><span style="font-size: 10pt; font-family: Consolas;">/</span></span>/</span></span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   For 
+ example, The key/value pairs<span> </span><b>qty=50|sm=&quot;MSFT&quot;</b><span> </span>should 
+ be converted into the following bytes for an encodedMap:</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   |--header--| 
+ |--------------------keys-----------------------| |----------------------values-----------------------|</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   |          | 
+ |                                               | 
+ |                                                   |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//  <span> </span><b>0x00, 
+  0x02,  0x03,  0x71,  0x74,  0x79,  0x02, 
+  0x73,  0x6D,  0x0A,  0x32,  0x09,  0x04, 
+  0x4D,  0x53,  0x46,  0x54</b></span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//   \_________/ 
+  \_____/ \________________/  \_____/\____________/ \____/ \____/ 
+ \___/ \____/  \_______________________/</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//     Entries     key1 
+         key1            key2 
+       key2      val1  val1 
+   val2   val2            val2</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//                length 
+     ASCII code        length   ASCII 
+ code   type  value  type  length        ASCII 
+ code</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//       (2)       (3)         (qty)            (2)        (sm)      (int) 
+ (50)  (string) (4)           (MSFT)</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//                                                                    /|\          /|\      </span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//                                              +----------------------+------------+------------------------------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//                                              |     The 
+ 0x0A and 0x09 dictate how to interpret the following     |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//                                              |     bytes, 
+ according to the value type definitions above         |</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 10pt; font-family: Consolas; color: rgb(63, 127, 95);">//                                              +------------------------------------------------------------------+</span></p>
+<p class="MsoNormal" style="margin: 0px; color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

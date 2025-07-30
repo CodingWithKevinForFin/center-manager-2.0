@@ -1,0 +1,63 @@
+****TEST_INPUT_QUERY****
+SELECT * FROM tableE UNPACK abc ON "|", def ON "#", xyz ON "%";
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+tableE
++--------------------+
+|       tableE       |
++------+------+------+
+|abc   |def   |xyz   |
+|String|String|String|
++------+------+------+
+|a|b|c |d,e,f |x%y%z |
++------+------+------+
+
+****TEST_RESULT****
++--------------------+
+|       tableE       |
++------+------+------+
+|abc   |def   |xyz   |
+|String|String|String|
++------+------+------+
+|a     |d,e,f |x     |
+|a     |d,e,f |y     |
+|a     |d,e,f |z     |
+|b     |d,e,f |x     |
+|b     |d,e,f |y     |
+|b     |d,e,f |z     |
+|c     |d,e,f |x     |
+|c     |d,e,f |y     |
+|c     |d,e,f |z     |
++------+------+------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT "*" FROM tableE UNPACK abc ON "|",def ON "#",xyz ON "%"
+
+PROJECTION : 
+SELECT "*" FROM tableE UNPACK abc ON "|",def ON "#",xyz ON "%"
+
+NESTING_QUERY : 
+#0 tableE
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+tableE
++--------------------+
+|       tableE       |
++------+------+------+
+|abc   |def   |xyz   |
+|String|String|String|
++------+------+------+
+|a|b|c |d,e,f |x%y%z |
++------+------+------+
+

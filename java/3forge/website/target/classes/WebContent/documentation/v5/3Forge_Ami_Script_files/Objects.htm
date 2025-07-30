@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.2.4_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Objects</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Objects">
+        <span>Objects</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1><u style="text-decoration: none; ">Objects</u></h1>
+<p style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">There 
+ is a predefined set of object types (classes). These are used to facilitate 
+ the interaction between AMI Script and various backend components, user 
+ inputs, dashboards, etc. Additionally, data structures are represented 
+ as objects and can be instantiated using the <i style="font-family: Arial, sans-serif;">new</i> 
+ operator.  Objects can only be accessed via methods (not member 
+ variables).</span> </p>
+<p style="margin-bottom: 0pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: 0pt; font-family: Arial, sans-serif;"> </p>
+<p style="font-size: 19pt; color: #6d2d9e; margin-top: 5pt; line-height: Normal; 
+	 margin-bottom: 5pt; font-weight: bold; font-family: Arial, sans-serif; 
+	 text-decoration: none; ">The Session Object</p>
+<p style="font-size: 11pt; margin-bottom: 00pt; line-height: Normal;"><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf;">session</span> 
+ <span style="font-size: 12pt;">- each user that is logged in has a session 
+ object (which is of type <i style="font-size: 12pt;">Session)</i>. This 
+ is the &quot;starting point&quot; for access to the user&#39;s information, 
+ along with various dashboard components.</span></p>
+<p style="font-size: 11pt; margin-bottom: 00pt; line-height: Normal; font-family: Arial, sans-serif;"> </p>
+<p style="font-size: 11pt; margin-bottom: 00pt; line-height: Normal; font-family: Arial, sans-serif;"> </p>
+<p style="font-size: 19pt; color: #6d2d9e; margin-top: 5pt; line-height: Normal; 
+	 margin-bottom: 5pt; font-weight: bold; font-family: Arial, sans-serif; 
+	 text-decoration: none; ">Common Data Structures</p>
+<p style="margin-bottom: 0pt; font-size: 12pt;"><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+														 color: #006dbf;">List</span><span courier=""> </span><span courier="" style="font-family: Arial, sans-serif;">-</span><span style="font-family: Arial, sans-serif;"> </span><span style="font-family: Arial, sans-serif;">A 
+ zero-indexed Array List implementation</span><span courier=""> </span></p>
+<p style="margin-bottom: 0pt; font-size: 12pt;"><span courier="" style="color: #006dbf; 
+														 font-family: &#39;Courier New&#39;, monospace;">Set</span><span courier=""> </span><span courier="" style="font-family: Arial, sans-serif;">-</span><span style="font-family: Arial, sans-serif;"> </span><span style="font-family: Arial, sans-serif;">A 
+ set of unique values</span><span courier="" style="font-family: Arial, sans-serif;"> </span></p>
+<p style="margin-bottom: 0pt; font-size: 12pt;"><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+														 color: #006dbf;">Map</span><span courier=""> </span><span courier="" style="font-family: Arial, sans-serif;">-</span><span style="font-family: Arial, sans-serif;"> </span><span style="font-family: Arial, sans-serif;">A 
+ Linked Hash Map implementation</span><span courier="" style="font-family: Arial, sans-serif;"> </span></p>
+<p style="margin-bottom: 0pt; font-size: 12pt;"><span courier="" style="color: #006dbf; 
+														 font-family: &#39;Courier New&#39;, monospace;">Table</span><span courier=""> </span><span courier="" style="font-family: Arial, sans-serif;">-</span><span style="font-family: Arial, sans-serif;"> </span><span style="font-family: Arial, sans-serif;">A 
+ 2-dimensional table with the same characteristics as a SQL style table. 
+ Tables have a title.  Columns are named and strongly typed.</span><span courier=""> </span></p>
+<p style="margin-bottom: 0pt; font-size: 12pt;"><span courier="" style="color: #006dbf; 
+														 font-family: &#39;Courier New&#39;, monospace;">Tableset</span><span courier=""> </span><span courier="" style="font-family: Arial, sans-serif;">-</span><span style="font-family: Arial, sans-serif;"> </span><span style="font-family: Arial, sans-serif;">A 
+ map of tables. Can be loosely thought of as a mini database.</span></p>
+<p style="font-size: 11pt; margin-bottom: 0pt;"> </p>
+<p style="font-size: 11pt; margin-bottom: 0pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-size: 13pt; 
+	 font-style: italic; color: #449938; text-transform: uppercase; font-family: Arial, sans-serif;"><b>Examples</b></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 line-height: Normal; font-size: 12pt;"><span courier="">session.alert(&quot;this 
+ is a test&quot;);</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">session.log(&quot;something worth 
+ logging);</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">List l = new List(&quot;apple&quot;, 
+ &quot;orange&quot;, &quot;berry&quot;, &quot;banana&quot;);</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">l.splice(1, 2, &quot;strawberry&quot;);</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">String s = l;                               </span> <i><span courier="" style="color: #808080;">//s is now apple, strawberry, banana</span></i></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">Map m = new Map(1, &quot;one&quot;, 
+ 2, &quot;two&quot;, 3, &quot;three&quot;); </span> <i><span courier="" style="color: #808080;">//map contains three key/value 
+ pairs, ex: 2 = &quot;two&quot;</span></i></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;"> </p>
+<b><span style="font-size: 15.0pt; line-height: 115%; font-family: Arial, sans-serif;"><br style="clear: all;" clear="all"/>
+</span></b> 
+<p> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

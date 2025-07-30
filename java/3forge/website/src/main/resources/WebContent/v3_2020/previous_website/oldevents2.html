@@ -1,0 +1,138 @@
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Events | 3forge</title>
+        <link rel="stylesheet" href="events2.css">
+        
+    </head>
+    <body>
+        
+        <!-- Main Content -->
+        <main>
+            <!-- Main -->
+
+            <!-- Header -->
+            <header class="header wrapper">
+<!--                 Header
+                <p>
+                Lorem ipsum dolo    
+                </p> -->
+                <a href="index.html">
+                	<img src="images/v1.svg" alt="3forge" width="138" height="35">
+                </a>
+            </header>
+
+            <!-- Hero -->
+            <section class="hero wrapper">
+                <a href="events2.html">
+                	<img src="images/colored-1.webp" id="3fimg" alt="3forge" width="312" height="80">
+                </a>
+                <a href="https://investops.wbresearch.com/">
+                	<img src="images/colored-2.webp" id="ioimg" alt="InvestOps" width="422" height="78">
+                </a>
+                <br>
+                <p id="headertext">
+                    The World’s Leading Buy Side Investment Operations Conference
+                </p>
+            </section>
+
+            <div class="flex-container wrapper">
+
+                <!-- Content -->
+                <section class="content">
+                    Content
+                    <p id="demo"></p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est. Nunc ita separantur, ut disiuncta sint, quo nihil potest esse perversius. Itaque quantum adiit periculum! ad honestatem enim illum omnem conatum suum referebat, non ad voluptatem. Ergo id est convenienter naturae vivere, a natura discedere. Esse enim quam vellet iniquus iustus poterat inpune. Tu enim ista lenius, hic Stoicorum more nos vexat. Duo Reges: constructio interrete.
+                    </p>
+                    <p>
+                        Quam ob rem tandem, inquit, non satisfacit? Haec quo modo conveniant, non sane intellego. Ita ceterorum sententiis semotis relinquitur non mihi cum Torquato, sed virtuti cum voluptate certatio. Tubulum fuisse, qua illum, cuius is condemnatus est rogatione, P. Quem ad modum quis ambulet, sedeat, qui ductus oris, qui vultus in quoque sit? Miserum hominem! Si dolor summum malum est, dici aliter non potest. Quo tandem modo? Ex rebus enim timiditas, non ex vocabulis nascitur. Deinde prima illa, quae in congressu solemus: Quid tu, inquit, huc? Quod eo liquidius faciet, si perspexerit rerum inter eas verborumne sit controversia.
+                    </p>
+                    <a href="https://investops.wbresearch.com/srspricing">
+                    	<div>
+                    		<span>Registration</span>
+                    	</div>
+                    </a>
+                    <a href="https://investops.wbresearch.com/agenda-mc">
+                    	<div>
+                    		<span>Agenda</span>
+                    	</div>
+                    </a>
+                    <a href="https://investops.wbresearch.com/sponsors">
+                    	<div>
+                    		<span>Sponsors</span>
+                    	</div>
+                    </a>                         
+                </section>
+
+<!--                 Sidebar
+                <aside class="sidebar">
+                    Sidebar                
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sumenda potius quam expetenda. Nihil opus est exemplis hoc facere longius. At Zeno eum non beatum modo, sed etiam divitem dicere ausus est. Nunc ita separantur, ut disiuncta sint, quo nihil potest esse perversius. Itaque quantum adiit periculum!
+                    </p>
+                </aside> -->
+
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer wrapper">
+                Footer                
+                <p id="reserve">
+                    RESERVE A MEETING
+                </p>
+                <div class="divform">
+                <form name="Registration" method="POST">
+                	<label class="formlabel">Name</label>
+                	<br>
+                	<input class="forminput" type="text" placeholder="Name">
+                	<br>
+                	<label class="formlabel">Email</label>
+                	<br>
+                	<input class="forminput" type="email" placeholder="Email">
+                	<br>
+                	<label class="formlabel">Position</label>
+                	<br>
+                	<input class="forminput" type="text" placeholder="Position">
+                	<br>
+                	<label class="formlabel">Company</label>
+                	<br>
+                	<input class="forminput" type="text" placeholder="Company">
+                	
+                </form>
+                </div>
+            </footer>
+
+        </main>
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("March 11, 2024 12:00:00").getTime();
+		
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+		
+		  // Get today's date and time
+		  var now = new Date().getTime();
+		    
+		  // Find the distance between now and the count down date
+		  var distance = countDownDate - now;
+		    
+		  // Time calculations for days, hours, minutes and seconds
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		    
+		  // Output the result in an element with id="demo"
+		  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+		  + minutes + "m ";
+		    
+		  // If the count down is over, write some text 
+		  if (distance < 0) {
+		    clearInterval(x);
+		    document.getElementById("demo").innerHTML = "EXPIRED";
+		  }
+		}, 1000);
+	</script>
+    </body>
+</html>

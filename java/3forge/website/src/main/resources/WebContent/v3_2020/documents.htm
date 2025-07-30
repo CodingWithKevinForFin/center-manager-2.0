@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f1:set var="tab" value="'documents'" scope="request" />
+
+<f1:secure/>
+
+<f1:if test="${isLoggedIn}"><f1:else/>
+
+  <f1:redirect page="'login.html'"/>
+
+</f1:if>
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<f1:include page="'_/v2/head.htm'"/>
+
+
+
+<f1:include page="'_/v2/masthead.htm'"/>
+
+
+
+	<body>
+
+
+
+
+
+    <div class="visible-phone" id="secondary-nav">
+
+
+
+      <a href="#" class="scrollToTop">
+
+        <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+      </a>
+
+
+
+      <noscript>
+
+        <a href="#" class="scrollToTop2">
+
+          <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+        </a>
+
+      </noscript>
+
+
+
+      <center>
+
+        <h3 class="mobile-h1">Videos</h3>
+
+      </center>
+
+
+
+      <a href="secure_account.htm" title="My Account">
+
+        <img class="secondary-nav-icon" style="right:0;top:0;color:white;" src="v2_resources/images/account_icon_gray.png" alt="Account"/>
+
+      </a>
+
+
+
+    </div>
+
+
+		<div id="portal-content">
+
+
+
+      <noscript>
+
+        <div class="formOverlay">
+
+          <center>
+
+            <h2>Most features on this site require JavaScript. Please enable JavaScript before continuing.</h2>
+
+          </center>
+
+        </div>
+
+      </noscript>
+
+
+
+      <!-- row1 -->
+
+      <ul class="unstyled row-fluid margin-bottom">
+
+
+
+        <!-- intro to ami -->
+
+        <li class="span3">
+
+
+
+          <img class="download-thumb" src="v2_resources/images/manual.png" alt="Rocket ship"/>
+
+
+
+          <br><br>
+
+
+
+          <h5>Introduction to AMI</h5>
+
+
+
+          <p>A quick overview of the AMI architecture and scaling capabilities.</p>
+
+
+
+          <a href="https://doc.3forge.com/getting_started/" target="_blank">
+
+            <button type="button" class="btn btn-info btn-theme1">Open in browser</button>
+
+          </a>
+
+
+
+          <br><br>
+
+
+
+        </li>
+
+
+
+        <!-- front end -->
+
+        <li class="span3 offset1">
+
+
+
+          <img class="download-thumb" src="v2_resources/images/frontend.png" alt="Desktop"/>
+
+
+
+          <br><br>
+
+
+
+          <h5>Advanced</h5>
+
+
+
+          <p>A series of guides on some of the more advanced usages of AMI.</p>
+
+
+
+          <a href="https://doc.3forge.com/architecture/advanced_setup/?h=adva" target="_blank">
+				<button type="button" class="btn btn-info btn-theme1">Open in browser</button>
+
+          </a>
+
+
+
+          <br><br>
+
+
+
+
+
+        </li>
+
+
+
+        <!-- Script -->
+
+        <li class="span3 offset1">
+
+
+
+          <img class="download-thumb" src="v2_resources/images/script.png" alt="Document"/>
+
+
+
+          <br><br>
+
+
+
+          <h5>AMI Script</h5>
+
+
+
+          <p>Adding highly customized behavior to the GUI for advanced users.</p>
+
+
+
+          <a href="https://doc.3forge.com/reference/ami_script/" target="_blank">
+
+            <button type="button" class="btn btn-info btn-support btn-theme1">Open in browser</button>
+
+          </a>
+
+
+
+          <br><br>
+
+
+
+        </li>
+
+
+
+
+
+
+
+      </ul>
+
+
+
+      <!-- row2 -->
+      <ul class="unstyled row-fluid margin-bottom">
+
+
+
+        <!-- Class types -->
+
+        <li class="span3">
+
+
+
+          <img class="download-thumb" src="v2_resources/images/script.png" alt="Document"/>
+
+
+
+          <br><br>
+
+
+
+          <h5>Feed Handler</h5>
+
+
+
+          <p>A list of feed handlers that AMI supports.</p>
+
+
+
+          <a href="https://doc.3forge.com/custom_java_plugins/feed_handlers/" target="_blank">
+
+				<button type="button" class="btn btn-info btn-support btn-theme1">Open in browser</button>
+
+          </a>
+
+
+
+          <br><br>
+
+
+
+        </li>
+
+
+
+        <!-- Cheat Sheet -->
+        <li class="span3 offset1">
+
+
+
+          <img class="download-thumb" src="v2_resources/images/functions.png" alt="Function"/>
+
+
+
+          <br><br>
+
+
+
+          <h5>AMI SQL Cheat Sheet</h5>
+
+
+
+          <p>A quick guide on AMI SQL syntaxes and examples.</p>
+
+
+
+          <a href="https://doc.3forge.com/cheatsheets/ami_sql/" target="_blank">
+
+            <button type="button" class="btn btn-info btn-support btn-theme1">Open in browser</button>
+
+          </a>
+
+
+
+          <br><br>
+
+
+
+        </li>
+
+
+        <!-- configuration -->
+
+        <li class="span3 offset1">
+
+
+
+          <img class="download-thumb" src="v2_resources/images/config.png" alt="Gears"/>
+
+
+
+          <br><br>
+
+
+
+          <h5>Configuration</h5>
+
+
+
+          <p>A guide for using the platform's configuration files.</p>
+
+
+
+          <a href="https://doc.3forge.com/configuration_guide/" target="_blank">
+
+            <button type="button" class="btn btn-info btn-support btn-theme1">Open in browser</button>
+
+          </a>
+
+
+
+          <br><br>
+
+
+
+        </li>
+
+
+
+      </ul>
+
+
+
+      <!-- row3 -->
+
+      <ul class="unstyled row-fluid">
+
+
+
+        <!-- real-time api -->
+
+        <li class="span3">
+
+
+
+          <img class="download-thumb" src="v2_resources/images/realtimeapi.png" alt="Clock"/>
+
+
+
+          <br><br>
+
+
+
+          <h5>Real-time API</h5>
+
+
+
+          <p>Establishing connection to your proprietary applications.</p>
+
+
+
+          <a href="https://doc.3forge.com/reference/ami_realtime_messages/?h=realtime+mes" target="_blank">
+
+            <button type="button" class="btn btn-info btn-support btn-theme1">Open in browser</button>
+
+          </a>
+
+
+
+          <br><br>
+
+
+
+        </li>
+
+
+
+        <!-- adapters -->
+
+        <li class="span3 offset1">
+
+
+
+          <img class="download-thumb" src="v2_resources/images/adapters.png" alt="Adapter"/>
+
+
+
+          <br><br>
+
+
+
+          <h5>Adapters</h5>
+
+
+
+          <p>Instructions for connecting and configuring different adapter types.</p>
+
+
+
+          <a href="https://doc.3forge.com/custom_java_plugins/datasource_adapters/" target="_blank">
+
+            <button type="button" class="btn btn-info btn-support btn-theme1">Open in browser</button>
+
+          </a>
+
+
+
+          <br><br>
+
+
+
+        </li>
+
+
+
+        <!-- Performance -->
+
+        <li class="span3 offset1">
+
+
+
+          <img class="download-thumb" src="v2_resources/images/performance2.png" alt="Speedometer"/>
+
+
+
+          <br><br>
+
+
+
+          <h5>Performance</h5>
+
+
+
+          <p>Basic performance stats of the platform including hardware specs.</p>
+
+
+
+          <a href="pdfs/ami_performance.pdf" target="_blank" download>
+
+            <button type="button" class="btn  btn-info btn-support btn-theme1">Download the PDF</button>
+
+          </a>
+
+
+
+          <br><br>
+
+
+
+        </li>
+
+
+
+      </ul>
+
+
+
+      <f1:include page="'_/v2/footer.htm'"/>
+
+		</div>
+
+
+
+
+
+    <!-- include modals -->
+
+
+
+    <f1:include page="'modals.htm'"/>
+
+
+
+	</body>
+
+</html>
+
+

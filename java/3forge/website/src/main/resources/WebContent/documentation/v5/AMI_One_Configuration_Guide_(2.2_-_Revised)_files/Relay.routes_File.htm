@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "6.1.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Relay.routes File</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Relay.routes File">
+        <span>Relay.routes File</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Relay.routes File</h1>
+<p>The relay can be connected to any number of centers (see <a href="Relay_Properties_Ami_One_Ami_Relay.htm#ami.centers">ami.centers 
+ property</a>). By default, as messages sent from an external source into 
+ a relay they are forwarded to all centers. By adding rules to the relay.routes 
+ file (see <a href="Relay_Properties_Ami_One_Ami_Relay.htm#ami.relay.routes.file">ami.relay.routes.file</a>) 
+ you can control which centers are receiving messages based on any parameters 
+ within a message and/or the structure of the message itself. Each line 
+ within the file is an isolated rule. Changes to this file will take 
+ effect immediately.</p>
+<p> </p>
+<p>Each line in the relay routes file is an isolated rule, with the following 
+ format:</p>
+<p> </p>
+<p>ROUTE_NAME;PRIORITY;MESSAGE_TYPES;OBJECT_TYPES;PARAM_TYPES;EXPRESSION;ROUTE_LIST;SUCCESS_ACTION;FAIL_ACTION;SKIP_ACTION 
+ </p>
+<p> </p>
+<p style="margin-left: 40px;">ROUTE_NAME - Unique name of rule</p>
+<p style="margin-left: 40px;">PRIORITY - Higher priority rules execute 
+ first. Lower numbers have higher priority, with 0 being the highest priority. 
+ Ties are determined using alphabetical route name</p>
+<p style="margin-left: 40px;">MESSAGE_TYPES - Comma delimited list of messages 
+ types, only O (object), D (delete), C (Command) and S (Status) are supported, 
+ * - all types </p>
+<p style="margin-left: 40px;">OBJECT_TYPES - Comma delimited list of types 
+ to evaluate by this rule. Blank - skip rule, * - all types </p>
+<p style="margin-left: 40px;">PARAM_TYPES - Comma delimited list of param 
+ types for the rule in the format: Name Type [nonull] </p>
+<p style="margin-left: 40px;">EXPRESSION - Expression to evaluate, must 
+ return boolean, true return value indicates rule succeeded </p>
+<p style="margin-left: 40px;">ROUTE_LIST - Comma delimited list of centers 
+ to send message to. Blank - no centers, * - all servers </p>
+<p style="margin-left: 40px;">ON_TRUE - Action if Expression returns true: 
+ BREAK - stop evaluating rules, blank or CONTINUE - continue evaluating 
+ next rule </p>
+<p style="margin-left: 40px;">ON_FALSE - Action if Expression returns false 
+ or null: BREAK - stop evaluating rules, blank or CONTINUE - Continue evaluating 
+ next rule</p>
+<p> </p>
+<p>Starting at the highest priority rule (lowest number), if the MESSAGE_TYPES 
+ and OBJECT_TYPES and PARAM_TYPES match the message, then the fields defined 
+ in the PARAM_TYPES are extracted from the message and passed into the 
+ EXPRESSION. If the expression returns true then the message is sent to 
+ all centers in the ROUTE_LIST. The ON_TRUE, ON_FALSE determine what to 
+ do next respective to the outcome.</p>
+<p> </p>
+<p>Notes:</p>
+<p> </p>
+<ul style="list-style: disc;">
+	<li><p>Lines starting with a pound (#) are considered comments and 
+	 skipped</p></li>
+	<li><p>A particular message will only be sent to a particular center 
+	 at most once, regardless of how many rules it matches</p></li>
+</ul>
+<p style="margin-left: 40px;"> </p>
+<p class="Examples_Small">Example</p>
+<p> </p>
+<p>#For NewOrder and Cancel messages with a symbol, route based on symbol. 
+ For all other messages router to all centers </p>
+<p>RULE0;0;O,D;NewOrder,Cancel;Symbol String nonull;symbol &lt; &quot;F&quot;;Center0;BREAK; 
+ </p>
+<p>RULE1;1;O,D;NewOrder,Cancel;Symbol String nonull;symbol &lt; &quot;Q&quot;;Center1;BREAK; 
+ </p>
+<p>RULE2;2;O,D;NewOrder,Cancel;Symbol String nonull;true;Center2,Center3;BREAK; 
+ </p>
+<p>RULE3;3;*;*;;true;*;BREAK; </p>
+<p> </p>
+<p>Example messages:</p>
+<p> </p>
+<p>O|T=&quot;NewOrder&quot;|Symbol=&quot;AAPL&quot;    &lt;== 
+ will be sent Center0 </p>
+<p>O|T=&quot;NewOrder&quot;|Symbol=&quot;IBM&quot;    &lt;== 
+ will be sent Center1 </p>
+<p>O|T=&quot;NewOrder&quot;|Symbol=&quot;ZVZZT&quot;    &lt;== 
+ will be sent to both Center2,Center3 </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

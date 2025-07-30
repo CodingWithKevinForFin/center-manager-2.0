@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = ".";
+    gCommonRootRelPath = ".";
+    gTopicId = "10.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="./template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="./whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="./template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="./template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="AMI Custom Java Plugins.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Interfacing with Directory Naming Service (Ami One, Center)</title>
+<link rel="StyleSheet" href="assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Interfacing with Directory Naming Service (Ami One, Center)">
+        <span>Interfacing with Directory Naming Service (Ami One, Center)</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Interfacing with Directory Naming Service (AMI One, Center)</h1>
+<h2 style="color: #7030A0; margin-top: 5pt; margin-bottom: 1pt;">Overview</h2>
+<p>In Enterprise environments, some services cannot be directly identified 
+ by a physical destination (ex: host name) and are instead logically identified.  In 
+ this situation, the organization implements a directory naming service 
+ that can map, in realtime, the logical identifier to a physical destination. 
+  </p>
+<p style="margin-bottom: .0001pt; font-size: 11pt;"> </p>
+<p>For AMI to access resources in this scenario, a plugin must be written 
+ that interfaces with the directory naming service.  Then, when 
+ a resource is requested inside AMI, AMI will first ask the Plugin to &quot;resolve&quot; 
+ the logical name to a physical one, passing the resolved physical one 
+ to the underlying connectors.  It&#39;s the plugin&#39;s responsibility 
+ to connect to the naming service and provide an answer in a timely fashion.</p>
+<p style="margin-bottom: .0001pt; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt;"> </p>
+<h2 style="color: #7030a0; text-decoration: none; ">Using Multiple Resolvers</h2>
+<p>Note, that many resolvers can be supplied. The order in which they are 
+ defined in the property is the order in which they are visited. Once a 
+ resolver plugin says it &quot;canResolve&quot; the identifier, the remaining 
+ resolvers are not called.</p>
+<p style="margin-bottom: .0001pt; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt;"> </p>
+<h2 style="text-decoration: none; ">Default case</h2>
+<p>If no resolvers plugins are provided, or none of the resolvers &quot;canResolve(...)&quot; 
+ a given identifier, then the identifier is considered a physical identifier 
+ and passed straight to the connector.   </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt;"><span style="font-size: 11pt;">                </span>      </p>
+<h2 style="text-decoration: none; ">Java interface (see javadoc for details)</h2>
+<p class="CourierBlue" style="color: #bf0000; font-size: 10pt;"><span courier="">com.f1.ami.amicommon.AmiNamingServiceResolver</span></p>
+<p style="margin-bottom: .0001pt; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-family: ; font-size: 12pt;"> </p>
+<h2 style="text-decoration: none; ">Property name</h2>
+<p class="CourierBlue"><i><span style="mso-fareast-font-family: Arial; 
+								 mso-fareast-theme-font: minor-latin; color: #C00000; 
+								 mso-ansi-language: EN-US; mso-fareast-language: EN-US; 
+								 mso-bidi-language: AR-SA; mso-no-proof: yes; 
+								 font-size: 10pt; font-style: normal;">ami.naming.service.resolvers</span><span style="font-size: 8.0pt; mso-fareast-font-family: Arial; mso-fareast-theme-font: minor-latin; 
+	 color: #0070C0; mso-ansi-language: EN-US; mso-fareast-language: EN-US; 
+	 mso-bidi-language: AR-SA;">=</span></i><i><span style="font-size: 8.0pt; 
+													 mso-fareast-font-family: Arial; 
+													 mso-fareast-theme-font: minor-latin; 
+													 color: #808080; mso-themecolor: background1; 
+													 mso-themeshade: 128; 
+													 mso-ansi-language: EN-US; 
+													 mso-fareast-language: EN-US; 
+													 mso-bidi-language: AR-SA; 
+													 font-style: italic; 
+													 mso-bidi-font-style: normal; 
+													 mso-no-proof: yes;">comma_delimited_list_of_fully_qualified_java_class_names</span></i></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,559 @@
+****TEST_INPUT_QUERY****
+create table sumDEF as select sum(sDnulls.x) as d, sum(sEnulls.x) as e, sum(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table minDEF as select min(sDnulls.x) as d, min(sEnulls.x) as e, min(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table maxDEF as select max(sDnulls.x) as d, max(sEnulls.x) as e, max(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table countDEF as select count(sDnulls.x) as d, count(sEnulls.x) as e, count(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table countUniqueDEF as select countUnique(sDnulls.x) as d, countUnique(sEnulls.x) as e, countUnique(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table avgDEF as select avg(sDnulls.x) as d, avg(sEnulls.x) as e, avg(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table varDEF as select var(sDnulls.x) as d, var(sEnulls.x) as e, var(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table varSDEF as select varS(sDnulls.x) as d, varS(sEnulls.x) as e, varS(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table stdevDEF as select stdev(sDnulls.x) as d, stdev(sEnulls.x) as e, stdev(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table stdevSDEF as select stdevS(sDnulls.x) as d, stdevS(sEnulls.x) as e, stdevS(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table firstDEF as select first(sDnulls.x) as d, first(sEnulls.x) as e, first(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table lastDEF as select last(sDnulls.x) as d, last(sEnulls.x) as e, last(sFnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table covarDEF as select covar(sDnulls.x, sEnulls.x) as d, covar(sEnulls.x, sFnulls.x) as e, covar(sFnulls.x, sDnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table covarSDEF as select covarS(sDnulls.x, sEnulls.x) as d, covarS(sEnulls.x, sFnulls.x) as e, covarS(sFnulls.x, sDnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table corDEF as select cor(sDnulls.x, sEnulls.x) as d, cor(sEnulls.x, sFnulls.x) as e, cor(sFnulls.x, sDnulls.x) as f from sDnulls, sEnulls, sFnulls;
+create table betaDEF as select beta(sDnulls.x, sEnulls.x) as d, beta(sEnulls.x, sFnulls.x) as e, beta(sFnulls.x, sDnulls.x) as f from sDnulls, sEnulls, sFnulls;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+sFnulls
++-------+
+|sFnulls|
++-------+
+|x      |
+|Double |
++-------+
+|-2.0   |
+!null   |
+|0.0    |
+|1.0    |
++-------+
+
+sEnulls
++-------+
+|sEnulls|
++-------+
+|x      |
+|Double |
++-------+
+|2.0    |
+|3.0    |
+|4.0    |
+!null   |
++-------+
+
+sDnulls
++-------+
+|sDnulls|
++-------+
+|x      |
+|Double |
++-------+
+|0.0    |
+!null   |
+|2.0    |
+|3.0    |
++-------+
+
+****TEST_RESULT****
+16
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS sumDEF  SELECT sum(sDnulls . x) AS d,sum(sEnulls . x) AS e,sum(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS minDEF  SELECT min(sDnulls . x) AS d,min(sEnulls . x) AS e,min(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS maxDEF  SELECT max(sDnulls . x) AS d,max(sEnulls . x) AS e,max(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS countDEF  SELECT count(sDnulls . x) AS d,count(sEnulls . x) AS e,count(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS countUniqueDEF  SELECT countUnique(sDnulls . x) AS d,countUnique(sEnulls . x) AS e,countUnique(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS avgDEF  SELECT avg(sDnulls . x) AS d,avg(sEnulls . x) AS e,avg(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS varDEF  SELECT var(sDnulls . x) AS d,var(sEnulls . x) AS e,var(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS varSDEF  SELECT varS(sDnulls . x) AS d,varS(sEnulls . x) AS e,varS(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS stdevDEF  SELECT stdev(sDnulls . x) AS d,stdev(sEnulls . x) AS e,stdev(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS stdevSDEF  SELECT stdevS(sDnulls . x) AS d,stdevS(sEnulls . x) AS e,stdevS(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS firstDEF  SELECT first(sDnulls . x) AS d,first(sEnulls . x) AS e,first(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS lastDEF  SELECT last(sDnulls . x) AS d,last(sEnulls . x) AS e,last(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS covarDEF  SELECT covar(sDnulls . x,sEnulls . x) AS d,covar(sEnulls . x,sFnulls . x) AS e,covar(sFnulls . x,sDnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS covarSDEF  SELECT covarS(sDnulls . x,sEnulls . x) AS d,covarS(sEnulls . x,sFnulls . x) AS e,covarS(sFnulls . x,sDnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS corDEF  SELECT cor(sDnulls . x,sEnulls . x) AS d,cor(sEnulls . x,sFnulls . x) AS e,cor(sFnulls . x,sDnulls . x) AS f FROM sDnulls,sEnulls,sFnullsCREATE TABLE AS betaDEF  SELECT beta(sDnulls . x,sEnulls . x) AS d,beta(sEnulls . x,sFnulls . x) AS e,beta(sFnulls . x,sDnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+PROJECTION : 
+SELECT sum(sDnulls . x) AS d,sum(sEnulls . x) AS e,sum(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT min(sDnulls . x) AS d,min(sEnulls . x) AS e,min(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT max(sDnulls . x) AS d,max(sEnulls . x) AS e,max(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT count(sDnulls . x) AS d,count(sEnulls . x) AS e,count(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT countUnique(sDnulls . x) AS d,countUnique(sEnulls . x) AS e,countUnique(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT avg(sDnulls . x) AS d,avg(sEnulls . x) AS e,avg(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT var(sDnulls . x) AS d,var(sEnulls . x) AS e,var(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT varS(sDnulls . x) AS d,varS(sEnulls . x) AS e,varS(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT stdev(sDnulls . x) AS d,stdev(sEnulls . x) AS e,stdev(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT stdevS(sDnulls . x) AS d,stdevS(sEnulls . x) AS e,stdevS(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT first(sDnulls . x) AS d,first(sEnulls . x) AS e,first(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT last(sDnulls . x) AS d,last(sEnulls . x) AS e,last(sFnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT covar(sDnulls . x,sEnulls . x) AS d,covar(sEnulls . x,sFnulls . x) AS e,covar(sFnulls . x,sDnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT covarS(sDnulls . x,sEnulls . x) AS d,covarS(sEnulls . x,sFnulls . x) AS e,covarS(sFnulls . x,sDnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT cor(sDnulls . x,sEnulls . x) AS d,cor(sEnulls . x,sFnulls . x) AS e,cor(sFnulls . x,sDnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+PROJECTION : 
+SELECT beta(sDnulls . x,sEnulls . x) AS d,beta(sEnulls . x,sFnulls . x) AS e,beta(sFnulls . x,sDnulls . x) AS f FROM sDnulls,sEnulls,sFnulls
+
+NESTING_QUERY : 
+#0 sDnulls
+
+NESTING_QUERY : 
+#1 sEnulls
+
+NESTING_QUERY : 
+#2 sFnulls
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 64 rows into 1 buckets
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+stdevDEF
++-----------------------------------------------------+
+|                      stdevDEF                       |
++-----------------+-----------------+-----------------+
+|d                |e                |f                |
+|Double           |Double           |Double           |
++-----------------+-----------------+-----------------+
+|1.247219128924647|0.816496580927726|1.247219128924647|
++-----------------+-----------------+-----------------+
+
+varDEF
++--------------------------------------------------------+
+|                         varDEF                         |
++------------------+------------------+------------------+
+|d                 |e                 |f                 |
+|Double            |Double            |Double            |
++------------------+------------------+------------------+
+|1.5555555555555556|0.6666666666666666|1.5555555555555556|
++------------------+------------------+------------------+
+
+sumDEF
++--------------------+
+|       sumDEF       |
++------+------+------+
+|d     |e     |f     |
+|Double|Double|Double|
++------+------+------+
+|80.0  |144.0 |-16.0 |
++------+------+------+
+
+lastDEF
++--------------------+
+|      lastDEF       |
++------+------+------+
+|d     |e     |f     |
+|Double|Double|Double|
++------+------+------+
+|3.0   !null  |1.0   |
++------+------+------+
+
+sDnulls
++-------+
+|sDnulls|
++-------+
+|x      |
+|Double |
++-------+
+|0.0    |
+!null   |
+|2.0    |
+|3.0    |
++-------+
+
+avgDEF
++---------------------------------------------+
+|                   avgDEF                    |
++------------------+------+-------------------+
+|d                 |e     |f                  |
+|Double            |Double|Double             |
++------------------+------+-------------------+
+|1.6666666666666667|3.0   |-0.3333333333333333|
++------------------+------+-------------------+
+
+countDEF
++--------------+
+|   countDEF   |
++----+----+----+
+|d   |e   |f   |
+|Long|Long|Long|
++----+----+----+
+|48  |48  |48  |
++----+----+----+
+
+firstDEF
++--------------------+
+|      firstDEF      |
++------+------+------+
+|d     |e     |f     |
+|Double|Double|Double|
++------+------+------+
+|0.0   |2.0   |-2.0  |
++------+------+------+
+
+stdevSDEF
++--------------------------------------------------------+
+|                       stdevSDEF                        |
++------------------+------------------+------------------+
+|d                 |e                 |f                 |
+|Double            |Double            |Double            |
++------------------+------------------+------------------+
+|1.2604175824977624|0.8251369970070347|1.2604175824977624|
++------------------+------------------+------------------+
+
+covarSDEF
++--------------------------------------------------------------------+
+|                             covarSDEF                              |
++---------------------+----------------------+-----------------------+
+|d                    |e                     |f                      |
+|Double               |Double                |Double                 |
++---------------------+----------------------+-----------------------+
+|9.516197353929913E-17|6.3441315692866086E-18|-1.2688263138573217E-17|
++---------------------+----------------------+-----------------------+
+
+sFnulls
++-------+
+|sFnulls|
++-------+
+|x      |
+|Double |
++-------+
+|-2.0   |
+!null   |
+|0.0    |
+|1.0    |
++-------+
+
+betaDEF
++-----------------------------------------------------------------+
+|                             betaDEF                             |
++---------------------+--------------------+----------------------+
+|d                    |e                   |f                     |
+|Double               |Double              |Double                |
++---------------------+--------------------+----------------------+
+|1.387778780781446E-16|3.96508223080413E-18|-7.930164461608264E-18|
++---------------------+--------------------+----------------------+
+
+maxDEF
++--------------------+
+|       maxDEF       |
++------+------+------+
+|d     |e     |f     |
+|Double|Double|Double|
++------+------+------+
+|3.0   |4.0   |1.0   |
++------+------+------+
+
+varSDEF
++--------------------------------------------------------+
+|                        varSDEF                         |
++------------------+------------------+------------------+
+|d                 |e                 |f                 |
+|Double            |Double            |Double            |
++------------------+------------------+------------------+
+|1.5886524822695036|0.6808510638297872|1.5886524822695036|
++------------------+------------------+------------------+
+
+countUniqueDEF
++--------------+
+|countUniqueDEF|
++----+----+----+
+|d   |e   |f   |
+|Long|Long|Long|
++----+----+----+
+|3   |3   |3   |
++----+----+----+
+
+minDEF
++--------------------+
+|       minDEF       |
++------+------+------+
+|d     |e     |f     |
+|Double|Double|Double|
++------+------+------+
+|0.0   |2.0   |-2.0  |
++------+------+------+
+
+corDEF
++------------------------------------------------------------------+
+|                              corDEF                              |
++---------------------+---------------------+----------------------+
+|d                    |e                    |f                     |
+|Double               |Double               |Double                |
++---------------------+---------------------+----------------------+
+|9.085144729692148E-17|6.056763153128097E-18|-7.930164461608262E-18|
++---------------------+---------------------+----------------------+
+
+covarDEF
++--------------------------------------------------------------------+
+|                              covarDEF                              |
++---------------------+----------------------+-----------------------+
+|d                    |e                     |f                      |
+|Double               |Double                |Double                 |
++---------------------+----------------------+-----------------------+
+|9.251858538542972E-17|6.1679056923619804E-18|-1.2335811384723961E-17|
++---------------------+----------------------+-----------------------+
+
+sEnulls
++-------+
+|sEnulls|
++-------+
+|x      |
+|Double |
++-------+
+|2.0    |
+|3.0    |
+|4.0    |
+!null   |
++-------+
+

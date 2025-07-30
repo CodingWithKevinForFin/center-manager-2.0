@@ -1,0 +1,386 @@
+/* DO NOT MODIFY THIS FILE WHILE AMI IS RUNNING, CONTENTS ARE MODIFIED BY AMI  */
+
+/*TABLES AND INDEXES*/
+
+CREATE PUBLIC TABLE AdminCommand(command Enum) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE TRIGGER adminCommandTrigger OFTYPE ADMINCOMMAND ON AdminCommand PRIORITY 0;
+
+
+CREATE PUBLIC TABLE ChildAck(time Long,symbol String,clOrdId String,status Enum,chainId Long) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX childModifiesChainIdIDX ON ChildAck(chainId HASH) USE Constraint="NONE";
+CREATE INDEX childModifiesIdIDX ON ChildAck(clOrdId HASH) USE Constraint="NONE";
+CREATE TRIGGER childModifyTrigger OFTYPE CHILDMODIFY ON ChildAck PRIORITY 1;
+
+
+CREATE PUBLIC TABLE ChildAlert(modifiedBy Enum,modifiedSid Enum,modifiedIp Enum,assignedTo Enum,id Long,
+                               type Enum,comment String,time Long,severity Integer,action Enum,
+                               parentId Long,symbol Enum,orderId String,account Enum,system Enum,
+                               sector Enum,industry Enum,strategy Enum,ex Enum,details Enum,
+                               alertId String, params String) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX childAlertAuditIdIDX ON ChildAlert(id HASH) USE Constraint="NONE";
+CREATE INDEX childAlertIdIDX ON ChildAlert(parentId HASH) USE Constraint="NONE";
+
+
+CREATE PUBLIC TABLE ChildAlertAudit(modifiedTime Long,status Enum,modifiedBy Enum,modifiedSid Enum,modifiedIp Enum,
+                                    assignedTo Enum,id Long,type Enum,comment String,time Long,
+                                    severity Integer,action Enum,parentId Long,symbol Enum,orderId String,
+                                    account Enum,system Enum,sector Enum,industry Enum,strategy Enum,
+                                    ex Enum,details Enum,alertId String) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+
+
+CREATE PUBLIC TABLE ChildOrder(time Long,parentId String,size Long,limitPx Double,baseCurrency Enum,
+                               baseLimitPx Double,clOrdId String,origClOrdId String,status Enum,symbol Enum,
+                               chainId Long) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX childMessagesOrderIDX ON ChildOrder(clOrdId HASH) USE Constraint="NONE";
+CREATE INDEX childMessagesOrigIdIDX ON ChildOrder(origClOrdId HASH) USE Constraint="NONE";
+CREATE INDEX childMessagesChainIdIDX ON ChildOrder(chainId HASH) USE Constraint="NONE";
+CREATE TRIGGER childOrderTrigger OFTYPE CHILDORDER ON ChildOrder PRIORITY 0;
+
+
+CREATE PUBLIC TABLE Execution(time Long NoNull,symbol Enum,ex Enum,basePx Double NoNull,px Double,
+                              execId String,baseCurrency Enum,size Integer NoNull,oID String,side Enum,
+                              status Enum,t1 Double,bid Double,ask Double,minBid Double,
+                              maxAsk Double,evAsk Double,evBid Double,evMaxAsk Double,evMinBid Double,
+                              value Double,inSpread Long,inReg Long,account Enum,system Enum,
+                              industry Enum,sector Enum,prevClose Double,t5 Double,parentId String,
+                              latency Long,strategy Enum,execIndicator Enum) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX execIdIDX ON Execution(execId HASH) USE Constraint="NONE";
+CREATE INDEX exOID ON Execution(oID HASH) USE Constraint="NONE";
+CREATE INDEX exTableParentIdIDX ON Execution(parentId HASH) USE Constraint="NONE";
+CREATE INDEX exdefinition ON Execution(parentId HASH) USE Constraint="NONE";
+CREATE INDEX exParentOID ON Execution(parentId HASH) USE Constraint="NONE";
+CREATE INDEX exSymTime ON Execution(symbol HASH,time SERIES) USE Constraint="NONE";
+CREATE TRIGGER executionTrigger OFTYPE EXECUTION ON Execution PRIORITY 0;
+
+
+CREATE PUBLIC TABLE FxRate(I String,time Long,baseCurrency Enum,counterCurrency Enum,rate Double) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX fxRateIDX ON FxRate(baseCurrency HASH,counterCurrency HASH) USE Constraint="NONE";
+
+
+CREATE PUBLIC TABLE NBBO(time Long NoNull,symbol Enum NoNull,bidEx Enum NoNull,askEx Enum NoNull,bid Double NoNull,
+                         bidSize Long,ask Double NoNull,askSize Long) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX nbboTime ON NBBO(symbol HASH,time SERIES) USE Constraint="NONE";
+CREATE TRIGGER nbboTrigger OFTYPE NBBO ON NBBO PRIORITY 0;
+
+
+CREATE PUBLIC TABLE OrdersByAccountSide(account Enum,side Enum,cnt Long,size Long,filled Long,
+                                        filledValue Double,openValue Double,rvOpen Double,evOpen Double,exCnt Long,
+                                        evIntervalVWAP Double,rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,evMktImpact Double,
+                                        rvMktImpact Double,rvLast Double,evLast Double,rvLHO Double,evLHO Double,
+                                        rvPrevClose Double,evPrevClose Double,evT1 Double,rvT1 Double,darkVol Long,
+                                        darkVal Double,rqOpen Long,rqPrevClose Long,rqLHO Long,rqLast Long,
+                                        rqT1 Long,rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,evT5 Double,
+                                        rvT5 Double,rqT5 Long,darkCnt Long,opCost Double,leaves Long,
+                                        pendingCnt Long,pendingLatency Long,processedCnt Long,processedLatency Long,liqCnt Long,
+                                        liqVol Long,liqVal Double,routedCnt Long,routedVol Long,routedVal Double) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX OrdersByAccountSideIdx ON OrdersByAccountSide(account HASH,side HASH) USE Constraint="NONE";
+
+
+CREATE PUBLIC TABLE OrdersByAccountSideHistory(time Long,account Enum,side Enum,cnt Long,size Long,
+                                               filled Long,filledValue Double,openValue Double,rvOpen Double,evOpen Double,exCnt Long,
+                                               evIntervalVWAP Double,rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,evMktImpact Double,
+                                               rvMktImpact Double,rvLast Double,evLast Double,rvLHO Double,evLHO Double,
+                                               rvPrevClose Double,evPrevClose Double,evT1 Double,rvT1 Double,darkVol Long,
+                                               darkVal Double,rqOpen Long,rqPrevClose Long,rqLHO Long,rqLast Long,
+                                               rqT1 Long,rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,evT5 Double,
+                                               rvT5 Double,rqT5 Long,darkCnt Long,opCost Double,leaves Long,
+                                               pendingCnt Long,pendingLatency Long,processedCnt Long,processedLatency Long,liqCnt Long,
+                                               liqVol Long,liqVal Double,routedCnt Long,routedVol Long,routedVal Double) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+
+
+CREATE PUBLIC TABLE OrdersBySecIndSide(industry Enum,sector Enum,side Enum,cnt Long,size Long,
+                                       filled Long,filledValue Double,openValue Double,rvOpen Double,evOpen Double,
+                                       exCnt Long,evIntervalVWAP Double,rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,
+                                       evMktImpact Double,rvMktImpact Double,rvLast Double,evLast Double,rvLHO Double,
+                                       evLHO Double,rvPrevClose Double,evPrevClose Double,evT1 Double,rvT1 Double,
+                                       darkVol Long,darkVal Double,rqOpen Long,rqPrevClose Long,rqLHO Long,
+                                       rqLast Long,rqT1 Long,rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,
+                                       evT5 Double,rvT5 Double,rqT5 Long,darkCnt Long,opCost Double,
+                                       leaves Long,pendingCnt Long,pendingLatency Long,processedCnt Long,processedLatency Long,
+                                       liqCnt Long,liqVol Long,liqVal Double,routedCnt Long,routedVol Long,
+                                       routedVal Double) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX OrdersBySecIndSideIdx ON OrdersBySecIndSide(sector HASH,industry HASH,side HASH) USE Constraint="NONE";
+
+
+CREATE PUBLIC TABLE OrdersBySecIndSideHistory(time Long,industry Enum,sector Enum,side Enum,cnt Long,
+                                              size Long,filled Long,filledValue Double,rvOpen Double,evOpen Double,
+                                              exCnt Long,evIntervalVWAP Double,rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,
+                                              evMktImpact Double,rvMktImpact Double,rvLast Double,evLast Double,rvLHO Double,
+                                              evLHO Double,rvPrevClose Double,evPrevClose Double,evT1 Double,rvT1 Double,
+                                              darkVol Long,darkVal Double,rqOpen Long,rqPrevClose Long,rqLHO Long,
+                                              rqLast Long,rqT1 Long,rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,
+                                              evT5 Double,rvT5 Double,rqT5 Long,darkCnt Long,opCost Double,
+                                              leaves Long,pendingCnt Long,pendingLatency Long,processedCnt Long,processedLatency Long,
+                                              liqCnt Long,liqVol Long,liqVal Double,routedCnt Long,routedVol Long,
+                                              routedVal Double) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+
+
+CREATE PUBLIC TABLE OrdersBySide(side Enum,cnt Long,size Long,filled Long,filledValue Double,
+                                 openValue Double,rvOpen Double,evOpen Double,exCnt Long,evIntervalVWAP Double,
+                                 rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,evMktImpact Double,rvMktImpact Double,
+                                 rvLast Double,evLast Double,rvLHO Double,evLHO Double,rvPrevClose Double,
+                                 evPrevClose Double,evT1 Double,rvT1 Double,darkVol Long,darkVal Double,
+                                 rqOpen Long,rqPrevClose Long,rqLHO Long,rqLast Long,rqT1 Long,
+                                 rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,evT5 Double,rvT5 Double,
+                                 rqT5 Long,darkCnt Long,opCost Double,leaves Long,pendingCnt Long,
+                                 pendingLatency Long,processedCnt Long,processedLatency Long,liqCnt Long,liqVol Long,
+                                 liqVal Double,routedCnt Long,routedVol Long,routedVal Double) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX OrdersBySideIdx ON OrdersBySide(side HASH) USE Constraint="NONE";
+
+
+CREATE PUBLIC TABLE OrdersBySideHistory(time Long,side Enum,cnt Long,size Long,filled Long,
+                                        filledValue Double,rvOpen Double,evOpen Double,exCnt Long,evIntervalVWAP Double,
+                                        rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,evMktImpact Double,rvMktImpact Double,
+                                        rvLast Double,evLast Double,rvLHO Double,evLHO Double,rvPrevClose Double,
+                                        evPrevClose Double,evT1 Double,rvT1 Double,darkVol Long,darkVal Double,
+                                        rqOpen Long,rqPrevClose Long,rqLHO Long,rqLast Long,rqT1 Long,
+                                        rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,evT5 Double,rvT5 Double,
+                                        rqT5 Long,darkCnt Long,opCost Double,leaves Long,pendingCnt Long,
+                                        pendingLatency Long,processedCnt Long,processedLatency Long,liqCnt Long,liqVol Long,
+                                        liqVal Double,routedCnt Long,routedVol Long,routedVal Double) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+
+
+CREATE PUBLIC TABLE OrdersByStrategySide(strategy Enum,side Enum,cnt Long,size Long,filled Long,
+                                         filledValue Double,openValue Double,rvOpen Double,evOpen Double,exCnt Long,
+                                         evIntervalVWAP Double,rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,evMktImpact Double,
+                                         rvMktImpact Double,rvLast Double,evLast Double,rvLHO Double,evLHO Double,
+                                         rvPrevClose Double,evPrevClose Double,evT1 Double,rvT1 Double,darkVol Long,
+                                         darkVal Double,rqOpen Long,rqPrevClose Long,rqLHO Long,rqLast Long,
+                                         rqT1 Long,rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,evT5 Double,
+                                         rvT5 Double,rqT5 Long,darkCnt Long,opCost Double,leaves Long,
+                                         pendingCnt Long,pendingLatency Long,processedCnt Long,processedLatency Long,liqCnt Long,
+                                         liqVol Long,liqVal Double,routedCnt Long,routedVol Long,routedVal Double) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX OrdersByStrategySideIdx ON OrdersByStrategySide(strategy HASH,side HASH) USE Constraint="NONE";
+
+
+CREATE PUBLIC TABLE OrdersByStrategySideHistory(time Long,strategy Enum,side Enum,cnt Long,size Long,
+                                                filled Long,filledValue Double,rvOpen Double,evOpen Double,exCnt Long,
+                                                evIntervalVWAP Double,rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,evMktImpact Double,
+                                                rvMktImpact Double,rvLast Double,evLast Double,rvLHO Double,evLHO Double,
+                                                rvPrevClose Double,evPrevClose Double,evT1 Double,rvT1 Double,darkVol Long,
+                                                darkVal Double,rqOpen Long,rqPrevClose Long,rqLHO Long,rqLast Long,
+                                                rqT1 Long,rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,evT5 Double,
+                                                rvT5 Double,rqT5 Long,darkCnt Long,opCost Double,leaves Long,
+                                                pendingCnt Long,pendingLatency Long,processedCnt Long,processedLatency Long,liqCnt Long,
+                                                liqVol Long,liqVal Double,routedCnt Long,routedVol Long,routedVal Double) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+
+
+CREATE PUBLIC TABLE OrdersBySymSide(symbol Enum,side Enum,cnt Long,size Long,filled Long,
+                                    filledValue Double,openValue Double,rvOpen Double,evOpen Double,exCnt Long,
+                                    evIntervalVWAP Double,rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,evMktImpact Double,
+                                    rvMktImpact Double,rvLast Double,evLast Double,rvLHO Double,evLHO Double,
+                                    rvPrevClose Double,evPrevClose Double,evT1 Double,rvT1 Double,darkVol Long,
+                                    darkVal Double,rqOpen Long,rqPrevClose Long,rqLHO Long,rqLast Long,
+                                    rqT1 Long,rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,evT5 Double,
+                                    rvT5 Double,rqT5 Long,darkCnt Long,opCost Double,industry Enum,
+                                    sector Enum,leaves Long,pendingCnt Long,pendingLatency Long,processedCnt Long,
+                                    processedLatency Long,liqCnt Long,liqVol Long,liqVal Double,routedCnt Long,
+                                    routedVol Long,routedVal Double, messageRate Double, exMessageRate Double) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX OrdersBySymIdx ON OrdersBySymSide(symbol HASH) USE Constraint="NONE";
+CREATE INDEX OrdersBySymSideIdx ON OrdersBySymSide(symbol HASH,side HASH) USE Constraint="NONE";
+CREATE TRIGGER OrdersBySymSideAgg2 OFTYPE ORDERSBYSYMSIDE ON OrdersBySymSide PRIORITY 3;
+
+
+CREATE PUBLIC TABLE OrdersBySymSideHistory(time Long,symbol Enum,side Enum,cnt Long,size Long,
+                                           filled Long,filledValue Double,rvOpen Double,evOpen Double,exCnt Long,
+                                           evIntervalVWAP Double,rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,evMktImpact Double,
+                                           rvMktImpact Double,rvLast Double,evLast Double,rvLHO Double,evLHO Double,
+                                           rvPrevClose Double,evPrevClose Double,evT1 Double,rvT1 Double,darkVol Long,
+                                           darkVal Double,rqOpen Long,rqPrevClose Long,rqLHO Long,rqLast Long,
+                                           rqT1 Long,rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,evT5 Double,
+                                           rvT5 Double,rqT5 Long,darkCnt Long,opCost Double,leaves Long,
+                                           pendingCnt Long,pendingLatency Long,processedCnt Long,processedLatency Long,liqCnt Long,
+                                           liqVol Long,liqVal Double,routedCnt Long,routedVol Long,routedVal Double, messageRate Double, exMessageRate Double) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+
+
+CREATE PUBLIC TABLE OrdersBySystemSide(system Enum,side Enum,cnt Long,size Long,filled Long,
+                                       filledValue Double,openValue Double,rvOpen Double,evOpen Double,exCnt Long,
+                                       evIntervalVWAP Double,rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,evMktImpact Double,
+                                       rvMktImpact Double,rvLast Double,evLast Double,rvLHO Double,evLHO Double,
+                                       rvPrevClose Double,evPrevClose Double,evT1 Double,rvT1 Double,darkVol Long,
+                                       darkVal Double,rqOpen Long,rqPrevClose Long,rqLHO Long,rqLast Long,
+                                       rqT1 Long,rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,evT5 Double,
+                                       rvT5 Double,rqT5 Long,darkCnt Long,opCost Double,leaves Long,
+                                       pendingCnt Long,pendingLatency Long,processedCnt Long,processedLatency Long,liqCnt Long,
+                                       liqVol Long,liqVal Double,routedCnt Long,routedVol Long,routedVal Double) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX OrdersBySystemSideIdx ON OrdersBySystemSide(system HASH,side HASH) USE Constraint="NONE";
+
+
+CREATE PUBLIC TABLE OrdersBySystemSideHistory(time Long,system Enum,side Enum,cnt Long,size Long,
+                                              filled Long,filledValue Double,rvOpen Double,evOpen Double,exCnt Long,
+                                              evIntervalVWAP Double,rvIntervalVWAP Double,rvDailyVWAP Double,evDailyVWAP Double,evMktImpact Double,
+                                              rvMktImpact Double,rvLast Double,evLast Double,rvLHO Double,evLHO Double,
+                                              rvPrevClose Double,evPrevClose Double,evT1 Double,rvT1 Double,darkVol Long,
+                                              darkVal Double,rqOpen Long,rqPrevClose Long,rqLHO Long,rqLast Long,
+                                              rqT1 Long,rqMktImpact Long,rqDailyVWAP Long,rqIntervalVWAP Long,evT5 Double,
+                                              rvT5 Double,rqT5 Long,darkCnt Long,opCost Double,leaves Long,
+                                              pendingCnt Long,pendingLatency Long,processedCnt Long,processedLatency Long,liqCnt Long,
+                                              liqVol Long,liqVal Double,routedCnt Long,routedVol Long,routedVal Double) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+
+
+CREATE PUBLIC TABLE ParentAlerts(type Enum,minTime Long,maxTime Long,id Long,cnt Integer,
+                                 severity Integer,details Enum,assignedTo Enum) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX parentAlertIDX ON ParentAlerts(type HASH,details HASH,assignedTo HASH) USE Constraint="NONE";
+CREATE INDEX parentAlertIdIDX ON ParentAlerts(id HASH) USE Constraint="NONE";
+
+
+CREATE PUBLIC TABLE ParentAlertsHistory(time Long,type Enum,minTime Long,maxTime Long,id Long,
+                                        cnt Integer,severity Integer,details Enum,assignedTo Enum) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+
+
+CREATE PUBLIC TABLE ParentOrder(time Long NoNull,symbol Enum NoNull,status Enum,side Enum NoNull,baseCurrency Enum,
+                                size Long NoNull,orderID String NoNull,filled Long,filledValue Double,dailyValue Double,
+                                dailyVolume Long,open Double,high Double,low Double,startTime Long,
+                                endTime Long,account Enum,system Enum,bid Double,ask Double,
+                                startVal Double,startVol Long,startMidpointHL Double,endVol Long,endVal Double,
+                                endBid Double,endAsk Double,prevClose Double,sector Enum,industry Enum,
+                                isOpen Long,IS Double,exCnt Long,lho Double,vwap Double,
+                                last Double,intervalVWAP Double,dailyVWAP Double,mktImpact Double,opportunityCost Double,
+                                askAgg Double,bidAgg Double,processedValue Double,regAskAgg Double,regBidAgg Double,
+                                t1Vol Long,evT1 Double,rvT1 Double,t5Vol Long,evT5 Double,
+                                rvT5 Double,darkVal Double,darkVol Long,darkCnt Long,leaves Long,
+                                pendingCnt Long,pendingLatency Long,processedCnt Long,processedLatency Long,liqCnt Long,
+                                liqVol Long,liqVal Double,strategy Enum,childCnt Long,routedCnt Long,
+                                routedVol Long,routedVal Double,limitPx Double,baseLimitPx Double) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX oSectorIDX ON ParentOrder(industry HASH,sector HASH) USE Constraint="NONE";
+CREATE INDEX oStrategyIDX ON ParentOrder(strategy HASH) USE Constraint="NONE";
+CREATE INDEX openOrderBySymbolsIDX ON ParentOrder(isOpen HASH,symbol HASH) USE Constraint="NONE";
+CREATE INDEX oidIDX ON ParentOrder(orderID HASH) USE Constraint="NONE";
+CREATE INDEX oSystemIDX ON ParentOrder(system HASH) USE Constraint="NONE";
+CREATE INDEX oSymbolIDX ON ParentOrder(symbol HASH) USE Constraint="NONE";
+CREATE TRIGGER ordersTrigger OFTYPE ORDERS ON ParentOrder PRIORITY 2;
+
+
+
+CREATE PUBLIC TABLE SecMaster(symbol Enum,name Enum,sector Enum,industry Enum,mktCap Double,
+                              prevClose Double,adv Double,time Long,baseCurrency String,openTime String) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="ADD";
+CREATE INDEX secmasterIDX ON SecMaster(symbol HASH) USE Constraint="NONE";
+CREATE TRIGGER secMasterTrigger OFTYPE SECMASTER ON SecMaster PRIORITY 0;
+
+
+CREATE PUBLIC TABLE Stats(currentTime Long,ordersCnt Long,ordersOpenedCnt Long,ordersClosedCnt Long,ordersMs Long,
+                          execsCnt Long,execsMs Long,timersCnt Long,timersOnOrdersCnt Long,timersMs Long,
+                          taqsCnt Long,taqsMs Long,historiesCnt Long,historiesMs Long,rawNbbosCnt Long,
+                          rawNbbosMaxMs Long,rawTradesCnt Long,rawTradesMaxMs Long,nbbosCnt Long,nbbosMaxMs Long,
+                          nbbosMinMs Long,tradesCnt Long,tradesMaxMs Long,tradesMinMs Long,queueSize Long,
+                          queueHpSize Long,memFree Long,memMax Long,memTot Long,childOrdersCnt Long,
+                          childModifiesCnt Long,childOrdersMs Long,childModifiesMs Long) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+
+
+CREATE PUBLIC TABLE StatsHistory(time Long,currentTime Long,ordersCnt Long,ordersOpenedCnt Long,ordersClosedCnt Long,
+                                 ordersMs Long,execsCnt Long,execsMs Long,timersCnt Long,timersOnOrdersCnt Long,
+                                 timersMs Long,taqsCnt Long,taqsMs Long,historiesCnt Long,historiesMs Long,
+                                 rawNbbosCnt Long,rawNbbosMaxMs Long,rawTradesCnt Long,rawTradesMaxMs Long,nbbosCnt Long,
+                                 nbbosMaxMs Long,nbbosMinMs Long,tradesCnt Long,tradesMaxMs Long,tradesMinMs Long,
+                                 queueSize Long,queueHpSize Long,memFree Long,memMax Long,memTot Long,
+                                 childOrdersCnt Long,childModifiesCnt Long,childOrdersMs Long,childModifiesMs Long) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+
+
+CREATE PUBLIC TABLE Symbol(symbol Enum,bid Double,ask Double,last Double,open Double,
+                           high Double,low Double,size Long,value Double,close Double,
+                           name Enum,sector Enum,industry Enum,mktCap Double,prevClose Double,
+                           updateTime Long) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX symbolIDX ON Symbol(symbol HASH) USE Constraint="NONE";
+
+
+CREATE PUBLIC TABLE SymbolHistory(time Long,symbol Enum,bid Double,ask Double,last Double,
+                                  open Double,high Double,low Double,size Long,value Double,
+                                  close Double,name Enum,sector Enum,industry Enum,mktCap Double,
+                                  prevClose Double) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX symHistoryIDX ON SymbolHistory(symbol HASH) USE Constraint="NONE";
+CREATE INDEX symHistorySectorIndustryIDX ON SymbolHistory(sector HASH,industry HASH) USE Constraint="NONE";
+
+
+CREATE PUBLIC TABLE Trade(time Long NoNull,symbol Enum NoNull,ex Enum NoNull,px Double NoNull,size Long NoNull,
+                          high Double NoNull,low Double NoNull,volume Long NoNull,value Double NoNull,open Double) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX tradeTime ON Trade(symbol HASH,time SERIES) USE Constraint="NONE";
+CREATE TRIGGER tradeTrigger OFTYPE TRADE ON Trade PRIORITY 0;
+
+
+CREATE PUBLIC TABLE Updates(time Long NoNull,symbol Enum NoNull,status Enum,side Enum NoNull,limitPx Double,
+                            baseCurrency Enum,baseLimitPx Double,size Long NoNull,orderID String NoNull,filled Long,
+                            filledValue Double,dailyValue Double,dailyVolume Long,open Double,high Double,
+                            low Double,startTime Long,endTime Long,account Enum,system Enum,
+                            bid Double,ask Double,startVal Double,startVol Long,startMidpointHL Double,
+                            endVol Long,endVal Double,endBid Double,endAsk Double,prevClose Double,
+                            sector Enum,industry Enum,isOpen Long,IS Double,exCnt Long,
+                            lho Double,vwap Double,last Double,intervalVWAP Double,dailyVWAP Double,
+                            mktImpact Double,opportunityCost Double,askAgg Double,bidAgg Double,processedValue Double,
+                            regAskAgg Double,regBidAgg Double,t1Vol Long,evT1 Double,rvT1 Double,
+                            t5Vol Long,evT5 Double,rvT5 Double,darkVal Double,darkVol Long,
+                            darkQty Long,darkCnt Long) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+
+
+CREATE PUBLIC TABLE Venues(venue String,exCnt Long,spreadCnt Long,regCnt Long,volume Long,
+                           side Enum,bidAgg Double,askAgg Double,regBidAgg Double,regAskAgg Double,
+                           processedValue Double,lit Long,rvT1 Double,t1Val Double,t1Cnt Long,
+                           rvT5 Double,t5Val Double,t5Cnt Long,liqCnt Long,liqVol Long,
+                           liqVal Double,routedCnt Long,routedVol Long,routedVal Double) USE Broadcast="true" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX venueIDX ON Venues(venue HASH,side HASH) USE Constraint="NONE";
+
+
+CREATE PUBLIC TABLE childOrders(parentId String,size Long,limitPx Double,baseCurrency Enum,baseLimitPx Double,
+                                chainId Long,clOrderId String,status Enum,replaced Boolean,pendingCnt Long,
+                                pendingLatency Long,processedCnt Long,processedLatency Long,filledValue Double,filledQty Long,
+                                availQty Long,availVal Double,openQty Long,openVal Double,symbol String,
+                                time Long,updateTime Long) USE Broadcast="false" RefreshPeriodMs="100" OnUndefColumn="REJECT";
+CREATE INDEX childOrderChainIDX ON childOrders(chainId HASH) USE Constraint="NONE";
+CREATE INDEX childOrderParentIDX ON childOrders(parentId HASH) USE Constraint="NONE";
+CREATE INDEX childOrderIDX ON childOrders(clOrderId HASH) USE Constraint="NONE";
+
+
+
+/*TIMERS*/
+CREATE TIMER anvilService OFTYPE SERVICE ON "" PRIORITY 0;
+
+CREATE TIMER timerTrigger OFTYPE TRIGGER ON "" PRIORITY 0;
+
+CREATE TIMER messageAlert OFTYPE MESSAGEALERT ON "10000" PRIORITY 1;
+
+/*PROCEDURES*/
+CREATE PROCEDURE spTrades OFTYPE SPTRADES;
+CREATE PROCEDURE spNbbos OFTYPE SPNBBOS;
+CREATE PROCEDURE spHandleAlert OFTYPE SPHANDLEALERT;
+
+
+/*MUTLI-TABLE TRIGGERS*/
+CREATE TRIGGER OrdersByAccountSideAgg OFTYPE AGGREGATE ON ParentOrder,OrdersByAccountSide PRIORITY 2 USE selects="cnt=count(orderID), size=sum(size), filled=sum(filled), filledValue=sum(filledValue), openValue=sum((size-filled)*limitPx), rvOpen=sum(open==null?0:filledValue),evOpen=sum(filled*open),exCnt=sum(exCnt),evIntervalVWAP=sum(filled*intervalVWAP),rvIntervalVWAP=sum(intervalVWAP==null?0:filledValue),evDailyVWAP=sum(filled*dailyVWAP),rvDailyVWAP=sum(dailyVWAP==null?0:filledValue),evMktImpact=sum(filled*startMidpointHL),rvMktImpact=sum(startMidpointHL==null?0:filledValue),evLast=sum(last*filled),rvLast=sum(last==null?0:filledValue),evLHO=sum(lho*filled),rvLHO=sum(lho==null?0:filledValue),evPrevClose=sum(prevClose*filled),rvPrevClose=sum(prevClose==null?0:filledValue),evT1=sum(evT1),rvT1=sum(rvT1),darkVol=sum(darkVol),darkVal=sum(darkVal),rqOpen=sum(open==null?0:filled),rqPrevClose=sum(prevClose==null?0:filled),rqLHO=sum(lho==null?0:filled),rqLast=sum(last==null?0:filled),rqMktImpact=sum(startMidpointHL==null?0:filled),rqDailyVWAP=sum(dailyVWAP==null?0:filled),rqIntervalVWAP=sum(intervalVWAP==null?0:filled),evT5=sum(evT5),rvT5=sum(rvT5),rqT1=sum(t1Vol),rqT5=sum(t5Vol),darkCnt=sum(darkCnt),opCost=sum(opportunityCost),leaves=sum(leaves),pendingCnt=sum(pendingCnt),pendingLatency=sum(pendingLatency),processedCnt=sum(processedCnt),processedLatency=sum(processedLatency),liqVal=sum(liqVal),liqVol=sum(liqVol),liqCnt=sum(liqCnt),routedVal=sum(routedVal),routedVol=sum(routedVol),routedCnt=sum(routedCnt)" groupBys="account=account,side=side";
+
+CREATE TRIGGER OrdersBySecIndSideAgg OFTYPE AGGREGATE ON ParentOrder,OrdersBySecIndSide PRIORITY 2 USE selects="cnt=count(orderID), size=sum(size), filled=sum(filled), filledValue=sum(filledValue), openValue=sum((size-filled)*limitPx),rvOpen=sum(open==null?0:filledValue),evOpen=sum(filled*open),exCnt=sum(exCnt),evIntervalVWAP=sum(filled*intervalVWAP),rvIntervalVWAP=sum(intervalVWAP==null?0:filledValue),evDailyVWAP=sum(filled*dailyVWAP),rvDailyVWAP=sum(dailyVWAP==null?0:filledValue),evMktImpact=sum(filled*startMidpointHL),rvMktImpact=sum(startMidpointHL==null?0:filledValue),evLast=sum(last*filled),rvLast=sum(last==null?0:filledValue),evLHO=sum(lho*filled),rvLHO=sum(lho==null?0:filledValue),evPrevClose=sum(prevClose*filled),rvPrevClose=sum(prevClose==null?0:filledValue),evT1=sum(evT1),rvT1=sum(rvT1),darkVol=sum(darkVol),darkVal=sum(darkVal),rqOpen=sum(open==null?0:filled),rqPrevClose=sum(prevClose==null?0:filled),rqLHO=sum(lho==null?0:filled),rqLast=sum(last==null?0:filled),rqMktImpact=sum(startMidpointHL==null?0:filled),rqDailyVWAP=sum(dailyVWAP==null?0:filled),rqIntervalVWAP=sum(intervalVWAP==null?0:filled),evT5=sum(evT5),rvT5=sum(rvT5),rqT1=sum(t1Vol),rqT5=sum(t5Vol),darkCnt=sum(darkCnt),opCost=sum(opportunityCost),leaves=sum(leaves),pendingCnt=sum(pendingCnt),pendingLatency=sum(pendingLatency),processedCnt=sum(processedCnt),processedLatency=sum(processedLatency),liqVal=sum(liqVal),liqVol=sum(liqVol),liqCnt=sum(liqCnt),routedVal=sum(routedVal),routedVol=sum(routedVol),routedCnt=sum(routedCnt)" groupBys="industry=industry, sector=sector, side=side";
+
+CREATE TRIGGER OrdersBySideAgg OFTYPE AGGREGATE ON ParentOrder,OrdersBySide PRIORITY 2 USE selects="cnt=count(orderID), size=sum(size), filled=sum(filled), filledValue=sum(filledValue), openValue=sum((size-filled)*limitPx),rvOpen=sum(open==null?0:filledValue),evOpen=sum(filled*open),exCnt=sum(exCnt),evIntervalVWAP=sum(filled*intervalVWAP),rvIntervalVWAP=sum(intervalVWAP==null?0:filledValue),evDailyVWAP=sum(filled*dailyVWAP),rvDailyVWAP=sum(dailyVWAP==null?0:filledValue),evMktImpact=sum(filled*startMidpointHL),rvMktImpact=sum(startMidpointHL==null?0:filledValue),evLast=sum(last*filled),rvLast=sum(last==null?0:filledValue),evLHO=sum(lho*filled),rvLHO=sum(lho==null?0:filledValue),evPrevClose=sum(prevClose*filled),rvPrevClose=sum(prevClose==null?0:filledValue),evT1=sum(evT1),rvT1=sum(rvT1),darkVol=sum(darkVol),darkVal=sum(darkVal),rqOpen=sum(open==null?0:filled),rqPrevClose=sum(prevClose==null?0:filled),rqLHO=sum(lho==null?0:filled),rqLast=sum(last==null?0:filled),rqMktImpact=sum(startMidpointHL==null?0:filled),rqDailyVWAP=sum(dailyVWAP==null?0:filled),rqIntervalVWAP=sum(intervalVWAP==null?0:filled),evT5=sum(evT5),rvT5=sum(rvT5),rqT1=sum(t1Vol),rqT5=sum(t5Vol),darkCnt=sum(darkCnt),opCost=sum(opportunityCost),leaves=sum(leaves),pendingCnt=sum(pendingCnt),pendingLatency=sum(pendingLatency),processedCnt=sum(processedCnt),processedLatency=sum(processedLatency),liqVal=sum(liqVal),liqVol=sum(liqVol),liqCnt=sum(liqCnt),routedVal=sum(routedVal),routedVol=sum(routedVol),routedCnt=sum(routedCnt)" groupBys="side=side";
+
+CREATE TRIGGER OrdersByStrategySideAgg OFTYPE AGGREGATE ON ParentOrder,OrdersByStrategySide PRIORITY 2 USE selects="cnt=count(orderID), size=sum(size), filled=sum(filled), filledValue=sum(filledValue), openValue=sum((size-filled)*limitPx),rvOpen=sum(open==null?0:filledValue),evOpen=sum(filled*open),exCnt=sum(exCnt),evIntervalVWAP=sum(filled*intervalVWAP),rvIntervalVWAP=sum(intervalVWAP==null?0:filledValue),evDailyVWAP=sum(filled*dailyVWAP),rvDailyVWAP=sum(dailyVWAP==null?0:filledValue),evMktImpact=sum(filled*startMidpointHL),rvMktImpact=sum(startMidpointHL==null?0:filledValue),evLast=sum(last*filled),rvLast=sum(last==null?0:filledValue),evLHO=sum(lho*filled),rvLHO=sum(lho==null?0:filledValue),evPrevClose=sum(prevClose*filled),rvPrevClose=sum(prevClose==null?0:filledValue),evT1=sum(evT1),rvT1=sum(rvT1),darkVol=sum(darkVol),darkVal=sum(darkVal),rqOpen=sum(open==null?0:filled),rqPrevClose=sum(prevClose==null?0:filled),rqLHO=sum(lho==null?0:filled),rqLast=sum(last==null?0:filled),rqMktImpact=sum(startMidpointHL==null?0:filled),rqDailyVWAP=sum(dailyVWAP==null?0:filled),rqIntervalVWAP=sum(intervalVWAP==null?0:filled),evT5=sum(evT5),rvT5=sum(rvT5),rqT1=sum(t1Vol),rqT5=sum(t5Vol),darkCnt=sum(darkCnt),opCost=sum(opportunityCost),leaves=sum(leaves),pendingCnt=sum(pendingCnt),pendingLatency=sum(pendingLatency),processedCnt=sum(processedCnt),processedLatency=sum(processedLatency),liqVal=sum(liqVal),liqVol=sum(liqVol),liqCnt=sum(liqCnt),routedVal=sum(routedVal),routedVol=sum(routedVol),routedCnt=sum(routedCnt)" groupBys="strategy=strategy, side=side";
+
+CREATE TRIGGER OrdersBySymSideAgg OFTYPE AGGREGATE ON ParentOrder,OrdersBySymSide PRIORITY 2 USE selects="cnt=count(orderID), size=sum(size), filled=sum(filled), filledValue=sum(filledValue), openValue=sum((size-filled)*limitPx),rvOpen=sum(open==null?0:filledValue),evOpen=sum(filled*open),exCnt=sum(exCnt),evIntervalVWAP=sum(filled*intervalVWAP),rvIntervalVWAP=sum(intervalVWAP==null?0:filledValue),evDailyVWAP=sum(filled*dailyVWAP),rvDailyVWAP=sum(dailyVWAP==null?0:filledValue),evMktImpact=sum(filled*startMidpointHL),rvMktImpact=sum(startMidpointHL==null?0:filledValue),evLast=sum(last*filled),rvLast=sum(last==null?0:filledValue),evLHO=sum(lho*filled),rvLHO=sum(lho==null?0:filledValue),evPrevClose=sum(prevClose*filled),rvPrevClose=sum(prevClose==null?0:filledValue),evT1=sum(evT1),rvT1=sum(rvT1),darkVol=sum(darkVol),darkVal=sum(darkVal),rqOpen=sum(open==null?0:filled),rqPrevClose=sum(prevClose==null?0:filled),rqLHO=sum(lho==null?0:filled),rqLast=sum(last==null?0:filled),rqMktImpact=sum(startMidpointHL==null?0:filled),rqDailyVWAP=sum(dailyVWAP==null?0:filled),rqIntervalVWAP=sum(intervalVWAP==null?0:filled),evT5=sum(evT5),rvT5=sum(rvT5),rqT1=sum(t1Vol),rqT5=sum(t5Vol),darkCnt=sum(darkCnt),opCost=sum(opportunityCost),leaves=sum(leaves),pendingCnt=sum(pendingCnt),pendingLatency=sum(pendingLatency),processedCnt=sum(processedCnt),processedLatency=sum(processedLatency),liqVal=sum(liqVal),liqVol=sum(liqVol),liqCnt=sum(liqCnt),routedVal=sum(routedVal),routedVol=sum(routedVol),routedCnt=sum(routedCnt)" groupBys="symbol=symbol,side=side";
+
+CREATE TRIGGER OrdersBySystemSideAgg OFTYPE AGGREGATE ON ParentOrder,OrdersBySystemSide PRIORITY 2 USE selects="cnt=count(orderID), size=sum(size), filled=sum(filled), filledValue=sum(filledValue), openValue=sum((size-filled)*limitPx),rvOpen=sum(open==null?0:filledValue),evOpen=sum(filled*open),exCnt=sum(exCnt),evIntervalVWAP=sum(filled*intervalVWAP),rvIntervalVWAP=sum(intervalVWAP==null?0:filledValue),evDailyVWAP=sum(filled*dailyVWAP),rvDailyVWAP=sum(dailyVWAP==null?0:filledValue),evMktImpact=sum(filled*startMidpointHL),rvMktImpact=sum(startMidpointHL==null?0:filledValue),evLast=sum(last*filled),rvLast=sum(last==null?0:filledValue),evLHO=sum(lho*filled),rvLHO=sum(lho==null?0:filledValue),evPrevClose=sum(prevClose*filled),rvPrevClose=sum(prevClose==null?0:filledValue),evT1=sum(evT1),rvT1=sum(rvT1),darkVol=sum(darkVol),darkVal=sum(darkVal),rqOpen=sum(open==null?0:filled),rqPrevClose=sum(prevClose==null?0:filled),rqLHO=sum(lho==null?0:filled),rqLast=sum(last==null?0:filled),rqMktImpact=sum(startMidpointHL==null?0:filled),rqDailyVWAP=sum(dailyVWAP==null?0:filled),rqIntervalVWAP=sum(intervalVWAP==null?0:filled),evT5=sum(evT5),rvT5=sum(rvT5),rqT1=sum(t1Vol),rqT5=sum(t5Vol),darkCnt=sum(darkCnt),opCost=sum(opportunityCost),leaves=sum(leaves),pendingCnt=sum(pendingCnt),pendingLatency=sum(pendingLatency),processedCnt=sum(processedCnt),processedLatency=sum(processedLatency),liqVal=sum(liqVal),liqVol=sum(liqVol),liqCnt=sum(liqCnt),routedVal=sum(routedVal),routedVol=sum(routedVol),routedCnt=sum(routedCnt)" groupBys="system=system,side=side";
+
+CREATE TRIGGER parentAlertsTrigger OFTYPE AGGREGATE ON ChildAlert,ParentAlerts PRIORITY 0 USE selects="severity=sum(severity)" groupBys="type=type, details=details,assignedTo=assignedTo";
+
+/*CS DEMO CHANGES*/
+
+alter public table ParentOrder add country String;
+alter public table ParentOrder add tactic_startTime long;
+alter public table ParentOrder add tactic_endTime long;
+alter public table ParentOrder add maxParticipants int;
+alter public table ParentOrder add relLimitPercent float;
+alter public table ParentOrder add relProduct String;
+alter public table ParentOrder add relProductRefPrice float;
+alter public table ParentOrder add relProductAsk float;
+alter public table ParentOrder add relProductBid float;
+alter public table ParentOrder add relProductLast float;
+alter public table ParentOrder add relProductClose float;
+alter public table ParentOrder add relProductPerChange float;
+alter public table ParentOrder add limitStatus String bitmap;
+alter public table ParentOrder add limitBreached String bitmap;
+alter public table ParentOrder add changeVsClose float;
+alter public table ParentOrder add indexChangeVsClose float;
+alter public table ParentOrder add changeVsStrike float;
+alter public table ParentOrder add indexChangeVsStrike float;
+alter public table ParentOrder add perfVsClose float;
+alter public table ParentOrder add newLimitVsClose float;
+alter public table ParentOrder add perfVsStrike float;
+alter public table ParentOrder add newLimitVsStrike float;
+
+create trigger CS_Order oftype AMISCRIPT on ParentOrder use canMutateRow="true" onInsertingScript="relProductPerChange=rand(0.08)\; country=\"GB\"\; maxParticipants=10\; relLimitPercent=0.05\; relProduct=\"MXEU0PB\"\; relProductRefPrice=25015\; relProductAsk=25020\; relProductBid=25016\; relProductLast=25015\; relProductClose=25023\; changeVsClose=5.5\; indexChangeVsClose=6.1\; changeVsStrike=6.2\; indexChangeVsStrike=7.1\; perfVsClose=2\; newLimitVsClose=3.5\; perfVsStrike=2.3\; newLimitVsStrike=2.5\;";

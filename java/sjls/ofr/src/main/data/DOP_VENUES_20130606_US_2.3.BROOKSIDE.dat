@@ -1,0 +1,13 @@
+#<Time Stamp>20130606 17:25:00
+#<Time Period>20130606
+#<File Type>VENUES
+#<Updated>irregular
+#<Delimiter>,
+#<Text Qualifier>"
+#<Version>2.3
+#<Field Names>VenueID,m,q,T,T_CR
+,0,1,2,50
+CAES,0,1,2,50
+MLXN,0,1,2,50
+NV,0,1,2,50
+#<EOF>

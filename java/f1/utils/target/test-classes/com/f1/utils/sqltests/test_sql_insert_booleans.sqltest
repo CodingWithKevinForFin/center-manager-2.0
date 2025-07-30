@@ -1,0 +1,41 @@
+****TEST_INPUT_QUERY****
+insert into booleansEmpty values (true), (false), ("true"), ("false"), (null);
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+booleansEmpty
++-------------+
+|booleansEmpty|
++-------------+
+|x            |
+|Boolean      |
++-------------+
++-------------+
+
+****TEST_RESULT****
+5
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+INSERT INTO booleansEmpty VALUES (true), (false), ("true"), ("false"), (null)
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+booleansEmpty
++-------------+
+|booleansEmpty|
++-------------+
+|x            |
+|Boolean      |
++-------------+
+|true         |
+|false        |
+|true         |
+|false        |
+!null         |
++-------------+
+

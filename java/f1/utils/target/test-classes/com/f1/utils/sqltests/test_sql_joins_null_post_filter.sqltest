@@ -1,0 +1,249 @@
+****TEST_INPUT_QUERY****
+create table l as select * from A left join B on A.n == B.n where B.n == null;
+create table lo as select * from A left only join B on A.n == B.n where B.n == null;
+create table r as select * from B right join A on B.n == A.n where B.n == null;
+create table ro as select * from B right only join A on B.n == A.n where B.n == null;
+create table o as select * from A outer join B on A.n == B.n where A.n == null || B.n == null;
+create table oo as select * from A outer only join B on A.n == B.n where A.n == null || B.n == null;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+A
++--------------+
+|      A       |
++-------+------+
+|n      |x     |
+|Integer|Double|
++-------+------+
+|0      |2.3   |
+|1      |4.4   |
+|2      |0.5   |
+|3      |7.8   |
++-------+------+
+
+B
++--------------+
+|      B       |
++-------+------+
+|n      |x     |
+|Integer|Double|
++-------+------+
+|0      |6.3   |
+|1      |4.0   |
+|7      |3.3   |
++-------+------+
+
+****TEST_RESULT****
+14
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS l  SELECT "*" FROM A LEFT JOIN B ON A . n == B . n WHERE B . n == nullCREATE TABLE AS lo  SELECT "*" FROM A LEFT ONLY JOIN B ON A . n == B . n WHERE B . n == nullCREATE TABLE AS r  SELECT "*" FROM B RIGHT JOIN A ON B . n == A . n WHERE B . n == nullCREATE TABLE AS ro  SELECT "*" FROM B RIGHT ONLY JOIN A ON B . n == A . n WHERE B . n == nullCREATE TABLE AS o  SELECT "*" FROM A OUTER JOIN B ON A . n == B . n WHERE A . n == null || B . n == nullCREATE TABLE AS oo  SELECT "*" FROM A OUTER ONLY JOIN B ON A . n == B . n WHERE A . n == null || B . n == null
+
+PROJECTION : 
+SELECT "*" FROM A LEFT JOIN B ON A . n == B . n WHERE B . n == null
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(B.n == null)
+
+PROJECTION : 
+SELECT "*" FROM A LEFT ONLY JOIN B ON A . n == B . n WHERE B . n == null
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(B.n == null)
+
+PROJECTION : 
+SELECT "*" FROM B RIGHT JOIN A ON B . n == A . n WHERE B . n == null
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(B.n == null)
+
+PROJECTION : 
+SELECT "*" FROM B RIGHT ONLY JOIN A ON B . n == A . n WHERE B . n == null
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(B.n == null)
+
+PROJECTION : 
+SELECT "*" FROM A OUTER JOIN B ON A . n == B . n WHERE A . n == null || B . n == null
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+((A.n == null) || (B.n == null))
+
+PROJECTION : 
+SELECT "*" FROM A OUTER ONLY JOIN B ON A . n == B . n WHERE A . n == null || B . n == null
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+((A.n == null) || (B.n == null))
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+lo
++-----------------------------+
+|             lo              |
++-------+------+-------+------+
+|n      |x     |B_n    |B_x   |
+|Integer|Double|Integer|Double|
++-------+------+-------+------+
+|2      |0.5   !null   !null  |
+|3      |7.8   !null   !null  |
++-------+------+-------+------+
+
+ro
++-----------------------------+
+|             ro              |
++-------+------+-------+------+
+|n      |x     |A_n    |A_x   |
+|Integer|Double|Integer|Double|
++-------+------+-------+------+
+!null   !null  |2      |0.5   |
+!null   !null  |3      |7.8   |
++-------+------+-------+------+
+
+oo
++-----------------------------+
+|             oo              |
++-------+------+-------+------+
+|n      |x     |B_n    |B_x   |
+|Integer|Double|Integer|Double|
++-------+------+-------+------+
+|2      |0.5   !null   !null  |
+|3      |7.8   !null   !null  |
+!null   !null  |7      |3.3   |
++-------+------+-------+------+
+
+r
++-----------------------------+
+|              r              |
++-------+------+-------+------+
+|n      |x     |A_n    |A_x   |
+|Integer|Double|Integer|Double|
++-------+------+-------+------+
+!null   !null  |2      |0.5   |
+!null   !null  |3      |7.8   |
++-------+------+-------+------+
+
+A
++--------------+
+|      A       |
++-------+------+
+|n      |x     |
+|Integer|Double|
++-------+------+
+|0      |2.3   |
+|1      |4.4   |
+|2      |0.5   |
+|3      |7.8   |
++-------+------+
+
+B
++--------------+
+|      B       |
++-------+------+
+|n      |x     |
+|Integer|Double|
++-------+------+
+|0      |6.3   |
+|1      |4.0   |
+|7      |3.3   |
++-------+------+
+
+o
++-----------------------------+
+|              o              |
++-------+------+-------+------+
+|n      |x     |B_n    |B_x   |
+|Integer|Double|Integer|Double|
++-------+------+-------+------+
+|2      |0.5   !null   !null  |
+|3      |7.8   !null   !null  |
+!null   !null  |7      |3.3   |
++-------+------+-------+------+
+
+l
++-----------------------------+
+|              l              |
++-------+------+-------+------+
+|n      |x     |B_n    |B_x   |
+|Integer|Double|Integer|Double|
++-------+------+-------+------+
+|2      |0.5   !null   !null  |
+|3      |7.8   !null   !null  |
++-------+------+-------+------+
+

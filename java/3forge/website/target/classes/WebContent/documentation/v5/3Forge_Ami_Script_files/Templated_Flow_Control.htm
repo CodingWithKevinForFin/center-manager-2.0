@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.3.1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Templated Flow Control</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Templated Flow Control">
+        <span>Templated Flow Control</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Templated Flow Control</h1>
+<p style="margin-bottom: 0pt; font-size: 12pt; font-family: Arial, sans-serif;">The 
+ ${...} syntax can also be used to dictate if/how text should be included.  This 
+ includes all flow control statements, including <i>if-statements, for-loops, 
+ for-each-loops,</i> and <i>while-loops</i>. All flow control statements 
+ are closed by the ${} token (empty curly brackets).</p>
+<p style="margin-bottom: 0pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: 0pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<h2><a name="Flow_Control_Statement" id="Flow_Control_Statement"><span courier="" style="color: #6d2d9e; font-size: 19pt; text-decoration: none; ">Flow 
+ Control Statement</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; margin-bottom: 0pt;"><span courier="" style="color: #006dbf;">&quot;</span><span courier=""><i style="color: #808080;">[</i></span><span courier="" style="color: #006dbf;">text</span><i><span courier="" style="color: #808080;">]\</span></i></p>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; margin-bottom: 0pt;"><i><span courier=""> </span></i> <span courier="" style="color: #ff0000;">${flow_control(...)}</span><span courier=""><i style="color: #808080;">\</i> </span></p>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; margin-bottom: 0pt;"><span courier="">   </span> <span courier=""><i style="color: #808080;">[</i></span><span courier="" style="color: #006dbf;">text 
+ inside flow control</span><i><span courier="" style="color: #808080;">]\</span></i></p>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; margin-bottom: 0pt;"><i><span courier=""> </span></i> <span courier="" style="color: #ff0000;">${}</span><i><span courier="" style="color: #808080;">\</span></i></p>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt; margin-bottom: 0pt;"><span courier=""><i style="color: #808080;">[</i></span><span courier="" style="color: #006dbf;">text</span><span courier=""><i style="color: #808080;">]</i></span><span courier="" style="color: #006dbf;">&quot;</span></p>
+<p style="font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt; 
+	 margin-bottom: 0pt; line-height: Normal;"><i><span courier="">** Definition 
+ is a multiline string for clarity</span></i></p>
+<p style="color: #808080; font-size: 11pt; margin-bottom: 0pt; line-height: Normal; 
+	 font-family: Arial, sans-serif;"> </p>
+<p style="color: #808080; font-size: 11pt; margin-bottom: 0pt; line-height: Normal; 
+	 font-family: Arial, sans-serif;"> </p>
+<h2><a name="Single_Line_Flow_Control" id="Single_Line_Flow_Control"><span courier="" style="color: #6d2d9e; font-size: 19pt; text-decoration: none; ">Single 
+ Line Flow Control Statement</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">&quot;<i style="color: #808080;">[</i>text<i style="color: #808080;">]</i></span><span courier="" style="color: #ff0000;">${flow_control(...)}</span><span courier=""><i style="color: #808080;">[</i>text inside flow control<i style="color: #808080;">]</i></span><span courier="" style="color: #ff0000;">${}</span><span courier=""><i style="color: #808080;">[</i>text<i style="color: #808080;">]</i>&quot;</span></p>
+<p style="margin-bottom: 0pt; font-family: Arial, sans-serif; font-size: 12pt;">Ex:</p>
+<p style="font-family: Arial, sans-serif; font-size: 11pt; margin-bottom: 0pt;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 11pt;"><span courier="">  </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf;">&quot;Count 
+ the apples: ${for(int i = 1; i &lt;= 5; i++)} ${i} apple ${} There are 
+ 5 apples.&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier=""> &quot;Count 
+ the apples: ${int i = 1; while(i++ &lt; 6)} ${i} apple ${} There are 5 
+ apples.&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier=""> &quot;Count 
+ the apples: ${if(5 &gt; 3)} apple apple apple apple apple ${} There are 
+ 5 apples.&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: 0pt; line-height: Normal; font-size: 14pt; font-family: Arial, sans-serif;"><b>For 
+ if/else use the reserved ${else} token:</b></p>
+<p style="font-family: Arial, sans-serif; font-size: 11pt; margin-bottom: 0pt; 
+	 line-height: Normal;"> </p>
+<p style="font-family: Arial, sans-serif; font-size: 11pt; margin-bottom: 0pt; 
+	 line-height: Normal;"> </p>
+<h2><a name="If_else_Statements" id="If_else_Statements"><span courier="" style="color: #6d2d9e; font-size: 19pt; text-decoration: none; ">If/else 
+ Statements</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"><span courier="" style="color: #006dbf;">&quot;</span><span courier=""><i>[</i></span><span courier="" style="color: #006dbf;">text</span><i><span courier="">]\</span></i></p>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"><i><span courier=""> </span></i> <span courier="" style="color: #ff0000;">${if(...)}</span><i><span courier="">\</span></i></p>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"><span courier=""><i>    [</i></span><span courier="" style="color: #006dbf;">text inside if statement</span><i><span courier="">]\</span></i></p>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"><i><span courier=""> </span></i> <span courier="" style="color: #ff0000;">${else}</span><i><span courier="">\</span></i></p>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"><span courier=""><i>    [</i></span><span courier="" style="color: #006dbf;">text inside else statement</span><i><span courier="">]\</span></i></p>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"><i><span courier=""> </span></i> <span courier="" style="color: #ff0000;">${}</span><i><span courier="">\</span></i></p>
+<p class="NormalCxSpMiddle" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"><span courier=""><i>[</i></span><span courier="" style="color: #006dbf;">text</span><span courier=""><i>]</i></span><span courier="" style="color: #006dbf;">&quot;</span></p>
+<p style="font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt; 
+	 margin-bottom: 0pt;"><i><span courier="">** Definition is a multiline 
+ string for clarity</span></i></p>
+<p style="font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt; 
+	 margin-bottom: 0pt;"> </p>
+<p style="font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt; 
+	 margin-bottom: 0pt;"> </p>
+<h2><a name="Single_Line_If_else" id="Single_Line_If_else"><span courier="" style="color: #6d2d9e; font-size: 19pt; text-decoration: none; ">Single 
+ Line If/else Statements</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">&quot;<i>[</i>text<i>]</i></span><span courier="" style="color: #ff0000;">${if(...)}</span><span courier=""><i style="color: #808080;">[</i>text inside if statement<i style="color: #808080;">]</i></span><span courier="" style="color: #ff0000;">${else}</span><span courier=""><i style="color: #808080;">[</i>text inside else statement<i style="color: #808080;">]</i></span><span courier="" style="color: #ff0000;">${}</span><span courier=""><i style="color: #808080;">[</i>text<i style="color: #808080;">]</i>&quot;</span></p>
+<p style="margin-bottom: 0pt; font-size: 12pt; font-family: Arial, sans-serif;">Ex:</p>
+<p style="font-family: Arial, sans-serif; font-size: 11pt; margin-bottom: 0pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: ; font-size: 11pt;"><span courier="">  </span><span courier="" style="color: #006dbf; 
+										 font-family: &#39;Courier New&#39;, monospace;">&quot;Count 
+ the apples: ${if(5 &lt; 3)} apple ${else} orange ${} There is one orange.&quot;</span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="font-size: 14pt; margin-bottom: 0pt; line-height: Normal; font-family: Arial, sans-serif;"><b>Flow 
+ control statements can be nested:</b></p>
+<p style="font-family: Arial, sans-serif; margin-bottom: 0pt; line-height: Normal; 
+	 font-size: 11pt;"> </p>
+<p style="font-family: Arial, sans-serif; margin-bottom: 0pt; line-height: Normal; 
+	 font-size: 11pt;"> </p>
+<h2><a name="Nested_Flow_Control" id="Nested_Flow_Control"><span courier="" style="color: #6d2d9e; font-size: 19pt; text-decoration: none; ">Nested 
+ Flow Control Statements</span></a></h2>
+<p class="NormalCxSpFirst" style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt; line-height: Normal;"><span courier="" style="color: #006dbf;">&quot;</span><span courier=""><i>[</i></span><span courier="" style="color: #006dbf;">text</span><i><span courier="">]\</span></i></p>
+<p class="NormalCxSpMiddle" style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt; line-height: Normal;"><span courier="">  </span><span courier="" style="color: #ff0000;">${flow_control_outer(...)}</span><i><span courier="">\</span></i></p>
+<p class="NormalCxSpMiddle" style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt; line-height: Normal;"><span courier=""><i>    [</i></span><span courier="" style="color: #006dbf;">text 
+ inside outer flow_control</span><i><span courier="">]\</span></i></p>
+<p class="NormalCxSpMiddle" style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt; line-height: Normal;"><span courier="">    </span><span courier="" style="color: #ff0000;">${flow_control_inner(...)}</span><i><span courier="">\</span></i></p>
+<p class="NormalCxSpMiddle" style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt; line-height: Normal;"><span courier=""><i>      [</i></span><span courier="" style="color: #006dbf;">text inside inner flow_control</span><i><span courier="">]\</span></i></p>
+<p class="NormalCxSpMiddle" style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt; line-height: Normal;"><span courier="">    </span><span courier="" style="color: #ff0000;">${}</span><i><span courier="">\</span></i></p>
+<p class="NormalCxSpMiddle" style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt; line-height: Normal;"><span courier=""><i>    [</i></span><span courier="" style="color: #006dbf;">text 
+ inside outer flow_control</span><i><span courier="">]\</span></i></p>
+<p class="NormalCxSpMiddle" style="font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt; line-height: Normal;"><i><span courier=""> </span></i> <span courier="" style="color: #ff0000;">${}</span><i><span courier="">\</span></i></p>
+<p class="NormalCxSpMiddle" style="font-size: 11pt; margin-bottom: 0pt; 
+	 line-height: Normal;"><span courier=""><i style="font-family: &#39;Courier New&#39;, monospace; 
+												 color: #808080;">[</i></span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf;">text</span><span courier=""><i style="font-family: &#39;Courier New&#39;, monospace; color: #808080;">]</i></span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf;">&quot;</span> 
+ <span courier="">  </span></p>
+<p style="font-family: &#39;Courier New&#39;, monospace; font-size: 11pt; margin-bottom: 0pt; 
+	 line-height: Normal;"><i><span courier="">** Definition is a multiline 
+ string for clarity</span></i></p>
+<p style="font-family: &#39;Courier New&#39;, monospace; font-size: 11pt; margin-bottom: 0pt; 
+	 line-height: Normal;"> </p>
+<p style="font-family: &#39;Courier New&#39;, monospace; font-size: 11pt; margin-bottom: 0pt; 
+	 line-height: Normal;"> </p>
+<h2><a name="Single_Line_Nested_Flow" id="Single_Line_Nested_Flow"><span courier="" style="color: #6d2d9e; font-size: 19pt; text-decoration: none; ">Single 
+ Line Nested Flow Control Statements</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-size: 11pt;"><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace;">&quot;<i style="font-family: &#39;Courier New&#39;, monospace; color: #808080;">[</i>text<i style="font-family: &#39;Courier New&#39;, monospace; color: #808080;">]</i></span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">${flow_control_outer(...)}</span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace;"><i style="font-family: &#39;Courier New&#39;, monospace; color: #808080;">[</i>text 
+ inside outer flow_control<i style="font-family: &#39;Courier New&#39;, monospace; 
+							 color: #808080;">]</i></span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">${flow_control_inner(...)}</span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace;"><i style="font-family: &#39;Courier New&#39;, monospace; color: #808080;">[</i>text 
+ inside inner flow_control<i style="font-family: &#39;Courier New&#39;, monospace; 
+							 color: #808080;">]</i></span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">${}</span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace;"><i style="font-family: &#39;Courier New&#39;, monospace; color: #808080;">[</i>text 
+ inside outer flow_control<i style="font-family: &#39;Courier New&#39;, monospace; 
+							 color: #808080;">]</i></span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">${}</span><span courier="" style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace;"><i style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace;">[</i>text<i style="color: #006dbf; font-family: &#39;Courier New&#39;, monospace;">]</i>&quot;</span> 
+ <span courier=""> </span></p>
+<p style="line-height: Normal; margin-bottom: 0pt; font-size: 12pt; font-family: Arial, sans-serif;">Ex:</p>
+<p style="font-size: 11pt; line-height: Normal; margin-bottom: 0pt; font-family: Arial, sans-serif;"> </p>
+<p style="font-size: 11pt; line-height: Normal; margin-bottom: 0pt;"><span courier="">  </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+										 color: #006dbf;">&quot;Courses:\n 
+ \</span></p>
+<p style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf; font-size: 11pt; 
+	 margin-bottom: 0pt;"><span courier="">    ${for(int 
+ i = 120; i &lt; 122; i++)} \</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">      Course: 
+ Math${i}\n \</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">      ${for(int 
+ j = 1000; j &lt; 1009; j++) } \</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">        Students${j}\n 
+ \</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">      ${} 
+ \</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">      Professor 
+ For Math${i}:Stern\n \</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">    ${}\</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  ====End====&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<h3><b>E</b>xamples</h3>
+<p style="margin-bottom: .0001pt; font-size: 11pt; line-height: Normal;"><span courier="">  </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+										 color: #006dbf;">List letters 
+ = new List(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;);</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  String 
+ s = &quot;Easy as ${for(int i = 1; i &lt;= 3; i++)} the number ${i} ${}&quot;;</span><i><span courier="" style="color: #808080;">//Easy as 1 2 3</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><b> </b> <span courier="">String 
+ s2 = &quot;${for(String i:letters)} ${i}${},</span></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 2.5in; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #006dbf; font-size: 11pt;"><span courier="">Easy as ${for(int i = 1; i &lt;= 3; i++)} ${i} ${}&quot;;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier=""> </span> <span courier=""><i style="color: #808080;">//s2 evaluates to: A B C, Easy 
+ as 1 2 3</i> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">{</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  Map 
+ messages = new Map();</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">  for(int 
+ num = 1; num &lt;= 3; num++)</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span courier="">     messages.put(num,&quot;=is 
+ ${if(num == 2)}exactly${else}not${} two&quot;);</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf;"><span courier="" style="font-size: 11pt;">  session.alert(messages);</span><span style="font-size: 11pt;"> </span><span courier=""><i style="color: #808080; 
+															 font-size: 11pt;">// 
+ Evaluates to: {1=is not two,2=is exactly two,3=is not two}</i></span><span courier="" style="font-size: 8.0pt;"> </span></p>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf;"><span courier="">}</span></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

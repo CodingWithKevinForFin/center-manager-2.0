@@ -1,0 +1,1607 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <f1:script src="cookiehub.js" nonce="true"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3forge - Realtime data streaming & Visualizations | Low code app development</title>
+  <link rel="canonical" href="https://3forge.com/" />
+  <meta name="description" content="We are experts in Realtime data streaming & Low code app development. Our team of developers has a passion for building innovative software solutions. Our product uses state of the art technologies and is launched in several tier 1 global investment banks and cryptocurrency exchanges.">
+  <style>
+  	   *{
+/*   	   	-webkit-text-stroke: 0.1px; */
+  	   	font-family: 'Barlow', sans-serif;
+  	   }
+	  body{
+	  	background-color: white;
+	  }
+  	  .gradience {
+	    background-clip: text;
+	    background-image: linear-gradient(93deg, #00a9ff, #ff8629, #ff6f00);
+	    -webkit-text-fill-color: transparent;
+	  }
+	[id^=gartner-pi-widget][data-theme=dark] * {
+		background: #191919;
+	}
+	[id^=gartner-pi-widget][data-size=line] .gartner-pi-score {
+	    position: relative;
+	    z-index: 8;
+	    vertical-align: bottom;
+	}
+/* 	[data-carousel-slide-to][aria-current="true"] {
+    	background-color: rgb(255 103 47) !important;
+	} */
+	input[name="username"] {
+    position: absolute;
+    left: -999999999px;
+	}
+	input[name="state"] {
+	    position: absolute;
+	    left: -999999999px;
+	}
+	#announcement-banner {
+	  transform: translateY(0); /* Default position */
+	}
+	.hidden-banner {
+	  transform: translateY(-100%); /* Hide the banner by sliding it up */
+	}
+  </style>
+<!--   <link media="all" rel="stylesheet" href="css/ferris.css"> -->
+  <link media="all" rel="stylesheet" href="css/webv3.css" defer>
+  <link href="./output.css" rel="stylesheet" defer>
+  <link media="all" rel="stylesheet" href="css/contact-modal.css">
+  <link media="all" rel="stylesheet" href="css/inter.css">
+<meta name="google-site-verification" content="xW138GlhCyQnRURDBIjiAskcn27dKLMkSwrvVMS0Yg4" />
+<f1:include page="'headtags.html'"/>
+</head>
+<body>
+<div class="wrap">
+<div id="dark-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-[41]"></div>
+	 <div id="contact-modal" class="modal">
+ 	  <div class="modal-content" style="text-align: center;">
+     <span class="close">&times;</span>
+     <img class="recaptcha-bot m-0 m-auto" src="images/bot.svg" alt="bot"></img> 	
+     <div class="modal-header text-center">
+      <h4>I am not a robot</h4>
+ 	  </div>
+ 	  <hr>
+  <p class="modal-text">What is <span id="left-operand"></span> multiplied by <span id="right-operand"></span>?</p>
+  <p id="recaptcha-message" style="color:red;"></p>
+  <form id="answers-container">
+     </form>
+  <br><br>
+  <div class="btn-holder">
+     	<button id="modal-submit-button" class="btn xl px-4 py-1 text-md text-white bg-orange-500 font-semibold rounded-full border border-orange-500 hover:text-white hover:bg-orange-400 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Submit</button>
+     </div>
+    </div>
+ </div>
+<f1:include page="'newweb_header_award.html'"/>
+<section class="bg-black" style="padding-top: 131px;" id="starting">
+	<div id="mainblock" class="h-[67rem] sm:h-[59rem] px-4 sm:px-0 md:h-auto md:auto-rows-auto max-w-[74rem] mx-auto pt-20">
+	  <div class="grid h-auto sm:auto-rows-[395px] md:auto-rows-auto grid-cols-1 md:grid-cols-2 pb-12">
+	  	<div class="" style="margin-top: 0%;">
+	  		<h1 class="px-8 sm:px-12 xl:px-0 text-5xl md:text-7xl font-semibold m-0 m-auto text-center lg:text-left text-white tracking-[1.6px]">Yeah, you can build that.</h1>
+	  		<div class="text-center lg:text-start pt-12 px-8 sm:px-12 xl:px-0">
+	  		<p class="max-w-lg m-0 m-auto text-[1.244rem] text-center lg:text-left lg:m-0 text-[#dae1e9] font-inter tracking-[0.6px]">Your enterprise&apos;s issues may be complex. That doesn&apos;t mean building the solution has to be. 3forge is the highly-flexible, low-code platform that empowers enterprise application development in record time.</p>
+			<div class="md:whitespace-nowrap">
+				<a href="platform-overview"><button class="mt-[2%] sm:mt-[0%] lg:ml-[7px] px-4 py-1 text-lg text-lightorange font-semibold rounded-full border border-lightorange hover:bg-lightorange hover:text-white transition select-none transition-all duration-500">Explore the Platform</button></a>
+				<a href="request-poc"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none transition-all duration-500">Request a Free POC</button></a>
+			</div>
+	  	</div>
+	  	</div>
+	  	<div class="h-[400px]">
+	  	<iframe id="ferrisframe" title="3forge Dashboard Ferris Wheel" class="w-full h-[123%] mt-[5%] relative sm:mt-[-8%] md:mt-[-6%] select-none" src="ferristest.html" loading="eager" scrolling="no"></iframe>
+ </div>
+	  </div>
+	 </div>	
+</section>
+<section class="bg-black">
+	<div class="h-auto mx-auto pt-4 max-w-[74rem] lg:pb-[2rem]" id="partner-section">
+		<h2 class="text-center lg:text-left pb-20 text-[1.7rem] leading-[1.9rem] font-light text-[#c4c6d1] px-8 sm:px-12 xl:px-0">Trusted By Global Firms in Critical Use Cases</h2>
+             <div class="pt-10 m-0 m-auto containing partners-container gridpartners1 pt-[0.5rem] max-w-[90rem] gap-[1rem] text-center lg:ml-[-4rem]" id="smallercontain" style="padding: 0px 20px;">
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Barclays Partner" href="#partner-section"><img class="partner-image brightness-0 invert select-none" src="images/barclays1.webp" alt="Barclays Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Bank of America Partner" href="#partner-section"><img class="partner-image brightness-0 invert select-none" src="images/bofa1.webp" alt="Bank of America Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Citibank Partner" href="#partner-section"><img class="partner-image brightness-0 invert select-none" src="images/citi1.webp" alt="Citibank Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Coinbase Partner" href="#partner-section"><img class="partner-image mt-[4%] brightness-0 invert select-none" src="images/coinbase1.png" alt="Coinbase Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Verition Partner" href="#partner-section"><img class="partner-image mt-[3%] brightness-0 invert select-none" src="images/verition1.webp" alt="Verition Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Quantbot Partner" href="#partner-section"><img class="partner-image brightness-0 invert select-none" src="images/quantbot1.webp" alt="Quantbot Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Morgan Stanley Partner" href="#partner-section"><img class="partner-image mt-[3%] brightness-0 invert select-none" src="images/MS_Standard_Logo_2022_Black.png" alt="Morgan Stanley Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Jain Global Partner" href="#partner-section"><img class="w-[179px] partner-image mt-[1%] brightness-0 invert select-none" src="images/jainGlobal1.webp" alt="Jain Global Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="HS Group Partner" href="#partner-section"><img class="w-[177px] partner-image mt-[-30%] brightness-0 invert select-none" src="images/hsgroup-logo.svg" alt="HS Group Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Plus Wealth Partner" href="#partner-section"><img class="w-[110px] partner-image mt-[-7%] brightness-0 invert select-none" src="images/pluswealth-logo.png" alt="Plus Wealth Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="IIFL Capital Partner" href="#partner-section"><img class="w-[130px] partner-image mt-[-23%] select-none" src="images/iifl-capital-logo.svg" alt="IIFL Capital Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Clear Street Partner" href="#partner-section"><img class="w-[174px] partner-image mt-[-33%] brightness-0 invert select-none" src="images/clearstreet-logo4.png" alt="Clear Street Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Wafra Partner" href="#partner-section"><img class="w-[110px] partner-image mt-[-20%] select-none" src="images/wafra-logo.svg" alt="Wafra Logo"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="Arrowpoint Partner" href="#partner-section"><img class="w-[188px] partner-image mt-[-1%] select-none" src="images/arrowpoint-logo.png" alt="Arrowpoint Logo" style="filter: brightness(100)"></a>
+				<a class="hover:opacity-80 partner-item transition-all duration-500 cursor-default" alt="RSquared Partner" href="#partner-section"><img class="w-[70px] partner-image mt-[-13%] brightness-0 invert select-none" src="images/r-squared-logowhite.svg" alt="RSquared Logo"></a>
+			</div>
+	</div>
+</section>
+<section>
+	<div class="h-auto px-4 sm:px-0 max-w-[73.063rem] mx-auto pt-12 sm:pb-20">
+		<h2 class="text-center m-0 m-auto pb-12 text-3xl md:text-[3.1rem] md:leading-[3.1rem] font-bold" style="margin: 0 auto;">The &quot;Everythingability&quot; Platform</h2>
+		<p class="text-center m-0 m-auto px-8 md:px-20 px-8 xl:px-0 lg:text-left pt-4 pb-12 text-2xl lg:text-[1.8rem] lg:leading-[1.4] text-[#212529] font-inter">Reliability? Check. Scalability? That too. Deliverability? In record time. Even for the most complex work flows and data sets. With 3forge, you no longer have to choose. Data integration, virtualization, processing, visualization, and workflows all living in one place - solving the world&apos;s most complex real-time streaming data challenges.</p>
+		<video class="mx-auto w-full max-w-screen-xl pt-12" loading="lazy" style="max-width: 66%;" autoplay muted loop webkit-playsinline playsinline>
+		  <source src="videos/cover-vid-9-compress.mp4" loading="lazy" type="video/mp4">
+		  Your browser does not support the video tag.
+		</video>
+	</div>
+</section>
+<section>
+	<div class="h-auto px-4 sm:px-0 max-w-[73.063rem] mx-auto pt-8 sm:pt-20 sm:pb-20">
+		<h2 class="text-center m-0 m-auto pb-12 text-3xl md:text-[3.1rem] md:leading-[3.1rem] font-bold" style="margin: 0 auto;">State of the Art Dashboards</h2>
+		
+		<div class="m-0 m-auto text-left md:text-center grid grid-cols-1 px-4 md:px-12 lg:hidden">
+			
+		<div id="accordion-collapse" data-accordion="collapse">
+		  <h2 id="accordion-collapse-heading-1">
+		    <button type="button" class="flex items-center justify-between w-full p-5 rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 gap-3" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
+		      <span class="text-black text-3xl px-8 md:px-12 m-0 m-auto">Real-time data visualizations</span>
+		      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+		        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+		      </svg>
+		    </button>
+		  </h2>
+		  <div id="accordion-collapse-body-1" class="hidden bg-white flex flex-col rounded-lg mt-4 text-center" aria-labelledby="accordion-collapse-heading-1" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a;">
+        		<p class="text-black text-[1.3rem] leading-[1.5] px-4 pt-4 pb-12 m-0 m-auto md:px-24">Create powerful real-time dashboards with 3forge&apos;s full-stack, <strong>High 
+Impact&trade; code platform.</strong> Stream in over 100,000 messages at near-zero 
+latency speeds. Connect to your existing infrastructure to power all of your 
+applications.</p>
+			    <a href="platform-overview">
+			      <button class="px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">
+			        Explore Platform
+			      </button>
+			    </a>
+   				<img class="w-[700px] p-8 m-0 m-auto" id="scroll-img" src="images/dashboardsc2.png" alt="3forge Dashboard">
+		  </div>
+		  <h2 id="accordion-collapse-heading-2">
+		    <button type="button" class="flex items-center justify-between w-full p-5 rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 gap-3" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
+		      <span class="text-black text-3xl px-8 md:px-12 m-0 m-auto">Powerful backend data structures</span>
+		      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+		        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+		      </svg>
+		    </button>
+		  </h2>
+		  <div id="accordion-collapse-body-2" class="hidden bg-white flex flex-col rounded-lg mt-4 text-center" aria-labelledby="accordion-collapse-heading-2" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a;">
+        		<p class="text-black text-[1.3rem] leading-[1.5] px-4 pt-4 pb-12 m-0 m-auto md:px-24">We offer more than just dashboards. Our platform offers a complete 
+backend, designed from the ground up for <strong>reliability, efficiency, security and
+ease of use.</strong> 3forge includes dashboards, scheduled reporting, real-time and 
+historical databases, complex event processing, connectivity and 
+messaging, and workflows &mdash; all in one place, operating in real time.</p>
+			    <a href="platform-overview">
+			      <button class="px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">
+			        Explore Platform
+			      </button>
+			    </a>
+   				<img class="w-[700px] p-8 m-0 m-auto" id="scroll-img" src="images/dashboardsc1.png" alt="3forge Dashboard">
+		  </div>
+		  <h2 id="accordion-collapse-heading-3">
+		    <button type="button" class="flex items-center justify-between w-full p-5 rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 gap-3" data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
+		      <span class="text-black text-3xl px-8 md:px-12 m-0 m-auto">Unlimited styles & customization</span>
+		      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+		        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+		      </svg>
+		    </button>
+		  </h2>
+		  <div id="accordion-collapse-body-3" class="hidden bg-white flex flex-col rounded-lg mt-4 text-center" aria-labelledby="accordion-collapse-heading-3" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a;">
+        		<p class="text-black text-[1.3rem] leading-[1.5] px-4 pt-4 pb-12 m-0 m-auto md:px-24">Change styles and layouts on the fly with our style manager. With 3forge, 
+you have <strong>unlimited potential.</strong> Utilize HTML, CSS, and JavaScript to design 
+the solution of your dreams.</p>
+			    <a href="platform-overview">
+			      <button class="px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">
+			        Explore Platform
+			      </button>
+			    </a>
+   				<img class="w-[700px] p-8 m-0 m-auto" id="scroll-img" src="images/new-styles.gif" alt="3forge Dashboard">
+		  </div>
+  		  <h2 id="accordion-collapse-heading-4">
+		    <button type="button" class="flex items-center justify-between w-full p-5 rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 gap-3" data-accordion-target="#accordion-collapse-body-4" aria-expanded="false" aria-controls="accordion-collapse-body-4">
+		      <span class="text-black text-3xl px-8 md:px-12 m-0 m-auto">Flexible sources of data</span>
+		      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+		        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+		      </svg>
+		    </button>
+		  </h2>
+ 		  <div id="accordion-collapse-body-4" class="hidden bg-white flex flex-col rounded-lg mt-4 text-center" aria-labelledby="accordion-collapse-heading-4" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a;">
+        		<p class="text-black text-[1.3rem] leading-[1.5] px-4 pt-4 pb-12 m-0 m-auto md:px-24">With 3forge&apos;s 360&deg; compatibility and our unique <strong>&quot;leave your data where it 
+is&quot;</strong> approach, you can connect to any application or data source. There is no
+need to start from the ground up or migrate data. And because the platform
+lives within your own four walls, you can feel safe that your data is 
+completely secure.</p>
+			    <a href="platform-overview">
+			      <button class="px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">
+			        Explore Platform
+			      </button>
+			    </a>
+   				<img class="w-[700px] p-8 m-0 m-auto" id="scroll-img" src="images/dashboardsc3.png" alt="3forge Dashboard">
+		  </div>
+   		  <h2 id="accordion-collapse-heading-5">
+		    <button type="button" class="flex items-center justify-between w-full p-5 rtl:text-right text-gray-500 border border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 gap-3" data-accordion-target="#accordion-collapse-body-5" aria-expanded="false" aria-controls="accordion-collapse-body-5">
+		      <span class="text-black text-3xl px-8 md:px-12 m-0 m-auto">Endlessly scalable solutions</span>
+		      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+		        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+		      </svg>
+		    </button>
+		  </h2>
+ 		  <div id="accordion-collapse-body-5" class="hidden bg-white flex flex-col rounded-lg mt-4 text-center" aria-labelledby="accordion-collapse-heading-5" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a;">
+        		<p class="text-black text-[1.3rem] leading-[1.5] px-4 pt-4 pb-12 m-0 m-auto md:px-24">Leverage the world&apos;s fastest real-time tables and charts, powerful enough to
+handle millions of rows and thousands of columns. Experience a world of 
+<strong>endlessly scalable solutions</strong> with 3forge.</p>
+			    <a href="platform-overview">
+			      <button class="px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">
+			        Explore Platform
+			      </button>
+			    </a>
+   				<img class="w-[700px] p-8 m-0 m-auto" id="scroll-img" src="images/3forgecomplex.png" alt="3forge Complex Dashboard">
+		  </div>
+		  
+		</div>
+			
+<!-- 				<div class="">
+					<button class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 mobb" id="realtime-mob">
+						      <span class="flex items-center"><svg class="w-5 h-5 me-2 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg> Real-time data visualizations</span>
+      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+      </svg>
+					</button>
+				</div>
+				<div class="">
+	    			<div id="realtime-mob-content" class="hidden rounded-[18px] bg-white flex flex-col mobbcontent" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a;">
+	    				<p class="text-black text-3xl px-8 md:px-12 m-0 m-auto">Real-time data visualizations</p>
+	    				<img class="w-[700px] p-8 m-0 m-auto" id="scroll-img" src="images/fils-demo1.gif">
+	    				<p class="text-black text-xl px-8 md:px-12 m-0 m-auto">Real-time data visualizations</p>
+	    				
+	    			</div>
+    			</div>
+				<div class="">
+					<button class="bg-white rounded-lg mobb" id="backend-mob">Powerful backend data structures</button>
+				</div>
+				<div class="">
+	    			<div id="backend-mob-content" class="hidden rounded-[18px] bg-white flex flex-col mobbcontent" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a;">
+	    				<p class="text-black text-3xl px-8 md:px-12 m-0 m-auto">Powerful backend data structures</p>
+	    				<img class="w-[700px] p-8 m-0 m-auto" id="scroll-img" src="images/fils-demo1.gif">
+	    				<p class="text-black text-xl px-8 md:px-12 m-0 m-auto">Powerful backend data structures</p>
+	    			</div>
+    			</div> -->
+		</div>
+
+<div class="mb-4 border-b border-gray-200 hidden lg:flex">
+    <ul class="flex -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" data-tabs-active-classes="text-orange-500 hover:text-orange-500 border-orange-500" data-tabs-inactive-classes="text-black hover:text-gray-600 border-gray-100 hover:border-gray-300" role="tablist">
+        <li class="me-2 w-full" role="presentation">
+            <button class="inline-block p-4 border-b-2 w-full rounded-t-lg text-xl xl:text-2xl transition-all duration-500" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Real-time data visualizations</button>
+        </li>
+        <li class="me-2 w-full" role="presentation">
+            <button class="inline-block p-4 border-b-2 w-full rounded-t-lg text-xl xl:text-2xl hover:text-gray-600 hover:border-gray-300 transition-all duration-500" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Powerful backend data structures</button>
+        </li>
+        <li class="me-2 w-full" role="presentation">
+            <button class="inline-block p-4 border-b-2 w-full rounded-t-lg text-xl xl:text-2xl hover:text-gray-600 hover:border-gray-300 transition-all duration-500" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Unlimited styles & customization</button>
+        </li>
+        <li class="me-2 w-full" role="presentation">
+            <button class="inline-block p-4 border-b-2 w-full rounded-t-lg text-xl xl:text-2xl hover:text-gray-600 hover:border-gray-300 transition-all duration-500" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">Flexible sources of data</button>
+        </li>
+        <li class="me-2 w-full" role="presentation">
+            <button class="inline-block p-4 border-b-2 w-full rounded-t-lg text-xl xl:text-2xl hover:text-gray-600 hover:border-gray-300 transition-all duration-500" id="scalable-tag" data-tabs-target="#scalable" type="button" role="tab" aria-controls="contacts" aria-selected="false">Endlessly scalable solutions</button>
+        </li>
+    </ul>
+</div>
+<div id="default-tab-content" class="hidden lg:flex">
+    <div class="hidden p-4 rounded-lg" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="grid lg:grid-cols-2">
+        	<div>
+        		<p class="text-black pr-8 text-[1.7rem] leading-[1.5] pb-12">Create powerful real-time dashboards with 3forge&#39;s full-stack, <strong>High 
+Impact&trade; code platform.</strong> Stream in over 100,000 messages at near-zero 
+latency speeds. Connect to your existing infrastructure to power all of your 
+applications</p>
+			    <a href="platform-overview">
+			      <button class="px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">
+			        Explore Platform
+			      </button>
+			    </a>
+		    </div>
+    		<div>
+    			<div class="rounded-[18px] bg-white hover:cursor-pointer hover:scale-[1.06] hover:translate-y-[-7px] transition-all duration-500" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a; width: 112%;">
+    				<img class="lg:w-[637px] p-8 m-0 m-auto" id="scroll-img" src="images/dashboardsc2.png">
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="hidden p-4 rounded-lg" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+        <div class="grid lg:grid-cols-2">
+        	<div>
+        		<p class="text-black pr-8 text-[1.7rem] leading-[1.5] pb-12">We offer more than just dashboards. Our platform offers a complete 
+backend, designed from the ground up for <strong>reliability, efficiency, security and
+ease of use.</strong> 3forge includes dashboards, scheduled reporting, real-time and 
+historical databases, complex event processing, connectivity and 
+messaging, and workflows — all in one place, operating in real time.</p>
+			    <a href="platform-overview">
+			      <button class="px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">
+			        Explore Platform
+			      </button>
+			    </a>
+			    </div>
+    		<div>
+    			<div class="rounded-[18px] bg-white hover:cursor-pointer hover:scale-[1.06] hover:translate-y-[-7px] transition-all duration-500" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a; width: 112%;">
+    				<img class="lg:w-[637px] p-8 m-0 m-auto" id="scroll-img" src="images/dashboardsc1.png">
+    			</div>
+    		</div>
+    	</div>    
+   	</div>
+    <div class="hidden p-4 rounded-lg" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+        <div class="grid lg:grid-cols-2">
+        	<div>
+        		<p class="text-black pr-8 text-[1.7rem] leading-[1.5] pb-12">Change styles and layouts on the fly with our style manager. With 3forge, 
+you have <strong>unlimited potential.</strong> Utilize HTML, CSS, and JavaScript to design 
+the solution of your dreams.</p>
+			    <a href="platform-overview">
+			      <button class="px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">
+			        Explore Platform
+			      </button>
+			    </a>
+			    </div>
+    		<div>
+    			<div class="rounded-[18px] bg-white hover:cursor-pointer hover:scale-[1.06] hover:translate-y-[-7px] transition-all duration-500" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a; width: 112%;">
+    				<img class="lg:w-[637px] p-8 m-0 m-auto" id="scroll-img" src="images/new-styles.gif" alt="3forge Dashboard Styling Switch">
+    			</div>
+    		</div>
+    	</div>    
+   	</div>
+    <div class="hidden p-4 rounded-lg" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+        <div class="grid lg:grid-cols-2">
+        	<div>
+        		<p class="text-black pr-8 text-[1.7rem] leading-[1.5] pb-12">With 3forge&#39;s 360&deg; compatibility and our unique <strong>&quot;leave your data where it 
+is&quot;</strong> approach, you can connect to any application or data source. There is no
+need to start from the ground up or migrate data. And because the platform
+lives within your own four walls, you can feel safe that your data is 
+completely secure.</p>
+			    <a href="platform-overview">
+			      <button class="px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">
+			        Explore Platform
+			      </button>
+			    </a>    		
+			    </div>
+    		<div>
+    			<div class="rounded-[18px] bg-white hover:cursor-pointer hover:scale-[1.06] hover:translate-y-[-7px] transition-all duration-500" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a; width: 112%;">
+    				<img class="lg:w-[637px] p-8 m-0 m-auto" id="scroll-img" src="images/dashboardsc3.png">
+    			</div>
+    		</div>
+    	</div>    
+   	</div>
+       <div class="hidden p-4 rounded-lg" id="scalable" role="tabpanel" aria-labelledby="scalable-tab">
+        <div class="grid lg:grid-cols-2">
+        	<div>
+        		<p class="text-black pr-8 text-[1.7rem] leading-[1.5] pb-12">Leverage the world&#39;s fastest real-time tables and charts, powerful enough to
+handle millions of rows and thousands of columns. Experience a world of 
+<strong>endlessly scalable solutions</strong> with 3forge.</p>
+			    <a href="platform-overview">
+			      <button class="px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">
+			        Explore Platform
+			      </button>
+			    </a>
+			    </div>
+    		<div>
+    			<div class="rounded-[18px] bg-white hover:cursor-pointer hover:scale-[1.06] hover:translate-y-[-7px] transition-all duration-500" style="box-shadow:0 10px 15px 4px #0000001a, 0 4px 6px -4px #0000001a; width: 112%;">
+    				<img class="lg:w-[637px] p-8 m-0 m-auto" id="scroll-img" src="images/3forgecomplex.png">
+    			</div>
+    		</div>
+    	</div>    
+   	</div>
+</div>
+	
+	</div>
+</section>
+<section>
+	<div class="h-auto px-4 sm:px-0 max-w-[73.063rem] mx-auto pt-8 sm:pt-20 sm:pb-20">
+		<h2 class="m-0 m-auto text-center pb-8 text-3xl md:text-[3.05rem] md:leading-[3.05rem] font-bold">Find Out How 3forge Can Transform Your Organization.</h2>
+		<p class="text-center m-0 m-auto px-8 md:px-20 px-8 xl:px-0 lg:text-left pt-4 pb-12 text-2xl lg:text-[1.8rem] lg:leading-[1.4] text-[#212529] font-inter">3forge provides award-winning technology that enables developers to deploy mission-critical applications in record time. Experience the difference of real-time data and zero latency with 3forge&apos;s focus on data integration, virtualization, processing, and visualization.</p>
+		<div class="text-center" style="margin: 0 auto;">
+			<a href="request-poc"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">Request a Free POC</button></a>	
+			<a href="platform-overview"><button class= "lg:ml-[7px] mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">Explore the Platform</button></a>
+		</div>
+	</div>
+</section>
+<section class="hidden">
+	<div class="h-auto mx-auto sm:pt-20 max-w-[90.75rem] pt-12 sm:pt-0" id="partner-section">
+		<h2 class="text-center pb-20 text-3xl md:text-[3.1rem] md:leading-[3.1rem] font-bold text-black px-20 xl:px-0">Trusted By Global Firms in Critical Use Cases</h2>
+             <div class="pt-10 ml-40 containing partners-container gridpartners1" id="smallercontain" style="max-width: 70rem; padding: 0px 20px; text-align: center; padding-top: 32px;">
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Barclays Partner" href="#partner-section"><img class="partner-image" src="images/barclays1.webp" alt="Barclays Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Bank of America Partner" href="#partner-section"><img class="partner-image" src="images/bofa1.webp" alt="Bank of America Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Citibank Partner" href="#partner-section"><img class="partner-image" src="images/citi1.webp" alt="Citibank Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Coinbase Partner" href="#partner-section"><img class="partner-image" src="images/coinbase1.png" alt="Coinbase Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Morgan Stanley Partner" href="#partner-section"><img class="partner-image mt-[3%]" src="images/MS_Standard_Logo_2022_Black.png" alt="Morgan Stanley Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Jain Global Partner" href="#partner-section"><img class="partner-image" src="images/jainGlobal1.webp" alt="Jain Global Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Quantbot Partner" href="#partner-section"><img class="partner-image" src="images/quantbot1.webp" alt="Quantbot Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Verition Partner" href="#partner-section"><img class="partner-image" src="images/verition1.webp" alt="Verition Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="HS Group Partner" href="#partner-section"><img class="w-[177px] partner-image mt-[-30%]" src="images/hsgroup-logo.svg" alt="HS Group Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Plus Wealth Partner" href="#partner-section"><img class="w-[110px] partner-image mt-[-7%]" src="images/pluswealth-logo.png" alt="Plus Wealth Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Arrowpoint Partner" href="#partner-section"><img class="w-[188px] partner-image mt-[-4%]" src="images/arrowpoint-logo.png" alt="Arrowpoint Logo" style="filter: brightness(0)"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="IIFL Capital Partner" href="#partner-section"><img class="w-[130px] partner-image mt-[-25%]" src="images/iifl-capital.svg" alt="IIFL Capital Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Wafra Partner" href="#partner-section"><img class="w-[159px] partner-image mt-[-11%]" src="images/wafra.png" alt="Wafra Logo"></a>
+				<a class="hover:opacity-80 partner-item cursor-default" alt="Clear Street Partner" href="#partner-section"><img class="w-[159px] partner-image mt-[-1%]" src="images/clearstreet-logo3.jpg" alt="Clear Street Logo"></a>
+			</div>
+	</div>
+</section>
+<section>
+<div class="h-auto xl:container mx-auto sm:pt-12 sm:pb-20">
+<h2 class="text-center pb-12 text-3xl md:text-[3.1rem] font-bold text-black-700 ">Hear From Our Clients</h2>
+<div id="quote-carousel" class="relative w-full pt-4 px-8 lg:px-0" style="max-width: 50rem; margin: 0 auto;">
+    <!-- Carousel wrapper -->
+    <div class="relative h-[33rem] sm:h-[27rem] overflow-hidden border-[1px] bg-papercard border-slightgrey rounded-lg md:h-96 shadow-lg"> <!--  style="box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 70px -19px;">-->
+         <!-- Item 1 -->
+        <div class="hidden duration-[1200ms] ease-in-out" id="carousel-item-1">
+			<section class="bg-papercard">
+			  <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+			      <figure class="max-w-screen-md mx-auto">
+ 			          <svg class="h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+			              <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+			          </svg> 
+			          <img width="191px" loading="lazy" class="filter invert 100" src="https://assets-global.website-files.com/65b020deb4d7930be96ab953/65b95819a2fcaf7edf5dc64b_Copy%20of%20Logos%20(1).png" style="margin: 0 auto;" alt="Deutsche Bank Logo">
+			          <blockquote>
+			              <p class="text-2xl text-gray-900">&quot;3forge&apos;s platform is an amazing solution for analysing and monitoring the scale of real- time data required by a leading exchange like Eurex&quot;</p>
+			          </blockquote>
+			          <figcaption class="flex items-center justify-center mt-6 space-x-3">
+			              <div class="flex items-center divide-x-2 divide-gray-500">
+			                  <div class="pr-3 font-medium text-gray-900">Sebastian Neusuess</div>
+			                  <div class="pl-3 text-sm font-light text-gray-500">Head of Xetra/Eurex Infrastructure Design &amp; Analytics</div>
+			              </div>
+			          </figcaption>
+			      </figure>
+			  </div>
+			</section>
+        </div>
+        <div class="hidden duration-[1200ms] ease-in-out" id="carousel-item-2">
+			<section class="bg-papercard">
+			  <div class="max-w-screen-xl px-4 py-16 mx-auto text-center lg:py-24 lg:px-6">
+			      <figure class="max-w-screen-md mx-auto">
+ 			          <svg class="h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+			              <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+			          </svg>
+			          <img width="191px" loading="lazy" height="191px" src="images/jainGlobal1.webp" alt="Jain Global Logo" style="margin: 0 auto;">
+			          <blockquote>
+			              <p class="text-2xl text-gray-900">&quot;It comes down to one word: scalability. And more specifically, scalability without incremental cost&quot;</p>
+			          </blockquote>
+			          <figcaption class="flex items-center justify-center mt-6 space-x-3">
+			              <div class="flex items-center divide-x-2 divide-gray-500">
+			                  <div class="pr-3 font-medium text-gray-900">Jonathan Barton</div>
+			                  <div class="pl-3 text-sm font-light text-gray-500">COO of Jain Global</div>
+			              </div>
+			          </figcaption>
+			      </figure>
+			  </div>
+			</section>
+        </div>
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" id="carousel-indicator-1" class="w-[1.25rem] h-[1.25rem] rounded-full" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" id="carousel-indicator-2" class="w-[1.25rem] h-[1.25rem] rounded-full" aria-current="false" aria-label="Slide 2"></button>
+    </div>
+</div>
+</div>
+</section>
+<section>
+	<div class="h-auto px-4 pt-4 sm:px-0 max-w-[73.063rem] mx-auto px-8 sm:px-0 sm:pt-20 sm:pb-20">
+		<h2 class="text-center pb-12 text-3xl md:text-[3.1rem] font-bold" style="margin: 0 auto;">Deliver Faster. Operate Better.</h2>
+		<p class="text-center m-0 m-auto md:px-20 px-8 xl:px-0 lg:text-left pt-5 text-2xl lg:text-[1.8rem] lg:leading-[1.4] text-[#212529] font-inter">3forge simplifies the complex and lets developers ship business-critical apps in record time. In a world where speed and accuracy are competitive advantages, 3forge powers the solutions that developers love, and businesses need.</p>
+		<div class="grid grid-cols-1 gap-8 max-w-full lg:grid-cols-2 xl:gap-12 pt-10 px-8 md:px-20 xl:px-0">
+		 <div class="m-0 m-auto h-[13.75rem] border-[1px] max-w-[36.75rem] bg-papercard w-full boxfix group hover:translate-y-[-7px] rounded-[18px] flex overflow-hidden relative flex-col md:flex-row hover:scale-[1.06] hover:shadow-gray-400 shadow-lg">
+		  <div class="absolute inset-0 bg-no-repeat bg-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-80 brightness-75" style="background-image: url('images/3forgecomplex.png');"></div>
+		  
+		  <div class="px-8 innerbox max-w-[70%] md:max-w-[50%] lg:max-w-[68%] relative z-10">
+		    <h2 class="m-0 m-auto text-left lg:m-[initial] lg:text-left pt-8 font-bold text-xl md:text-2xl xl:text-3xl group-hover:text-orange-500">Build limitless applications.</h2>
+		    <a href="platform-overview">
+		      <button class="mt-8 px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">
+		        Explore Platform
+		      </button>
+		    </a>
+		  </div>
+		
+		  <div class="relative max-w-[50%] flex-[0_0_50%] lg:flex-[0_0_32%]">
+		    <img src="images/complexsmall2.png" alt="3forge Complex Dashboard" class="absolute rounded-lg bottom-[-17%] right-[-161%] sm:bottom-[-39%] sm:right-[-123%] md:bottom-[-19%] md:right-[-11%] max-w-[280px] transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+		  </div>
+		</div>
+				 <div class="m-0 m-auto h-[13.75rem] max-w-[36.75rem] border-[1px] bg-papercard w-full boxfix group hover:translate-y-[-7px] rounded-[18px] flex overflow-hidden relative flex-col md:flex-row hover:scale-[1.06] shadow-lg hover:shadow-gray-400">
+		  <div class="absolute inset-0 bg-no-repeat bg-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-70 brightness-75" style="background-image: url('images/filbig.png');"></div>
+		  
+			<div class="px-8 innerbox max-w-[68%] md:max-w-[50%] lg:max-w-[68%] relative z-10">
+		    <h2 class="m-0 m-auto lg:m-[initial] text-left pt-8 font-bold text-xl md:text-2xl xl:text-3xl group-hover:text-orange-500">Meet exact user requirements.</h2>
+		    <a href="request-poc"><button class="mt-8 px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">Request POC</button></a>	
+		  </div>
+		
+		  <div class="relative max-w-[50%] flex-[0_0_50%] lg:flex-[0_0_32%]">
+		    <img src="images/filsmall.png" alt="3forge Dashboard - FILS Demo" class="absolute rounded-lg bottom-[-101%] right-[-161%] sm:bottom-[-55%] sm:right-[-123%] md:bottom-[-61%] md:right-[-11%] max-w-[280px] transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+		  </div>
+		</div>
+						 <div class="m-0 m-auto h-[13.75rem] max-w-[36.75rem] border-[1px] bg-papercard w-full boxfix group hover:translate-y-[-7px] rounded-[18px] flex overflow-hidden relative flex-col md:flex-row hover:scale-[1.06] shadow-lg hover:shadow-gray-400">
+		  <div class="absolute inset-0 bg-no-repeat bg-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-80 brightness-75" style="background-image: url('images/3forgeheatmap.png');"></div>
+		  
+		  <div class="px-8 innerbox max-w-[77%] md:max-w-[56%] lg:max-w-[72%] relative z-10">
+		    <h2 class="m-0 m-auto lg:m-[initial] text-left pt-8 font-bold text-xl md:text-2xl xl:text-3xl group-hover:text-orange-500">Make fast delivery your competitive edge.</h2>
+		    <a href="why-3forge"><button class="mt-8 px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">Why 3forge</button></a>	
+		  </div>
+		
+		  <div class="relative max-w-[50%] flex-[0_0_45%] lg:flex-[0_0_28%]">
+		    <img src="images/heatmapsmall.png" alt="3forge Dashboard - Heatmap" class="absolute rounded-lg bottom-[-65%] right-[-161%] sm:bottom-[-75%] sm:right-[-123%] md:bottom-[-39%] md:right-[-12%] max-w-[280px] transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+		  </div>
+		</div>
+						 <div class="m-0 m-auto h-[13.75rem] max-w-[36.75rem] border-[1px] bg-papercard w-full boxfix group hover:translate-y-[-7px] rounded-[18px] flex overflow-hidden relative flex-col md:flex-row hover:scale-[1.06] shadow-lg hover:shadow-gray-400">
+		  <div class="absolute inset-0 bg-no-repeat bg-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-80 brightness-75" style="background-image: url('images/main-18.png');"></div>
+		  
+		  <div class="px-8 innerbox max-w-[77%] md:max-w-[50%] lg:max-w-[68%] relative z-10">
+		    <h2 class="m-0 m-auto lg:m-[initial] text-left pt-8 font-bold text-xl md:text-2xl xl:text-3xl group-hover:text-orange-500">Scale throughout your organization.</h2>
+		    <a href="pricing"><button class="mt-8 px-4 py-1 text-lg smallfont text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">Our Pricing</button></a>	
+		  </div>
+		
+		  <div class="relative max-w-[50%] flex-[0_0_50%] lg:flex-[0_0_32%]">
+		    <img src="images/smallscale.png" alt="3forge Dashboard Scaling" class="absolute rounded-lg bottom-[-113%] right-[-161%] sm:bottom:[-112%] sm:right-[-123%] md:bottom-[-68%] md:right-[-11%] max-w-[280px] transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+		  </div>
+		</div>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="h-auto px-4 sm:px-0 max-w-[73.063rem] mx-auto pt-20" id="animcontain">
+		<h2 class="text-center pb-12 text-3xl md:text-[3.1rem] font-bold">Choose Your Own Adventure&hellip;</h2>
+		<p class="m-0 m-auto px-8 md:px-20 px-8 xl:px-0 text-center lg:text-left text-2xl lg:text-[1.8rem] lg:leading-[1.4] text-[#212529] font-inter">What will you build today? With over 100 out of the box adapters, and a tiny fraction of the code necessary to build applications compared to in-house development, 3forge is the solution you&apos;re looking for to maximize speed, efficiency, and reliability. </p>
+		<div class="text-center pb-12 md:pb-20">
+			<a href="platform-overview"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800]">Explore the Platform</button></a>
+		</div>
+	</div>
+	
+</section>
+
+<!-- <section>
+<div id="usecase-carousel" class="relative w-full px-4 sm:px-0" style="max-width: 800px; margin: 0 auto;">
+    Carousel wrapper
+    <div class="relative h-[37rem] overflow-hidden rounded-lg md:h-[20rem]">
+         Item 1
+        <div class="hidden duration-[1200ms] ease-in-out" id="carousel-item-4">
+			  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-10">
+			  <div class="h-[545px] md:flex md:h-[260px] md:max-h-[260px]">
+			    <div class="md:shrink-0">
+			      <img class="h-[260px] w-full object-fill md:h-full md:w-72 hover:opacity-80" loading="lazy" src="images/realtime-latency.png" alt="Modern building architecture">
+			    </div>
+			    <div class="p-8 pt-0 mt-20">
+			      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Use Case</div>
+			      <a href="realtime-dashboard.html" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Real Time Latency Dashboard</a>
+			      <p class="mt-2 text-slate-500">3Forge allows a Tier 1 Bank to display millions of data points in a single chart.</p>
+			      <a href="case-studies.html"><button class="mt-4 px-4 py-1 text-md text-orange-500 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">See The Story</button></a>
+			    </div>
+			  </div>
+			</div>
+        </div>
+        Item 2
+        <div class="hidden duration-[1200ms] ease-in-out" id="carousel-item-5">
+        	  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-10">
+			  <div class="md:flex md:max-h-[260px]">
+			    <div class="md:shrink-0">
+			      <img class="h-[260px] w-full object-fill md:h-full md:w-72 hover:opacity-80" loading="lazy" src="images/client-manager.png" alt="Modern building architecture">
+			    </div>
+			    <div class="p-8 pt-0">
+			      <img class="-ml-10 filter invert 100" style="max-width: 12rem;" src="newlogos/citibanklogo.png" alt="Modern building architecture">
+			      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Use Case</div>
+			      <a href="client-connection.html" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Client Connection Manager</a>
+			      <p class="mt-2 text-slate-500">3Forge has helped Citi to update their applications for the ever increasing demand to handle more data and analytics.</p>
+			      <a href="case-studies.html"><button class="mt-4 px-4 py-1 text-md text-orange-500 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">See The Story</button></a> 
+			    </div>
+			  </div>
+			</div>
+        </div>
+        Item 3
+        <div class="hidden duration-[1200ms] ease-in-out" id="carousel-item-6">
+        	  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-10">
+			  <div class="md:flex md:max-h-[260px]">
+			    <div class="md:shrink-0">
+			      <img class="h-[260px] w-full object-fill md:h-full md:w-72 hover:opacity-80" loading="lazy" src="images/audit-trails.png" alt="Modern building architecture">
+			    </div>
+			    <div class="p-8 pt-0">
+			      <img class="-ml-10 filter invert 100" style="max-width: 12rem;" src="newlogos/citibanklogo.png" alt="Modern building architecture">
+			      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Use Case</div>
+			      <a href="citi-audit-trail.html" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Audit Trail</a>
+			      <p class="mt-2 text-slate-500">3Forge has helped Citi to answer customer complaints in a timely manner, improving the quality of responses.</p>
+			      <a href="case-studies.html"><button class="mt-4 px-4 py-1 text-md text-orange-500 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">See The Story</button></a>
+			    </div>
+			  </div>
+			</div>
+        </div>
+        Item 4
+        <div class="hidden duration-[1200ms] ease-in-out" id="carousel-item-7">
+        	  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-10">
+			  <div class="md:flex md:h-[260px] md:max-h-[260px]">
+			    <div class="md:shrink-0">
+			      <img class="h-[260px] w-full object-fill md:h-full md:w-72 hover:opacity-80" loading="lazy" src="images/laptop-phone-dashboard.png" alt="Modern building architecture">
+			    </div>
+			    <div class="p-8">
+			      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Use Case</div>
+			      <a href="new-global-bank.html" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Global Bank</a>
+			      <p class="mt-2 text-slate-500">3forge provides trade support at this global bank through anomaly detection, real-time surveillance, and kill switch functionality.</p>
+			      <a href="case-studies.html"><button class="mt-10 px-4 py-1 text-md text-orange-500 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">See The Story</button></a>
+			    </div>
+			  </div>
+			</div>
+        </div>
+    </div>
+    Slider indicators
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-[-0.75rem] left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" id="carousel-indicator-4" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" id="carousel-indicator-5" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"></button>
+        <button type="button" id="carousel-indicator-6" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"></button>
+        <button type="button" id="carousel-indicator-7" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"></button>
+    </div>
+</div>
+	<div class="h-auto xl:container mx-auto pt-5 text-center pb-24">
+			<a href="request-poc.html"><button class="mt-8 px-4 py-1 text-center text-lg text-white bg-orange-500 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-400 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Request a Free POC</button></a>
+			<a href="platform-overview"><button class="mt-8 px-4 py-1 text-lg text-white bg-orange-500 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-400 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Explore the Platform</button></a>
+	</div>
+</section> -->
+
+
+<f1:include page="'newweb_footer.html'"/>
+<div id="modal-buttons" style="display: none;">
+  <button type="button" class="hidden" data-modal-target="modal-spreadsheets"></button>
+  <button type="button" class="hidden" data-modal-target="modal-reporting"></button>
+  <button type="button" class="hidden" data-modal-target="modal-reconciliation"></button>
+  <button type="button" class="hidden" data-modal-target="modal-monitoring"></button>
+  <button type="button" class="hidden" data-modal-target="modal-analytics"></button>
+  <button type="button" class="hidden" data-modal-target="modal-p-l"></button>
+  <button type="button" class="hidden" data-modal-target="modal-transactional"></button>
+  <button type="button" class="hidden" data-modal-target="modal-historical"></button>
+  <button type="button" class="hidden" data-modal-target="modal-realtime"></button>
+  <button type="button" class="hidden" data-modal-target="modal-risk"></button>
+  <button type="button" class="hidden" data-modal-target="modal-image-1"></button>
+  <button type="button" class="hidden" data-modal-target="modal-image-2"></button>
+  <button type="button" class="hidden" data-modal-target="modal-image-3"></button>
+  <button type="button" class="hidden" data-modal-target="modal-image-4"></button>
+  <button type="button" class="hidden" data-modal-target="modal-image-5"></button>
+  <button type="button" class="hidden" data-modal-target="modal-image-6"></button>
+  <button type="button" class="hidden" data-modal-target="modal-image-7"></button>
+  <button type="button" class="hidden" data-modal-target="modal-image-8"></button>
+  <button type="button" class="hidden" data-modal-target="modal-image-9"></button>
+  <button type="button" class="hidden" data-modal-target="modal-image-10"></button>
+</div>
+  <div id="modal-spreadsheets" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-4xl md:text-7xl font-light text-modaltitle">
+                    Spreadsheets
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-spreadsheets">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    3Forge streamlines spreadsheet integration by enabling seamless data import and manipulation, offering powerful functionalities for analysis and reporting.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    This allows users to transition from static spreadsheets to dynamic, real-time data visualization and interaction within a secure platform.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/3forgecomplex.png" alt="3forge Dashboard" loading="lazy">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-reporting" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-4xl md:text-7xl font-light text-modaltitle">
+                    Reporting
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-reporting">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    3Forge's advanced reporting tools provide comprehensive data aggregation, customizable dashboards, and automated report generation.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    Users can create detailed, visually appealing reports that can be easily shared and accessed in real time across the organization.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/dashboardsc3.png" alt="3forge Dashboard" loading="lazy">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-reconciliation" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-4xl md:text-7xl font-light text-modaltitle">
+                    Reconciliation
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-reconciliation">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    With 3Forge, data reconciliation becomes efficient and accurate, thanks to its ability to integrate multiple data sources and identify discrepancies. 
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    This ensures that financial and transactional data remains consistent, reliable, and audit-ready.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/3forgeheatmap.png" alt="3forge Dashboard" loading="lazy">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-monitoring" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-4xl md:text-7xl font-light text-modaltitle">
+                    Monitoring
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-monitoring">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    3Forge offers robust monitoring capabilities, providing real-time alerts, performance metrics, and anomaly detection.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    Its customizable dashboards and interactive tools enable users to proactively manage and optimize system performance and operational efficiency.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/main-24.png" alt="3forge Dashboard" loading="lazy">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-analytics" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-4xl md:text-7xl font-light text-modaltitle">
+                    Analytics
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-analytics">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    3Forge empowers users with advanced analytics, offering deep insights through data mining, predictive modeling, and real-time data processing. 
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    Our platform supports the creation of complex analytical models, enabling data-driven decision-making across the enterprise.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/main-7.png" alt="3forge Dashboard" loading="lazy">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-p-l" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-4xl md:text-7xl font-light text-modaltitle">
+                    P&L
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-p-l">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    3Forge provides powerful tools for detailed P&L analysis, enabling users to seamlessly integrate financial data from multiple sources for comprehensive performance tracking. 
+                </p>
+                <p class="text-base leading-relaxed text-white">
+					Our platform's interactive dashboards and real-time data capabilities facilitate in-depth analysis of revenue, costs, and profitability, supporting informed financial decision-making.                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/main-6.png" alt="3forge P&L Dashboard" loading="lazy">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-historical" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-4xl md:text-7xl font-light text-modaltitle">
+                    Historical
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-historical">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    3Forge excels in managing and analyzing historical data, allowing users to access, visualize, and extract insights from extensive datasets over time.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    This capability supports trend analysis, performance evaluation, and strategic forecasting, providing a comprehensive view of past events and patterns.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/main-18.png" alt="3forge Dashboard" loading="lazy">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+  <div id="modal-realtime" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-4xl md:text-7xl font-light text-modaltitle">
+                    Realtime
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-realtime">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+					Have access to your data as it streams in with our realtime visualizations, tables &amp; charts. 
+                </p>
+                <p class="text-base leading-relaxed text-white">
+					Connect to external data sources and manipulate your data without waiting. 
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/reliable.png" alt="3forge Dashboard" loading="lazy">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-transactional" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-4xl md:text-7xl font-light text-modaltitle">
+                    Transactional
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-transactional">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    3Forge offers robust transactional data handling, ensuring seamless integration and real-time processing of high-volume, time-sensitive data.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    Our platform provides detailed transaction tracking and analysis, enabling businesses to monitor and optimize their operational workflows efficiently.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/main-14.png" alt="3forge Dashboard" loading="lazy">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-risk" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow" style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-4xl md:text-7xl font-light text-modaltitle">
+                    Risk
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-risk">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    3Forge enhances risk management through its advanced analytics and real-time monitoring tools, helping users identify and mitigate potential threats. 
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    Our platform's comprehensive risk assessment features support proactive decision-making, ensuring compliance and safeguarding against financial and operational risks.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/3forgedatabase.png" alt="3forge Dashboard" loading="lazy">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+  <div id="modal-image-1" class="hidden fixed inset-0 items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden">
+        <button class="absolute top-2 right-2 text-white text-2xl font-bold p-4" data-modal-hide="modal-image-1">X</button>
+        <img src="images/dashboardsc2.png" alt="Expanded Image 1" class="max-w-full max-h-full">
+    </div>
+</div>
+<div id="modal-image-2" class="hidden fixed inset-0 items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden">
+        <button class="absolute top-2 right-2 text-white text-2xl font-bold p-4" data-modal-hide="modal-image-2">X</button>
+        <img src="images/dashboardsc1.png" alt="Expanded Image 2" class="max-w-full max-h-full">
+    </div>
+</div>
+      <div id="modal-image-3" class="hidden fixed inset-0 items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden">
+        <button class="absolute top-2 right-2 text-white text-2xl font-bold p-4" data-modal-hide="modal-image-3">X</button>
+        <img src="images/new-styles.gif" alt="Expanded Image 3" class="max-w-full max-h-full">
+    </div>
+</div>
+<div id="modal-image-4" class="hidden fixed inset-0 items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden">
+        <button class="absolute top-2 right-2 text-white text-2xl font-bold p-4" data-modal-hide="modal-image-4">X</button>
+        <img src="images/dashboardsc3.png" alt="Expanded Image 4" class="max-w-full max-h-full">
+    </div>
+</div>
+<div id="modal-image-5" class="hidden fixed inset-0 items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden">
+        <button class="absolute top-2 right-2 text-white text-2xl font-bold p-4" data-modal-hide="modal-image-5">X</button>
+        <img src="images/3forgecomplex.png" alt="Expanded Image 5" class="max-w-full max-h-full">
+    </div>
+</div>
+  <div id="modal-image-6" class="hidden fixed inset-0 items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden">
+        <button class="absolute top-2 right-2 text-white text-2xl font-bold p-4" data-modal-hide="modal-image-6">X</button>
+        <img src="images/dashboardsc2.png" alt="Expanded Image 1" class="max-w-full lg:max-w-[1377px] max-h-full">
+    </div>
+</div>
+<div id="modal-image-7" class="hidden fixed inset-0 items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden">
+        <button class="absolute top-2 right-2 text-white text-2xl font-bold p-4" data-modal-hide="modal-image-7">X</button>
+        <img src="images/dashboardsc1.png" alt="Expanded Image 2" class="max-w-full lg:max-w-[1377px] max-h-full">
+    </div>
+</div>
+      <div id="modal-image-8" class="hidden fixed inset-0 items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden">
+        <button class="absolute top-2 right-2 text-white text-2xl font-bold p-4" data-modal-hide="modal-image-8">X</button>
+        <img src="images/new-styles.gif" alt="Expanded Image 3" class=" md:w-[850px] lg:w-[1377px] max-h-full">
+    </div>
+</div>
+<div id="modal-image-9" class="hidden fixed inset-0 items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden">
+        <button class="absolute top-2 right-2 text-white text-2xl font-bold p-4" data-modal-hide="modal-image-9">X</button>
+        <img src="images/dashboardsc3.png" alt="Expanded Image 4" class="max-w-full lg:max-w-[1377px] max-h-full">
+    </div>
+</div>
+<div id="modal-image-10" class="hidden fixed inset-0 items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden">
+        <button class="absolute top-2 right-2 text-white text-2xl font-bold p-4" data-modal-hide="modal-image-10">X</button>
+        <img src="images/3forgecomplex.png" alt="Expanded Image 5" class="max-w-full lg:max-w-[1377px] max-h-full">
+    </div>
+</div>
+</div>
+
+	<f1:script src="js/flowbite.min.js" nonce="true"/>
+	<f1:script src="cookiebutton.js" nonce="true"/>
+	<f1:script src="inline" nonce="true"/>
+			// Function to set a custom cookie indicating the user's choice regarding cookies
+			function setCookieHubCookie(value) {
+			    // Set a cookie named 'cookiehub' with the provided value
+			    document.cookie = 'cookiehub=' + value + '; expires=' + calculateExpirationDate() + '; path=/';
+			}
+			
+			// Function to calculate the expiration date for the cookie (30 days from the current day)
+			function calculateExpirationDate() {
+			    var currentDate = new Date();
+			    var expirationDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 days in milliseconds
+			    return expirationDate.toUTCString();
+			}
+			
+			// Check if the custom cookie indicating the user's choice regarding cookies is set
+			window.addEventListener('load', function() {
+			    var cookieValue = getCookie('cookiehub');
+			    if (!cookieValue) {
+			        // If the custom cookie is not set, display the CookieHub banner
+			        var cpm = {};
+			        window.cookiehub.load(cpm);
+			    }
+			});
+			
+			// Set the custom cookie when the "Accept All Cookies" or "Deny All Cookies" button is clicked
+			document.addEventListener('click', function(event) {
+			    var target = event.target;
+			    if (target.classList.contains('ch2-allow-all-btn')) {
+			        // Set the custom cookie to indicate acceptance of cookies
+			        setCookieHubCookie('allow');
+			    } else if (target.classList.contains('ch2-deny-all-btn')) {
+			        // Set the custom cookie to indicate denial of all cookies
+			        setCookieHubCookie('deny');
+			    }
+			});
+	</script>
+	<f1:script src="inline" nonce="true"/>
+		var count = 0; 
+		function openCookieHubWindow() {
+			if (count == 0) {
+				window.cookiehub.load();
+				count++;
+			}
+			if (count >= 1) {			
+				window.cookiehub.openDialog();
+				count++;
+			}
+		}
+	</script>
+	<f1:script type="text/javascript"
+		src="../js/widget.js" nonce="true"/>
+	<f1:script type="text/javascript" src="inline" nonce="true"/>
+	    GartnerPI_Widget({
+	        size: "line",
+	        theme: "dark",
+	        sourcingLink: "https://gtnr.io/iKfnxw3cA",
+	        widget_id: "ZjA4NTVhMzUtZWUxZi00YmZhLWJmNGEtMWQ4YzU1YjI1ZjUy",
+	        version: "2",
+	        container: document.getElementById("gartner-widget")
+	    });
+	</script>
+	
+	<f1:script src="inline" nonce="true"/>
+		let lastScrollTop = 0;
+		let initialLoad = true;
+	
+		const bottom = document.getElementById("bottomnav");
+		const lowerhalf = document.getElementById("bottomlower");
+		const bottomAnchor = document.getElementById("bottomanchor");
+		bottom.style.transform = "translate3d(0, 0, 0)";
+	
+		const banner = document.getElementById("sticky-banner");
+		const closeButton = banner.querySelector('[data-dismiss-target="#sticky-banner"]');
+		const navbar = document.getElementById("navbarwhole");
+		const startingElement = document.getElementById("starting");
+	
+		function removeClass(element, className) {
+		    element.classList.remove(...className.split(" "));
+		}
+	
+		startingElement.style.paddingTop = banner.style.display === "none" ? "88px" : "131px";
+	
+		closeButton.addEventListener("click", () => {
+		    // Hide the banner
+		    banner.style.display = "none";
+	
+		    // Adjust navbar styles
+		    removeClass(navbar, "mt-[2.7rem]");
+		    navbar.style.marginTop = "0";
+	
+		    // Adjust starting padding
+		    startingElement.style.paddingTop = "88px";
+		});
+	
+		function updateLayout() {
+		    const top = document.getElementById("topnav");
+		
+		    if (window.innerWidth < 1024 && top.style.visibility === "hidden") {
+		        lowerhalf.style.height = "5rem";
+		        bottomAnchor.style.marginTop = "0rem";
+		    } else if (window.innerWidth < 1024) {
+		        lowerhalf.style.height = "";
+		        bottomAnchor.style.removeProperty("margin-top");
+		    }
+		      else {
+		    	bottomAnchor.style.removeProperty("margin-top");
+		    }
+		    if (window.innerWidth >= 1024 && top.style.visibility === "hidden"){
+		        bottomAnchor.style.marginTop = "0rem";
+		    }
+   		    if (window.innerWidth >= 1024 && top.style.visibility === "visible"){
+		        bottomAnchor.style.marginTop = "-2rem";
+		    }
+		}
+	
+		window.onscroll = function () {
+		    const top = document.getElementById("topnav");
+	
+		    if (window.innerWidth >= 1024) {
+		        if (!initialLoad) {
+		            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+	
+		            if (currentScroll > lastScrollTop) {
+		                // Scrolling down
+		                top.style.position = "fixed";
+		                top.style.width = "100%";
+		                top.style.zIndex = "100";
+		                top.style.transform = "translate3d(0, -100%, 0)";
+		                top.style.visibility = "hidden";
+		                top.style.transition = "transform 0.2s ease-out";
+	
+		                navbar.style.height = "5.125rem";
+	
+		                bottom.style.position = "fixed";
+		                bottom.style.width = "100%";
+		                bottom.style.zIndex = "100";
+		                bottom.style.transform = "translate3d(0, 0, 0)";
+		                lowerhalf.style.height = "5rem";
+		            } else {
+		                // Scrolling up
+		                top.style.transition = "transform 0.2s ease-in";
+		                top.style.position = "fixed";
+		                top.style.width = "100%";
+		                top.style.zIndex = "100";
+		                top.style.transform = "translate3d(0, 0, 0)";
+		                top.style.visibility = "visible";
+	
+		                navbar.style.height = "6.688rem";
+	
+		                bottom.style.position = "fixed";
+		                bottom.style.width = "100%";
+		                bottom.style.zIndex = "100";
+		                bottom.style.transform = "translate3d(0, 45px, 0)";
+		                lowerhalf.style.height = "auto";
+		            }
+	
+		            lastScrollTop = Math.max(0, currentScroll);
+		        }
+	
+		        initialLoad = false;
+		    }
+	
+		    // Apply the layout update for small screens
+		    updateLayout();
+		};
+	
+		window.addEventListener("resize", updateLayout);
+		
+	</script>
+
+    <f1:script src="inline" nonce="true"/>
+      document.addEventListener("DOMContentLoaded", () => {
+	    const sections = document.querySelectorAll('.transition-section');
+	
+	    // Function to determine the threshold based on screen size
+	    const getThreshold = () => {
+	        const width = window.innerWidth;
+	        //console.log(width);
+	        if (width < 600) {
+	            return 0.1; // Smaller screens
+	        } else if (width < 1200) {
+	            return 0.2; // Medium screens
+	        } else if (width < 1600) {
+	            return 0.25; // Larger screens
+	        }
+      	      else {
+	            return 0.3; // Larger screens
+	        }
+	    };
+	
+	    // Initial observer options
+	    const observerOptions = {
+	        root: null, // Use the viewport as the root
+	        rootMargin: '0px',
+	        threshold: getThreshold()
+	    };
+	
+	    // Function to create a new observer with updated options
+	    const createObserver = () => {
+	        return new IntersectionObserver((entries, observer) => {
+	            entries.forEach(entry => {
+	                if (entry.isIntersecting) {
+	                    entry.target.classList.add('visible');
+	                    observer.unobserve(entry.target); // Stop observing once it's visible
+	                }
+	            });
+	        }, observerOptions);
+	    };
+	
+	    let observer = createObserver();
+	
+	    // Observe each section
+	    sections.forEach(section => {
+	        observer.observe(section);
+	    });
+	
+	    // Update observer on window resize
+	    window.addEventListener('resize', () => {
+	        observer.disconnect(); // Disconnect the old observer
+	        observerOptions.threshold = getThreshold(); // Update the threshold
+	        observer = createObserver(); // Create a new observer
+	        sections.forEach(section => {
+	            if (!section.classList.contains('visible')) {
+	                observer.observe(section); // Re-observe sections that are not visible
+	            }
+	        });
+	    });
+	});
+    </script>
+
+	<f1:script src="inline" nonce="true"/>
+	    document.addEventListener('DOMContentLoaded', () => {
+	    	initModals();
+	        const overlay = document.getElementById('dark-overlay');
+	
+	        // Function to toggle modal visibility
+	        function toggleModal(modalId) {
+	            const modal = document.getElementById(modalId);
+	            modal.classList.toggle('hidden');
+	            modal.classList.toggle('flex');
+	            overlay.classList.toggle('hidden');
+	        }
+	
+	        // Event listener for messages from the iframe
+	        window.addEventListener('message', function(event) {
+	            if (event.data && event.data.cabinId) {
+	                const modalId = `modal-${event.data.cabinId}`;
+	                toggleModal(modalId);
+	            }
+	        });
+	        
+            const images = document.querySelectorAll('img[id="scroll-img"]');
+		    images.forEach((img, index) => {
+		        img.addEventListener('click', () => {
+		            const modalId = `modal-image-${index + 1}`;
+		            toggleModal(modalId);
+		        });
+		    });
+			
+	        // Event listeners for modal buttons to hide the modal
+	        document.querySelectorAll('[data-modal-hide]').forEach(button => {
+	            button.addEventListener('click', () => {
+	                const modalId = button.getAttribute('data-modal-hide');
+	                toggleModal(modalId);
+	            });
+	        });
+	    });
+	</script>
+
+	<f1:script src="inline" nonce="true"/>
+	    document.addEventListener('DOMContentLoaded', () => {
+	        // Initialize the first carousel
+	        const carouselElementOne = document.getElementById('quote-carousel');
+	
+	        const optionsOne = {
+	            defaultPosition: 0,
+	            interval: 12000,
+	            indicators: {
+	                activeClasses: 'bg-orange-500',
+	                inactiveClasses: 'bg-black/50',
+	                items: [
+	                    { position: 0, el: document.getElementById('carousel-indicator-1') },
+	                    { position: 1, el: document.getElementById('carousel-indicator-2') },
+	                ]
+	            },
+	        };
+	
+	        const itemsOne = [
+	            { position: 0, el: document.getElementById('carousel-item-1') },
+	            { position: 1, el: document.getElementById('carousel-item-2') },
+	        ];
+	
+	        const carouselOne = new Carousel(carouselElementOne, itemsOne, optionsOne);
+	
+	        carouselOne.cycle();
+	
+	        // Initialize the second carousel (commented out for now)
+	        /*
+	        const carouselElementTwo = document.getElementById('usecase-carousel');
+	
+	        const optionsTwo = {
+	            defaultPosition: 0,
+	            interval: 10000,
+	            indicators: {
+	                activeClasses: 'bg-orange-500',
+	                inactiveClasses: 'bg-black/50',
+	                items: [
+	                    { position: 0, el: document.getElementById('carousel-indicator-4') },
+	                    { position: 1, el: document.getElementById('carousel-indicator-5') },
+	                    { position: 2, el: document.getElementById('carousel-indicator-6') },
+	                    { position: 3, el: document.getElementById('carousel-indicator-7') },
+	                ]
+	            },
+	        };
+	
+	        const itemsTwo = [
+	            { position: 0, el: document.getElementById('carousel-item-4') },
+	            { position: 1, el: document.getElementById('carousel-item-5') },
+	            { position: 2, el: document.getElementById('carousel-item-6') },
+	            { position: 3, el: document.getElementById('carousel-item-7') },
+	        ];
+	
+	        const carouselTwo = new Carousel(carouselElementTwo, itemsTwo, optionsTwo);
+	
+	        carouselTwo.cycle();
+	        */
+	    });
+	</script>
+    
+    <f1:script type="text/javascript" src="js/email.min.js" nonce="true"/>
+	<f1:script type="text/javascript" src="inline" nonce="true"/>
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "I3dJ3vzRikpLEq5W-",
+            });
+        })();
+    </script>
+    
+   	<f1:script src="js/jquery-3.7.1.min.js" nonce="true"/>
+	<f1:script src="js/jquery.main.js" nonce="true"/>
+    
+        <f1:script type="text/javascript" src="inline" nonce="true"/>
+		document.getElementById("submit").addEventListener('click', recaptcha, false);
+		var UPPER_RANGE = 11;
+		function recaptcha(e) {
+			e.preventDefault(); // may be unnecessary
+			$("#contact-modal").slideDown();
+			document.getElementById("recaptcha-message").innerText = "";
+			prepareQuestion();
+		}
+		
+		function prepareQuestion() {
+			// create two operands
+			var leftOperand = Math.floor(Math.random() * UPPER_RANGE);
+			var rightOperand = Math.floor(Math.random() * UPPER_RANGE);
+			document.getElementById("left-operand").innerText = leftOperand;
+			document.getElementById("right-operand").innerText = rightOperand;
+			
+			// create answer choices
+			var numOfChoices = 4;
+			var correctAnswer = leftOperand * rightOperand;
+			var choices = new Set();
+			choices.add(correctAnswer);
+			while (choices.size != numOfChoices)
+				choices.add(generateWrongChoice(choices));
+			
+			//create radio buttons with answer choices
+			clearExistingChoices();
+			var choicesArray = Array.from(choices);
+			shuffleChoices(choicesArray);
+			createRadioButtons(choicesArray);
+		}
+		function clearExistingChoices() {
+			var radioContainer = document.getElementById("answers-container");
+			while(radioContainer.firstChild)
+				radioContainer.removeChild(radioContainer.lastChild);
+		}
+		/* Randomize array in-place using Durstenfeld shuffle algorithm source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array */
+		function shuffleChoices(array) {
+		    for (var i = array.length - 1; i > 0; i--) {
+		        var j = Math.floor(Math.random() * (i + 1));
+		        var temp = array[i];
+		        array[i] = array[j];
+		        array[j] = temp;
+		    }
+		}
+		
+		function generateWrongChoice(existingChoices) {
+			var newChoice = Math.floor(Math.random() * UPPER_RANGE) * Math.floor(Math.random() * UPPER_RANGE);
+			while (existingChoices.has(newChoice))
+				newChoice = Math.floor(Math.random() * UPPER_RANGE) * Math.floor(Math.random() * UPPER_RANGE);
+			return newChoice;
+		}
+		
+		function createRadioButtons(choicesArray) {
+			var radioContainer = document.getElementById("answers-container");
+			var labelIdPrefix = "label-";
+			for (var i = 0; i < choicesArray.length; i++) {
+				var label = document.createElement("label");
+				var input = document.createElement("input");
+				label.setAttribute("class", "choice-label");
+				label.setAttribute("for", labelIdPrefix + i);
+				label.appendChild(document.createTextNode("" + choicesArray[i]));
+				
+				input.setAttribute("type", "radio");
+				input.setAttribute("id", labelIdPrefix + i);
+				input.setAttribute("name", "choice");
+				input.setAttribute("value", choicesArray[i]);
+				
+				radioContainer.appendChild(label);
+				radioContainer.appendChild(input);
+			}
+		}
+		
+		function isAnswerCorrect() {
+			var expected = 	parseInt(document.getElementById("left-operand").innerText) * parseInt(document.getElementById("right-operand").innerText);
+			var radios = document.getElementsByName("choice");
+			var actual = null;
+			for (var i = 0; i < radios.length; i++)
+				if (radios[i].checked)
+					actual = parseInt(radios[i].value);
+			if (actual === null)
+				return null;
+			return expected === actual;
+		}
+		
+		$("#modal-submit-button").on('click', function() {
+			document.getElementById("recaptcha-message").innerText = "";
+			if (isAnswerCorrect() === null)
+				document.getElementById("recaptcha-message").innerText = "Please select one of the following choices.";
+			else if (isAnswerCorrect()) {
+				closeModal();
+				validateNewsletterFormAndSubmit();
+			} else {
+				document.getElementById("recaptcha-message").innerText = "Wrong answer, please try again.";
+				prepareQuestion();
+			}
+		});
+		
+		function validateNewsletterFormAndSubmit() {
+			var emailInput = document.getElementById('EMBED_FORM_EMAIL_LABEL');
+	        var email = emailInput.value;
+	        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	        
+          	var honeypot3 = document.querySelector('input[name="username"]').value;
+     	  	var honeypot4 = document.querySelector('input[name="state"]').value;
+     	  	
+	  		if (honeypot3 || honeypot4) {
+	            alert('Spam detected.');
+	            return false;
+	      	}
+	
+	        if (!emailPattern.test(email)) {
+	            emailInput.value = 'Invalid email entered.';
+	            return false;
+	        } else {
+	
+	            emailjs.sendForm('newsletter_service', 'newsletter_form', document.getElementById('email-signup'))
+	                .then(() => {
+	                    console.log('SUCCESS!');
+	                    window.location.href = "thanks";
+	                }, (error) => {
+	                    console.log('FAILED...', error);
+	                    alert('There was an error with your submission. Please try again.');
+	                });
+	        }
+	}
+		
+		$(".close").on('click', closeModal);
+		
+		window.addEventListener("click", function(event) {
+			if (event.target == document.getElementById("contact-modal")) {
+				closeModal();
+			}
+		});
+		
+		function closeModal() {
+			$("#contact-modal").slideUp();
+		}
+		
+		// event listener for radio button change
+		$("#answers-container").on("change", function() {
+			document.getElementById("recaptcha-message").innerText = "";
+		});
+	</script>
+	
+	<f1:script src="inline" nonce="true"/>
+	 cookiesets = document.getElementById("cookiesettings");
+	 
+	 cookiesets.addEventListener("click", function(event){
+	 	event.preventDefault();
+	 	openCookieHubWindow(); 
+	 	return false;
+	 });
+	</script>
+	
+	<f1:script src="inline" nonce="true"/>
+       document.addEventListener("DOMContentLoaded", function() {
+        const buttons = document.querySelectorAll(".mobb");
+        const contents = document.querySelectorAll(".mobbcontent");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function() {
+                // Get the corresponding content section
+                const contentId = button.id + "-content";
+                const contentSection = document.getElementById(contentId);
+
+                // Check if the content section is already visible
+                if (!contentSection.classList.contains("hidden")) {
+                    // If it's visible, hide it
+                    contentSection.classList.add("hidden");
+                } else {
+                    // Otherwise, hide all content sections first
+                    contents.forEach(content => content.classList.add("hidden"));
+                    // Then show the clicked button's corresponding content section
+                    contentSection.classList.remove("hidden");
+                }
+            });
+        });
+   	  });
+	</script>
+	
+	<f1:script src="inline" nonce="true"/>
+		document.addEventListener("DOMContentLoaded", function() {
+			const banner2 = document.getElementById('announcement-banner');
+			const closeButton2 = document.getElementById('close-banner');
+			let isBannerClosed = false;
+			
+			// Close button functionality
+			closeButton2.addEventListener('click', () => {
+			  banner2.style.display = 'none';
+			  isBannerClosed = true; // Mark the banner as closed
+			});
+			
+			// Scroll functionality
+			window.addEventListener('scroll', () => {
+			  if (isBannerClosed) return; // Don't do anything if the banner is closed
+			
+			  const scrollY = window.scrollY;
+			  const bannerHeight = banner2.offsetHeight;
+			
+			  if (scrollY > bannerHeight) {
+			    banner2.classList.add('hidden-banner'); // Hide the banner
+			  } else {
+			    banner2.classList.remove('hidden-banner'); // Show the banner
+			  }
+			});
+		});
+	</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "2.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2020"/>
+  <title>AMI Styling Guide</title>
+  <link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="AMI Styling Guide">
+        <span>AMI Styling Guide</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+  <h1>AMI Styling Guide</h1>
+  <p>In this example, we will guide you through the various styling options that are available in AMI.</p>
+  <p> </p>
+  <p>Assume that we have a plot of a <span style="font-weight: bold;">sine</span> function as below:</p>
+  <p> </p>
+  <p><img alt="" border="0" height="385" src="../assets/images/style1.png" style="border: none;" width="669"/></p>
+  <p> </p>
+  <p>This is a simple <span style="font-weight: bold;">Line</span> plot and we can explore the visualization setup by either pressing [Center] <span style="font-weight: bold;">Green Button</span> &gt; <span style="font-weight: bold;">Plot</span> &gt; <span style="font-weight: bold;">Edit Plot</span> or [Top Right] Green Button &gt; Edit Plot. By doing any of the previous steps, we open the <span style="font-weight: bold;">Edit Rendering Layer</span> window</p>
+  <p> </p>
+  <p><img alt="" border="0" height="469" src="../assets/images/style2.png" style="border: none;" width="943"/></p>
+  <p> </p>
+  <p>Here we can specify the variables which are being plotted on the X axis and the Y axis. In our example, <span style="font-family: &#39;Courier New&#39;, monospace;">degrees</span> and <span style="font-family: &#39;Courier New&#39;, monospace;">sine</span>. There are also some default values for the <span style="font-weight: bold;">Marker Size</span> and <span style="font-weight: bold;">Line Size </span>of the plot in the number of pixels (px). We can set either of these features to the desired values. For example, setting <span style="font-weight: bold;">Marker Size</span> to 10 px.</p>
+  <p> </p>
+  <p><img alt="" border="0" src="../assets/images/style3.png" style="border: none;"/></p>
+  <p> </p>
+  <p>Although the <span style="font-weight: bold;">Line</span> tab offers these basic styling features, we can do much more through the <span style="font-weight: bold;">Advanced</span> tab.</p>
+  <p> </p>
+  <p>First, we can adjust the color, shape, and size of the <span style="font-weight: bold;">Markers</span> by using the <span style="font-weight: bold;">Shape</span>, <span style="font-weight: bold;">Color</span>, <span style="font-weight: bold;">Width</span> (px) fields under the <span style="font-weight: bold;">Markers </span>section.</p>
+  <p> </p>
+  <p><img alt="" border="0" src="../assets/images/style4.png" style="border: none;"/></p>
+  <p> </p>
+  <p>We can also remove the line which connects the data points and keep only the markers by leaving the <span style="font-weight: bold;">Line Size</span> (<span style="font-weight: bold;">px</span>) from the <span style="font-weight: bold;">LINES</span> section empty.</p>
+  <p> </p>
+  <p><img alt="" border="0" src="../assets/images/style5.png" style="border: none;"/></p>
+  <p> </p>
+  <p>We may as well keep only the line and also adjust its color, width, and dashes. E.g., leave <span style="font-weight: bold;">Shape </span>(under <span style="font-weight: bold;">MARKERS</span>), set <span style="font-weight: bold;">Line Color</span> to <b id="docs-internal-guid-ee5a6992-7fff-5ef7-5cca-5d322ebc0d7d"><span style="font-size: 11pt; font-family: &#39;Courier New&#39;; font-weight: 400;">#ff007f</span><span style="font-weight: 400; font-family: Arial, sans-serif;">, </span><span style="font-family: Arial, sans-serif; font-weight: bold;">Line Size </span><span style="font-family: Arial, sans-serif; font-weight: normal;">(px) to 2 and </span><span style="font-family: Arial, sans-serif; font-weight: bold;">Line Dash Size </span><span style="font-family: Arial, sans-serif; font-weight: normal;">to 2 (under </span><span style="font-family: Arial, sans-serif; font-weight: bold;">LINES</span><span style="font-family: Arial, sans-serif; font-weight: normal;">)</span></b></p>
+  <p> </p>
+  <p style="font-family: Arial, sans-serif;"><img alt="" border="0" src="../assets/images/style6.png" style="border: none;"/></p>
+  <p style="font-family: Arial, sans-serif;"> </p>
+  <p style="font-family: Arial, sans-serif;">By Clicking the <span style="font-weight: bold;">Green Button</span> of the chart and then navigating through <span style="font-weight: bold;">Style</span>, we can change the background color of the chart</p>
+  <p style="font-family: Arial, sans-serif;"> </p>
+  <p style="font-family: Arial, sans-serif;"><img alt="" border="0" src="../assets/images/style7.png" style="border: none;"/></p>
+  <p style="font-family: Arial, sans-serif;"> </p>
+  <p style="font-family: Arial, sans-serif;"><b id="docs-internal-guid-216ddd72-7fff-12c2-4023-ce5207ea5521" style="font-weight: normal;"><span style="font-size: 11pt; font-family: Arial; font-weight: 400;">By selecting square markers and getting advantage of the</span> <span style="font-size: 11pt; 
+	 font-family: Arial; font-weight: 700;">MARKER POSITION OVERRIDE</span> <span style="font-size: 11pt; font-family: Arial; font-weight: 400;">option (in this case setting</span> <span style="font-size: 11pt; font-family: Arial; 
+									 font-weight: 700;">Bottom</span> <span style="font-size: 11pt; font-family: Arial; font-weight: 400;">to 0) we get a bar chart style</span></b></p>
+  <p style="font-family: Arial, sans-serif;"> </p>
+  <p style="font-weight: normal; font-size: 11pt; font-family: Arial;"><img alt="" border="0" src="../assets/images/style8.png" style="border: none;"/></p>
+  <p style="font-weight: normal; font-size: 11pt; font-family: Arial;"> </p>
+  <p><span style="font-weight: bold;">NOTE</span>: A bar chart styling option as the above is not the same as a <span style="font-weight: bold;">Bar Chart</span> charting option. The first one is a visualization option which is created upon markers&#39; special style and the data are numeric. The second groups data into categories, which can be either numeric or nonnumeric. It also creates a special axis for those categories. A <span style="font-weight: bold;">Line</span> or <span style="font-weight: bold;">Scatter</span> chart should not be blended with a <span style="font-weight: bold;">Bar Chart</span></p>
+  <p> </p>
+  <p>Instead of a fixed color for our line we can select <span style="font-weight: bold;">Gradient</span> and provide a quantity (in this case <span style="font-weight: bold;">sine</span>) which will determine the range of values based on which the gradient is changing colors we get the following.</p>
+  <p> </p>
+  <p><img alt="" border="0" src="../assets/images/style9.png" style="border: none;"/></p>
+  <p> </p>
+  <p>The default <span style="font-weight: bold;">Gradient</span> option uses colors from green to red, but there is the option to specify <span style="font-weight: bold;">Custom Gradient</span></p>
+  <p> </p>
+  <p><img alt="" border="0" src="../assets/images/Screenshot 2020-10-19 135447.png" style="border: none;"/></p>
+  <p> </p>
+  <p><img alt="" border="0" src="../assets/images/style10.png" style="border: none; cursor: nwse-resize;"/></p>
+  <p> </p>
+  <p> </p>
+  <p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><b id="docs-internal-guid-d5b5f496-7fff-b110-3801-8afb533207f9" style="font-weight: normal;"><span style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; 
+	 font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; 
+	 white-space: pre-wrap; text-decoration: none; ">Alternatively, we could select</span> <span style="font-size: 11pt; font-family: Arial; 
+							 color: #000000; background-color: transparent; 
+							 font-weight: 700; font-style: normal; font-variant: normal; 
+							 vertical-align: baseline; white-space: pre-wrap; 
+							 text-decoration: none; ">Formula</span> <span style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; 
+	 font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; 
+	 white-space: pre-wrap; text-decoration: none; ">and then apply a</span> <span style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; 
+		 font-weight: 700; font-style: normal; font-variant: normal; vertical-align: baseline; 
+		 white-space: pre-wrap; text-decoration: none; ">gradient</span> <span style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; 
+		 font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; 
+		 white-space: pre-wrap; text-decoration: none; ">function, e.g.</span><span style="font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; 
+	 font-weight: 400; font-style: normal; font-variant: normal; vertical-align: baseline; 
+	 white-space: pre-wrap; text-decoration: none; "></span><br/>
+      <span style="font-size: 11pt; font-family: &#39;Courier New&#39;; color: #000000; 
+			 background-color: transparent; font-weight: 400; font-style: normal; 
+			 font-variant: normal; vertical-align: baseline; white-space: pre-wrap; 
+			 text-decoration: none; ">gradient(sine, -1, &quot;#ff7f00&quot;, 1, &quot;#007fff&quot;)</span></b></p>
+  <p><b id="docs-internal-guid-d5b5f496-7fff-b110-3801-8afb533207f9" style="font-weight: normal;"><span style="line-height: 1.38; font-size: 11pt; font-family: Arial; font-weight: 400;"><br/>
+        Moreover, by selecting a second line with the use of</span><span style="line-height: 1.38;"> </span><span style="line-height: 1.38; font-size: 11pt; font-family: Arial; 
+				 font-weight: 700;">X2</span><span style="line-height: 1.38; 
+													 font-size: 11pt; font-family: Arial; 
+													 font-weight: 400;">,</span><span style="line-height: 1.38;"> </span><span style="line-height: 1.38; 
+												 font-size: 11pt; font-family: Arial; 
+												 font-weight: 700;">Y2</span><span style="line-height: 1.38;"> </span><span style="line-height: 1.38; 
+												 font-size: 11pt; font-family: Arial; 
+												 font-weight: 400;">under</span><span style="line-height: 1.38;"> </span><span style="line-height: 1.38; 
+												 font-size: 11pt; font-family: Arial; 
+												 font-weight: 700;">AREA</span><span style="line-height: 1.38;"> </span><span style="line-height: 1.38; 
+												 font-size: 11pt; font-family: Arial; 
+												 font-weight: 400;">options and corresponding styling, we can have an </span></b><span style="font-weight:bold;"><b style="font-weight: normal;"><span style="line-height: 1.38;font-size: 11pt;font-family: Arial;font-weight: bold">Area Chart</span></b></span><b style="font-weight: normal;"><span style="line-height: 1.38; 
+												 font-size: 11pt; font-family: Arial; 
+												 font-weight: 400;">.</span></b>   <img alt="" border="0" src="../assets/images/Screenshot 2020-10-27 100150.jpg" style="border: none;"/>   <img alt="" border="0" src="../assets/images/style11.png" style="border: none;"/></p>
+  <p> </p>
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

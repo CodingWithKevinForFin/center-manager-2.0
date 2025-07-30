@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = ".";
+    gCommonRootRelPath = ".";
+    gTopicId = "10.0_7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="./template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="./template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="./whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="./template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="./template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="AMI Custom Java Plugins.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Custom Timer (Ami One, Ami Center)</title>
+<link rel="StyleSheet" href="assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Custom Timer (Ami One, Ami Center)">
+        <span>Custom Timer (Ami One, Ami Center)</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Custom Timer (AMI One, AMI Center)</h1>
+<h2 style="text-decoration: none; "><span>Overview</span></h2>
+<p style="margin-bottom: .0001pt;">AMI&#39;s in-memory database is a comprehensive 
+ and realtime SQL storage engine that can be extended using Java Plugins.  The 
+ timer plugin is a factory used to create timers as defined in the imdb 
+ schema.</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;"> </p>
+<h2 style="text-decoration: none; "><span style="text-decoration: none; ">Example</span></h2>
+<p style="margin-bottom: .0001pt;">Consider the Ami Script example:</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">CREATE 
+ TIMER mytimer OFTYPE <b><i>MyStartupTimer</i></b> ON &quot;0 0 0 0 MON-FRI 
+ UTC &quot; USE myoption=&quot;some_value&quot;</span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;">The above sample command will cause 
+ AMI to:</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<ol style="list-style: decimal;">
+	<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+													 font-family: Arial, sans-serif;">Look 
+	 for a registered AmiStoredProcFactory with the id &quot;MyStartupTimer&quot;.  <span courier="" style="font-size: 10.0pt; line-height: 115%;"> </span></p></li>
+	<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+													 font-family: Arial, sans-serif;">Call 
+	 newTimer()  on the factory. <span courier="" style="font-size: 10.0pt; 
+												 line-height: 115%;"> </span></p></li>
+	<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+													 font-family: Arial, sans-serif;">Call 
+	 startup(...) on the returned, newly generated storedproc. Note that 
+	 the startup will contain the necessary bindings:<span courier="" style="font-size: 10.0pt; 
+															 line-height: 115%;"> </span></p></li>
+</ol>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 1.0in; text-indent: -.25in; font-family: Arial, sans-serif;"><span courier="" style="font-size: 10.0pt;">a.</span><span courier="" style="font-size: 10.0pt; 
+															 font: 7.0pt &#39;Times New Roman&#39;;"> </span> Timer 
+ name (ex: <i><span courier="" style="font-size: 8.0pt;">mytimer</span></i>)<span courier="" style="font-size: 10.0pt;"> </span></p>
+<p class="ListParagraphCxSpMiddle" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 1.0in; text-indent: -.25in; font-family: Arial, sans-serif;"><span courier="" style="font-size: 10.0pt;">b.</span><span courier="" style="font-size: 10.0pt; 
+															 font: 7.0pt &#39;Times New Roman&#39;;"> </span> Options 
+ (ex: <i><span courier="" style="font-size: 8.0pt;">myoption=some_value</span></i>)<span courier="" style="font-size: 10.0pt;"> </span></p>
+<p class="ListParagraphCxSpLast" style="margin-top: 0in; margin-right: 0in; 
+	 margin-bottom: .0001pt; margin-left: 1.0in; text-indent: -.25in; font-family: Arial, sans-serif;"><span courier="" style="font-size: 10.0pt;">c.</span><span courier="" style="font-size: 10.0pt; 
+															 font: 7.0pt &#39;Times New Roman&#39;;"> </span>  Schedule, 
+ Priority, etc.<span courier="" style="font-size: 10.0pt;"> </span></p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-family: ; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-family: ; font-size: 12pt;"> </p>
+<h2><span style="text-decoration: none; ">Java interface (see javadoc for 
+ details)</span> <span courier="" style="font-size: 10.0pt; line-height: 115%;"> </span></h2>
+<p style="margin-bottom: .0001pt;"><span class="CourierRed">com.f1.ami.center.timers.AmiTimerFactory</span></p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-family: ; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt;"> </p>
+<h2 style="text-decoration: none; "><span style="text-decoration: none; ">Property 
+ name</span></h2>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt;"><span class="CourierRed">ami.db.timer.plugins=<i>comma_delimited_list_of_fully_qualified_java_class_names</i></span></p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-family: ; font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-family: ; font-size: 12pt;"> </p>
+<h2 style="text-decoration: none; "><span courier="" style="text-decoration: none; ">E</span><span style="text-decoration: none; ">xample - Java Code</span></h2>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><b><span style="color: #7F0055; font-weight: bold;">package</span></b> 
+ <u>com.demo</u>;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><b><span style="color: #7F0055; font-weight: bold;">import</span></b> 
+ java.util.ArrayList;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><b><span style="color: #7F0055; font-weight: bold;">import</span></b> 
+ java.util.Collection;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><b><span style="color: #7F0055; font-weight: bold;">import</span></b> 
+ java.util.List;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><b><span style="color: #7F0055; font-weight: bold;">import</span></b> 
+ <u>com.f1.ami.amicommon.AmiFactoryOption</u>;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><b><span style="color: #7F0055; font-weight: bold;">import</span></b> 
+ com.f1.container.ContainerTools;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><b><span style="color: #7F0055; font-weight: bold;">import</span></b> 
+ com.f1.utils.PropertyController;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><b><span style="color: #7F0055; font-weight: bold;">public</span></b> 
+ <b><span style="color: #7F0055; font-weight: bold;">class</span></b> <u>TestTimerFactory</u> 
+ <b><span style="color: #7F0055; font-weight: bold;">implements</span></b> 
+ <u>AmiTimerFactory</u> {</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <b><span style="color: #7F0055; font-weight: bold;">private</span></b> List&lt;<u>AmiFactoryOption</u>&gt; 
+ <span style="color: #0000C0;">options</span> = <b><span style="color: #7F0055; 
+														 font-weight: bold;">new</span></b> 
+ ArrayList&lt;<u>AmiFactoryOption</u>&gt;();</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <b><span style="color: #7F0055; font-weight: bold;">public</span></b> TestTimerFactory() 
+ {</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 2;">               </span> <span style="color: #3F7F5F;">//</span> <b><span style="color: #7F9FBF; 
+												 font-weight: bold;">TODO</span></b><span style="color: #3F7F5F;">Auto-generated method stub</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <span style="color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <b><span style="color: #7F0055; font-weight: bold;">public</span></b> <b><span style="color: #7F0055; font-weight: bold;">void</span></b> <u>init(ContainerTools</u> 
+ <u><span style="color: #6A3E3E;">tools</span></u><u>, PropertyController</u> 
+ <u><span style="color: #6A3E3E;">props</span></u><u>)</u> {</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 2;">               </span> <span style="color: #3F7F5F;">//</span> <b><span style="color: #7F9FBF; 
+												 font-weight: bold;">TODO</span></b><span style="color: #3F7F5F;">Auto-generated method stub</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <span style="color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <b><span style="color: #7F0055; font-weight: bold;">public</span></b> Collection&lt;<u>AmiFactoryOption</u>&gt; 
+ <u>getAllowedOptions()</u> {</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 2;">               </span> <b><span style="color: #7F0055; font-weight: bold;">return</span></b> <u><span style="color: #0000C0;">options</span></u>;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <span style="color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <b><span style="color: #7F0055; font-weight: bold;">public</span></b> <u>AmiTimer</u> 
+ <u>newTimer()</u> {</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 2;">               </span> <b><span style="color: #7F0055; font-weight: bold;">return</span></b> <b><span style="color: #7F0055; font-weight: bold;">new</span></b> <u>TestTimer</u>();</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <span style="color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <b><span style="color: #7F0055; font-weight: bold;">public</span></b> String 
+ <u>getPluginId()</u> {</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 2;">               </span> <b><span style="color: #7F0055; font-weight: bold;">return</span></b> <span style="color: #2A00FF;">&quot;TESTTIMER&quot;</span>;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;">}</p>
+<p class="MsoNormal" style="line-height: 115%; color: #C00000; mso-no-proof: yes; 
+	 font-family: Consolas, monospace; font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><b><span style="color: #7F0055; font-weight: bold;">package</span></b> 
+ <u>com.demo</u>;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><b><span style="color: #7F0055; font-weight: bold;">import</span></b> 
+ com.f1.ami.center.table.AmiImdb;</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><b><span style="color: #7F0055; font-weight: bold;">public</span></b> 
+ <b><span style="color: #7F0055; font-weight: bold;">class</span></b> <u>TestTimer</u> 
+ <b><span style="color: #7F0055; font-weight: bold;">extends</span></b> 
+ <u>AmiAbstractTimer</u> {</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <span style="color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <b><span style="color: #7F0055; font-weight: bold;">public</span></b> <b><span style="color: #7F0055; font-weight: bold;">void</span></b> <u>onTimer(</u><b><u><span style="color: #7F0055; font-weight: bold;">long</span></u></b> <u><span style="color: #6A3E3E;">scheduledTime</span></u><u>)</u> {</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 2;">               </span> <span style="color: #3F7F5F;">//</span> <b><span style="color: #7F9FBF; 
+												 font-weight: bold;">TODO</span></b><span style="color: #3F7F5F;">Auto-generated method stub</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <span style="color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <b><span style="color: #7F0055; font-weight: bold;">public</span></b> <b><span style="color: #7F0055; font-weight: bold;">void</span></b> <u>onSchemaChanged(AmiImdb</u> 
+ <u><span style="color: #6A3E3E;">imdb</span></u><u>)</u> {</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 2;">               </span> <span style="color: #3F7F5F;">//</span> <b><span style="color: #7F9FBF; 
+												 font-weight: bold;">TODO</span></b><span style="color: #3F7F5F;">Auto-generated method stub</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"> </p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <span style="color: #646464;">@Override</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> <b><span style="color: #7F0055; font-weight: bold;">protected</span></b> <b><span style="color: #7F0055; font-weight: bold;">void</span></b> <u>onStartup()</u> 
+ {</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 2;">               </span> <span style="color: #3F7F5F;">//</span> <b><span style="color: #7F9FBF; 
+												 font-weight: bold;">TODO</span></b><span style="color: #3F7F5F;">Auto-generated method stub</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;"><span style="mso-tab-count: 1;">       </span> }</p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal; 
+	 mso-layout-grid-align: none; text-autospace: none; font-family: Consolas, monospace; 
+	 font-size: 8pt;">}</p>
+<p class="MsoNormal" style="line-height: 115%; color: #C00000; mso-no-proof: yes; 
+	 font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<p class="MsoNormal" style="line-height: 115%; color: #C00000; mso-no-proof: yes; 
+	 font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<h2 style="text-decoration: none; "><font><span style="text-decoration: none; ">Example 
+ - Configuration</span></font></h2>
+<p style="margin-bottom: .0001pt; line-height: 115%;"><span class="CourierBlueStyle">ami.db.timer.plugins=com.demo.TestTimerFactory</span><span courier="" style="font-size: 8.0pt;"> </span></p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 8.0pt;"> </p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 8.0pt;"> </p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt;">================</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">TIMER 
+ PROCEDURES</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">================</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;"> </p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">__SCHEDULE_TIMER 
+ (TimerName String nonull, Delay long nonull)</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">runs 
+ a scheduled execution of timer with TimerName, Delay is in milliseconds 
+ from now</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">Example:</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">CALL 
+ __SCHEDULE_TIMER(&quot;t1&quot;,15000);</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;"> </p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">__SHOW_TIMER_ERROR 
+ (TimerName String nonull)</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">shows 
+ last error of timer with TimerName</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">Example:</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">CALL 
+ __SCHEDULE_TIMER_ERROR(&quot;t2&quot;);</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;"> </p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">__RESET_TIMER_STATS 
+ (TimerName String nonull,ExecutedStats boolean nonull, ErrorStats boolean 
+ nonull)</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">resets 
+ ExecutedCount and/or ErrorCount of timer with TimerName</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">Example:</p>
+<p style="margin-bottom: .0001pt; line-height: 115%; font-size: 12pt; font-family: Consolas, monospace;">CALL 
+ __RESET_TIMER_STATS(&quot;t1&quot;, true, false);</p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

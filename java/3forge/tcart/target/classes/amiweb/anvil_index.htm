@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<style>
+
+div{
+  position:absolute;
+}  
+
+body,textarea{
+  overflow:hidden;
+	font-family: arial;
+	font-size: 12px;
+	color:black;
+	background:#1f1f1f;
+}
+
+a{
+  font-size:10px;
+  color:#444444;
+}
+.block{
+  background:black;
+  width:26px;
+  height:26px;
+  border-width:1px;
+  border-style:solid;
+}
+
+#dialog {
+  width:392px;
+  height:200px;
+  border:1px solid black;
+  left: 50%;
+  top: 50%;
+  margin: -70px 0 0 -196px;
+  padding:0px;
+}
+#title {
+  left: 50%;
+  top: 50%;
+  margin: -230px 0px 0px -196px;
+  width:392px;
+  height:216px;
+}
+
+ul, ol, li
+{
+	list-style-type: none;
+}
+
+li
+{
+	margin: .75em;
+	padding-left: 20px;
+}
+fieldset
+{
+	position: relative;
+	float: left;
+	clear: both;
+	width: 100%;
+	margin: 0 0 -1em 0;
+	padding: 0 0 1em 0;
+}
+
+fieldset.login
+{
+	width: 350px;
+	clear: both;
+	margin-left: 275px;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+fieldset.login label
+{
+}
+
+
+fieldset.login fieldset.submit
+{
+	padding-left: 7em;
+	margin: 0;
+}
+
+fieldset.no-legend ol
+{
+	padding: 1em 1em 0 1em;
+}
+
+#login
+{
+	border: solid 1px #008800;
+	background: #008800;
+	color: #f1f1f1 !important;
+	text-decoration: none !important;
+	cursor: pointer;
+	padding:2px !important;
+	font-family: Gill Sans MT, Gill Sans, Arial, Helvetica, Sans-Serif;
+}
+
+.error{
+    color:#D80000;
+    font-weight:bold;
+}
+
+
+
+</style>
+
+<HEAD>
+  <link rel="icon" href="<f1:out value="${favIcon}"/>" />
+  <title>3Forge ANVIL</title>
+</HEAD>
+
+<body style="margin:0px;">
+<div style="position:top left;padding:10px"><a href='http://3forge.com'><img src="logo24.png"></a></div>
+<div style='width:100%;height:100%;text-align:center;opacity:1' id="footerOwner">
+  <div style="background:url('numbers45.png');overflow:hidden;background-size:100% 100%;z-index:1;" id="footer"'></div>
+  <div style="background:url('numbers45.png');overflow:hidden;background-size:100% 100%;z-index:2;" id="footer2"'></div>
+  <div style="background:url('numbers45.png');overflow:hidden;background-size:100% 100%;z-index:3;" id="footer3"'></div>
+  <div style="background:url('numbers45.png');overflow:hidden;background-size:100% 100%;z-index:3;" id="footer4"'></div>
+</div>
+<div id="dialog" style='z-index:4;'>
+<div style='left:0px;right:0px;top:0px;bottom:0px;background:white;border:0px solid black;opacity:.9'></div>
+				<form action="login" method='post'>
+  							<f1:if test="OH.eq(${resetPwd},Boolean.TRUE)">
+ANVIL
+<div style='left:20px;right:0px;top:10px;text-align:center' class='error'><f1:out value="${error}"/>&nbsp;</label></div>
+<div style='left:0px;right:0px;top: 20px;text-align:center'><img src='username.gif'></div>
+<div style='left:0px;right:0px;top: 40px;text-align:center'><B><input id="username" name="username" type="text" value="<f1:out value="${username}"/>"/></div>
+<div style='left:1px;right:0px;top: 70px;text-align:center'><img src='password.gif'></div>
+<div style='left:0px;right:0px;top: 90px;text-align:center'><B><input type='password' id="password" name="password" type="text" value="<f1:out value="${password}"/>"/></div>
+<div style='left:1px;right:0px;top:120px;text-align:center'>New Password:</div>
+<div style='left:0px;right:0px;top:140px;text-align:center'><B><input type='password' id="new_password" name="new_password" type="text" value=""/></div>
+<div style='left:0px;right:0px;top:170px;text-align:center'> <input type="submit" id="login" value="&nbsp;Change Password&nbsp;" title="Login" /></div>
+							<f1:else/>
+<div style='left:0px;right:0px;top:05px;text-align:center;font-size:22px' class=''>ANVIL</label></div>
+<div style='left:0px;right:0px;top: 30px;text-align:center'><img src='username.gif'></div>
+<div style='left:0px;right:0px;top: 50px;text-align:center'><B><input id="username" name="username" type="text" value="<f1:out value="${username}"/>"/></div>
+<div style='left:1px;right:0px;top: 90px;text-align:center'><img src='password.gif'></div>
+<div style='left:0px;right:0px;top:110px;text-align:center'><B><input type='password' id="password" name="password" type="text" value="<f1:out value="${password}"/>"/></div>
+<div style='left:0px;right:0px;top:135px;text-align:center' class='error'><f1:out value="${error}"/>&nbsp;</label></div>
+<div style='left:0px;right:0px;top:160px;text-align:center'> <input type="submit" id="login" value="&nbsp;Login&nbsp;" title="Login" /></div>
+							</f1:if>
+
+
+                </form>
+</div>
+</body>
+
+<script>
+
+
+
+
+
+
+    var start=0;
+    var end=8;
+    
+    var rate=.2;
+    var remainingBlocks=[];
+    var frame=-6;
+    var frame2=-4;
+    var frame3=-2;
+    var frame4=0;
+    process();
+	ROTATE_INTERVAL=window.setInterval(function(){
+		process();
+	}, 50 );
+    if(document.getElementById('username').value)
+      document.getElementById('password').focus();
+    else
+      document.getElementById('username').focus();
+	
+    
+    var drft=0;
+    var dr=0;
+	function process(){
+		if(drft>120)
+		  dr+=rand(-.5,.4);
+		else if(drft<-120)
+		  dr+=rand(-.4,.5);
+		else
+		  dr+=rand(-.5,.5);
+		
+		if(dr>5)dr=5;
+		if(dr<-5)dr=-5;
+		drft+=dr/4;
+		if(drft>150)
+			drft=150;
+		if(drft<-150)
+			drft=-150;
+		
+		if(frame>=end)
+			frame=start;
+		frame+=rate;
+		if(frame>=start){
+          <f1:ifNot test="${login_animated}">
+		  window.clearInterval(ROTATE_INTERVAL);          </f1:ifNot>
+		  processFooter(footer,frame,drft);
+		}
+		
+		if(frame2>=end)
+			frame2=start;
+		frame2+=rate;
+		if(frame2>=start)
+		  processFooter(footer2,frame2,drft);
+		
+		if(frame3>=end)
+			frame3=start;
+		frame3+=rate;
+		if(frame3>=start)
+		  processFooter(footer3,frame3,drft);
+		
+		if(frame4>=end)
+			frame4=start;
+		frame4+=rate;
+		if(frame4>=start)
+		  processFooter(footer4,frame4,drft);
+	}
+	
+	
+	
+	function processFooter(ftr,frm,drift){
+		var w=window.innerWidth;
+		var i=673 * w / 1914;
+		var h=window.innerHeight;
+		var n=frm*(frm)*frm;
+		n-=150;
+		var y=400;
+		var slope=(i/y) * (w / (w-2*i)) * n;
+		var height=y+2*y*slope/w;
+		var top=h-y+n;
+		var bottom=n;
+		var left=-1* slope;
+		var width=w + 2 * slope;
+		
+		ftr.style.position='absolute';
+		ftr.style.top=top+"px";
+		ftr.style.left=(drift+left)+"px";
+		ftr.style.width=width+"px";
+		ftr.style.height=(height)+"px";
+		ftr.style.opacity=Math.min(frm/8,.8);
+		/*
+		rotate(footer,d);
+		*/
+		
+	}
+    function rand(min,max){        return min+ Math.random()*(max-min);    }    
+</script>

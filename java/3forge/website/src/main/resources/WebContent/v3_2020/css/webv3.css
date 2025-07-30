@@ -1,0 +1,1129 @@
+.wrap {
+	flex: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.partners-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.partners-container > a {
+    /*width: 216px;*/
+    width: 227px;
+/*     height: 120px; */
+	height: 90px;
+    text-align: center;
+}
+
+header#navbarwhole {
+	background-image: radial-gradient(circle at 90% -20%, rgb(186, 103, 95), rgb(89, 36, 166), rgb(38, 48, 84)) !important;
+}
+
+.partner-image {
+	/*width: 153px;*/
+	width: 132px;
+	margin: 0 auto;
+}
+
+/* .gridpartners1 {
+	display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+} */
+
+.threeflogo {
+	background-image: url("data:image/svg+xml,%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 558.7 180.5'%3E%3C!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116) --%3E%3Cdefs%3E%3Cstyle%3E .st0 %7B fill: %23fff; %7D .st1 %7B fill: %23f16900; %7D .st2 %7B fill: %230e91bb; %7D .st3 %7B fill: %2377cefa; %7D %3C/style%3E%3C/defs%3E%3Cpath class='st0' d='M226.8,103.9c0,5-.8,9.8-2.6,14.5-1.1,3-2.7,5.7-4.7,8.2-2,2.5-4.4,4.6-7,6.3-2.9,1.8-6,3.1-9.2,4-3.3.9-6.6,1.3-10,1.2-3.4,0-6.8-.3-10.1-1.3-3.3-.9-6.4-2.3-9.3-4.2-2.7-1.8-5.1-4-7.1-6.5-2-2.6-3.6-5.4-4.7-8.4-1.3-3.7-2.1-7.5-2.3-11.4,0-.3,0-.7,0-1,.1-.3.3-.6.5-.9.2-.2.5-.4.8-.5.3-.1.7-.1,1-.1h15.6c.3,0,.7,0,1,.1s.6.3.9.5c.3.2.4.5.6.8.1.3.2.7.2,1,.2,2.2.7,4.3,1.5,6.3.8,2.4,2.2,4.4,4.3,5.9,2.1,1.5,4.4,2.2,7,2.1,1.2,0,2.4,0,3.5-.3,1.2-.3,2.2-.8,3.2-1.4s1.9-1.4,2.6-2.3c.8-.9,1.3-1.9,1.8-3,1.4-3.2,2.1-6.6,2-10.2,0-3.9-.7-7.6-2.3-11.1-.5-1.1-1.1-2-1.9-2.9-.8-.9-1.7-1.6-2.7-2.2-1-.6-2.1-1-3.2-1.3-1.1-.3-2.3-.4-3.4-.3-2.5.3-4.7,1.2-6.6,2.7-.5.3-.9.4-1.5.4-.8,0-1.5-.3-2-1l-7.7-10.3c-.4-.5-.6-1.1-.6-1.8,0-.7.3-1.3.9-1.7l22.6-19.7c.1,0,.2-.1.3-.3,0-.1,0-.3,0-.4,0-.3-.3-.4-.7-.4h-33.4c-.3,0-.7,0-1,0-.3-.1-.6-.3-.9-.5-.2-.2-.4-.5-.5-.8-.1-.3-.1-.7,0-1v-12.7c0-.3,0-.7,0-1,.1-.3.3-.6.5-.8s.5-.4.9-.5c.3-.1.7-.1,1,0h58.9c.3,0,.7,0,1,0,.3.1.6.3.9.5s.4.5.5.8c.1.3.1.7.1,1v14.2c0,1.2-.5,2.2-1.3,3l-19,17.4c-.6.6-.4,1,.6,1.2,2,.4,4,1,5.8,1.9s3.6,2,5.2,3.3c1.6,1.3,3,2.8,4.2,4.5s2.2,3.4,2.9,5.4c2,4.9,3,9.9,2.9,15.2Z'/%3E%3Cpath class='st0' d='M275.4,64.8v12.1c0,.3,0,.7,0,1-.1.3-.3.6-.5.9-.2.2-.5.4-.8.5-.3.1-.7.1-1,0h-13.2c-.1,0-.2,0-.3,0-.1,0-.2,0-.3.2s-.1.2-.2.3c0,.1,0,.2,0,.3v54.2c0,.2,0,.3,0,.5,0,.2,0,.3-.1.5,0,.2-.1.3-.2.5,0,.1-.2.3-.3.4-.1.1-.3.2-.4.3-.2,0-.3.2-.5.2s-.3,0-.5,0c-.2,0-.4,0-.5,0h-15.3c-.3,0-.7,0-1,0-.3-.1-.6-.3-.8-.5s-.4-.5-.5-.8c-.1-.3-.1-.7,0-1v-54.1c0-.1,0-.2,0-.4,0-.1-.1-.2-.2-.3s-.2-.1-.3-.2c-.1,0-.2,0-.4,0h-7.7c-.3,0-.7,0-1,0-.3-.1-.6-.3-.8-.5s-.4-.5-.5-.9c-.1-.3-.1-.7,0-1v-12.3c0-.3,0-.7,0-1,.1-.3.3-.6.5-.8s.5-.4.8-.5c.3-.1.7-.1,1,0h7.7c.1,0,.2,0,.4,0s.2-.1.3-.2.2-.2.2-.3c0-.1,0-.2,0-.4v-3c-.3-4.9.7-9.5,2.7-14,1-1.7,2.2-3.2,3.8-4.4,1.5-1.2,3.3-2.1,5.1-2.7,5.6-1.6,11.3-2.2,17.1-1.8h4.8c.3,0,.7,0,1,0,.3.1.6.3.8.5.2.2.4.5.5.8.1.3.1.7,0,1v10.3c0,.3,0,.7,0,1-.1.3-.3.6-.5.8-.2.2-.5.4-.8.5-.3.1-.7.1-1,0h-4c-1.3,0-2.5,0-3.7.4-1.2.4-2.3.9-3.3,1.7-.8,1-1.3,2.2-1.7,3.4-.3,1.2-.4,2.5-.3,3.8v1.4c0,.1,0,.2,0,.4,0,.1,0,.2.2.3s.2.2.3.2.2,0,.4,0h13.2c.3,0,.6,0,.9.1s.6.3.8.5c.2.2.4.5.5.8s.1.6,0,1Z'/%3E%3Cpath class='st0' d='M285.6,131.7c-2.9-2.1-5.4-4.7-7.4-7.7s-3.5-6.2-4.5-9.7c-1.4-4.8-2.1-9.8-2.1-14.8,0-5.2.6-10.4,2.2-15.4,1-3.4,2.5-6.5,4.6-9.4,2-2.9,4.5-5.3,7.4-7.4,3.1-2.1,6.4-3.7,10-4.7,3.6-1,7.2-1.5,10.9-1.4,3.6-.1,7.2.4,10.7,1.4s6.7,2.6,9.7,4.7c2.8,2,5.3,4.5,7.3,7.4,2,2.9,3.5,6,4.5,9.3,1.5,4.9,2.3,10,2.2,15.2,0,5-.6,9.9-1.9,14.7-.5,1.8-1.1,3.5-1.8,5.2-.8,1.7-1.6,3.3-2.7,4.8-1,1.5-2.2,2.9-3.4,4.3-1.3,1.3-2.6,2.5-4.1,3.6-1.5,1.1-3,2.1-4.6,2.9-1.6.8-3.3,1.5-5.1,2.1s-3.5.9-5.3,1.2c-1.8.2-3.6.3-5.5.3-3.8.1-7.4-.4-11-1.5s-6.9-2.7-10-4.9ZM314.5,117.7c2.4-2.2,4-4.8,4.8-8,.9-3.3,1.3-6.7,1.3-10.2,0-3.5-.3-6.9-1.2-10.3-.8-3.1-2.4-5.6-4.8-7.7-1.2-.9-2.5-1.6-3.9-2.1s-2.9-.7-4.4-.6c-1.5,0-2.9.2-4.3.6-1.4.5-2.7,1.2-3.8,2.1-2.4,2.1-4,4.6-4.8,7.7-.8,3.4-1.2,6.8-1.2,10.3,0,3.4.3,6.8,1.2,10.2.8,3.2,2.4,5.8,4.9,8,1.2,1,2.5,1.7,3.9,2.2s2.9.7,4.4.7c1.4,0,2.8-.2,4.2-.7s2.6-1.2,3.7-2.2Z'/%3E%3Cpath class='st0' d='M389.6,63.2c.3.1.5.3.8.5s.4.5.5.8c.1.3.2.6.2.9s0,.6-.1.9l-2.7,15.2c0,.9-.4,1.4-.8,1.6-.7.2-1.4.2-2.1,0-1.4-.4-2.8-.6-4.3-.6-.7,0-1.8,0-3.3.3-1.7.1-3.2.5-4.7,1.2-1.5.7-2.9,1.6-4.1,2.7-1.2,1.2-2.1,2.6-2.8,4.1-.6,1.6-.9,3.2-.8,4.9v38.8c0,.3,0,.7,0,1-.1.3-.3.6-.5.8s-.5.4-.9.5c-.3.1-.7.1-1,0h-15.4c-.3,0-.7,0-1,0-.3-.1-.6-.3-.9-.5s-.4-.5-.5-.8c-.1-.3-.1-.7-.1-1v-69.5c0-.3,0-.7,0-1,.1-.3.3-.6.5-.9s.5-.4.9-.5c.3-.1.7-.1,1,0h15.5c.3,0,.7,0,1,0s.6.3.9.5c.3.2.4.5.5.9.1.3.1.7,0,1v4.3c0,.4,0,.6.3.7.3,0,.4,0,.7-.3.8-1.3,1.8-2.5,2.9-3.6,1.1-1.1,2.4-2,3.8-2.7,1.4-.8,2.8-1.3,4.3-1.7,1.5-.4,3.1-.6,4.6-.5,2.7,0,5.3.7,7.7,2.1Z'/%3E%3Cpath class='st0' d='M435.6,62.5h15.5c.3,0,.7,0,1,0,.3.1.6.3.8.5s.4.5.5.9c.1.3.1.7,0,1v65.3c0,12.7-3.6,21.7-10.8,27.1-4.1,2.9-8.5,5-13.3,6.4-4.8,1.4-9.7,2-14.7,1.8-3.6,0-7.2-.3-10.8-.7-1.5,0-2.2-1-2.2-2.6l.6-13.5c0-.7.2-1.3.8-1.8.6-.5,1.3-.6,2-.3,2.9.4,5.9.7,8.8.7,2.5.2,5-.1,7.5-.8,2.4-.7,4.7-1.8,6.8-3.3.9-.8,1.7-1.7,2.3-2.7.7-1,1.2-2,1.7-3.2.4-1.1.7-2.3.9-3.4.2-1.2.2-2.4.1-3.6,0-.3,0-.5-.3-.5-.3,0-.4,0-.7.4-1,1-2.2,1.9-3.4,2.7-1.2.8-2.5,1.4-3.9,1.9s-2.8.8-4.2,1c-1.4.2-2.9.2-4.4.1-3,0-6-.4-8.9-1.1s-5.7-1.9-8.3-3.4c-2.7-1.7-5.1-3.8-7-6.3-1.9-2.5-3.3-5.3-4.2-8.4-1.6-5.6-2.3-11.3-2.2-17.1-.2-6.3.7-12.4,2.6-18.4.9-2.8,2.3-5.5,4-7.9s3.8-4.5,6.2-6.3c2.4-1.8,5.1-3.1,8-4.1,2.9-.9,5.8-1.3,8.8-1.3,1.6-.1,3.1,0,4.7.2,1.6.2,3.1.6,4.6,1.2,1.5.6,2.9,1.3,4.2,2.1,1.3.9,2.5,1.9,3.7,3,.3.3.5.4.7.3.2-.2.3-.4.3-.7v-2.7c0-.3,0-.6,0-.9,0-.3.2-.6.4-.8.2-.2.4-.4.7-.6.3-.1.6-.2.9-.2ZM433.2,99.1c0-2.3,0-4.6-.3-6.9-.2-1.6-.5-3.1-1-4.6-.8-2.6-2.2-4.7-4.3-6.3-1.1-.8-2.3-1.4-3.6-1.8s-2.6-.6-4-.6c-1.3,0-2.7.1-3.9.6s-2.5,1-3.5,1.8c-2,1.7-3.5,3.8-4.3,6.3-1.6,3.8-2.3,7.7-2.1,11.8-.3,4,.3,7.9,1.7,11.6.4,1.3,1.1,2.5,1.9,3.5.8,1.1,1.8,2,2.9,2.8,1.1.8,2.3,1.3,3.6,1.7,1.3.4,2.6.6,4,.5,1.3,0,2.6-.1,3.8-.5,1.2-.4,2.4-.9,3.4-1.7,1.1-.7,2-1.6,2.7-2.7.8-1,1.3-2.2,1.7-3.4.9-4,1.4-8,1.3-12.1Z'/%3E%3Cpath class='st0' d='M509.4,114.2c.5-.6,1.1-.9,1.9-1,.7,0,1.2.2,1.6.7l8.2,8c.5.4.8,1,.9,1.7,0,.7-.2,1.2-.6,1.8-3.3,4.1-7.4,7.2-12.3,9.3-5.2,2.3-10.6,3.4-16.3,3.4-4,.2-7.8-.4-11.6-1.5-3.8-1.2-7.3-2.9-10.4-5.3-3-2.4-5.5-5.1-7.5-8.3-2-3.2-3.5-6.7-4.3-10.4-1.2-4.4-1.7-8.9-1.7-13.5-.1-4.8.4-9.5,1.6-14.2.9-3.4,2.3-6.6,4.3-9.6,2-2.9,4.4-5.5,7.3-7.6,3-2.2,6.3-3.9,9.8-5s7.2-1.6,10.9-1.5c2.1,0,4.1,0,6.2.3,2,.3,4,.9,6,1.6,1.9.7,3.8,1.7,5.5,2.8s3.4,2.4,4.8,3.9c3,3.3,5.4,6.9,7.3,10.9,1.8,4,3,8.3,3.5,12.7.4,3.2.7,6.7.9,10.6,0,.3,0,.7-.1,1-.1.3-.3.6-.5.8-.2.2-.5.4-.8.5-.3.1-.7.1-1,.1h-44.4c-.6,0-.9.3-.9.9.2,1.5.5,3,1,4.5.5,1.5,1.2,2.8,2.2,4,1,1.2,2.2,2.1,3.5,2.9,3.2,1.7,6.7,2.5,10.3,2.4,1.4,0,2.8-.2,4.1-.5,1.4-.3,2.7-.8,3.9-1.4,1.3-.6,2.4-1.3,3.5-2.2,1.1-.9,2.1-1.8,3-2.9ZM483.3,81.2c-2.2,1.6-3.6,3.7-4.3,6.3-.5,1.8-.8,3-.9,3.6,0,.6,0,.9.7.9h24.6c.5,0,.7,0,.7-.6,0-1.2-.2-2.3-.6-3.3-.2-.7-.4-1.3-.7-2s-.6-1.3-1-1.8c-.4-.6-.8-1.1-1.3-1.6-.5-.5-1-1-1.6-1.4-.6-.4-1.2-.8-1.8-1.1-.6-.3-1.3-.6-2-.8-.7-.2-1.4-.3-2.1-.4-.7,0-1.4,0-2.1,0-2.8-.1-5.4.6-7.7,2.2Z'/%3E%3Cpath class='st1' d='M44.5,36.6h16.6c.4,0,.9,0,1.3.1.4,0,.8.2,1.2.4.4.2.8.4,1.2.6.4.2.7.5,1,.8.3.3.6.6.8,1,.2.4.4.7.6,1.1.2.4.3.8.4,1.3,0,.4.1.9.1,1.3v16.6c0,.4,0,.9-.1,1.3,0,.4-.2.8-.4,1.2-.2.4-.4.8-.6,1.2-.2.4-.5.7-.8,1s-.6.6-1,.8c-.4.2-.7.4-1.2.6-.4.2-.8.3-1.2.4-.4,0-.9.1-1.3.1h-16.6c-.4,0-.9,0-1.3-.1-.4,0-.8-.2-1.2-.4-.4-.2-.8-.4-1.1-.6-.4-.2-.7-.5-1-.8-.3-.3-.6-.6-.8-1-.2-.4-.4-.7-.6-1.2-.2-.4-.3-.8-.4-1.2,0-.4-.1-.9-.1-1.3v-16.6c0-.4,0-.9.1-1.3,0-.4.2-.8.4-1.3.2-.4.4-.8.6-1.1.2-.4.5-.7.8-1,.3-.3.6-.6,1-.8.4-.2.7-.4,1.1-.6.4-.2.8-.3,1.2-.4.4,0,.9-.1,1.3-.1Z'/%3E%3Cpath class='st1' d='M81.1,36.6h16.6c.4,0,.9,0,1.3.1.4,0,.8.2,1.2.4s.8.4,1.1.6c.4.2.7.5,1,.8.3.3.6.6.8,1,.2.4.4.7.6,1.1.2.4.3.8.4,1.3,0,.4.1.9.1,1.3v16.6c0,.4,0,.9-.1,1.3,0,.4-.2.8-.4,1.2-.2.4-.4.8-.6,1.2-.2.4-.5.7-.8,1-.3.3-.6.6-1,.8-.4.2-.7.4-1.1.6s-.8.3-1.2.4c-.4,0-.9.1-1.3.1h-16.6c-.4,0-.9,0-1.3-.1-.4,0-.8-.2-1.2-.4s-.8-.4-1.2-.6c-.4-.2-.7-.5-1-.8-.3-.3-.6-.6-.8-1-.2-.4-.4-.7-.6-1.2-.2-.4-.3-.8-.4-1.2,0-.4-.1-.9-.1-1.3v-16.6c0-.4,0-.9.1-1.3,0-.4.2-.8.4-1.3.2-.4.4-.8.6-1.1.2-.4.5-.7.8-1,.3-.3.6-.6,1-.8.4-.2.8-.4,1.2-.6s.8-.3,1.2-.4c.4,0,.9-.1,1.3-.1Z'/%3E%3Cpath class='st2' d='M44.5,73.2h16.6c.4,0,.9,0,1.3.1.4,0,.8.2,1.2.4.4.2.8.4,1.2.6.4.2.7.5,1,.8s.6.6.8,1c.2.4.4.7.6,1.2.2.4.3.8.4,1.2,0,.4.1.9.1,1.3v16.6c0,.4,0,.9-.1,1.3,0,.4-.2.8-.4,1.2-.2.4-.4.8-.6,1.2-.2.4-.5.7-.8,1-.3.3-.6.6-1,.8-.4.2-.7.4-1.2.6-.4.2-.8.3-1.2.4-.4,0-.9.1-1.3.1h-16.6c-.4,0-.9,0-1.3-.1-.4,0-.8-.2-1.2-.4-.4-.2-.8-.4-1.1-.6-.4-.2-.7-.5-1-.8-.3-.3-.6-.6-.8-1-.2-.4-.4-.7-.6-1.2-.2-.4-.3-.8-.4-1.2,0-.4-.1-.9-.1-1.3v-16.6c0-.4,0-.9.1-1.3,0-.4.2-.8.4-1.2.2-.4.4-.8.6-1.2.2-.4.5-.7.8-1,.3-.3.6-.6,1-.8.4-.2.7-.4,1.1-.6.4-.2.8-.3,1.2-.4.4,0,.9-.1,1.3-.1Z'/%3E%3Cpath class='st3' d='M44.5,109.8h16.6c.4,0,.9,0,1.3.1.4,0,.8.2,1.2.4.4.2.8.4,1.2.6.4.2.7.5,1,.8s.6.6.8,1c.2.4.4.7.6,1.2.2.4.3.8.4,1.2,0,.4.1.9.1,1.3v16.6c0,.4,0,.9-.1,1.3,0,.4-.2.8-.4,1.2-.2.4-.4.8-.6,1.2-.2.4-.5.7-.8,1-.3.3-.6.6-1,.8-.4.2-.7.4-1.2.6-.4.2-.8.3-1.2.4-.4,0-.9.1-1.3.1h-16.6c-.4,0-.9,0-1.3-.1-.4,0-.8-.2-1.2-.4-.4-.2-.8-.4-1.1-.6-.4-.2-.7-.5-1-.8-.3-.3-.6-.6-.8-1-.2-.4-.4-.7-.6-1.2-.2-.4-.3-.8-.4-1.2,0-.4-.1-.9-.1-1.3v-16.6c0-.4,0-.9.1-1.3,0-.4.2-.8.4-1.2.2-.4.4-.8.6-1.2.2-.4.5-.7.8-1,.3-.3.6-.6,1-.8.4-.2.7-.4,1.1-.6.4-.2.8-.3,1.2-.4.4,0,.9-.1,1.3-.1Z'/%3E%3Cpath class='st2' d='M81.1,73.2h16.6c.4,0,.9,0,1.3.1.4,0,.8.2,1.2.4s.8.4,1.1.6c.4.2.7.5,1,.8.3.3.6.6.8,1,.2.4.4.7.6,1.2.2.4.3.8.4,1.2,0,.4.1.9.1,1.3v16.6c0,.4,0,.9-.1,1.3,0,.4-.2.8-.4,1.2-.2.4-.4.8-.6,1.2-.2.4-.5.7-.8,1s-.6.6-1,.8c-.4.2-.7.4-1.1.6s-.8.3-1.2.4c-.4,0-.9.1-1.3.1h-16.6c-.4,0-.9,0-1.3-.1-.4,0-.8-.2-1.2-.4s-.8-.4-1.2-.6c-.4-.2-.7-.5-1-.8s-.6-.6-.8-1c-.2-.4-.4-.7-.6-1.2-.2-.4-.3-.8-.4-1.2,0-.4-.1-.9-.1-1.3v-16.6c0-.4,0-.9.1-1.3,0-.4.2-.8.4-1.2.2-.4.4-.8.6-1.2.2-.4.5-.7.8-1,.3-.3.6-.6,1-.8.4-.2.8-.4,1.2-.6s.8-.3,1.2-.4c.4,0,.9-.1,1.3-.1Z'/%3E%3Cpath class='st1' d='M117.6,36.6h16.6c.4,0,.9,0,1.3.1.4,0,.8.2,1.3.4.4.2.8.4,1.1.6.4.2.7.5,1,.8.3.3.6.6.8,1,.2.4.4.7.6,1.1.2.4.3.8.4,1.3s.1.9.1,1.3v16.6c0,.4,0,.9-.1,1.3s-.2.8-.4,1.2c-.2.4-.4.8-.6,1.2-.2.4-.5.7-.8,1s-.6.6-1,.8c-.4.2-.7.4-1.1.6-.4.2-.8.3-1.3.4-.4,0-.9.1-1.3.1h-16.6c-.4,0-.9,0-1.3-.1-.4,0-.8-.2-1.2-.4-.4-.2-.8-.4-1.1-.6-.4-.2-.7-.5-1-.8s-.6-.6-.8-1c-.2-.4-.4-.7-.6-1.2-.2-.4-.3-.8-.4-1.2s-.1-.9-.1-1.3v-16.6c0-.4,0-.9.1-1.3s.2-.8.4-1.3c.2-.4.4-.8.6-1.1.2-.4.5-.7.8-1,.3-.3.6-.6,1-.8.4-.2.7-.4,1.1-.6.4-.2.8-.3,1.2-.4.4,0,.9-.1,1.3-.1Z'/%3E%3Cimage width='599' height='160' transform='translate(-7200.3 -7784.3)' xlink:href='content-1.png'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+}
+
+.spinning {
+	animation: spin3 45s linear infinite;
+}
+.transition-section {
+    transition-property: all;
+    transition-duration: var(--transition-duration, 0.3s);
+    transition-timing-function: var(--cubicIn, cubic-bezier(0.550, 0.055, 0.675, 0.190));
+    opacity: 0; /* Initial state */
+    transform: translateY(20px); /* Initial state: slightly off screen */
+}
+
+.transition-section.visible {
+    transition-timing-function: var(--cubicOut, cubic-bezier(0.215, 0.610, 0.355, 1.000));
+    opacity: 1; /* Final state */
+    transform: translateY(0); /* Final state: on screen */
+}
+
+@keyframes spin3 {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+.ss-section .ss-nav-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.eventhover:hover {
+	filter: drop-shadow(-2px 6px 24px grey);
+	 transform: translateY(-10px);
+  	-webkit-transition: transform 0.2s ease 0s;
+  	transition: transform 0.2s ease 0s;
+}
+
+#ss-searchbox:focus {
+	border: 2px solid #f16900;
+	outline: none;
+}
+.ss-nav-container .ss-nav-item {
+	font-size: 16px;
+	font-weight: 400;
+	margin: 10px;
+	cursor: pointer;
+	transition: all 200ms linear;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+.ss-nav-container .active-nav-item {
+	/*
+	font-size: 25px; 
+	font-weight: 500;
+	margin-bottom: 5px; */
+	color: #F16900;
+}
+.ss-searchbox {
+	text-align: center;
+}
+.generic-view {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	/* height: 380px; */
+}
+.generic-view .ss-item-container-generic {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 4px 0 4px;
+	font-size: 25px;
+	padding: 20px;
+    border-radius: 50%;
+    width: 120px !important;
+    height: 120px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    cursor: pointer;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+.detailed-view {
+	height: 380px;
+	overflow-y: auto;
+	box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+	padding: 15px;
+}
+.detailed-view > div {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+.detailed-view .ss-item-container-left {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 25px 0 4px;
+	font-size: 25px;
+	padding: 20px;
+    border-radius: 50%;
+    width: 120px !important;
+    height: 120px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    cursor: pointer;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+.detailed-view .ss-item-container-right {
+	font-size: 22px;
+	display: flex;
+    flex-direction: column;
+    height: 120px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.vid-share {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 120px;
+    border-radius: 3px;
+    margin: 10px 0 0 0;
+    background: #f16900;
+    height: 30px;
+}
+
+.share-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.share-text {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+
+/*
+.ss-section .ss-item-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; 
+	margin: 0 4px 0 4px;
+	font-size: 25px;
+	padding: 20px;
+    border-radius: 50%;
+    width: 120px !important;
+    height: 120px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    cursor: pointer;
+}
+*/
+.partner-list {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.partner-list > li {
+	margin: 0 30px 20px;
+	opacity: 1;
+	-webkit-transform: translateY(100px);
+	-ms-transform: translateY(100px);
+	transform: translateY(100px);
+	-webkit-transition: opacity .4s linear, -webkit-transform .4s linear;
+	transition: opacity .4s linear, -webkit-transform .4s linear;
+	transition: opacity .4s linear, transform .4s linear;
+	transition: opacity .4s linear, transform .4s linear, -webkit-transform .4s linear;
+}
+
+.teampic {
+	opacity: 0.9;
+}
+
+.teampic:hover {
+	opacity: 1;
+	transition-timing-function: cubic-bezier(.4,0,1,1);
+	transition-duration: .3s;
+	--tw-scale-x: 1;
+    --tw-scale-y: 1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	
+}
+
+.in-viewport .partner-list > li {
+	opacity: 1;
+	-webkit-transform: none;
+	-ms-transform: none;
+	transform: none;
+}
+
+.partner-list > li:nth-child(1) {
+	-webkit-transition-delay: .4s;
+	transition-delay: .4s;
+}
+
+.partner-list > li:nth-child(2) {
+	-webkit-transition-delay: .8s;
+	transition-delay: .8s;
+}
+
+.partner-list > li:nth-child(3) {
+	-webkit-transition-delay: 1.2s;
+	transition-delay: 1.2s;
+}
+
+.partner-list > li:nth-child(4) {
+	-webkit-transition-delay: 1.6s;
+	transition-delay: 1.6s;
+}
+
+.partner-list > li:nth-child(5) {
+	-webkit-transition-delay: 2s;
+	transition-delay: 2s;
+}
+
+.partner-list > li:nth-child(6) {
+	-webkit-transition-delay: 2.4s;
+	transition-delay: 2.4s;
+}
+
+.partner-list > li:nth-child(7) {
+	-webkit-transition-delay: 2.8s;
+	transition-delay: 2.8s;
+}
+
+.partner-list > li:nth-child(8) {
+	-webkit-transition-delay: 3.2s;
+	transition-delay: 3.2s;
+}
+
+.partner-list > li:nth-child(9) {
+	-webkit-transition-delay: 3.6s;
+	transition-delay: 3.6s;
+}
+
+.partner-list > li:nth-child(10) {
+	-webkit-transition-delay: 4s;
+	transition-delay: 4s;
+}
+
+.partner-list > li:nth-child(11) {
+	-webkit-transition-delay: 4.4s;
+	transition-delay: 4.4s;
+}
+
+.partner-list > li:nth-child(12) {
+	-webkit-transition-delay: 4.8s;
+	transition-delay: 4.8s;
+}
+
+.partner-list > li:nth-child(13) {
+	-webkit-transition-delay: 5.2s;
+	transition-delay: 5.2s;
+}
+
+.partner-list > li:nth-child(14) {
+	-webkit-transition-delay: 5.6s;
+	transition-delay: 5.6s;
+}
+
+.partner-list > li:nth-child(15) {
+	-webkit-transition-delay: 6s;
+	transition-delay: 6s;
+}
+
+.partner-list > li:nth-child(16) {
+	-webkit-transition-delay: 6.4s;
+	transition-delay: 6.4s;
+}
+
+.partner-list > li:nth-child(17) {
+	-webkit-transition-delay: 6.8s;
+	transition-delay: 6.8s;
+}
+
+.partner-list > li:nth-child(18) {
+	-webkit-transition-delay: 7.2s;
+	transition-delay: 7.2s;
+}
+
+.partner-list > li:nth-child(19) {
+	-webkit-transition-delay: 7.6s;
+	transition-delay: 7.6s;
+}
+
+.partner-list > li:nth-child(20) {
+	-webkit-transition-delay: 8s;
+	transition-delay: 8s;
+}
+
+
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.ss-section .ss-item-img {
+	border-radius: 50%;
+}
+.ss-searchbox-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 15px;
+}
+.ss-section .ss-searchbox {
+    width: 375px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid #F16900;
+    padding: 15px;
+    box-shadow: 0 5px 4px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+}
+.ss-section .not-found-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.ss-section .not-found-container .not-found-text {
+	font-size: 25px;
+}
+.ss-section .not-found-container > div {
+	margin: 20px;
+}
+.ss-item-text-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: rgba(241,105,0,1);
+	border-radius: 50%;
+}
+.ss-item-text-overlay:hover {
+	opacity: 1;	
+}
+
+.ss-section .ss-item-text {
+	color: white;
+  	font-size: 15px;
+  	font-weight: 700;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	-webkit-transform: translate(-50%, -50%);
+  	-ms-transform: translate(-50%, -50%);
+  	transform: translate(-50%, -50%);
+  	text-align: center;
+  	text-shadow: 1px 2px 5px #040404
+}
+
+/* ACCORDION SECTION */
+.accordion-section {
+	background: white;
+	color: black;
+}
+.accordion-section .accordion-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.accordion-container .accordion-item {
+	width: 175px; /* item left width + item right width */
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	transition: 300ms cubic-bezier(0.42, 0, 0, 0.88) all;
+	margin-right: 15px;
+}
+.accordion-item .left {
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.accordion-item .right {
+	height: 250px;
+	display: flex;
+	width: 70px;
+	justify-content: center;
+	align-items: center;
+}
+.accordion-item .item-detail {
+	font-size: 18px;
+	display: none;
+}
+.item-expand {
+	width: 450px !important;
+}
+.item-shrink {
+	width: 140px !important;
+}
+.accordion-item-show-detail {
+	display: block !important;
+	animation: fadeIn ease 2000ms;
+}
+@keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+.accordion-item .item-title {
+	font-size: 20px;
+	width: 105px;
+	/*
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	*/
+	font-weight: 400;
+}
+.title-strech {
+	width: 100% !important;
+}
+.horizontal-text {
+	writing-mode: horizontal-tb !important;
+	animation: fadeIn ease 2000ms;
+}
+.accordion-end-text {
+	text-align: center;
+	font-size: 20px;
+	font-weight: 300;
+	margin-top: 30px;
+}
+/* ONE ROOF SECTION */
+.oneroof-section .architecture-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+}
+.architecture-container img {
+	width: 850px;
+}
+
+/* SPEEDDIAL SECTION */
+.inner {
+	position: absolute;
+	width: 800px;
+}
+.speed-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+  	width: 1000px;
+  	height: 400px;
+  	margin: 0 auto;
+}
+.btn-container {
+	display: flex;
+	justify-content: center;
+}
+.btn-container > button {
+	z-index: 10;
+}
+#speed-arrow {
+	width: 126px;
+	display: flex;
+	margin: 0 auto;
+	transform-origin: 50% 80%;
+	transform: rotate(-80deg);
+	z-index: -10;
+	transition: 500ms cubic-bezier(0, 0.55, 0.49, 1.12);
+}
+.desc-title {
+	width: 124px;
+    height: 80px;
+    position: absolute;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.rt-workflows {
+	color: #f16900;
+	top: 216px;
+	left: 100px;
+}
+.uiux {
+	top: 40px;
+	left: 260px;
+}
+.team-collab {
+	top: -60px;
+	left: 460px;
+}
+.sec-rob {
+	top: 25px;
+	left: 700px;
+}
+.data-int {
+	top: 216px;
+	left: 825px;
+}
+.speed-desc-container {
+	height: 100px;
+	font-size: 25px;
+}
+.speed-desc-container > div {
+	display: none;
+}
+.speed-desc-container #rt-workflows {
+	display: block;
+}
+/* UNDERLYING TECH SECTION */
+.underlying-tech-section {
+	background: #242323;
+	color: white;
+}
+.underlying-tech-section .container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.underlying-tech-section .sub-header {
+	font-size: 25px;
+	font-weight: 400;
+}
+.underlying-tech-section .ut-parent {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: baseline;
+	width: 100%;
+	margin: 40px;
+}
+.ut-parent .ut-left {
+	width: 700px;
+}
+.ut-parent .ut-right {
+	width: 400px;
+}
+.ut-right .title {
+	font-weight: 500;
+	font-size: 32px;
+}
+.ut-right .desc {
+	font-size: 23px;
+}
+.ut-right .list-desc {
+	font-size: 16px;
+}
+.rt-streaming .ut-left {
+	order: 2;
+}
+.rt-streaming .ut-right {
+	order: 1;
+}
+/*LATEST RELEASES  & ADDITIONAL RESOURCES SECTION*/
+.latest-releases-section .container, .add-resources-section .container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+}
+.latest-releases-section {
+	background: #F2F2EB;
+}
+.add-resources-section {
+	background: #323333;
+	color: white;
+}
+.latest-releases-section .desc, .add-resources-section .desc {
+	font-weight: 300;
+	margin-bottom: 30px;
+}
+/* YOUR PROJECT SECTION */
+.yourproject-section {
+	background: #646666;
+	color: white;
+}
+.yourproject-section .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    height: 150px;
+    background: #646666;
+}
+
+/* SMALL TO MID-SIZED LAPTOPS */
+@media all and (min-width: 981px) and (max-width: 1800px) {
+	.section-header {
+		font-size: 35px;
+	}
+	.modal-close-btn {
+		top: 33px;
+		right: 94px;
+	}
+	#modal-caption {
+		font-size: 35px;
+	}
+	/* PLATFORM OVERVIEW SECTION */
+	.platform-overview-container {
+		margin-left: 2%;
+	}
+	/* CES SECTION (COMPLETE ENTERPRISE SOLUTION) */
+	.ces-section .ces-left {
+		width: 500px;
+	}
+	.ces-section .ces-right {
+		width: 400px;
+	}
+	.ces-right .desc {
+		font-size: 16px;
+	}
+	
+	/* SUPORTED SOFTWARE SECTION */
+	.ss-section .generic-view {
+		height: 100%;
+	}
+	
+	/* ACCORDION SECTION */
+	.accordion-section .accordion-item .left, .accordion-section .accordion-item .right {
+		height: 350px;
+	} 
+	
+	/* UNDERLYING TECH SECTION */
+	.ut-parent .ut-left {
+		width: 450px;
+	}
+	.ut-parent .ut-right {
+		width: 450px;
+	}
+	.ut-right .title {
+		font-size: 25px;
+	}
+	.ut-right .desc {
+		font-size: 20px;
+	}
+}
+
+/*TABLET*/
+@media all and (min-width: 577px) and (max-width: 980px) {
+	.section-header {
+		font-size: 35px;
+	}
+	.modal-close-btn {
+		top: 33px;
+		right: 30px;
+	}
+	.modal-img {
+		width: 98%;
+	}
+	#modal-caption {
+		font-size: 30px;
+	}
+	/* PLATFORM OVERVIEW SECTION */
+	.platform-overview-container {
+		width: 500px;
+		margin: 0 auto;
+	}
+	.platform-overview-container .title {
+    	font-size: 40px;
+    	font-weight: 400;
+	}
+	.platform-overview-container p {
+    	font-size: 20px;
+	}
+	/* CES SECTION (COMPLETE ENTERPRISE SOLUTION) */
+	.ces-section .ces-parent {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin: 40px;
+	}
+	.ces-parent .ces-left {
+		width: 100%;
+	}
+	.ces-parent .ces-right {
+		width: 100%;
+	}
+	.ces-right .title {
+    	margin-bottom: 15px;
+	}
+	.ces-left {
+		order: 2;
+	}
+	.ces-right {
+		order: 1;
+	}
+	/* SUPORTED SOFTWARE SECTION */
+	.ss-section .generic-view {
+		height: 100%;
+	}
+	/* ACCORDION SECTION */
+	.accordion-container {
+		flex-wrap: wrap;
+		pointer-events: none;
+	}
+	/* UNDERLYING TECH SECTION */
+	.underlying-tech-section .ut-parent {
+		flex-direction: column;
+	}
+	.ut-parent .ut-left {
+		width: 100%;
+	}
+	.ut-parent .ut-right {
+		width: 100%;
+	}
+	.ut-left {
+		order: 2;
+	}
+	.ut-right {
+		order: 1;
+	}
+	.ut-right .title {
+		font-size: 25px;
+	}
+	.ut-right .desc {
+		font-size: 18px;
+	}
+	/*LATEST RELEASES, ADDITIONAL RESOURCES SECTION & YOUR PROJECT SECTION*/
+	.latest-releases-section, .add-resources-section, .yourproject-section{
+	    height: 366px;
+	}
+}
+
+/*MOBILE*/
+@media all and (max-width: 576px) {
+	section {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.section-header {
+		padding:20px;
+		font-size: 30px;
+	}
+	.modal-close-btn {
+		top: 33px;
+		right: 15px;
+	}
+	.modal-img {
+		width: 98%;
+	}
+	#modal-caption {
+		font-size: 20px;
+	}
+	/* PLATFORM OVERVIEW SECTION */
+	.platform-overview-container {
+		width: 80%;
+		margin: 0 auto;
+	}
+	.platform-overview-container .title {
+		font-size: 25px;
+    	font-weight: 400;
+	}
+	.platform-overview-container p {
+    	font-size: 16px;
+	}
+	/* CES SECTION (COMPLETE ENTERPRISE SOLUTION) */
+	.ces-section .ces-parent {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin: 40px;
+	}
+	.ces-parent .ces-left {
+		width: 100%;
+	}
+	.ces-parent .ces-right {
+		width: 100%;
+	}
+	.ces-left {
+		order: 2;
+	}
+	.ces-right {
+		order: 1;
+	}
+	.ces-right .title {
+    	font-size: 21px;
+    	margin-bottom: 15px;
+	}
+	.ces-right .desc {
+    	font-size: 16px;
+	}
+	/* SUPORTED SOFTWARE SECTION */
+	.generic-view {
+    	height: 100%;
+	}
+	/* ACCORDION SECTION */
+	.accordion-container {
+		flex-wrap: wrap;
+		pointer-events: none;
+	}
+	.accordion-container .accordion-item {
+    	width: 140px;
+	}
+	.accordion-item .left {
+    	height: 130px;
+	}
+	.accordion-item .right {
+    	height: 130px;
+	}
+	.accordion-item .item-title {
+    	font-size: 15px;
+    	width: 95px;
+    	font-weight: 500;
+	}
+	/* UNDERLYING TECH SECTION */
+	.underlying-tech-section .ut-parent {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin: 40px;
+	}
+	.underlying-tech-section .sub-header {
+		font-size: 20px;
+		font-weight: 400;
+	}
+	.ut-parent .ut-left {
+		width: 100%;
+	}
+	.ut-parent .ut-right {
+		width: 100%;
+	}
+	.ut-left {
+		order: 2;
+	}
+	.ut-right {
+		order: 1;
+	}
+	.ut-right .title {
+    	font-size: 21px;
+    	margin-bottom: 15px;
+	}
+	.ut-right .desc {
+    	font-size: 16px;
+	}
+	/* ONE ROOF SECTION */
+	.oneroof-section .architecture-container {
+    	width: 100%;
+	}
+	/*LATEST RELEASES, ADDITIONAL RESOURCES SECTION & YOUR PROJECT SECTION*/
+	.latest-releases-section, .add-resources-section, .yourproject-section{
+	    height: 445px;
+	}
+	.latest-releases-section .desc, .add-resources-section .desc {
+	    font-size: 20px;
+	    margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 1439px){
+
+	div#smallercontain {
+	    width: 100%;
+	    /* max-width: 748px; */
+	    max-width: 1193px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+}
+
+@media screen and (max-width: 1062px){
+	.boxfix {
+		height: 225px !important;
+	}
+}
+
+@media screen and (max-width: 1023px){
+	.boxfix {
+		height: 200px !important;
+	}
+}
+
+@media screen and (max-width: 795px) {
+	div#smallercontain {
+    width: 100%;
+    max-width: 595px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* .partners-container > a {
+    width: 152px;
+    height: 120px;
+    text-align: center;
+} */
+}
+
+@media screen and (max-width: 767px) {
+	div#mainfooterdiv{
+		padding-left: 2rem !important;
+	}
+	
+	div#subfooterdiv{
+		padding-left: 3rem !important;
+	}
+}
+
+@media screen and (max-width: 600px){
+	div#smallercontain {
+    width: 100%;
+    max-width: 1305px;
+    margin-left: auto;
+    /* margin-right: 67%; */
+}
+	
+}
+
+@media screen and (max-width: 520px){
+	.innerbox{
+		max-width: 100% !important;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+/* 		    .gridpartners1 {
+	    display: grid !important;
+	    grid-template-columns: 1fr 1fr !important;
+	} */
+}
+
+@media screen and (max-width: 485px) {
+	div#mainfooterdiv{
+		padding-left: 0rem !important;
+	}
+	
+	div#subfooterdiv{
+		padding-left: 1rem !important;
+	}
+	
+	.shift1{
+		padding-left: 1rem !important;
+	}
+}
+
+@media screen and (max-width: 391px) {
+	
+/* 	div#mainblock {
+		height: 66rem: !important;
+	}
+	
+	iframe#ferrisframe {
+		margin-top: 6%: important!;
+	} */
+	
+	.smallfont {
+		font-size: 0.9rem !important;
+	}
+}
+
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-Italic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 250;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-Thin.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 250;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-ThinItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 275;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-ExtraLight.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 275;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-ExtraLightItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-LightItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-MediumItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-SemiBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 600;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-SemiBoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-BoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-ExtraBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 800;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-ExtraBoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-Black.woff') format('woff');
+}
+@font-face {
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 900;
+    src: local('Barlow'), url('https://fonts.cdnfonts.com/s/58924/Barlow-BlackItalic.woff') format('woff');
+}

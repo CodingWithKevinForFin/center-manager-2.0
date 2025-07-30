@@ -1,0 +1,115 @@
+****TEST_INPUT_QUERY****
+{select y as t from tableA where (y) in (select a+1 from tableC);}
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+tableA
++--------------------+
+|       tableA       |
++------+------+------+
+|x     |y     |z     |
+|Double|Double|Double|
++------+------+------+
+|4.0   |5.0   |8.0   |
+|4.0   |11.0  |11.0  |
+|9.0   |7.0   |0.0   |
+|6.0   |13.0  |33.0  |
+|3.0   |8.0   |17.0  |
+|4.0   |17.0  |99.0  |
+|1.0   |1.0   |23.0  |
+|1.0   |7.0   |90.0  |
+|1.0   |5.0   |50.0  |
++------+------+------+
+
+tableC
++--------------------+
+|       tableC       |
++------+------+------+
+|a     |b     |c     |
+|Double|Double|Double|
++------+------+------+
+|1.0   |2.0   |6.0   |
+|11.0  |0.0   |8.0   |
+|9.0   |8.0   |2.0   |
+|9.0   |3.0   |5.0   |
+|4.0   |3.0   |2.0   |
++------+------+------+
+
+****TEST_RESULT****
++------+
+|tableA|
++------+
+|t     |
+|Double|
++------+
+|5.0   |
+|5.0   |
++------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT y AS t FROM tableA WHERE (y) in (SELECT a + 1 FROM tableC)SELECT a + 1 FROM tableC
+
+PROJECTION : 
+SELECT y AS t FROM tableA WHERE (y) in (SELECT a + 1 FROM tableC)
+
+PREJOIN_FILTER : 
+For Table 'tableA' ==> (y) in (SELECT a + 1 FROM tableC)
+
+PROJECTION : 
+SELECT a + 1 FROM tableC
+
+NESTING_QUERY : 
+#0 tableC
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+TMP_INDEX_ON_IN_CLAUSE : 
+5 row(s) reduced to 4
+
+NESTING_QUERY : 
+#0 tableA
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+tableA
++--------------------+
+|       tableA       |
++------+------+------+
+|x     |y     |z     |
+|Double|Double|Double|
++------+------+------+
+|4.0   |5.0   |8.0   |
+|4.0   |11.0  |11.0  |
+|9.0   |7.0   |0.0   |
+|6.0   |13.0  |33.0  |
+|3.0   |8.0   |17.0  |
+|4.0   |17.0  |99.0  |
+|1.0   |1.0   |23.0  |
+|1.0   |7.0   |90.0  |
+|1.0   |5.0   |50.0  |
++------+------+------+
+
+tableC
++--------------------+
+|       tableC       |
++------+------+------+
+|a     |b     |c     |
+|Double|Double|Double|
++------+------+------+
+|1.0   |2.0   |6.0   |
+|11.0  |0.0   |8.0   |
+|9.0   |8.0   |2.0   |
+|9.0   |3.0   |5.0   |
+|4.0   |3.0   |2.0   |
++------+------+------+
+

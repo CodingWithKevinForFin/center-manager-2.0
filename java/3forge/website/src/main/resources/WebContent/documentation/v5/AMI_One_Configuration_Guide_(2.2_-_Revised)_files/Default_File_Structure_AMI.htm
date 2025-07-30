@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "6.3_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Default File Structure AMI</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Default File Structure AMI">
+        <span>Default File Structure AMI</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1 style="line-height: 115%;">Default File Structure - AMI</h1>
+<h2 style="text-decoration: none; "><a name="Read_only" id="Read_only" style="text-decoration: none; "><u style="text-decoration: none; ">Read only</u></a></h2>
+<p class="NoSpacing"> </p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/config/build.properties</span><span courier=""> 
+  - </span><span style="font-style: italic;">build information</span><span courier=""> </span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/config/default.properties</span><span courier=""> 
+ -</span> <span style="font-style: italic;">default properties</span> <span courier=""> </span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/config/root.properties</span><span courier=""> 
+ -</span> <span style="font-style: italic;">references load order of properties 
+ files</span><span courier=""> </span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/config/speedlogger.properties</span><span courier=""> -</span> <span style="font-style: italic;">logging config</span><span courier=""> </span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/lib/</span><span courier=""> - </span><span courier="" style="font-style: italic;">directory</span><span style="font-style: italic;"> 
+ java libraries, including libraries for AMI web</span><span courier=""> </span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/data/sample_data.txt</span><span courier=""> 
+ -</span> <span style="font-style: italic;">sample data for &quot;upload 
+ data&quot; panel</span><span courier=""> </span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/scripts/start.sh</span><span courier=""> 
+ - </span><span style="font-style: italic;">UNIX script for starting AMI</span><span courier=""> </span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/scripts/stop.sh</span><span courier=""> - 
+ </span><span style="font-style: italic;">UNIX script for stopping AMI</span><span courier=""> </span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/scripts/start.bat</span><span courier=""> 
+ -</span> <span style="font-style: italic;">DOS script for starting AMI</span><span courier=""> </span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/scripts/stop.bat</span><span courier=""> 
+ - </span><span style="font-style: italic;">DOS script for stopping AMI</span><b><span courier=""> </span></b></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/scripts/restart.sh</span><span courier=""> 
+ - </span><span style="font-style: italic;">UNIX script for restarting 
+ AMI</span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/data/access.txt</span><span courier=""> - 
+ </span><span courier="" style="font-style: italic;">s</span><span style="font-style: italic;">ee 
+ default authentication access file section</span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/data/resources</span><span courier=""> - 
+ </span><span style="font-style: italic;">place resources (ex images) used 
+ by web in this directory</span></p>
+<p class="NoSpacing" style="font-family: Arial, sans-serif; font-size: 12pt;"><span courier="">3forge/amione/config/local.properties</span><span courier=""> 
+ - c</span><span style="font-style: italic;">reate, and override properties 
+ here</span></p>
+<p> </p>
+<p> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

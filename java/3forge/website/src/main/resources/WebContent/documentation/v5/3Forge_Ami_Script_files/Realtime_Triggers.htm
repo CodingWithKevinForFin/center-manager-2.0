@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "8.3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+  <meta name="generator" content="Adobe RoboHelp 2020"/>
+  <title>Realtime Triggers</title>
+  <style type="text/css">
+    /*<![CDATA[*/
+    A:visited {
+      color: #800080;
+    }
+    A:link {
+      color: #0000ff;
+    }
+    /*]]>*/
+  </style>
+  <link rel="stylesheet" type="text/css" href="../assets/css/AMI_Documentation_Style.css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Realtime Triggers">
+        <span>Realtime Triggers</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+  <h2 style="font-size: 24pt; margin-top: 5pt; margin-bottom: 15pt; line-height: Normal;">Realtime Triggers</h2>
+  <h2 style="margin-top: 5pt; margin-bottom: 1pt; line-height: 115%; font-size: 19pt; color: rgb(112, 48, 160); font-family: Arial, sans-serif; text-decoration: none;"><a id="create_trigger_clause_–"></a><span style="color: #7030A0; font-family: Arial, sans-serif; 
+											 text-decoration: none; ">create_trigger clause - custom amiscript</span></h2>
+  <hr align="left" style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;"/>
+  <h4 style="margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-size: 13pt; 
+	 font-weight: bold; font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">This command allows you to add script that can be executed as data is inserted, updated or deleted from a specified table.  There are 5 different events that can cause the trigger to be executed, you must specify at least one of:</p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+  <ul style="list-style: disc;">
+    <li>
+      <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">onInsertingScript</span> - This script will be executed <b>before a row is inserted</b> into <i>table_name</i> table. The values of the row to be inserted will available as local variables to the executing script.</p>
+    </li>
+    <li>
+      <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">onInsertedScript</span> - This script will be executed <b>after a row is inserted</b> into <i>table_name</i>. The values of the row just inserted will available as local variables to the executing script.</p>
+    </li>
+    <li>
+      <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">onUpdatingScript</span> - This script will be executed <b>before an update</b> on <i>table_name</i> table&#39;s rows. The values of the row prior to the update will be available as local variable with the form <span style="color: #ff0000;">old_varname</span>. The values of the row after the update will be available as local variable with the form <span style="color: #ff0000;">new_varname</span><span style="color: #C00000;">.</span></p>
+    </li>
+    <li>
+      <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">onUpdatedScript</span> - This script will be executed <b>after an update</b> on <i>table_name</i> table&#39;s rows. The values of the row just updated will be available as local variables to the executing script.</p>
+    </li>
+    <li>
+      <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #ff0000;">onDeletingScript</span> - <span style="text-indent: -.25in;">This script will be executed <b>before a row is deleted</b> from the <i>table_name</i> table. The values of the row to be deleted will available as local variables to the executing script.</span></p>
+    </li>
+    <li>
+      <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="font-size: 12pt; font-family: Arial, sans-serif; text-indent: -.25in; 
+	 color: #ff0000;">canMutateRow</span><span style="font-size: 12pt; 
+												 font-family: Arial, sans-serif; 
+												 text-indent: -.25in;"> - If true, then any values of the row changed inside the onInsertingScript will reflect back on the row to be inserted. For onUpdatingScript, any changes to the new_varname values will reflect on the row to be updated. Note, this only applies to the onInsertingScript and onUpdatingScript options. See Mutating Trigger example below</span></p>
+    </li>
+  </ul>
+  <p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">CREATE TRIGGER</span> <span courier="" style="color: #006dbf;">trigger_name</span> <span courier=""> </span><span courier="" style="color: #ff0000;">OFTYPE</span><span style="color: #ff0000;"> </span><span courier="" style="color: #ff0000;"> </span><b><span courier="" style="color: #ff0000;">AMISCRIPT</span></b><span style="color: #ff0000;"> </span><span courier="" style="color: #ff0000;"> ON</span> <span courier=""> </span><span courier="" style="color: #006dbf;">table_name</span> <span courier=""><i>[</i></span><span courier="" style="color: #ff0000;">PRIORITY</span> <span courier="" style="color: #006dbf;">priority</span><i><span courier="">]</span></i> <span courier=""> </span><span courier="" style="color: #ff0000;">USE</span></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><i><span courier="">[</span></i><b><span courier="" style="color: #ff0000;">vars=&quot;</span></b><i><span courier="">Variables shared by the trigger, a comma delimited list of type varname</span><span courier="" style="color: #ff0000;">&quot;</span></i><i><span courier="">]</span></i></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier=""><i>[</i><b style="color: #ff0000;">onStartupScript=&quot;</b><i>AmiScript to Run When the trigger is created</i></span><i><span courier="" style="color: #ff0000;">&quot;</span><span courier="">]</span></i><span courier=""> </span></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier=""><i>[</i></span><span courier="" style="color: #ff0000;"><b style="color: #ff0000;">onInsertingScript</b>=&quot;</span><span courier=""><i>AmiScript to Run Prior to insert of a row on defined Tables</i></span><span courier="" style="color: #ff0000;">&quot;</span><span courier=""><i>]</i> </span></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier=""><i>[</i></span><span courier="" style="color: #ff0000;"><b style="color: #ff0000;">onInsertedScript</b>=&quot;</span><span courier=""><i>AmiScript to Run After an insert of a row on defined Tables</i></span><span courier="" style="color: #ff0000;">&quot;</span><span courier=""><i>]</i> </span></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier=""><i>[</i></span><span courier="" style="color: #ff0000;"><b style="color: #ff0000;">onUpdatingScript</b>=&quot;</span><span courier=""><i>AmiScript to Run Prior to updating a row on defined Tables</i></span><span courier="" style="color: #ff0000;">&quot;</span><span courier=""><i>]</i> </span></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier=""><i>[</i></span><span courier="" style="color: #ff0000;"><b style="color: #ff0000;">onUpdatedScript</b>=&quot;</span><span courier=""><i>AmiScript to Run After updating a row on defined Tables</i></span><span courier="" style="color: #ff0000;">&quot;</span><span courier=""><i>]</i> </span></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier=""><i>[</i></span><span courier="" style="color: #ff0000;"><b style="color: #ff0000;">onDeletingScript</b>=&quot;</span><span courier=""><i>AmiScript to Run Prior to deleting a row on defined Tables</i></span><span courier="" style="color: #ff0000;">&quot;</span><span courier=""><i>]</i></span></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-size: 12pt; font-family: &#39;Courier New&#39;, monospace;"><i><span courier="">[</span><span courier="" style="font-style: normal; color: #ff0000; 
+								 font-weight: bold;">canMutateRow</span></i><span courier="" style="color: #ff0000;">=&quot;</span><span courier="">true or false</span><span courier="" style="color: #ff0000;">&quot;</span><span courier=""><i>]</i></span></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"> </p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><i><span courier="">trigger_name</span></i></b> -<i><span courier=""> name of the trigger to create, must be unique within the database</span></i></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><i><span courier="">table_name</span></i></b> -<i><span courier=""> name of the table(s) that will cause the trigger to execute</span></i></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><b><i><span courier="">priority</span></i></b> -<i><span courier=""> a number, triggers with lowest value are executed first. Only considered when two or more triggers exist on the same table</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+  <h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 line-height: Normal; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; line-height: Normal;">In this example let us assume we have a table <i>MyTable(id int,price double)</i> and a <i>MyAlertTable(type String,id int,diff double) .</i> When a row is deleted from the MyTable this trigger will insert an alert into the <i>MyAlert</i> Table including the id and price of the record deleted. In the case of an update, a row will be inserted into the <i>MyAlert</i> table including the id and change in price due to the update.<span courier=""> </span></p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span courier="">                               </span></p>
+  <p style="margin-bottom: .0001pt; color: #006dbf; font-size: 12pt; font-family: Arial, sans-serif;"><span courier="">CREATE TRIGGER MyTrigger OFTYPE AMISCRIPT ON MyTable USE</span></p>
+  <p style="margin-bottom: .0001pt; color: #006dbf; font-size: 12pt; font-family: Arial, sans-serif;"><span courier="">onDeletingScript=&quot;insert into MyAlert(type,id) values(\&quot;RECORD DELETED\&quot;,id,0-price)&quot;</span></p>
+  <p style="margin-bottom: .0001pt; color: #006dbf; font-size: 12pt; font-family: Arial, sans-serif;"><span courier="">onUpdatingScript=&quot;insert into MyAlert(type,id,diff) values(\&quot;CHANGE\&quot;,id,new_price - old_price)</span><span courier="">&quot;</span></p>
+  <p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+  <h4 style="font-size: 13pt; margin-bottom: 3pt; color: #449938; font-family: Arial, sans-serif;"><span class="Heading4" style="color: #449938; font-family: Arial, sans-serif;">MUTATING TRIGGER EXAMPLE</span></h4>
+  <p style="font-variant-ligatures: normal; font-variant-caps: normal; background-color: #ffffff; 
+	 font-family: &#39;Courier New&#39;; color: #006dbf;"><span style="orphans: 2; 
+														 widows: 2; -webkit-text-stroke-width: 0px; 
+														 text-decoration-style: initial; 
+														 text-decoration-color: initial;">CREATE PUBLIC TABLE MutateSample(px double,qty int,val double);</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">CREATE TRIGGER MutateTrigger OFTYPE AMISCRIPT ON MutateSample USE canMutateRow=&quot;true&quot; onInsertingScript=&quot;val=px*qty&quot; onUpdatingScript=&quot;new_val=new_px*new_qty&quot;;</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">INSERT INTO MutateSample(px,qty) VALUES(125.2,100);</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">SELECT * from MutateSample;</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">+----------------------+</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">|     MutateSample     |</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">+------+-------+-------+</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">|px    |qty    |val    |</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">|Double|Integer|Double |</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">+------+-------+-------+</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">|125.2 |100    |12520.0|</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">+------+-------+-------+</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">UPDATE MutateSample set qty=qty+10;</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"> </p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">SELECT * from MutateSample;</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">+----------------------+</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">|     MutateSample     |</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">+------+-------+-------+</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">|px    |qty    |val    |</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">|Double|Integer|Double |</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">+------+-------+-------+</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">|125.2 |110    |13772.0|</span></p>
+  <p class="MsoNormal" style="margin: 0px 0in; font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; 
+	 color: rgb(34, 34, 34); font-style: normal; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; font-weight: 400; letter-spacing: normal; 
+	 orphans: 2; text-align: start; text-indent: 0px; text-transform: none; 
+	 white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><span style="font-family: &#39;Courier New&#39;; color: #006dbf;">+------+-------+-------+</span></p>
+  <p style="font-family: Arial, sans-serif; margin-bottom: 0pt;"> </p>
+  <h2 style="font-size: 19pt; margin-top: 5pt; margin-bottom: 1pt; line-height: normal; color: rgb(112, 48, 160); font-family: Arial, sans-serif; text-decoration: none;"><a id="drop_trigger_clause" name="drop_trigger_clause"><span style="color: #7030A0; 
+	 font-family: Arial, sans-serif; text-decoration: none; ">drop_trigger clause</span></a></h2>
+  <hr align="left" style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;"/>
+  <h4 style="margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-size: 13pt; 
+	 font-weight: bold; font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+  <p style="margin-bottom: 0pt; font-size: 12pt; font-family: Arial, sans-serif;">This command permanently drops one or more triggers.</p>
+  <p style="margin-bottom: .0001pt; color: #ff0000; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+  <p style="margin-bottom: .0001pt;"><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+										 color: #ff0000;">DROP TRIGGER</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #808080;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf;">trigger_name</span><span courier=""><i style="font-family: &#39;Courier New&#39;, monospace; color: #808080;">[</i></span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf;">, trigger_name</span><span style="font-family: &#39;Courier New&#39;, monospace; 
+							 color: #006dbf;"> </span><span style="font-family: &#39;Courier New&#39;, monospace; 
+															 color: #808080;">...</span><span courier=""><i style="font-family: &#39;Courier New&#39;, monospace; color: #808080;">]</i></span><span courier="" style="font-size: 8.0pt;"> </span></p>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+  <h4 style="margin-top: 15pt; margin-bottom: 3pt; font-size: 13pt; font-weight: bold; 
+	 font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+  <p style="margin-bottom: .0001pt;"><span style="font-family: Arial, sans-serif;">This example will drop the trigger MyTrigger from the database.</span><span courier="" style="font-family: Arial, sans-serif; font-size: 11pt;"> </span></p>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+  <p style="margin-bottom: 0pt;"><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+									 color: #006dbf;">DROP TRIGGER MyTrigger</span></p>
+  <p style="margin-bottom: 0pt; font-family: Arial, sans-serif;"> </p>
+  <p style="margin-bottom: 0pt; font-family: Arial, sans-serif;"> </p>
+  <h2 style="margin-top: 5pt; margin-bottom: 1pt; line-height: normal; font-size: 19pt; color: rgb(109, 45, 158); font-family: Arial, sans-serif; text-decoration: none;"><a id="streaming_realtime_-_aggregation_triggers" style="font-size: 19pt; 
+	 color: #6d2d9e; font-family: Arial, sans-serif; text-decoration: none; ">Streaming realtime - aggregation triggers</a></h2>
+  <hr align="left" style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;"/>
+  <p style="margin-bottom: .0001pt; line-height: Normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000;"><span courier="">CREATE TRIGGER <i>mytrigger</i> OFTYPE <b>AGGREGATE</b> ON <i>sourceTable,targetTable</i> USE ...</span></p>
+  <h4 style="margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-size: 13pt; 
+	 font-weight: bold; font-style: italic; color: #449938; font-family: Arial, sans-serif; 
+	 text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">This command binds an existing <i>source</i> table and an existing <i>target</i> table together such that the target table will be an aggregate representation of the source table.  The following rules apply:</p>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+  <ul style="list-style: disc;">
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">As the <i>source</i> table has rows inserted, updated or deleted the target table will be automatically updated accordingly</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">The <i>target</i> table is no longer modifiable (inserts, updates and deletes to the <i>target</i> table will not succeed)</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">Multiple aggregate triggers can share the same source table</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">Multiple aggregate triggers can not share the same target table (a given table can only participate in one aggregate trigger as a <i>target</i> table)</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">Streaming triggers can be daisy chained, meaning a given table can be a target for one aggregate trigger and a source for another aggregate trigger</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">The creation of the trigger will clear out and rebuild the <i>target</i> table to properly reflect the aggregation of the <i>source</i> table&#39;s data</p>
+    </li>
+  </ul>
+  <p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">There are two <span courier="">USE </span>options:</p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+  <ul style="list-style: disc;">
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #C00000;">groupBys</span> - A comma delimited list of expressions to group rows by, each expression being of the form:<br/>
+        <i>targetTableColumn = expression_on_sourceTableColumns</i> [,<i>targetTableColumn = expression_on_sourceTableColumns ...]</i>
+      </p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 line-height: Normal; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #C00000;"><i>s</i>elects </span><span style="color: Transparent;">-</span> A comma delimited list of expressions on how to populate target columns from source columns.<br/>
+        <i>targetTableColumn = aggregate_on_sourceTableColumns</i> [,<i>targetTableColumn = aggregate_on_sourceTableColumns ...]</i>
+      </p>
+    </li>
+  </ul>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt; 
+	 line-height: Normal;"> </p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">The following rules apply for the <span style="color: #C00000;">groupBys</span> and <span style="color: #C00000;">selects</span> use options:</p>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+  <ul style="list-style: disc;">
+    <li style="font-size: 12pt; font-weight: normal; font-style: normal; 
+		 font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+											 font-size: 12pt; font-family: Arial, sans-serif;"><i>targetTableColumns</i> must only reference columns in the target table&#39;s shcema</p>
+    </li>
+    <li style="font-size: 12pt; font-weight: normal; font-style: normal; 
+		 font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+											 font-size: 12pt; font-family: Arial, sans-serif;"><i>sourceTableColumns</i> must only reference columns in the source table&#39;s schema</p>
+    </li>
+    <li style="font-size: 12pt; font-weight: normal; font-style: normal; 
+		 font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+											 font-size: 12pt; font-family: Arial, sans-serif;">A <i>targetTableColumn</i> can only be referenced once</p>
+    </li>
+    <li style="font-size: 12pt; font-weight: normal; font-style: normal; 
+		 font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+											 font-size: 12pt; font-family: Arial, sans-serif;">For aggregate expressions only <i>count, countUnique, first, last, max, min, stdev, stdevs, sum</i> and <i>var</i> functions are supported</p>
+    </li>
+  </ul>
+  <p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><span courier="" style="color: #ff0000;">CREATE TRIGGER</span> <span courier="" style="color: #006dbf;">trigger_name</span> <span courier=""> </span><span courier="" style="color: #ff0000;">OFTYPE</span><span style="color: #ff0000;"> </span><span courier="" style="color: #ff0000;"> </span><b><span courier="" style="color: #ff0000;">AGGREGATE</span></b><span style="color: #ff0000;"> </span><span courier="" style="color: #ff0000;"> ON</span> <span courier=""> </span><span courier="" style="color: #006dbf;">source_table_name,target_table_name</span> <span courier=""><i>[</i></span><span courier="" style="color: #ff0000;">PRIORITY</span> <span courier="" style="color: #006dbf;">priority</span><i><span courier="">]</span></i> <span courier=""> </span><span courier="" style="color: #ff0000;">USE <b style="color: #ff0000;">groupBys=&quot;</b></span><span courier=""><i>list of group by expressions&quot;</i><b> </b></span><b><span courier="" style="color: #ff0000;">selects=&quot;</span></b><span courier=""><i>list of aggregate expressions&quot;</i> </span></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"> </p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="">trigger_name</span></i></b> -<i><span courier=""> name of the trigger to create, must be unique within the database</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="">source_table_name</span></i></b> -<i><span courier=""> name of the table that will cause the trigger to execute</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="">target_table_name</span></i></b> -<i><span courier=""> name of the table that will be updates by the trigger</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="">priority</span></i></b> -<i><span courier=""> a number, triggers with lowest value are executed first. Only considered when two or more triggers exist on the same table</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+  <h4 style="font-size: 13pt; color: #449938; margin-top: 15pt; margin-bottom: 3pt; 
+	 font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">EXAMPLES</u></h4>
+  <p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">//Lets assume the two tables exist:</span></i></p>
+  <p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">CREATE PUBLIC TABLE Accounts(account String,region String,qty int,px double);</span></p>
+  <p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">CREATE PUBLIC TABLE Summary(act String,region String,cnt int,value double);</span></p>
+  <p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"> </p>
+  <p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">//The below trigger will build a realtime aggregation on accounts reflected in the summary table:</span></i></p>
+  <p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">//(try inserting into the Accounts table and then take a look at the Summary table)</span></i></p>
+  <p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="">CREATE TRIGGER MyTrigger OFTYPE AGGREGATE ON Accounts,Summary USE groupBys=&quot;act=account,region=region&quot; selects=&quot;cnt=count(*),value=sum(qty*px)&quot;;</span></p>
+  <p style="font-family: Arial, sans-serif; margin-bottom: 0pt;"> </p>
+  <p style="font-family: Arial, sans-serif; margin-bottom: 0pt;"> </p>
+  <h2 style="margin-top: 5pt; margin-bottom: 1pt; font-size: 19pt; color: rgb(112, 48, 160); font-family: Arial, sans-serif; text-decoration: none;"><a id="Streaming_realtime" name="Streaming_realtime"><span style="color: #7030A0; font-family: Arial, sans-serif; 
+									 text-decoration: none; ">Streaming realtime - projections and filters triggers</span></a></h2>
+  <hr align="left" style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;"/>
+  <p style="margin-bottom: .0001pt; color: #ff0000; font-family: &#39;Courier New&#39;, monospace;"><span courier="">CREATE TRIGGER <i>mytrigger</i> OFTYPE <b>PROJECTION</b> ON <i>sourceTable(s),targetTable</i> USE ...</span></p>
+  <h4 style="margin-top: 15pt; margin-bottom: 3pt; font-size: 13pt; font-style: italic; 
+	 color: #449938; font-family: Arial, sans-serif; text-decoration: none; "><u style="text-decoration: none; ">OVERVIEW</u></h4>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">This command binds one or more existing <i>source</i> tables and an existing <i>target</i> table together such that the target table will be populated using the source table(s).  The following rules then apply:</p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+  <ul style="list-style: disc;">
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">As the <i>source</i> table(s) have rows inserted, updated or deleted the target table will automatically have it&#39;s corresponding projected rows inserted, updated, deleted accordingly.</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">When there are multiple source tables, the resulting target is a UNION of the source tables (not a join)</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">The <i>target</i> table&#39;s rows that are a result of this projection can not be modified (inserts, updates and deletes to the <i>target</i> table&#39;s managed rows will not succeed)</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">Multiple projection triggers can share the same source table</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">Multiple projection triggers can share the same target table</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">The creation of the trigger will clear out and rebuild the <i>target</i> table to properly reflect the aggregation of the <i>source</i> table&#39;s data.</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">If a source tables&#39; row is updated such that the evaluation of the wheres clause changes, then the row will be inserted/deleted from the target table accordingly.</p>
+    </li>
+  </ul>
+  <p style="margin-bottom: .0001pt; font-family: Cambria, serif;"> </p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">There are two <span courier="" style="color: #bf0000;">USE</span><span courier=""> </span>options:</p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+  <ul style="list-style: disc;">
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #C00000;">wheres</span> - A comma delimited list of boolean expressions that must all be true on a source table&#39;s row in order for it to be projected into the target table:<br/>
+        <i>expression_on_sourceTableColumns,[ expression_on_sourceTableColumns ...]</i>
+      </p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #C00000;"><i>s</i>elects </span><span style="color: Transparent;">-</span> A comma delimited list of expressions on how to populate target columns from source columns.<br/>
+        <i>targetTableColumn = aggregate on sourceTableColumns</i> [,<i>targetTableColumn = aggregate on sourceTableColumns ...]</i>
+      </p>
+    </li>
+  </ul>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt; 
+	 line-height: Normal;"> </p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">There following rules apply for the <span style="color: #bf0000;">wheres</span> and <span style="color: #bf0000;">selects</span> use options (important when there are multiple source tables):</p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+  <ul style="list-style: disc;">
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">Using the form <i>tablename.columnname</i> will isolate the expression to only apply to the specified table.</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">Using the form <i>columnname</i> means that the expression will apply to all tables with the supplied columnname.</p>
+    </li>
+  </ul>
+  <p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+  <p style="margin-bottom: .0001pt; font-size: 11pt;"><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+															 color: #ff0000; 
+															 font-size: 12pt;">CREATE TRIGGER</span><span style="color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+					 font-size: 12pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+													 color: #006dbf; font-size: 12pt;">trigger_name</span><span style="color: #808080; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"> </span><span courier="" style="color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+				 font-size: 12pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+														 color: #ff0000; 
+														 font-size: 12pt;">OFTYPE</span><span style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-size: 12pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #ff0000; font-size: 12pt;"> </span><b><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; 
+	 font-size: 12pt;">PROJECTION</span></b><span style="font-family: &#39;Courier New&#39;, monospace; 
+													 color: #ff0000; font-size: 12pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #ff0000; font-size: 12pt;"> ON</span><span style="color: #808080; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #006dbf; font-size: 12pt;">source_table_name</span><i><span courier="" style="color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;">[,</span></i><span style="color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+											 font-size: 12pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #006dbf; 
+	 font-size: 12pt;">source_table_name</span><span courier="" style="color: #808080; 
+													 font-family: &#39;Courier New&#39;, monospace; 
+													 font-size: 12pt;">...<i style="font-size: 12pt;">]</i>, </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+													 color: #006dbf; font-size: 12pt;">target_table_name</span><span style="color: #808080; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"> </span><span courier=""><i style="color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+							 font-size: 12pt;">[</i></span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-size: 12pt;">PRIORITY</span><span style="color: #808080; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #006dbf; font-size: 12pt;">priority</span><i><span courier="" style="color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;">]</span></i><span style="color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+										 font-size: 12pt;"> </span><span courier="" style="color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+											 color: #ff0000; font-size: 12pt;">USE <b style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000; font-size: 12pt;">wheres=&quot;</b></span><i><span courier="" style="color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;">list of where expressions&quot;</span></i><b style="color: #808080; 
+	 font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"><span courier="" style="color: #808080; font-family: &#39;Courier New&#39;, monospace; font-size: 12pt;"> </span><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+				 color: #ff0000; font-size: 12pt;">selects=&quot;</span></b><i><span courier="" style="color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;">list of assignment expressions&quot;</span></i><span courier=""> </span></p>
+  <p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-size: 12pt;"><b><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; font-weight: normal; 
+	 font-style: normal;">trigger_name</span></i></b> -<i><span courier="" style="font-style: normal;"> name of the trigger to create, must be unique within the database</span></i></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-size: 12pt;"><b><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; font-weight: normal; 
+	 font-style: normal;">source_table_name(s)</span></i></b> -<i><span courier="" style="font-style: normal;"> name of the tables that will cause the trigger to execute</span></i></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-size: 12pt;"><b><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; font-weight: normal; 
+	 font-style: normal;">target_table_name</span></i></b> -<i><span courier="" style="font-style: normal;"> name of the table that will be updated by the trigger</span></i></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-size: 12pt;"><b><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; font-weight: normal; 
+	 font-style: normal;">priority</span></i></b> -<i><span courier="" style="font-style: normal;"> a number, triggers with lowest value are executed first. Only considered when two or more triggers exist on the same table</span></i></p>
+  <p style="margin-bottom: .0001pt; color: #808080; font-size: 11pt;"> </p>
+  <h4 style="margin-top: 15pt; margin-bottom: 3pt; font-size: 13pt; color: #449938; 
+	 font-family: Arial, sans-serif; text-decoration: none; ">EXAMPLES</h4>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">//Lets assume the three tables exist:</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE PUBLIC TABLE Accounts1(account String,region String,qty int,px double);</span></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE PUBLIC TABLE Accounts2(account String,region String,qty int,px double);</span></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE PUBLIC TABLE MissingRegion(account String, value double);</span></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"> </p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">//The below trigger will build a realtime view of accounts that have a null region:</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">//(try inserting into the Accounts1 table and then take a look at the MissingRegions table)</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE TRIGGER MyTrigger OFTYPE PROJECTION ON Accounts1,Accounts2,MissingRegion USE wheres=&quot;region==null&quot; selects=&quot;account=account,value=qty * px&quot;;</span></p>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+  <h2 style="font-size: 19pt; margin-top: 5pt; margin-bottom: 1pt; color: rgb(112, 48, 160); font-family: Arial, sans-serif; text-decoration: none;"><a id="Streaming_realtime_–"></a><span style="color: #7030A0; font-family: Arial, sans-serif; text-decoration: none; ">Streaming realtime - join triggers</span></h2>
+  <hr align="left" style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;"/>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 12pt;"><span courier="">CREATE TRIGGER <i>mytrigger</i> OFTYPE </span><span courier="" style="font-weight: bold;">JOIN</span><span courier=""> ON <i>leftTable,rightTable,targetTable</i> USE ...</span></p>
+  <h4 style="margin-top: 15pt; margin-bottom: 3pt; font-size: 13pt; color: #449938; 
+	 font-family: Arial, sans-serif; text-decoration: none; ">OVERVIEW</h4>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;">This command allows for realtime joining across two tables.</p>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+  <ul style="list-style: disc;">
+    <li style="font-family: Arial, sans-serif; font-size: 12pt;">
+      <p style="margin-bottom: .0001pt; 
+		 font-family: Arial, sans-serif; font-size: 12pt;">Changes to the leftTable or/or RightTable automatically update the targetTable, equivalent to using the ... JOIN ... ON ... syntax of the SELECT statement.  See the <i>Join Examples</i> section for an illustration of the various types of joins</p>
+    </li>
+    <li style="font-family: Arial, sans-serif; font-size: 12pt;">
+      <p style="margin-bottom: .0001pt; 
+		 font-family: Arial, sans-serif; font-size: 12pt;">Effectively, the target table can be considered a read only table, and can no longer be modified directly</p>
+    </li>
+    <li style="font-family: Arial, sans-serif; font-size: 12pt;">
+      <p style="margin-bottom: .0001pt; 
+		 font-family: Arial, sans-serif; font-size: 12pt;">Multiple JOIN triggers can share the same source table</p>
+    </li>
+    <li style="font-family: Arial, sans-serif; font-size: 12pt;">
+      <p style="margin-bottom: .0001pt; 
+		 font-family: Arial, sans-serif; font-size: 12pt;">Multiple JOIN triggers can not share the same target table.</p>
+    </li>
+    <li style="font-family: Arial, sans-serif; font-size: 12pt;">
+      <p style="margin-bottom: .0001pt; 
+		 font-family: Arial, sans-serif; font-size: 12pt;">The creation of the trigger will clear out and rebuild the <i>target</i> table to properly reflect the JOIN of the <i>left and right</i> tables.</p>
+    </li>
+  </ul>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;">There are three <span courier="" style="color: #ff0000;">USE</span><span courier=""> </span>options:</p>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;"> </p>
+  <ul style="list-style: disc;">
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-family: Arial, sans-serif; font-size: 12pt;"><span style="color: #ff0000;">type </span><span style="color: Transparent;">-</span><span style="color: #ff0000;"> </span>How to join the left and right tables. Supported types include: <i><span courier="" style="color: #ff0000;">LEFT</span></i>, <i><span courier="" style="color: #ff0000;">RIGHT</span></i>, <i><span courier="" style="color: #ff0000;">INNER</span></i>, <i><span courier="" style="color: #ff0000;">OUTER</span></i>, <i><span courier="" style="color: #ff0000;">LEFT ONLY</span></i>, <i><span courier="" style="color: #ff0000;">RIGHT ONLY</span></i><span style="color: #ff0000;">, </span><i><span courier="" style="color: #ff0000;">OUTER ONLY</span></i>.  (See <i>Join Examples</i> section for details on the behavior of the various configurations).</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-family: Arial, sans-serif; font-size: 12pt;"><span style="color: #ff0000;">on</span> - An expression for how to relate the two tables in the form:   &quot;leftColumn == rightColumn <i>[</i> &amp;&amp; leftColumn == rightColumn ...<i> ]&quot;</i></p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-family: Arial, sans-serif; font-size: 12pt;"><span style="color: #ff0000;"><i style="color: #ff0000;">s</i>elects</span><span style="color: #C00000;"> </span><span style="color: Transparent;">-</span> A comma delimited list of expressions on how to populate target columns from columns of the left and right tables.<br/>
+        <i>targetTableColumn = aggregate on sourceTableColumns</i> [,<i>targetTableColumn = aggregate on sourceTableColumns ...]</i>
+      </p>
+    </li>
+  </ul>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">The following rules apply for the <span style="color: #ff0000;">wheres</span> and <span style="color: #ff0000;">selects</span> use options:</p>
+  <p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+  <ul style="list-style: disc;">
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">Using the form <i>tablename.columnname</i> will explicitly determine which table (left or right) is to be referenced.</p>
+    </li>
+    <li style="font-size: 12pt; font-family: Arial, sans-serif;">
+      <p style="margin-bottom: .0001pt; 
+		 font-size: 12pt; font-family: Arial, sans-serif;">Using the form <i>columnname</i> means that the column name must be unique to either the left or right table.</p>
+    </li>
+  </ul>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"><span courier="" style="font-size: 11pt; font-family: ;">                                                </span></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000; 
+											 font-size: 12pt;">CREATE TRIGGER</span><span style="font-size: 12pt;"> </span><span courier="" style="color: #006dbf; 
+											 font-size: 12pt;">trigger_name</span><span style="font-size: 12pt;"> </span><span courier="" style="font-size: 12pt;"> </span><span courier="" style="color: #ff0000; font-size: 12pt;">OFTYPE</span><span style="color: #ff0000; font-size: 12pt;"> </span><span courier="" style="color: #ff0000; 
+															 font-size: 12pt;"> </span><b><span courier="" style="color: #ff0000; font-size: 12pt;">JOIN</span></b><span style="color: #ff0000; font-size: 12pt;"> </span><span courier="" style="color: #ff0000; 
+															 font-size: 12pt;"> ON</span><span style="font-size: 12pt;"> </span><span courier="" style="color: #006dbf; 
+											 font-size: 12pt;">left_table_name</span><span courier="" style="font-size: 12pt;">, </span><span courier="" style="color: #006dbf; 
+														 font-size: 12pt;">right_table_name</span><span courier="" style="font-size: 12pt;">, </span><span courier="" style="color: #006dbf; 
+														 font-size: 12pt;">target_table_name</span><span style="font-size: 12pt;"> </span><span courier=""><i style="font-size: 12pt;">[</i></span><span courier="" style="color: #ff0000; font-size: 12pt;">PRIORITY</span><span style="font-size: 12pt;"> </span><span courier="" style="color: #006dbf; 
+											 font-size: 12pt;">priority</span><i><span courier="" style="font-size: 12pt;">]</span></i><span style="font-size: 12pt;"> </span><span courier="" style="font-size: 12pt;"> </span><span courier="" style="color: #ff0000; font-size: 12pt;">USE type=&quot;</span><span courier=""><i style="font-size: 12pt;">join type</i></span><span courier="" style="color: #ff0000; font-size: 12pt;">&quot; <b style="color: #ff0000; 
+														 font-size: 12pt;">on=&quot;</b></span><i style="font-size: 12pt;"><span courier="" style="font-size: 12pt;">cross table comparison expression</span><span courier="" style="color: #ff0000; 
+										 font-size: 12pt;">&quot;</span></i><b style="font-size: 12pt;"><span courier="" style="font-size: 12pt;"> </span><span courier="" style="color: #ff0000; font-size: 12pt;">selects=&quot;</span></b><i style="font-size: 12pt;"><span courier="" style="font-size: 12pt;">list of assignment expressions</span><span courier="" style="color: #ff0000; 
+										 font-size: 12pt;">&quot;</span></i><span courier=""> </span></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="" style="font-weight: normal; 
+													 font-style: normal;">trigger_name</span></i></b> -<i><span courier="" style="font-style: normal;"> name of the trigger to create, must be unique within the database</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="" style="font-weight: normal; 
+													 font-style: normal;">left_table_name</span></i></b> -<i><span courier="" style="font-style: normal;"> name of the left table to join against</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="" style="font-weight: normal; 
+													 font-style: normal;">right_table_name</span></i></b> -<i><span courier="" style="font-style: normal;"> name of the right table to join against</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="" style="font-weight: normal; 
+													 font-style: normal;">target_table_name</span></i></b> -<i><span courier="" style="font-style: normal;"> name of the table that will be updated by the trigger</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 12pt;"><b><i><span courier="" style="font-weight: normal; 
+													 font-style: normal;">priority</span></i></b> -<i><span courier="" style="font-style: normal;"> a number, triggers with lowest value are executed first. Only considered when two or more triggers exist on the same table</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"> </p>
+  <h4 style="margin-top: 15pt; margin-bottom: 3pt; font-size: 13pt; color: #449938; 
+	 font-family: Arial, sans-serif; text-decoration: none; ">EXAMPLES</h4>
+  <p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">//Lets assume the three tables exist:</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE PUBLIC TABLE Accounts1(account String,region String,qty int,px double);</span></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE PUBLIC TABLE Accounts2(account String,region String,qty int,px double);</span></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE PUBLIC TABLE UnmatchedAccounts(account1 String, account2 String);</span></p>
+  <p style="margin-bottom: .0001pt; text-indent: .5in; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">                           </span></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">//The below trigger will build a realtime view of accounts that only in the Accounts1 table</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">//or only in the Accounts2 table.  (see OUTER ONLY for details)</span></i></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><i><span courier="" style="font-style: normal;">//(try inserting into the Accounts1 table and then take a look at the</span></i> <span courier="">UnmatchedAccounts <i style="font-style: normal;">table)</i></span></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf;"><span courier="">CREATE TRIGGER MyTrigger OFTYPE JOIN ON Accounts1,Accounts2, UnmatchedAccounts USE type=&quot;OUTER ONLY&quot; on=&quot;Accounts1.account==Accounts2.account&quot; selects=&quot;account1=Accounts1.account, account2=Accounts2.account&quot;;</span></p>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf;"> </p>
+  <h2 style="font-size: 19pt; margin-top: 5pt; margin-bottom: 1pt; color: rgb(112, 48, 160); font-family: Arial, sans-serif; text-decoration: none;"><span style="color: #7030A0; font-family: Arial, sans-serif; text-decoration: none; "><a id="Streaming_realtime_-_DECORATE_triggers"></a>Streaming realtime - DECORATE triggers</span></h2>
+  <hr align="left" style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;"/>
+  <p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #ff0000; font-size: 12pt;"><span courier="">CREATE TRIGGER mytrigger OFTYPE DECORATE ON sourceTable,targetTable USE...</span></p>
+  <h3>OVERVIEW</h3>
+  <p> </p>
+  <p>This trigger is used to automatically decorate (update) a target table based on changes from a source table</p>
+  <p> </p>
+  <ul class="Disc">
+    <li>
+      <p>When a row is updated/inserted in the source table all matching rows (based on the ON clause) in the target table are updated (based on the SELECTS clause).</p>
+    </li>
+    <li>
+      <p>Multiple DECORATE triggers can share the same source table.</p>
+    </li>
+    <li>
+      <p>Multiple DECORATE triggers can share the same target table.</p>
+    </li>
+    <li>
+      <p>The creation of the trigger will immediately update the target table based on source table values.</p>
+    </li>
+    <li>
+      <p>When a row is inserted into the target table the last known matching values (if any) from the source table will be used to immediately update the new row.</p>
+    </li>
+    <li>
+      <p>Deletes from the source table will not affect the target table.</p>
+    </li>
+  </ul>
+  <p> </p>
+  <p>There are three <span style="color:#ff0000;">USE </span>options: </p>
+  <p> </p>
+  <ul class="Disc">
+    <li>
+      <p>on - An expression for how to relate the two tables in the form:  &quot;leftColumn == rightColumn [ &amp;&amp; leftColumn == rightColumn ... ]&quot;</p>
+    </li>
+    <li>
+      <p>selects - A comma delimited list of expressions on how to populate target columns from source columns. Form is: targetTableColumn = sourceTableColumn [,targetTableColumn = sourceTableColumns]</p>
+    </li>
+    <li>
+      <p>keysChange- Either true or false. Default is false. If it&#39;s expected that columns participating in the ON clause can change, then set to true. Note that setting to true adds additional overhead.</p>
+    </li>
+  </ul>
+  <p><br/>
+    <span style="font-family:&#39;Courier New&#39;;"><span style="color:#ff0000;">CREATE TRIGGER</span> <span style="color:#0000ff;">trigger_name</span>  <span style="color:#ff0000;">OFTYPE DECORATE ON</span> <span style="color:#0000ff;">source_table_name, target_table_name</span> [<span style="color:#ff0000;">PRIORITY</span> <span style="color:#0000ff;">priority</span>]  <span style="color:#ff0000;">USE <strong>on=&quot;</strong></span>cross<br/>
+      table comparison expression<span style="color:#ff0000;">&quot; selects=&quot;</span>list of assignment expressions<span style="color:#ff0000;">&quot;</span></span> 
+  </p>
+  <p><br/>
+    <span style="color:#808080;">trigger_name - name of the trigger to create, must be unique within the database<br/>
+      source_table_name - name of the table to listen for updates from target_table_name - name<br/>
+      of the table to update on changes priority - a number, triggers with lowest value<br/>
+      are executed first. Only considered when two or more triggers exist on the same table</span>
+  </p>
+  <h3><span style="color:#808080;"></span>EXAMPLES </h3>
+  <p> </p>
+  <p class="CourierBlue">//Let&#39;s assume the two tables exist: create public table MktData(sym String,price<br/>
+    double); create public table Orders(id String,sym String,price double); </p>
+  <p class="CourierBlue"><br/>
+    //When the MktData is updated, all Orders with the same symbol will now have the<br/>
+    price updated create trigger tt oftype decorate on MktData,Orders use on=&quot;Orders.sym==MktData.sym&quot;<br/>
+    selects=&quot;price=price&quot;</p>
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

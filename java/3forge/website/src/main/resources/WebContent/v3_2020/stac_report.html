@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="loader">
+<f1:secure/>
+<head>
+	<title>STAC Report</title>
+	<f1:include page="'_/head.htm'"/>
+	<link media="all" rel="stylesheet" href="css/stac-modal.css">
+</head>
+<body>
+	<div id="wrapper">
+		<f1:include page="'_/header.html'"/>
+		<main id="main">
+			<div id="modal">
+				<div class="modal-content" style="text-align: center;">
+					<div class="modal-header">
+						<span class="close">&times;</span>
+						<h1>Thank You!</h1>
+					</div>
+					<hr>
+					<p class="modal-text">An email containing the download link has been sent to <span id="modal-email"></span></p>
+					<br><br>
+					<button id="modal-close-button" class="btn btn-large btn-theme3">close</button>
+				</div>
+			</div>
+			<section class="visual-section">
+				<div class="container">
+					<div class="decor decor-outline"></div>
+					<div class="decor decor-filled"></div>
+					<div class="visual">
+						<div class="text-holder">
+							<div class="text-wrap">
+								<h1 class="h1"> STAC Report: 3Forge's High Performance Web Technology Renders Heavyweight Front Ends Obsolete</h1>
+							</div>
+						</div>
+						<div class="img-holder">
+							<img src="images/customer-stories-img.png" srcset="images/customer-stories-img@2x.png 2x" alt="" width="526" height="209">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="contact-section viewport-section">
+				<div class="container">
+					<div class="contact-block">
+						<ul class="contact-list">
+							<li>
+								<p>"As a leader in electronic trading, we recognize the importance of independent bench-marking. STAC applies the type of rigor customarily limited to transactional systems to real-time dashboards and analytics. This provides us with the ability to monitor, analyze and effectively act on massive sums of moving data, which is central to our business, and the <b>3Forge browser-based platform</b> has continued to provide strong reliability as the sophistication, performance and volume of our trades increase year over year."</p>
+								<h2 >Hank Hyatt</h3> <br>
+								<h3 >Managing Director and Global Head of Algorithmic Trading Technology</h3>
+								<h3 style="color:#187ABA">Morgan Stanley</h3>
+							</li>
+						</ul>
+					</div>
+					<div class="contact-form">
+						<label style="color: red;"><f1:out value="${cu_errors}"/></label>
+						<!-- 
+						<form class="info-form form-validation" id="contact-form" action="/contactUs" method="post" onSubmit="true">
+						-->
+						<form class="info-form" action="" method="post" accept-charset="UTF-8" role="form" style="padding: 20px 10px; position: relative;" id='form'>
+							<div class="form-container">
+			                	<label id='success' name='success' style="color: green;"></label>
+			                	<label id='error' name='error' style="color: red;"></label>
+								<div class="form-row">
+									<div class="form-col">
+										<div class="input-holder">
+											<input id="fname" name="fname" type="text" placeholder="First Name" data-hj-whitelist/>
+										</div>
+									</div>
+									<div class="form-col">
+										<div class="input-holder">
+											<input id="lname" name="lname" type="text" placeholder="Last Name" data-hj-whitelist/>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-col">
+										<div class="input-holder">
+											<input id="email" name="email" type="text" placeholder="Business Email" data-hj-whitelist/>
+										</div>
+									</div>
+									<div class="form-col">
+										<div class="input-holder">
+											<input id="company" name="company" type="text" placeholder="Company" data-hj-whitelist/>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-col">
+										<div class="input-holder">
+											<input id="phone" name="phone" type="text" placeholder="phone"/>
+										</div>
+									</div>
+									<div class="form-col">
+										<div class="input-holder">
+			                    			<select id="press-release-version" name="press-release-version" class="inputbox">
+			                      				<option selected value="stac_report_3forge.pdf">STAC Report 3Forge AMI</option>
+			                    			</select>
+										</div>
+									</div>
+								</div>
+			                    <label id="microNotice" class="smalltext"></label><br>
+								<div class="form-col">
+									<div class="input-holder">
+		                    			<label >I would like to be contacted for more information by:</label><br>
+										<input type="checkbox" id='contact_medium_phone' name="contact_medium_phone" value="contact_phone"> Phone<br>
+										<input type="checkbox" id='contact_medium_email' name="contact_medium_email" value="contact_email"> Email<br>
+									</div>
+								</div>
+								<br>
+			                    <button type="submit" id="pressRelease" class="btn btn-theme3 btn-info" onclick='disableBtn();ajaxNow("sendDownloadLink",getFields("form"));return false;'>Send Download Link</button><br><br>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		<f1:include page="'_/footer.html'"/>
+	</div>
+
+	<script type="text/javascript" src="v2_resources/javascripts/script.js"></script>
+	<script>
+		// modal
+		var slideFade = (elem) => {
+			elem.slideUp();
+			$("#success").html(" ");
+		}
+		
+		function closeModal() {
+			slideFade($("#modal"));			
+		}
+		
+		$(".close").on('click', closeModal);
+		$("#modal-close-button").on('click', closeModal);
+		
+		window.addEventListener("click", function(event) {
+			if (event.target == modal) {
+				closeModal();
+			}
+		});
+		
+		$(".animated-text-container").fadeIn(2000);	
+		$(".main-header-phone, .form-fillout-note").fadeIn(2500);	
+		
+		// press release form
+		if (document.getElementById('pressRelease')) {
+		  var form = document.getElementById('form');
+		  var submitBtn = document.getElementById('pressRelease');
+		  var microTxt = document.getElementById('microNotice');
+		  var errorMsg = document.getElementById('error');
+		  var successMsg = document.getElementById('success');
+		  var timeOutFunction;
+		
+		  // while submitting the form
+		  function disableBtn() {
+		    submitBtn.disabled = true;
+		    submitBtn.textContent = 'Submitting...'
+		    microTxt.textContent = 'Request on process. Please do not refresh the page.';
+		    errorMsg.innerHTML = ' ';
+		    successMsg.innerHTML = ' ';
+		    timeOutFunction = setTimeout(stillWorking, 3000);
+		  };
+		
+		  // display error
+		  function showErrorMessage(text){
+		    submitBtn.disabled = false;
+		    submitBtn.textContent = 'Send Download Link';
+		    microTxt.textContent = '';
+		    errorMsg.innerHTML = text;
+		    $('html, body').animate({scrollTop : 0},800); 
+		  };
+		  
+		  // display success 
+		  function showSuccessMessage(text){
+		    submitBtn.disabled = false;
+		    submitBtn.textContent = 'Send Download Link';
+		    microTxt.textContent = '';
+		    successMsg.innerHTML = text;
+		  };
+		 
+		  function showModal(text) {
+		    submitBtn.disabled = false;
+		    submitBtn.textContent = 'Send Download Link';
+		    microTxt.textContent = '';
+		    successMsg.textContent = "Success";
+		    var modal = document.getElementById("modal");
+		    var email_placeholder = document.getElementById("modal-email");
+		    email_placeholder.textContent = text;
+		    $("#modal").slideDown();
+		  }
+		
+		  // change button text after 3s
+		  function stillWorking() {
+		    if (errorMsg.innerHTML == ' ' && successMsg.innerHTML == ' ')
+			    submitBtn.textContent = 'Still working...';
+			else {
+		    	submitBtn.textContent = 'Send Download Link';
+		    	submitBtn.disabled = false;
+		    	clearTimeout(timeOutFunction);
+			}
+		
+		  };
+		  
+		  // clear form if successfull
+		  function clearForm() {
+			  form.reset();
+		  }
+		}
+		
+	</script>
+</body>
+</html>

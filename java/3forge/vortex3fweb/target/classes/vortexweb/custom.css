@@ -1,0 +1,534 @@
+
+
+
+  .graph_node.nc_server{ 
+    border:2px solid black;
+    background-image: -webkit-gradient( linear, left bottom, left top,
+	    color-stop(1.00, rgb(235,235,255)),
+	    color-stop(0.23, rgb(180,180,215)));
+  } 
+  
+  .graph_node{ 
+    font-size:10px;
+    border:2px outset rgb(180,215,180);
+    background-image: -webkit-gradient( linear, left bottom, left top,
+	    color-stop(1.00, rgb(235,255,235)),
+	    color-stop(0.23, rgb(180,215,180)));
+  }
+  
+  .metafield{
+    color: #8700a3;
+  }
+
+  
+  .comment_header{
+    overflow:hidden;
+    background:white;
+  }
+  .terminal_pwd  {
+    overflow:hidden;
+    background:white;
+    padding:2px;
+  }
+  
+.portal_form{
+  padding:2px;
+  text-align:center;
+  width:100%;
+  height:100%;
+  margin:0px;
+  background:#ffffff;
+}
+
+
+.diff_title{
+	background:#eeeeee;
+	font-weight:bold;
+	padding:0px 3px;
+	overflow:hidden;
+}
+
+.html_wait{
+  display:table;
+  background:white;
+  text-align:center;
+  overflow:auto !important;
+  width:100%;
+  height:100%;
+  background-image:url('portal/rsc/wait2.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.html_wait div{
+  position:relative;
+  padding:0px 0px 200px 0px;
+  font-weight:bold;
+  display:table-cell;
+  vertical-align: middle;
+}
+
+.html_error{
+  display:table;
+  background:white;
+  text-align:center;
+  overflow:auto !important;
+  width:100%;
+  height:100%;
+  background-image:url('portal/rsc/stop.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.html_error div{
+  position:relative;
+  padding:0px 0px 200px 0px;
+  font-weight:bold;
+  display:table-cell;
+  vertical-align: middle;
+}
+
+.portlet_icon_amazon{
+  float:left;
+  background-image:url('portal/rsc/vendor/amazon_icon.png');
+  width:18px;
+  height:18px;
+  background-repeat:no-repeat;
+  background-position:left center;
+}
+.portlet_icon_joyent{
+  float:left;
+  background-image:url('portal/rsc/vendor/joyent_icon.png');
+  width:18px;
+  height:18px;
+  background-repeat:no-repeat;
+  background-position:left center;
+}
+.portlet_icon_google{
+  float:left;
+  background-image:url('portal/rsc/vendor/google_icon.png');
+  width:18px;
+  height:18px;
+  background-repeat:no-repeat;
+  background-position:left center;
+}
+.portlet_icon_rackspace{
+  float:left;
+  background-image:url('portal/rsc/vendor/rackspace_icon.png');
+  width:18px;
+  height:18px;
+  background-repeat:no-repeat;
+  background-position:left center;
+}
+.portlet_clock{
+  cursor:pointer;
+  background:white;
+  text-align:left;
+  padding:2px;
+  font-size:11px;
+  color:black;
+  font-family:ms sans serif;
+}
+
+.portal_form_title{
+  color:#0000CC;
+}
+
+
+
+.ami_desktop_background{
+  background-color:#EEFFEE;
+  background-image:url('portal/rsc/ami/desktop_edit.png');
+}
+
+.ami_desktop{
+  background-image:url('portal/rsc/ami/desktop_center.png');
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.ami_desktop_content{
+  left:5px;
+  right:5px;
+  top:20px;
+  bottom:5px;
+}
+
+.ami_desktop_header{
+  background:#008800;
+  background-position:bottom;
+  cursor:move;
+  padding:0px;
+  left:5px;
+  right:5px;
+  top:4px;
+  height:16px;
+}
+
+.ami_desktop_title{
+	color:white;
+  cursor:text;
+  padding:0px;
+  left:5px;
+  top:4px;
+  height:16px;
+}
+
+
+.ami_desktop_close_button{
+  background-image:url('portal/rsc/window_close_btn.gif');
+  right:10px;
+  top:5px;
+  width:27px;
+  height:11px;
+  cursor:pointer;
+}
+.ami_desktop_min_button{
+  background-image:url('portal/rsc/window_min_btn.gif');
+  right:64px;
+  top:5px;
+  width:27px;
+
+  height:11px;
+  cursor:pointer;
+}
+.ami_desktop_max_button{
+  background-image:url('portal/rsc/window_max_btn.gif');
+  right:37px;
+  top:5px;
+  width:27px;
+
+  height:11px;
+  cursor:pointer;
+}
+
+
+.ami_desktop_left{
+  background:#008800;
+  border-color:#00BB00;
+  border-style:solid;
+  border-width:0px 0px 0px 1px;
+  border-style:solid;
+  cursor:w-resize;
+  top:20px;
+  left:0px;
+  bottom:5px;
+  width:5px;
+}
+
+.ami_desktop_right{
+  background:#008800;
+  border-color: #004400;
+  border-style:solid;
+  border-width:0px 1px 0px 0px;
+  cursor:w-resize;
+  top:20px;
+  right:0px;
+  bottom:5px;
+  width:5px;
+}
+
+.ami_desktop_top{
+  background:#008800;
+  border-color: #00BB00;
+  border-style:solid;
+  border-width:1px 0px 0px 0px;
+  background-position:top;
+  cursor:ns-resize;
+  padding:2px;
+  left:5px;
+  right:5px;
+  top:0px;
+  height:4px;
+}
+.ami_desktop_bottom{
+  background:#008800;
+  border-color: #004400;
+  border-width:0px 0px 1px 0px;
+  border-style:solid;
+  cursor:n-resize;
+  left:5px;
+  right:5px;
+  bottom:0px;
+  height:5px;
+}
+
+.ami_desktop_top_left{
+  background:#008800;
+  border-color: #00BB00;
+  border-width:1px 0px 0px 1px;
+  border-style:solid;
+  cursor:nw-resize;
+  left:0px;
+  top:0px;
+  width:5px;
+  height:20px;
+}
+
+.ami_desktop_top_right{
+  background:#008800;
+  border-color: #00BB00 #004400;
+  border-width:1px 1px 0px 0px;
+  border-style:solid;
+  cursor:ne-resize;
+  right:0px;
+  top:0px;
+  width:5px;
+  height:20px;
+}
+
+.ami_desktop_bottom_left{
+  background:#008800;
+  border-color: #004400 #00BB00;
+  border-width:0px 0px 1px 1px;
+  border-style:solid;
+  cursor:ne-resize;
+  left:0px;
+  bottom:0px;
+  width:5px;
+  height:5px;
+}
+
+.ami_desktop_bottom_right{
+  background:#008800;
+  border-color: #004400;
+  border-width:0px 1px 1px 0px;
+  cursor:nw-resize;
+  border-style:solid;
+  right:0px;
+  bottom:0px;
+  width:5px;
+  height:5px;
+}
+
+.ami_3forge_logo{
+    background-image:url('portal/rsc/ami/3forge_logo_small.png');
+    background-position:5px 1px;
+    background-repeat:no-repeat;
+}
+
+.ami_dashboard_title{
+	padding:4px;
+	font-size:16px;
+}
+	
+.ami_dashboard_menu{
+	padding:4px;
+}
+	
+.ami_dashboard{
+	background-color:#EEEEEE;
+    border-color:#EEEEEE;
+	text-align:center;
+}
+.ami_dashboard_divider{
+    border-style:solid;
+    border-color:#CCCCCC #FFFFFF #555555 #FFFFFF;
+    border-width:1px 0px;
+    background:#AAAAAA
+}
+
+.ami_dashboard_button{
+	border:2px outset grey;
+	font-size:16px;
+	background:#AAFFAA;
+	padding:1px 3px;
+	margin:2px 10px;
+	cursor:pointer;
+}
+
+.ami_config_off{
+	color:#888888;
+	cursor:pointer;
+    background-image:url('portal/rsc/ami/config_off.png');
+    background-repeat:no-repeat;
+    background-position:right center;
+	text-align:right;
+    padding:4px 85px 0px 0px;
+    width:100%;
+    height:100%;
+}
+.ami_config_on{
+	color:#888888;
+	cursor:pointer;
+    background-image:url('portal/rsc/ami/config_on.png');
+    background-repeat:no-repeat;
+    background-position:right center;
+	text-align:right;
+    padding:4px 85px 0px 0px;
+    width:100%;
+    height:100%;
+}
+.ami_blank{
+  background-image:url('portal/rsc/blank.gif');
+  position:absolute;
+  bottom:0px;
+  top:0px;
+  left:0px;
+  right:0px;
+}
+.ami_blank2{
+  background-image:url('portal/rsc/ami/config_button.png');
+  cursor:pointer;
+  position:absolute;
+  width:30px;
+  height:30px;
+  margin:-15px -15px;
+  bottom:50%;
+  left:50%;
+}
+
+.ami_help_bubble{
+  background-image:url('portal/rsc/ami/bubble.png');
+  background-repeat:no-repeat;
+  width:218px;
+  height:124px;
+  padding:60px 20px 10px 20px;
+  text-align:left;
+  top:0px;
+  right:100px;
+}
+.ami_help_bubble2{
+  background-image:url('portal/rsc/ami/bubble.png');
+  background-repeat:no-repeat;
+  cursor:default;
+  width:218px;
+  height:124px;
+  padding:50px 10px 10px 10px;
+  text-align:left;
+  margin: 20px -50px;
+  top:50%;
+  right:50%;
+}
+
+.ami_desktop_edit_div{
+  z-index:2000;
+  pointer-events:none;
+  left:0px;
+  right:0px;
+  top:0px;
+  bottom:0px;
+}
+.ami_desktop_edit_button{
+  pointer-events:auto;
+  background-image:url('portal/rsc/ami/config_button.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  cursor:pointer;
+  width:60px;
+  height:60px;
+  margin:-30px -30px;
+  bottom:50%;
+  left:50%;
+}
+.ami_desktop_edit_select{
+  border:3px solid #006600;
+  text-align:center;
+  overflow:hidden;
+  font-size:80px;
+  color:black;
+  left:0px;
+  top:0px;
+  bottom:0px;
+  right:0px;
+}
+.ami_desktop_edit_select2{
+  background:#00FF00;
+  opacity:.4;
+  left:0px;
+  top:0px;
+  bottom:0px;
+  right:0px;
+}
+.ami_desktop_edit_button_h{
+  pointer-events:auto;
+  background-image:url('portal/rsc/ami/config_button_h.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  cursor:pointer;
+  width:90px;
+  height:30px;
+  margin:-15px -45px;
+  bottom:50%;
+  left:50%;
+}
+.ami_desktop_edit_button_v{
+  pointer-events:auto;
+  background-image:url('portal/rsc/ami/config_button_v.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  cursor:pointer;
+  width:30px;
+  height:90px;
+  margin:-45px -15px;
+  bottom:50%;
+  left:50%;
+}
+.ami_desktop_edit_button_tab{
+  pointer-events:auto;
+  background-image:url('portal/rsc/ami/config_button_tab.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  cursor:pointer;
+  width:90px;
+  height:20px;
+  top:0px;
+  right:50%;
+  margin:0px -45px;
+}
+
+.ami_edit_menu:hover{
+  background-image:url('portal/rsc/ami/config_menu.png') !important;
+  background-position:left center !important;
+  background-repeat:no-repeat !important;
+}
+.ami_edit_menu{
+  background-image:url('portal/rsc/ami/config_menu.png');
+  color:#006600;
+  background-position:left center;
+  background-repeat:no-repeat;
+}
+	
+.ami_link_canvas{
+  opacity:.5;
+  pointer-events:none;
+  position:absolute;
+  left:0px;
+  top:0px;
+  bottom:0px;
+  right:0px;
+}
+.ami_user_linking_canvas{
+  pointer-events:none;
+  position:absolute;
+  left:0px;
+  top:0px;
+  bottom:0px;
+  right:0px;
+}
+
+.ami_desktop_link_source {
+  text-align:center;
+  overflow:hidden;
+  padding:50px;
+  font-size:90px;
+  color:white;
+  background:blue;
+  opacity:.6;
+  left:0px;
+  top:0px;
+  bottom:0px;
+  right:0px;
+}
+.ami_desktop_link_target{
+  text-align:center;
+  overflow:hidden;
+  padding:50px;
+  font-size:90px;
+  color:white;
+  background:green;
+  opacity:.6;
+  left:0px;
+  top:0px;
+  bottom:0px;
+  right:0px;
+}

@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>vortex</name>
+
+    <groupId>com.vortex</groupId>
+    <artifactId>vortex</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+  
+   <parent>
+          <groupId>com.3f</groupId>
+          <artifactId>3f</artifactId>
+          <version>1.00-SNAPSHOT</version>
+          <relativePath>../</relativePath>
+    </parent>
+    
+    <modules>
+        <module>eye</module>
+        <module>agent</module>
+        <module>glass</module>
+        <module>sso</module>
+        <module>tester</module>
+        <module>vortexcommon</module>
+        <module>vortexcompiler</module>
+    </modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+
+    <build>
+        <plugins>
+         <plugin>
+             <artifactId>maven-source-plugin</artifactId>
+             <version>2.1.1</version>
+             <executions>
+             <execution>
+             <id>bundle-sources</id>
+             <phase>package</phase>
+             <goals>
+                  <goal>jar-no-fork</goal>
+             <goal>test-jar-no-fork</goal>
+             </goals>
+             </execution>
+             </executions>
+         </plugin>
+		</plugins>
+		</build>
+  
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <type>jar</type>
+            <scope>test</scope>
+            <optional>true</optional>
+        </dependency>
+   
+    </dependencies>
+
+
+
+    <scm>
+        <connection>scm:perforce:ssl:192.168.3.2:1234://depot/dev/java/f1</connection>
+        <developerConnection>scm:perforce:ssl:192.168.3.2:1234://depot/dev/java/f1</developerConnection> 
+        <url>scm:perforce://depot/dev/java/f1</url> 
+    </scm>
+    
+    
+
+</project>
+

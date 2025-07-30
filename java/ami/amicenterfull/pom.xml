@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ami</groupId>
+
+    <name>amicenterfull</name>
+    <artifactId>amicenterfull</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.ami</groupId>
+        <artifactId>ami</artifactId>
+        <version>1.00-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <dependencies>
+      <dependency>
+        <groupId>com.ami</groupId>
+        <artifactId>amicenter</artifactId>
+        <version>1.00-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ami</groupId>
+        <artifactId>amimysql</artifactId>
+        <version>1.00-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ami</groupId>
+        <artifactId>amipostgresql</artifactId>
+        <version>1.00-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ami</groupId>
+        <artifactId>amioracle</artifactId>
+        <version>1.00-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ami</groupId>
+        <artifactId>amiexcel</artifactId>
+        <version>1.00-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ami</groupId>
+        <artifactId>amidb2</artifactId>
+        <version>1.00-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+      	<groupId>com.ami</groupId>
+      	<artifactId>amissh</artifactId>
+      	<version>1.00-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+      	<groupId>com.ami</groupId>
+      	<artifactId>amisqlite</artifactId>
+      	<version>1.00-SNAPSHOT</version>
+      </dependency>
+    </dependencies>
+    
+</project>
+

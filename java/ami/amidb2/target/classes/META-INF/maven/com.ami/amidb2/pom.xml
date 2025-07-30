@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ami</groupId>
+  
+  <name>amidb2</name>
+  <artifactId>amidb2</artifactId>
+  <version>1.00-SNAPSHOT</version>
+
+  <parent>
+      <groupId>com.ami</groupId>
+      <artifactId>ami</artifactId>
+      <version>1.00-SNAPSHOT</version>
+      <relativePath>../</relativePath>
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.ami</groupId>
+      <artifactId>amicommon</artifactId>
+      <version>1.00-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>db2</groupId>
+      <artifactId>db2-jdbc</artifactId>
+      <version>jcc4</version>
+    </dependency>
+  </dependencies>
+</project>

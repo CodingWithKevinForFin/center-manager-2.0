@@ -1,0 +1,73 @@
+/* Setting maximum width, default 61rem */
+.md-grid {
+  max-width: 64rem;
+}
+
+
+:root {
+	/* Custom AMI colors */
+	--ami-login-background-old: #024960;
+	--ami-login-background-new: #130a37;
+
+	/* Setting custom primary color */
+	--md-primary-fg-color: #BA675F;
+	--md-primary-fg-color--light: #BA675F;
+	--md-primary-fg-color--dark: #BA675F;
+
+	/* Setting custom accent color */
+	--md-accent-fg-color: #5924a6;
+	--md-accent-fg-color--light: #5924a6;
+	--md-accent-fg-color--dark: #5924a6;
+
+
+
+}
+
+/* Override header colors */
+.md-header {
+	background-color: var(--ami-login-background-old);
+	background-image: radial-gradient(80% 300% at 90% -20%, #BA675F, #5924a6, #263054);
+}
+@media screen and (max-width: 76.234375em) {
+	.md-nav--primary .md-nav__title {
+		background-color: var(--ami-login-background-old) !important;
+		background-image: radial-gradient(80% 300% at 90% -40%, #BA675F, #5924a6, #263054) !important;
+		color: hsla(225,15%,90%,0.76) !important;
+	}
+}
+
+/* Override code syntax coloring (commented out as it doesn't look great by default) */
+/* [data-md-color-scheme="slate"] { */
+/* 	--md-code-hl-keyword-color: #98335d; */
+/* 	--md-code-hl-string-color: #669245; */
+/* 	--md-code-hl-number-color: #632c6b; */
+/* } */
+/* [data-md-color-scheme="default"] { */
+/* 	--md-code-hl-keyword-color: #98335d; */
+/* 	--md-code-hl-string-color: #669245; */
+/* 	--md-code-hl-number-color: #632c6b; */
+/* } */
+
+.md-typeset .admonition.quote {
+    border: 0px; 
+    border-radius: 6px; 
+}
+
+img.bloomberg-logo {
+    padding-top: 1.3rem;
+    padding-bottom: 1rem;
+}
+
+img.fix-logo {
+	padding-top: 1rem;
+	padding-bottom: 0.2rem;
+}
+
+img.aeron-logo {
+	height: 3.25rem;
+}
+
+img.aquaq-logo {
+	padding-top: 1rem;
+	padding-bottom: 0.7rem;
+}

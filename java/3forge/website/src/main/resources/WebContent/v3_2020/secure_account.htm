@@ -1,0 +1,876 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f1:set var="tab" value="'secure_account'" scope="request" />
+
+<f1:secure/>
+
+<f1:if test="${isLoggedIn}"><f1:else/>
+
+  <f1:redirect page="'login.html'"/>
+
+</f1:if>
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+
+<f1:include page="'_/v2/head.htm'"/>
+
+
+
+<f1:include page="'_/v2/masthead.htm'"/>
+
+
+
+	<body>
+
+
+
+
+
+    <div class="visible-phone" id="secondary-nav">
+
+
+
+
+
+      <a href="#" class="scrollToTop">
+
+        <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+      </a>
+
+
+
+
+
+      <noscript>
+
+
+        <a href="#" class="scrollToTop2">
+
+          <img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/>
+
+        </a>
+
+
+      </noscript>
+
+
+
+
+
+      <center>
+
+
+        <h3 class="mobile-h1">Account Settings</h3>
+
+
+      </center>
+
+
+
+
+
+      <a href="secure_account.htm" title="My Account">
+
+
+        <img class="secondary-nav-icon" style="right:0;top:0;color:white;" src="v2_resources/images/account_icon_gray.png"/>
+
+
+      </a>
+
+
+
+
+
+    </div>
+
+
+
+		<div id="portal-content">
+
+
+
+      <noscript>
+
+        <div class="formOverlay">
+
+          <center>
+
+            <h2>Most features on this site require JavaScript. Please enable JavaScript before continuing.</h2>
+
+          </center>
+
+        </div>
+
+      </noscript>
+
+
+
+			<fieldset class="login">
+
+
+
+        <ul class="unstyled row-fluid">
+
+
+
+
+
+          <li class="span4 bottom-margin-30x">
+
+
+
+            <legend><span>About you</span></legend>
+
+
+
+
+
+            <div id="about-you">
+
+
+
+
+
+              <ul class="unstyled row-fluid">
+
+
+
+
+                <li>
+
+
+                  <label for="name">First Name:</label>
+
+
+                  <f1:out escape="FULL"  value="${user.firstName}"/>
+
+
+                </li>
+
+
+                <li>
+
+
+                  <label for="name">Last Name:</label>
+
+
+                  <f1:out escape="FULL"  value="${user.lastName}"/>
+
+
+                </li>
+
+
+                <li>
+
+
+                  <label for="name">Company:</label>
+
+
+                  <f1:out escape="FULL"  value="${user.company}"/>
+
+
+                </li>
+
+
+                <li>
+
+
+                  <label for="name">Title/Role:</label>
+
+
+                  <f1:out escape="FULL" value="${user.role}"/>
+
+
+                </li>
+
+
+                <li>
+
+
+                  <label for="name">Phone:</label>
+
+
+                  <f1:out escape="FULL" value="${user.phone}"/>
+
+
+                </li>
+
+
+
+
+              </ul><br>
+
+
+
+
+
+              <button id="update-about-info" type="button" class="btn btn-info btn-theme1">Update information</button>
+
+
+
+
+
+            </div>
+
+
+
+
+
+            <div id="about-you-form">
+
+
+
+
+
+              <form class="" action="" method="post" id="form2"><input id='tok' type="hidden" value='<f1:out value="${sectoken}"/>'>
+          
+
+
+                <label id='uaerror' style="color:red;"></label>
+
+
+                <label id='uaokay' style="color:blue;"></label>
+
+
+
+                <label for="name">First Name:</label>
+
+
+                  <input id='fname' type="text" value= '<f1:out escape="QUOTES" value="${user.firstName}"/>'>
+
+
+
+                <label for="name">Last Name:</label>
+
+
+                <input id='lname' type="text" value= '<f1:out escape="QUOTES" value="${user.lastName}"/>'>
+
+
+
+                <label for="name">Company:</label>
+
+
+                <input id='company' type="text" value= '<f1:out escape="QUOTES" value="${user.company}"/>'>
+
+
+
+                <label for="name">Title/Role:</label>
+
+
+                <input id='role' type="text" value= '<f1:out escape="QUOTES" value="${user.role}"/>'>
+
+
+
+                <label for="name">Phone:</label>
+
+
+                <input id='phone' type="text" value= '<f1:out escape="QUOTES" value="${user.phone}"/>'>
+
+
+
+                <br><br>
+
+
+
+                <button id="save-new-info" type="submit" class="btn btn-info btn-theme1" >Save changes</button>
+
+
+
+              </form>
+
+
+
+
+
+            </div>
+
+
+
+
+
+          </li>
+
+
+
+
+
+          <li class="span4 bottom-margin-30x">
+
+
+
+
+
+            <legend><span>Account info</span></legend>
+
+
+
+
+
+            <ul class="unstyled row-fluid">
+
+
+
+              <li>
+
+
+                <label for="username">Username:</label>
+
+
+                <f1:out escape="FULL" value="${user.userName}"/>
+
+
+              </li>
+
+
+
+              <li>
+
+
+                <label for="name">Membership:</label>
+
+
+                <f1:if test="OH.eq(${user.statusText},'ENTERPRISE')">Enterprise</f1:if>
+
+
+                <f1:if test="OH.eq(${user.statusText},'ADMIN')">Administrative</f1:if>
+
+
+                <f1:if test="OH.ne(${user.statusText},'ENTERPRISE') && OH.ne(${user.statusText},'ADMIN')">Trial</f1:if>
+
+
+                User
+
+
+              </li>
+
+
+
+            </ul><br>
+
+
+
+
+
+          </li>
+
+
+
+
+
+          <li class="span4 bottom-margin-30x">
+
+
+
+            <legend><span>Change password</span></legend>
+
+
+
+            <form id='form' class="" action="" method="post"><input id='tok' type="hidden" value='<f1:out value="${sectoken}"/>'>
+
+              <label id='error' style="color:red;"></label>
+
+              <label id='okay' style="color:blue;"></label>
+
+
+
+              <input id="pass" type="password" autocomplete="current-password" name="password" placeholder="Current password"/>
+
+              <input id="newpass1" type="password" autocomplete="new-password" name="" class="" placeholder="New password" value="">
+
+              <label class="smalltext" id="passrules" style="padding: 0; font-weight: normal;">Password must be 7 to 32 characters and contain an uppercase, lowercase, numeric and special character.</label>
+
+              <input id="newpass2" type="password"  autocomplete="new-password" name="" class="" placeholder="Retype new password" value=""><br><br>
+
+
+
+              <button id="save-new-password" type="submit" class="btn btn-theme1 btn-info">Save changes</button>
+
+            </form>
+
+
+
+          </li>
+          
+<!--                     <li class="span4 bottom-margin-30x">
+
+
+
+            <legend><span>Manage user file upload permissions</span></legend>
+
+
+
+                    <table style="overflow: auto; display: block; height: 377px; width: 732px; max-width:732px;">
+
+
+
+          <tr class="files-header-row">
+
+
+
+
+            <th>
+
+              <a href="secure_account?sort=name&tok=<f1:out value="${sectoken}"/>">User<f1:if test="OH.eq(${user.fileSorting},\"name\")">
+
+                <img src="v2_resources/images/carrot.png" alt="^" /> </f1:if>
+
+              </a>
+
+            </th>
+            
+             <th>
+
+              <a href="secure_account?sort=name&tok=<f1:out value="${sectoken}"/>">Email<f1:if test="OH.eq(${user.fileSorting},\"name\")">
+
+                <img src="v2_resources/images/carrot.png" alt="^" /> </f1:if>
+
+              </a>
+
+            </th>
+            
+            
+            <th>
+
+              <a href="secure_account?sort=size&tok=<f1:out value="${sectoken}"/>">Permission<f1:if test="OH.eq(${user.fileSorting},\"size\")">
+
+                <img src="v2_resources/images/carrot.png" alt="^" /> </f1:if>
+
+              </a>
+
+            </th>
+
+
+
+
+            <th>
+
+              <a href="secure_account?sort=modified&tok=<f1:out value="${sectoken}"/>">Modified<f1:if test="OH.eq(${user.fileSorting},\"modified\")">
+
+                <img src="v2_resources/images/carrot.png" alt="^" /> </f1:if>
+
+              </a>
+
+            </th>
+
+
+
+
+          </tr>
+
+
+
+
+
+          <f1:forEach items="${user.employees.rows}" var="employee">
+
+
+            <tr>
+
+
+
+              <td>
+
+                <f1:out escape="FULL" value="${employee..firstName}"/>
+
+              </td>
+
+
+
+
+
+              <td>
+
+                <f1:out escape="FULL" value="${employee..email}"/>
+
+              </td>
+
+
+
+
+              <td>
+				<select name="permissionselect" id="permission select" style="text-transform: capitalize; width:92%;">
+					<option value=f1:out escape="FULL" value="${employee..permission}" style="text-transform: capitalize;"><f1:out escape="FULL" value="${employee..permission}"/></option>
+					<option value=f1:out escape="FULL" value="${employee..oppositePermission}" style="text-transform: capitalize;"><f1:out escape="FULL" value="${employee..oppositePermission}"/></option>
+				</select>
+                
+
+              </td>
+              
+              <td>
+
+                <f1:out escape="FULL" value="${employee..modifiedOn}"/>
+
+              </td>
+
+
+
+
+            </f1:forEach>
+
+
+
+
+
+          </table><br>
+
+			              <button id="update-user-permissions" type="submit" class="btn btn-theme1 btn-info" onclick=''>Update permissions</button>
+			
+
+          </li>
+
+
+ -->
+        </ul>
+
+
+
+      </fieldset>
+
+
+
+			<div class="clear"></div>
+
+
+
+
+
+      <div class="visible-phone">
+
+
+
+
+
+        <ul class="unstyled row-fluid">
+
+
+
+          <li class="span5 bottom-margin-30x">
+
+
+
+            <legend><span>Contact support</span></legend>
+
+
+
+            <form action="" onSubmit="" method="post" class="" id="contactForm"><input id='tok' type="hidden" value='<f1:out value="${sectoken}"/>'>
+
+
+
+              <label style="color:red;" id='csError'></label>
+
+
+
+              <textarea id="message" class="contactFormInput" name="message" placeholder="What is your support question?" rows="7" style="width: 100%;"></textarea>
+
+              <input id='type' type="hidden" value='question'/>
+
+              <input id='func' type="hidden" value='onContactSupportResponse'/>
+
+
+
+              <br><br>
+
+
+
+              <label>What is your preferred contact method?</label>
+
+
+
+              <div class="radio">
+
+                <label>
+
+                  <input type="radio" name="contactMethod" id="contactMethod" class="contactFormInput" value="email" checked>
+
+                  Email: <f1:out escape="FULL" value="${user.userName}"/>
+
+                </label>
+
+              </div>
+
+              <div class="radio">
+
+                <label>
+
+                  <input type="radio" name="contactMethod" id="contactMethod" class="contactFormInput" value="phone">
+
+                  Phone: <f1:out escape="FULL"  value="${user.phone}"/>
+
+                </label>
+
+              </div>
+
+
+
+              <br>
+
+
+
+
+
+            </form>
+
+
+
+              <label>(Optional) Attach up to 3 Files:</label>
+
+              <form id="submitFile0" method="post" action="attach" ENCTYPE="multipart/form-data" target="hf"><input name='tok' type="hidden" value='<f1:out value="${sectoken}"/>'> <input type="hidden" id="pos" name="pos" value='0'> <input type="file" name="file" id="file" class="contactFormInput" style="color:#141414" /> </form>
+
+              <form id="submitFile1" method="post" action="attach" ENCTYPE="multipart/form-data" target="hf"><input name='tok' type="hidden" value='<f1:out value="${sectoken}"/>'> <input type="hidden" id="pos" name="pos" value='1'> <input type="file" name="file" id="file" class="contactFormInput" style="color:#141414" /> </form>
+
+              <form id="submitFile2" method="post" action="attach" ENCTYPE="multipart/form-data" target="hf"><input name='tok' type="hidden" value='<f1:out value="${sectoken}"/>'> <input type="hidden" id="pos" name="pos" value='2'> <input type="file" name="file" id="file" class="contactFormInput" style="color:#141414" /> </form>
+
+
+
+              <hr>
+
+              <label>After submitting the form you will receive a confirmation email containing a copy of your support question.</label><br>
+
+
+
+              <button id="contactSubmit" data-toggle="modal" class="btn btn-info btn-theme1"> Contact Us </button>
+
+
+
+              <p id="contactDelayMsg" class="smalltext delayMsg" style="margin-bottom: 0;">If you are uploading attachments, this may take a while. Please do not refresh the page.</p>
+
+
+
+          </li>
+
+
+
+        </ul>
+
+
+
+        <hr>
+
+
+
+        <a href="logout">
+
+          <button class="btn btn-info btn-large" style="width:100%;background-color:#DE1D1D; border:none;">Logout</button>
+
+        </a><br><br>
+
+
+
+      </div>
+
+
+
+
+
+      <div id="portal-footer">
+
+
+
+        <div id="footer-body">
+
+
+
+          <p>&copy; <b style="font-weight:normal;" id="copyright">Copyright 3Forge, LLC. All rights reserved.</b> | <a href="privacy" title="Privacy Policy">Privacy Policy</a> | <a href="terms" title="Terms of Use">Terms of Use</a></p>
+
+
+          <p>This site is protected by copyright and trademark laws under U.S. and International law.</p>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+      <f1:include page="'_/v2/footer.htm'"/>
+
+
+
+
+
+      <!-- submit confirmation -->
+
+      <div class="modal fade" id="submitConfirmation" tabindex="-1" role="dialog" aria-labelledby="submitConfirmation">
+
+        <div class="modal-dialog" role="document">
+
+          <div class="modal-content">
+
+
+
+              <div class="modal-header">
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                  <h2 class="modal-title" id="modalTitle">Message sent</h2>
+
+              </div>
+
+
+
+              <div class="modal-body">
+
+
+
+                <p>Your request has been submitted! Our team will follow up shortly.</p>
+
+
+
+              </div>
+
+
+
+              <div class="modal-footer">
+
+                <center>
+
+                  <button id="" data-toggle="modal" data-dismiss="modal" class="btn btn-info btn-theme1">Close</button>
+
+                </center>
+
+              </div>
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <f1:script type="text/javascript" src="inline"  nonce="true"/>
+
+
+
+        var year = new Date().getFullYear();
+
+        document.getElementById('copyright').textContent = 'Copyright ' + year + ' 3Forge, LLC. All rights reserved.';
+
+
+
+      </script>
+
+
+
+		</div>
+	<f1:script type="text/javascript" src="v2_resources/javascripts/portal.js" nonce="true"/>
+	<f1:script type="text/javascript" src="v2_resources/javascripts/script.js" nonce="true"/>
+	
+	<f1:script src="inline" nonce="true"/>
+	 change = document.getElementById("save-new-password");
+	 change.addEventListener("click", function(event) {
+	 	event.preventDefault();
+		disableBtn2();
+		ajaxNow("changePassword",getFields("form"));
+		return false;
+	 });
+	</script>
+	<f1:script src="inline" nonce="true"/>
+	 info = document.getElementById("save-new-info");
+	 info.addEventListener("click", function(event) {
+	 	event.preventDefault();
+		disableBtn();
+		ajaxNow("updateAccount",getFields("form2"));
+		return false;
+	 });
+	</script>
+	  <f1:script src="inline" nonce="true"/>
+	  
+	   contactbtn = document.getElementById("contactSubmit");
+	   
+	   contactbtn.addEventListener('click', function(event) {
+		   event.preventDefault();
+		   ajaxNow("contactSupport",getFields("contactForm"));
+		   onContactSupportResponse("sending","Sending....");
+		   return false;
+	   });
+	   
+	   files1 = document.getElementById("file0");
+	   files2 = document.getElementById("file1");
+	   files3 = document.getElementById("file2");
+	   
+	   files1.addEventListener('change', function(event) {
+	   	fileSelected(event, 0, '<f1:out value="${sectoken}"/>');
+	   });
+	   
+	   files2.addEventListener('change', function(event) {
+	   	fileSelected(event, 1, '<f1:out value="${sectoken}"/>');
+	   });
+	   
+	   files3.addEventListener('change', function(event) {
+	   	fileSelected(event, 2, '<f1:out value="${sectoken}"/>');
+	   });
+	   
+	  
+	  </script>
+    <f1:script src="inline" nonce="true"/>
+  		function fileSelected(event, filePos) {
+  		var fileInput = document.getElementById("file" + filePos);
+  		var contactSubmitBtn = document.getElementById("contactSubmit");
+  		var uploadStatus = document.getElementById("uploadStatus");
+  		
+  		var xhr = new XMLHttpRequest();
+  		var formData = new FormData();
+  		if (fileInput.files && fileInput.files.length === 1) {
+			var file = fileInput.files[0];
+			formData.append("file", file);
+			formData.append("tok",'<f1:out value="${sectoken}"/>');
+			formData.append("pos", filePos);
+			xhr.open("post", "attach");
+			xhr.upload.addEventListener("progress", function(event) {
+				contactSubmitBtn.disabled = true;
+				contactSubmitBtn.style.cursor = "not-allowed";
+			    if (event.lengthComputable) {
+			    	var percentComplete = Math.floor(event.loaded / event.total * 100);
+			    	uploadStatus.innerHTML = "Uploading <b>" + file.name + "</b>(" + percentComplete + "% completed)";
+			  	} else {
+			    	uploadStatus.innerHTML = "Uploading <b>" + file.name + "...</b>";
+			  	}
+			});
+			xhr.addEventListener("load", function() {
+				contactSubmitBtn.disabled = false;
+				contactSubmitBtn.style.cursor = "pointer";
+				if (xhr.status == 200 && xhr.readyState == 4) {
+					uploadStatus.innerHTML = "Upload complete for <b>" + file.name + "</b>";
+				} else if (xhr.status == 400) {
+					fileInput.value = "";
+					uploadStatus.innerHTML = "<span style='color:red;'>" + xhr.responseText + "</span>";
+				} else {
+					fileInput.value = "";
+					uploadStatus.innerHTML = "<span style='color:red;'>Unknown Error: Please contact support directly via support@3forge.com</span>";
+				}
+			});
+			xhr.addEventListener("error", function() {
+			    uploadStatus.innerHTML = "Error uploading <b>" + file.name + "</b>. Please try again or contact <b>support@3forge.com</b> directly";
+			});
+			xhr.addEventListener("abort", function() {
+			    uploadStatus.innerHTML = "Upload cancelled for <b>" + file.name + "</b>";
+			});
+			xhr.send(formData);
+		} else {
+			// user hit cancel from the file explorer. Send request to clear if there were an existing file uploaded.
+			formData.append("tok",'<f1:out value="${sectoken}"/>');
+			formData.append("pos",filePos);
+			formData.append("detach", "detach");
+			xhr.open("post", "attach");
+			xhr.addEventListener("load", function() {
+				uploadStatus.innerHTML = "";
+			});
+			xhr.send(formData);
+		}
+  	}
+  </script>
+  </body>
+</html>

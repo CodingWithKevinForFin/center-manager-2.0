@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "3.3.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Important AmiScript Class Types</title>
+<link rel="StyleSheet" href="../../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Important AmiScript Class Types">
+        <span>Important AmiScript Class Types</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Important AmiScript Class Types</h1>
+<p dir="ltr">Below is a sampling of the class types available within amiscript. 
+ Please visit the documentation for a full, up-to-date catalog of functions 
+ and methods under <span style="font-weight: bold;">Help</span> &gt;<span style="font-weight: bold;"> AmiScript Doc</span> &gt; <span style="font-weight: bold;">AmiScript 
+ Class Types</span>.</p>
+<h3 dir="ltr">Session &amp; Layout</h3>
+<p dir="ltr">There is a single session object for each user that is currently 
+ logged in. Through all of dashboards, the session variable is a special 
+ predefined variable. The session stores things such as the user&#39;s name, 
+ IP address they are logged in from, etc. It also provides functionality 
+ for loading a new layout, starting a download, changing the browser title, 
+ etc.</p>
+<p dir="ltr"> </p>
+<p dir="ltr">A layout represents a particular layout file. Layout files 
+ are what contain the various objects of a dashboard such as panel, datamodels, 
+ as well as child layouts. Please visit <span style="font-weight: bold;"><a href="../Dashboard_Files/Managing_AMI_Files_%26_Objects.htm">Managing 
+ Dashboard Files</a></span> for an understanding of how a dashboard can 
+ be made of several files.</p>
+<h3 dir="ltr">Panels, FormFields, Menu Items.</h3>
+<p dir="ltr">Each panel is represented by a Panel object and there are 
+ several subtypes of panels for each type of panel available. For example, 
+ TablePanel, FormPanel, ChartPanel, TabsPanel, etc. Depending on the type 
+ of panel, certain functionality is available for manipulating the panel 
+ runtime.</p>
+<p dir="ltr"> </p>
+<p dir="ltr">Form Panels can contain a variety of field types, and each 
+ type is represented by a subtype of the Field object, such as the FormCheckboxField, 
+ FormTextField, etc.</p>
+<h3 dir="ltr">StyleSet</h3>
+<p dir="ltr">For each custom style created inside the style manager, they 
+ can be accessed using a StyleSet object. Additionally, each panel 
+ also has an associated StyleSet for manipulating the style settings of 
+ a particular style.</p>
+<h3 dir="ltr">Data structures (Collection,Iterator, Set,Map,List)</h3>
+<p dir="ltr">There are 3 collection types used for organized data. Set 
+ - a unique collection of data. List - an ordered collection of data. Map 
+ - similar to a set but each entry is also associated with a value.</p>
+<h3 dir="ltr">Table &amp; Row</h3>
+<p dir="ltr">An object representation of a SQL table. With functionality 
+ for adding/editing/updating columns, rows, and cell values. A table is 
+ made up of a list of row objects.</p>
+<h3 dir="ltr">Error</h3>
+<p dir="ltr">When AMI Detects an error it will throw an Error object. This 
+ will contain details about why the error occurred and potentially an inner, 
+ causing Error.</p>
+<br class="Apple-interchange-newline"/>
+
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

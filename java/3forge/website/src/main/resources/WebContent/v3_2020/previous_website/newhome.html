@@ -1,0 +1,1164 @@
+<!doctype html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KP5MMRBN');</script>
+  <!-- End Google Tag Manager -->
+  <script src="cookiehub.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realtime data streaming & Blending | Low code app development</title>
+  <meta name="description" content="We are experts in Realtime data streaming & Low code app development. Our team of developers has a passion for building innovative software solutions. Our product uses state of the art technologies and is launched in several tier 1 global investment banks and cryptocurrency exchanges.">
+  <style>
+  	   *{
+/*   	   	-webkit-text-stroke: 0.1px; */
+  	   	font-family: 'Barlow', sans-serif;
+  	   }
+	  body{
+	  	background-color: white;
+	  }
+  	  .gradience {
+	    background-clip: text;
+	    background-image: linear-gradient(93deg, #00a9ff, #ff8629, #ff6f00);
+	    -webkit-text-fill-color: transparent;
+	  }
+	[id^=gartner-pi-widget][data-theme=dark] * {
+		background: #191919;
+	}
+	[id^=gartner-pi-widget][data-size=line] .gartner-pi-score {
+	    margin-right: 12px !important;
+	}
+	[data-carousel-slide-to][aria-current="true"] {
+    	background-color: rgb(255 103 47) !important; /* Override other styles */
+	}
+  </style>
+<!--   <link media="all" rel="stylesheet" href="css/ferris.css"> -->
+  <link media="all" rel="stylesheet" href="css/webv3.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+   tailwind.config = {
+	  	theme: {
+	    extend: {
+	      colors: {
+	        clifford: '#da373d',
+	        grey: '#808080',
+	        offgrey: 'rgb(223 223 223)',
+	        darkgrey: 'rgb(83 83 83)',
+	        slightgrey: 'rgb(201, 203, 198)',
+	        card1: 'rgb(208 213 215)',
+	        card2: 'rgb(229 233 235)',
+	        orangey: 'rgb(255 120 0)',
+	        kindawhite: 'rgb(249 253 255)',
+	        slategrey: '#a4adb7',
+	        modal: '#14142c;',
+	        modaltitle: '#9c9aff;',
+	      }
+	    }
+	  }
+  	}
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KP5MMRBN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap">
+<header class="position: fixed w-full z-50" id="navbarwhole" style="background-image: radial-gradient(80% 300% at 90% -20%, #BA675F, #5924a6, #263054); box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 45px 0px;">
+<nav class="border-gray-200" id="topnav">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-[1215px] p-4">
+        <a href="https://3forge.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+        </a>
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+			<div class="flex group hover:underline">
+			    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-offgrey group-hover:text-orange-500" style="width:20px;">
+			        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+			    </svg>
+			    <a href="https://doc.3forge.com/" class="text-sm text-offgrey font-semibold group-hover:text-orange-500" id="sl1" style="padding-left: 3px;">Documentation</a>
+			</div>
+        	<div class="flex group hover:underline">
+        		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-offgrey group-hover:text-orange-500" style="width:20px;">
+				  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+				</svg>
+            	<a href="new-login.html" class="text-sm  text-offgrey font-semibold group-hover:text-orange-500" id="sl2" style="padding-left: 3px;">Login</a>
+            </div>
+            <div class="flex group hover:underline">
+            	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-offgrey group-hover:text-orange-500" style="width:20px;">
+				  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+				</svg>   	
+            	<a href="contact-us.html" class="text-sm  text-offgrey font-semibold group-hover:text-orange-500" id="sl3" style="padding-left: 3px;">Contact Us</a>
+            </div>
+<!--             <div class="flex">
+            	<div class="gtranslate_wrapper"></div>
+            </div> -->
+        </div>
+    </div>
+</nav>
+<nav class="border-darkgrey border-t-0 border-l-0 border-r-0 border-b-[0px]" id="bottomnav">
+  <div class="max-w-[1215px] flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="newhome.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="images/colored-1.webp" class="h-8" alt="3forge Logo" href="newhome.html" />
+    </a>
+    <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white hover:text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-dropdown" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+      <ul class="bg-white md:bg-transparent flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-6 lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+        <li class="hover:border-b-4 group hover:border-orange-600">
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar1" data-dropdown-delay="400" data-dropdown-trigger="hover" class="flex items-center justify-between w-full py-2 px-3 md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-orange-500 md:p-0 md:w-auto">Platform <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar1" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="platform-overview.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Platform Overview</a>
+                  </li>
+                  <li>
+                    <a href="platform-highlights.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Platform Highlights (Videos)</a>
+                  </li>
+                  <li>
+                    <a href="https://blog.3forge.com/product-release-notes-2/" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Release Notes</a>
+                  </li>
+                  <li>
+                    <a href="case-studies.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Case Studies</a>
+                  </li>
+                  <li>
+                    <a href="new-faq.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">FAQ</a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+        <li class="hover:border-b-4 group hover:border-orange-600">
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar3" data-dropdown-delay="400" data-dropdown-trigger="hover" class="flex items-center justify-between w-full py-2 px-3 md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-orange-500 md:p-0 md:w-auto">For Developers <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar3" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="why-3forge.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Why 3forge?</a>
+                  </li>
+                  <li>
+                    <a href="https://doc.3forge.com/" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Documentation</a>
+                  </li>
+                  <li>
+                    <a href="tutorial-access.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Tutorials</a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+        <li class="hover:border-b-4 group hover:border-orange-600">
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar4" data-dropdown-delay="400" data-dropdown-trigger="hover" class="flex items-center justify-between w-full py-2 px-3 md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-orange-500 md:p-0 md:w-auto">About 3forge <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar4" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="about-3forge.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Company</a>
+                  </li>
+                  <li>
+                    <a href="newevents.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Events</a>
+                  </li>
+                  <li>
+                    <a href="https://blog.3forge.com/" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Blog</a>
+                  </li>
+                  <li>
+                    <a href="careers.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Careers</a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+        <li class="hover:border-b-4 group hover:border-orange-600">
+        	<a href="pricing.html" class="flex items-center justify-between w-full py-2 px-3 md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-orange-500 md:p-0 md:w-auto" id="sl1">Pricing</a>
+        </li>
+        <li class="mt-[1%] md:mt-[-1%]">
+	      <a href="demo.html"><button class="px-4 py-1 text-md text-white bg-orange-600 font-semibold rounded-full border border-orange-600 hover:text-white hover:bg-orange-500 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Request POC</button></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+<section class="bg-black" style="padding-top: 88px;" id="starting">
+	<div class="h-[64rem] sm:h-[59rem] px-4 sm:px-0 md:h-auto md:auto-rows-auto max-w-[1184px] mx-auto pt-20">
+	  <div class="grid auto-rows-[500px] sm:auto-rows-[395px] md:auto-rows-auto grid-cols-1 md:grid-cols-2 pb-12">
+	  	<div class="" style="margin-top: 0%;">
+	  		<h1 class="px-4 sm:px-0 text-5xl md:text-7xl font-semibold m-0 m-auto text-center lg:text-left text-white">Yeah, you can build that.</h1>
+	  		<div class="text-center lg:text-start pt-12">
+	  		<p class="px-4 sm:px-0 max-w-lg m-0 m-auto text-center lg:text-left lg:m-0 text-white font-medium" style="font-size: 20px;">Your enterprise&apos;s issues may be complex. That doesn&apos;t mean building the solution has to be. 3forge is the highly-flexible, low-code platform that empowers enterprise application development in record time.</p>
+			<a href="demo.html"><button class="mt-8 px-4 py-1 text-lg text-white bg-orange-600 font-semibold rounded-full border border-orange-600 hover:text-orange-600 hover:bg-white hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Request a Free POC</button></a>
+	  		<a href="platform-overview"><button class="mt-[2%] sm:mt-[0%] px-4 py-1 text-lg text-white bg-orange-600 font-semibold rounded-full border border-orange-600 hover:text-orange-600 hover:bg-white hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Explore the Platform</button></a>
+	  	</div>
+	  	</div>
+	  	<div>
+	  	<iframe class="w-full h-[123%] relative mt-[-6%] sm:mt-[-12%] md:mt-[-6%]" src="ferristest.html" scrolling="no"></iframe>
+ </div>
+	  </div>
+	 </div>
+</section>
+<section>
+	<div class="h-auto px-4 sm:px-0 max-w-[1169px] mx-auto pt-8 sm:pt-20 sm:pb-20 transition-section">
+		<h1 class="text-center m-0 m-auto pb-12 text-3xl md:text-[3.1rem] font-bold" style="margin: 0 auto;">The &quot;Everythingability&quot; Platform</h1>
+		<p class="text-center m-0 m-auto md:px-20 lg:px-4 xl:px-0 lg:text-left pt-4 pb-12 font-medium text-2xl text-black-500">Reliability? Check. Scalability? That too. Deliverability? In record time. Even for the most complex data sets. With 3forge, you no longer have to choose. Data integration, virtualization, processing, visualization, and workflows all living in one place - solving the world&apos;s most complex real-time streaming data challenges.</p>
+		<video class="mx-auto w-full max-w-screen-xl pt-12" style="max-width: 66%;" controls autoplay muted loop>
+		  <source src="videos/cover-vid-9.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		</video>
+	</div>
+</section>
+<section>
+	<div class="h-auto px-4 sm:px-0 max-w-[1169px] mx-auto pt-8 sm:pt-20 sm:pb-20 transition-section">
+		<h1 class="m-0 m-auto text-center pb-8 text-3xl md:text-[3.05rem] font-bold">Find Out How 3forge Can Transform Your Organization.</h1>
+		<p class="text-center m-0 m-auto md:px-20 lg:px-4 xl:px-0 lg:text-left pt-4 pb-12 font-medium text-2xl text-black-500">3forge provides award-winning technology that enables developers to deploy mission-critical applications in record time. Experience the difference of real-time data and zero latency with 3forge&apos;s focus on data integration, virtualization, processing, and visualization.</p>
+		<div class="text-center" style="margin: 0 auto;">
+			<a href="demo.html"><button class="mt-8 px-4 py-1 text-lg text-white bg-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-500 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Request a Free POC</button></a>	
+			<a href="platform-overview"><button class="mt-8 px-4 py-1 text-lg text-white bg-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-500 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Explore the Platform</button></a>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="h-auto mx-auto sm:pt-20 max-w-[1452px] pt-12 sm:pt-0 transition-section">
+		<h1 class="text-center pb-20 text-3xl md:text-[3.1rem] font-bold text-black">Trusted By Global Firms in Critical Use Cases</h1>
+             <div class="pt-10 ml-40 containing partners-container gridpartners1" id="smallercontain" style="max-width: 1120px; padding: 0px 20px; text-align: center; padding-top: 32px;">
+				<!-- <a class="hover:opacity-80 partner-item"><img class="partner-image" src="images/BAM1.png" alt="BAM Logo" loading="lazy"></a>-->
+				<a class="hover:opacity-80 partner-item"><img class="partner-image" src="images/barclays1.png" alt="Barclays Logo" loading="lazy"></a>
+				<a class="hover:opacity-80 partner-item"><img class="partner-image" src="images/bofa1.png" alt="Bank of America Logo" loading="lazy"></a>
+				<a class="hover:opacity-80 partner-item"><img class="partner-image" src="images/citi1.png" alt="Citibank Logo" loading="lazy"></a>
+				<a class="hover:opacity-80 partner-item"><img class="partner-image" src="images/coinbase1.png" alt="Coinbase Logo" loading="lazy"></a>
+				<a class="hover:opacity-80 partner-item"><img class="partner-image" src="images/morganStanley1.png" alt="Morgan Stanley Logo" loading="lazy"></a>
+				<a class="hover:opacity-80 partner-item"><img class="partner-image" src="images/quantbot1.png" alt="Quantbot Logo" loading="lazy"></a>
+				<a class="hover:opacity-80 partner-item"><img class="partner-image" src="images/verition1.png" alt="Verition Logo" loading="lazy"></a>
+			</div>
+	</div>
+</section>
+<section>
+<div class="h-auto xl:container mx-auto sm:pt-12 sm:pb-20 transition-section">
+<h1 class="text-center pb-12 text-3xl md:text-[3.1rem] font-bold text-black-700 ">Hear From Our Clients</h1>
+<div id="default-carousel" class="relative w-full pt-4" data-carousel="slide" style="max-width: 800px; margin: 0 auto;">
+    <!-- Carousel wrapper -->
+    <div class="relative h-[30rem] sm:h-[27rem] overflow-hidden border-[1px] bg-kindawhite border-slightgrey rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-[1200ms] ease-in-out" data-carousel-item>
+			<section class="bg-kindawhite">
+			  <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+			      <figure class="max-w-screen-md mx-auto">
+ 			          <svg class="h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+			              <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+			          </svg> 
+			          <img width="191" sizes="191px" class="filter invert 100" src="https://assets-global.website-files.com/65b020deb4d7930be96ab953/65b95819a2fcaf7edf5dc64b_Copy%20of%20Logos%20(1).png" style="margin: 0 auto;">
+			          <blockquote>
+			              <p class="text-2xl font-medium text-gray-900">&quot;3forge&apos;s platform is an amazing solution for analysing and monitoring the scale if real- time data required by a leading exchange like Eurex&quot;</p>
+			          </blockquote>
+			          <figcaption class="flex items-center justify-center mt-6 space-x-3">
+			              <div class="flex items-center divide-x-2 divide-gray-500">
+			                  <div class="pr-3 font-medium text-gray-900">Sebastian Neusuess</div>
+			                  <div class="pl-3 text-sm font-light text-gray-500">Head of Xetra/Eurex Infrastructure Design &amp; Analytics</div>
+			              </div>
+			          </figcaption>
+			      </figure>
+			  </div>
+			</section>
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-[1200ms] ease-in-out" data-carousel-item>
+			<section class="bg-kindawhite">
+			  <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+			      <figure class="max-w-screen-md mx-auto">
+ 			          <svg class="h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+			              <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+			          </svg>
+			          <img width="191" sizes="191px" class="filter invert 100"src="https://assets-global.website-files.com/65b020deb4d7930be96ab953/65b930f663b0c0061e142b5d_7%20Morgan%20S%20-%20White.png" style="margin: 0 auto;">
+			          <blockquote>
+			              <p class="text-2xl font-medium text-gray-900">&quot;The 3forge browser-based platform reliably supports our increasing trade complexity and volume year over year&quot;</p>
+			          </blockquote>
+			          <figcaption class="flex items-center justify-center mt-6 space-x-3">
+			              <div class="flex items-center divide-x-2 divide-gray-500">
+			                  <div class="pr-3 font-medium text-gray-900">Hank Hyatt</div>
+			                  <div class="pl-3 text-sm font-light text-gray-500">Managing Director and Global Head of Algorithmic Trading Technology</div>
+			              </div>
+			          </figcaption>
+			      </figure>
+			  </div>
+			</section>
+        </div>
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full !bg-black/50" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full !bg-black/50" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+    </div>
+    <!-- Slider controls 
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="height: 6rem; width: 4rem;"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="height: 6rem; width: 4rem;"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>-->
+</div>
+</div>
+</section>
+<section>
+	<div class="h-auto px-4 sm:px-0 max-w-[1169px] mx-auto sm:pt-20 sm:pb-20 transition-section">
+		<h1 class="text-center pb-12 text-3xl md:text-[3.1rem] font-bold" style="margin: 0 auto;">Deliver Faster. Operate Better.</h1>
+		<p class="text-center m-0 m-auto md:px-20 lg:px-4 xl:px-0 lg:text-left pt-5 font-medium text-2xl">3forge simplifies the complex and lets developers ship business-critical apps in record time. In a world where speed and accuracy are competitive advantages, 3forge powers the solutions that developers love, and businesses need.</p>
+		<div class="grid grid-cols-1 gap-8 max-w-full lg:grid-cols-4 xl:gap-12 pt-10">
+		  <div class="xl:max-w-sm m-0 m-auto h-[200px] border-[1px] border-black w-full max-w-[471px] boxfix">
+		  	<h1 class="m-0 m-auto text-center lg:m-[initial] lg:text-left p-8 font-bold text-3xl">Build limitless applications.</h1>
+		  </div>
+  		  <div class="xl:max-w-sm m-0 m-auto h-[200px] border-[1px] border-black w-full max-w-[471px] boxfix">
+		  	<h1 class="m-0 m-auto text-center lg:m-[initial] lg:text-left p-8 font-bold text-3xl">Meet exact user requirements.</h1>
+		  </div>
+  		  <div class="xl:max-w-sm m-0 m-auto h-[200px] border-[1px] border-black w-full max-w-[471px] boxfix">
+		  	<h1 class="m-0 m-auto text-center lg:m-[initial] lg:text-left p-8 font-bold text-3xl">Make fast delivery your competitive edge.</h1>
+		  </div>
+  		  <div class="xl:max-w-sm m-0 m-auto h-[200px] border-[1px] border-black w-full max-w-[471px] boxfix">
+		  	<h1 class="m-0 m-auto text-center lg:m-[initial] lg:text-left p-8 font-bold text-3xl">Scale throughout your organization.</h1>
+		  </div>
+		</div>
+		<div class="text-center pt-4" style="margin: 0 auto;">
+			<a href="demo.html"><button class="mt-8 px-4 py-1 text-lg text-white bg-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-500 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Request a Free POC</button></a>	
+			<a href="platform-overview"><button class="mt-8 px-4 py-1 text-lg text-white bg-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-500 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Explore the Platform</button></a>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="h-auto px-4 sm:px-0 max-w-[1169px] mx-auto pt-20 transition-section">
+		<h1 class="text-center pb-8 text-3xl md:text-[3.1rem] font-bold">Choose Your Own Adventure&hellip;</h1>
+		<p class="m-0 m-auto md:px-20 lg:px-4 xl:px-0 text-center lg:text-left pb-12 font-medium text-2xl pt-5">What will you build today? With over 100 out of the box adapters, and a tiny fraction of the code necessary to build applications compared to in-house development, 3forge is the solution you’re looking for to maximize speed, efficiency, and reliability. </p>
+		<p class="m-0 m-auto md:px-20 lg:px-4 xl:px-0 text-center lg:max-w-full lg:text-left md:pb-12 font-medium text-2xl">Here are just a few examples of what other industry leaders have built using 3forge: </p>
+	</div>
+</section>
+
+<section>
+<div id="default-carousel" class="relative w-full" data-carousel="slide" style="max-width: 800px; margin: 0 auto;">
+    <!-- Carousel wrapper -->
+    <div class="relative h-[37rem] overflow-hidden rounded-lg md:h-[20rem]">
+         <!-- Item 1 -->
+        <div class="hidden duration-[1200ms] ease-in-out" data-carousel-item>
+			  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-10">
+			  <div class="md:flex md:h-[260px] md:max-h-[260px]">
+			    <div class="md:shrink-0">
+			      <img class="h-[260px] w-full object-fill md:h-full md:w-72 hover:opacity-80" src="images/realtime-latency.png" alt="Modern building architecture">
+			    </div>
+			    <div class="p-8 pt-0">
+			      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Use Case</div>
+			      <a href="realtime-dashboard.html" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Real Time Latency Dashboard</a>
+			      <p class="mt-2 text-slate-500">3Forge allows a Tier 1 Bank to display millions of data points in a single chart.</p>
+			      <a href="realtime-dashboard.html"><button class="mt-4 px-4 py-1 text-md text-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">See The Story</button></a>
+			    </div>
+			  </div>
+			</div>
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-[1200ms] ease-in-out" data-carousel-item>
+        	  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-10">
+			  <div class="md:flex md:max-h-[260px]">
+			    <div class="md:shrink-0">
+			      <img class="h-[260px] w-full object-fill md:h-full md:w-72 hover:opacity-80" src="images/client-manager.png" alt="Modern building architecture">
+			    </div>
+			    <div class="p-8 pt-0">
+			      <img class="-ml-10 filter invert 100" style="max-width: 12rem;" src="newlogos/citibanklogo.png" alt="Modern building architecture">
+			      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Use Case</div>
+			      <a href="client-connection.html" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Client Connection Manager</a>
+			      <p class="mt-2 text-slate-500">3Forge has helped Citi to update their applications for the ever increasing demand to handle more data and analytics.</p>
+			      <a href="client-connection.html"><button class="mt-4 px-4 py-1 text-md text-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">See The Story</button></a> 
+			    </div>
+			  </div>
+			</div>
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-[1200ms] ease-in-out" data-carousel-item>
+        	  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-10">
+			  <div class="md:flex md:max-h-[260px]">
+			    <div class="md:shrink-0">
+			      <img class="h-[260px] w-full object-fill md:h-full md:w-72 hover:opacity-80" src="images/audit-trails.png" alt="Modern building architecture">
+			    </div>
+			    <div class="p-8 pt-0">
+			      <img class="-ml-10 filter invert 100" style="max-width: 12rem;" src="newlogos/citibanklogo.png" alt="Modern building architecture">
+			      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Use Case</div>
+			      <a href="citi-audit-trail.html" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Audit Trail</a>
+			      <p class="mt-2 text-slate-500">3Forge has helped Citi to answer customer complaints in a timely manner, improving the quality of responses.</p>
+			      <a href="citi-audit-trail.html"><button class="mt-4 px-4 py-1 text-md text-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">See The Story</button></a>
+			    </div>
+			  </div>
+			</div>
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-[1200ms] ease-in-out" data-carousel-item>
+        	  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-10">
+			  <div class="md:flex md:h-[260px] md:max-h-[260px]">
+			    <div class="md:shrink-0">
+			      <img class="h-[260px] w-full object-fill md:h-full md:w-72 hover:opacity-80" src="images/laptop-phone-dashboard.png" alt="Modern building architecture">
+			    </div>
+			    <div class="p-8">
+			      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Use Case</div>
+			      <a href="new-global-bank.html" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Global Bank</a>
+			      <p class="mt-2 text-slate-500">3forge provides trade support at this global bank through anomaly detection, real-time surveillance, and kill switch functionality.</p>
+			      <a href="new-global-bank.html"><button class="mt-10 px-4 py-1 text-md text-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">See The Story</button></a>
+			    </div>
+			  </div>
+			</div>
+        </div>
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-[-0.75rem] left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full !bg-black/50" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full !bg-black/50" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full !bg-black/50" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full !bg-black/50" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+    </div>
+    <!-- Slider controls
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="height: 6rem; width: 4rem;"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="height: 6rem; width: 4rem;"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>-->
+</div>
+	<div class="h-auto xl:container mx-auto pt-5 text-center pb-24">
+			<a href="demo.html"><button class="mt-8 px-4 py-1 text-center text-lg text-white bg-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-500 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Request a Free POC</button></a>
+			<a href="platform-overview"><button class="mt-8 px-4 py-1 text-lg text-white bg-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-500 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Explore the Platform</button></a>
+	</div>
+</section>
+
+
+<footer class="bg-black pt-4">
+    <div class="mx-auto w-full max-w-[1215px]">
+     <div class="grid grid-cols-1 lg:grid-cols-1">
+      <div class="relative xl:flex">
+    	<div class="px-4 py-6 bg-black md:flex" style="margin-top: -1%;">
+    		<span class="text-2xl text-white font-bold sm:text-center">Sign up for updates
+        </span>
+    	</div>
+    	<div class="bg-black md:flex">
+    		<div style="position:relative;">
+									<div id="Zc_SignupSuccess" style="display:none;position:absolute;margin-left:4%;width:90%;background-color: white; padding: 3px; border: 3px solid rgb(194, 225, 154);  margin-top: 10px;margin-bottom:10px;word-break:break-all">
+										<table width="100%" cellpadding="0" cellspacing="0" border="0">
+											<tbody>
+												<tr>
+													<td width="10%">
+														<img class="successicon" src="https://tkwr.maillist-manage.com/images/challangeiconenable.jpg" align="absmiddle">
+													</td>
+													<td>
+														<span id="signupSuccessMsg" style="color: rgb(73, 140, 132); font-family: sans-serif; font-size: 14px;word-break:break-word">&nbsp;&nbsp;Thank you for Signing Up</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<form method="POST" id="zcampaignOptinForm" style="margin: 0px; width: 100%; padding: 0px 15px" action="https://maillist-manage.com/weboptin.zc" target="_zcSignup">
+									<div style="background-color: rgb(255, 235, 232); padding: 10px; color: rgb(210, 0, 0); margin: 20px 10px 0px; border: 1px solid rgb(255, 217, 211); opacity: 1; display: none; width: 330px; height: 40px; font-size: 20px" id="errorMsgDiv">Please enter a valid email</div>
+									<div style="position: relative; margin: 10px 0px 15px; display: inline-block; height: 40px; width: 240px" class="SIGNUP_FLD">
+										<input type="text" style="border: 1px solid rgb(235, 235, 235); border-radius: 0px; width: 100%; height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(136, 136, 136); text-align: left; font-family: Arial; background-color: rgb(255, 255, 255); box-sizing: border-box; font-size: 20px" placeholder="Email" changeitem="SIGNUP_FORM_FIELD" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL">
+									</div>
+									<div style="position: relative; text-align: left; display: inline-block; margin: 0px 0px 10px; height: 40px; width: 90px" class="SIGNUP_FLD">
+										<input type="button" style="text-align: center; width: 100%; height: 100%; z-index: 5; border: 2px none; color: rgb(255, 255, 255); cursor: pointer; outline: none; background-color: rgb(241, 105, 0); margin: 0px 0px 0px -5px; border-radius: 0px 3px 3px 0px; font-family: Lato, Arial, Helvetica, sans-serif; font-size: 17px; padding-top: 2px;" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now">
+									</div>
+									<input type="hidden" id="fieldBorder" value="">
+									<input type="hidden" id="submitType" name="submitType" value="optinCustomView">
+									<input type="hidden" id="emailReportId" name="emailReportId" value="">
+									<input type="hidden" id="formType" name="formType" value="QuickForm">
+									<input type="hidden" name="zx" id="cmpZuid" value="12b29f095">
+									<input type="hidden" name="zcvers" value="3.0">
+									<input type="hidden" name="oldListIds" id="allCheckedListIds" value="">
+									<input type="hidden" id="mode" name="mode" value="OptinCreateView">
+									<input type="hidden" id="zcld" name="zcld" value="1a2ab5170c86c783">
+									<input type="hidden" id="document_domain" value="">
+									<input type="hidden" id="zc_Url" value="tkwr.maillist-manage.com">
+									<input type="hidden" id="new_optin_response_in" value="0">
+									<input type="hidden" id="duplicate_optin_response_in" value="0">
+									<input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW">
+									<input type="hidden" id="zc_formIx" name="zc_formIx" value="8a252e9057e97e321f4cec5084850ed3f6dfae48574d3708">
+									<input type="hidden" id="viewFrom" value="URL_ACTION">
+									<span style="display: none" id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
+								</form>
+    	</div>
+    	<div class="px-4 py-6 bg-black md:flex xl:mt-[-1%] xl:ml-[7%]">
+    		<div id="gartner-widget" style="background-color: #000000 !important;"></div>
+    	</div>
+    </div>
+    <div>
+      <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-3 lg:grid-cols-6">
+        <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Platform</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="platform-overview" class=" hover:underline">Platform Overview</a>
+                </li>
+                <li class="mb-4">
+                    <a href="platform-highlights.html" class="hover:underline">Platform Highlights (Videos)</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Solutions</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="case-studies.html" class="hover:underline">Case Studies</a>
+                </li>
+                <li class="mb-4">
+                    <a href="industries.html" class="hover:underline">Industries</a>
+                </li>
+                <li class="mb-4">
+                    <a href="use-cases.html" class="hover:underline">Use Cases</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Developers</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="why-3forge.html" class="hover:underline">Why 3forge?</a>
+                </li>
+                <li class="mb-4">
+                    <a href="https://doc.3forge.com/" class="hover:underline">Documentation</a>
+                </li>
+                <li class="mb-4">
+                    <a href="https://blog.3forge.com/product-release-notes-2/" class="hover:underline">Release Notes</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Legal</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="new-privacy-policy.html" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li class="mb-4">
+                    <a href="new-scam-disclaimer.html" class="hover:underline">Disclaimer</a>
+                </li>
+                <li class="mb-4">
+                    <a href="new-terms-of-use.html" class="hover:underline">Terms of Use</a>
+                </li>
+                <li class="mb-4">
+                    <a onclick="openCookieHubWindow(); return false;" class="hover:underline hover:cursor-pointer">Cookie Settings</a>
+                </li>
+            </ul>
+        </div>
+                <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Company</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="about-3forge.html" class="hover:underline">About Us</a>
+                </li>
+                <li class="mb-4">
+                    <a href="careers.html" class="hover:underline">Careers</a>
+                </li>
+            </ul>
+        </div>
+                <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Resources</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="newevents.html" class="hover:underline">Events</a>
+                </li>
+                <li class="mb-4">
+                    <a href="https://blog.3forge.com/" class="hover:underline">Blog</a>
+                </li>
+                <li class="mb-4">
+                    <a href="new-faq.html" class="hover:underline">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="px-4 py-6 bg-black md:flex md:items-center md:justify-between">
+    	    <a href="newhome.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="images/colored-1.webp" class="h-8" alt="3forge Logo" />
+    </a>
+        <span class="text-[16px] text-white sm:text-center lg:ml-[-29rem] xl:ml-[-37rem]">&copy; 2024 <a href="https://3forge.com/">3forge, LLC</a>. All Rights Reserved.
+        </span>
+        <div class="flex mt-4 md:mt-0 space-x-5 rtl:space-x-reverse lg:mr-[6%] lg:ml-[-8%]">
+            <a href="https://www.facebook.com/3forge/" class="text-white hover:opacity-80">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                        <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                    </svg>
+                  <span class="sr-only">Facebook page</span>
+              </a>
+              <a href="https://www.linkedin.com/company/3forge/" class="text-white hover:opacity-80">
+					<img src="images/linkedin_icon.svg" style="filter: brightness(100); width:19px; height:17px; filter: invert(1);">
+              </a>
+              <a href="https://twitter.com/3forge_nyc" class="text-white hover:opacity-80">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 17">
+                    <path fill-rule="evenodd" d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z" clip-rule="evenodd"/>
+                </svg>
+                  <span class="sr-only">Twitter page</span>
+              </a>
+              <a href="https://youtube.com/@3forge461?si=BJ3k_VdbK9c_KJyt" class="text-white hover:opacity-80">
+				  <img src="images/youtube_icon.svg" style="filter: brightness(100); width:19px; height:17px; filter: invert(1);">
+              </a>
+              <a href="https://3forge.medium.com/" class="text-white hover:opacity-80">
+                  <img src="images/medium_icon.svg" style="filter: brightness(100); width:19px; height:18px; filter: invert(1);">
+              </a>
+        </div>
+      </div>
+    </div>
+</footer>
+  <div id="modal-spreadsheets" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-7xl font-light text-modaltitle">
+                    Spreadsheets
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-spreadsheets">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                </p>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-reporting" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-7xl font-light text-modaltitle">
+                    Reporting
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-reporting">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/dev-img-2.png">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-reconciliation" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-7xl font-light text-modaltitle">
+                    Reconciliation
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-reconciliation">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/3forgeheatmap.png">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-monitoring" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-7xl font-light text-modaltitle">
+                    Monitoring
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-monitoring">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/main-24.png">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-analytics" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-7xl font-light text-modaltitle">
+                    Analytics
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-analytics">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/main-7.png">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-p-l" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-7xl font-light text-modaltitle">
+                    P&L
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-p-l">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/main-6.png">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-historical" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-7xl font-light text-modaltitle">
+                    Historical
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-historical">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/main-18.png">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+  <div id="modal-realtime" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-7xl font-light text-modaltitle">
+                    Realtime
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-realtime">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+					Have access to your data as it streams in with our realtime visualizations, tables &amp; charts. 
+                </p>
+                <p class="text-base leading-relaxed text-white">
+					Connect to external data sources and manipulate your data without waiting. 
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/reliable.png">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-transactional" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow"  style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-7xl font-light text-modaltitle">
+                    Transactional
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-transactional">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                </p>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+    <div id="modal-risk" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-300 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+      <div class="relative bg-modal rounded-lg shadow" style="background-color: rgba(20, 20, 44, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(2px);">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5">
+                <h3 class="text-7xl font-light text-modaltitle">
+                    Risk
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="modal-risk">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-white">
+                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                </p>
+                <p class="text-base leading-relaxed text-white">
+                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                </p>
+            </div>
+            <div>
+            	<img class="p-8" src="images/3forgedatabase.png">
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5">
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+	<script src="cookiebutton.js"></script>
+	<script>
+			// Function to set a custom cookie indicating the user's choice regarding cookies
+			function setCookieHubCookie(value) {
+			    // Set a cookie named 'cookiehub' with the provided value
+			    document.cookie = 'cookiehub=' + value + '; expires=' + calculateExpirationDate() + '; path=/';
+			}
+			
+			// Function to calculate the expiration date for the cookie (30 days from the current day)
+			function calculateExpirationDate() {
+			    var currentDate = new Date();
+			    var expirationDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 days in milliseconds
+			    return expirationDate.toUTCString();
+			}
+			
+			// Check if the custom cookie indicating the user's choice regarding cookies is set
+			window.addEventListener('load', function() {
+			    var cookieValue = getCookie('cookiehub');
+			    if (!cookieValue) {
+			        // If the custom cookie is not set, display the CookieHub banner
+			        var cpm = {};
+			        window.cookiehub.load(cpm);
+			    }
+			});
+			
+			// Set the custom cookie when the "Accept All Cookies" or "Deny All Cookies" button is clicked
+			document.addEventListener('click', function(event) {
+			    var target = event.target;
+			    if (target.classList.contains('ch2-allow-all-btn')) {
+			        // Set the custom cookie to indicate acceptance of cookies
+			        setCookieHubCookie('allow');
+			    } else if (target.classList.contains('ch2-deny-all-btn')) {
+			        // Set the custom cookie to indicate denial of all cookies
+			        setCookieHubCookie('deny');
+			    }
+			});
+	</script>
+	<script>
+		var count = 0; 
+		function openCookieHubWindow() {
+			if (count == 0) {
+				window.cookiehub.load();
+				count++;
+			}
+			if (count >= 1) {			
+				window.cookiehub.openDialog();
+				count++;
+			}
+		}
+	</script>
+	<script type="text/javascript"
+		src="../js/widget.js">
+	</script>
+	<script type="text/javascript">
+	    GartnerPI_Widget({
+	        size: "line",
+	        theme: "dark",
+	        sourcingLink: "https://gtnr.io/iKfnxw3cA",
+	        widget_id: "ZjA4NTVhMzUtZWUxZi00YmZhLWJmNGEtMWQ4YzU1YjI1ZjUy",
+	        version: "2",
+	        container: document.getElementById("gartner-widget")
+	    });
+	</script>
+	<script>
+		let lastScrollTop = 0;
+		let initialLoad = true;
+	
+		window.onscroll = function (e) {  
+			if(!initialLoad) {
+				let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+				
+				document.getElementById("starting").style.paddingTop = "88px";
+				
+		 		top = document.getElementById("topnav");
+		 		bottom = document.getElementById("bottomnav");
+		 		
+		 		
+					if (currentScroll > lastScrollTop) {
+						document.getElementById("sl1").style.transition = "opacity 1s";
+						document.getElementById("sl2").style.transition = "opacity 1s";
+						document.getElementById("sl3").style.transition = "opacity 1s";
+					
+						document.getElementById("topnav").style.position="initial";
+						document.getElementById("topnav").style.width = "initial";
+						document.getElementById("topnav").style.zIndex = "initial";
+						document.getElementById("topnav").style.transform = "initial";
+						document.getElementById("topnav").style.visibility = "hidden";
+						document.getElementById("topnav").style.transition = "opacity 1s";
+						
+						document.getElementById("navbarwhole").style.height = "66px";
+			 		
+				 		bottom.style.position = "fixed";
+				 		bottom.style.width = "100%";
+				 		bottom.style.zIndex = "100";
+				    	bottom.style.transform = "translate3d(0px, -52px, 0px)";
+				    	
+			    	}
+			    	
+			    	if (currentScroll < lastScrollTop) {
+						document.getElementById("sl1").style.transition = "opacity 0.1s";
+						document.getElementById("sl2").style.transition = "opacity 0.1s";
+						document.getElementById("sl3").style.transition = "opacity 0.1s";
+			    		
+			    		document.getElementById("topnav").style.transition = "none";
+						document.getElementById("topnav").style.position="fixed";
+						document.getElementById("topnav").style.width = "100%";
+						document.getElementById("topnav").style.zIndex = "100";
+						document.getElementById("topnav").style.transform = "translate3d(0, 0, 0)";
+						document.getElementById("topnav").style.visibility = "visible";
+						
+						document.getElementById("navbarwhole").style.height = "118px";
+				    	
+			    		bottom.style.position = "fixed";
+				 		bottom.style.width = "100%";
+				 		bottom.style.zIndex = "100";
+				    	bottom.style.transform = "translate3d(0px, 52px, 0px)";
+			    	}
+			    	lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+		    	}
+		    	if (typeof currentScroll !== 'undefined'){
+		    		lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+		    	}
+		    	
+	    	initialLoad = false;
+           }
+	
+	</script>
+	
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	    const sections = document.querySelectorAll('.transition-section');
+	
+	    // Function to determine the threshold based on screen size
+	    const getThreshold = () => {
+	        const width = window.innerWidth;
+	        console.log(width);
+	        if (width < 600) {
+	            return 0.1; // Smaller screens
+	        } else if (width < 1200) {
+	            return 0.2; // Medium screens
+	        } else if (width < 1600) {
+	            return 0.25; // Larger screens
+	        }
+      	      else {
+	            return 0.3; // Larger screens
+	        }
+	    };
+	
+	    // Initial observer options
+	    const observerOptions = {
+	        root: null, // Use the viewport as the root
+	        rootMargin: '0px',
+	        threshold: getThreshold()
+	    };
+	
+	    // Function to create a new observer with updated options
+	    const createObserver = () => {
+	        return new IntersectionObserver((entries, observer) => {
+	            entries.forEach(entry => {
+	                if (entry.isIntersecting) {
+	                    entry.target.classList.add('visible');
+	                    observer.unobserve(entry.target); // Stop observing once it's visible
+	                }
+	            });
+	        }, observerOptions);
+	    };
+	
+	    let observer = createObserver();
+	
+	    // Observe each section
+	    sections.forEach(section => {
+	        observer.observe(section);
+	    });
+	
+	    // Update observer on window resize
+	    window.addEventListener('resize', () => {
+	        observer.disconnect(); // Disconnect the old observer
+	        observerOptions.threshold = getThreshold(); // Update the threshold
+	        observer = createObserver(); // Create a new observer
+	        sections.forEach(section => {
+	            if (!section.classList.contains('visible')) {
+	                observer.observe(section); // Re-observe sections that are not visible
+	            }
+	        });
+	    });
+	});
+    </script>
+    
+     <script>
+	    // Function to toggle modal visibility
+	    function toggleModal(modalId) {
+	      const modal = document.getElementById(modalId);
+	      modal.classList.toggle('hidden');
+	      modal.classList.toggle('flex');
+	    }
+	
+	    // Event listener for messages from the iframe
+	    window.addEventListener('message', function(event) {
+	      if (event.data && event.data.cabinId) {
+	        const modalId = `modal-${event.data.cabinId}`;
+	        toggleModal(modalId);
+	      }
+	    });
+	
+	    // Event listeners for modal buttons to hide the modal
+	    document.querySelectorAll('[data-modal-hide]').forEach(button => {
+	      button.addEventListener('click', () => {
+	        const modalId = button.getAttribute('data-modal-hide');
+	        toggleModal(modalId);
+	      });
+	    });
+    </script>
+    
+    <script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en", "ms", "ja"],"wrapper_selector":".gtranslate_wrapper"}</script>
+	<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+    
+</body>
+</html>

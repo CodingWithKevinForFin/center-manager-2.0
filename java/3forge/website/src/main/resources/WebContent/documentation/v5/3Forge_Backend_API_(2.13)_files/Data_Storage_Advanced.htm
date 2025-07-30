@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "7.1_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Backend API (2.13).docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Data Storage (Advanced)</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Data Storage (Advanced)">
+        <span>Data Storage (Advanced)</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Data Storage (Advanced)</h1>
+<p><b>Data sizes Overview.</b> Each parameter added to an object  and 
+ application status message has a <b>3 byte overhead</b>, plus additional 
+ bytes, depending on the data type. Please see the table below.</p>
+<p class="ListParagraph" style="margin-bottom: .0001pt; margin-left: 0in;"> </p>
+<table style="border: none; border-collapse: separate;" cellspacing="0" width="667" cellpadding="1">
+	<tbody><tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: solid #000000 1.0px; 
+			 border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; margin-left: 12px;"><b>Type</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;"><b>Min value</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; 
+			 text-indent: 12px;"><b>Max value</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; 
+			 text-indent: 12px;"><b>Size (bytes)*</b></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Integer</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-128</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">127</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 1</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Integer</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-32,768</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">32,767</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 2</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Integer</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-8,388,608</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">8,388,607</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 3</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Integer</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-2,147,483,648</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">2,147,483,647</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 4</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Long</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-128</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">127</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 1</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Long</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-32,768</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">32,767</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 2</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Long</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-8,388,608</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">8,388,607</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 3</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Long</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-2,147,483,648</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">2,147,483,647</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 4</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Long</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-549,755,813,888</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">549,755,813,887</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 5</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Long</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-140,737,488,355,328</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">140,737,488,355,327</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 6</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Long</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-36,028,797,018,963,968</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">36,028,797,018,963,967</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 7</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Long</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">-9,223,372,036,854,775,808</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">9,223,372,036,854,775,807</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 8</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="79"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Boolean</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; margin-left: 12px;">false</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="186"><p style="margin-bottom: .0001pt; text-indent: 12px;">true</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 1</p></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="451"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Float</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 4</p></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="451"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Double</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 8</p></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="451"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">String or Json (simple ascii with length 
+		 &lt; 128)</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 1 + length</p></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="451"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">String or Json (simple ascii with length 
+		 &gt;= 128)</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 4 + length</p></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="451"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">String or Json (Unicode)</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 4 + (length x 2)</p></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="451"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Enum (First 255 enums)</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 1 per entry + enum_cost</p></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="451"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Enum (Next 65,281 enums)</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 2 per entry + enum_cost</p></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="451"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Enum (Next 16,711,935 enums)</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + 3 per entry + enum_cost</p></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="451"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Binary</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="216"><p style="margin-bottom: .0001pt; text-indent: 12px;">3 
+		 + byte length</p></td>
+	</tr>
+</tbody></table>
+<p> </p>
+<p><b>Keys</b>. The length of a key has virtually no impact on memory.  This 
+ is because all key names are indexed. Ami Supports up to 65,536 <u>unique</u> 
+ key names plus data types (T=). This is a hard limit per AMI center and 
+ going beyond that will result in data loss. For example, the following 
+ 2 messages would result in 5 unique keys. Note that when key names and 
+ types (T=) are repeated then they do not count as a new unique key.</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #308299;"><span courier="" style="color: #ff0000;">O</span><span courier="">|</span><span courier="" style="color: #ff0000;">T</span><span courier="">=&quot;Order&quot;|quantity=100|symbol=&#39;ABC&#39;|</span><span courier="" style="color: #ff0000;">I</span><span courier="">=&quot;Ord123&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #308299;"><span courier="" style="color: #ff0000;">O</span><span courier="">|</span><span courier="" style="color: #ff0000;">T</span><span courier="">=&quot;Execution&quot;|quantity=50|symbol=&#39;XYZ&#39;|price=45.3d|</span><span courier="" style="color: #ff0000;">I</span><span courier="">=&quot;exec123&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #308299;"><span courier="" style="color: #ff0000;">O</span><span courier="">|</span><span courier="" style="color: #ff0000;">T</span><span courier="">=&quot;Execution&quot;|quantity=150|symbol=&#39;DEF&#39;|price=13d|</span><span courier="" style="color: #ff0000;">I</span><span courier="">=&quot;exec456&quot;</span></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

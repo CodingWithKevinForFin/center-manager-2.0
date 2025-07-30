@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.3forge</groupId>
+
+    <name>demoweb</name>
+    <artifactId>vortex3fweb</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.3forge</groupId>
+        <artifactId>3forge</artifactId>
+        <version>1.00-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <dependencies>
+     
+        <dependency>
+            <groupId>com.vortex</groupId>
+            <artifactId>glass</artifactId>
+            <version>1.00-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vortex</groupId>
+            <artifactId>ssoweb</artifactId>
+            <version>1.00-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+                            
+
+
+<!--     <build>
+        <plugins>
+        <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>2.3</version>
+            <configuration>
+                <descriptors>
+                    <descriptor>src/main/assembly/sjls.xml</descriptor>
+                </descriptors>
+                <finalName>sjls</finalName>
+                <appendAssemblyId>false</appendAssemblyId>
+            </configuration>
+        </plugin>
+        </plugins>
+    </build> -->
+
+
+
+</project>
+

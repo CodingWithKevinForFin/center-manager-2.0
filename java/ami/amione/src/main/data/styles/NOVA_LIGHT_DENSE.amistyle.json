@@ -1,0 +1,37 @@
+[
+  {
+    "id":"NOVA_LIGHT_DENSE",
+    "pt":"NOVA_LIGHT",
+    "lb":"Nova Light (Dense)",
+    "vl":{
+      "div":{
+        "divSz":2.0
+      },
+      "heatmap":{
+        "nodeFontSz":12.0,
+        "groupBdrSz":1.0,
+        "nodeBdrSz":2.0,
+        "groupFontSz":14.0
+      },
+      "treegrid":{
+        "cellRtPx":1.0,
+        "columnFilterHeight":26.0,
+        "headerFontSz":14.0,
+        "fontSz":13.0,
+        "columnFilterFontSz":12.0,
+        "rowHt":18.0,
+        "headerHt":20.0
+      },
+      "table":{
+        "cellRtPx":1.0,
+        "columnFilterHeight":26.0,
+        "cellBtmPx":1.0,
+        "headerFontSz":14.0,
+        "fontSz":13.0,
+        "columnFilterFontSz":12.0,
+        "rowHt":18.0,
+        "headerHt":20.0
+      }
+    }
+  }
+]

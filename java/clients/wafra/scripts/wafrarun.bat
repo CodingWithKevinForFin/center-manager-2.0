@@ -1,0 +1,12 @@
+"C:\Program Files\ami\jre\bin\java" -Df1.license.mode=dev ^
+-Dproperty.f1.properties.decrypters=AZURE=com.f1.utils.encrypt.azurevault.AzureVaultRestDecrypter ^
+-DAzureDecrypterKeyName=[keyname] ^
+-DAzureDecrypterKeyVersion=[version] ^
+-DAzureDecrypterApiVersion=7.2 ^
+-DAzureDecrypterAlg=RSA-OAEP ^
+-DAzureUrlBase=[url] ^
+-DAzureAuth=Identity ^
+-DAzureIdentityApiVersion=2018-02-01 ^
+-DAzureIdentityResource=https://vault.azure.net ^
+-DAzureDecrypterCharset=UTF-8 ^
+-cp "../lib/*;../out/" com.threeforge.clients.wafra.WafraAmiJdbcClient

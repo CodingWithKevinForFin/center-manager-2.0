@@ -1,0 +1,155 @@
+{
+  "includeFiles":[
+  ],
+  "metadata":{
+    "customPrefsImportMode":"reject",
+    "dm":{
+      "dms":[
+        {
+          "callbacks":{
+            "entries":[
+              {
+                "amiscript":[
+                  "{\n",
+                  "  CREATE TABLE ClientInfo(ClientGroup String, ClientId int, LoanAmount double, ApplicantIncome double);\n",
+                  "  insert into ClientInfo values\n",
+                  "  (\"Client Group 1\", 0, 4583, 128),(\"Client Group 1\",1,3000,66),(\"Client Group 1\",2,2583, 120),(\"Client Group 1\",3,6000,141),(\"Client Group 1\",4,2333,95),\n",
+                  "  (\"Client Group 2\", 0, 2571, 28),(\"Client Group 2\",1,6000,16),(\"Client Group 2\",2,1583, 1200),(\"Client Group 2\",3,4500,1410),(\"Client Group 2\",4,1133,5);\n",
+                  "  \n",
+                  "  create table out as prepare *, kmeansCluster(4, 1000L, LoanAmount, ApplicantIncome) as ClusterId from ClientInfo partition by ClientGroup;\n",
+                  "  \n",
+                  "  \n",
+                  "   create table out2 as prepare *, emGmmCluster(4, 1000L, LoanAmount, ApplicantIncome) as ClusterId from ClientInfo partition by ClientGroup;\n",
+                  "   \n",
+                  "     \n",
+                  "   //create table out3 as prepare *, viGmmCluster(4, 1000L, LoanAmount, ApplicantIncome) as ClusterId from ClientInfo partition by ClientGroup;\n",
+                  "   \n",
+                  "}\n"
+                ],
+                "defaultDs":"AMI",
+                "hasDatamodel":true,
+                "linkedVariables":[
+                ],
+                "name":"onProcess",
+                "schema":{
+                  "tbl":[
+                    {
+                      "cols":[
+                        {
+                          "nm":"ClientGroup",
+                          "tp":"String"
+                        },
+                        {
+                          "nm":"ClientId",
+                          "tp":"Integer"
+                        },
+                        {
+                          "nm":"LoanAmount",
+                          "tp":"Double"
+                        },
+                        {
+                          "nm":"ApplicantIncome",
+                          "tp":"Double"
+                        }
+                      ],
+                      "nm":"ClientInfo",
+                      "oc":"ask"
+                    },
+                    {
+                      "cols":[
+                        {
+                          "nm":"ClientGroup",
+                          "tp":"String"
+                        },
+                        {
+                          "nm":"ClientId",
+                          "tp":"Integer"
+                        },
+                        {
+                          "nm":"LoanAmount",
+                          "tp":"Double"
+                        },
+                        {
+                          "nm":"ApplicantIncome",
+                          "tp":"Double"
+                        },
+                        {
+                          "nm":"ClusterId",
+                          "tp":"Integer"
+                        }
+                      ],
+                      "nm":"out",
+                      "oc":"ask"
+                    },
+                    {
+                      "cols":[
+                        {
+                          "nm":"ClientGroup",
+                          "tp":"String"
+                        },
+                        {
+                          "nm":"ClientId",
+                          "tp":"Integer"
+                        },
+                        {
+                          "nm":"LoanAmount",
+                          "tp":"Double"
+                        },
+                        {
+                          "nm":"ApplicantIncome",
+                          "tp":"Double"
+                        },
+                        {
+                          "nm":"ClusterId",
+                          "tp":"Integer"
+                        }
+                      ],
+                      "nm":"out2",
+                      "oc":"ask"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "datasources":[
+            "AMI"
+          ],
+          "lbl":"datamodel",
+          "lower":[
+          ],
+          "queryMode":"startup",
+          "test_input_type":"OPEN",
+          "test_input_vars":"String WHERE=\"true\";"
+        }
+      ]
+    },
+    "fileVersion":3,
+    "menubarPosition":"top",
+    "rt":{
+    },
+    "stm":{
+      "styles":[
+        {
+          "id":"LAYOUT_DEFAULT",
+          "lb":"Layout Default",
+          "pt":"DEFAULT"
+        }
+      ]
+    },
+    "transientIdPrefix":"TRANSIENT_"
+  },
+  "portletConfigs":[
+    {
+      "portletBuilderId":"amidesktop",
+      "portletConfig":{
+        "amiPanelId":"@DESKTOP",
+        "amiStyle":{
+          "pt":"LAYOUT_DEFAULT"
+        },
+        "windows":[
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+(function() {    var toc =  [{"name":"AMI Remote Procedure Calling (RPC)","type":"item","tilePath":"","description":"","url":"AMI_Remote_Procedure_Calling_(RPC).htm"}];    window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });    })();

@@ -1,0 +1,585 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"p
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f1:set var="tab" value="'secure_licenses'" scope="request" />
+<f1:secure/>
+<f1:if test="${isLoggedIn}"><f1:else/>
+  <f1:redirect page="'login.html'"/>
+</f1:if>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<f1:include page="'_/v2/head.htm'"/>
+<f1:include page="'_/v2/masthead.htm'"/>
+
+<body>
+
+  <div class="visible-phone" id="secondary-nav">
+
+    <a href="#" class="scrollToTop"><img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/></a>
+
+    <noscript>
+      <a href="#" class="scrollToTop2"><img class="secondary-nav-icon" style="color:white;" src="v2_resources/images/hamburger.png" alt="Menu"/></a>
+    </noscript>
+
+    <center>
+      <h3 class="mobile-h1">Licenses</h3>
+    </center>
+
+    <a href="secure_account.htm" title="My Account">
+      <img class="secondary-nav-icon" style="right:0;top:0;color:white;" src="v2_resources/images/account_icon_gray.png"/>
+    </a>
+
+  </div>
+
+    <div id="portal-content">
+
+      <noscript>
+        <div class="formOverlay">
+          <center>
+            <h2>Most features on this site require JavaScript. Please enable JavaScript before continuing.</h2>
+          </center>
+        </div>
+      </noscript>
+
+        <f1:if test="OH.eq(${user.statusText},'NEW') || OH.eq(${user.statusText},'VERIFIED')">
+
+          <ul class="unstyled row-fluid">
+
+              <li class="span5">
+
+                <h3>Proof of Concept</h3><hr>
+
+                <div class="trial-option" style="background-color:#4E892F;">
+                  <div class="container-fluid">
+
+                      <br>
+
+                      <center>
+                        <h2 class="text-white margin-bottom">AMI Proof of Concept</h2>
+                      </center>
+
+                      <h5 style="color:white; padding-bottom: 10px;">Description</h5>
+                      <p>
+                        Enjoy the full functionality of the latest version of AMI with a flexible trial period and no data cap.
+                      </p><br>
+
+                      <h5 style="color:white; padding-bottom: 10px;">Instructions</h5>
+                      <p>
+                        Click the button below to request your proof of concept. Our team will contact you shortly to put together a trial that meets your needs and system specifications.
+                      </p><br>
+
+                      <h5 style="color: white; padding-bottom: 10px;">FAQ</h5>
+                      <p><b>How long is the trial period?</b></p>
+                      <p class="margin-bottom">Your trial period is flexible and subject to a variety of factors. When you request the proof of concept, we will contact you to settle upon a trial period that best fits your needs. Your trial period begins once you are provided with the software.</p>
+                      <p><b>Can I request a trial extension?</b></p>
+                      <p class="margin-bottom">You may request a trial extension at any time by contacting the support team <a data-toggle="modal" data-target="#contactFormModal" style="color: white;"><ins>here.</ins></a></p>
+                      <p><b>How long does it take to install the software?</b></p>
+                      <p class="margin-bottom">Downloading and installing AMI only takes a few minutes and our support team will guide you through the installation process. For a quick start guide to AMI, check out our <a href="/videos.htm" style="color: white;"><ins>videos page.</ins></a></p>
+                      <p><b>How do I troubleshoot issues?</b></p>
+                      <p>Contact us at any time for support help by <a data-toggle="modal" data-target="#contactFormModal" style="color: white;"><ins>filling out the support form</ins></a> or emailing us at info@3forge.com.</p><br>
+
+                      <f1:if test="OH.eq(${user.statusText},'NEW')">
+
+                        <center>
+                          <button class="btn btn-info btn-large btn-theme3" data-toggle="modal" data-target="#verifyEmail">Start your trial</button>
+                        </center><br>
+
+                      </f1:if>
+
+                      <f1:if test="OH.eq(${user.statusText},'VERIFIED')">
+
+                        <!-- button to contact for a trial download: -->
+                        <form action="" onSubmit="" method="post" class="" id="downloadForm">
+                          <input id='tok' type="hidden" value='<f1:out value="${sectoken}"/>'>
+                          <input id='message' type="hidden" value='I would like to download AMI'/>
+                          <input id='type' type="hidden" value='download'/>
+                          <input id='func' type="hidden" value='onRequestDownloadResponse'/>
+                          <input type="hidden" id="contactMethod" value="email" checked>
+                        </form>
+
+                        <center>
+                          <a class="btn-link" href=""><button id="trialDownloadRequest" class="trial-download-button btn btn-large btn-info btn-theme3" onclick='sending();ajaxNow("contactSupport",getFields("downloadForm"));return false'>Start your trial</button></a>
+                        </center><br>
+
+                        <!-- download -->
+
+                      </f1:if>
+
+
+
+                  </div>
+                </div>
+              </li>
+
+              <li class="span7">
+
+                <h3>Paid Licenses</h3><hr>
+
+                <ul class="unstyled row-fluid">
+
+                  <li class="span6">
+
+                    <div class="trial-option" style="background-color:#007264;">
+
+                      <br>
+
+                      <center>
+                        <h2 style="color:white;">AMI One</h2><br>
+                        <div class="target-client">
+                          <h5>For small businesses</h5>
+                        </div>
+                      </center>
+
+                      <ul style="padding: 0 10px;">
+                        <li>Annual licensing</li>
+                        <li>Access to different AMI releases</li>
+                        <li>Create your own licenses</li>
+                        <li>Unlimited access to exclusive resources</li>
+                      </ul>
+
+                      <br><br><br><br>
+
+                      <center>
+                        <a class="btn-link" data-toggle="modal" data-target="#purchaseModal"><button class="btn btn-large btn-info btn-theme2">Contact for pricing </button></a>
+                      </center><br>
+
+                    </div>
+                  </li>
+
+                  <li class="span6">
+
+                    <div class="blue-background trial-option">
+
+                      <br>
+
+                      <center>
+                        <h2 style="color:white;">AMI Enterprise</h2><br>
+                        <div class="target-client">
+                          <h5>For enterprise firms</h5>
+                        </div>
+                      </center>
+
+                      <ul style="padding: 0 10px;">
+                        <li>Annual licensing</li>
+                        <li>Entitlements</li>
+                        <li>Audit Trails</li>
+                        <li>Database naming service</li>
+                        <li>Access to different AMI releases</li>
+                        <li>Create your own licenses</li>
+                        <li>Unlimited access to exclusive resources</li>
+                      </ul>
+
+                      <br>
+
+                      <center>
+                        <a class="btn-link" data-toggle="modal" data-target="#purchaseModal"><button class="btn btn-large btn-info btn-theme2">Contact for pricing</button></a>
+                      </center><br>
+
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+
+        </f1:if>
+
+        <f1:if test="OH.eq(${user.statusText},'STARTED_TRIAL')">
+
+          <ul class="unstyled row-fluid">
+
+              <li class="span5">
+
+                <h3>Proof of Concept</h3><br>
+
+                <div class="trial-option" style="background-color:#4E892F;">
+                  <div class="container-fluid">
+
+                      <br>
+
+                      <center>
+                        <h2 class="text-white">AMI Proof of Concept</h2>
+                      </center>
+
+                      <h5 style="color:white; padding-bottom: 10px;">Description</h5>
+                      <p>
+                        Enjoy the full functionality of the latest version of AMI with a flexible trial period and no data cap.
+                      </p><br>
+
+                      <h5 style="color:white; padding-bottom: 10px;">Instructions</h5>
+                      <p>
+                        Click the button below to request your proof of concept. Our team will contact you shortly to put together a trial that meets your needs and system specifications.
+                      </p><br>
+
+                      <h5 style="color: white; padding-bottom: 10px;">FAQ</h5>
+                      <p><b>How long is the trial period?</b></p>
+                      <p class="margin-bottom">Your trial period is flexible and subject to a variety of factors. When you request the proof of concept, we will contact you to settle upon a trial period that best fits your needs. Your trial period begins once you are provided with the software.</p>
+                      <p><b>Can I request a trial extension?</b></p>
+                      <p class="margin-bottom">You may request a trial extension at any time by contacting the support team <a data-toggle="modal" data-target="#contactFormModal" style="color: white;"><ins>here.</ins></a></p>
+                      <p><b>How long does it take to install the software?</b></p>
+                      <p class="margin-bottom">Downloading and installing AMI only takes a few minutes and our support team will guide you through the installation process. For a quick start guide to AMI, check out our <a href="/videos.htm" style="color: white;"><ins>videos page.</ins></a></p>
+                      <p><b>How do I troubleshoot issues?</b></p>
+                      <p>Contact us at any time for support help by <a data-toggle="modal" data-target="#contactFormModal" style="color: white;"><ins>filling out the support form</ins></a> or emailing us at info@3forge.com.</p><br>
+
+                      <center>
+                        <button class="half-opacity trial-download-button btn btn-large btn-info btn-theme3">Start your trial</button>
+                      </center><br>
+
+                  </div>
+                </div>
+              </li>
+
+              <li class="span7">
+
+                <h3>Paid Licenses</h3><br>
+
+                <ul class="unstyled row-fluid">
+
+                  <li class="span6">
+
+                    <div class="trial-option" style="background-color:#007264;">
+
+                      <br>
+
+                      <center>
+                        <h2 style="color:white;">AMI One</h2><br>
+                        <div class="target-client">
+                          <h5>For small businesses</h5>
+                        </div>
+                      </center>
+
+                      <ul style="padding: 0 10px;">
+                        <li>Annual licensing</li>
+                        <li>Access to different AMI releases</li>
+                        <li>Create your own licenses</li>
+                        <li>Unlimited access to exclusive resources</li>
+                      </ul>
+
+                      <br><br><br><br>
+
+                      <center>
+                        <a class="btn-link" data-toggle="modal" data-target="#purchaseModal"><button class="btn btn-large btn-info btn-theme2">Contact for pricing </button></a>
+                      </center><br>
+
+                    </div>
+                  </li>
+
+                  <li class="span6">
+
+                    <div class="blue-background trial-option">
+
+                      <br>
+
+                      <center>
+                        <h2 style="color:white;">AMI Enterprise</h2><br>
+                        <div class="target-client">
+                          <h5>For enterprise firms</h5>
+                        </div>
+                      </center>
+
+                      <ul style="padding: 0 10px;">
+                        <li>Annual licensing</li>
+                        <li>Entitlements</li>
+                        <li>Audit Trails</li>
+                        <li>Database naming service</li>
+                        <li>Access to different AMI releases</li>
+                        <li>Create your own licenses</li>
+                        <li>Unlimited access to exclusive resources</li>
+                      </ul>
+
+                      <br>
+
+                      <center>
+                        <a class="btn-link" data-toggle="modal" data-target="#purchaseModal"><button class="btn btn-large btn-info btn-theme2">Contact for pricing</button></a>
+                      </center><br>
+
+                    </div>
+
+                  </li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+
+        </f1:if>
+
+
+        <f1:if test="OH.eq(${user.statusText},'ENDED_TRIAL')">
+
+          <ul class="unstyled row-fluid">
+
+              <li class="span4">
+                <div class="trial-option" style="background-color:#007264;">
+
+                  <br>
+
+                  <center>
+                    <h2 style="color:white;">AMI One</h2><br>
+                    <div class="target-client">
+                      <h5>For small businesses</h5>
+                    </div>
+                  </center>
+
+                  <ul class="container-fluid">
+                    <li>Annual licensing</li>
+                    <li>Access to different AMI releases</li>
+                    <li>Create your own licenses</li>
+                    <li>Unlimited access to exclusive resources</li>
+                  </ul>
+
+                  <br><br><br><br><br>
+
+                  <center>
+                    <a class="btn-link" data-toggle="modal" data-target="#purchaseModal"><button class="btn btn-large btn-info btn-theme2">Contact for pricing </button></a>
+                  </center><br>
+
+                </div>
+              </li>
+
+              <li class="span4">
+                <div class="blue-background trial-option">
+
+                  <br>
+
+                  <center>
+                    <h2 style="color:white;">AMI Enterprise</h2><br>
+                    <div class="target-client">
+                      <h5>For enterprise firms</h5>
+                    </div>
+                  </center>
+
+                  <ul class="container-fluid">
+                    <li>Annual licensing</li>
+                    <li>Entitlements</li>
+                    <li>Audit Trails</li>
+                    <li>Database naming service</li>
+                    <li>Access to different AMI releases</li>
+                    <li>Create your own licenses</li>
+                    <li>Unlimited access to exclusive resources</li>
+                  </ul>
+
+                  <br><br>
+
+                  <center>
+                    <a class="btn-link" data-toggle="modal" data-target="#purchaseModal"><button class="btn btn-large btn-info btn-theme2">Contact for pricing</button></a>
+                  </center><br>
+
+                </div>
+              </li>
+
+          </ul>
+
+        </f1:if>
+
+
+        <f1:if test="OH.eq(${user.statusText},'ENTERPRISE')">
+
+              <div id="secureblock">
+
+            		<legend><span><h2>Your licenses</h2></span></legend>
+
+            		<div id="files">
+
+            		  <table>
+
+            		     <tr>
+
+            		       <th>Application Name</th>
+
+            		       <th>Host</th>
+
+            		       <th>Created On</th>
+
+            		       <th>Expires On</th>
+
+            		       <th>Contents</th>
+
+            		     </tr>
+
+            		     <f1:forEach items="${user.licenses.rows}" var="license">
+
+              		     <tr>
+
+              		       <td><p><f1:out escape="FULL" value="${license..appName}"/></p></td>
+
+              		       <td><p><f1:out escape="FULL" value="${license..host}"/></p></td>
+
+              		       <td><p><f1:out escape="FULL" value="${license..created}"/></p></td>
+
+              		       <td><p><f1:out escape="FULL" value="${license..expires}"/></p></td>
+							 
+						   <td><p><a class="licenseview" id="<f1:out escape="NONE" value="${license..id}"/>">view</a></p></td>
+            		     </f1:forEach>
+
+            		   </table>
+
+          		  </div>
+
+              </div>
+
+              <br><br>
+
+              <div id="createlicense">
+
+                <form action="createLicense" method='post'>
+                <input name='tok' type="hidden" value='<f1:out value="${sectoken}"/>'>
+
+                  <fieldset class="login">
+
+                    <legend><span><h2>Create a license</h2></span></legend>
+
+
+                    <ol>
+
+                      <span style='color:red'><f1:out escape="FULL" value="${license_error}"/></span><P>
+
+                      <li>
+
+                          <label for="appName">Application(s):</label>
+
+                          <table style="border-collapse:collapse">
+
+                            <f1:forEach items="${user.licenseApps}" var="t">
+
+                              <TR>
+
+                              <TD>&nbsp;&nbsp;&nbsp;<input type='checkbox' name="appName" value="<f1:out escape="FULL" value="t"/>" <f1:if test="request.findAttribute('license_app_'+t)!=null">checked</f1:if>>&nbsp;<f1:out escape="FULL" value="t"/></input><br></br>
+
+                            </f1:forEach>
+
+                          </table>
+
+                      </li>
+
+                      <li>
+
+                          <label for="host">Host(s): (comma-delimited list for multiple hosts)</label>
+
+                          <input id="host" name="host" type="text" value="<f1:out escape="FULL" value="${license_host}"/>"/>
+
+                      </li>
+
+                      <li>
+
+                          <label for="Created on">Created&nbsp;On:</label><f1:out escape="FULL" value="${licenseCreatedOn}"/>
+
+                      </li>
+
+                    </ol>
+
+
+                    <fieldset class="submit">
+
+                        <input type="submit" id="create" value="create" title="Create Certificate"/>
+
+                    </fieldset>
+
+                  </fieldset>
+
+                </form>
+
+              </div>
+
+        </f1:if>
+
+      <f1:include page="'_/v2/footer.htm'"/>
+
+    </div>
+
+    <!-- include modals -->
+
+    <f1:include page="'modals.htm'"/>
+
+
+    <f1:script src="inline" nonce="true"/>
+
+      var requestBtn = document.getElementById("trialDownloadRequest");
+
+      function onRequestDownloadResponse(success,msg){
+
+          requestBtn.textContent = "Trial requested";
+          $('#downloadRequestSent').modal('show');
+
+      }
+
+      function sending() {
+
+          requestBtn.disabled=true;
+          requestBtn.textContent = "Requesting...";
+
+      }
+
+    </script>
+
+	</body>
+</html>
+
+    <!-- copy license modal -->
+    <div class="modal fade" id="copyLicense" tabindex="-1" role="dialog" aria-labelledby="copyLicense">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h2 class="modal-title" id="modalTitle">Copy License</h2>
+          </div>
+
+          <div class="modal-body" id="licenseText">
+          </div>
+
+        </div>
+      </div>
+    </div>
+<f1:if test="${user.selectedLicense}!=null">
+  <f1:script type="text/javascript" src="inline" nonce="true"/>
+    $(window).on('load', function(){
+        showLicense('<f1:out escape="FULL" value="${user.selectedLicense}"/>');
+    });
+</script>
+  <f1:out escape="FULL" value="${user.clearSelectedLicense}"/></td>
+</f1:if>
+<f1:script type="text/javascript" src="v2_resources/javascripts/portal.js" nonce="true"/>
+<f1:script type="text/javascript" src="v2_resources/javascripts/script.js" nonce="true"/>
+
+<f1:script src="inline" nonce="true"/>
+function getLicense(rowId){
+	var url = 'downloadlicense'
+	var paramsText= 'id=' + rowId+'&tok=<f1:out value="${sectoken}"/>';
+	var par = new XMLHttpRequest();
+	par.onerror=function(o){onAjaxError(o);};
+	par.onreadystatechange=function(o){
+		showLicense(par.responseText);
+		portletAjaxCallback(o);
+	};
+	par.open("POST",url,true);
+	par.setRequestHeader("Content-type","text/plain");
+	par.send(paramsText);
+	par.paramsText=paramsText;
+}
+
+function showLicense(data){
+ 	$('#licenseText').html("<textarea style='width:98%;'>"+data+"</textarea>");
+  	$('#copyLicense').modal('show');
+}
+</script>
+
+
+<f1:script src="inline" nonce="true"/>
+    views = document.getElementsByClassName("licenseview");
+
+    function viewLicenses(event) {
+        event.preventDefault();
+        console.log("test");
+        const licensesId = event.currentTarget.id;
+        console.log(licensesId);
+        getLicense(licensesId);
+    }
+
+    for (var i = 0; i < views.length; i++) {
+        views[i].addEventListener('click', viewLicenses, false);
+    }
+</script>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "9.3.1_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="AMI_SSH_Adapter.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Directives for parsing Key Value Pairs</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Directives for parsing Key Value Pairs">
+        <span>Directives for parsing Key Value Pairs</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Directives for parsing Key Value Pairs</h1>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_cmd=<i>command_to_execute</i></span><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace;"> </span></i>(<b>Required</b>, 
+ see general directives)<span courier=""> </span></p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_fields=<i>col1_type 
+ col1_name, ...</i></span><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace;"> 
+ </span></i>(<b>Required</b>, see general directives)<i><span courier=""> </span></i></p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_delim=delim_string</span><span courier="" style="font-family: &#39;Courier New&#39;, monospace;"> </span>(<b>Required</b>)<i><span courier=""> </span></i></p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_conflateDelim=true|false</span><span courier="" style="font-family: &#39;Courier New&#39;, monospace;"> </span>(Optional. 
+ Default is false)<i><span courier=""> </span></i></p>
+<p style="margin-bottom: .0001pt;"><i><span class="CourierBlueStyle">_equals=single_equals_char</span><span courier="" style="font-family: &#39;Courier New&#39;, monospace;"> </span></i>(<b>Required</b>)</p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_mappings=from1=to1,from2=to2,...</span><span courier="" style="font-family: &#39;Courier New&#39;, monospace;"> </span>(Optional)<i><span courier=""> </span></i></p>
+<p style="margin-bottom: .0001pt;"><i><span class="CourierBlueStyle">_quote=single_quote_char</span><span courier="" style="font-family: &#39;Courier New&#39;, monospace;"> </span></i>(Optional)<i><span courier=""> </span></i></p>
+<p style="margin-bottom: .0001pt;"><i><span class="CourierBlueStyle">_escape=single_escape_char</span><span courier="" style="font-family: &#39;Courier New&#39;, monospace;"> </span></i>(Optional)<i><span courier=""> </span></i></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;">The _<i>delim</i> indicates the char 
+ (or chars) used to separate each field (If _<i>conflateDelim</i> is true, 
+ then 1 or more consecutive delimiters are treated as a single delimiter). 
+ The _equals char is used to indicate the key/value separator. The _<i>fields</i> 
+ is an ordered list of types and field names for each of the delimited 
+ fields. If the _<i>quote</i> is supplied, then a field value starting 
+ with <i>quote</i> will be read until another <span style="font-style: italic;">q</span><i>uote</i> 
+ char is found, meaning <i>delim</i>s within <i>quotes</i> will not be 
+ treated as delims.  If the _<span style="font-style: italic;">e</span><i>scape</i> 
+ char is supplied then when an <i>escape</i> char is read, it is skipped 
+ and the following char is read as a literal.</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;">The optional _<span style="font-style: italic;">ma</span><i>ppings</i> 
+ directive allows you to map keys within the output to field names specified 
+ in the _<i>fields</i> directive. This is useful when the output has key 
+ names that are not valid field names, or the output has multiple key names 
+ that should be used to populate the same column.</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<h3>Examples</h3>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_delim=&quot;|&quot;</span></p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_equals=&quot;=&quot;</span></p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_fields=&quot;code,lname,int 
+ age&quot;</span></p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_mappings=&quot;20=code,21=lname,22=age&quot;</span></p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_quote=&quot;&#39;&quot;</span></p>
+<p style="margin-bottom: .0001pt;"><span class="CourierBlueStyle">_escape=&quot;\\&quot;</span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;">This defines a pattern such that:</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; mso-themecolor: accent2; font-family: &#39;Courier New&#39;; 
+	 color: #632423; mso-themeshade: 128; font-style: italic;"><i><span style="font-style: italic; mso-bidi-font-style: normal;">code=11232-33|lname=Smith|age=20</span></i></p>
+<p style="margin-bottom: .0001pt; mso-themecolor: accent2; font-family: &#39;Courier New&#39;; 
+	 color: #632423; mso-themeshade: 128; font-style: italic;"><i><span style="font-style: italic; mso-bidi-font-style: normal;">code=&#39;1332|ABC&#39;|age=30</span></i></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;; color: #632423; 
+	 mso-themecolor: accent2; font-style: italic;"><i style="mso-bidi-font-style: normal;"><span style="line-height: 115%; mso-fareast-font-family: Arial; mso-fareast-theme-font: minor-latin; 
+	 mso-themeshade: 128; mso-ansi-language: EN-US; mso-fareast-language: EN-US; 
+	 mso-bidi-language: AR-SA; font-style: italic; mso-bidi-font-style: normal;">20=Act\|112|21=J|22=18 
+ </span><span style="line-height: 115%; mso-ascii-theme-font: minor-latin; 
+				 mso-fareast-font-family: Arial; mso-fareast-theme-font: minor-latin; 
+				 mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &#39;Times New Roman&#39;; 
+				 mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; 
+				 mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+				 color: #000000; font-family: Arial, sans-serif;">(Note: 
+ this row will work due to the _mappings directive)</span></i> </p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;">Maps to: </p>
+<p style="margin-bottom: .0001pt;"> </p>
+<table style="margin-left: 36.9pt; border: none;" cellspacing="0" width="100%" cellpadding="1">
+	<tbody><tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: solid #000000 1.0px; 
+			 border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="164"><p style="margin-bottom: .0001pt; margin-left: 12px;"><b>code          </b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="213"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;"><b>Lname</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="213"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;"><b>age</b></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="164"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">11232-33</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="213"><p style="margin-bottom: .0001pt; margin-left: 12px;">Smith</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="213"><p style="margin-bottom: .0001pt; margin-left: 12px;">20</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="164"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">1332|ABC</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="213"><p style="margin-bottom: .0001pt; margin-left: 12px;"> </p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="213"><p style="margin-bottom: .0001pt; margin-left: 12px;">30</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="164"><p style="margin-bottom: .0001pt; 
+			 margin-left: 12px;">Act|112</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="213"><p style="margin-bottom: .0001pt; margin-left: 12px;">J</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="213"><p style="margin-bottom: .0001pt; margin-left: 12px;">18</p></td>
+	</tr>
+</tbody></table>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

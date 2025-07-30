@@ -1,0 +1,29 @@
+# Overview:
+# Each new client connection is passed through the webbalancer rules engine to determine which list of webservers are candidates for forwarding
+# Starting at the highest priority (first) rule. 
+#
+# Rule Format:
+# CLIENT_MASK;SERVERS_LIST;ON_FAILURE     # Comments
+#    CLIENT_MASK: a pattern matching expression for client ip addresses, (*=wild)
+#    SERVERS_LIST: a comma delimited list of protocol://host:port entries.  (Only http,https protocols supported, default is http)
+#    ON_FAILURE: If all servers in SERVERS_LIST are down, either CONTINUE trying other rules or BREAK and return error to user. Default is BREAK
+#
+# If the client's ip address (as seen by the webbalancer) matches the CLIENT_MASK portion then a web server from the SERVERS_LIST option is chosen
+# for forwarding, see selection strategy for details. The selected forwarding is "sticky for all subsequent connections from the same client ip address,
+# for the life of the session (see ami.webbalancer.session.timeout.period for determining when a session can expire).
+# 
+# Selection Strategy:
+#
+# The servers from the SERVERS_LIST with an UP status (see ami.webbalancer.server.test.url property determining UP/DOWN status of a server) and the 
+# least number of active client sessions is chosen. With ties broken via round-robin.
+#
+# Note: If a client address can not be matched to a rule the user will receive an error message.
+#
+# Example:
+#     192.168.1.1|192.168.1.2|192.168.1.3;https://server1:33332,https://server2:33332    #send those 3 clients to either server1 or server2
+#     192.168.1.*;https://server3:33332  #send all clients in the 192.168.1 address range to server3
+#     *;http://server4:33332,http://server5:33332  #all others get sent to server4 or server5
+#
+# Default:
+*;http://localhost:33332;BREAK
+

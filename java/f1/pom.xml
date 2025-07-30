@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>f1</name>
+
+    <groupId>com.f1</groupId>
+    <artifactId>f1</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+   
+   <parent>
+        <groupId>com.3f</groupId>
+        <artifactId>3f</artifactId>
+        <version>1.00-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+    
+    <modules>
+        <module>base</module>
+        <module>utils</module>
+        <module>console</module>
+        <module>stringmaker</module>
+        <module>speedlogger</module>
+        <module>speedloggerLog4j</module>
+        <module>speedloggerSlf4j</module>
+        <module>codegen</module>
+        <module>container</module>
+        <module>bootstrap</module>
+        <module>pofo</module>
+        <module>povo</module>
+        <module>msg</module>
+        <module>msgdirect</module>
+        <module>suiteutils</module>
+        <module>persist</module>
+        <module>containerpersist</module>
+        <module>email</module>
+        <module>sample</module>
+        <module>fixclientsim</module>
+        <module>qfix</module>
+        <module>fixoms</module>
+        <module>fixomsclient</module>
+        <module>suiteweb</module>
+        <module>refdata</module>
+        <module>refdataclient</module>
+        <module>encoder</module>
+        <module>mktdata</module>
+        <module>mktdatasim</module>
+        <module>http</module>
+        <module>mktdataclient</module>
+        <module>f1toolkit</module>
+        <module>f1webkit</module>
+        <module>office</module>
+        <module>pdf</module>
+        <module>ssh</module>
+        <module>fixdropcopy</module>
+    </modules>
+	
+<distributionManagement>
+  <snapshotRepository>
+      <id>3Forge</id>
+      <url>http://hammer:8081/nexus/content/repositories/3Forge</url>
+  </snapshotRepository>
+</distributionManagement>
+	
+
+   
+  
+
+</project>
+

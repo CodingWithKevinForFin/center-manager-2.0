@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "5.1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Data Source Access Clauses</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Data Source Access Clauses">
+        <span>Data Source Access Clauses</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Data Source Access Clauses</h1>
+<h2><a style="font-family: Arial, sans-serif;" id="use_..._execute_clause">use 
+ ... execute_clause</a></h2>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h3><u style="text-decoration: none; ">OVERVIEW</u></h3>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;">This 
+ command enables you to &quot;execute&quot; code on an external datasource 
+ and process/store the results locally</p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 11pt;"> </p>
+<ul style="list-style: disc;">
+	<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; 
+		 font-family: Arial, sans-serif; font-size: 12pt;"><span style="color: #C00000;">USE</span>: 
+	 While datamodels have default options, you can override them for a 
+	 particular query.  Valid options include</p></li>
+	<ul style="list-style: circle;">
+		<li style="font-weight: normal; font-style: normal; font-family: Arial, sans-serif; 
+			 font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; 
+									 font-family: Arial, sans-serif; font-size: 12pt;"><b>ds</b> 
+		 = <span style="font-style: italic;">&quot;</span><i>datasource_name&quot;<span style="line-height: 115%; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Arial; 
+		 mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; 
+		 mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; 
+		 font-style: normal;"> </span></i></p></li>
+		<ul style="list-style: square; font-size: 12pt;">
+			<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; 
+											 line-height: 115%; mso-ascii-theme-font: minor-latin; 
+											 mso-fareast-theme-font: minor-latin; 
+											 mso-hansi-theme-font: minor-latin; 
+											 font-style: normal; font-family: Arial, sans-serif; 
+											 font-size: 12pt;"><i><span style="mso-fareast-font-family: Arial; mso-bidi-font-family: &#39;Times New Roman&#39;; 
+			 mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; 
+			 mso-fareast-language: EN-US; mso-bidi-language: AR-SA; font-style: normal;">The 
+			 name of the datasource to execute this script on</span></i></p></li>
+		</ul>
+		<li style="font-weight: normal; font-style: normal; font-family: Arial, sans-serif; 
+			 font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; 
+									 font-family: Arial, sans-serif; font-size: 12pt;"><b>timeout 
+		 =</b> <i>timeout_in_millis </i></p></li>
+		<ul style="list-style: square; font-size: 12pt;">
+			<li style="font-weight: normal; font-style: normal; font-family: Arial, sans-serif; 
+				 font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; 
+										 font-family: Arial, sans-serif; 
+										 font-size: 12pt; font-style: normal;"><i><span style="font-style: normal;">T</span></i>he number of milliseconds 
+			 before the execute command times out</p></li>
+		</ul>
+		<li style="font-weight: normal; font-style: normal; font-family: Arial, sans-serif; 
+			 font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; 
+									 font-size: 12pt; font-family: Arial, sans-serif;"><b>limit 
+		 =</b> <i>row_limit_to_return </i></p></li>
+		<ul style="list-style: square; font-size: 12pt;">
+			<li style="font-weight: normal; font-style: normal; font-family: Arial, sans-serif; 
+				 font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; 
+										 font-family: Arial, sans-serif; 
+										 font-size: 12pt; font-style: normal;">The 
+			 max number of records returned</p></li>
+		</ul>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+			 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+			 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+			 text-decoration-style: initial; text-decoration-color: initial; 
+			 font-size: 12pt;"><b>ds_url =</b> &quot;<i>url</i>&quot;</p></li>
+		<ul style="list-style: square; font-size: 12pt;">
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; font-size: 12pt; 
+				 -webkit-text-stroke-width: 0px; display: inline	 ! important ; 
+				 text-decoration-style: initial; text-decoration-color: initial;">Overrides 
+			 the url of the datasource</p></li>
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; font-size: 12pt;"><span style="-webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+			 text-decoration-color: initial; display: inline	 ! important ; 
+			 float: none;">When used in conjunction with</span> <i style="-webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+			 text-decoration-color: initial;">ds=&quot;datasource_name&quot;,</i> <span style="-webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+			 text-decoration-color: initial; display: inline	 ! important ; 
+			 float: none;">supplied datasource must contain</span> <i style="-webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+			 text-decoration-color: initial;">URL</i> <span style="-webkit-text-stroke-width: 0px; 
+			 text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">in the</span> <i style="-webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+			 text-decoration-color: initial;">PermittedOverrides</i> <span style="-webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+			 text-decoration-color: initial; display: inline	 ! important ; 
+			 float: none;">field</span></p></li>
+		</ul>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; font-style: normal; font-variant-ligatures: normal; 
+			 font-variant-caps: normal; background-color: #ffffff; orphans: 2; 
+			 widows: 2; -webkit-text-stroke-width: 0px; line-height: Normal; 
+			 font-family: Arial, sans-serif; text-decoration-style: initial; 
+			 text-decoration-color: initial; font-size: 12pt;"><b><span style="display: inline	 ! important ; float: none;">d</span>s_username 
+		 =</b> &quot;<i>username</i>&quot;</p></li>
+		<ul style="list-style: square; font-size: 12pt;">
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; font-variant-ligatures: normal; 
+				 font-variant-caps: normal; background-color: #ffffff; 
+				 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+				 text-decoration-style: initial; text-decoration-color: initial; 
+				 line-height: Normal; font-family: Arial, sans-serif; font-style: normal; 
+				 font-size: 12pt;">Overrides the username of the datasource</p></li>
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+				 font-size: 12pt;"><span style="text-decoration-style: initial; 
+										 text-decoration-color: initial;">W</span><span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">hen used in 
+			 conjunction with</span> <i style="text-decoration-style: initial; 
+											 text-decoration-color: initial;">ds=&quot;datasource_name&quot;,</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">supplied datasource 
+			 must contain</span> <i style="text-decoration-style: initial; 
+										 text-decoration-color: initial;"><span style="font-style: normal;">USERNAME</span></i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">in the</span> <i style="text-decoration-style: initial; text-decoration-color: initial;"><span style="font-style: normal;">PermittedOverrides</span></i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">field</span></p></li>
+		</ul>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+			 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+			 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+			 font-size: 12pt;"><b style="text-decoration-style: initial; 
+									 text-decoration-color: initial;"><span style="text-decoration-style: initial; text-decoration-color: initial; 
+		 display: inline	 ! important ; float: none;">d</span>s_password 
+		 =</b><span style="text-decoration-style: initial; text-decoration-color: initial;"> &quot;<i>plain_text_pass</i></span><i><span style="text-decoration-style: initial; text-decoration-color: initial;">word</span></i><span style="text-decoration-style: initial; text-decoration-color: initial;">&quot;</span> 
+		 </p></li>
+		<ul style="list-style: square; font-size: 12pt;">
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+				 font-size: 12pt;"><span style="text-decoration-style: initial; 
+										 text-decoration-color: initial; 
+										 display: inline	 ! important ; 
+										 float: none;">Overrides the password 
+			 of the datasource using a plain text password</span> </p></li>
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+				 font-size: 12pt;"><span style="text-decoration-style: initial; 
+										 text-decoration-color: initial; 
+										 display: inline	 ! important ; 
+										 float: none;">When used in conjunction 
+			 with</span> <i style="text-decoration-style: initial; 
+								 text-decoration-color: initial;">ds=&quot;datasource_name&quot;,</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">supplied datasource 
+			 must contain</span> <i style="text-decoration-style: initial; 
+										 text-decoration-color: initial;">PASSWORD</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">in the</span> <i style="text-decoration-style: initial; text-decoration-color: initial;">PermittedOverrides</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">field</span> 
+			 </p></li>
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+				 font-size: 12pt;"><span style="text-decoration-style: initial; 
+										 text-decoration-color: initial; 
+										 display: inline	 ! important ; 
+										 float: none;">Mutually exclusive 
+			 with the</span> <i style="text-decoration-style: initial; 
+									 text-decoration-color: initial;">ds_password_enc</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">option</span></p></li>
+		</ul>
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+			 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+			 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+			 font-size: 12pt; text-decoration-style: initial; text-decoration-color: initial;"><b><span style="display: inline	 ! important ; float: none;">d</span>s_password_enc 
+		 =</b> &quot;<i>aes_encrypted_password&quot;</i></p></li>
+		<ul style="list-style: square;">
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+				 font-size: 12pt; text-decoration-style: initial; text-decoration-color: initial; 
+				 display: inline	 ! important ;">Overrides the password 
+			 of the datasource, using an encrypted password</p></li>
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+				 font-size: 12pt;"><span style="text-decoration-style: initial; 
+										 text-decoration-color: initial; 
+										 display: inline	 ! important ; 
+										 float: none;">Use strEncrypt(...) 
+			 to create an encrypted password</span></p></li>
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+				 font-size: 12pt;"><span style="text-decoration-style: initial; 
+										 text-decoration-color: initial; 
+										 display: inline	 ! important ; 
+										 float: none;">When used in conjunction 
+			 with</span> <i style="text-decoration-style: initial; 
+								 text-decoration-color: initial;">ds=&quot;datasource_name&quot;,</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">supplied datasource 
+			 must contain</span> <i style="text-decoration-style: initial; 
+										 text-decoration-color: initial;">PASSWORD</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">in the</span> <i style="text-decoration-style: initial; text-decoration-color: initial;">PermittedOverrides</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">field</span> 
+			 </p></li>
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+				 font-size: 12pt;"><span style="text-decoration-style: initial; 
+										 text-decoration-color: initial; 
+										 display: inline	 ! important ; 
+										 float: none;">Mutually exclusive 
+			 with the</span> <i style="text-decoration-style: initial; 
+									 text-decoration-color: initial;">ds_password</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">option</span></p></li>
+		</ul>
+		<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+														 line-height: Normal; 
+														 font-family: Arial, sans-serif; 
+														 font-style: normal; 
+														 font-variant-ligatures: normal; 
+														 font-variant-caps: normal; 
+														 background-color: #ffffff; 
+														 orphans: 2; widows: 2; 
+														 -webkit-text-stroke-width: 0px; 
+														 font-size: 12pt;"><b style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial;"><span style="text-decoration-style: initial; text-decoration-color: initial; 
+		 display: inline	 ! important ; float: none;">d</span>s_options 
+		 =</b><span style="font-size: 16px; text-decoration-style: initial; 
+					 text-decoration-color: initial;"> &quot;<i>some 
+		 options</i>&quot;</span> </p></li>
+		<ul style="list-style: circle;">
+			<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+															 line-height: Normal; 
+															 font-family: Arial, sans-serif; 
+															 font-style: normal; 
+															 font-variant-ligatures: normal; 
+															 font-variant-caps: normal; 
+															 background-color: #ffffff; 
+															 orphans: 2; 
+															 widows: 2; 
+															 -webkit-text-stroke-width: 0px; 
+															 font-size: 16px; 
+															 text-decoration-style: initial; 
+															 text-decoration-color: initial; 
+															 display: inline	 ! important ;">Override 
+			 the options of the datasource</p></li>
+			<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+															 line-height: Normal; 
+															 font-family: Arial, sans-serif; 
+															 font-style: normal; 
+															 font-variant-ligatures: normal; 
+															 font-variant-caps: normal; 
+															 background-color: #ffffff; 
+															 orphans: 2; 
+															 widows: 2; 
+															 -webkit-text-stroke-width: 0px; 
+															 font-size: 12pt;"><span style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">When used 
+			 in conjunction with</span> <i style="font-size: 16px; 
+												 text-decoration-style: initial; 
+												 text-decoration-color: initial;">ds=&quot;datasource_name&quot;,</i> <span style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">supplied datasource 
+			 must contain</span> <i style="font-size: 16px; text-decoration-style: initial; 
+										 text-decoration-color: initial;">OPTIONS</i> <span style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">in the</span> <i style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial;">PermittedOverrides</i> <span style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">field</span> 
+			 </p></li>
+		</ul>
+		<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+														 line-height: Normal; 
+														 font-family: Arial, sans-serif; 
+														 font-style: normal; 
+														 font-variant-ligatures: normal; 
+														 font-variant-caps: normal; 
+														 background-color: #ffffff; 
+														 orphans: 2; widows: 2; 
+														 -webkit-text-stroke-width: 0px; 
+														 font-size: 12pt;"> <b style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial;">ds_relay 
+		 =</b><span style="font-size: 16px; text-decoration-style: initial; 
+					 text-decoration-color: initial;"> &quot;<i>relayid</i>&quot;</span> 
+		 </p></li>
+		<ul style="list-style: circle;">
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+				 font-size: 12pt;"><span style="text-decoration-style: initial; 
+										 text-decoration-color: initial; 
+										 display: inline	 ! important ; 
+										 float: none;">Override the relay 
+			 of the datasource</span> </p></li>
+			<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+				 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+				 background-color: #ffffff; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+				 font-size: 12pt;"><i style="text-decoration-style: initial; 
+										 text-decoration-color: initial;">Run 
+			 SHOW RELAYS command and inspect RelayId for available relays</i> 
+			 </p></li>
+			<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+															 line-height: Normal; 
+															 font-family: Arial, sans-serif; 
+															 font-style: normal; 
+															 font-variant-ligatures: normal; 
+															 font-variant-caps: normal; 
+															 background-color: #ffffff; 
+															 orphans: 2; 
+															 widows: 2; 
+															 -webkit-text-stroke-width: 0px; 
+															 font-size: 12pt;"><span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">When used 
+			 in conjunction with</span> <i style="text-decoration-style: initial; 
+												 text-decoration-color: initial;">ds=&quot;datasource_name&quot;,</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">supplied datasource 
+			 must contain</span> <i style="text-decoration-style: initial; 
+										 text-decoration-color: initial;">RELAY</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">in the</span> <i style="text-decoration-style: initial; text-decoration-color: initial;">PermittedOverrides</i> <span style="text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">field</span> 
+			 </p></li>
+		</ul>
+		<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+														 line-height: Normal; 
+														 font-family: Arial, sans-serif; 
+														 font-style: normal; 
+														 font-variant-ligatures: normal; 
+														 font-variant-caps: normal; 
+														 background-color: #ffffff; 
+														 orphans: 2; widows: 2; 
+														 -webkit-text-stroke-width: 0px; 
+														 font-size: 12pt;"><b style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial;">ds_adapter 
+		 = </b><span style="font-size: 16px; text-decoration-style: initial; 
+							 text-decoration-color: initial;">&quot;<i>SOME_ADAPTER</i>&quot;</span> 
+		 </p></li>
+		<ul style="list-style: circle;">
+			<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+															 line-height: Normal; 
+															 font-family: Arial, sans-serif; 
+															 font-style: normal; 
+															 font-variant-ligatures: normal; 
+															 font-variant-caps: normal; 
+															 background-color: #ffffff; 
+															 orphans: 2; 
+															 widows: 2; 
+															 -webkit-text-stroke-width: 0px; 
+															 font-size: 12pt;"><span style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">Use an &quot;anonymous&quot; 
+			 datasource of the specified adapter type</span> </p></li>
+			<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+															 line-height: Normal; 
+															 font-family: Arial, sans-serif; 
+															 font-style: normal; 
+															 font-variant-ligatures: normal; 
+															 font-variant-caps: normal; 
+															 background-color: #ffffff; 
+															 orphans: 2; 
+															 widows: 2; 
+															 -webkit-text-stroke-width: 0px; 
+															 font-size: 12pt;"><span style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">Run</span> <i style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial;">SHOW 
+			 DATASOURCE_TYPES</i> <span style="font-size: 16px; text-decoration-style: initial; 
+											 text-decoration-color: initial; 
+											 display: inline	 ! important ; 
+											 float: none;">command and 
+			 inspect the</span> <i style="font-size: 16px; text-decoration-style: initial; 
+										 text-decoration-color: initial;">I</i> <span style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">column for 
+			 available adapters</span> </p></li>
+			<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+															 line-height: Normal; 
+															 font-family: Arial, sans-serif; 
+															 font-style: normal; 
+															 font-variant-ligatures: normal; 
+															 font-variant-caps: normal; 
+															 background-color: #ffffff; 
+															 orphans: 2; 
+															 widows: 2; 
+															 -webkit-text-stroke-width: 0px; 
+															 font-size: 12pt;"><span style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">Mutually exclusive 
+			 with</span> <i style="font-size: 16px; text-decoration-style: initial; 
+								 text-decoration-color: initial;">ds=&quot;datasource_name&quot;</i> <span style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">option</span> 
+			 </p></li>
+			<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+															 line-height: Normal; 
+															 font-family: Arial, sans-serif; 
+															 font-style: normal; 
+															 font-variant-ligatures: normal; 
+															 font-variant-caps: normal; 
+															 background-color: #ffffff; 
+															 orphans: 2; 
+															 widows: 2; 
+															 -webkit-text-stroke-width: 0px; 
+															 font-size: 12pt;"><span style="font-size: 16px; text-decoration-style: initial; text-decoration-color: initial; 
+			 display: inline	 ! important ; float: none;">See ami.db.anonymous.datasources.enabled 
+			 option for permission details</span></p></li>
+		</ul>
+		<li style="font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+														 line-height: Normal; 
+														 font-size: 12pt; 
+														 font-family: Arial, sans-serif;">_<i>custom</i>=<i>some_directive</i></p></li>
+		<ul style="list-style: square;">
+			<li style="font-weight: normal; font-style: normal; font-size: 12pt; 
+				 font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+													 line-height: Normal; 
+													 font-size: 12pt; font-family: Arial, sans-serif;">Prefixing 
+			 with an underbar (_) passes the option through to the datasource&#39;s 
+			 adapter</p></li>
+		</ul>
+	</ul>
+	<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; 
+		 line-height: Normal; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #bf0000;">EXECUTE</span>: <span style="text-indent: -.25in;">The 
+	 literal text to execute. The text will be sent directly to the datasource 
+	 for execution. Therefore, variables cannot be referenced. Instead, 
+	 substitution can be used. See <i>dollarsign_substitution</i></span></p></li>
+</ul>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; line-height: Normal; 
+	 font-size: 11pt;"> </p>
+<h3><u style="font-family: Arial, sans-serif; text-decoration: none; ">SYNTAX</u><span style="line-height: 115%; font-size: 11pt;">                                                   </span></h3>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier=""><i style="font-style: normal; font-size: 12pt;">[</i></span><span courier="" style="color: #ff0000; font-size: 12pt;">USE</span><span style="font-size: 12pt;"> </span><span courier="" style="color: #006dbf; 
+											 font-size: 12pt;">option</span><span style="font-size: 12pt;"> </span><span courier="" style="color: #ff0000; 
+											 font-size: 12pt;">=</span><span style="font-size: 12pt;"> </span><span courier="" style="color: #006dbf; 
+											 font-size: 12pt;">value</span><span style="font-size: 12pt;"> </span><span courier="" style="font-size: 12pt;"> </span><i><span courier="" style="font-style: normal; font-size: 12pt;">[</span></i><span style="font-size: 12pt;"> </span><span courier="" style="font-size: 12pt;"> </span><span courier="" style="color: #006dbf; font-size: 12pt;">option</span><span style="font-size: 12pt;"> </span><span courier="" style="color: #ff0000; 
+											 font-size: 12pt;">=</span><span style="font-size: 12pt;"> </span><span courier="" style="color: #006dbf; 
+											 font-size: 12pt;">value</span><span style="font-size: 12pt;"> </span><span courier="" style="font-size: 12pt;"> ...<i style="font-style: normal; font-size: 12pt;">]]</i>  </span><span courier="" style="color: #ff0000; font-size: 12pt;">EXECUTE</span><span style="font-size: 12pt;"> </span><span courier="" style="color: #006dbf; 
+											 font-size: 12pt;">code_to_execute</span><i><span courier=""> </span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><i><span courier="" style="font-weight: normal; 
+									 font-style: normal;">code_to_execute</span></i></b> 
+ -<i><span courier="" style="font-style: normal;"> code to execute on default 
+ or supplied datasource</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><b><i><span courier="" style="font-weight: normal; 
+									 font-style: normal;">option</span></i></b> 
+ -<i><span courier="" style="font-style: normal;"> valid options (keys 
+ are case-insensitive):</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">                     datasource 
+ = datasource_name</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">                     timeout 
+ = timeout_in_millis</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt; font-style: normal;"><i><span courier="" style="font-style: normal;">                     limit 
+ = row_limit_to_return</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"> </p>
+<h3><b><span style="font-size: 13pt; font-style: italic; color: #449938; 
+			 text-transform: uppercase; font-family: Arial, sans-serif;">Examples</span></b><span courier="" style="font-size: 8.0pt;"> </span></h3>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt;"><span style="font-family: Arial, sans-serif; 
+															 font-size: 12pt;">This 
+ example will execute a select query on the datasource named mydb and stores 
+ the first 100 rows of the result to an in-memory table named final_table.</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">CREATE TABLE</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  final_table 
+ AS</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">USE</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  ds=&quot;mydb&quot;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  timeout=10000</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  limit=100</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">EXECUTE</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  <i>select 
+ * from mytable;</i></span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<h2><a style="font-family: Arial, sans-serif;" id="use_..._show_tables_clause">use 
+ ... show tables clause</a></h2>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h3><u style="text-decoration: none; ">OVERVIEW</u></h3>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-family: Arial, sans-serif; 
+	 font-size: 12pt;">This command enables you to see what tables are 
+ available on a given datasource (similar to what the AMI gui wizard shows 
+ you when selecting a table).</p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<ul style="list-style: disc;">
+	<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; 
+		 font-family: Arial, sans-serif; font-size: 12pt;"><span style="color: #bf0000;">USE</span>: 
+	 While datamodels have default options, you can override them for a 
+	 particular query.  Valid options include</p></li>
+	<ul style="list-style: circle;">
+		<li style="font-family: Arial, sans-serif; font-size: 12pt;"><p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; 
+			 font-size: 12pt;"><span style="font-weight: bold;">ds</span> 
+		 = <span style="text-indent: -.25in;">&quot;<i>datasource_name&quot;</i>             The 
+		 name of the datasource to execute ths script on</span></p></li>
+	</ul>
+</ul>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; font-size: 12pt;">The 
+ resulting table will be called <span courier="" style="color: #006dbf;">TABLE</span> 
+ and contain two String columns: <span courier="" style="color: #006dbf;">TableName</span> 
+ and <span courier="" style="color: #006dbf;">Schema</span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<h3><u style="font-family: Arial, sans-serif; text-decoration: none; ">SYNTAX</u><span style="font-size: 8.0pt;">                                                                                                  </span></h3>
+<p style="margin-bottom: .0001pt; line-height: Normal;"><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">USE 
+ ds=</span><i style="font-family: &#39;Courier New&#39;, monospace;"><span courier="" style="color: #808080; font-family: &#39;Courier New&#39;, monospace;">&quot;datasource_name&quot;</span><span courier="" style="font-family: &#39;Courier New&#39;, monospace;"> </span></i><span style="font-family: &#39;Courier New&#39;, monospace;"> </span><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">SHOW 
+ TABLES</span><i><span courier="" style="font-size: 8.0pt;"> </span></i></p>
+<p style="margin-bottom: .0001pt; line-height: Normal;"> </p>
+<h3><b><span style="font-weight: bold;">Examples</span></b></h3>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt;"><span style="font-size: 12pt; 
+															 font-family: Arial, sans-serif;">This 
+ example will return a table displaying all tables available in the <i style="font-size: 12pt; font-family: Arial, sans-serif;">mydb</i> 
+ datasource. If the datasource supports schema names, that will be populated 
+ as well.</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">USE ds=&quot;mydb&quot; 
+ SHOW TABLES;</span></p>
+<p style="color: #006dbf; margin-top: 0pt; margin-bottom: 0pt; line-height: Normal; 
+	 font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">//returns:</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">+------------------------------------------+</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">|                  TABLES                  |</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">+-----------------------+------------------+</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">|TableName              |Schema            |</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">|String                 |String            |</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">+-----------------------+------------------+</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">|sample_table           |public            |</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">|my_sample_table2       |public            |</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">|sql_implementation_info|information_schema|</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">|sql_languages          |information_schema|</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">+-----------------------+------------------+</span></p>
+<p style="margin-bottom: 0pt; line-height: Normal; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: 0pt; line-height: Normal; font-family: Arial, sans-serif;"> </p>
+<h2><span style="color: #7030A0;"><a id="ANALYZE" data-indexterm="ANALYZE"></a><a style="font-size: 19pt; 
+									 font-family: Arial, sans-serif; text-decoration: none; " id="use_..._insert_clause">use 
+ ... insert clause</a></span></h2>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h3><u style="text-decoration: none; ">OVERVIEW</u></h3>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">This 
+ command uploads data from AMI into a datasource.</p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<ul style="list-style: circle;">
+	<li style="list-style: disc; font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="color: #bf0000;">USE</span>: While datamodels have default 
+	 options, you can override them for a particular query.  Valid 
+	 options include</p></li>
+	<ul style="list-style: circle;">
+		<li style="font-size: 12pt; font-family: Arial, sans-serif;"><p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"><span style="font-weight: bold;">ds</span> = &quot;<i>datasource_name&quot;</i>             The 
+		 name of the datasource to execute ths script on</p></li>
+	</ul>
+</ul>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-size: 12pt; 
+	 font-family: Arial, sans-serif;">The resulting table will be called 
+ <span courier="">TABLE</span> and contain two String columns: <span courier="">TableName</span> 
+ and <span courier="">Schema</span></p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; line-height: Normal; 
+	 font-family: Arial, sans-serif;"> </p>
+<h3><span><u style="font-family: Arial, sans-serif; text-decoration: none; ">SYNTAX</u></span><span style="font-size: 8.0pt; line-height: 115%; font-family: Arial, sans-serif;"> </span><span style="font-size: 8.0pt; line-height: 115%;">                                                                                                 </span></h3>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">USE ds=</span><i><span courier="">&quot;datasource_name&quot; </span></i> <span courier="" style="color: #ff0000;">INSERT [INTO]</span> <span courier="" style="color: #006dbf;">datasource_table</span> <span courier=""><b> </b><i>[</i></span><span courier="" style="color: #ff0000;">(</span><span courier="" style="color: #006dbf;">col1</span><span courier=""><i>[</i><b>, </b></span><span courier="" style="color: #006dbf;">col2</span><span courier=""> ...<i>]</i></span><span courier="" style="color: #ff0000;">)</span><i><span courier="">]</span></i> <b><span courier="" style="color: #6d2d9e;">select_clause</span></b><i><span courier=""> </span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">USE ds=</span><i><span courier="">&quot;datasource_name&quot; </span></i> <span courier="" style="color: #ff0000;">INSERT [INTO]</span> <span courier="" style="color: #006dbf;">datasource_table</span> <span courier=""><b> </b><i>[</i></span><span courier="" style="color: #ff0000;">(</span><span courier="" style="color: #006dbf;">col1</span><span courier=""><i>[</i><b>, </b></span><span courier="" style="color: #006dbf;">col2</span><span courier=""> ...<i>]</i></span><span courier="" style="color: #ff0000;">)</span><i><span courier="">]</span></i> <b><span courier="" style="color: #6d2d9e;">analyze_clause</span></b><i><span courier=""> </span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">USE ds=</span><i><span courier="">&quot;datasource_name&quot; </span></i> <span courier="" style="color: #ff0000;">INSERT [INTO]</span> <span courier="" style="color: #006dbf;">datasource_table</span> <span courier=""><b> </b><i>[</i></span><span courier="" style="color: #ff0000;">(</span><span courier="" style="color: #006dbf;">col1</span><span courier=""><i>[</i><b>, </b></span><span courier="" style="color: #006dbf;">col2</span><span courier=""> ...<i>]</i></span><span courier="" style="color: #ff0000;">)</span><i><span courier="">]</span></i> <b><span courier="" style="color: #6d2d9e;">prepare_clause</span></b><i><span courier=""> </span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">USE ds=</span><i><span courier="">&quot;datasource_name&quot; </span></i> <span courier="" style="color: #ff0000;">INSERT [INTO]</span> <span courier="" style="color: #006dbf;">datasource_table</span> <span courier=""><b> </b><i>[</i></span><span courier="" style="color: #ff0000;">(</span><span courier="" style="color: #006dbf;">col1</span><span courier=""><i>[</i><b>, </b></span><span courier="" style="color: #006dbf;">col2</span><span courier=""> ...<i>]</i></span><span courier="" style="color: #ff0000;">)</span><i><span courier="">]</span></i> <b><span courier="" style="color: #6d2d9e;">execute_clause</span></b></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">USE ds=</span><i><span courier="">&quot;datasource_name&quot; </span></i> <span courier="" style="color: #ff0000;">INSERT [INTO]</span> <span courier="" style="color: #006dbf;">datasource_table</span> <span courier=""><b> </b><i>[</i></span><span courier="" style="color: #ff0000;">(</span><span courier="" style="color: #006dbf;">col1</span><span courier=""><i>[</i><b>, </b></span><span courier="" style="color: #006dbf;">col2</span><span courier=""> ...<i>]</i></span><span courier="" style="color: #ff0000;">)</span><i><span courier="">]</span></i></p>
+<p style="margin-bottom: .0001pt; text-indent: .5in; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 margin-left: 320px; font-size: 12pt;"><span courier="" style="color: #ff0000;">VALUES</span><span courier=""> </span><b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#values_expr" style="font-size: 12pt;">values_expr</a></span></b><i><span courier="">[</span></i><i><span courier="" style="color: #6d2d9e;">, 
+ </span></i><b><span courier="" style="color: #6d2d9e;">values_expr</span></b> 
+ ...<i><span courier="">]</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 12pt;"><span courier="" style="color: #ff0000;">USE ds=</span><i><span courier="">&quot;datasource_name&quot; </span></i><span style="color: #ff0000;"> </span><span courier="" style="color: #ff0000;">INSERT [INTO]</span> <span courier="" style="color: #006dbf;">datasource_table</span> <span courier=""><b> </b><i>[</i></span><span courier="" style="color: #ff0000;">(</span><span courier="" style="color: #006dbf;">col1</span><span courier=""><i>[</i><b>, </b></span><span courier="" style="color: #006dbf;">col2</span><span courier=""> ...<i>]</i></span><span courier="" style="color: #ff0000;">)</span><i><span courier="">]</span></i></p>
+<p style="margin-bottom: .0001pt; text-indent: .5in; color: #6d2d9e; font-family: &#39;Courier New&#39;, monospace; 
+	 margin-left: 320px; font-size: 12pt;"><b><span courier="">Use_execute_clause</span></b></p>
+<p style="margin-bottom: .0001pt; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #808080; font-size: 12pt;"><b><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; font-weight: normal; 
+	 font-style: normal;">datasource_name</span></i></b> -<i><span courier="" style="font-style: normal;"> string name of the datasource containing 
+ the table to insert values into</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-size: 12pt;"><b><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; font-weight: normal; 
+	 font-style: normal;">datasource_table</span></i></b> -<i><span courier="" style="font-style: normal;"> name of the table to insert values into</span></i></p>
+<p style="margin-bottom: .0001pt; color: #808080; font-size: 11pt;"> </p>
+<h3><b><span style="font-weight: bold; font-style: italic; color: #449938; 
+			 text-transform: uppercase; font-size: 13pt; font-family: Arial, sans-serif;">Examples</span></b><span courier=""> </span></h3>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt; line-height: Normal;"><span style="color: #000000; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">This example will 
+ insert two rows into the <i style="color: #000000; font-size: 12pt; font-family: Arial, sans-serif;">mydb</i> 
+ datasource&#39;s <i style="color: #000000; font-size: 12pt; font-family: Arial, sans-serif;">users</i> 
+ table:</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">USE ds=&quot;mydb&quot; 
+ INSERT INTO users(name,city,state) values (&quot;Rob&quot;,&quot;NYC&quot;,&quot;NY&quot;),(&quot;Sara&quot;,&quot;OC&quot;,&quot;CA&quot;);</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"><span style="color: #000000; font-size: 12pt; 
+											 font-family: Arial, sans-serif;">This 
+ example copy all rows from AMI&#39;s <i style="color: #000000; font-size: 12pt; 
+									 font-family: Arial, sans-serif;">my_users</i> 
+ table into the &quot;mydb&quot; datasource&#39;s <i style="color: #000000; 
+												 font-size: 12pt; font-family: Arial, sans-serif;">users</i> 
+ table:</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">USE ds=&quot;mydb&quot; 
+ INSERT INTO users(name,city,state) SELECT Name,Local,Region FROM my_users;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 11pt;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span style="color: #000000; font-family: Arial, sans-serif;">This 
+ example copy all rows from the <i style="color: #000000; font-family: Arial, sans-serif;">old_users</i> 
+ table in the <i style="color: #000000; font-family: Arial, sans-serif;">otherds</i> 
+ datasource to the <i style="color: #000000; font-family: Arial, sans-serif;">users</i> 
+ table in the <i style="color: #000000; font-family: Arial, sans-serif;">mydb</i> 
+ datasource.</span><span courier=""> </span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">USE ds=&quot;mydb&quot; 
+ INSERT INTO users(name,city,state) USE ds=&quot;otherds&quot; EXECUTE 
+ SELECT * FROM old_users</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; color: #7030A0; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<h2><span style="color: #7030A0;"><a id="AS1" data-indexterm="AS"></a><a style="font-size: 19pt; font-family: Arial, sans-serif; 
+									 text-decoration: none; " id="concurrent_block__advanced_">concurrent_block 
+ (advanced)</a></span></h2>
+<hr style="border: Solid 1.5px #7030a0; color: #7030a0; background-color: #7030a0; 
+	 margin-top: 0px; margin-bottom: 0px;" align="left"/>
+<h3><u style="text-decoration: none; ">OVERVIEW</u></h3>
+<p style="margin-bottom: .0001pt; line-height: Normal; font-size: 12pt; 
+	 font-family: Arial, sans-serif;">When running analysis that needs 
+ to query many datasources, there can be large performance gains by executing 
+ these queries simultaneously. The <span style="color: #C00000;">CONCURRENT{...}</span> 
+ key word causes all <span style="color: #C00000;">EXECUTE</span> clauses 
+ within the block to be run in parallel (instead of sequentially).</p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">In 
+ both of the examples below, we are going to execute three queries on three 
+ separate datasources (mydb1, mydb2, mydb3). The first example executes 
+ the queries sequentially and the second example executes the queries concurrently.</p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">Assuming 
+ each query takes 2 seconds for a database to process, the first example 
+ will complete in about 6 seconds (2+2+2), while the second, concurrent, 
+ example will complete in only 2 seconds:</p>
+<p style="margin-bottom: .0001pt; font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<h3><u style="text-decoration: none; ">Example of Sequential Execution 
+ (Default)</u></h3>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; line-height: Normal; font-size: 12pt;"><span courier="">{</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  CREATE 
+ TABLE mytable1 AS USE ds=&quot;mydb1&quot; EXECUTE select * from mytable;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  CREATE 
+ TABLE mytable2 AS USE ds=&quot;mydb2&quot; EXECUTE select * from mytable;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  CREATE 
+ TABLE mytable3 AS USE ds=&quot;mydb3&quot; EXECUTE select * from mytable;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">}</span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">Here 
+ is the sequence of events:</p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:00 -  EXECUTE 
+ clause is sent to <span courier="">mydb1 </span> </p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:00 -  <i>AMI 
+ Script sleeps until there is a response from mydb1...</i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">                                                                  </p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:02 - <span courier="">mytable1</span> is created (from result of query to mydb1)<br/>
+00:00:02 - <span courier=""> </span>EXECUTE clause is sent to <span courier="">mydb2</span></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:02 - <span courier=""> </span><i>AMI Script sleeps until there is a response 
+ from mydb2...</i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:04 - <span courier="">mytable2</span> is created (from result of query to mydb2)<br/>
+00:00:04 - <span courier=""> </span>EXECUTE clause is sent to <span courier="">mydb3</span></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:04 - <span courier=""> </span><i>AMI Script sleeps until there is a response 
+ from mydb3...</i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:06 - <span courier="">mytable3</span> is created (from result of query to mydb3)<br/>
+00:00:06 - <span courier=""> </span>Block is complete after 6 seconds 
+ (code after the block will be executed)</p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 11pt; font-family: Arial, sans-serif;"> </p>
+<h3><u style="text-decoration: none; ">Example of CONCURRENT Execution</u></h3>
+<p style="margin-bottom: .0001pt; font-size: 8.0pt; line-height: Normal;"><span style="font-size: 12pt; font-family: Arial, sans-serif;">So now let&#39;s 
+ add the CONCURRENT keyword before the block.  In this case, 
+ all 3 executes will be initiated at the same time.</span>  </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier=""><b style="font-weight: normal;">CONCURRENT</b>{</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  CREATE 
+ TABLE mytable1 AS USE ds=&quot;mydb1&quot; EXECUTE select * from mytable;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  CREATE 
+ TABLE mytable2 AS USE ds=&quot;mydb2&quot; EXECUTE select * from mytable;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">  CREATE 
+ TABLE mytable3 AS USE ds=&quot;mydb3&quot; EXECUTE select * from mytable;</span></p>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #006dbf; font-size: 12pt;"><span courier="">}</span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; font-size: 12pt; font-family: Arial, sans-serif;">Here 
+ is the sequence of events:</p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:00 - EXECUTE 
+ clause is sent to <span courier="" style="color: #006dbf;">mydb1</span><span courier=""> </span> </p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:00 - EXECUTE 
+ clause is sent to <span courier="" style="color: #006dbf;">mydb2</span></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:00 - EXECUTE 
+ clause is sent to <span courier="" style="color: #006dbf;">mydb3</span></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:00 - <i>AMI 
+ Script sleeps until there is a response from all 3 queries...</i></p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: .5in; 
+	 font-size: 12pt; font-family: Arial, sans-serif;">00:00:02 - <span courier="" style="color: #006dbf;">mytable1</span> is created (from 
+ result of query to mydb1)<br/>
+00:00:02 - <span courier="" style="color: #006dbf;">mytable2</span> is 
+ created (from result of query to mydb2)<br/>
+00:00:02 - <span courier="" style="color: #006dbf;">mytable3</span> is 
+ created (from result of query to mydb3)<br/>
+00:00:02 - <span courier=""> </span>Block is complete after 2 seconds 
+ (code after the block will be executed)</p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

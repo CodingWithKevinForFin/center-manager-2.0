@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ami</groupId>
+
+    <name>amisybase</name>
+    <artifactId>amisybase</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.ami</groupId>
+        <artifactId>ami</artifactId>
+        <version>1.00-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <dependencies>
+      <dependency>
+        <groupId>com.ami</groupId>
+        <artifactId>amicommon</artifactId>
+        <version>1.00-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sourceforge.jtds</groupId>
+        <artifactId>jtds</artifactId>
+        <version>1.2.8</version>
+      </dependency>
+      <dependency>
+        <groupId>sybase</groupId>
+        <artifactId>jconn</artifactId>
+        <version>7.0</version>
+      </dependency>
+	  <!-- No existing version without vulnerabilities but 11.2.2 is current verrsion with fewest vulns-->
+      <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <version>11.2.2.jre8</version>
+      </dependency>
+    </dependencies>
+    
+</project>
+

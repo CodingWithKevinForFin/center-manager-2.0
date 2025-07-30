@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <link href="cards.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="button-linear-gradient-animation.webflow.c493931b3.min.css">
+        <link rel="stylesheet" type="text/css" href="test.css">
+		<link rel="stylesheet" type="text/css" href="tabs.css">
+        <link rel="stylesheet" type="text/css" href="button-linear-gradient-animation.webflow.c493931b3.min.css">
+        <link rel="stylesheet" type="text/css" href="footers.css">
+        <link rel="stylesheet" type="text/css" href="3forge-ee0fca.webflow.737e571bf.css">
+        <link rel="stylesheet" type="text/css" href="overrides.css">
+        <link rel="stylesheet" type="text/css" href="mobiletest.css">
+    </head>
+    <body>
+        <div class="d-130-section-home wf-section">
+            <div class="demo-container">
+            	<img src="images/gradientdecor.svg" id="gradient-decor35" alt="Gradient decoration" style="position: absolute;">
+                <div class="demo-wrapper">
+                    <div data-w-id="30ea2312-2284-6d12-daa4-a9f85b69dae5" class="d-130-blog-card-wrapper">
+                        <div class="d-130-image-wrapper">
+                            <div class="interactable-image d-130-image" id="img1" alt="30 Day Use Case Pipeline" onclick="sendMessageToParent()"></div>
+                        </div>
+                        <div class="d-130-description-wrapper">
+                            <h3 class="d-130-h3-heading gradient-txt">REAL-TIME GLOBAL P&L SOLUTION FOR MULTI-STRATEGY HEDGE FUND</h3>
+                            <p class="d-130-paragraph">1 month buildout with fully customizable calculations, web dashboard with millisecond level updates, charting, and drill downs. Configurable role-based entitlements. 100k+ instruments and positions.</p>
+                            <div class="container">
+                            <a href="global-pl-solution.html" target="_top" class="css-button w-inline-block" id="cardbutton" alt="Global P&L Solution Page">
+                        	   <div class="button-text">Read More</div>
+                        	   <div class="css-button__style w-embed">
+                        	     
+                        	     <style>
+								   .css-button {
+  									   background-size: 300%;
+  									}
+  
+  								   .css-button:hover,
+  								   .css-button:focus {
+  									   background-position: right;
+  									}
+							     </style>
+							     
+							   </div>
+							</a>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+		    function sendMessageToParent() {
+		    var backgroundImageURL = getComputedStyle(document.querySelector('.d-130-image')).backgroundImage;
+		    var imageSrc = backgroundImageURL.replace('url("', '').replace('")', ''); // Extract URL from background-image value
+		    var altText = document.getElementById("img1").getAttribute("alt");
+		    
+		    var targetOrigin = ""; // Define an empty variable to store the target origin
+		    
+		    // Determine the target origin based on the current origin
+		    if (window.location.origin === "https://desktop-ebeasrk:9443") {
+		        targetOrigin = "https://desktop-ebeasrk:9443"; // Set target origin for desktop-ebeasrk
+		    } else if (window.location.origin === "https://block.3forge.net:9444") {
+		        targetOrigin = "https://block.3forge.net:9444"; // Set target origin for block.3forge
+		    }
+		      else if (window.location.origin === "https://3forge.com") {
+		        targetOrigin = "https://3forge.com"; // Set target origin for block.3forge
+		    }
+		    
+		    // Check if a valid target origin is set
+		    if (targetOrigin) {
+		        window.parent.postMessage({ imageSrc: imageSrc, altText: altText }, targetOrigin);
+		    } else {
+		        console.error("Invalid origin:", window.location.origin); // Output error message if origin is not recognized
+		    }
+		 }
+		</script>
+    </body>
+</html>

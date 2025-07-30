@@ -1,0 +1,41 @@
+<f1:set var="tab" value="'dashboard'" scope="request" />
+<f1:secure/>
+<f1:if test="${isLoggedIn}">
+<f1:else/>
+	<f1:redirect page="'login.html'"/>
+</f1:if>
+
+
+<html lang="en" class="loader">
+<f1:include page="'_/head.htm'"/>
+<body style="background-color: #111A42;">
+	
+  	<center>
+    	<br><br><br>
+    	<h3 style="color:white; max-width: 700px; padding: 15px;">
+      	<f1:out value="${action_message}"/>
+    	</h3>
+    	<br><br><br>
+		<div class="btn-holder" id="closebtn" style="cursor: pointer;">
+			<div class="btn xl">Close window</div>
+		</div>
+    	<br><br><br>
+  	</center>
+	
+	
+	<f1:script src="inline" nonce="true"/>
+		document.getElementById("closebtn");
+		
+		closebtn.addEventListener('click', function(event) {
+	    	try {
+	      		window.close();
+	    	} catch (e) {
+	      		window.location.href = "https://3forge.com/dashboard.htm";
+	    	} finally {
+	      		window.location.href = "https://3forge.com/dashboard.htm";
+	    	}
+		});
+	</script>
+	
+</body>
+</html>

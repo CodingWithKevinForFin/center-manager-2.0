@@ -1,0 +1,148 @@
+****TEST_INPUT_QUERY****
+create table A as select * from tableA;
+create table F as select * from tableF;
+insert into A select * from F;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+tableA
++--------------------+
+|       tableA       |
++------+------+------+
+|x     |y     |z     |
+|Double|Double|Double|
++------+------+------+
+|4.0   |5.0   |8.0   |
+|4.0   |11.0  |11.0  |
+|9.0   |7.0   |0.0   |
+|6.0   |13.0  |33.0  |
+|3.0   |8.0   |17.0  |
+|4.0   |17.0  |99.0  |
+|1.0   |1.0   |23.0  |
+|1.0   |7.0   |90.0  |
+|1.0   |5.0   |50.0  |
++------+------+------+
+
+tableF
++--------------------+
+|       tableF       |
++------+------+------+
+|x     |b     |z     |
+|Double|Double|Double|
++------+------+------+
+|1.0   |2.0   |6.0   |
+|11.0  |0.0   |8.0   |
+|9.0   |8.0   |2.0   |
+|9.0   |3.0   |5.0   |
+|4.0   |3.0   |2.0   |
++------+------+------+
+
+****TEST_RESULT****
+19
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS A  SELECT "*" FROM tableACREATE TABLE AS F  SELECT "*" FROM tableFINSERT INTO A VALUES SELECT "*" FROM FSELECT "*" FROM F
+
+PROJECTION : 
+SELECT "*" FROM tableA
+
+NESTING_QUERY : 
+#0 tableA
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM tableF
+
+NESTING_QUERY : 
+#0 tableF
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM F
+
+NESTING_QUERY : 
+#0 F
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+F
++--------------------+
+|         F          |
++------+------+------+
+|x     |b     |z     |
+|Double|Double|Double|
++------+------+------+
+|1.0   |2.0   |6.0   |
+|11.0  |0.0   |8.0   |
+|9.0   |8.0   |2.0   |
+|9.0   |3.0   |5.0   |
+|4.0   |3.0   |2.0   |
++------+------+------+
+
+tableA
++--------------------+
+|       tableA       |
++------+------+------+
+|x     |y     |z     |
+|Double|Double|Double|
++------+------+------+
+|4.0   |5.0   |8.0   |
+|4.0   |11.0  |11.0  |
+|9.0   |7.0   |0.0   |
+|6.0   |13.0  |33.0  |
+|3.0   |8.0   |17.0  |
+|4.0   |17.0  |99.0  |
+|1.0   |1.0   |23.0  |
+|1.0   |7.0   |90.0  |
+|1.0   |5.0   |50.0  |
++------+------+------+
+
+A
++--------------------+
+|         A          |
++------+------+------+
+|x     |y     |z     |
+|Double|Double|Double|
++------+------+------+
+|4.0   |5.0   |8.0   |
+|4.0   |11.0  |11.0  |
+|9.0   |7.0   |0.0   |
+|6.0   |13.0  |33.0  |
+|3.0   |8.0   |17.0  |
+|4.0   |17.0  |99.0  |
+|1.0   |1.0   |23.0  |
+|1.0   |7.0   |90.0  |
+|1.0   |5.0   |50.0  |
+|1.0   |2.0   |6.0   |
+|11.0  |0.0   |8.0   |
+|9.0   |8.0   |2.0   |
+|9.0   |3.0   |5.0   |
+|4.0   |3.0   |2.0   |
++------+------+------+
+
+tableF
++--------------------+
+|       tableF       |
++------+------+------+
+|x     |b     |z     |
+|Double|Double|Double|
++------+------+------+
+|1.0   |2.0   |6.0   |
+|11.0  |0.0   |8.0   |
+|9.0   |8.0   |2.0   |
+|9.0   |3.0   |5.0   |
+|4.0   |3.0   |2.0   |
++------+------+------+
+

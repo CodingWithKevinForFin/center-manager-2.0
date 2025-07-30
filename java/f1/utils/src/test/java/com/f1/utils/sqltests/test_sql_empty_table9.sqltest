@@ -1,0 +1,41 @@
+****TEST_INPUT_QUERY****
+prepare stack(x) from empty partition by y order by z;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+
+****TEST_RESULT****
++-------+
+|stack_x|
+|Double |
++-------+
++-------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+PREPARE stack(x) FROM empty PARTITION BY y ORDER BY ASC z
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+

@@ -1,0 +1,79 @@
+
+
+.body{
+  overflow: hidden;
+}
+.portal_desktop{
+  background-color:#c6dcee;
+  background-image:url('../larkin_desktop.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  overflow:hidden;
+}
+
+.larkin_logo{
+  background:url('../larkin_logo.png');
+  background-position:50% 100%;
+  background-margin:0px;
+  background-repeat:no-repeat;
+  background-color:#c6dcee;
+  overflow:hidden;
+}
+
+.portal_form{
+  padding:4px;
+  text-align:center;
+  width:100%;
+  height:100%;
+  margin:0px;
+  overflow: hidden !important;
+  background:#c6dcee;
+}
+
+.larkin_form{
+  text-align:center;
+  width:100%;
+  height:100%;
+  margin:0px;
+border:0px;
+padding:0px;
+ font-size: 20px;
+color: red;
+  overflow: hidden !important;
+  background:#c6dcee;
+}
+.larkin_scenario{
+  text-align:left;
+  width:100%;
+  height:100%;
+  margin:0px;
+border:0px;
+padding:0px;
+ font-size: 20px;
+color: black;
+  overflow: hidden !important;
+  background:#c6dcee;
+}
+
+
+
+.LarkinTitle{
+
+font-size: 20px;
+margin:15px 0px 15px;
+width:100%;
+color:  #434d90;
+text-align: center;
+text-decoration:underline;
+}
+.LarkinParams{
+font-weight=bold;
+font-size:17px;
+color:  #434d90;
+
+}
+.LarkinDetails{
+font-size:15px;
+color: #434d90;
+
+}

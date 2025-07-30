@@ -1,0 +1,124 @@
+****TEST_INPUT_QUERY****
+delete from A left join B on A.n == B.n  where n % 2 == 0 limit 3, 5;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+A
++-------+
+|   A   |
++-------+
+|n      |
+|Integer|
++-------+
+|0      |
+|1      |
+|2      |
+|3      |
+|4      |
+|5      |
+|6      |
+|7      |
+|8      |
+|9      |
+|10     |
+|11     |
+|12     |
+|13     |
+|14     |
++-------+
+
+B
++-------+
+|   B   |
++-------+
+|n      |
+|Integer|
++-------+
+|5      |
+|6      |
+|7      |
+|8      |
+|9      |
+|10     |
+|11     |
+|12     |
+|13     |
+|14     |
+|15     |
+|16     |
+|17     |
+|18     |
+|19     |
++-------+
+
+****TEST_RESULT****
+5
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+DELETE FROM A LEFT JOIN B ON A . n == B . n WHERE n % 2 == 0 LIMIT 3,5
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+((n % 2) == 0)
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+A
++-------+
+|   A   |
++-------+
+|n      |
+|Integer|
++-------+
+|1      |
+|3      |
+|5      |
+|6      |
+|7      |
+|8      |
+|9      |
+|10     |
+|11     |
+|13     |
++-------+
+
+B
++-------+
+|   B   |
++-------+
+|n      |
+|Integer|
++-------+
+|5      |
+|6      |
+|7      |
+|8      |
+|9      |
+|10     |
+|11     |
+|12     |
+|13     |
+|14     |
+|15     |
+|16     |
+|17     |
+|18     |
+|19     |
++-------+
+

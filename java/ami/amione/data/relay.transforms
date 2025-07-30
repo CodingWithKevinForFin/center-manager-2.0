@@ -1,0 +1,25 @@
+# This is applied before routing. This allows for messages coming in from feedhandlers to be mapped prior to being forwarded to the router
+# The general flow of the relay is
+#       Feedhandlers --> relay.transforms --> relays.routes --> centers
+#
+#  Format:
+#  TransformName;Priority;ObjectTypes;Dictionary;Expression;Options;OnTrue;OnFalse
+#     TransformName - Unique name of the transform
+#     Priority      - Lowest number executes first,ties determined using alphabetical route name
+#     ObjectTypes   - Comma delimited list of types (T=...) to evaluate by this transform. Blank - skip rule, * - all types, Use Target=Source to map.
+#     Dictionary    - Optional dictionary to apply form transforming fields. If Empty no field transforms are applied 
+#     Expression    - Expression to evaluate on source values, must return boolean, true return value indicates rule succeeded
+#     Options       - Comma delimited list of options: PASSHTROUGH - Include unmapped fields in the output
+#     OnTrue        - Action if Table matches: BREAK - stop evaluating rules, blank - continue evaluating next rule
+#     OnFalse       - Action if Table does not match: BREAK - stop evaluating rules, blank - Continue evaluating next rule
+#    
+#  Example:
+#     TRANSFORM1;CANCEL=CancelOrder,NEW_ORDER=NewOrder;FixDictionary;symbol!=null;PASSTHROUGH;BREAK;
+#
+#  Example sample.relay.dictionary file:
+#     FixDictionary extends RawFix{ String `55`; sym=`55`.toUpper(); now=timestamp(); }
+#     RawFix { price=`44`; }
+#
+#
+#
+

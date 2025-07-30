@@ -1,0 +1,44 @@
+****TEST_INPUT_QUERY****
+prepare stack(x), offset(y, -2) from empty;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+
+****TEST_RESULT****
++-------+----------+
+|stack_x|offset_y_2|
+|Double |Double    |
++-------+----------+
++-------+----------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+PREPARE stack(x),offset(y,-2) FROM empty
+
+PROJECTION : 
+PREPARE stack(x),offset(y,-2) FROM empty
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+

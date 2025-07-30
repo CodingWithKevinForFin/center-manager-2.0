@@ -1,0 +1,509 @@
+****TEST_INPUT_QUERY****
+create table la as select * from A left join B on A.n == B.n where A.x == A.y;
+create table loa as select * from A left only join B on A.n == B.n where A.x == A.y;
+create table ra as select * from A right join B on A.n == B.n where A.x == A.y;
+create table roa as select * from A right only join B on A.n == B.n where A.x == A.y;
+create table oa as select * from A outer join B on A.n == B.n where A.x == A.y;
+create table ooa as select * from A outer only join B on A.n == B.n where A.x == A.y;
+create table ia as select * from A join B on A.n == B.n where A.x == A.y;
+create table lb as select * from A left join B on A.n == B.n where B.x == B.y;
+create table lob as select * from A left only join B on A.n == B.n where B.x == B.y;
+create table rb as select * from A right join B on A.n == B.n where B.x == B.y;
+create table rob as select * from A right only join B on A.n == B.n where B.x == B.y;
+create table ob as select * from A outer join B on A.n == B.n where B.x == B.y;
+create table oob as select * from A outer only join B on A.n == B.n where B.x == B.y;
+create table ib as select * from A join B on A.n == B.n where B.x == B.y;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+A
++-----------------------+
+|           A           |
++-------+-------+-------+
+|n      |x      |y      |
+|Integer|Integer|Integer|
++-------+-------+-------+
+|-1     |0      |1      |
+|0      |0      |0      |
+|1      |0      |1      |
+|2      |1      |0      |
+|3      |1      |1      |
+|4      |0      |0      |
++-------+-------+-------+
+
+B
++-----------------------+
+|           B           |
++-------+-------+-------+
+|n      |x      |y      |
+|Integer|Integer|Integer|
++-------+-------+-------+
+|1      |0      |0      |
+|2      |0      |1      |
+|3      |1      |0      |
+|4      |1      |1      |
+|5      |0      |0      |
+|6      |0      |1      |
++-------+-------+-------+
+
+****TEST_RESULT****
+40
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS la  SELECT "*" FROM A LEFT JOIN B ON A . n == B . n WHERE A . x == A . yCREATE TABLE AS loa  SELECT "*" FROM A LEFT ONLY JOIN B ON A . n == B . n WHERE A . x == A . yCREATE TABLE AS ra  SELECT "*" FROM A RIGHT JOIN B ON A . n == B . n WHERE A . x == A . yCREATE TABLE AS roa  SELECT "*" FROM A RIGHT ONLY JOIN B ON A . n == B . n WHERE A . x == A . yCREATE TABLE AS oa  SELECT "*" FROM A OUTER JOIN B ON A . n == B . n WHERE A . x == A . yCREATE TABLE AS ooa  SELECT "*" FROM A OUTER ONLY JOIN B ON A . n == B . n WHERE A . x == A . yCREATE TABLE AS ia  SELECT "*" FROM A JOIN B ON A . n == B . n WHERE A . x == A . yCREATE TABLE AS lb  SELECT "*" FROM A LEFT JOIN B ON A . n == B . n WHERE B . x == B . yCREATE TABLE AS lob  SELECT "*" FROM A LEFT ONLY JOIN B ON A . n == B . n WHERE B . x == B . yCREATE TABLE AS rb  SELECT "*" FROM A RIGHT JOIN B ON A . n == B . n WHERE B . x == B . yCREATE TABLE AS rob  SELECT "*" FROM A RIGHT ONLY JOIN B ON A . n == B . n WHERE B . x == B . yCREATE TABLE AS ob  SELECT "*" FROM A OUTER JOIN B ON A . n == B . n WHERE B . x == B . yCREATE TABLE AS oob  SELECT "*" FROM A OUTER ONLY JOIN B ON A . n == B . n WHERE B . x == B . yCREATE TABLE AS ib  SELECT "*" FROM A JOIN B ON A . n == B . n WHERE B . x == B . y
+
+PROJECTION : 
+SELECT "*" FROM A LEFT JOIN B ON A . n == B . n WHERE A . x == A . y
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(A.x == A.y)
+
+PROJECTION : 
+SELECT "*" FROM A LEFT ONLY JOIN B ON A . n == B . n WHERE A . x == A . y
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(A.x == A.y)
+
+PROJECTION : 
+SELECT "*" FROM A RIGHT JOIN B ON A . n == B . n WHERE A . x == A . y
+
+TEMP_INDEX : 
+On 'A.n'
+
+NESTING_QUERY : 
+#0 B indexing to [B.n ==> A.n]
+
+NESTING_QUERY : 
+#1 A
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(A.x == A.y)
+
+PROJECTION : 
+SELECT "*" FROM A RIGHT ONLY JOIN B ON A . n == B . n WHERE A . x == A . y
+
+TEMP_INDEX : 
+On 'A.n'
+
+NESTING_QUERY : 
+#0 B indexing to [B.n ==> A.n]
+
+NESTING_QUERY : 
+#1 A
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(A.x == A.y)
+
+PROJECTION : 
+SELECT "*" FROM A OUTER JOIN B ON A . n == B . n WHERE A . x == A . y
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(A.x == A.y)
+
+PROJECTION : 
+SELECT "*" FROM A OUTER ONLY JOIN B ON A . n == B . n WHERE A . x == A . y
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(A.x == A.y)
+
+PROJECTION : 
+SELECT "*" FROM A JOIN B ON A . n == B . n WHERE A . x == A . y
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(A.x == A.y)
+
+PROJECTION : 
+SELECT "*" FROM A LEFT JOIN B ON A . n == B . n WHERE B . x == B . y
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(B.x == B.y)
+
+PROJECTION : 
+SELECT "*" FROM A LEFT ONLY JOIN B ON A . n == B . n WHERE B . x == B . y
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(B.x == B.y)
+
+PROJECTION : 
+SELECT "*" FROM A RIGHT JOIN B ON A . n == B . n WHERE B . x == B . y
+
+TEMP_INDEX : 
+On 'A.n'
+
+NESTING_QUERY : 
+#0 B indexing to [B.n ==> A.n]
+
+NESTING_QUERY : 
+#1 A
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(B.x == B.y)
+
+PROJECTION : 
+SELECT "*" FROM A RIGHT ONLY JOIN B ON A . n == B . n WHERE B . x == B . y
+
+TEMP_INDEX : 
+On 'A.n'
+
+NESTING_QUERY : 
+#0 B indexing to [B.n ==> A.n]
+
+NESTING_QUERY : 
+#1 A
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(B.x == B.y)
+
+PROJECTION : 
+SELECT "*" FROM A OUTER JOIN B ON A . n == B . n WHERE B . x == B . y
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(B.x == B.y)
+
+PROJECTION : 
+SELECT "*" FROM A OUTER ONLY JOIN B ON A . n == B . n WHERE B . x == B . y
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(B.x == B.y)
+
+PROJECTION : 
+SELECT "*" FROM A JOIN B ON A . n == B . n WHERE B . x == B . y
+
+TEMP_INDEX : 
+On 'B.n'
+
+NESTING_QUERY : 
+#0 A indexing to [A.n ==> B.n]
+
+NESTING_QUERY : 
+#1 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+POSTJOIN_FILTER : 
+(B.x == B.y)
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+A
++-----------------------+
+|           A           |
++-------+-------+-------+
+|n      |x      |y      |
+|Integer|Integer|Integer|
++-------+-------+-------+
+|-1     |0      |1      |
+|0      |0      |0      |
+|1      |0      |1      |
+|2      |1      |0      |
+|3      |1      |1      |
+|4      |0      |0      |
++-------+-------+-------+
+
+B
++-----------------------+
+|           B           |
++-------+-------+-------+
+|n      |x      |y      |
+|Integer|Integer|Integer|
++-------+-------+-------+
+|1      |0      |0      |
+|2      |0      |1      |
+|3      |1      |0      |
+|4      |1      |1      |
+|5      |0      |0      |
+|6      |0      |1      |
++-------+-------+-------+
+
+oob
++-----------------------------------------------+
+|                      oob                      |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|-1     |0      |1      !null   !null   !null   |
+|0      |0      |0      !null   !null   !null   |
+!null   !null   !null   |5      |0      |0      |
++-------+-------+-------+-------+-------+-------+
+
+ooa
++-----------------------------------------------+
+|                      ooa                      |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|0      |0      |0      !null   !null   !null   |
+!null   !null   !null   |5      |0      |0      |
+!null   !null   !null   |6      |0      |1      |
++-------+-------+-------+-------+-------+-------+
+
+rb
++-----------------------------------------------+
+|                      rb                       |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|1      |0      |1      |1      |0      |0      |
+|4      |0      |0      |4      |1      |1      |
+!null   !null   !null   |5      |0      |0      |
++-------+-------+-------+-------+-------+-------+
+
+loa
++-----------------------------------------------+
+|                      loa                      |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|0      |0      |0      !null   !null   !null   |
++-------+-------+-------+-------+-------+-------+
+
+rob
++-----------------------------------------------+
+|                      rob                      |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+!null   !null   !null   |5      |0      |0      |
++-------+-------+-------+-------+-------+-------+
+
+ra
++-----------------------------------------------+
+|                      ra                       |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|3      |1      |1      |3      |1      |0      |
+|4      |0      |0      |4      |1      |1      |
+!null   !null   !null   |5      |0      |0      |
+!null   !null   !null   |6      |0      |1      |
++-------+-------+-------+-------+-------+-------+
+
+roa
++-----------------------------------------------+
+|                      roa                      |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+!null   !null   !null   |5      |0      |0      |
+!null   !null   !null   |6      |0      |1      |
++-------+-------+-------+-------+-------+-------+
+
+lob
++-----------------------------------------------+
+|                      lob                      |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|-1     |0      |1      !null   !null   !null   |
+|0      |0      |0      !null   !null   !null   |
++-------+-------+-------+-------+-------+-------+
+
+ib
++-----------------------------------------------+
+|                      ib                       |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|1      |0      |1      |1      |0      |0      |
+|4      |0      |0      |4      |1      |1      |
++-------+-------+-------+-------+-------+-------+
+
+ia
++-----------------------------------------------+
+|                      ia                       |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|3      |1      |1      |3      |1      |0      |
+|4      |0      |0      |4      |1      |1      |
++-------+-------+-------+-------+-------+-------+
+
+oa
++-----------------------------------------------+
+|                      oa                       |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|3      |1      |1      |3      |1      |0      |
+|4      |0      |0      |4      |1      |1      |
+|0      |0      |0      !null   !null   !null   |
+!null   !null   !null   |5      |0      |0      |
+!null   !null   !null   |6      |0      |1      |
++-------+-------+-------+-------+-------+-------+
+
+ob
++-----------------------------------------------+
+|                      ob                       |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|1      |0      |1      |1      |0      |0      |
+|4      |0      |0      |4      |1      |1      |
+|-1     |0      |1      !null   !null   !null   |
+|0      |0      |0      !null   !null   !null   |
+!null   !null   !null   |5      |0      |0      |
++-------+-------+-------+-------+-------+-------+
+
+la
++-----------------------------------------------+
+|                      la                       |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|3      |1      |1      |3      |1      |0      |
+|4      |0      |0      |4      |1      |1      |
+|0      |0      |0      !null   !null   !null   |
++-------+-------+-------+-------+-------+-------+
+
+lb
++-----------------------------------------------+
+|                      lb                       |
++-------+-------+-------+-------+-------+-------+
+|n      |x      |y      |B_n    |B_x    |B_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|1      |0      |1      |1      |0      |0      |
+|4      |0      |0      |4      |1      |1      |
+|-1     |0      |1      !null   !null   !null   |
+|0      |0      |0      !null   !null   !null   |
++-------+-------+-------+-------+-------+-------+
+

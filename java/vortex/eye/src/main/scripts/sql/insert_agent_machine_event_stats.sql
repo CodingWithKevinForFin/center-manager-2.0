@@ -1,0 +1,30 @@
+INSERT INTO AgentMachineEventStats
+(
+	id,
+	machine_instance_id,
+	level,
+	now,
+	start_time,
+	source,
+	host,
+	name,
+	user_name,
+	message,
+	duration,
+	end_time,
+	not_ended
+) VALUES (
+	?{id},
+	?{machine_instance_id},
+	?{level},
+	?{now},
+	?{start_time},
+	?{source},
+	?{host},
+	?{name},
+	?{user_name},
+	?{message},
+	?{duration},
+	?{end_time},
+	?{not_ended}
+);

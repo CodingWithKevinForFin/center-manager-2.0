@@ -1,0 +1,144 @@
+****TEST_INPUT_QUERY****
+CREATE TABLE out AS SELECT t.orderID AS orderID, t.bloombergID AS bloombergID, t.description AS description, m.bid AS bid, m.ask AS ask from (SELECT * FROM Orders AS o LEFT JOIN Products AS p ON o.productID == p.productID) AS t LEFT JOIN MarketData AS m ON t.bloombergID == m.bloombergID;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+Products
++---------------------------------+
+|            Products             |
++-----------+---------+-----------+
+|bloombergID|productID|description|
+|String     |String   |String     |
++-----------+---------+-----------+
+|bloom1     |p1       |product1   |
+|bloom2     |p2       |product2   |
+|bloom3     |p3       |product3   |
+|bloom4     |p4       |product4   |
++-----------+---------+-----------+
+
+MarketData
++-------------------------+
+|       MarketData        |
++-----------+------+------+
+|bloombergID|bid   |ask   |
+|String     |Double|Double|
++-----------+------+------+
+|bloom1     |1.15  |1.16  |
+|bloom2     |2.15  |2.16  |
+|bloom3     |3.15  |3.16  |
+|bloom4     |4.15  |4.16  |
+|bloom5     |5.15  |5.16  |
++-----------+------+------+
+
+Orders
++-----------------+
+|     Orders      |
++-------+---------+
+|orderID|productID|
+|String |String   |
++-------+---------+
+|oid1   |p1       |
+|oid2   |p1       |
+|oid3   |p2       |
+|oid4   |p2       |
+|oid5   |p3       |
++-------+---------+
+
+****TEST_RESULT****
+5
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS out  SELECT t . orderID AS orderID,t . bloombergID AS bloombergID,t . description AS description,m . bid AS bid,m . ask AS ask FROM (SELECT "*" FROM Orders AS o LEFT JOIN Products AS p ON o . productID == p . productID) AS t LEFT JOIN MarketData AS m ON t . bloombergID == m . bloombergIDSELECT "*" FROM Orders AS o LEFT JOIN Products AS p ON o . productID == p . productID
+
+PROJECTION : 
+SELECT t . orderID AS orderID,t . bloombergID AS bloombergID,t . description AS description,m . bid AS bid,m . ask AS ask FROM (SELECT "*" FROM Orders AS o LEFT JOIN Products AS p ON o . productID == p . productID) AS t LEFT JOIN MarketData AS m ON t . bloombergID == m . bloombergID
+
+PROJECTION : 
+SELECT "*" FROM Orders AS o LEFT JOIN Products AS p ON o . productID == p . productID
+
+TEMP_INDEX : 
+On 'p.productID'
+
+NESTING_QUERY : 
+#0 o indexing to [o.productID ==> p.productID]
+
+NESTING_QUERY : 
+#1 p
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+TEMP_INDEX : 
+On 'm.bloombergID'
+
+NESTING_QUERY : 
+#0 t indexing to [t.bloombergID ==> m.bloombergID]
+
+NESTING_QUERY : 
+#1 m
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+Products
++---------------------------------+
+|            Products             |
++-----------+---------+-----------+
+|bloombergID|productID|description|
+|String     |String   |String     |
++-----------+---------+-----------+
+|bloom1     |p1       |product1   |
+|bloom2     |p2       |product2   |
+|bloom3     |p3       |product3   |
+|bloom4     |p4       |product4   |
++-----------+---------+-----------+
+
+MarketData
++-------------------------+
+|       MarketData        |
++-----------+------+------+
+|bloombergID|bid   |ask   |
+|String     |Double|Double|
++-----------+------+------+
+|bloom1     |1.15  |1.16  |
+|bloom2     |2.15  |2.16  |
+|bloom3     |3.15  |3.16  |
+|bloom4     |4.15  |4.16  |
+|bloom5     |5.15  |5.16  |
++-----------+------+------+
+
+Orders
++-----------------+
+|     Orders      |
++-------+---------+
+|orderID|productID|
+|String |String   |
++-------+---------+
+|oid1   |p1       |
+|oid2   |p1       |
+|oid3   |p2       |
+|oid4   |p2       |
+|oid5   |p3       |
++-------+---------+
+
+out
++---------------------------------------------+
+|                     out                     |
++-------+-----------+-----------+------+------+
+|orderID|bloombergID|description|bid   |ask   |
+|String |String     |String     |Double|Double|
++-------+-----------+-----------+------+------+
+|oid1   |bloom1     |product1   |1.15  |1.16  |
+|oid2   |bloom1     |product1   |1.15  |1.16  |
+|oid3   |bloom2     |product2   |2.15  |2.16  |
+|oid4   |bloom2     |product2   |2.15  |2.16  |
+|oid5   |bloom3     |product3   |3.15  |3.16  |
++-------+-----------+-----------+------+------+
+

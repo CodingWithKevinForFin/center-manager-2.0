@@ -1,0 +1,35 @@
+//Coded by MessageCodeTemplate
+package com.f1.ami.amicommon.msg;
+
+import com.f1.base.Valued;
+import com.f1.utils.VH;
+
+
+public abstract class AmiCenterPassToRelayResponse00 extends com.f1.ami.amicommon.msg.AmiCenterPassToRelayResponse0 {
+
+    public String askIdeableName(){
+        return "F1.VE.PTAR";
+    }
+
+    public long askVid(){
+        return 3590943238656835217L;
+    }
+
+    public String askCheckSum(){
+        return "asdf";
+    }
+    
+    public StringBuilder toString(StringBuilder sb){
+      return VH.toString(this,sb);
+    }
+    
+	public Class<Valued> askType(){
+	    return (Class)AmiCenterPassToRelayResponse00.class;
+	}
+	
+	public Class<Valued> askOriginalType(){
+	    return (Class)com.f1.ami.amicommon.msg.AmiCenterPassToRelayResponse.class;
+	}
+
+    
+}

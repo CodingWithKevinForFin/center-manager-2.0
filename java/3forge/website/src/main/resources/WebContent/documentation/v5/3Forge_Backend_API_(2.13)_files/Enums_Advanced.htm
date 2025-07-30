@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "7.1_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Backend API (2.13).docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Enums (Advanced)</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Enums (Advanced)">
+        <span>Enums (Advanced)</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Enums (Advanced)</h1>
+<p style="margin-bottom: .0001pt;"><b>Clarification on Denoting Enums vs. 
+ Strings:</b> Enums are surrounded using single quotes (&#39;) while strings 
+ are denoted using double quotes (&quot;). For example (note the quote 
+ types):</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #308299; font-family: &#39;Courier New&#39;, monospace;"><span courier="">O|T=&quot;sample&quot;|my_enum=&#39;hello&#39;|my_string=&quot;Hello 
+ there Mr. Jones&quot;</span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;"><b>Enum Storage Methodology</b>: Using 
+ enums will dramatically reduce the cost of storing text that is often 
+ repeated. Instead of storing the <i>actual</i> value, just an index 
+ (binary number) is stored and regardless of how many times it is referenced 
+ only a single instance of the string is kept in a lookup table. The 
+ first 255 unique enum values received by the AMI central server will be 
+ indexed using a single byte index. The following 65,281 unique enum 
+ values received will be indexed using 2 bytes and the last 16,711,935 
+ unique entries will use a 3 byte index. Be aware that the order in 
+ which unique enum values are introduced also determines the storage requirements 
+ for repeat entries.</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;"><b>Enum Scope</b>: The scope of a particular 
+ enum is for an AmiCenter. This means that the same index will be used 
+ regardless of application sending the enum, type of message it is in or 
+ parameter it is associated with. For example, the following will result 
+ in 3 enums (presuming these are the first 3 messages then all 3 of these 
+ would be indexed using a single byte):</p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt; color: #308299; font-family: &#39;Courier New&#39;, monospace;"><span courier="" style="color: #ff0000;">O</span><span courier="">|</span><span courier="" style="color: #ff0000;">T</span><span courier="">=&quot;Order&quot;|symbol=&#39;ABC&#39;|</span><span courier="" style="color: #ff0000;">I</span><span courier="">=&quot;Ord123&quot;|name=&#39;DEF&#39;</span></p>
+<p style="margin-bottom: .0001pt; color: #308299; font-family: &#39;Courier New&#39;, monospace;"><span courier="" style="color: #ff0000;">O</span><span courier="">|</span><span courier="" style="color: #ff0000;">T</span><span courier="">=&quot;Execution&quot;|name=&#39;ABC&#39;|</span><span courier="" style="color: #ff0000;">I</span><span courier="">=&quot;exec123&quot;</span></p>
+<p style="margin-bottom: .0001pt; color: #308299; font-family: &#39;Courier New&#39;, monospace;"><span courier="" style="color: #ff0000;">O</span><span courier="">|</span><span courier="" style="color: #ff0000;">T</span><span courier="">=&quot;Execution&quot;|symbol=&#39;DEF&#39;|Orig=&#39;ZZZ&#39;|</span><span courier="" style="color: #ff0000;">I</span><span courier="">=&quot;exec456&quot;</span></p>
+<p style="margin-bottom: .0001pt;"> </p>
+<p style="margin-bottom: .0001pt;"><u>Note</u>: Exceeding 16,777,216 unique 
+ enums will cause the Center to treat remaining Enums as Strings.</p>
+<p style="margin-bottom: .0001pt; line-height: normal;"> </p>
+<p style="margin-bottom: .0001pt; line-height: normal;"><b>Understanding 
+ Cost:</b></p>
+<p style="margin-bottom: .0001pt; line-height: normal;">The first instance 
+ of an enum has significant overhead verses a String, but following instances 
+ will usually have a highly reduced overhead.  </p>
+<p style="margin-bottom: .0001pt; line-height: normal;"> </p>
+<table style="border: none; border-collapse: separate;" cellspacing="0" width="100%" cellpadding="1">
+	<tbody><tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: solid #000000 1.0px; 
+			 border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="170"><p style="margin-bottom: .0001pt; line-height: normal;">Description</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="119"><p style="margin-bottom: .0001pt; 
+			 line-height: normal;">Enum Cost</p>
+		<p style="margin-bottom: .0001pt; line-height: normal;">(Best case)</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="119"><p style="margin-bottom: .0001pt; 
+			 line-height: normal;">String  Cost</p>
+		<p style="margin-bottom: .0001pt; line-height: normal;">(Best Case)</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="119"><p style="margin-bottom: .0001pt; 
+			 line-height: normal;">Enum Cost</p>
+		<p style="margin-bottom: .0001pt; line-height: normal;">(Worst  case)</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: solid #000000 1.0px; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="108"><p style="margin-bottom: .0001pt; 
+			 line-height: normal;">String  Cost</p>
+		<p style="margin-bottom: .0001pt; line-height: normal;">(Worst 
+		 Case)</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="170"><p style="margin-bottom: .0001pt; 
+			 line-height: normal;">First entry for a string</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="119"><p style="margin-bottom: .0001pt; line-height: normal;">19 
+		 + (length x 2)</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="119"><p style="margin-bottom: .0001pt; line-height: normal;">4 
+		 + length</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="119"><p style="margin-bottom: .0001pt; line-height: normal;">21 
+		 + (length x 2)</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="108"><p style="margin-bottom: .0001pt; line-height: normal;">7 
+		 + length * 2</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; border-left: solid #000000 1.0px; 
+			 border-right: solid #000000 1.0px; border-top: none; border-bottom: solid #000000 1.0px; 
+			 padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;" width="170"><p style="margin-bottom: .0001pt; 
+			 line-height: normal;">repeat entries for string</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="119"><p style="margin-bottom: .0001pt; line-height: normal;"><b>4</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="119"><p style="margin-bottom: .0001pt; line-height: normal;">4 
+		 + length</p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="119"><p style="margin-bottom: .0001pt; line-height: normal;"><b>6</b></p></td>
+		<td style="vertical-align: top; border-left: none; border-right: solid #000000 1.0px; 
+			 border-top: none; border-bottom: solid #000000 1.0px; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" width="108"><p style="margin-bottom: .0001pt; line-height: normal;">7 
+		 + length * 2</p></td>
+	</tr>
+</tbody></table>
+<p style="margin-bottom: .0001pt; line-height: normal;"><i>Notes: (1) The 
+ length variable is the number of characters in the string. (2) Costs are 
+ in bytes.</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal;"> </p>
+<p style="margin-bottom: .0001pt; line-height: normal;">From the table 
+ above you can see there is a large cost for the first entry for an enum, 
+ but additional entries have a highly reduced cost which is regardless 
+ of string size.</p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,964 @@
+{
+  "type": "record",
+  "name": "NovaExecutionFix",
+  "namespace": "recorder.eqa",
+  "fields": [
+   {
+         "name": "parameters",
+         "type": [ "null",
+                 {
+                   "type": "map",
+                   "values": "string"
+                 }
+               ],
+               "default": null
+               },
+      {
+        "name": "WFSENTRYDATE",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      {
+        "name": "ALGOVERSION_8120",
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+    {
+      "name": "MSGTYPE_35",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACCOUNT_1",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AVGPX_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "CLIORDID_11",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "COMMISSION_12",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "COMMISSIONTYPE_13",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CUMQTY_14",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "CURRENCY_15",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ENDSEQNO_16",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "EXECID_17",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXECINST_18",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXECREFID_19",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXECTRANSTYPE_20",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "HANDLINST_21",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "IDSOURCE_22",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "LASTCAPACITY_29",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "LASTMKT_30",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "LASTPX_31",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "LASTSHARES_32",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "MSGSEQNUM_34",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "NEWSEQNUM_36",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "ORDERID_37",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ORDERQTY_38",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "ORDSTATUS_39",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ORDTYPE_40",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ORIGCLORDID_41",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "POSSDUPFLAG_43",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PRICE_44",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "REFSEQNUM_45",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "ORDERCAPACITY_47",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SECURITYID_48",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SENDERCOMPID_49",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SENDERSUBID_50",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SENDINGTIME_52",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SIDE_54",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SYMBOL_55",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TARGETCOMPID_56",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TEXT_58",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TIMEINFORCE_59",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRANSACTTIME_60",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SETTLEMENTTYP_63",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FUTSETTDATE_64",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SYMBOLSUFFIX_65",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRADEDATE_75",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXECBROKER_76",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "OPENCLOSE_77",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "POSSRESEND_97",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "STOPPX_99",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "EXECDESTINATION_100",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CXLREJREASON_102",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "ORDREJREASON_103",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "CLIENTID_109",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MINQTY_110",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "MAXFLOOR_111",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "REPORTTOEXCH_113",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "LOCATEREQD_114",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ONBEHALFOFCOMPID_115",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ORIGSENDINGTIME_122",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DELIVERTOCOMPID_128",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXECTYPE_150",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "LEAVESQTY_151",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "SECURITYTYPE_167",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SECONDARYORDERID_198",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MATURITYMONTHYEAR_200",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PUTORCALL_201",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "STRIKEPRICE_202",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "CUSTOMERORFIRM_204",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MATURITYDAY_205",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SECURITYEXCHANGE_207",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DESKID_284",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "REFMSGTYPE_372",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CONTRABROKER_375",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "COMPLIANCEID_376",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXECRESTATEMENTREASON_378",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BUSINESSREJECTREFID_379",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BUSINESSREJECTREASON_380",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "DISCRETIONOFFSET_389",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "LIQUIDITYINDTYPE_409",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "EXPIREDATE_432",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CXLREJRESPONSETO_434",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CLEARINGFRIM_439",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MULTILEGREPORTINGTYPE_442",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "WORKINGINDICATOR_636",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "LASTLIQUIDITY_851",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "POSITIONID_3001",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRADERID_3002",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ORDERLEVEL_3009",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "PARENTIDORCUSTVAL_3010",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PARENTORDERID_3011",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NOVASYSTEMID_3012",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NOVAORDERID_9800",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRADEORGINATORSYSTEMID_9801",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NOVAORDERFLAGS_9802",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NOVAORDERSUBSTATUS_9803",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DESKNAME_9804",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NOVATMSSYSTEMTAGID_9805",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NOVATMSUNIQUESYSTEMTAG_9806",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NOVATMSOBJECTVERSIONTAG_9807",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CROSSID_12118",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CROSSTYPE_12113",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PARAMETERS",
+      "type": {
+        "type": "map",
+        "values": "string"
+      }
+    },
+    {
+      "name": "DESKID_11106",
+      "type": [
+        "null",
+        "string"
+      ]
+    },{
+        "name" : "UUID",
+        "type" : [ "null", "string" ],
+        "default": null
+        },
+    {
+      "name" : "TARGETDESKNAME_13000",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "SOURCEDESKNAME_13001",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "MPIDFLOORBROKERDEALER_20128",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "ERRCOUNT",
+      "type" : [ "null", "int" ]
+    },{
+      "name" : "AE_MATRIX_8190",
+      "type" : [ "null", "string" ]
+    },{
+      "name" : "ALGOSTRATEGY_8080",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "ALGOAGGRESSION1_8081",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "ALGOAGGRESSION2_8082",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "MINSHARESPERWAVE_8083",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "STARTTIME_8084",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "ENDTIME_8085",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "WAVESIZE_8086",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "RATEORVOLCAPPCT_8087",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "IWOULD_8089",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "WAVEDELAY_8090",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "COBRAIKAISWEEP_8091",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "MINORDERSIZE_8092",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "PEGORWAVETYPE_8093",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "DISPLAYQTY_8097",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "DARKONLYCLEANUP_8099",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "DARKMINEXECQTY_8100",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "CLOSESHARES_8101",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "ALGOCURVESTRATEGYORPCT_8102",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "DEFAULTTICKER_8103",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "JACKRAND_8104",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "HARDLIMIT_8105",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "RELATIVESPREAD_8106",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "GETITDONE_8107",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "PCTOFMKT_8108",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "DESKNAME_8119",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "TRADINGSESSIONS_8121",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "REFERENCE_8122",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "REFERENCEVALUE_8123",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "MINQUOTESIZE_8125",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "BUYBACK_8126",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "SCALINGTYPE_8127",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "FORCECOMPLETE_8128",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "LITSWEEP_8129",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "ALGOREFERENCE_8140",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "ALGOREFERENCEOFFSET_8142",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "PRICERELATIVEVALUE_8143",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "PRICERELATIVEOFFSETBPS_8144",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "TRIGGERPRICE_8145",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "STOPPRICE_8146",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "ALGOLITSWEEP_8147",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "ALGOLITSWEEPOFFSET_8148",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "ALGONODQUOTE_8149",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "ALGOCONDITIONALS_8150",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "IWOULDTYPE_8151",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "IWOULDPRICE_8152",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "IWOULDQTY_8153",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "IWOULDRELATIVEVALIDX_8154",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "IWOULDRELATIVEOFFSETBPS_8155",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "IWOULDOFFSET_8156",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "IWOULDDARK_8158",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "IWOULDDARKMINEXECQTY_8159",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "IWOULDCONDITIONAL_8160",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "IWOULDCONDITIONALSHARES_8161",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "IWOULDPCTVOL_8162",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "IWOULDAGENCYLIQUIDITY_8162",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "OPEN_8171",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "CLOSE_8172",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "SWAPDESK_8175",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "SORSTRIKETYPE_9501",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "SORSPREADLIMIT_9508",
+       "type" : [ "null", "double" ]
+       }, {
+       "name" : "SORRESERVEPCT_9518",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "SMARTROUTERSTRATEGY_9525",
+       "type" : [ "null", "int" ]
+       }, {
+       "name" : "FIRMMPID_9711",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "CUSTOMERSHORTNAME_9712",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "ARCALIQUIDITY_9730",
+       "type" : [ "null", "string" ]
+       }, {
+       "name" : "EQMAUID",
+       "type" : [ "null", "string" ],
+       "default": null
+       }
+  ]
+}

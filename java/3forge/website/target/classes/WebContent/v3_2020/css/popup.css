@@ -1,0 +1,52 @@
+.popup {
+	    display: none;
+	    position: fixed;
+	    bottom: -2%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+        background-color: rgba(243, 243, 243, 0.8);
+	    border: 1px solid #ccc;
+	    padding: 20px;
+	    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	    z-index: 9999;
+	    border-radius: 20px;
+	    height: 60px;
+	    backdrop-filter: blur(10px);
+	}
+	
+	.popup-content {
+	  text-align: center;
+	}
+	
+	.close-btn {
+	    position: absolute;
+	    top: 2px;
+	    right: 7px;
+	    cursor: pointer;
+	    font-size: 13px;
+	    font-weight: bold;
+	    color: grey;
+	}
+	
+	.noticetext {
+		font-size: 14px;
+	}
+	
+	.disclaimerpage:hover {
+		text-decoration: underline;
+	}
+	
+	
+@media screen and (max-width: 674px) {
+    #popup {
+        top: 5%;
+        height: 74px;
+    }
+}
+
+@media screen and (max-width: 433px) {
+	    #popup {
+        top: 7%;
+        height: 90px;
+    }
+}

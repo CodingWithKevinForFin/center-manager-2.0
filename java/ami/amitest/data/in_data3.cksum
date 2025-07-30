@@ -1,0 +1,41 @@
+// #1
+// create table
+primary:b=0x836575d7,s=0x52fe827a,a=0x5c588c3f
+
+// #2
+// select
+------------------
+
+// #3
+// alter table - add
+primary:b=0x836575d7,s=0x52fe827a,c=0xb581c681,a=0x5c588c3f
+
+// #4
+// alter table - rename
+primary:b=0x836575d7,c=0xb581c681,a=0x5c588c3f,addr=0x52fe827a
+
+// #5
+// alter table - before
+primary:b=0x836575d7,c=0xb581c681,a=0x5c588c3f,addr=0x52fe827a,x=0xb581c681
+
+// #6
+// alter table - change column type
+primary:b=0x836575d7,c=0xb581c681,a=0x5c588c3f,addr=0x52fe827a,x=0xb581c681
+
+// #7
+// drop table and create table
+target:b=0x0,s=0x0,a=0x0
+
+// #8
+// stored procedure
+primary:b=0x1ecb98d31,s=0x158e542a0,c=0x7af6487b,a=0x17c9a8a47
+target:b=0x0,s=0x0,a=0x0
+
+// #9
+// call stored procedure with read/write
+------------------
+
+// #10
+// call stored procedure with read
+------------------
+

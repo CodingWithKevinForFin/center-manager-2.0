@@ -1,0 +1,63 @@
+****TEST_INPUT_QUERY****
+select v as t from t3 where (v) in (1,n)
+****TEST_INPUT_GLOBAL_VARS****
+{n=3}
+****TEST_INPUT_TABLES****
+t3
++---------------------------------------+
+|                  t3                   |
++------+----------+---------------------+
+|v     |w         |s                    |
+|Double|String    |String               |
++------+----------+---------------------+
+|1.0   |what      |this,that,these,those|
+|2.0   |where;asdf|what,when            |
+|3.0   |when;why  !null                 |
++------+----------+---------------------+
+
+****TEST_RESULT****
++------+
+|  t3  |
++------+
+|t     |
+|Double|
++------+
+|1.0   |
+|3.0   |
++------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT v AS t FROM t3 WHERE (v) in (1,n)
+
+PROJECTION : 
+SELECT v AS t FROM t3 WHERE (v) in (1,n)
+
+PREJOIN_FILTER : 
+For Table 't3' ==> (v) in ((1),(n))
+
+NESTING_QUERY : 
+#0 t3
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{n=3}
+****TEST_RESULT_TABLES****
+t3
++---------------------------------------+
+|                  t3                   |
++------+----------+---------------------+
+|v     |w         |s                    |
+|Double|String    |String               |
++------+----------+---------------------+
+|1.0   |what      |this,that,these,those|
+|2.0   |where;asdf|what,when            |
+|3.0   |when;why  !null                 |
++------+----------+---------------------+
+

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "2.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Instructions for Secure Socket</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Instructions for Secure Socket">
+        <span>Instructions for Secure Socket</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1 style="font-size: 24pt;">Instructions for Secure Socket</h1>
+<p> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 background-color: transparent; font-size: 12pt; font-weight: 400;"><b id="docs-internal-guid-aac505ce-7fff-d859-3ac6-b4320cf7c487"><span style="font-weight: 400;"># You&#39;ll need to start by </span></b><b id="docs-internal-guid-aac505ce-7fff-d859-3ac6-b4320cf7c487"><span style="font-weight: 400;">creating the certificates. To do this, keytool 
+ </span></b><b id="docs-internal-guid-aac505ce-7fff-d859-3ac6-b4320cf7c487"><span style="font-weight: 400;">must be in your PATH.</span></b></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 background-color: transparent; font-size: 12pt; font-weight: 400;"><b id="docs-internal-guid-aac505ce-7fff-d859-3ac6-b4320cf7c487"><span style="font-weight: 400;"># First we create a </span></b><b id="docs-internal-guid-aac505ce-7fff-d859-3ac6-b4320cf7c487"><span style="font-weight: 400;">server.jks file and a server.cer file which 
+ we will keep with the server. Note, replace serverpass with a password</span></b></p>
+<div style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;">
+	<span style="font-size: 12pt;"><font style="font-family: monospace; 
+										 font-size: 12pt;" face="monospace" size="4">keytool -genkeypair -deststoretype 
+	 pkcs12 -keyalg RSA -alias 3forge_server -keystore <i style="font-size: 12pt;"><b style="font-size: 12pt;">server.jks</b></i> -validity 1000 -keysize 
+	 2048 -keypass <i style="font-size: 12pt;"><b style="font-size: 12pt;">serverpass </b></i>-storepass <i style="font-size: 12pt;"><b style="font-size: 12pt;">serverpass </b></i>-dname 
+	 &quot;cn=3Forge Client&quot;<br/>
+	</font></span>
+</div>
+<span><font style="font-family: monospace; font-variant-ligatures: normal; 
+			 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+			 background-color: #ffffff; text-decoration-style: initial; 
+			 text-decoration-color: initial;" face="monospace" color="#222222">keytool 
+ -export -alias 3forge_server -storepass <b><i>serverpass</i></b> -file <i><b>server.cer</b></i> -keystore </font><i style="color: rgb(34, 34, 34); font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;"><font style="font-family: monospace;" face="monospace"><b>server.jks</b></font></i></span><span> 
+ </span>
+<p dir="ltr" style="line-height: 1.38; background-color: #ffffff; margin-top: 0pt; 
+	 margin-bottom: 0pt; font-weight: normal;"> </p>
+<p dir="ltr" style="line-height: 1.38; background-color: #ffffff; margin-top: 0pt; 
+	 margin-bottom: 0pt; font-weight: normal;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 background-color: transparent; font-size: 12pt;"><b id="docs-internal-guid-030c5d1c-7fff-af4a-95d6-b6c1c4bd5ea3"><span style="font-weight: 400;"># Now lets create a client.jks file using 
+ the server&#39;s certificate, if you have multiple clients you should run 
+ this for each client (such that each time the client.jks file is unique 
+ for that client).  Note, replace clientpass with a password</span></b> 
+ </p>
+<p dir="ltr"><span style="color: rgb(34, 34, 34); font-family: monospace; 
+					 font-variant-ligatures: normal; font-variant-caps: normal; 
+					 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+					 background-color: #ffffff; text-decoration-style: initial; 
+					 text-decoration-color: initial; display: inline	 ! important ; 
+					 float: none;">keytool -genkey -deststoretype pkcs12 
+  -alias 3forge_client -keyalg RSA -keypass </span><span style="font-family: &#39;Courier New&#39;; 
+	 color: #222222; background-color: #ffffff;"><i style="color: rgb(34, 34, 34); 
+													 font-family: monospace; 
+													 font-variant-ligatures: normal; 
+													 font-variant-caps: normal; 
+													 orphans: 2; widows: 2; 
+													 -webkit-text-stroke-width: 0px; 
+													 background-color: #ffffff; 
+													 text-decoration-style: initial; 
+													 text-decoration-color: initial;"><b>clientpass </b></i></span><span style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 display: inline	 ! important ; float: none;">-storepass </span><span style="font-family: &#39;Courier New&#39;; color: #222222; background-color: #ffffff;"><i style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b>clientpass </b></i></span><span style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 display: inline	 ! important ; float: none;">-keystore </span><span style="font-family: &#39;Courier New&#39;; color: #222222; background-color: #ffffff;"><i style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b>client.jks</b></i></span><span style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 display: inline	 ! important ; float: none;">  -dname 
+ &quot;cn=3Forge Client&quot;</span><span style="font-family: &#39;Courier New&#39;; 
+											 color: #222222; background-color: #ffffff;"><br style="color: rgb(34, 34, 34); font-family: monospace; font-size: small; 
+	 font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; 
+	 text-indent: 0px; text-transform: none; white-space: normal; widows: 2; 
+	 word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;"/>
+</span><span style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+			 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+			 background-color: #ffffff; text-decoration-style: initial; 
+			 text-decoration-color: initial; display: inline	 ! important ; 
+			 float: none;">keytool -import -v -trustcacerts -alias 3forge_server 
+ -file </span><span style="font-family: &#39;Courier New&#39;; color: #222222; 
+						 background-color: #ffffff;"><i style="color: rgb(34, 34, 34); 
+														 font-family: monospace; 
+														 font-variant-ligatures: normal; 
+														 font-variant-caps: normal; 
+														 orphans: 2; widows: 2; 
+														 -webkit-text-stroke-width: 0px; 
+														 background-color: #ffffff; 
+														 text-decoration-style: initial; 
+														 text-decoration-color: initial;"><b>server.cer</b></i></span><span style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 display: inline	 ! important ; float: none;"> -keystore </span><span style="font-family: &#39;Courier New&#39;; color: #222222; background-color: #ffffff;"><i style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b>client.jks</b></i></span><span style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 display: inline	 ! important ; float: none;"> -keypass </span><span style="font-family: &#39;Courier New&#39;; color: #222222; background-color: #ffffff;"><i style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b>clientpass </b></i></span><span style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 display: inline	 ! important ; float: none;">-storepass </span><span style="font-family: &#39;Courier New&#39;; color: #222222; background-color: #ffffff;"><i style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"><b>clientpass </b></i></span><span style="color: rgb(34, 34, 34); font-family: monospace; font-variant-ligatures: normal; 
+	 font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; 
+	 background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial; 
+	 display: inline	 ! important ; float: none;">-noprompt</span><span style="font-family: &#39;Courier New&#39;; color: #222222; background-color: #ffffff;"> 
+ </span> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 background-color: transparent; font-weight: 400;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 background-color: transparent; font-weight: 400;"> </p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 background-color: transparent; font-weight: 400;"><b id="docs-internal-guid-869d0bad-7fff-d379-744d-b99f1bd0be21"><span style="font-weight: 400;">#To configure the server, copy the server.jks 
+ file to the server, and add the following properties to your local.properties 
+ of AMI:</span></b></p>
+<p dir="ltr" style="line-height: 1.38; background-color: #ffffff; margin-top: 0pt; 
+	 margin-bottom: 0pt; font-family: &#39;Courier New&#39;; color: #222222;"><b id="docs-internal-guid-869d0bad-7fff-d379-744d-b99f1bd0be21" style="font-weight: normal;"><span style="font-weight: 400;">ami.port.keystore.file=</span><span style="font-weight: 700; 
+	 font-style: italic;">/path/to/server.jks</span></b></p>
+<b id="docs-internal-guid-869d0bad-7fff-d379-744d-b99f1bd0be21" style="font-weight: normal;"><span style="font-family: &#39;Courier New&#39;; color: #222222; background-color: #ffffff; 
+	 font-weight: 400;">ami.port.keystore.password=</span><span style="font-family: &#39;Courier New&#39;; 
+	 color: #222222; background-color: #ffffff; font-weight: 700; font-style: italic;">serverpass</span></b><span> 
+ </span>
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; 
+	 background-color: transparent; font-weight: 400;"> </p>
+<div style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;">
+	<span style="font-size: 12pt;">#To configure the client, copy the client.jks 
+	 file to the client and instead of calling the function <i style="font-size: 12pt;">AmiClient::start(host, 
+	 port, loginId, options) </i>call:</span>
+</div>
+<div style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;">
+	<span style="font-size: 12pt;"><br/>
+	</span>
+</div>
+<div style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;">
+	<span style="font-size: 12pt;"><font style="font-family: monospace; 
+										 font-size: 12pt;" face="monospace" size="4">AmiClient client=new 
+	 AmiClient();</font></span>
+</div>
+<div style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;">
+	<span style="font-size: 12pt;"><font style="font-family: monospace; 
+										 font-size: 12pt;" face="monospace" size="4">...</font></span>
+</div>
+<div style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+	 font-size: small; font-variant-ligatures: normal; font-variant-caps: normal; 
+	 orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+	 text-decoration-style: initial; text-decoration-color: initial;">
+	<span style="font-size: 12pt;"><font style="font-family: monospace; 
+										 font-size: 12pt;" face="monospace" size="4">client.start(host, port, 
+	 loginId, options,new File(&quot;<b style="font-size: 12pt;"><i style="font-size: 12pt;">/path/to/client.jks</i></b>&quot;),&quot;<b style="font-size: 12pt;"><i style="font-size: 12pt;">clientpass</i></b>&quot;);</font></span>
+</div>
+<p dir="ltr"> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

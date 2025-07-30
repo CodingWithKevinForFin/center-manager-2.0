@@ -1,0 +1,211 @@
+****TEST_INPUT_QUERY****
+CREATE TABLE j AS SELECT D.name, A.cat, sum( B.px * E.rate ) as totalPurchased FROM A, B, C, D, E  WHERE A.item == B.item  and B.item == C.item  and C.cust == D.cust  and B.cur == E.cur  and true GROUP BY D.cust, A.cat;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+D
++-----------------------+
+|           D           |
++------+--------+-------+
+|cust  |name    |age    |
+|String|String  |Integer|
++------+--------+-------+
+|1     |James   |24     |
+|2     |Jackie  |32     |
+|3     |Jennifer|20     |
+|4     |Jasmine |37     |
++------+--------+-------+
+
+E
++-------------+
+|      E      |
++------+------+
+|cur   |rate  |
+|String|Double|
++------+------+
+|USD   |1.0   |
+|EUR   |1.09  |
+|JPY   |0.0091|
+|CAD   |0.75  |
+|KOR   |0.1   |
++------+------+
+
+A
++------------------+
+|        A         |
++-----------+------+
+|cat        |item  |
+|String     |String|
++-----------+------+
+|clothing   |item1 |
+|clothing   |item4 |
+|electronics|item2 |
+|kitchen    |item3 |
+|kitchen    |item5 |
++-----------+------+
+
+B
++---------------------+
+|          B          |
++------+------+-------+
+|item  |cur   |px     |
+|String|String|Double |
++------+------+-------+
+|item1 |USD   |22.4   |
+|item2 |EUR   |30.5   |
+|item3 |JPY   |10000.0|
+|item4 |CAD   |25.0   |
+|item5 |USD   |10.0   |
++------+------+-------+
+
+C
++--------------------+
+|         C          |
++------+------+------+
+|pid   |cust  |item  |
+|String|String|String|
++------+------+------+
+|p1    |1     |item1 |
+|p2    |1     |item1 |
+|p3    |2     |item1 |
+|p4    |2     |item2 |
+|p5    |3     |item3 |
+|p6    |4     |item4 |
+|p7    |4     |item2 |
++------+------+------+
+
+****TEST_RESULT****
+6
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS j  SELECT D . name,A . cat,sum(B . px * E . rate) AS totalPurchased FROM A,B,C,D,E WHERE A . item == B . item && B . item == C . item && C . cust == D . cust && B . cur == E . cur && true GROUP BY D . cust,A . cat
+
+PROJECTION : 
+SELECT D . name,A . cat,sum(B . px * E . rate) AS totalPurchased FROM A,B,C,D,E WHERE A . item == B . item && B . item == C . item && C . cust == D . cust && B . cur == E . cur && true GROUP BY D . cust,A . cat
+
+TEMP_INDEX : 
+On 'D.cust'
+
+TEMP_INDEX : 
+On 'B.item'
+
+TEMP_INDEX : 
+On 'A.item'
+
+TEMP_INDEX : 
+On 'E.cur'
+
+NESTING_QUERY : 
+#0 C indexing to [C.cust ==> D.cust, C.item ==> B.item]
+
+NESTING_QUERY : 
+#1 B indexing to [B.item ==> A.item, B.cur ==> E.cur]
+
+NESTING_QUERY : 
+#2 A
+
+NESTING_QUERY : 
+#3 D
+
+NESTING_QUERY : 
+#4 E
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+GROUPING : 
+Grouped 7 rows into 6 buckets
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+D
++-----------------------+
+|           D           |
++------+--------+-------+
+|cust  |name    |age    |
+|String|String  |Integer|
++------+--------+-------+
+|1     |James   |24     |
+|2     |Jackie  |32     |
+|3     |Jennifer|20     |
+|4     |Jasmine |37     |
++------+--------+-------+
+
+E
++-------------+
+|      E      |
++------+------+
+|cur   |rate  |
+|String|Double|
++------+------+
+|USD   |1.0   |
+|EUR   |1.09  |
+|JPY   |0.0091|
+|CAD   |0.75  |
+|KOR   |0.1   |
++------+------+
+
+A
++------------------+
+|        A         |
++-----------+------+
+|cat        |item  |
+|String     |String|
++-----------+------+
+|clothing   |item1 |
+|clothing   |item4 |
+|electronics|item2 |
+|kitchen    |item3 |
+|kitchen    |item5 |
++-----------+------+
+
+B
++---------------------+
+|          B          |
++------+------+-------+
+|item  |cur   |px     |
+|String|String|Double |
++------+------+-------+
+|item1 |USD   |22.4   |
+|item2 |EUR   |30.5   |
+|item3 |JPY   |10000.0|
+|item4 |CAD   |25.0   |
+|item5 |USD   |10.0   |
++------+------+-------+
+
+C
++--------------------+
+|         C          |
++------+------+------+
+|pid   |cust  |item  |
+|String|String|String|
++------+------+------+
+|p1    |1     |item1 |
+|p2    |1     |item1 |
+|p3    |2     |item1 |
+|p4    |2     |item2 |
+|p5    |3     |item3 |
+|p6    |4     |item4 |
+|p7    |4     |item2 |
++------+------+------+
+
+j
++---------------------------------------+
+|                   j                   |
++--------+-----------+------------------+
+|D_name  |A_cat      |totalPurchased    |
+|String  |String     |Double            |
++--------+-----------+------------------+
+|James   |clothing   |44.8              |
+|Jackie  |clothing   |22.4              |
+|Jackie  |electronics|33.245000000000005|
+|Jennifer|kitchen    |91.0              |
+|Jasmine |clothing   |18.75             |
+|Jasmine |electronics|33.245000000000005|
++--------+-----------+------------------+
+

@@ -1,0 +1,259 @@
+****TEST_INPUT_QUERY****
+create table const_no_prefixes as select * from A where (m, n) in ((0,0), (3,6), (7, 14), (100, 300));
+create table const_prefixes as select * from A where (A.m, A.n) in ((0,0), (3,6), (7, 14), (100, 300));
+create table sel_no_prefixes as select * from A where (m, n) in (select * from B where m % 2 == 0);
+create table sel_prefixes as select * from A where (A.m, A.n) in (select * from B where m % 2 == 0);
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+A
++---------------+
+|       A       |
++-------+-------+
+|m      |n      |
+|Integer|Integer|
++-------+-------+
+!null   !null   |
+|0      |0      |
+|1      |2      |
+|2      |4      |
+|3      |6      |
+|4      |8      |
+|5      |10     |
+|6      |12     |
+|7      |14     |
+|8      |16     |
+|9      |18     |
+|10     |20     |
+|11     |22     |
+|12     |24     |
+|13     |26     |
+|14     |28     |
+|15     |30     |
+|16     |32     |
+|17     |34     |
+|18     |36     |
+|19     |38     |
++-------+-------+
+
+B
++---------------+
+|       B       |
++-------+-------+
+|m      |n      |
+|Integer|Integer|
++-------+-------+
+|0      |0      |
+|1      |2      |
+|2      |4      |
+|3      |6      |
+|4      |8      |
+|5      |10     |
+|6      |12     |
+|7      |14     |
+|8      |16     |
+|9      |18     |
+|0      |0      |
+|100    |200    |
+|200    |400    |
+|300    |600    |
+|400    |800    |
++-------+-------+
+
+****TEST_RESULT****
+16
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS const_no_prefixes  SELECT "*" FROM A WHERE (m,n) in ((0,0),(3,6),(7,14),(100,300))CREATE TABLE AS const_prefixes  SELECT "*" FROM A WHERE (A . m,A . n) in ((0,0),(3,6),(7,14),(100,300))CREATE TABLE AS sel_no_prefixes  SELECT "*" FROM A WHERE (m,n) in (SELECT "*" FROM B WHERE m % 2 == 0)SELECT "*" FROM B WHERE m % 2 == 0CREATE TABLE AS sel_prefixes  SELECT "*" FROM A WHERE (A . m,A . n) in (SELECT "*" FROM B WHERE m % 2 == 0)SELECT "*" FROM B WHERE m % 2 == 0
+
+PROJECTION : 
+SELECT "*" FROM A WHERE (m,n) in ((0,0),(3,6),(7,14),(100,300))
+
+PREJOIN_FILTER : 
+For Table 'A' ==> (m,n) in ((0,0),(3,6),(7,14),(100,300))
+
+NESTING_QUERY : 
+#0 A
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM A WHERE (A . m,A . n) in ((0,0),(3,6),(7,14),(100,300))
+
+PREJOIN_FILTER : 
+For Table 'A' ==> (A.m,A.n) in ((0,0),(3,6),(7,14),(100,300))
+
+NESTING_QUERY : 
+#0 A
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM A WHERE (m,n) in (SELECT "*" FROM B WHERE m % 2 == 0)
+
+PREJOIN_FILTER : 
+For Table 'A' ==> (mn,) in (SELECT "*" FROM B WHERE m % 2 == 0)
+
+PROJECTION : 
+SELECT "*" FROM B WHERE m % 2 == 0
+
+PREJOIN_FILTER : 
+For Table 'B' ==> ((m % 2) == 0)
+
+NESTING_QUERY : 
+#0 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+TMP_INDEX_ON_IN_CLAUSE : 
+10 row(s) reduced to 9
+
+NESTING_QUERY : 
+#0 A
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+PROJECTION : 
+SELECT "*" FROM A WHERE (A . m,A . n) in (SELECT "*" FROM B WHERE m % 2 == 0)
+
+PREJOIN_FILTER : 
+For Table 'A' ==> (A.mA.n,) in (SELECT "*" FROM B WHERE m % 2 == 0)
+
+PROJECTION : 
+SELECT "*" FROM B WHERE m % 2 == 0
+
+PREJOIN_FILTER : 
+For Table 'B' ==> ((m % 2) == 0)
+
+NESTING_QUERY : 
+#0 B
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+TMP_INDEX_ON_IN_CLAUSE : 
+10 row(s) reduced to 9
+
+NESTING_QUERY : 
+#0 A
+
+NONINDEX_WHERE : 
+<FULL SCAN>
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+const_prefixes
++---------------+
+|const_prefixes |
++-------+-------+
+|m      |n      |
+|Integer|Integer|
++-------+-------+
+|0      |0      |
+|3      |6      |
+|7      |14     |
++-------+-------+
+
+A
++---------------+
+|       A       |
++-------+-------+
+|m      |n      |
+|Integer|Integer|
++-------+-------+
+!null   !null   |
+|0      |0      |
+|1      |2      |
+|2      |4      |
+|3      |6      |
+|4      |8      |
+|5      |10     |
+|6      |12     |
+|7      |14     |
+|8      |16     |
+|9      |18     |
+|10     |20     |
+|11     |22     |
+|12     |24     |
+|13     |26     |
+|14     |28     |
+|15     |30     |
+|16     |32     |
+|17     |34     |
+|18     |36     |
+|19     |38     |
++-------+-------+
+
+B
++---------------+
+|       B       |
++-------+-------+
+|m      |n      |
+|Integer|Integer|
++-------+-------+
+|0      |0      |
+|1      |2      |
+|2      |4      |
+|3      |6      |
+|4      |8      |
+|5      |10     |
+|6      |12     |
+|7      |14     |
+|8      |16     |
+|9      |18     |
+|0      |0      |
+|100    |200    |
+|200    |400    |
+|300    |600    |
+|400    |800    |
++-------+-------+
+
+sel_prefixes
++---------------+
+| sel_prefixes  |
++-------+-------+
+|m      |n      |
+|Integer|Integer|
++-------+-------+
+|0      |0      |
+|2      |4      |
+|4      |8      |
+|6      |12     |
+|8      |16     |
++-------+-------+
+
+const_no_prefixes
++-----------------+
+|const_no_prefixes|
++--------+--------+
+|m       |n       |
+|Integer |Integer |
++--------+--------+
+|0       |0       |
+|3       |6       |
+|7       |14      |
++--------+--------+
+
+sel_no_prefixes
++---------------+
+|sel_no_prefixes|
++-------+-------+
+|m      |n      |
+|Integer|Integer|
++-------+-------+
+|0      |0      |
+|2      |4      |
+|4      |8      |
+|6      |12     |
+|8      |16     |
++-------+-------+
+

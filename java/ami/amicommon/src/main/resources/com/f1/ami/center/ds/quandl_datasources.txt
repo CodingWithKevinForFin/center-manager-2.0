@@ -1,0 +1,307 @@
+Description|API|DATABASE|SAMPLE|Pricing
+End of Day US Stock Prices|Time-Series|EOD|V|Premium
+CLS FX Volume Data (aggregated hourly, delivered hourly)|Table|CLS|IDH|Premium
+CLS FX Volume Data (aggregated hourly, delivered daily)|Time-Series|CLSH|USDZAR_SWP_TRD|Premium
+Core US Fundamentals Data|Time-Series|SF1|WMT_GP_MRQ|Premium
+Continuous Futures|Time-Series|SCF|CBOE_VX2_ON|Premium
+BNC Digital Currency Indexed EOD|Time-Series|BNC2|MWA_AVT_USDT|Premium
+Zacks Fundamentals Collection B|Table|ZACKS|FC|Premium
+Barchart Eurex Futures|Time-Series|BCEUX|AIZ2016|Premium
+Trading Economics|Time-Series|SGE|IDNHOUS|Premium
+Credit Default Swap Data|Table|CFIS|CDSD|Premium
+OptionWorks Futures Options|Time-Series|OWF|NYM_CL_CL_N2019_IVS|Premium
+ORATS Option Volatility Surfaces|Time-Series|OPT|MSFT|Premium
+US Equity Historical & Option Implied Volatilities|Time-Series|VOL|MSFT|Premium
+Robur Global Select Stock Fundamentals|Time-Series|RB1|0031_FORECAST|Premium
+FinSentS Web News Sentiment|Time-Series|NS1|TWTR_US|Premium
+CLS FX Prices|Table|CLS|IDHP|Premium
+CLS FX Flow Data|Table|CLS|IDHOF|Premium
+Barchart Global Index Prices|Time-Series|BCIW|_SPXT|Premium
+CLS FX Volume Data (daily)|Time-Series|CLSD|USDSEK_ORF|Premium
+CLS FX Volume Data (monthly)|Time-Series|CLSM|CADJPY_SWP|Premium
+Reference Futures|Time-Series|SRF|CME_HGZ2017|Premium
+Foreign Exchange Rates|Time-Series|CUR|MXN|Premium
+Interest Rate Swaption Volatility Data|Table|CFIS|SWO|Premium
+Swap Curve Data|Table|CFIS|SCD|Premium
+FX Option Volatility Data|Table|CFIS|FXO|Premium
+YData Enhanced Events|Table|YC|EE|Premium
+YData Enhanced Events History|Table|YC|EEH|Premium
+YData Complete Events|Table|YC|CE|Premium
+YData Complete Events History|Table|YC|CEH|Premium
+YData Basic Events|Table|YC|BE|Premium
+YData Basic Events History|Table|YC|BEH|Premium
+OptionWorks CME Options Settlement Prices|Table|AR|OWCS|Premium
+MarketWorks ICE Futures Settlement Prices|Table|AR|MWIS|Premium
+OptionWorks ICE Options Settlement Prices|Table|AR|OWIS|Premium
+MarketWorks CME Futures Settlement Prices|Table|AR|MWCS|Premium
+Zacks Earnings Announcements|Table|ZACKS|EA|Premium
+Zacks Earnings Surprises|Table|ZACKS|ES|Premium
+Zacks Sales Estimates|Table|ZACKS|SE|Premium
+Zacks Earnings Estimates|Table|ZACKS|EE|Premium
+Zacks Analyst Recommendations|Table|ZACKS|AR|Premium
+Zacks Sales Surprises|Table|ZACKS|SS|Premium
+Zacks Earnings Trends|Table|ZACKS|EET|Premium
+Zacks Upcoming Splits|Table|ZACKS|USP|Premium
+Zacks Analyst Revisions|Table|ZACKS|EREV|Premium
+Zacks Institutional Holdings Collection|Table|ZACKS|IHC|Premium
+Zacks Institutional Holdings History|Table|ZACKS|HH|Premium
+Zacks Expanded Fundamental Ratios|Table|ZACKS|RF1|Premium
+Zacks Target Price History|Table|ZACKS|TP|Premium
+Zacks Street Earnings Surprises|Table|ZACKS|SES|Premium
+Zacks Sales Estimates History|Table|ZACKS|SEH|Premium
+Zacks Street Earnings Estimates|Table|ZACKS|SEE|Premium
+Zacks Analyst Rating History|Table|ZACKS|RH|Premium
+Zacks Preannouncement History|Table|ZACKS|IRH|Premium
+Zacks Insider Metrics|Table|ZACKS|ZIT1|Premium
+Zacks Holder Metrics|Table|ZACKS|IHM|Premium
+Zacks Long Term Growth History|Table|ZACKS|LTGH|Premium
+Zacks Consensus Earnings Estimate History|Table|ZACKS|EEH|Premium
+Zacks EBITDA|Table|ZACKS|EB|Premium
+Zacks Fundamentals Collection C|Table|ZACKS|FE|Premium
+Zacks Fundamentals Collection A|Table|ZACKS|FC|Premium
+Core China Fundamentals Data|Time-Series|DY1|600887_FOREX_GAIN_AR|Premium
+Chinese Earnings Forecasts|Time-Series|DY6|600887_EARNING_FORECAST|Premium
+Chinese Spot Metal Prices|Time-Series|DY9|AG9999|Premium
+Chinese Futures Data|Time-Series|DY8|FU1704_201703|Premium
+Chinese Stock Index Prices|Time-Series|DY7|901|Premium
+Chinese ETF and Mutual Fund Data|Time-Series|DY10|510500_XSHG_DAILY_PRICE|Premium
+Quantcha Risk Metrics|Time-Series|QRM|MSFT|Premium
+US Option Analytics|Time-Series|QOA|MSFT|Premium
+Global Yield Curves|Time-Series|YC|DEU30Y|Premium
+ETF Fund Flows|Table|ETFG|FUND|Premium
+ETF Global Proprietary Analytics|Table|ETFG|ANLT|Premium
+ETF Industry Profiles|Table|ETFG|INDP|Premium
+Core India Fundamentals Data|Time-Series|DEB|TCS_A_CFROA|Premium
+Indian Equities Adjusted End of Day Prices|Time-Series|TC1|SUNPHARMA|Premium
+RealVol Indices|Time-Series|VOLX|VOLSPY|Premium
+PortfolioEffect Volatility and Risk Factors|Time-Series|PE|AAPL_VAR|Premium
+PortfolioEffect Risk and Performance Metrics|Time-Series|PM|AAPL_EXPECTED_SHORTFALL_95CI|Premium
+US Industry Aggregates|Time-Series|EA1|REALMANDEV_AGM|Premium
+Railroad Traffic|Time-Series|RR1|COFC|Premium
+Chinese Stock Prices|Time-Series|DY4|601628|Premium
+Barchart ICE Europe Futures|Time-Series|BCICE|CBZ2016|Premium
+China Macroeconomic and Industrial Data|Time-Series|DY2|I2060001265|Premium
+Trends in Mutual Fund Investing|Time-Series|ICI4|E_DOM|Premium
+Chinese Corporate Actions|Time-Series|DY3|000651_DAILY_RETURNS|Premium
+Barchart Euronext.LIFFE Commodities Futures|Time-Series|BCLFE|XZ2016|Premium
+Chinese Equity Factor Data A|Time-Series|DY5|601988_XSHG_FACTORSDP2|Premium
+Zacks Company Profiles|Table|ZACKS|CP|Premium
+EDI World Corporate Actions|Table|EDI|WCA695|Premium
+Mergent Global Fundamentals Data|Table|MER|F1|Premium
+Zacks Historical Daily Maintenance|Table|ZACKS|HDM|Premium
+Zacks Daily Maintenance|Table|ZACKS|DM|Premium
+Estimated Long-Term Mutual Fund Flows|Time-Series|ICI1|ALL|Premium
+Money Market Fund Assets|Time-Series|ICI2|ALL_TOT|Premium
+Exchange-Traded Fund Assets and Share Issuance|Time-Series|ICI3|TOTAL|Premium
+ClosingBell Active Analyst Ratings|Time-Series|CBARH|XOM|Premium
+EventVestor Corporate Buybacks|Time-Series|EVB|AINC|Premium
+Free US Fundamentals Data|Time-Series|SF0|ADI_TAXEXP_MRY|Premium
+Bombay Stock Exchange Prices|Time-Series|XBOM|500010|Premium
+Japan Exchange Group Prices|Time-Series|XJPX|13760|Premium
+Hong Kong Stock Exchange Prices|Time-Series|XHKG|5|Premium
+Shenzhen Stock Exchange Prices|Time-Series|XSHE|200026|Premium
+National Stock Exchange of India Prices|Time-Series|XNSE|ADSL|Premium
+Shanghai Stock Exchange Prices|Time-Series|XSHG|600004|Premium
+London Stock Exchange Prices|Time-Series|XLON|AEO|Premium
+Toronto Ventures Stock Exchange Prices|Time-Series|XTSX|AFM|Premium
+Toronto Stock Exchange Prices|Time-Series|XTSE|AAB|Premium
+New York Stock Exchange Prices|Time-Series|XNYS|ABC|Premium
+NYSE MKT (AMEX) Prices|Time-Series|XASE|ABE|Premium
+Singapore Exchange Prices|Time-Series|XSES|1B6|Premium
+OTC Markets Group Prices|Time-Series|OTCB|ADFS|Premium
+OTC Bulletin Board Prices|Time-Series|XOTC|CSBB|Premium
+NASDAQ Stock Market Prices|Time-Series|XNAS|ACIW|Premium
+WIKI Prices|Table|WIKI|PRICES|Free
+WIKI EOD Stock Prices|Time-Series|WIKI|MSFT|Free
+BraveNewCoin Global Weighted Averages|Time-Series|BNC3|GWA_BTC|Free
+BNC Liquid Index|Time-Series|BNC1|BLX|Premium
+London Metal Exchange|Time-Series|LME|PR_CO|Free
+Chicago Mercantile Exchange Futures Data|Time-Series|CME|NKZ2018|Free
+Wiki Continuous Futures|Time-Series|CHRIS|ASX_WM2|Free
+Zillow Real Estate Research|Time-Series|ZILLOW|M746_ZRIMFRR|Free
+Federal Reserve Economic Data|Time-Series|FRED|NROUST|Free
+Intercontinental Exchange Futures Data|Time-Series|ICE|DPW_022018|Free
+London Bullion Market Association|Time-Series|LBMA|GOLD|Free
+Global Dairy Trade|Time-Series|GDT|BMP_SQ_CP5|Free
+Tokyo Stock Exchange|Time-Series|TSE|9266|Free
+National Stock Exchange of India|Time-Series|NSE|DNAMEDIA|Free
+IMF Cross Country Macroeconomic Statistics|Time-Series|ODA|NRU_BCA_NGDPD|Free
+NASDAQ OMX Global Index Data|Time-Series|NASDAQOMX|LDRIG05|Free
+Yale Department of Economics|Time-Series|YALE|RBCI|Free
+London Platinum & Palladium Market|Time-Series|LPPM|PALL|Free
+U.S. Energy Information Administration Data|Time-Series|EIA|AEO_2016_REF_NO_CPP_PRCE_NA_COMM_NA_NG_NA_SATL_Y13DLRPMCF_A|Free
+LIFFE Futures Data|Time-Series|LIFFE|RCN2019|Free
+Commodity Futures Trading Commission Reports|Time-Series|CFTC|NOMI_FO_L_OLD_CR|Free
+EUREX Futures Data|Time-Series|EUREX|FBTSU2018|Free
+British Petroleum|Time-Series|BP|COAL_PROD_O_MNG|Free
+Johnson Matthey|Time-Series|JOHNMATT|RUTH|Free
+University of Michigan|Time-Series|UMICH|SOC22|Free
+World Bank Worldwide Governance Indicators|Time-Series|WWGI|VUT_RL_PER_RNK|Free
+World Bank World Development Indicators|Time-Series|WWDI|PYF_SL_UEM_1524_MA_ZS|Free
+World Bank Public Sector Debt|Time-Series|WPSD|KSV_DP_DOD_DECF_CR_BC_CD|Free
+World Bank Poverty Statistics|Time-Series|WPOV|IDN_SI_POV_NOP1|Free
+World Bank Millennium Development Goals|Time-Series|WMDG|VNM_NY_AGR_SUBS_GD_ZS|Free
+World Bank Jobs for Knowledge Platform|Time-Series|WJKP|ZWE_DB_NOTICE_5YR|Free
+World Bank International Development Association|Time-Series|WIDA|TJK_EG_ELC_HOUS_ZS|Free
+World Bank Health Nutrition and Population Statistics|Time-Series|WHNP|SWE_SH_HIV_ORPH|Free
+World Bank Global Findex (Global Financial Inclusion database)|Time-Series|WGLF|TZA_WP11632_8|Free
+World Bank Global Financial Development|Time-Series|WGFD|VUT_GFDD_SI_05|Free
+World Bank GEP Economic Prospects|Time-Series|WGEP|ZWE_BNCABFUNDCD_|Free
+World Bank Gender Statistics|Time-Series|WGEN|MMR_SP_M18_2024_FE_ZS|Free
+World Bank Global Economic Monitor|Time-Series|WGEM|MNG_CPTOTSAXN|Free
+World Bank Global Economic Monitor (GEM) Commodities|Time-Series|WGEC|WLD_ZINC|Free
+World Bank Global Development Finance|Time-Series|WGDF|RUS_DT_AMT_DPNG_CD|Free
+World Bank Enterprise Surveys|Time-Series|WESV|THA_IC_FRM_CORR_CORR3|Free
+World Bank Education Statistics|Time-Series|WEDU|ZWE_MYS_PROP_80UP_TER_MF|Free
+World Bank Doing Business|Time-Series|WDBU|VCT_IC_ISV_COST|Free
+World Bank Corporate Scorecard|Time-Series|WCSC|UMC_IQ_SCI_OVRL|Free
+World Bank Africa Development Indicators|Time-Series|WADI|CHI_SL_TLF_ACTI_1524_ZS|Free
+European Central Bank|Time-Series|ECB|BLS_Q_U2_ALL_FCOB_B_Z_F6_AP_D_BWSD|Free
+National Securities Depository Limited (India)|Time-Series|NSDL|DIF|Free
+Statistics Bureau of Japan|Time-Series|SBJ|307|Free
+Frankfurt Stock Exchange|Time-Series|FSE|ZO1_X|Free
+Boerse Stuttgart|Time-Series|SSE|NA8P|Free
+London Stock Exchange|Time-Series|LSE|XUTC|Free
+Hong Kong Exchange|Time-Series|HKEX|62672|Free
+Warsaw Stock Exchange (GPW)|Time-Series|WSE|BAHOLDING|Free
+Euronext Stock Exchange|Time-Series|EURONEXT|MLAIM|Free
+Polish Power Exchange (TGE)|Time-Series|PPE|GB2018W02|Free
+Shanghai Futures Exchange|Time-Series|SHFE|FUZ2018|Free
+South African Futures Exchange|Time-Series|SAFEX|YMAZG2018|Free
+BarclayHedge|Time-Series|BARH|BT50HR|Free
+Bucharest Stock Exchange|Time-Series|BUCHARESTSE|INDICES|Free
+Bitcoin Watch|Time-Series|BITCOINWATCH|MINING|Free
+Korea Exchange|Time-Series|KRX|KRDRVFUBMAH2018|Free
+multpl.com|Time-Series|MULTPL|SP500_PE_RATIO_MONTH|Free
+US Federal Reserve Data Releases|Time-Series|FED|RXI_N_A_VE|Free
+Deutsche Bundesbank Data Repository|Time-Series|BUNDESBANK|BBQFS_A_DE_LIFE_NET_RET_INV_MILD__X_0000|Free
+Financial Industry Regulatory Authority|Time-Series|FINRA|FORF_XMMRF|Free
+Central Bank of Brazil Statistical Database|Time-Series|BCB|195|Free
+Organization of the Petroleum Exporting Countries|Time-Series|OPEC|ORB|Free
+Global Petroleum Prices|Time-Series|GPP|CFP_DZA|Free
+United Kingdom Office of National Statistics|Time-Series|UKONS|L4PP_A|Free
+Bank of England Official Statistics|Time-Series|BOE|XUDLB8KL|Free
+Bank for International Settlements|Time-Series|BIS|EERBR_RBVE|Free
+Freddie Mac|Time-Series|FMAC|30US|Free
+Dalian Commodities Exchange|Time-Series|DCE|JDX2018|Free
+WIKI Commodity Prices|Time-Series|COM|AG_GBP|Free
+Baker Hughes Investor Relations|Time-Series|BKRHUGHES|RIGS_BY_STATE_LOUISIANA_INWAT|Free
+Federal Reserve Bank of New York|Time-Series|FRBNY|ACM_D|Free
+US Treasury|Time-Series|USTREASURY|REALLONGTERM|Free
+European Commission Annual Macro-Economic Database|Time-Series|AMECO|ALB_1_0_0_0_YPUT8|Free
+Singapore Exchange|Time-Series|SGX|NKZ2022|Free
+Institute for Supply Management|Time-Series|ISM|BUY_CAP_EXP|Free
+Unicorn Research Corporation|Time-Series|URC|NASDAQ_UNCH|Free
+Merrill Lynch|Time-Series|ML|EMHYY|Free
+JODI Oil World Database|Time-Series|JODI|OIL_TPREBK_THA|Free
+Association for Real Estate Securitization|Time-Series|ARES|JPI_R|Free
+Montreal Exchange|Time-Series|MX|ONXJ2018|Free
+Multi Commodity Exchange India|Time-Series|MCX|SIMZ2017|Free
+Lloyd's List|Time-Series|LLOYDS|BSI|Free
+China Financial Futures Exchange|Time-Series|CFFEX|TFU2018|Free
+Nikkei|Time-Series|NIKKEI|ALL_STOCK|Free
+European Commission Business and Consumer Surveys|Time-Series|ECBCS|CST_TOT_QU_RS|Free
+Center for Applied Studies on Applied Economics (Brazil)|Time-Series|CEPEA|CALF_C|Free
+Minneapolis Grain Exchange|Time-Series|MGEX|MWZ2018|Free
+BLS Inflation & Prices|Time-Series|BLSI|WPU115|Free
+Australian Bureau of Statistics|Time-Series|AUSBS|32220C9_A83748166R|Free
+Bitfinex|Time-Series|BITFINEX|BTCEUR|Free
+World Federation of Exchanges|Time-Series|WFE|SHARES_JAPANEXCHANGEGROUPINC|Free
+Paris School of Economics|Time-Series|PSE|ANNINC992I_PALL_ZW|Free
+Top Flight Grain Co-operative|Time-Series|TFGRAIN|SOYBEANS|Free
+Zhengzhou Commodities Exchange|Time-Series|ZCE|ZCZ2018|Free
+Swiss Exchange|Time-Series|SIX|DE000A1TNV91CHF|Free
+Bitcoin Charts Exchange Rate Data|Time-Series|BCHARTS|ABUCOINSEUR|Free
+Blockchain|Time-Series|BCHAIN|MWNUS|Free
+United Nations World Tourism|Time-Series|UTOR|EXTUR_5206|Free
+United Nations National Accounts Estimates|Time-Series|UNAE|GVAKD_LKA|Free
+United Nations National Accounts Official Country Data|Time-Series|UNAC|CCGVAI3_TE_MAR|Free
+United Nations Labour Market Indicators|Time-Series|ULMI|YUNEM_F_GBR|Free
+United Nations Industrial Development Organization|Time-Series|UIST|EST_CHEM_MDA|Free
+United Nations Industrial Commodities|Time-Series|UINC|MEMA_LVA|Free
+United Nations International Financial Statistics|Time-Series|UIFS|OF_FAS_MEX|Free
+United Nations Information and Communication Technology|Time-Series|UICT|INT_SSD|Free
+United Nations Global Indicators|Time-Series|UGID|POPTOT_|Free
+United Nations Greenhouse Gas Inventory|Time-Series|UGHG|USA|Free
+United Nations Gender Information|Time-Series|UGEN|PPRJ_5001|Free
+United Nations Food and Agriculture|Time-Series|UFAO|CR_YAUT_5204|Free
+United Nations Environment Statistics|Time-Series|UENV|WATER_TTO|Free
+United Nations Energy Statistics|Time-Series|UENG|EW_PROD_KNA|Free
+United Nations Commodity Trade|Time-Series|UCOM|MBME_LAO|Free
+The Economist - Big Mac Index|Time-Series|ECONOMIST|BIGMAC_VNM|Free
+NAAIM Exposure Index|Time-Series|NAAIM|NAAIM|Free
+Bank of France|Time-Series|BOF|QS_D_IEUTIO9M|Free
+Organisation for Economic Co-operation and Development|Time-Series|OECD|HIGH_AGLINK_2010_ZAF_WT_QC|Free
+Osaka Securities Exchange|Time-Series|OSE|JGBLMDM2018|Free
+Central Bank of Argentina|Time-Series|BCRA|MVAR_CVS|Free
+Economic Cycle Research Institute|Time-Series|ECRI|USLEADING|Free
+Tokyo Commodities Exchange|Time-Series|TOCOM|33K2018|Free
+Federal Reserve Bank of Philadelphia|Time-Series|FRBP|RR3_TBILL_CPCE_MD|Free
+Federal Reserve Bank of Kansas City|Time-Series|FRKC|AGR_FIN_B_4A|Free
+American Association of Individual Investors|Time-Series|AAII|AAII_SENTIMENT|Free
+Australian Securities Exchange|Time-Series|ASX|IRZ2022|Free
+Osaka Dojima Commodity Exchange|Time-Series|ODE|ORM2018|Free
+Ministry of Finance Japan|Time-Series|MOFJ|INTEREST_RATE_JAPAN_40Y|Free
+Rogers International Commodity Indices|Time-Series|RICI|RICI|Free
+Tokyo Financial Exchange|Time-Series|TFX|JBAG2018|Free
+ADP Research Institute|Time-Series|ADP|EMPL_SERVICE_PR|Free
+Prague Stock Exchange|Time-Series|PRAGUESE|PX_TR|Free
+Solar Influences Data Analysis Center|Time-Series|SIDC|SUNSPOTS_13|Free
+Borsa Italiana|Time-Series|BITAL|U2018|Free
+BLS Employment & Unemployment|Time-Series|BLSE|CEU9000000010|Free
+Taiwan Futures Exchange|Time-Series|TAIFEX|MTXF2018|Free
+Bitstamp|Time-Series|BITSTAMP|USD|Free
+Malta Stock Exchange|Time-Series|MALTASE|INDEX|Free
+Zagreb Stock Exchange|Time-Series|ZAGREBSE|CROBEXPLUS|Free
+Bank of Japan|Time-Series|BOJ|COAEG2011401CFY43000|Free
+Bureau of Economic Analysis|Time-Series|BEA|T20804_M|Free
+Monetary Authority of Singapore|Time-Series|MAS|SGSB|Free
+Central Bank of the Republic of Turkey|Time-Series|CBRT|TP_MK_ISL_MK|Free
+National Bureau of Statistics of China|Time-Series|NBSC|A19011D_M|Free
+Belgrade Stock Exchange|Time-Series|BELGRADESE|BELEXLINE|Free
+BATS U.S. Stock Exchanges|Time-Series|BATS|EDGA_SPDV|Free
+United States Misery Index|Time-Series|USMISERY|INDEX|Free
+Association of Mutual Funds in India|Time-Series|AMFI|142068|Free
+Asia Bond Market Initiative|Time-Series|ABMI|LIQUIDITY_BID_ASK_SPREADS_CHN|Free
+U.S. Agency for International Development|Time-Series|USAID|MILCONT_STKITTSANDNEVIS|Free
+Bombay Stock Exchange|Time-Series|BSE|BOM539658|Free
+Federal Reserve Bank of Cleveland|Time-Series|FRBC|CREDIT_EASING|Free
+Ljubljana Stock Exchange (Slovenia)|Time-Series|LJUBSE|INDEX|Free
+National Institute of Statistics and Economic Studies (France)|Time-Series|INSEE|1786_001774105_A|Free
+BTER|Time-Series|BTER|BTMETH|Free
+Bank of Canada Statistical Database|Time-Series|BOC|V39079|Free
+Renaissance Capital|Time-Series|RENCAP|USIPO|Free
+Russian Federation Statistics Service|Time-Series|RFSS|FIMONEY|Free
+BLS Productivity|Time-Series|BLSP|PRS85006113|Free
+Swiss National Bank|Time-Series|SNB|SNBIPROGA|Free
+Eurekahedge|Time-Series|EUREKA|MEI27|Free
+Bank of Mexico|Time-Series|BDM|SF41080|Free
+Cass Information Systems|Time-Series|CASS|CFI|Free
+European Network of Transmission System Operators For Electricity|Time-Series|ENTSOE|MK_TRANS|Free
+Wells Fargo Home Mortgage Loans|Time-Series|WFC|RR_CON_51ARM_APR|Free
+Ukrainian Exchange|Time-Series|UKRSE|UX|Free
+Amman Stock Exchange|Time-Series|AMMANSE|INDEX_TECHNOLOGY_AND_COMMUNICATION|Free
+Federal Deposit Insurance Corporation|Time-Series|FDIC|SI20_OA|Free
+Perth Mint|Time-Series|PERTH|USD_JPY_D|Free
+Thomas Brinkhoff: City Populations|Time-Series|CITYPOP|CITY_YANGIQALAHTKRAFGHANISTAN|Free
+Liv-Ex|Time-Series|LIVEX|LVX_50_D|Free
+Social Security Administration|Time-Series|SOCSEC|TRUST_FUND_OP|Free
+Reserve Bank of Australia|Time-Series|RBA|A03_4|Free
+Stock Exchange of Thailand|Time-Series|THAISE|MI_MAI|Free
+Quito Stock Exchange (Ecuador)|Time-Series|QUITOSE|QUITO|Free
+US Treasury - Financial Management Service|Time-Series|FMSTREAS|MTS|Free
+Inflation Rate|Time-Series|RATEINF|CPI_CHE|Free
+PFTS Stock Exchange (Ukraine)|Time-Series|PFTS|INDEX|Free
+Canadian Mortgage and Housing Corporation|Time-Series|CMHC|SVRPM|Free
+World Aluminium|Time-Series|WORLDAL|PALPROD|Free
+National Association of Homebuilders|Time-Series|NAHB|INTRATES|Free
+BLS International|Time-Series|BLSN|EIUIH14243|Free
+Wu-Xia Shadow Federal Funds Rate|Time-Series|SHADOWS|EUROPE|Free
+NYSE Factbook|Time-Series|NYXDATA|MARKET_CREDIT|Free
+Bank of Russia|Time-Series|BANKRUSSIA|MONEYSUPPLY_FULL|Free
+Tunis Stock Exchange|Time-Series|TUNISSE|TUNINDEX20|Free
+BLS Pay & Benefits|Time-Series|BLSB|WSU020|Free
+Puerto Rico Institute of Statistics|Time-Series|IRPR|PMINSA|Free
+GDAX (Global Digital Asset Exchange)|Time-Series|GDAX|ETH_EUR|Free
+Local Bitcoins|Time-Series|LOCALBTC|ETH|Free
+Stock Exchange of Mauritius|Time-Series|MAURITIUSSE|INDICES|Free

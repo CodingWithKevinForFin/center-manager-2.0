@@ -1,0 +1,16 @@
+<head>
+<script>
+function go(){
+  var url='/start';
+  var t=sessionStorage.getItem('PRELOGINID');
+  sessionStorage.removeItem('PRELOGINID');
+  if(t)
+    url+='?PRELOGINID='+t;
+  window.location.href=url;
+};
+</script>
+</head>
+
+<body>
+Already logged in!<P><a href="javascript:go();">Click here To continue</a>
+</body>

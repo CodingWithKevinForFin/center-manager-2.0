@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <f1:script src="cookiehub.js" nonce="true"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://3forge.com/release-notes"/>
+  <title>Release Notes | 3forge</title>
+  <meta name="description" content="Stay updated with the latest release notes from 3forge. Discover new features, enhancements, and improvements in our real-time data streaming and low-code app development platform.">
+  <style>
+  	   *{
+/*   	   	-webkit-text-stroke: 0.1px; */
+  	   	font-family: 'Barlow', sans-serif;
+  	   }
+	  body{
+	  	background-color: white;
+	  }
+	  .gradience {
+	    background-clip: text;
+	    background-image: linear-gradient(93deg, #00a9ff, #ff8629, #ff6f00);
+	    -webkit-text-fill-color: transparent;
+	  }
+	[id^=gartner-pi-widget][data-theme=dark] * {
+		background: #191919;
+	}
+	[id^=gartner-pi-widget][data-size=line] .gartner-pi-score {
+	    position: relative;
+	    z-index: 8;
+	    vertical-align: bottom;
+	}
+		input[name="username"] {
+	    position: absolute;
+	    left: -999999999px;
+	}
+	input[name="state"] {
+	    position: absolute;
+	    left: -999999999px;
+	}
+    ul.list-discc li::before {
+	    content: " ";
+	    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 29.9 29.9'%3E%3Cpath fill='%23f06b22' d='M6.6,0h16.6c.4,0,.9,0,1.3.1.4,0,.8.2,1.2.4.4.2.8.4,1.2.6.4.2.7.5,1,.8.3.3.6.6.8,1,.2.4.4.7.6,1.1.2.4.3.8.4,1.3,0,.4.1.9.1,1.3v16.6c0,.4,0,.9-.1,1.3,0,.4-.2.8-.4,1.2-.2.4-.4.8-.6,1.2-.2.4-.5.7-.8,1s-.6.6-1,.8c-.4.2-.7.4-1.2.6-.4.2-.8.3-1.2.4-.4,0-.9.1-1.3.1H6.6c-.4,0-.9,0-1.3-.1-.4,0-.8-.2-1.2-.4-.4-.2-.8-.4-1.1-.6-.4-.2-.7-.5-1-.8-.3-.3-.6-.6-.8-1-.2-.4-.4-.7-.6-1.2-.2-.4-.3-.8-.4-1.2,0-.4-.1-.9-.1-1.3V6.6c0-.4,0-.9.1-1.3,0-.4.2-.8.4-1.3.2-.4.4-.8.6-1.1.2-.4.5-.7.8-1,.3-.3.6-.6,1-.8.4-.2.7-.4,1.1-.6.4-.2.8-.3,1.2-.4.4,0,.9-.1,1.3-.1Z'/%3E%3C/svg%3E");
+	  	width: 10px;
+	  	height: 10px;
+	  	display: block;
+	  	background-size: contain;
+	  	background-repeat: no-repeat;
+	  	position: absolute;
+	  	left: -15px;
+	  	top: 10px;
+   }
+  </style>
+  <link media="all" rel="stylesheet" href="css/webv3.css">
+  <link href="./output.css" rel="stylesheet">
+  <link media="all" rel="stylesheet" href="css/inter.css">
+  <f1:include page="'headtags.html'"/>
+</head>
+<body>
+<div class="wrap" style="overflow: initial;">
+<f1:include page="'newweb_header_announce.html'"/>
+<section class="bg-white" style=" padding-top: 88px;" id="starting">
+	<div class="h-auto max-w-[74.375rem] mx-auto pt-20">
+	  <div class="">
+<!-- 	  	<div>
+	  		<h1 class="m-0 m-auto text-center lg:m-[initial] lg:text-left text-5xl font-semibold text-white px-12 xl:px-0">Be our next success story</h1>
+	  		<div class="pt-12 px-12 xl:px-0">
+	  		<p class="m-0 m-auto text-center lg:m-[initial] lg:text-left max-w-lg text-white font-medium" style="font-size: 22px;"><a href="realtime-dashboard.html" class="font-bold text-orange-500 hover:text-orange-400 underline">Real-time dashboards.</a> <a href="client-connection.html" class="font-bold hover:text-orange-400 text-orange-500 underline">Scalable analytics for rapidly increasing data.</a> <a href="citi-audit-trail.html" class="font-bold hover:text-orange-400 text-orange-500 underline">Compliance and audit trails.</a></p>
+	  		<p class="m-0 m-auto text-center lg:m-[initial] lg:text-left max-w-lg text-white font-medium pt-10" style="font-size: 22px;">Whatever you need. You can build it with 3forge. See what others have built.
+	  		</p>		
+	  	</div>
+	  	</div> -->
+		<div>
+	  		<h1 class="m-0 m-auto text-center text-5xl md:text-[5rem] font-medium text-black px-12 xl:px-0 tracking-[-3.9px]">3forge Release Notes</h1>
+	  		<div class="pt-12 px-12 xl:px-0">
+	  		<p class="m-0 m-auto text-center text-black font-medium text-2xl md:text-3xl px-8 md:px-20 md:pb-8 md:max-w-[97%] font-inter text-balance">Check out the latest product news of 3forge, including new versions, features, bug fixes, and support for recent techonlogies.</p>		
+
+	  	</div>
+	  	</div>
+	  </div>
+	 </div>
+</section>
+
+<section>
+	<div class="h-auto max-w-[74.375rem] mx-auto pt-4 md:pt-12">
+		<div class="m-0 m-auto md:grid md:grid-cols-4 md:pb-[4rem]">
+			<div class="md:col-span-1 md:sticky md:top-[160px] hidden md:block" style="align-self: start;">
+			    <p class="text-center m-0 m-auto text-[1.3rem] text-black font-medium md:text-left md:m-[initial] md:px-2 uppercase tracking-[1.5px] pb-[0.5rem]">Changelog</p>
+			    <ul class="list-inside text-center m-0 m-auto md:text-left md:m-[initial]">
+			        <li class="px-2 text-xl font-bold text-black">2024 (4)</li>
+			        <ul>
+			            <li class="px-2 text-lg changelog-item" data-release="august-november-2024"><a href="#august-november-2024">August 2024 - November 2024</a></li>
+			            <li class="px-2 text-lg changelog-item" data-release="may-july-2024"><a href="#may-july-2024">May 2024 - July 2024</a></li>
+			            <li class="px-2 text-lg changelog-item" data-release="feb-apr-2024"><a href="#feb-apr-2024">February 2024 - April 2024</a></li>
+			            <li class="px-2 text-lg changelog-item" data-release="oct-jan-2024"><a href="#oct-jan-2024">October 2023 - January 2024</a></li>
+			        </ul>
+			
+			        <li class="px-2 text-xl font-bold text-black">2023 (2)</li>
+			        <ul>
+			            <li class="px-2 text-lg changelog-item" data-release="jul-oct-2023"><a href="#jul-oct-2023">July 2023 - October 2023</a></li>
+			            <li class="px-2 text-lg changelog-item" data-release="jan-june-2023"><a href="#jan-june-2023">January 2023 - June 2023</a></li>
+			        </ul>
+			
+			        <li class="px-2 text-xl font-bold text-black">2022 (3)</li>
+			        <ul>
+			            <li class="px-2 text-lg changelog-item" data-release="aug-dec-2022"><a href="#aug-dec-2022">August 2022 - December 2022</a></li>
+			            <li class="px-2 text-lg changelog-item" data-release="april-july-2022"><a href="#april-july-2022">April 2022 - July 2022</a></li>
+			            <li class="px-2 text-lg changelog-item" data-release="feb-apr-2022"><a href="#feb-apr-2022">February 2022 - April 2022</a></li>
+			        </ul>
+			
+			        <li class="px-2 text-xl font-bold text-black">2021 (2)</li>
+			        <ul>
+			            <li class="px-2 text-lg changelog-item" data-release="oct-feb-2022"><a href="#oct-feb-2022">October 2021 - February 2022</a></li>
+			            <li class="px-2 text-lg changelog-item" data-release="jul-sept-2021"><a href="#jul-sept-2021">July 2021 - September 2021</a></li>
+			        </ul>
+			
+			        <li class="px-2 text-xl font-bold text-black">2020 (3)</li>
+			        <ul>
+			            <li class="px-2 text-lg changelog-item" data-release="oct-jan-2021"><a href="#oct-jan-2021">October 2020 - January 2021</a></li>
+			            <li class="px-2 text-lg changelog-item" data-release="apr-may-2020"><a href="#apr-may-2020">April 2020 - May 2020</a></li>
+			            <li class="px-2 text-lg changelog-item" data-release="jan-mar-2020"><a href="#jan-mar-2020">January 2020 - March 2020</a></li>
+			        </ul>
+			
+			        <li class="px-2 text-xl font-bold text-black">2019 (3)</li>
+			        <ul>
+			            <li class="px-2 text-lg changelog-item" data-release="jun-jul-2019"><a href="#jun-jul-2019">June 2019 - July 2019</a></li>
+			            <li class="px-2 text-lg changelog-item" data-release="mar-may-2019"><a href="#mar-may-2019">March 2019 - May 2019</a></li>
+			            <li class="px-2 text-lg changelog-item" data-release="dec-feb-2019"><a href="#dec-feb-2019">December 2018 - February 2019</a></li>
+			        </ul>
+			    </ul>
+			</div>
+			<div class="md:col-span-3" style="align-items: start;">
+							<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+			<div class="h-auto pb-12 release-section" id="august-november-2024" data-release="august-november-2024" style="align-items: start;">
+			<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: August 2024 - November 2024</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4 text-balance">3forge&apos;s Biggest Update of The Year: Introducing Bloomberg
+Datasource Adapter, DBOs, iCalendar, and Pivot Tables</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl text-balance">Notable updates include the integration of a Bloomberg datasource
+adapter for seamless access to historical and reference data, introduction of Database Objects
+(DBOs) for storing custom data types, and the launch of iCalendar functionality for easier
+scheduling and event management.
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Bloomberg Datasource Adapter</li>
+					<li class="text-2xl relative">Database Objects (DBOs)</li>
+					<li class="text-2xl relative">iCalendar Functionality</li>
+					<li class="text-2xl relative">Pivot Tables</li>
+				</ul>
+				  			<a href="release-notes/august-november-2024.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+		</div>
+									<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+			<div class="h-auto pb-12 release-section" id="may-july-2024" data-release="may-july-2024" style="align-items: start;">
+			<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: May 2024 - July 2024</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4 text-balance">BPIPE Plugin, Excel Enhancements, and Relay Transformations</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl text-balance">In Q2 2024, 3forge demonstrated its dedication to revolutionizing data visualization through a
+series of innovative updates. Each of these latest enhancements provide users with powerful,
+intuitive features that reflect the company&apos;s ongoing commitment to advancement and
+excellence.
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">BPIPE Plugin</li>
+					<li class="text-2xl relative">Excel Enhancements</li>
+					<li class="text-2xl relative">Relay Transformations</li>
+				</ul>
+				  			<a href="release-notes/may-july-2024.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+		</div>
+				<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+					<div class="h-auto pb-12 release-section" id="feb-apr-2024" data-release="feb-apr-2024" style="align-items: start;">
+			<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: February 2024 - April 2024</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4 text-balance">Streamlining Development: 3forge&apos;s Latest Release</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl text-balance">In its newest release, 3forge continues to push the boundaries of data management and
+visualization, unveiling powerful features designed to enhance efficiency, customization, and
+user experience. These latest updates exemplify our commitment to delivering innovative
+solutions for complex data challenges.
+
+</p>
+<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Enhanced Excel Collaboration</li>
+					<li class="text-2xl relative">Feedhandlers & Datasource Adapters</li>
+					<li class="text-2xl relative">Cell Flashing on Tree Grids</li>
+				</ul>
+  			<a href="release-notes/feb-april-2024.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+
+				</div>
+			</div>
+			</div>
+		</div>
+				<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+							<div class="h-auto pb-12 release-section" id="oct-jan-2024" data-release="oct-jan-2024" style="align-items: start;">
+			<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: October 2023 - January 2024</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4 text-balance">Streamlining Development: 3forge&apos;s Latest Release</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl text-balance">In Q4 2023, 3forge enhanced its real-time data management and visualization suite with
+major updates, designed to enhance efficiency, customization, and user experience. Each
+of these highlighted features represents our ongoing commitment to innovation and
+excellence.
+
+</p>
+<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Smart Debugger</li>
+					<li class="text-2xl relative">Variable Based Styling</li>
+					<li class="text-2xl relative">Enhanced PDF Methods</li>
+				</ul>
+  			<a href="release-notes/oct-jan-2024.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+
+				</div>
+			</div>
+			</div>
+		</div>
+									<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none mt-[3rem] pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+		<div class="h-auto pb-12 release-section" id="jul-oct-2023" data-release="jul-oct-2023" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: July 2023 - October 2023</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4 text-balance">3forge Elevates Enterprise Efficiency</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl text-balance">Q4, 2022 witnessed the successful launch of The Historical Database (HDB), positioning the 3forge platform
+as a comprehensive solution for constructing full-stack enterprise applications. Our clients have leveraged
+HDB to store substantial volumes of data (petabytes/trillions of records) within the 3forge ecosystem, a
+testament to its effectiveness. Building on the success and critical role HDB plays in our client
+deployments, we&apos;re pleased to announce several feature enhancements that raise our platform to new
+heights.
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Automated Report Scheduling</li>
+					<li class="text-2xl relative">Micro Dashboards</li>
+					<li class="text-2xl relative">PINs-Powered Version Control</li>
+				</ul>
+				  			<a href="release-notes/july-october-2023.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+										<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none mt-[1rem] pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+			<div class="h-auto pb-12 release-section" id="jul-oct-2023" data-release="jan-june-2023" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: January 2023 - June 2023</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">3forge Elevates Enterprise Efficiency</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">3forge&apos;s latest release enables users and third-party applications to launch multiple dashboards
+simultaneously. By using layouts in the URL along with specific data elements, our micro dashboard
+concept optimizes dashboard real-estate, allowing user access to diverse dashboards at the same
+time. Control all open dashboards effortlessly with our new session management web UI.
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Support resolution scaling for all windows in AMI</li>
+					<li class="text-2xl relative">Add callbacks to support Finsemble</li>
+					<li class="text-2xl relative">PINs-Powered Version Control</li>
+				</ul>
+				  			<a href="release-notes/jan-june-2023.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+										<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[-6rem] ml-[-22rem] min-w-[74.75rem] select-none h-[57rem] min-h-[57rem] pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+			<div class="h-auto pb-12 release-section" id="aug-dec-2022" data-release="aug-dec-2022" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: August 2022 - December 2022</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">A Complete Ecosystem: The 3forge Platform Introduces a Historical Database for Storing Trillions of Records Right out of the Box</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">AMI Historical Database is our latest creation, crafted for storing massive volumes
+of data (petabytes) on disk with record speed queries on demand. The benefits are
+multifold. You no longer have to resort to another system to store historical data and
+worry about integration. Getting up and running is quick and simple since it is integrated
+with our realtime database. Moreover, there are tools built to analyze, optimize and make
+the best use of it. And the best part is that it is supported out of the box
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Introduce Historical Database</li>
+					<li class="text-2xl relative text-balance">Datamodeler now contains AMI Script tab to control all the formulas from one place</li>
+					<li class="text-2xl relative">Full set of options to style alert dialog</li>
+				</ul>
+				  			<a href="release-notes/august-dec-2022.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+				<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+			<div class="h-auto pb-12 release-section" id="april-july-2022" data-release="april-july-2022" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: April 2022 - July 2022</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">A Milestone Release: Replication,
+Realtime Streaming Datamodels
+and the Smart Datamodeler</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">This release has been very exciting for us as we are working relentlessly to add new
+features into our platform that focus on the ease of development, user experience, fault
+tolerance, scalability and much more. We are proud to introduce advanced replication
+mechanisms for the AMI Center, Realtime Streaming Datamodels and the Smart
+Datamodeler Tool.
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Realtime datamodels (subscription) </li>
+					<li class="text-2xl relative">Add Redis Ds Adapter</li>
+					<li class="text-2xl relative">Smart Datamodeler Tool</li>
+				</ul>
+				  			<a href="release-notes/apr-july-2022.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+							<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+			<div class="h-auto pb-12 release-section" id="feb-apr-2022" data-release="feb-apr-2022" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: February 2022 - April 2022</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">Completely flexible forms,
+advanced PDF styling, and
+introduction to real-time pivot
+table/tree visualization</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">This release introduces real-time tree visualization into the 3forge platform.
+It allows users to view aggregated data with the ability to drill down to underlying
+values, see updates within a fraction of a second and perform actions as needed.
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Real-time tree visualization</li>
+					<li class="text-2xl relative">Generating better and more customizable reports</li>
+					<li class="text-2xl relative">Support for quick filters in variables tree</li>
+				</ul>
+				  			<a href="release-notes/feb-apr-2022.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+							<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+			<div class="h-auto pb-12 release-section" id="oct-feb-2022" data-release="oct-feb-2022" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: October 2021 - February 2022</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">3forge wrapped up 2021 with a
+broad range of features making
+development and security at scale
+even easier</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">We now have full integration to 3rd party key management systems for realtime key
+access: this means passwords and other sensitive properties never need to rest on the
+server hosting the 3Forge platform. Also, dashboards now support &quot;transient&quot; objects,
+meaning users can have code that dynamically mutates the dashboard without affecting
+the underlying dashboard definition.
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">All Callbacks have in-product documentation</li>
+					<li class="text-2xl relative">New loading animation during the post-login proces</li>
+					<li class="text-2xl relative text-balance">Expanded language to allow Variable redeclaration within inner blocks</li>
+				</ul>
+				  			<a href="release-notes/oct-feb-2022.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+							<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+						<div class="h-auto pb-12 release-section" id="jul-sept-2021" data-release="jul-sept-2021" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: July 2021 - September 2021</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">This release is focused on
+performance at scale: managing
+1000s of users on a 24 hour global
+basis has been greatly simplified with
+the introduction of our web balancer
+and web manager components</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">These tools provide out-of-the-box dynamic expansion of web nodes without relying
+on third party tools. Additionally, the storage and maintenance of user preferences and
+dashboards have been centralized, shifting away from the need to manually maintain
+these settings across servers and regions. 
+
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">New components: Web Balancer & Web Manager</li>
+					<li class="text-2xl relative">Ability to directly invoke callbacks</li>
+					<li class="text-2xl relative">Support for hot keys</li>
+				</ul>
+				  			<a href="release-notes/july-sep-2021.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+							<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[-3rem] ml-[-22rem] min-w-[74.75rem] h-[45rem] min-h-[45rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+						<div class="h-auto pb-12 release-section" id="oct-jan-2021" data-release="oct-jan-2021" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: October 2020 - January 2021</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">Improved User Experience,
+Performance Gains on large datasets
+and more developer options</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">The focus of this release has been enabling end users to react and manage real-time
+streaming data in fewer key/mouse strokes. We&apos;ve added easier column arrangement,
+smarter data formatting and better real-time search/filter tools. Data selection can now
+be used to drive complex real-time streaming analytics providing instant rollups on userinterested subsets of data, allowing users to absorb more information faster in rapidly
+changing market conditions.
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Real-time analytics on user selection</li>
+					<li class="text-2xl relative">Draggable column arrangement in tables and trees</li>
+					<li class="text-2xl relative">AMPS Datasource Adapter</li>
+				</ul>
+				  			<a href="release-notes/oct-jan-2021.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+							<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[-6rem] ml-[-22rem] min-w-[74.75rem] h-[47rem] min-h-[47rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+			<div class="h-auto pb-12 release-section" id="apr-may-2020" data-release="apr-may-2020" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: April 2020 - May 2020</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">OpenFin, SAML2 authentication,
+improved dashboard layout tools
+& more</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">We are introducing many new features and performance improvements in AMI this month.
+See below for all of the features and enhancements
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Support for OpenFin</li>
+					<li class="text-2xl relative">Dashboard Object Browser</li>
+					<li class="text-2xl relative">Added SAML support</li>
+				</ul>
+				  			<a href="release-notes/apr-may-2020.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+							<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+									<div class="h-auto pb-12 release-section" id="jun-jul-2019" data-release="jan-mar-2020" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: January 2020 - March 2020</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">Source Control, PDF Reporting, 
+Developer Tools, Faster APIs & More</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">We&apos;re bringing in the new decade with one of our biggest releases, including an array of features 
+focused on next generation Dashboard Maintenance and Development tools. We&apos;re continuing to 
+improve end user experience with the ability to produce fully customized PDF reports. And we&apos;ve 
+pushed the performance envelope by introducing an embedded Binary API. For details on the new 
+development tools visit our Source Control Management Document.
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Source Control Management</li>
+					<li class="text-2xl relative">Multi-file Linker</li>
+					<li class="text-2xl relative">PDF Reports</li>
+				</ul>
+				  			<a href="release-notes/jan-march-2020.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+							<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[-4rem] ml-[-22rem] min-w-[74.75rem] h-[47rem] min-h-[47rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+						<div class="h-auto pb-12 release-section" id="jun-jul-2019" data-release="jun-jul-2019" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: June 2019 - July 2019</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">Focused on adapting to external
+front end solutions</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">This release includes a new dialect concept, allowing AMI to simulate other database sql syntaxes
+and with that, BI tools such as Tableau are able to connect directly to AMI&apos;s in memory database.
+We&apos;ve also added support for connecting to alternative front end containers such as Finsemble.
+Finally, dynamic front end tables that automatically arrange columns depending on query results
+and improved permission control for access to AMIDB
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">Dynamic columns</li>
+					<li class="text-2xl relative">(Compatibility) [Support for Tableau] TABLEAU dialect</li>
+					<li class="text-2xl relative">AmiWebGuiServicePlugin.java, support for Finsemble</li>
+				</ul>
+				  			<a href="release-notes/jun-july-2019.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+							<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[0.5rem] ml-[-22rem] min-w-[74.75rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+						<div class="h-auto pb-12 release-section" id="mar-may-2019" data-release="mar-may-2019" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: March 2019 - May 2019</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">Backend improvements and
+need-based front end modifications</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">This feature release includes many improvements to the backend &mdash; notably allowing the upload
+and storage of large volumes of data. In addition to work on the backend, the front end has
+improved in order to give end users to modify layouts according to their needs. 
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">More robust backend</li>
+					<li class="text-2xl relative">Self-service dashboard building</li>
+					<li class="text-2xl relative text-balance">Ability for separate dashboards to communicate using
+the Native Browser&apos;s CORS technology</li>
+				</ul>
+				  			<a href="release-notes/mar-may-2019.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+							<div>
+					<img class="hidden lg:block absolute w-[74.75rem] mt-[-4.5rem] h-[53rem] min-h-[53rem] ml-[-22rem] min-w-[74.75rem] select-none pointer-events-none" src="images/website-triangles-flipped.svg" alt="Decorative Triangles" style="filter: opacity(0.1);">
+				</div>
+			<div class="h-auto pb-12 release-section" id="dec-feb-2019" data-release="dec-feb-2019" style="align-items: start;">
+					<div class="row-start-1 px-5 lg:row-start-auto lg:sticky lg:top-[123px]">
+					<p class="text-[1.8rem] text-black font-medium px-4 uppercase tracking-[0.5px]">Release Notes: December 2018 - February 2019</p>
+					<p class="text-3xl text-lightorange font-bold px-4 pt-4">Nanoseconds, complex queries, 
+custom workspaces, and more</p>
+					
+			<div class="px-5 pb-8">
+				<div class="mt-12">
+					<p class="text-black text-2xl">We&apos;re kicking off 2019 with some exciting new features and performance improvements in AMI. First, 
+we&apos;re speeding things up by supporting nanosecond and microsecond granularity. Most charting 
+tools only offer one-second granularity, so this feature is incredibly important to brokers who now 
+measure latency in nanoseconds. For our enterprise clients, users can now save custom workspaces 
+that load on login to enhance user experience and workflow efficiency. Additionally, relationships 
+are now even more configurable with cascading abilities for audit trails and multivariable support. 
+See below for all of the new features and enhancements we&apos;ve added this month.
+</p>
+				<p class="text-3xl text-black font-medium pt-8 pb-4">Highlights:</p>
+				<ul class="list-discc list-inside block pl-[1rem]">
+					<li class="text-2xl relative">NEAREST in JOIN query clauses</li>
+					<li class="text-2xl relative">Nanosecond and Microsecond support</li>
+					<li class="text-2xl relative text-balance">Function autocomplete</li>
+				</ul>
+				  			<a href="release-notes/dec-feb-2019.pdf"><button class="mt-8 px-4 py-1 text-lg text-white bg-lightorange font-semibold rounded-full hover:bg-[#e76800] select-none">View Release Notes</button></a>
+				
+				</div>
+			</div>
+			</div>
+			</div>
+	</div>
+			</div>
+		</div>
+
+</section>
+
+<f1:include page="'newweb_footer.html'"/>
+</div>
+	<f1:script nonce="true" src="js/flowbite.min.js"/>
+	<f1:script nonce="true" src="js/util.js"/>
+	<f1:script nonce="true" src="js/jquery-3.7.1.min.js"/>
+	<f1:script nonce="true" src="js/jquery.main.js"/>
+	<f1:script nonce="true" type="text/javascript" src="inline"/>
+		// highlight current page in navigation
+		$("#nav-item-product").toggleClass("active");
+	</script>
+	<f1:script nonce="true" src="cookiebutton.js"/>
+	<f1:script nonce="true" src="inline"/>
+			// Function to set a custom cookie indicating the user's choice regarding cookies
+			function setCookieHubCookie(value) {
+			    // Set a cookie named 'cookiehub' with the provided value
+			    document.cookie = 'cookiehub=' + value + '; expires=' + calculateExpirationDate() + '; path=/';
+			}
+			
+			// Function to calculate the expiration date for the cookie (30 days from the current day)
+			function calculateExpirationDate() {
+			    var currentDate = new Date();
+			    var expirationDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 days in milliseconds
+			    return expirationDate.toUTCString();
+			}
+			
+			// Check if the custom cookie indicating the user's choice regarding cookies is set
+			window.addEventListener('load', function() {
+			    var cookieValue = getCookie('cookiehub');
+			    if (!cookieValue) {
+			        // If the custom cookie is not set, display the CookieHub banner
+			        var cpm = {};
+			        window.cookiehub.load(cpm);
+			    }
+			});
+			
+			// Set the custom cookie when the "Accept All Cookies" or "Deny All Cookies" button is clicked
+			document.addEventListener('click', function(event) {
+			    var target = event.target;
+			    if (target.classList.contains('ch2-allow-all-btn')) {
+			        // Set the custom cookie to indicate acceptance of cookies
+			        setCookieHubCookie('allow');
+			    } else if (target.classList.contains('ch2-deny-all-btn')) {
+			        // Set the custom cookie to indicate denial of all cookies
+			        setCookieHubCookie('deny');
+			    }
+			});
+	</script>
+	<f1:script nonce="true" src="inline"/>
+		var count = 0; 
+		function openCookieHubWindow() {
+			if (count == 0) {
+				window.cookiehub.load();
+				count++;
+			}
+			if (count >= 1) {			
+				window.cookiehub.openDialog();
+				count++;
+			}
+		}
+	</script>
+	<f1:script nonce="true" type="text/javascript"
+		src="../js/widget.js"/>
+	<f1:script nonce="true" type="text/javascript" src="inline"/>
+	    GartnerPI_Widget({
+	        size: "line",
+	        theme: "dark",
+	        sourcingLink: "https://gtnr.io/iKfnxw3cA",
+	        widget_id: "ZjA4NTVhMzUtZWUxZi00YmZhLWJmNGEtMWQ4YzU1YjI1ZjUy",
+	        version: "2",
+	        container: document.getElementById("gartner-widget")
+	    });
+	</script>
+	<f1:script src="inline" nonce="true"/>
+	let lastScrollTop = 0;
+	let initialLoad = true;
+	
+	const bottom = document.getElementById("bottomnav");
+	bottom.style.transform = "translate3d(0, 0, 0)";
+	
+	const banner = document.getElementById("sticky-banner");
+	const closeButton = banner.querySelector('[data-dismiss-target="#sticky-banner"]');
+	const navbar = document.getElementById("navbarwhole");
+	const startingElement = document.getElementById("starting");
+	
+	function removeClass(element, className) {
+	    element.classList.remove(...className.split(" "));
+	}
+	
+	startingElement.style.paddingTop = banner.style.display === "none" ? "88px" : "131px";
+	
+	closeButton.addEventListener("click", () => {
+	    // Hide the banner
+	    banner.style.display = "none";
+	
+	    // Adjust navbar styles
+	    removeClass(navbar, "mt-[2.7rem]");
+	    navbar.style.marginTop = "0";
+	
+	    // Adjust starting padding
+	    startingElement.style.paddingTop = "88px";
+	});
+	
+	window.onscroll = function () {
+	    if (window.innerWidth > 500) {
+	        if (!initialLoad) {
+	            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+	            const top = document.getElementById("topnav");
+	
+	            if (currentScroll > lastScrollTop) {
+	                // Scrolling down
+	                top.style.position = "fixed";
+	                top.style.width = "100%";
+	                top.style.zIndex = "100";
+	                top.style.transform = "translate3d(0, -100%, 0)";
+	                top.style.visibility = "hidden";
+	                top.style.transition = "transform 0.2s ease-out";
+	
+	                navbar.style.height = "4.125rem";
+	
+	                bottom.style.position = "fixed";
+	                bottom.style.width = "100%";
+	                bottom.style.zIndex = "100";
+	                bottom.style.transform = "translate3d(0, 0, 0)";
+	            } else {
+	                // Scrolling up
+	                top.style.transition = "transform 0.2s ease-in";
+	                top.style.position = "fixed";
+	                top.style.width = "100%";
+	                top.style.zIndex = "100";
+	                top.style.transform = "translate3d(0, 0, 0)";
+	                top.style.visibility = "visible";
+	
+	                navbar.style.height = "6.688rem";
+	
+	                bottom.style.position = "fixed";
+	                bottom.style.width = "100%";
+	                bottom.style.zIndex = "100";
+	                bottom.style.transform = "translate3d(0, 45px, 0)";
+	            }
+	
+	            lastScrollTop = Math.max(0, currentScroll);
+	        }
+	
+	        initialLoad = false;
+	    }
+	};
+	</script>
+	<!-- <script nonce="true">
+		function animateCounter(counterId, startValue, endValue, duration, suffix) {
+		  var counterElement = document.getElementById(counterId);
+		  var startTime = null;
+		
+		  function step(timestamp) {
+		    if (!startTime) startTime = timestamp;
+		    var progress = timestamp - startTime;
+		    var percentage = progress / duration;
+		    var current = startValue + (endValue - startValue) * percentage;
+		
+		    // Ensure current value stays within the range of startValue and endValue
+		    current = Math.min(current, endValue);
+		
+		    // Round current to the nearest integer and convert to string
+		    var roundedValue = Math.round(current).toString();
+		
+		    // Extract the first three digits
+		    var displayValue = roundedValue.slice(0, 3);
+		
+		    if (suffix) {
+		      // Use innerHTML to render HTML entities
+		      counterElement.innerHTML = displayValue + suffix;
+		    } else {
+		      counterElement.textContent = displayValue;
+		    }
+		
+		    if (progress < duration) {
+		      window.requestAnimationFrame(step);
+		    }
+		  }
+		
+		  window.requestAnimationFrame(step);
+		}
+		
+		// Call the function with startValue = 1, endValue = 36, duration = 1.6 seconds (1600 milliseconds), and suffix = '°' for counter1
+		animateCounter('counter1', 1, 360, 1600, '&deg;');
+		
+		animateCounter('counter2', 1, 80, 1600, '%');
+		
+		animateCounter('counter3', 20, 100, 1600, 'M+');
+		
+		animateCounter('counter4', 1, 24, 1600, '/7');
+		
+		animateCounter('counter5', 20, 100, 1600, '%');
+		</script> -->
+    <f1:script nonce="true" src="inline"/>
+      document.addEventListener("DOMContentLoaded", () => {
+	    const sections = document.querySelectorAll('.transition-section');
+	
+	    // Function to determine the threshold based on screen size
+	    const getThreshold = () => {
+	        const width = window.innerWidth;
+	        console.log(width);
+	        if (width < 600) {
+	            return 0.1; // Smaller screens
+	        } else if (width < 1200) {
+	            return 0.2; // Medium screens
+	        } else if (width < 1600) {
+	            return 0.25; // Larger screens
+	        }
+      	      else {
+	            return 0.3; // Larger screens
+	        }
+	    };
+	
+	    // Initial observer options
+	    const observerOptions = {
+	        root: null, // Use the viewport as the root
+	        rootMargin: '0px',
+	        threshold: getThreshold()
+	    };
+	
+	    // Function to create a new observer with updated options
+	    const createObserver = () => {
+	        return new IntersectionObserver((entries, observer) => {
+	            entries.forEach(entry => {
+	                if (entry.isIntersecting) {
+	                    entry.target.classList.add('visible');
+	                    observer.unobserve(entry.target); // Stop observing once it's visible
+	                }
+	            });
+	        }, observerOptions);
+	    };
+	
+	    let observer = createObserver();
+	
+	    // Observe each section
+	    sections.forEach(section => {
+	        observer.observe(section);
+	    });
+	
+	    // Update observer on window resize
+	    window.addEventListener('resize', () => {
+	        observer.disconnect(); // Disconnect the old observer
+	        observerOptions.threshold = getThreshold(); // Update the threshold
+	        observer = createObserver(); // Create a new observer
+	        sections.forEach(section => {
+	            if (!section.classList.contains('visible')) {
+	                observer.observe(section); // Re-observe sections that are not visible
+	            }
+	        });
+	    });
+	});
+    </script>
+    
+    <f1:script nonce="true" type="text/javascript" src="js/email.min.js"/>
+	<f1:script nonce="true" type="text/javascript" src="inline"/>
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "I3dJ3vzRikpLEq5W-",
+            });
+        })();
+    </script>
+
+	<f1:script nonce="true" src="inline"/>
+	window.onload = function() {
+	    document.getElementById('email-signup').addEventListener('submit', function(event) {
+	        event.preventDefault(); // Prevent the default form submission
+	
+	        var emailInput = document.getElementById('EMBED_FORM_EMAIL_LABEL');
+	        var email = emailInput.value;
+	        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	        	        
+	        var honeypot3 = document.querySelector('input[name="username"]').value;
+     	  	var honeypot4 = document.querySelector('input[name="state"]').value;
+     	  	
+	  		if (honeypot3 || honeypot4) {
+	            alert('Spam detected.');
+	            return false;
+	      	}
+	
+	        if (!emailPattern.test(email)) {
+	            emailInput.value = 'Invalid email entered.';
+	        } else {
+	
+	            emailjs.sendForm('newsletter_service', 'newsletter_form', this)
+	                .then(() => {
+	                    console.log('SUCCESS!');
+	                    window.location.href = "thanks";
+	                }, (error) => {
+	                    console.log('FAILED...', error);
+	                    alert('There was an error with your submission. Please try again.');
+	                });
+	        }
+	    });
+	}
+	</script>
+	
+	<f1:script src="inline" nonce="true"/>
+		document.addEventListener("DOMContentLoaded", function () {
+		    const changelogItems = document.querySelectorAll('.changelog-item');
+		    const releaseSections = document.querySelectorAll('.release-section');
+		    const navbar = document.getElementById("navbarwhole");
+		
+		    // Function to get the height of the fixed navbar
+		    function getHeaderOffset() {
+		        return navbar.offsetHeight || 0;
+		    }
+		
+		    // Smooth scroll with offset adjustment
+		    function scrollToSection(sectionId) {
+		        const targetSection = document.querySelector(sectionId);
+		        if (targetSection) {
+		            const offset = getHeaderOffset() + 20; // Extra padding for better visibility
+		            const sectionPosition = targetSection.getBoundingClientRect().top + window.scrollY - offset;
+		
+		            window.scrollTo({
+		                top: sectionPosition,
+		                behavior: "smooth"
+		            });
+		        }
+		    }
+		
+		    // Attach click event to anchor links
+		    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		        anchor.addEventListener("click", function (event) {
+		            event.preventDefault(); // Prevent default anchor behavior
+		            const targetId = this.getAttribute("href");
+		            scrollToSection(targetId);
+		        });
+		    });
+		
+		    // Intersection Observer for active section highlighting
+		    const observerOptions = {
+		        root: null,
+		        threshold: 0.5
+		    };
+		
+		    const observer = new IntersectionObserver((entries) => {
+		        entries.forEach(entry => {
+		            if (entry.isIntersecting) {
+		                const release = entry.target.getAttribute('data-release');
+		
+		                // Remove active styles from all items
+		                changelogItems.forEach(item => {
+		                    item.classList.remove('text-[#36a6db]', 'font-bold');
+		                });
+		
+		                // Add active styles to the matching item
+		                const activeItem = document.querySelector(`.changelog-item[data-release="${release}"]`);
+		                if (activeItem) {
+		                    activeItem.classList.add('text-[#36a6db]', 'font-bold');
+		                }
+		            }
+		        });
+		    }, observerOptions);
+		
+		    releaseSections.forEach(section => {
+		        observer.observe(section);
+		    });
+		});
+	</script>
+
+    
+</body>
+</html>

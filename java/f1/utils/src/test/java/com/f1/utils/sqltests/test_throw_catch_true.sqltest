@@ -1,0 +1,23 @@
+****TEST_INPUT_QUERY****
+{
+  Integer i = 15;
+  if (i > 20) { throw "Value ${i} exceeds limit"; }  else { return "Value ${i} is within limit, don't throw"; }
+} catch(String s) {
+  return s;
+}
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+****TEST_RESULT****
+Value 15 is within limit, don't throw
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****

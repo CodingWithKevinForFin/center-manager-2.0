@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.2.3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Ami Script.docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Flow Control</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Flow Control">
+        <span>Flow Control</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1><u style="text-decoration: none; ">Flow Control</u></h1>
+<p style="margin-bottom: 0pt; line-height: Normal; font-size: 12pt; font-family: Arial, sans-serif;">Complex 
+ AMI scripts can be achieved by combining multiple <i>statements</i> into 
+ <i>statement blocks.</i> A statement block is wrapped in curly brackets 
+ {...} and each statement is separated with a semi-colon;. Then, the execution 
+ of <i>statement blocks</i> can be determined using a variety of flow control 
+ statements including <i>if, if/else, for, while,</i> and <i>for-each-loops.</i> 
+ Note that for and while loops can use the <i>continue</i> and <i>break</i> 
+ directives as well.</p>
+<p style="font-family: Arial, sans-serif; margin-bottom: 0pt; line-height: Normal; 
+	 font-size: 11pt;"> </p>
+<p style="margin-top: 15pt; margin-bottom: 3pt; line-height: Normal; font-size: 13pt; 
+	 font-style: italic; color: #449938; text-transform: uppercase; font-family: Arial, sans-serif;"><b>Examples</b></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">{</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">  Integer count = 10;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">  Integer value = 1;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">  for(Integer i = 0; 
+ i &lt; count; i++){</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">    value *= 
+ 2;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">  }</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">  if(value &lt; 2000) 
+ {</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">    session.alert(value);</span> 
+ <i><span courier="" style="color: #808080;">//alert shows 1024</span></i></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><i><span courier=""> </span></i> <span courier="">} else</span> <span courier=""><i> </i> </span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">    session.alert(&quot;High 
+ value&quot;);</span> <i><span courier="" style="color: #808080;">// this 
+ is never hit. Also note: single statements don&#39;t need to<br/>
+                                    be 
+ in {...} statement blocks</span></i></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">  while(true){</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">    value -= 
+ 10;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">    if(value 
+ &lt; 1000)</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">      break;</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">  }</span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier=""> </span> <span courier=""><i style="color: #808080;">//value is now 994</i> </span></p>
+<p style="margin-bottom: .0001pt; color: #006dbf; font-family: &#39;Courier New&#39;, monospace; 
+	 font-size: 11pt;"><span courier="">}</span></p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif;"> </p>
+<p style="margin-bottom: .0001pt; font-family: Arial, sans-serif; line-height: Normal;"> </p>
+<h2 style="text-decoration: none; "><a name="Statement_block" id="Statement_block"><span courier="" style="color: #6d2d9e; text-decoration: none; ">statement 
+ block</span></a></h2>
+<p style="margin-bottom: .0001pt; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">{</span> 
+ <span courier="" style="color: #006dbf;">statement</span> <span courier=""><i>[</i></span><span courier="" style="color: #ff0000;">;</span><span courier="" style="color: #006dbf;">statement</span> 
+ ...<span courier=""><i>] [</i></span><span courier="" style="color: #ff0000;">;</span><span courier=""><i>]</i></span><span courier="" style="color: #ff0000;">}</span></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">** Evaluates to return value if a return_statment exists, 
+ otherwise it evaluates to the last statement&#39;s evaluation. If no statements, 
+ evaluates to Void</span></i></p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<h2><a name="for_loop" id="for_loop"><span courier="" style="color: #6d2d9e; 
+											 text-decoration: none; ">for 
+ loop</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">for(</span><span courier="" style="color: #006dbf;">initialization;termination_expression</span><span courier="">;</span><span courier="" style="color: #006dbf;">increment</span><span courier="" style="color: #ff0000;">)</span> <span courier="" style="color: #006dbf;">statement</span></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><b><i><span courier="">initialization</span></i></b> -<i><span courier=""> statement 
+ that is called first, used to declare variables with local scope</span></i></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><b><i><span courier="">termination_expression</span></i></b> -<i><span courier=""> 
+ statement that must evaluate to boolean, false terminates</span></i></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><b><i><span courier="">increment</span></i></b> -<i><span courier=""> statement 
+ called after each completion of the loop&#39;s statements</span></i></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><b><i><span courier="">statement</span></i></b> -<i><span courier=""> called once 
+ per loop. Note:<br/>
+               * 
+ <b>continue_statement</b> will exit the statement and proceed to increment 
+ statement</span></i></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">               * 
+ <b>break_statement</b> will exit the for loop entirely</span></i></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">** Evaluates to Void</span></i></p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<h2><a name="for_each_loop" id="for_each_loop"><span courier="" style="color: #6d2d9e; 
+													 text-decoration: none; ">for 
+ each loop</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">for(</span><b><span courier="" style="color: #6d2d9e;"><a href="AMI-SQL_Nested_Expressions.htm#type_expr">type_expr</a></span></b> 
+ <span courier=""> </span><span courier="" style="color: #006dbf;">varname</span><span courier="" style="color: #ff0000;">:</span><span courier="" style="color: #006dbf;">iterable_or_array</span><span courier="" style="color: #ff0000;">)</span> <span courier="" style="color: #006dbf;">statement</span></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><b><i><span courier="">iterable_or_array</span></i></b> -<i><span courier=""> 
+ values to iterate over in order</span></i></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><b><i><span courier="">statement</span></i></b> -<i><span courier=""> called once 
+ per value. Note:<br/>
+               * 
+ <b>continue_statement</b> will exit the statement and proceed to next 
+ value</span></i></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">               * 
+ <b>break_statement</b> will exit the for loop entirely</span></i></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">** Evaluates to Void</span></i></p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<h2><a name="while_loop" id="while_loop"><span courier="" style="color: #6d2d9e; 
+												 text-decoration: none; ">while 
+ loop</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">while(</span><span courier="" style="color: #006dbf;">bool_expression</span><span courier="" style="color: #ff0000;">)</span> <span courier="" style="color: #006dbf;">statement</span></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">same as for(;bool_expression;) statement</span></i></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">** Evaluates to Void</span></i></p>
+<p class="NormalCxSpLast" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"> </p>
+<p class="NormalCxSpLast" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"><span courier="">                  </span></p>
+<h2><a name="if_statement" id="if_statement"><span courier="" style="color: #6d2d9e; 
+													 text-decoration: none; ">if 
+ statement</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">if(</span><span courier="" style="color: #006dbf;">bool_expression</span><span courier="" style="color: #ff0000;">)</span> <span courier="" style="color: #006dbf;">statement</span></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">if <b>bool_expression</b> evaluates to true then execute 
+ <b>statement</b></span></i><span courier=""> </span></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">** Evaluates to Void</span></i></p>
+<p class="NormalCxSpLast" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"> </p>
+<p class="NormalCxSpLast" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"> </p>
+<h2><a name="if_else_statement" id="if_else_statement"><span courier="" style="color: #6d2d9e; 
+															 text-decoration: none; ">if 
+ else statement</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">if(</span><span courier="" style="color: #006dbf;">bool_expression</span><span courier="" style="color: #ff0000;">)</span> <span courier="" style="color: #006dbf;">statement</span> 
+ <span courier="" style="color: #ff0000;">else</span> <span courier="" style="color: #006dbf;">statement2</span></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">if <b>bool_expression</b> evaluates to true then execute 
+ <b>statement</b> otherwise execute<b>statement2</b></span></i><span courier=""> </span></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">** Evaluates to Void</span></i></p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<h2><a name="return_statement" id="return_statement"><span courier="" style="color: #6d2d9e; 
+															 text-decoration: none; ">return 
+ statement</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">return</span> 
+ <span courier="" style="color: #006dbf;">statement</span><span courier="">                    </span></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">** Evaluates to statement&#39;s value. Will cause call stack 
+ to be popped out to caller function.</span></i></p>
+<p class="NormalCxSpLast" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"> </p>
+<p class="NormalCxSpLast" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"> </p>
+<h2><a name="break_statement" id="break_statement"><span courier="" style="color: #6d2d9e; 
+														 text-decoration: none; ">break 
+ statement</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt;"><span courier="" style="color: #ff0000;">break</span><span courier=""> </span></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">** See for_loop, for_each_loop and while_loop</span></i></p>
+<p style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; color: #808080; 
+	 font-size: 11pt; margin-bottom: 0pt;"> </p>
+<p style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; color: #808080; 
+	 font-size: 11pt; margin-bottom: 0pt;"> </p>
+<h2><a name="continue_statement" id="continue_statement"><span courier="" style="color: #6d2d9e; text-decoration: none; ">continue statement</span></a></h2>
+<p class="NormalCxSpFirst" style="line-height: normal; font-family: &#39;Courier New&#39;, monospace; 
+	 color: #808080; font-size: 11pt; margin-bottom: 0pt;"><span courier="" style="color: #ff0000;">continue</span><span courier=""> </span></p>
+<p class="NormalCxSpMiddle" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><i><span courier="">** See for_loop, for_each_loop and while_loop</span></i></p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<h2><a name="function_call" id="function_call"><span courier="" style="color: #6d2d9e; 
+													 font-size: 19pt; text-decoration: none; ">function 
+ call</span></a> </h2>
+<p class="NormalCxSpFirst" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"><span courier="" style="color: #006dbf;">function</span><span courier="">(</span><span courier="" style="color: #006dbf;">param</span><span courier=""><i>[</i></span><span courier="" style="color: #006dbf;">, param</span> ...<span courier=""><i>]</i></span><span courier="" style="color: #ff0000;">)</span> <span courier=""><br/>
+</span><i><span courier="">** Evaluates to <b>return_type</b> value</span></i></p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<p class="NormalCxSpLast" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; color: #808080; font-size: 11pt;"> </p>
+<h2><a name="member_method_call" id="member_method_call"><span courier="" style="color: #6d2d9e; text-decoration: none; ">member method call</span></a></h2>
+<p class="NormalCxSpFirst" style="margin-bottom: .0001pt; line-height: normal; 
+	 font-family: &#39;Courier New&#39;, monospace; font-size: 11pt;"><span courier="" style="color: #006dbf;">target_object.function</span><span courier="" style="color: #ff0000;">(</span><span courier="" style="color: #006dbf;">param</span><span courier=""><i style="color: #808080;">[</i></span><span courier="" style="color: #006dbf;">, 
+ param</span><span style="color: #808080;"> ...</span><span courier=""><i style="color: #808080;">]</i></span><span courier="" style="color: #ff0000;">)</span><span style="color: #808080;"> </span><span courier="" style="color: #808080;"><br/>
+</span><i><span courier="" style="color: #808080;">** Evaluates to <b style="color: #808080;">return_type</b> 
+ value</span></i></p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

@@ -1,0 +1,52 @@
+****TEST_INPUT_QUERY****
+insert into stringsEmpty values (2.3), (5.6), (0.9), (1.4), (1), (2), (0), (3f), (3F), (3d), (3D), (3l), (3L), ('c'), ('z'), ("xyz");
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+stringsEmpty
++------------+
+|stringsEmpty|
++------------+
+|x           |
+|String      |
++------------+
++------------+
+
+****TEST_RESULT****
+16
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+INSERT INTO stringsEmpty VALUES (2.3), (5.6), (0.9), (1.4), (1), (2), (0), (3.0D), (3.0D), (3.0), (3.0), (3L), (3L), (c), (z), ("xyz")
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+stringsEmpty
++------------+
+|stringsEmpty|
++------------+
+|x           |
+|String      |
++------------+
+|2.3         |
+|5.6         |
+|0.9         |
+|1.4         |
+|1           |
+|2           |
+|0           |
+|3.0         |
+|3.0         |
+|3.0         |
+|3.0         |
+|3           |
+|3           |
+|c           |
+|z           |
+|xyz         |
++------------+
+

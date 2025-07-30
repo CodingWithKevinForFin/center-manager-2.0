@@ -1,0 +1,342 @@
+<f1:set scope="lcv" var="tab" value="${tab}" type="String"/>
+<f1:set scope="lcv" var="isLoggedIn" value="${isLoggedIn}" type="Boolean"/>
+
+    <!-- navigation -->
+
+        <div class="visible-phone">
+
+          <div id="portal-masthead" class="noPrint">
+
+            <div id="portal-nav">
+
+              <!-- for trial and admin users -->
+              <f1:if test="OH.ne(${user.statusText},'ENTERPRISE')">
+
+                <ul id="nav-links" class="unstyled row-fluid">
+
+                  <a href="dashboard.htm" title="Dashboard">
+                    <li <f1:if test="OH.eq(tab,'dashboard')"> class="col3 selected" </f1:if> <f1:if test="OH.ne(tab,'dashboard')"> class="col3" </f1:if>>
+                      <center>
+
+                        <img class="nav-icon" src="v2_resources/images/dashboard_icon.png" alt="&#9707;"/>
+                        <p class="nav-link-text">Dashboard</p>
+
+                      </center>
+                    </li>
+                  </a>
+
+                  <!-- for trial users -->
+                  <f1:if test="OH.ne(${user.statusText},'ADMIN')">
+
+                    <a href="secure_licenses.htm" title="Licenses">
+                      <li <f1:if test="OH.eq(tab,'secure_licenses')"> class="col3 selected" </f1:if> <f1:if test="OH.ne(tab,'secure_licenses')"> class="col3" </f1:if>>
+                        <center>
+
+                          <img class="nav-icon" src="v2_resources/images/licenses_icon.png" alt="&#9998;"/>
+                          <p class="nav-link-text">Licenses</p>
+
+                        </center>
+                      </li>
+                    </a>
+
+                    <a href="documents.htm" title="Documents">
+                      <li <f1:if test="OH.eq(tab,'documents')"> class="col3 selected" </f1:if> <f1:if test="OH.ne(tab,'documents')"> class="col3" </f1:if>>
+                        <center>
+
+                          <img class="nav-icon" src="v2_resources/images/document.png" alt="&#9874;"/>
+                          <p class="nav-link-text">Documents</p>
+
+                        </center>
+                      </li>
+                    </a>
+                    
+                    <a href="tutorials.htm" title="Tutorials">
+                      <li <f1:if test="OH.eq(tab,'tutorials')"> class="col3 selected" </f1:if> <f1:if test="OH.ne(tab,'tutorials')"> class="col3" </f1:if>>
+                        <center>
+
+                          <img class="nav-icon" src="v2_resources/images/tutorials_icon.png" alt="&#9655;"/>
+                          <p class="nav-link-text">Tutorials</p>
+
+                        </center>
+                      </li>
+                    </a>
+                    <a href="videos.htm" title="Videos">
+                      <li <f1:if test="OH.eq(tab,'videos')"> class="col3 selected" </f1:if> <f1:if test="OH.ne(tab,'videos')"> class="col3" </f1:if>>
+                        <center>
+
+                          <img class="nav-icon" src="v2_resources/images/videos_icon.png" alt="&#9655;"/>
+                          <p class="nav-link-text">Videos</p>
+
+                        </center>
+                      </li>
+                    </a>
+
+                    </f1:if>
+
+                </ul>
+
+              </f1:if>
+
+              <!-- for enterprise users -->
+              <f1:if test="OH.eq(${user.statusText},'ENTERPRISE')">
+
+                <ul id="nav-links" class="unstyled row-fluid">
+
+                  <a href="dashboard.htm" title="Dashboard">
+                    <li <f1:if test="OH.eq(tab,'dashboard')"> class="col2 selected" </f1:if> <f1:if test="OH.ne(tab,'dashboard')"> class="col2" </f1:if>>
+                      <center>
+
+                        <img class="nav-icon" src="v2_resources/images/dashboard_icon.png" alt="&#9707;"/>
+                        <p class="nav-link-text">Home</p>
+
+                      </center>
+                    </li>
+                  </a>
+
+                  <a href="secure_licenses.htm" title="Licenses">
+                    <li <f1:if test="OH.eq(tab,'secure_licenses')"> class="col2 selected" </f1:if> <f1:if test="OH.ne(tab,'secure_licenses')"> class="col2" </f1:if>>
+                      <center>
+
+                        <img class="nav-icon" src="v2_resources/images/licenses_icon.png" alt="&#9998;"/>
+                        <p class="nav-link-text">Licenses</p>
+
+                      </center>
+                    </li>
+                  </a>
+
+                  <a href="documents.htm" title="Documents">
+                    <li <f1:if test="OH.eq(tab,'documents')"> class="col2 selected" </f1:if> <f1:if test="OH.ne(tab,'documents')"> class="col2" </f1:if>>
+                      <center>
+
+                        <img class="nav-icon" src="v2_resources/images/document.png" alt="&#9874;"/>
+                        <p class="nav-link-text">Docs</p>
+
+                      </center>
+                    </li>
+                  </a>
+
+
+                    <a href="tutorials.htm" title="Tutorials">
+                    <li <f1:if test="OH.eq(tab,'tutorials')"> class="col2 selected" </f1:if> <f1:if test="OH.ne(tab,'tutorials')"> class="col2" </f1:if>>
+                      <center>
+
+                        <img class="nav-icon" src="v2_resources/images/tutorials_icon.png" alt="&#9655;"/>
+                        <p class="nav-link-text">Tutorials</p>
+
+                      </center>
+                    </li>
+                  </a>
+                  
+                  <a href="videos.htm" title="Videos">
+                    <li <f1:if test="OH.eq(tab,'videos')"> class="col2 selected" </f1:if> <f1:if test="OH.ne(tab,'videos')"> class="col2" </f1:if>>
+                      <center>
+
+                        <img class="nav-icon" src="v2_resources/images/videos_icon.png" alt="&#9655;"/>
+                        <p class="nav-link-text">Videos</p>
+
+                      </center>
+                    </li>
+                  </a>
+
+                  <a href="secure_files?tok=<f1:out value="${sectoken}"/>" title="Files">
+                    <li <f1:if test="OH.eq(tab,'secure_files')"> class="col2 selected" </f1:if> <f1:if test="OH.ne(tab,'secure_files')"> class="col2" </f1:if>>
+                      <center>
+
+                        <img class="nav-icon" src="v2_resources/images/files_icon.png" alt="&#8645;"/>
+                        <p class="nav-link-text">Files</p>
+
+                      </center>
+                    </li>
+                  </a>
+
+                </ul>
+
+              </f1:if>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="visible-tablet visible-desktop">
+
+          <div id="portal-masthead" class='noPrint'>
+
+      			<div id="portal-nav">
+
+              <!-- logo -->
+              <div class="visible-tablet">
+
+                <div id="nav-logo">
+                  <center>
+                    <a href="/" target="_blank">
+                      <img src="v2_resources/images/dashboard_tablet_logo.png" alt="3Forge" />
+                    </a>
+                  </center>
+                </div>
+
+              </div>
+              <div class="visible-desktop">
+
+                <div id="nav-logo">
+                  <center>
+                    <a href="/" target="_blank">
+                      <img src="images/v2_white.svg" alt="3Forge" />
+                    </a>
+                  </center>
+                </div>
+
+              </div>
+
+              <!-- user info -->
+              <div id="user-info">
+                <center style="padding:0 5px;">
+
+                  <a href="secure_account.htm"><img src="v2_resources/images/person.png" alt="User" /></a>
+
+                  <!-- username -->
+                  <p style="color:white;word-wrap:break-word;margin: 5px 0;"><f1:out escape="FULL" value="${user.firstName}"/><b> </b><f1:out escape="FULL" value="${user.lastName}"/></p>
+
+                  <!-- user type -->
+                  <p class="text-center text-white">
+                    <f1:if test="OH.eq(${user.statusText},'ENTERPRISE')">Enterprise</f1:if>
+                    <f1:if test="OH.eq(${user.statusText},'ADMIN')">Admin</f1:if>
+                    <f1:if test="OH.ne(${user.statusText},'ENTERPRISE') && OH.ne(${user.statusText},'ADMIN')">Trial</f1:if>
+                    User
+                  </p>
+
+                </center>
+              </div>
+
+              <!-- navigation list -->
+              <ul id="nav-links" class="unstyled row-fluid">
+
+                <h5 class="text-white" style="text-transform:none;">Main</h5>
+
+                    <!-- dashboard -->
+                    <li <f1:if test="OH.eq(tab,'dashboard')"> class="selected" </f1:if>>
+                      <a href="dashboard.htm" title="Dashboard">
+                        <span>
+
+                          <img class="nav-icon" src="v2_resources/images/dashboard_icon.png" alt="&#9707;"/>
+                          <p class="nav-link-text">Dashboard</p>
+
+                        </span>
+                      </a>
+                    </li>
+
+                    <!-- for trial and enterprise users -->
+                    <f1:if test="OH.ne(${user.statusText},'ADMIN')">
+
+                        <!-- licenses -->
+                        <li <f1:if test="OH.eq(tab,'secure_licenses')"> class="selected" </f1:if>>
+                          <a href="secure_licenses.htm" title="Licenses">
+                            <span>
+
+                              <img class="nav-icon" src="v2_resources/images/licenses_icon.png" alt="&#9998;"/>
+                              <p class="nav-link-text">Licenses</p>
+
+                            </span>
+                          </a>
+                        </li>
+
+                        <!-- documents -->
+                        <li <f1:if test="OH.eq(tab,'documents')"> class="selected" </f1:if>>
+                          <a href="documents.htm" title="Documents">
+                            <span>
+
+                              <img class="nav-icon" src="v2_resources/images/document.png" alt="&#9874;"/>
+                              <p class="nav-link-text">Documents</p>
+
+                            </span>
+                          </a>
+                        </li>
+
+                        <!-- tutorials -->
+                        <li <f1:if test="OH.eq(tab,'tutorials')"> class="selected" </f1:if>>
+                          <a href="tutorials.htm" title="Tutorials">
+                            <span>
+
+                              <img class="nav-icon" src="v2_resources/images/tutorials_icon.png" alt="&#9655;"/>
+                              <p class="nav-link-text">Tutorials</p>
+
+                            </span>
+                          </a>
+                        </li>
+                        
+                        <!-- videos -->
+                        <li <f1:if test="OH.eq(tab,'videos')"> class="selected" </f1:if>>
+                          <a href="videos.htm" title="Videos">
+                            <span>
+
+                              <img class="nav-icon" src="v2_resources/images/videos_icon.png" alt="&#9655;"/>
+                              <p class="nav-link-text">Videos</p>
+
+                            </span>
+                          </a>
+                        </li>
+
+                        <!-- files -->
+                        <f1:if test="OH.eq(${user.statusText},'ENTERPRISE')">
+                          <li <f1:if test="OH.eq(tab,'secure_files')"> class="selected" </f1:if>>
+                            <a href="secure_files?tok=<f1:out value="${sectoken}"/>" title="Files">
+                              <span>
+
+                                <img class="nav-icon" src="v2_resources/images/files_icon.png" alt="&#8645;"/>
+                                <p class="nav-link-text">Files</p>
+
+                              </span>
+                            </a>
+                          </li>
+                        </f1:if>
+
+                    </f1:if>
+
+                <br>
+
+                <h5 class="text-white" style="text-transform:none;">Account</h5>
+
+                    <!-- settings -->
+                    <li <f1:if test="OH.eq(tab,'secure_account')"> class="selected" </f1:if>>
+                      <a href="secure_account.htm" title="Settings">
+                        <span>
+
+                          <img class="nav-icon" src="v2_resources/images/account_icon.png" alt="&#9728;"/>
+                          <p class="nav-link-text">Settings</p>
+
+                        </span>
+                      </a>
+                    </li>
+
+                    <!-- help -->
+                    <li <f1:if test="OH.eq(tab,'contact_support')"> class="selected" </f1:if>>
+                      <a href="contact_support.htm" title="Settings">
+                        <span>
+
+                          <img class="nav-icon" src="v2_resources/images/help_icon.png" alt="?"/>
+                          <p class="nav-link-text">Help</p>
+
+                        </span>
+                      </a>
+                    </li>
+
+                    <!-- logout -->
+                    <li <f1:if test="OH.eq(tab,'login')"> class="selected" </f1:if>>
+                      <a href="../../logout" title="Logout">
+                        <span>
+
+                          <img class="nav-icon" src="v2_resources/images/logout_icon.png" alt="&#9711;"/>
+                          <p class="nav-link-text">Logout</p>
+
+                        </span>
+                      </a>
+                    </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>

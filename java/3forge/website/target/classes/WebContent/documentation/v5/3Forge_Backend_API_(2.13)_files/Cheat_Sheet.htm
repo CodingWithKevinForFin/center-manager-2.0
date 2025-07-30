@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "7.1_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="3Forge Backend API (2.13).docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Cheat Sheet</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Cheat Sheet">
+        <span>Cheat Sheet</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Cheat Sheet</h1>
+<p><b>Valid outbound types <i>and required parameters <span style="color: #00B050;">(optional 
+ pre-defined parameters in green)</span></i></b></p>
+<p> </p>
+<ul style="list-style: disc;">
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: normal; 
+									 font-size: 12pt;"><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+															 color: #ff0000;">L</span> 
+	 (login)</p></li>
+</ul>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">I</span> (app ID)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #00af4f;">O</span> <span style="color: #00B050;">(session 
+ options)</span></i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt; color: #00B050; font-family: &#39;Courier New&#39;, monospace;"><i>PL 
+ <span style="font-family: Arial, sans-serif;">(plugin options)</span></i></p>
+<ul style="list-style: disc; font-size: 12pt;">
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: normal; 
+									 font-size: 12pt;"><span courier="" style="color: #ff0000; 
+															 font-family: &#39;Courier New&#39;, monospace;">S</span> 
+	 (status)</p></li>
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: normal; 
+									 font-size: 12pt;"><span courier="" style="color: #ff0000; 
+															 font-family: &#39;Courier New&#39;, monospace;">A</span> 
+	 (alert) <span style="color: #ff0000;">DEPRECATED</span></p></li>
+</ul>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">I</span> 
+ (alert ID)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">L</span> (level)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">T</span> (alert type)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #00af4f;">E</span> <span style="color: #00B050;">(expires 
+ on)</span></i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; color: #00B050; 
+	 margin-left: 80px; font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace;">U</span> 
+ (user assignment)</i></p>
+<ul style="list-style: disc; font-size: 12pt;">
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: normal; 
+									 font-size: 12pt;"><span courier="" style="color: #ff0000;">O</span> 
+	 (object)</p></li>
+</ul>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">I</span> (object ID)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">T</span> (object Type)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #00af4f; font-family: &#39;Courier New&#39;, monospace;">E</span> 
+ <span style="color: #00B050;">(expires on)</span></i></p>
+<ul style="list-style: disc; font-size: 12pt;">
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: normal; 
+									 font-size: 12pt;"> <span courier="" style="color: #ff0000;">C</span> (command definition)</p></li>
+</ul>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">I</span> (command ID)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; color: #00B050; 
+	 margin-left: 80px; font-size: 12pt;"><i><span style="font-family: &#39;Courier New&#39;, monospace;">N</span> 
+ (name)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; color: #00B050; 
+	 margin-left: 80px; font-size: 12pt;"><i><span style="font-family: &#39;Courier New&#39;, monospace;">W</span> 
+ (where - row level)</i></p>
+<p style="margin-bottom: .0001pt; color: #00B050; line-height: normal; 
+	 margin-left: 80px; font-size: 12pt;"><i><span style="font-family: &#39;Courier New&#39;, monospace;">T</span> 
+ (where - panel level)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #00af4f; font-family: &#39;Courier New&#39;, monospace;">L</span> 
+ <span style="color: #00B050;">(permissions Level)</span></i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #00af4f; font-family: &#39;Courier New&#39;, monospace;">A</span> 
+ <span style="color: #00B050;">(form definition)</span></i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #00af4f;">H</span> <span style="color: #00B050;">(help)</span></i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #00af4f; font-family: &#39;Courier New&#39;, monospace;">P</span> 
+ <span style="color: #00B050;">(priority)</span></i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #00af4f; font-family: &#39;Courier New&#39;, monospace;">E</span> 
+ <span style="color: #00B050;">(enabled)</span></i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #00af4f; font-family: &#39;Courier New&#39;, monospace;">F</span> 
+ <span style="color: #00B050;">(fields)</span></i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #00af4f; font-family: &#39;Courier New&#39;, monospace;">M</span> 
+ <span style="color: #00B050;">(multiple)</span></i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #00af4f; font-family: &#39;Courier New&#39;, monospace;">S</span> 
+ <span style="color: #00B050;">(</span><span style="color: #00af4f;">style</span><span style="color: #00B050;">)</span></i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; color: #00B050; 
+	 margin-left: 80px; font-size: 12pt;"><i><span style="font-family: &#39;Courier New&#39;, monospace;">C</span> 
+ (condition)</i></p>
+<p style="margin-bottom: .0001pt; color: #00B050; line-height: normal; 
+	 margin-left: 80px; font-size: 12pt;"><i><span style="font-family: &#39;Courier New&#39;, monospace;">X</span> 
+ (execute AmiScript)</i></p>
+<ul style="list-style: disc; font-size: 12pt;">
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; color: #00B050; 
+									 line-height: normal; font-size: 12pt;"><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">R</span><span style="color: Transparent;"> </span><span style="color: #000000;">(response 
+	 to execute command)  </span></p></li>
+</ul>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">I</span> (Unique ID)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">S</span> (status)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #00af4f;">M</span> 
+ <span style="color: #00af4f;">(message)</span></i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span style="color: #00af4f;">X (execute AmiScript)</span></i></p>
+<ul style="list-style: disc; font-size: 12pt;">
+	<li style="color: #000000; font-size: 12pt;"><p style="margin-bottom: .0001pt; 
+													 line-height: normal; 
+													 color: #000000; font-size: 12pt;"><span courier="" style="font-family: &#39;Courier New&#39;, monospace; color: #ff0000;">D</span> 
+	 (delete object)</p></li>
+</ul>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">I</span> 
+ (object ID)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">T</span> (object Type)</i></p>
+<ul style="list-style: disc; font-size: 12pt;">
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; color: Transparent; 
+									 line-height: normal; font-size: 12pt;"><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">X</span> 
+	 <span style="color: #000000;">(exit)</span></p></li>
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; color: Transparent; 
+									 line-height: normal; font-size: 12pt;"><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">H</span> 
+	 <span style="color: #000000;">(help)</span></p></li>
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; color: Transparent; 
+									 line-height: normal; font-size: 12pt;"><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">P</span> 
+	 <span style="color: #000000;">(pause) only to be used in testing</span></p></li>
+</ul>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">D</span> 
+ (delay)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal;"> </p>
+<p style="margin-bottom: .0001pt; line-height: normal;"><b>Valid inbound 
+ types <i>and parameters always supplied <span style="color: #00af4f;">(occasionally 
+ supplied parameters in green)</span></i></b></p>
+<p style="margin-bottom: .0001pt; line-height: normal;"> </p>
+<ul style="list-style: disc;">
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: normal; 
+									 font-size: 12pt;"><span courier="" style="color: #ff0000; 
+															 font-family: &#39;Courier New&#39;, monospace;">M</span> 
+	 (status message)</p></li>
+</ul>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">S</span> (status)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #ff0000;">Q</span> (sequence number)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #00af4f;">M</span> <span style="color: #00B050;">(message) </span></i></p>
+<ul style="list-style: disc; font-size: 12pt;">
+	<li style="font-size: 12pt;"><p style="margin-bottom: .0001pt; line-height: normal; 
+									 font-size: 12pt;"><span courier="" style="color: #ff0000;">E</span> 
+	 (execute command)</p></li>
+</ul>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">I</span> 
+ (unique ID)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">C</span> 
+ (a string command)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="color: #ff0000; font-family: &#39;Courier New&#39;, monospace;">U</span> 
+ (user name)</i></p>
+<p style="margin-bottom: .0001pt; line-height: normal; margin-left: 80px; 
+	 font-size: 12pt;"><i><span courier="" style="font-family: &#39;Courier New&#39;, monospace; 
+								 color: #00af4f;">O</span> <span style="color: #00B050;">(associated 
+ object ID)</span></i></p>
+<i><span style="font-size: 11.0pt; line-height: 115%; font-family: Arial, sans-serif; 
+		 color: #00B050;"><br style="clear: all;" clear="all"/>
+</span></i> 
+<p> </p>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

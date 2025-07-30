@@ -1,0 +1,264 @@
+<!-- verify email modal -->
+<div class="modal fade" id="verifyEmail" tabindex="-1" role="dialog" aria-labelledby="verifyEmail">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title" id="modalTitle">Please verify your email address</h3>
+        </div>
+
+        <div class="modal-body">
+
+          <p>Certain features and pages are disabled until your email address has been verified. Please check your inbox (including your spam folder) to find our verification email.</p><br>
+
+          <p>Can't find our email? <a href="/resend?tok=<f1:out value="${sectoken}"/>">Resend verification</a></p>
+
+        </div>
+
+    </div>
+  </div>
+</div>
+
+<iframe name="hf" style="display:none;"></iframe>
+  <!-- contact form modal -->
+  <div class="contactFormModal modal fade" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="contactFormModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="modalTitle">Contact Support</h3>
+          </div>
+
+          <div class="modal-body">
+
+            <form action="" onSubmit="" method="post" style=" margin-left: 25px;"class="" id="contactForm"><input id='tok' type="hidden" value='<f1:out value="${sectoken}"/>'>
+
+              <label style="color:red;" id='csError'></label>
+
+              <textarea id="message" class="contactFormInput" name="message" placeholder="What is your support question?" rows="7"></textarea>
+              <input id='type' type="hidden" value='question'/>
+              <input id='func' type="hidden" value='onContactSupportResponse'/>
+
+              <br><br>
+
+              <label>What is your preferred contact method?</label>
+
+              <div class="radio">
+                <label>
+                  <input type="radio" name="contactMethod" id="contactMethod" class="contactFormInput" value="email" checked>
+                  Email: <f1:out escape="FULL" value="${user.userName}"/>
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="contactMethod" id="contactMethod" class="contactFormInput" value="phone">
+                  Phone: <f1:out escape="FULL"  value="${user.phone}"/>
+                </label>
+              </div>
+
+              <br>
+
+
+            </form>
+
+              <label style="margin-left: 25px;">(Optional) Attach up to 3 Files:</label>
+              <form id="submitFile0" method="post" action="attach" ENCTYPE="multipart/form-data" target="hf"><input name='tok' type="hidden" value='<f1:out value="${sectoken}"/>'> <input type="hidden" id="pos" name="pos" value='0'> <input type="file" name="file" id="file" class="contactFormInput" style="color:#141414" /> </form>
+              <form id="submitFile1" method="post" action="attach" ENCTYPE="multipart/form-data" target="hf"><input name='tok' type="hidden" value='<f1:out value="${sectoken}"/>'> <input type="hidden" id="pos" name="pos" value='1'> <input type="file" name="file" id="file" class="contactFormInput" style="color:#141414" /> </form>
+              <form id="submitFile2" method="post" action="attach" ENCTYPE="multipart/form-data" target="hf"><input name='tok' type="hidden" value='<f1:out value="${sectoken}"/>'> <input type="hidden" id="pos" name="pos" value='2'> <input type="file" name="file" id="file" class="contactFormInput" style="color:#141414" /> </form>
+
+              <hr>
+              <label style="margin-left: 25px;">After submitting the form you will receive a confirmation email containing a copy of your support question.</label>
+
+          </div>
+
+          <div class="modal-footer">
+            <center>
+
+              <button id="contactSubmit" data-toggle="modal" class="btn btn-info btn-theme1" onclick='ajaxNow("contactSupport",getFields("contactForm"));onContactSupportResponse("sending","Sending....");return false'> Contact Us </button>
+
+              <p id="contactDelayMsg" class="smalltext delayMsg" style="margin-bottom: 0;">If you are uploading attachments, this may take a while. Please do not refresh the page.</p>
+
+            </center>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- pricing quote modal -->
+  <div class="modal fade" id="purchaseModal" tabindex="-1" role="dialog" aria-labelledby="purchaseModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+            <h3 class="modal-title" id="modalTitle">Pricing request</h3>
+          </div>
+
+          <div class="modal-body">
+
+            <form action="" onSubmit="" method="post" class="" id="quoteForm"><input id='tok' type="hidden" value='<f1:out value="${sectoken}"/>'>
+
+              <label style="color:red;" id='rqError'></label>
+
+              <label>How many employees will use the software?</label>
+
+              <label class="radio-inline">
+                <input type="radio" name="userCount" id="userCount" class="quoteFormInput" value="I don't know" checked> I don't know
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="userCount" id="userCount" class="quoteFormInput" value="0-10"> 0-10
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="userCount" id="userCount" class="quoteFormInput" value="11-50"> 11-50
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="userCount" id="userCount" class="quoteFormInput" value="51-200"> 51-200
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="userCount" id="userCount" class="quoteFormInput" value="200+"> 200+
+              </label>
+
+
+              <br><br>
+
+              <label id="quote-message">(Optional) Please tell us a bit about your company and how you intend to use the software:</label>
+              <textarea id="message" class="quoteFormInput" rows='4'></textarea>
+              <input id='type' type="hidden" value='quote'/>
+              <input id='func' type="hidden" value='onRequestQuoteResponse'/>
+
+              <br><br>
+
+              <label>What is your preferred contact method?</label>
+
+              <div class="radio">
+                <label>
+                  <input type="radio" name="contactMethod" id="contactMethod" class="quoteFormInput" value="email" checked>
+                  Email: <f1:out escape="FULL" value="${user.userName}"/>
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="contactMethod" id="contactMethod" class="quoteFormInput" value="phone">
+                  Phone: <f1:out escape="FULL"  value="${user.phone}"/>
+                </label>
+              </div>
+
+            </form>
+
+          </div>
+
+          <div class="modal-footer">
+            <center>
+
+              <button id="requestSubmit" data-toggle="modal" class="btn btn-info btn-theme1">Request my free quote</button>
+
+              <p id="quoteDelayMsg" class="smalltext delayMsg" style="margin-bottom: 0;">Please check your inbox for our confirmation email. If you are experiencing problems with the form, please email us directly at info@3forge.com</p>
+
+            </center>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- submit confirmation -->
+  <div class="modal fade" id="submitConfirmation" tabindex="-1" role="dialog" aria-labelledby="submitConfirmation">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="modalTitle">Message sent</h3>
+          </div>
+
+          <div class="modal-body">
+
+            <p>Your request has been submitted! Our team will follow up shortly.</p>
+
+          </div>
+
+          <div class="modal-footer">
+            <center>
+              <button id="" data-toggle="modal" data-dismiss="modal" class="btn btn-info btn-theme1">Close</button>
+            </center>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- trial request confirmation -->
+  <div class="modal fade" id="downloadRequestSent" tabindex="-1" role="dialog" aria-labelledby="downloadrequest">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="modalTitle">Trial Request Sent</h3>
+          </div>
+
+          <div class="modal-body">
+
+            <p style="padding: 15px 10px;">Your proof of concept request has been received! Our team will contact you shortly. In the meantime, check out our tutorials to help you get familiar with the platform. </p><br>
+
+            <center style="margin: 0 100px;">
+
+                <a href="//fast.wistia.net/embed/playlists/zc19z1n7zy?bento%5BmenuPosition%5D=bottom&loop=true&media_0_0%5BautoPlay%5D=true&media_0_0%5BcontrolsVisibleOnLoad%5D=true&popover=true&theme=bento&version=v1&videoOptions%5BautoPlay%5D=true&videoOptions%5BplayerColor%5D=e27025&videoOptions%5BvideoHeight%5D=675&videoOptions%5BvideoWidth%5D=1200&videoOptions%5BvolumeControl%5D=true" class="wistia-popover[height=818,playerColor=e27025,width=1200]"><img src="http://embed.wistia.com/deliveries/1d76516d0cadc43a8efeeb5de3bc6ace21f25bb8.jpg?image_play_button=true&image_play_button_color=e27025e0&image_crop_resized=500x281" alt="" /></a>
+                        <f1:script src="js/popover-v1.js" nonce="true"/>
+
+                <br><br>
+
+                <h5>Getting started</h5>
+                <p>3 videos</p>
+
+            </center>
+
+          </div>
+
+          <div class="modal-footer">
+            <center>
+              <a href="videos.htm">
+                <button class="btn btn-info btn-theme1">See more tutorials</button>
+              </a>
+            </center>
+          </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <f1:script src="inline" nonce="true"/>
+   files1 = document.getElementById("file0");
+   files2 = document.getElementById("file1");
+   files3 = document.getElementById("file2");
+   
+   files1.addEventListener('change', function(event) {
+   	fileSelected(event, 0, '<f1:out value="${sectoken}"/>');
+   });
+   
+   files2.addEventListener('change', function(event) {
+   	fileSelected(event, 1, '<f1:out value="${sectoken}"/>');
+   });
+   
+   files3.addEventListener('change', function(event) {
+   	fileSelected(event, 2, '<f1:out value="${sectoken}"/>');
+   });
+   
+  
+  </script>
+  
+  <f1:script src="inline" nonce="true"/>
+  
+	  quotebtn = document.getElementById("requestSubmit");
+	  
+	  quotebtn.addEventListener('click', function(event) {
+	 	ajaxNow("contactSupport",getFields("quoteForm"));
+	  	onRequestQuoteResponse("sending","Requesting....");
+	  	return false;
+	  });
+	  
+  </script>

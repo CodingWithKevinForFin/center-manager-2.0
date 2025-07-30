@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="loader">
+<f1:secure/>
+<head>
+	<title>Career</title>
+	<f1:include page="'_/head.htm'"/>
+</head>
+<body>
+	<div id="wrapper">
+		<f1:include page="'_/header.html'"/>
+		<main id="main">
+			<section class="visual-section viewport-section">
+				<div class="container">
+					<div class="decor decor-outline yellow"></div>
+					<div class="decor decor-filled"></div>
+					<div class="visual style-2">
+						<div class="text-holder">
+							<div class="text-wrap smaller">
+								<h1 class="h1">3forge Careers</h1>
+								<p>At 3forge, we are perfecting the balance between powerful and accessible - helping companies thrive by turning opportunity into action.
+	 							Join our team if you're looking to find a place to build your career. Here, we foster an environment that is engaging, caring and fun. </p>
+							</div>
+						</div>
+						<div class="img-holder">
+							<img src="images/customer-stories-img.png" srcset="images/customer-stories-img@2x.png 2x" alt="" width="526" height="209">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="job-posting-section viewport-section">
+				<div class="container job-posting-container">
+					<div class="job-postings">
+						<div class="job-posting">
+							<div class="job-title">Junior Solutions Engineer - Full Time Graduate Role</div>
+							<div class="job-location">
+								<div class="job-location-img"><img src="images/map-pin.svg"></div>
+								<div class="job-location-name">Toronto</div>
+							</div>
+							<div class="job-desc">At 3forge, we are developing the next generation of hybrid application development platforms. As a 3forge Jr Solutions Engineer, you will be placed in a dynamic environment with state-of-the-art technology and big data use cases, enabling you to develop your skills and learn new technologies.</div>
+							<div class="job-apply btn-holder" onclick="jobRoleClicked(7)">
+								<a href="#" class="btn xl">View Details</a>
+							</div>
+						</div>
+						<div class="job-posting">
+							<div class="job-title">Technology Summer Internship</div>
+							<div class="job-location">
+								<div class="job-location-img"><img src="images/map-pin.svg"></div>
+								<div class="job-location-name">New York City</div>
+							</div>
+							<div class="job-desc">At 3forge, we are developing the next generation of hybrid application development platforms. As a 3forge Summer Intern you will be placed in a dynamic environment with state-of-the-art technology and big data use cases, enabling you to develop your understanding of software and learn new skills.</div>
+							<div class="job-apply btn-holder" onclick="jobRoleClicked(1)">
+								<a href="#" class="btn xl">View Details</a>
+							</div>
+						</div>
+						<div class="job-posting">
+							<div class="job-title">Junior Solutions Engineer - Full Time Graduate Role</div>
+							<div class="job-location">
+								<div class="job-location-img"><img src="images/map-pin.svg"></div>
+								<div class="job-location-name">New York City</div>
+							</div>
+							<div class="job-desc">At 3forge, we are developing the next generation of hybrid application development platforms. As a 3forge Jr Solutions Engineer, you will be placed in a dynamic environment with state-of-the-art technology and big data use cases, enabling you to develop your skills and learn new technologies.</div>
+							<div class="job-apply btn-holder" onclick="jobRoleClicked(2)">
+								<a href="#" class="btn xl">View Details</a>
+							</div>
+						</div>
+						<div class="job-posting">
+							<div class="job-title">Technology Summer Internship</div>
+							<div class="job-location">
+								<div class="job-location-img"><img src="images/map-pin.svg"></div>
+								<div class="job-location-name">London</div>
+							</div>
+							<div class="job-desc">At 3forge, we are developing the next generation of hybrid application development platforms. As a 3forge Summer Intern you will be placed in a dynamic environment with state-of-the-art technology and big data use cases, enabling you to develop your understanding of software and learn new skills.</div>
+							<div class="job-apply btn-holder" onclick="jobRoleClicked(3)">
+								<a href="#" class="btn xl">View Details</a>
+							</div>
+						</div>
+						<div class="job-posting">
+							<div class="job-title">Junior Solutions Engineer - Full Time Graduate Role</div>
+							<div class="job-location">
+								<div class="job-location-img"><img src="images/map-pin.svg"></div>
+								<div class="job-location-name">London</div>
+							</div>
+							<div class="job-desc">At 3forge, we are developing the next generation of hybrid application development platforms. As a 3forge Jr Solutions Engineer, you will be placed in a dynamic environment with state-of-the-art technology and big data use cases, enabling you to develop your skills and learn new technologies.</div>
+							<div class="job-apply btn-holder" onclick="jobRoleClicked(4)">
+								<a href="#" class="btn xl">View Details</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<f1:include page="'_/footer.html'"/>
+	</div>
+	
+	<script type="text/javascript">
+		function jobRoleClicked(role) {
+			if (role == null)
+				return;
+			
+			if (role == 1)
+				var win = window.open("pdfs/NYC_Summer_Intern_JobPost.pdf", "_blank");
+			else if (role == 2) 
+				var win = window.open("pdfs/NYC_Graduate_JobPost.pdf", "_blank");
+			else if (role == 3) 
+				var win = window.open("pdfs/London_Summer_Intern_JobPost.pdf", "_blank");
+			else if (role == 4) 
+				var win = window.open("pdfs/London_Graduate_JobPost.pdf", "_blank");
+			else if (role == 5) 
+				var win = window.open("pdfs/Singapore_Summer_Intern_JobPost.pdf", "_blank");
+			else if (role == 6) 
+				var win = window.open("pdfs/Singapore_Graduate_JobPost.pdf", "_blank");
+			else if (role == 7)
+				var win = window.open("pdfs/Toronto_Graduate_JobPost.pdf", "_blank");
+			
+			var url = 'onJobRoleClicked';
+			var paramsText= 'role=' + role;
+			var par = new XMLHttpRequest();
+			par.onerror=function(o){onAjaxError(o);};
+			par.onreadystatechange=function(o){
+				// nothing to do
+			};
+			par.open("POST",url,true);
+			par.setRequestHeader("Content-type","text/plain");
+			par.send(paramsText);
+			par.paramsText=paramsText;
+		}
+	</script>
+	
+</body>
+</html>

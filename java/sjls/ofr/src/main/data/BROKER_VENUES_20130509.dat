@@ -1,0 +1,10 @@
+#broker_id|	venue_type_list|	dark_pool_list | can_shortSell
+#BCLSJ| |	BARX | Yes
+#MSSJ| |	CAES | Yes
+#GSSJ| |	CAES | Yes
+#DBSJ| |	CAES | Yes
+#FBSJ| |	CAES | Yes
+#UBSSJ| |	CAES | Yes
+MLSJ| |	MLXN | Yes
+#JPMSJ| |	CAES | Yes
+SJSJ| |	CAES | Yes

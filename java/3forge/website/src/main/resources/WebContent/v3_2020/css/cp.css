@@ -1,0 +1,206 @@
+.cp-container select {
+	width: 160px;
+    margin: 10px 15px;
+    padding: 6px;
+    border: 1px solid #e5e8ec;
+    border-radius: 5px;
+    border-bottom: 2px solid #e5e8ec
+}
+.inputBox {
+	width: 90px;
+    margin: 10px 15px;
+    padding: 6px;
+    border: 1px solid #e5e8ec;
+    border-radius: 5px;
+    border-bottom: 2px solid #e5e8ec
+}
+.cp-container .cols-container {
+	margin-left: 60px;
+}
+.cp-container .cols-container .col-type-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.cp-container .num-cols-input {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.cp-title {
+    font-size: 35px;
+    font-weight: 600;
+}
+.cp-section .input-label {
+    font-size: 25px;
+    font-weight: 500;
+}
+.cols-container .input-label {
+    font-size: 20px;
+    font-weight: 400;
+}
+.cp-container .cp-result {
+	font-size: 30px;
+    color: green;
+}
+.cp-container .cal-cap-btn-container {
+	margin-top: 30px;
+}
+.cp-container .add-col {
+	margin-left: 10px;
+}
+.cp-container .add-table {
+	margin-top: 20px;
+	/*margin-left: 10px;*/
+}
+.tableDiv {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.tableTitleSpan {
+    color: #00008B;
+    width : 150px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 25px;
+}
+.nRowsTextSpan {
+	/*margin-right: 20px;*/
+    width : 135px;
+    display: inline-block;
+    color: #000000;
+    font-weight: bold;
+}
+.nIdxsTextSpan {
+	/*margin-right: 20px;*/
+	width : 135px;
+	display: inline-block;
+    color: #000000;
+    font-weight: bold;
+}
+.maxLenTextSpan {
+	margin-left: 10px;
+	margin-right: 5px;
+	/*width : 135px;*/
+	display: inline-block;
+    color: #000000;
+    font-weight: nornal;
+}
+.canBeNullTextSpan {
+	margin-left: 10px;
+	margin-right: 4px;
+	/*width : 135px;*/
+	display: inline-block;
+    color: #000000;
+    font-weight: nornal;
+}
+.nullTextSpan {
+    margin-right: 0px;
+    color: #000000;
+    font-weight: bold;
+}
+.colTypeTextSpan {
+	margin-top: 20px;
+	margin-left: 40px;
+	width : 95px;
+	display: inline-block;
+    color: #000000;
+    font-weight: normal;
+}
+.addColButton {
+    color: #ffffff;
+    font-weight: normal;
+    box-shadow: 2px 2px #e5e8ec; 
+    background-color: #0066cc;
+    border: 1px solid #e5e8ec;
+    border-radius: 5px;
+    border-bottom: 2px solid #e5e8ec
+}
+.removeColButton {
+    color: #ffffff;
+    font-weight: normal;
+    box-shadow: 2px 2px #e5e8ec;
+    background-color: #ff0000;
+    border: 1px solid #e5e8ec;
+    border-radius: 5px;
+    border-bottom: 2px solid #e5e8ec
+}
+.remTableButton {
+    color: #ffffff;
+    font-weight: normal;
+    box-shadow: 2px 2px #e5e8ec; 
+    background-color: #ff0000;
+    border: 1px solid #e5e8ec;
+    border-radius: 5px;
+    border-bottom: 2px solid #e5e8ec
+}
+.maxLenInput {
+	width : 50px;
+}
+.maxLenInputBox {
+	width: 90px;
+    margin: 10px 15px;
+    padding: 6px;
+    border: 1px solid #e5e8ec;
+    border-radius: 5px;
+    border-bottom: 2px solid #e5e8ec	
+}
+.nullCheckBox {
+	/*width: 20px;*/
+    margin: 10px 15px;
+    margin-right: 30px;
+    padding: 6px;
+    border: 1px solid #e5e8ec;
+    border-radius: 5px;
+    border-bottom: 2px solid #e5e8ec	
+}
+.tableResultTextSpan {
+	margin-top: 20px;
+	margin-right: 0px;
+	width : 300px;
+	display: inline-block;
+    color: #000000;
+    font-weight: normal;
+    font-size: 20px;
+    color: black;
+}
+.tableNameTextSpan {
+	margin-top: 20px;
+	margin-right: 0px;
+	width : 100px;
+	display: inline-block;
+    color: #00008B;
+    font-weight: bold;
+    font-size: 20px;
+}
+.tableSuggestionTextSpan {
+	margin-top: 20px;
+	margin-right: 0px;
+	width : 300px;
+	display: inline-block;
+    color: #000000;
+    font-weight: normal;
+    font-size: 20px;
+    color: green;
+}
+.tablesResultTextSpan {
+	margin-top: 20px;
+	margin-right: 0px;
+	width : 800px;
+	display: inline-block;
+    color: #000000;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+}
+.tablesSuggestionTextSpan {
+	margin-top: 20px;
+	margin-right: 0px;
+	width : 800px;
+	display: inline-block;
+    color: #000000;
+    font-weight: bold;
+    font-size: 25px;
+    color: green;
+}

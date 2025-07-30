@@ -1,0 +1,18 @@
+****TEST_INPUT_QUERY****
+{return true != true;}
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+****TEST_RESULT****
+false
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+
+
+QUERY_COMPLETED : 
+null
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****

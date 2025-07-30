@@ -1,0 +1,50 @@
+****TEST_INPUT_QUERY****
+select count(*) from empty;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+
+****TEST_RESULT****
++------+
+|empty |
++------+
+|count_|
+|Long  |
++------+
+|0     |
++------+
+
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+SELECT count("*") FROM empty
+
+PROJECTION : 
+SELECT count("*") FROM empty
+
+GROUPING : 
+Grouped 0 rows into 1 buckets
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+empty
++----------------------------+
+|           empty            |
++-------+------+------+------+
+|n      |x     |y     |z     |
+|Integer|Double|Double|Double|
++-------+------+------+------+
++-------+------+------+------+
+

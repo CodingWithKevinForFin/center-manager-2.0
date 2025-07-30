@@ -1,0 +1,157 @@
+/* Modal for Share Error */
+#share-modal-container {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 100; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+#share-modal {
+	background: white;
+	padding: 20px;
+}
+#share-link {
+	width: 250px;
+	background: #e8e7e7;
+	border: none;
+}
+#share-close-btn-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+}
+#share-close-btn {
+	width: 100px;
+	color: white;
+	background: #f16900;
+	border: none;
+}
+#share-copy-btn {
+	color: white;
+	background: #f16900;
+	border: none;
+}
+.share-text-copy-container {
+	display: flex;
+	justify-content: center;
+}
+/* BIG SCREENS */
+.platform-overview-container .title {
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 70px;
+}
+.product-videos-container {
+	width: 100%;
+}
+.vids-container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: flex-start;
+}
+.vid {
+	width: 540px;
+	margin: 0 40px 40px 0;
+}
+.vid-banner {
+	width: 100%;
+	height: 20px;
+	background-image: url('../images/white-dot.svg');
+	background-repeat: repeat;
+}
+.vid-title {
+	font-size: 25px;
+	font-weight: 500;
+	margin: 10px 0;
+	hieght: 420px;
+}
+.vid-share {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+    width: 120px;
+    border-radius: 3px;
+    margin: 10px 0 0 0;
+    background: #f16900;
+    height: 30px;
+}
+.vid-share:hover {
+	cursor: pointer;
+}
+.share-icon {
+	width: 40px;
+	height: 40px;
+}
+.share-text {
+	font-size: 20px;
+	text-transform: uppercase;
+}
+/* SMALL TO MID-SIZED LAPTOPS */
+@media all and (min-width: 981px) and (max-width: 1800px) {
+	.vid {
+		width: 420px;
+	}
+	.vid-title {
+		font-size: 22px;
+	}
+}
+
+/*TABLET*/
+@media all and (min-width: 577px) and (max-width: 980px) {
+	.vids-container {
+		justify-content: center;
+	}
+	.vid {
+		width: 700px;
+	}
+}
+/*MOBILE*/
+@media all and (max-width: 576px) {
+	.platform-overview-container .title {
+    	font-size: 40px;
+    	font-weight: 500;
+    	margin-bottom: 30px;
+	}
+	.vids-container {
+		justify-content: center;
+	}
+	.vid-title {
+		font-size: 20px;
+		font-weight: 400;
+	}
+	.vid-share {
+	    width: 95px;
+	    height: 25px;
+	}
+	.vid-share:hover {
+		cursor: pointer;
+	}
+	.share-icon {
+		width: 27px;
+		height: 27px;
+	}
+	.share-text {
+		font-size: 17px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

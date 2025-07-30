@@ -1,0 +1,134 @@
+****TEST_INPUT_QUERY****
+create table ABC as select * from A, B, C where A.x == B.x && B.y == C.y && A.y == C.x;
+****TEST_INPUT_GLOBAL_VARS****
+{}
+****TEST_INPUT_TABLES****
+A
++---------------+
+|       A       |
++-------+-------+
+|x      |y      |
+|Integer|Integer|
++-------+-------+
+|0      |0      |
+|0      |1      |
+|1      |0      |
+|1      |1      |
++-------+-------+
+
+B
++---------------+
+|       B       |
++-------+-------+
+|x      |y      |
+|Integer|Integer|
++-------+-------+
+|0      |0      |
+|0      |1      |
+|1      |0      |
+|1      |1      |
++-------+-------+
+
+C
++---------------+
+|       C       |
++-------+-------+
+|x      |y      |
+|Integer|Integer|
++-------+-------+
+|0      |0      |
+|0      |1      |
+|1      |0      |
+|1      |1      |
++-------+-------+
+
+****TEST_RESULT****
+8
+****TEST_QUERY_PLAN****
+QUERY_RECEIVED : 
+CREATE TABLE AS ABC  SELECT "*" FROM A,B,C WHERE A . x == B . x && B . y == C . y && A . y == C . x
+
+PROJECTION : 
+SELECT "*" FROM A,B,C WHERE A . x == B . x && B . y == C . y && A . y == C . x
+
+TEMP_INDEX : 
+On 'B.x'
+
+TEMP_INDEX : 
+On 'C.x'
+
+NESTING_QUERY : 
+#0 A indexing to [A.x ==> B.x, A.y ==> C.x]
+
+NESTING_QUERY : 
+#1 B
+
+NESTING_QUERY : 
+#2 C
+
+NONINDEX_WHERE : 
+(B.y == C.y)
+
+QUERY_COMPLETED : 
+ColumnarTable
+
+
+****TEST_RESULT_GLOBAL_VARS****
+{}
+****TEST_RESULT_TABLES****
+ABC
++-----------------------------------------------+
+|                      ABC                      |
++-------+-------+-------+-------+-------+-------+
+|x      |y      |B_x    |B_y    |C_x    |C_y    |
+|Integer|Integer|Integer|Integer|Integer|Integer|
++-------+-------+-------+-------+-------+-------+
+|0      |0      |0      |0      |0      |0      |
+|0      |0      |0      |1      |0      |1      |
+|0      |1      |0      |0      |1      |0      |
+|0      |1      |0      |1      |1      |1      |
+|1      |0      |1      |0      |0      |0      |
+|1      |0      |1      |1      |0      |1      |
+|1      |1      |1      |0      |1      |0      |
+|1      |1      |1      |1      |1      |1      |
++-------+-------+-------+-------+-------+-------+
+
+A
++---------------+
+|       A       |
++-------+-------+
+|x      |y      |
+|Integer|Integer|
++-------+-------+
+|0      |0      |
+|0      |1      |
+|1      |0      |
+|1      |1      |
++-------+-------+
+
+B
++---------------+
+|       B       |
++-------+-------+
+|x      |y      |
+|Integer|Integer|
++-------+-------+
+|0      |0      |
+|0      |1      |
+|1      |0      |
+|1      |1      |
++-------+-------+
+
+C
++---------------+
+|       C       |
++-------+-------+
+|x      |y      |
+|Integer|Integer|
++-------+-------+
+|0      |0      |
+|0      |1      |
+|1      |0      |
+|1      |1      |
++-------+-------+
+

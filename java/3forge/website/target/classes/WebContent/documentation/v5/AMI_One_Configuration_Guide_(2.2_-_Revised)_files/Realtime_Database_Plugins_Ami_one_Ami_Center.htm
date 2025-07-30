@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "6.2.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="OriginalFile" content="AMI One Configuration Guide (2.2 - Revised).docx"/>
+<meta name="generator" content="Adobe RoboHelp 2020"/>
+<title>Realtime Database Plugins (AMI One, AMI Center)</title>
+<link rel="StyleSheet" href="../assets/css/AMI_Documentation_Style.css" type="text/css"/>
+<style type="text/css">/*<![CDATA[*/
+A:visited {
+	color: #800080;
+}
+A:link {
+	color: #0000ff;
+}
+/*]]>*/</style>
+</head>
+
+<body class="topicbody">
+  <div class="topic-header rh-hide" id="rh-topic-header" onclick="rh._.goToFullLayout()">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Realtime Database Plugins (AMI One, AMI Center)">
+        <span>Realtime Database Plugins (AMI One, AMI Center)</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <span>Click here to see this page in full context</span>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+    <div class="deprecation-container" style="display: flex; justify-content: center; align-items: center; background: #FFCC00; height: 60px;">
+      <div class="message" style="color: #000000; font-size: 20px"><span class="warning-sign">⚠</span> This page has been deprecated. Please visit <a class="new-doc-link" href="https://docs.3forge.com" target="_blank">New 3forge Documentation</a> for updated content.</div>
+    </div>
+  </div>
+  <div>
+<h1>Realtime Database Plugins (AMI one, AMI Center)</h1>
+<ul style="list-style: disc;">
+	<li style="font-weight: normal; font-style: normal; font-size: 12pt;"><p><span class="CourierBlueStyle">ami.object.nobroadcast</span>: Used to stop 
+	 a type of message or data from broadcasting to AMI Web. This is used 
+	 for increasing the performance of AMI Web when a type of data does 
+	 not need to be pushed in real time to the front end and can be used 
+	 as a &quot;hard filter&quot;.  Should be a comma (,) delimited 
+	 list of types (T=) of messages to suppress. See &quot;AMI backend 
+	 API&quot; manual for details on specifying types on messages</p></li>
+	<li style="font-weight: normal; font-style: normal; font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.object.indexes</span>: 
+	 Force indexes on the internal in memory database. The syntax is a 
+	 comma delimited list of type.field pairs. Ex: <i>account.fname,order.order_id</i></p></li>
+	<li style="font-weight: normal; font-style: normal; font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.persist.dir</span><span courier="">:</span> Directory where the center should store persistent 
+	 data. This is any data that needs to persist after AMI center is shut 
+	 down and restarted</p></li>
+	<li style="font-weight: normal; font-style: normal; font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.datasource.plugins</span><span courier="">:</span> A comma delimited list of java classes that implement 
+	 the <i>com.f1.ami.amicommon.AmiDatasourcePlugin</i> interface. See 
+	 plugin documentation for details</p></li>
+	<li style="font-weight: normal; font-style: normal; font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.db.procedure.plugins</span><span courier="">:</span> A comma delimited list of java classes that implement 
+	 the <i>com.f1.ami.center.procs.</i> <i>AmiStoredProcFactory</i> interface. 
+	 See plugin documentation for details</p></li>
+	<li style="font-weight: normal; font-style: normal; font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.db.trigger.plugins</span><span courier="">:</span> A comma delimited list of java classes that implement 
+	 the <i>com.f1.ami.center.triggers.</i> <i>AmiTriggerFactory</i> interface. 
+	 See plugin documentation for details</p></li>
+	<li style="font-weight: normal; font-style: normal; font-size: 12pt;"><p><span class="CourierBlueStyle" style="font-size: 12pt;">ami.db.persister.plugins</span><span courier="">:</span> A comma delimited list of java classes that implement 
+	 the <i>com.f1.ami.center.table.persist.</i> <i>AmiTablePersisterFactory</i> 
+	 interface. See plugin documentation for details</p></li>
+	<li style="font-weight: normal; font-style: normal; font-size: 12pt;"><p><span class="CourierBlueStyle">ami.db.timer.plugins</span><span courier="">:</span> 
+	 A comma delimited list of java classes that implement the <i>com.f1.ami.amicommon.AmiFactoryPlugin.</i> 
+	 <i>AmiTimerFactory</i> interface. See plugin documentation for details</p></li>
+	<li style="font-weight: normal; font-style: normal; font-size: 12pt;"><p style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; 
+		 font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; 
+		 background-color: #ffffff;"><span class="CourierBlueStyle">ami.db.dialect.plugins</span><span style="orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; 
+	 text-decoration-color: initial;">: Comma delimted list of classes 
+	 implementing the com.f1.ami.center.dialectsAmiDbDialectPlugin interface.  Dialect 
+	 plugins are used to adapt specific dialects (such as Tableau&#39;s mysql 
+	 queries) into AMIDB&#39;s dialect</span></p></li>
+</ul>
+
+
+</div><div>
+    <p> </p>
+  </div>
+
+</body></html>

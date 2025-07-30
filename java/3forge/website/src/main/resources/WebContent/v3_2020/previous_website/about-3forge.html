@@ -1,0 +1,778 @@
+<!doctype html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KP5MMRBN');</script>
+  <!-- End Google Tag Manager -->
+  <script src="cookiehub.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realtime data streaming & Blending | Low code app development</title>
+  <meta name="description" content="We are experts in Realtime data streaming & Low code app development. Our team of developers has a passion for building innovative software solutions. Our product uses state of the art technologies and is launched in several tier 1 global investment banks and cryptocurrency exchanges.">
+  <style>
+  	   *{
+/*   	   	-webkit-text-stroke: 0.1px; */
+  	   	font-family: 'Barlow', sans-serif;
+  	   }
+	  body{
+	  	background-color: white;
+	  }
+  	  .gradience {
+	    background-clip: text;
+	    background-image: linear-gradient(93deg, #00a9ff, #ff8629, #ff6f00);
+	    -webkit-text-fill-color: transparent;
+	  }
+	[id^=gartner-pi-widget][data-theme=dark] * {
+		background: #191919;
+	}
+	[id^=gartner-pi-widget][data-size=line] .gartner-pi-score {
+	    margin-right: 12px !important;
+	}
+  </style>
+<!--   <link media="all" rel="stylesheet" href="css/ferris.css"> -->
+  <link media="all" rel="stylesheet" href="css/webv3.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+   tailwind.config = {
+	  	theme: {
+	    extend: {
+	      colors: {
+	        clifford: '#da373d',
+	        grey: '#808080',
+	        offgrey: 'rgb(223 223 223)',
+	        darkgrey: 'rgb(83 83 83)',
+	        orangey: 'rgb(255 120 0)',
+	        slategrey: '#a4adb7',
+	      }
+	    }
+	  }
+  	}
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KP5MMRBN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap">
+<header class="position: fixed w-full z-50" id="navbarwhole" style="background-image: radial-gradient(80% 300% at 90% -20%, #BA675F, #5924a6, #263054); box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 45px 0px;">
+<nav class="border-gray-200" id="topnav">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-[1215px] p-4">
+        <a href="https://3forge.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+        </a>
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+			<div class="flex group hover:underline">
+			    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-offgrey group-hover:text-orange-500" style="width:20px;">
+			        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+			    </svg>
+			    <a href="https://doc.3forge.com/" class="text-sm text-offgrey font-semibold group-hover:text-orange-500" id="sl1" style="padding-left: 3px;">Documentation</a>
+			</div>
+        	<div class="flex group hover:underline">
+        		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-offgrey group-hover:text-orange-500" style="width:20px;">
+				  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+				</svg>
+            	<a href="new-login.html" class="text-sm  text-offgrey font-semibold group-hover:text-orange-500" id="sl2" style="padding-left: 3px;">Login</a>
+            </div>
+            <div class="flex group hover:underline">
+            	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-offgrey group-hover:text-orange-500" style="width:20px;">
+				  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+				</svg>   	
+            	<a href="contact-us.html" class="text-sm  text-offgrey font-semibold group-hover:text-orange-500" id="sl3" style="padding-left: 3px;">Contact Us</a>
+            </div>
+<!--             <div class="flex">
+            	<div class="gtranslate_wrapper"></div>
+            </div> -->
+        </div>
+    </div>
+</nav>
+<nav class="border-darkgrey border-t-0 border-l-0 border-r-0 border-b-[0px]" id="bottomnav">
+  <div class="max-w-[1215px] flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="newhome.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="images/colored-1.webp" class="h-8" alt="3forge Logo" href="newhome.html" />
+    </a>
+    <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white hover:text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-dropdown" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+      <ul class="bg-white md:bg-transparent flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-6 lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+        <li class="hover:border-b-4 group hover:border-orange-600">
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar1" data-dropdown-delay="400" data-dropdown-trigger="hover" class="flex items-center justify-between w-full py-2 px-3 md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-orange-500 md:p-0 md:w-auto">Platform <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar1" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="platform-overview.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Platform Overview</a>
+                  </li>
+                  <li>
+                    <a href="platform-highlights.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Platform Highlights (Videos)</a>
+                  </li>
+                  <li>
+                    <a href="https://blog.3forge.com/product-release-notes-2/" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Release Notes</a>
+                  </li>
+                  <li>
+                    <a href="case-studies.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Case Studies</a>
+                  </li>
+                  <li>
+                    <a href="new-faq.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">FAQ</a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+        <li class="hover:border-b-4 group hover:border-orange-600">
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar3" data-dropdown-delay="400" data-dropdown-trigger="hover" class="flex items-center justify-between w-full py-2 px-3 md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-orange-500 md:p-0 md:w-auto">For Developers <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar3" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="why-3forge.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Why 3forge?</a>
+                  </li>
+                  <li>
+                    <a href="https://doc.3forge.com/" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Documentation</a>
+                  </li>
+                  <li>
+                    <a href="tutorial-access.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Tutorials</a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+        <li class="hover:border-b-4 group hover:border-orange-600">
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar4" data-dropdown-delay="400" data-dropdown-trigger="hover" class="flex items-center justify-between w-full py-2 px-3 md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-orange-500 md:p-0 md:w-auto">About 3forge <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar4" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="about-3forge.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Company</a>
+                  </li>
+                  <li>
+                    <a href="newevents.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Events</a>
+                  </li>
+                  <li>
+                    <a href="https://blog.3forge.com/" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Blog</a>
+                  </li>
+                  <li>
+                    <a href="careers.html" class="block px-4 py-2 hover:bg-gray-100 hover:underline">Careers</a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+        <li class="hover:border-b-4 group hover:border-orange-600">
+        	<a href="pricing.html" class="flex items-center justify-between w-full py-2 px-3 md:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:group-hover:text-orange-500 md:p-0 md:w-auto" id="sl1">Pricing</a>
+        </li>
+        <li class="mt-[1%] md:mt-[-1%]">
+	      <a href="demo.html"><button class="px-4 py-1 text-md text-white bg-orange-600 font-semibold rounded-full border border-orange-600 hover:text-white hover:bg-orange-500 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Request POC</button></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+<section class="bg-black" style="padding-top: 88px;" id="starting">
+	<div class="h-auto max-w-[1190px] mx-auto pt-20 pb-8">
+	  <div class="grid grid-cols-1 lg:grid-cols-2">
+	  	<div class="text-center lg:text-left">
+	  		<h1 class="m-0 m-auto text-center lg:m-[initial] lg:text-left text-4xl md:text-5xl px-8 sm:px-0 font-semibold text-white">We set out to make software that does exactly what you expect&hellip;</h1>
+	  		<div class="m-0 m-auto text-center lg:m-[initial] lg:text-left pt-12">
+	 	  	</div>
+	  	</div>
+	  	<div class="m-0 m-auto">
+ 		<img class="m-0 m-auto w-[500px] max-w-[500px] lg:mt-[-10%]" src="images/futureinvest.svg">	  	
+ </div>
+	  </div>
+	 </div>
+</section>
+
+<section>
+	<div class="h-auto max-w-[1192px] mx-auto sm:pt-12 lg:pt-0 transition-section">
+		<h1 class="text-center text-[3.2rem] font-bold m-0 m-auto pt-12">And We Did It.</h1>
+		<p class="m-0 m-auto text-center lg:m-[initial] lg:text-left sm:pb-12 font-medium text-2xl px-4 xl:px-0 pt-10">Since 2011, 3forge has been perfecting a full-stack platform that drastically reduces development time, minimizes maintenance costs, and provides unfailing uptime, scalability, and performance.</p>
+	</div>
+</section>
+
+<section>
+	<div class="h-auto max-w-[1192px] mx-auto transition-section">
+			<p class="m-0 m-auto text-center lg:m-[initial] lg:text-left pb-4 font-medium px-4 xl:px-0 text-2xl">
+			Yes, that means we built our own web server from scratch. And our own database. A messenger too. All so customers can have a better experience.
+			
+	</p>
+			<p class="m-0 m-auto text-center lg:m-[initial] lg:text-left pb-4 font-medium text-2xl px-4 xl:px-0 pt-5 ">The ugly truth about software is conditions incentivize developers to cut corners, cobbling together third-party solutions. Other platforms are built hastily with open source and glue code.
+
+
+	</p>
+	<p class="m-0 m-auto text-center lg:m-[initial] lg:text-left pb-4 font-medium text-2xl px-4 xl:px-0 pt-5">
+		3forge was built from the ground up with a holistic approach. Each component was hand-crafted for reliability, efficiency, and ease of use. The result is a full-stack, unified, seamless platform that &quot;just works.&quot; 
+
+In fact, that’s exactly what our users tell us. 
+
+Ready for a solution that actually does what it promises?
+	</p>
+			<div class="h-auto xl:container mx-auto text-center">
+			<a href="#"><button class="mt-8 px-4 py-1 text-center text-lg text-white bg-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-500 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Try 3forge</button></a>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="h-auto max-w-[1192px] mx-auto pt-8 sm:pt-20 transition-section">
+		<h1 class="text-center text-[3.2rem] font-bold">Certifications / Partners / Industry Organizations</h1>
+		<div class="max-w-[1240px] m-0 m-auto pb-28">
+					<ul class="partner-list" style="margin-top: -6%;">
+						<li><a><img src="images/finsemble.png" alt="finsemble" width="145" height="56"></a></li>
+						<li><a><img src="images/aquaq.png" alt="aquaq" width="145" height="56"></a></li>
+						<li><a><img src="images/soc-2.png" alt="soc2 type2 compliant certificate" width="180" height="95"></a></li>
+						<li><a><img src="images/partner-1.png" srcset="images/partner-1@2x.png 2x" alt="amazon web services" width="145" height="56"></a></li>
+						<li><a><img src="images/partner-2.png" srcset="images/partner-2@2x.png 2x" alt="oracle" width="141" height="56"></a></li>
+						<li><a><img src="images/partner-3.png" srcset="images/partner-3@2x.png 2x" alt="edm council" width="172" height="63"></a></li>
+						<li><a><img src="images/interop.io-primary-RGB.svg" alt="interop" width="172" height="63"></a></li>
+					</ul>
+		</div>
+	</div>
+</section>
+
+<section>
+<section class="bg-white">
+    <div class="container px-6 pt-0 sm:py-10 pt-20 mx-auto transition-section">
+        <h1 class="text-center pb-3 text-[3.2rem] font-bold">Our Team</h1>
+
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-3 xl:grid-cols-4 pt-4 sm:pt-12" style="max-width: 1100px; margin: 0 auto;">
+            <div class="flex flex-col items-center">
+               <div class="relative">
+               <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="images/team-headshots/rob-headshot.png" alt="">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Robert Cooke</h1>
+		
+		                <p class="mt-2 text-white capitalize">CTO / Founder</p>
+                	</div>
+               </div>
+            </div>
+
+            <div class="flex flex-col items-center">
+            	<div class="relative">
+               <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="images/team-headshots/peter-headshot.png" alt="">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Peter Sibirzeff</h1>
+		
+		                <p class="mt-2 text-white capitalize">Director / Head Business Dev</p>
+                	</div>
+               </div>
+
+            </div>
+            <div class="flex flex-col items-center">
+                 	<div class="relative">
+               <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="images/team-headshots/rick-headshot.png" alt="">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Rick Barber</h1>
+		
+		                <p class="mt-2 text-white capitalize">Global Project Manager</p>
+                	</div>
+               </div>
+            </div>
+            <div class="flex flex-col items-center">
+               <div class="relative">
+               <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="images/team-headshots/george-headshot.png" alt="">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">George Lin</h1>
+		
+		                <p class="mt-2 text-white capitalize">Global Core Engineer</p>
+                	</div>
+               </div>
+            </div>
+            <div class="flex flex-col items-center">
+               <div class="relative">
+               	<img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="images/team-headshots/mir-headshot.png" alt="">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Mir Ahmed</h1>
+		
+		                <p class="mt-2 text-white capitalize">Lead Engineer NA</p>
+                	</div>
+               </div>
+            </div>
+            <div class="flex flex-col items-center">
+               <div class="relative">
+               <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="images/team-headshots/joe-headshot.png" alt="">
+
+						<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+	                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Joe Ronan</h1>
+	
+	                <p class="mt-2 text-white capitalize">Lead Engineer EMEA</p>
+                	</div>
+               </div>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="relative">
+               <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="images/team-headshots/wesley-headshot.png" alt="">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Wesley Chen</h1>
+		
+		                <p class="mt-2 text-white capitalize">Lead Engineer APAC</p>
+                	</div>
+               </div>
+            </div>
+             <div class="flex flex-col items-center">
+              <div class="relative">
+               <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="images/team-headshots/min-headshot.png" alt="">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Min Hui Lee</h1>
+		
+		                <p class="mt-2 text-white capitalize">QA Lead</p>
+                	</div>
+               </div>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="relative">
+               <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="images/team-headshots/mike-headshot.png" alt="">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Mike Chiovari</h1>
+		
+		                <p class="mt-2 text-white capitalize">Sales NA</p>
+                	</div>
+               </div>
+            </div>
+             <div class="flex flex-col items-center">
+               <div class="relative">
+                <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="https://media.licdn.com/dms/image/C4E03AQH-S255gDIGpQ/profile-displayphoto-shrink_800_800/0/1589199510793?e=1723075200&v=beta&t=n7MibQVrp10g78USNr7OX48xUw81Os_xsPpzeIbvTMw" alt="">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Lawrence Peirson</h1>
+		
+		                <p class="mt-2 text-white capitalize">Sales EMEA</p>
+                	</div>
+               </div>
+            </div>
+             <div class="flex flex-col items-center">
+               <div class="relative">
+                <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="https://media.licdn.com/dms/image/C4D03AQFC-TCujk1chg/profile-displayphoto-shrink_800_800/0/1663930663979?e=1723075200&v=beta&t=rsjwdnEt-KJTN8fsXMP4Exw5Obk55ugcT6-SUHUwSJc" alt="">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Dhaval Budhai</h1>
+		
+		                <p class="mt-2 text-white capitalize">Sales APAC</p>
+                	</div>
+               </div>
+            </div>
+             <div class="flex flex-col items-center">
+               <div class="relative">
+                <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="images/square6.jpg" alt="" style="object-position: top;">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Eugene Farber</h1>
+		
+		                <p class="mt-2 text-white capitalize">Head of Marketing</p>
+                	</div>
+               </div>
+            </div>
+            <div class="flex flex-col items-center">
+               <div class="relative">
+                <img class="object-cover w-[251px] rounded-xl aspect-square teampic" src="images/crouton-1.svg" alt="">
+
+					<div class="absolute px-3 w-full lg:h-[111px]" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); height: 111px; margin-top: 6.2%; border-radius: 0.75rem; top: 50%;">
+		                <h1 class="mt-4 text-2xl font-semibold text-white capitalize pt-[29px]">Crouton Cooke</h1>
+		
+		                <p class="mt-2 text-white capitalize">CBO (Chief Barking Officer)</p>
+                	</div>
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+
+<section>
+	<div class="h-auto max-w-[1192px] mx-auto sm:pt-20 transition-section">
+		<h1 class="text-center pb-3 text-[3.2rem] font-bold">You Have the Power</h1>
+		<p class="m-0 m-auto text-center lg:m-[initial] lg:text-left font-medium text-2xl pt-5 px-4 xl:px-0">Build whatever you need with less time and energy. We did the hard work so that you don’t have to. And by never taking the easy way out, we’ve developed a platform that’s drastically lighter, faster, and more stable <b>solving data problems that other platforms couldn't.</b></p>
+		<div class="h-auto xl:container mx-auto text-center pb-24">
+			<a href="#"><button class="mt-8 px-4 py-1 text-center text-lg text-white bg-orange-600 font-semibold rounded-full border border-orange-200 hover:text-white hover:bg-orange-500 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2">Customer Stories</button></a>
+		</div>
+	</div>
+</section>
+
+
+
+<footer class="bg-black pt-4">
+    <div class="mx-auto w-full max-w-[1215px]">
+     <div class="grid grid-cols-1 lg:grid-cols-1">
+      <div class="relative xl:flex">
+    	<div class="px-4 py-6 bg-black md:flex" style="margin-top: -1%;">
+    		<span class="text-2xl text-white font-bold sm:text-center">Sign up for updates
+        </span>
+    	</div>
+    	<div class="bg-black md:flex">
+    		<div style="position:relative;">
+									<div id="Zc_SignupSuccess" style="display:none;position:absolute;margin-left:4%;width:90%;background-color: white; padding: 3px; border: 3px solid rgb(194, 225, 154);  margin-top: 10px;margin-bottom:10px;word-break:break-all">
+										<table width="100%" cellpadding="0" cellspacing="0" border="0">
+											<tbody>
+												<tr>
+													<td width="10%">
+														<img class="successicon" src="https://tkwr.maillist-manage.com/images/challangeiconenable.jpg" align="absmiddle">
+													</td>
+													<td>
+														<span id="signupSuccessMsg" style="color: rgb(73, 140, 132); font-family: sans-serif; font-size: 14px;word-break:break-word">&nbsp;&nbsp;Thank you for Signing Up</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<form method="POST" id="zcampaignOptinForm" style="margin: 0px; width: 100%; padding: 0px 15px" action="https://maillist-manage.com/weboptin.zc" target="_zcSignup">
+									<div style="background-color: rgb(255, 235, 232); padding: 10px; color: rgb(210, 0, 0); margin: 20px 10px 0px; border: 1px solid rgb(255, 217, 211); opacity: 1; display: none; width: 330px; height: 40px; font-size: 20px" id="errorMsgDiv">Please enter a valid email</div>
+									<div style="position: relative; margin: 10px 0px 15px; display: inline-block; height: 40px; width: 240px" class="SIGNUP_FLD">
+										<input type="text" style="border: 1px solid rgb(235, 235, 235); border-radius: 0px; width: 100%; height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(136, 136, 136); text-align: left; font-family: Arial; background-color: rgb(255, 255, 255); box-sizing: border-box; font-size: 20px" placeholder="Email" changeitem="SIGNUP_FORM_FIELD" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL">
+									</div>
+									<div style="position: relative; text-align: left; display: inline-block; margin: 0px 0px 10px; height: 40px; width: 90px" class="SIGNUP_FLD">
+										<input type="button" style="text-align: center; width: 100%; height: 100%; z-index: 5; border: 2px none; color: rgb(255, 255, 255); cursor: pointer; outline: none; background-color: rgb(241, 105, 0); margin: 0px 0px 0px -5px; border-radius: 0px 3px 3px 0px; font-family: Lato, Arial, Helvetica, sans-serif; font-size: 17px; padding-top: 2px;" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now">
+									</div>
+									<input type="hidden" id="fieldBorder" value="">
+									<input type="hidden" id="submitType" name="submitType" value="optinCustomView">
+									<input type="hidden" id="emailReportId" name="emailReportId" value="">
+									<input type="hidden" id="formType" name="formType" value="QuickForm">
+									<input type="hidden" name="zx" id="cmpZuid" value="12b29f095">
+									<input type="hidden" name="zcvers" value="3.0">
+									<input type="hidden" name="oldListIds" id="allCheckedListIds" value="">
+									<input type="hidden" id="mode" name="mode" value="OptinCreateView">
+									<input type="hidden" id="zcld" name="zcld" value="1a2ab5170c86c783">
+									<input type="hidden" id="document_domain" value="">
+									<input type="hidden" id="zc_Url" value="tkwr.maillist-manage.com">
+									<input type="hidden" id="new_optin_response_in" value="0">
+									<input type="hidden" id="duplicate_optin_response_in" value="0">
+									<input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW">
+									<input type="hidden" id="zc_formIx" name="zc_formIx" value="8a252e9057e97e321f4cec5084850ed3f6dfae48574d3708">
+									<input type="hidden" id="viewFrom" value="URL_ACTION">
+									<span style="display: none" id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
+								</form>
+    	</div>
+    	<div class="px-4 py-6 bg-black md:flex xl:mt-[-1%] xl:ml-[7%]">
+    		<div id="gartner-widget" style="background-color: #000000 !important;"></div>
+    	</div>
+    </div>
+    <div>
+      <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-3 lg:grid-cols-6">
+        <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Platform</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="platform-overview" class=" hover:underline">Platform Overview</a>
+                </li>
+                <li class="mb-4">
+                    <a href="platform-highlights.html" class="hover:underline">Platform Highlights (Videos)</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Solutions</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="case-studies.html" class="hover:underline">Case Studies</a>
+                </li>
+                <li class="mb-4">
+                    <a href="industries.html" class="hover:underline">Industries</a>
+                </li>
+                <li class="mb-4">
+                    <a href="use-cases.html" class="hover:underline">Use Cases</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Developers</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="why-3forge.html" class="hover:underline">Why 3forge?</a>
+                </li>
+                <li class="mb-4">
+                    <a href="https://doc.3forge.com/" class="hover:underline">Documentation</a>
+                </li>
+                <li class="mb-4">
+                    <a href="https://blog.3forge.com/product-release-notes-2/" class="hover:underline">Release Notes</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Legal</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="new-privacy-policy.html" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li class="mb-4">
+                    <a href="new-scam-disclaimer.html" class="hover:underline">Disclaimer</a>
+                </li>
+                <li class="mb-4">
+                    <a href="new-terms-of-use.html" class="hover:underline">Terms of Use</a>
+                </li>
+                <li class="mb-4">
+                    <a onclick="openCookieHubWindow(); return false;" class="hover:underline hover:cursor-pointer">Cookie Settings</a>
+                </li>
+            </ul>
+        </div>
+                <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Company</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="about-3forge.html" class="hover:underline">About Us</a>
+                </li>
+                <li class="mb-4">
+                    <a href="careers.html" class="hover:underline">Careers</a>
+                </li>
+            </ul>
+        </div>
+                <div>
+            <h2 class="mb-6 text-[20px] font-bold text-white">Resources</h2>
+            <ul class="text-slategrey font-medium">
+                <li class="mb-4">
+                    <a href="newevents.html" class="hover:underline">Events</a>
+                </li>
+                <li class="mb-4">
+                    <a href="https://blog.3forge.com/" class="hover:underline">Blog</a>
+                </li>
+                <li class="mb-4">
+                    <a href="new-faq.html" class="hover:underline">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="px-4 py-6 bg-black md:flex md:items-center md:justify-between">
+    	    <a href="newhome.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="images/colored-1.webp" class="h-8" alt="3forge Logo" />
+    </a>
+        <span class="text-[16px] text-white sm:text-center lg:ml-[-29rem] xl:ml-[-37rem]">&copy; 2024 <a href="https://3forge.com/">3forge, LLC</a>. All Rights Reserved.
+        </span>
+        <div class="flex mt-4 md:mt-0 space-x-5 rtl:space-x-reverse lg:mr-[6%] lg:ml-[-8%]">
+            <a href="https://www.facebook.com/3forge/" class="text-white hover:opacity-80">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                        <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                    </svg>
+                  <span class="sr-only">Facebook page</span>
+              </a>
+              <a href="https://www.linkedin.com/company/3forge/" class="text-white hover:opacity-80">
+					<img src="images/linkedin_icon.svg" style="filter: brightness(100); width:19px; height:17px; filter: invert(1);">
+              </a>
+              <a href="https://twitter.com/3forge_nyc" class="text-white hover:opacity-80">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 17">
+                    <path fill-rule="evenodd" d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z" clip-rule="evenodd"/>
+                </svg>
+                  <span class="sr-only">Twitter page</span>
+              </a>
+              <a href="https://youtube.com/@3forge461?si=BJ3k_VdbK9c_KJyt" class="text-white hover:opacity-80">
+				  <img src="images/youtube_icon.svg" style="filter: brightness(100); width:19px; height:17px; filter: invert(1);">
+              </a>
+              <a href="https://3forge.medium.com/" class="text-white hover:opacity-80">
+                  <img src="images/medium_icon.svg" style="filter: brightness(100); width:19px; height:18px; filter: invert(1);">
+              </a>
+        </div>
+      </div>
+    </div>
+</footer>
+</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+	<script src="cookiebutton.js"></script>
+	<script>
+			// Function to set a custom cookie indicating the user's choice regarding cookies
+			function setCookieHubCookie(value) {
+			    // Set a cookie named 'cookiehub' with the provided value
+			    document.cookie = 'cookiehub=' + value + '; expires=' + calculateExpirationDate() + '; path=/';
+			}
+			
+			// Function to calculate the expiration date for the cookie (30 days from the current day)
+			function calculateExpirationDate() {
+			    var currentDate = new Date();
+			    var expirationDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 days in milliseconds
+			    return expirationDate.toUTCString();
+			}
+			
+			// Check if the custom cookie indicating the user's choice regarding cookies is set
+			window.addEventListener('load', function() {
+			    var cookieValue = getCookie('cookiehub');
+			    if (!cookieValue) {
+			        // If the custom cookie is not set, display the CookieHub banner
+			        var cpm = {};
+			        window.cookiehub.load(cpm);
+			    }
+			});
+			
+			// Set the custom cookie when the "Accept All Cookies" or "Deny All Cookies" button is clicked
+			document.addEventListener('click', function(event) {
+			    var target = event.target;
+			    if (target.classList.contains('ch2-allow-all-btn')) {
+			        // Set the custom cookie to indicate acceptance of cookies
+			        setCookieHubCookie('allow');
+			    } else if (target.classList.contains('ch2-deny-all-btn')) {
+			        // Set the custom cookie to indicate denial of all cookies
+			        setCookieHubCookie('deny');
+			    }
+			});
+	</script>
+	<script>
+		var count = 0; 
+		function openCookieHubWindow() {
+			if (count == 0) {
+				window.cookiehub.load();
+				count++;
+			}
+			if (count >= 1) {			
+				window.cookiehub.openDialog();
+				count++;
+			}
+		}
+	</script>
+	<script type="text/javascript"
+		src="../js/widget.js">
+	</script>
+	<script type="text/javascript">
+	    GartnerPI_Widget({
+	        size: "line",
+	        theme: "dark",
+	        sourcingLink: "https://gtnr.io/iKfnxw3cA",
+	        widget_id: "ZjA4NTVhMzUtZWUxZi00YmZhLWJmNGEtMWQ4YzU1YjI1ZjUy",
+	        version: "2",
+	        container: document.getElementById("gartner-widget")
+	    });
+	</script>
+	<script>
+		let lastScrollTop = 0;
+		let initialLoad = true;
+	
+		window.onscroll = function (e) {  
+			if(!initialLoad) {
+				let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+				
+				document.getElementById("starting").style.paddingTop = "88px";
+				
+		 		top = document.getElementById("topnav");
+		 		bottom = document.getElementById("bottomnav");
+		 		
+		 		
+					if (currentScroll > lastScrollTop) {
+						document.getElementById("sl1").style.transition = "opacity 1s";
+						document.getElementById("sl2").style.transition = "opacity 1s";
+						document.getElementById("sl3").style.transition = "opacity 1s";
+					
+						document.getElementById("topnav").style.position="initial";
+						document.getElementById("topnav").style.width = "initial";
+						document.getElementById("topnav").style.zIndex = "initial";
+						document.getElementById("topnav").style.transform = "initial";
+						document.getElementById("topnav").style.visibility = "hidden";
+						document.getElementById("topnav").style.transition = "opacity 1s";
+						
+						document.getElementById("navbarwhole").style.height = "66px";
+			 		
+				 		bottom.style.position = "fixed";
+				 		bottom.style.width = "100%";
+				 		bottom.style.zIndex = "100";
+				    	bottom.style.transform = "translate3d(0px, -52px, 0px)";
+				    	
+			    	}
+			    	
+			    	if (currentScroll < lastScrollTop) {
+						document.getElementById("sl1").style.transition = "opacity 0.1s";
+						document.getElementById("sl2").style.transition = "opacity 0.1s";
+						document.getElementById("sl3").style.transition = "opacity 0.1s";
+			    		
+			    		document.getElementById("topnav").style.transition = "none";
+						document.getElementById("topnav").style.position="fixed";
+						document.getElementById("topnav").style.width = "100%";
+						document.getElementById("topnav").style.zIndex = "100";
+						document.getElementById("topnav").style.transform = "translate3d(0, 0, 0)";
+						document.getElementById("topnav").style.visibility = "visible";
+						
+						document.getElementById("navbarwhole").style.height = "118px";
+				    	
+			    		bottom.style.position = "fixed";
+				 		bottom.style.width = "100%";
+				 		bottom.style.zIndex = "100";
+				    	bottom.style.transform = "translate3d(0px, 52px, 0px)";
+			    	}
+			    	lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+		    	}
+		    	if (typeof currentScroll !== 'undefined'){
+		    		lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+		    	}
+		    	
+	    	initialLoad = false;
+           }
+	
+	</script>
+	
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	    const sections = document.querySelectorAll('.transition-section');
+	
+	    // Function to determine the threshold based on screen size
+	    const getThreshold = () => {
+	        const width = window.innerWidth;
+	        console.log(width);
+	        if (width < 600) {
+	            return 0.1; // Smaller screens
+	        } else if (width < 1200) {
+	            return 0.2; // Medium screens
+	        } else if (width < 1600) {
+	            return 0.25; // Larger screens
+	        }
+      	      else {
+	            return 0.3; // Larger screens
+	        }
+	    };
+	
+	    // Initial observer options
+	    const observerOptions = {
+	        root: null, // Use the viewport as the root
+	        rootMargin: '0px',
+	        threshold: getThreshold()
+	    };
+	
+	    // Function to create a new observer with updated options
+	    const createObserver = () => {
+	        return new IntersectionObserver((entries, observer) => {
+	            entries.forEach(entry => {
+	                if (entry.isIntersecting) {
+	                    entry.target.classList.add('visible');
+	                    observer.unobserve(entry.target); // Stop observing once it's visible
+	                }
+	            });
+	        }, observerOptions);
+	    };
+	
+	    let observer = createObserver();
+	
+	    // Observe each section
+	    sections.forEach(section => {
+	        observer.observe(section);
+	    });
+	
+	    // Update observer on window resize
+	    window.addEventListener('resize', () => {
+	        observer.disconnect(); // Disconnect the old observer
+	        observerOptions.threshold = getThreshold(); // Update the threshold
+	        observer = createObserver(); // Create a new observer
+	        sections.forEach(section => {
+	            if (!section.classList.contains('visible')) {
+	                observer.observe(section); // Re-observe sections that are not visible
+	            }
+	        });
+	    });
+	});
+    </script>
+    
+</body>
+</html>

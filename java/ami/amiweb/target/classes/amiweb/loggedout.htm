@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<f1:if test="com.f1.ami.web.auth.AmiWebLoginHttpHandler.isLoggedIn(request)">
+  <f1:redirect page="com.f1.ami.web.pages.AmiWebPages.URL_PORTALS"/>
+<f1:else/>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <base href='<f1:out value="${url_prepend}"/>'>
+  	<link rel="icon" href="<f1:out value="${favIcon}"/>" />
+  
+    <style media="screen">
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        background: linear-gradient(45deg, #2C1E4A 0%, #06002E 100%);
+      }
+      .logo-container {
+        width: 200px;
+        position: absolute;
+        z-index: 999;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+      .logo {
+        padding: 15px;
+        width: 200px;
+      }
+      .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .container2 {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .container > div {
+      	margin: 15px;
+      }
+      .logout-msg {
+      	color: white;
+      	font-size: 30px;
+      }
+      .logout-msg-btn {
+      	display: flex;
+      	justify-content: center;
+      	align-items: center;
+      }
+      .logout-msg-btn > div {
+      	margin-right: 10px;
+      }
+      .too-soon {
+      	color: #b7b7b7;
+      	font-size: 20px;
+      }
+      .logout-btn, button, .logout-btn a {
+      	cursor: pointer;
+      	background: #5C6379;
+      	border: none;
+      	color: white;
+      	padding-left: 5px;
+      	padding: 2px 5px;
+      	border-radius: 3px;
+      	font-weight: bold;
+      }
+      .content {
+        position: absolute;
+        width: 350px;
+      }
+      #browsernotice {
+      	background-color: #F2DEDE;
+	    text-align: center;
+      }
+      .browsernotice-warning-text {
+      	padding: 10px;
+      	color: #A94442;
+      }
+    </style>
+  </head>
+  <body>
+  
+  	<div id="browsernotice"></div>
+  
+	<div class="logo-container">
+      <a href="https://3forge.com">
+       <img src="portal/rsc/ami/menubar_logo3_color2.svg">
+      </a>
+    </div>
+  <title>Logged Out</title>
+    <div class="container">
+      <div class="logout-msg">You have been logged out successfully!</div>
+	  <div class="logout-msg-btn">
+	  	<div class="too-soon">logged out too soon?</div>
+	  	<div class="logout-btn"><a href="<f1:out value="${indexPage}"/>"><button>Login</button></a></div>
+	  </div>    
+    </div>
+
+</f1:if>
+</html>
+

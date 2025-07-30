@@ -1,0 +1,29 @@
+<!-- trial expiration date: !!! IMPORTANT !!! -->
+<f1:script type="text/javascript" src="inline" nonce="true"/>
+  var expiresOn = <f1:out value="${user.trialExpiresOn}"/>;
+</script>
+
+<!-- linking scripts -->
+
+<f1:script src="../v2_resources/javascripts/jquery.min.js" type="text/javascript" nonce="true"/>
+
+<f1:script src="../v2_resources/javascripts/bootstrap.js" type="text/javascript" nonce="true"/>
+
+<f1:script src="../v2_resources/javascripts/jquery.countdown.min.js" type="text/javascript" nonce="true"/>
+
+<f1:script src="../v2_resources/javascripts/script.js" type="text/javascript" nonce="true"/>
+
+<f1:script src="../v2_resources/javascripts/switcher.js" type="text/javascript" nonce="true"/>
+
+<f1:script src="../v2_resources/javascripts/portal.js" type="text/javascript" nonce="true"/>
+
+<!-- visual visitor -->
+<f1:script type="text/javascript" src="inline" nonce="true"/>
+var vv_account_id = '5SFgJcXooC';
+var vv_BaseURL = (("https:" == document.location.protocol) ? "https://frontend.id-visitors.com/FrontEndWeb/" : "http://frontend.id-visitors.com/FrontEndWeb/");
+(function () {
+var va = document.createElement('script'); va.type = 'text/javascript'; va.async = true;
+va.src = vv_BaseURL + 'Scripts/liveVisitAsync.js';
+var sv = document.getElementsByTagName('script')[0]; sv.parentNode.insertBefore(va, sv);
+})();
+</script>

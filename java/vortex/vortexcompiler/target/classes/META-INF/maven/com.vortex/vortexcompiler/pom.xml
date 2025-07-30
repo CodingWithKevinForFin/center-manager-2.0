@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.vortex</groupId>
+
+    <name>vortexcompiler</name>
+    <artifactId>vortexcompiler</artifactId>
+    <version>1.00-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.vortex</groupId>
+        <artifactId>vortex</artifactId>
+        <version>1.00-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.f1</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>1.00-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.f1</groupId>
+            <artifactId>http</artifactId>
+            <version>1.00-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+    
+
+
+
+</project>
+
